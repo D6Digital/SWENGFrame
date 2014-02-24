@@ -11,7 +11,7 @@ import java.util.ArrayList;
  *
  */
 public class Text extends SlideObject {
-ArrayList<TextContent> text = new ArrayList<TextContent>(0);
+ArrayList<TextContent> text;
 
 /**
  * @param x_coord

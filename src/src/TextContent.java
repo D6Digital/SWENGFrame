@@ -20,5 +20,29 @@ public class TextContent {
 		this.underlined = underlined;
 		this.textString = textString;
 	}
+	/**
+	 * @return the bold
+	 */
+	public boolean isBold() {
+		return bold;
+	}
+	/**
+	 * @return the italic
+	 */
+	public boolean isItalic() {
+		return italic;
+	}
+	/**
+	 * @return the underlined
+	 */
+	public boolean isUnderlined() {
+		return underlined;
+	}
+	/**
+	 * @return the textString
+	 */
+	public String getTextString() {
+		return textString;
+	}
 
 }
