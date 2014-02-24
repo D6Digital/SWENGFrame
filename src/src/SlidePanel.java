@@ -1,8 +1,11 @@
 package src;
 
+import java.awt.Shape;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 /**
@@ -74,6 +77,47 @@ public class SlidePanel extends JPanel implements ActionListener{
 		// TODO Auto-generated method stub
 		
 	}
+	
+	//private JPanel addShape(Shapes shape){
+		
+		// TODO make a JPanel to represent the size and location of the shape
+		// Eventually Use the bought in module to improve this method
+	//	return null;
+	//}
+	
+	private JLabel addImage(Image image){
+	
+		// TODO make a JLabel containing an image
+		// Eventually Use the bought in module to improve this method
+		return null;
+	}
+	
+	
+	private JPanel addVideo(Video video){
+		
+		// TODO instantiate the video player when available and the video player controls
+		// Start paused by default
+		
+		return null;
+	}
+	
+	//private EmbeddedMusicPlayer addSound(Sound sound){
+		
+		// TODO instantiate the embedded slide music player when available
+		// Start paused by default
+		
+	//	return null;
+	//}
+	
+	private JPanel addText(Text text){
+		
+		// TODO use the Scribe class when available to add the text to a JPanel
+		
+		return null;
+	}
+	
+	
+	
 	
 
 }
