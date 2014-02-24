@@ -53,11 +53,13 @@ public class GUI extends JFrame{
 				UtilitiesPanel utilitiesSelectionPanel = new UtilitiesPanel();
 				contentPane.add(utilitiesSelectionPanel, BorderLayout.CENTER);
 				break;
-			case "diceRollerPanel":        
-				//DicePanel();
+			case "diceRollerPanel":
+				DicePanel diceRollerPanel = new DicePanel();
+				contentPane.add(diceRollerPanel, BorderLayout.CENTER);
 				break;
 			case "calculatorPanel":        
-				//CalculatorPanel();
+				CalculatorPanel calculatorPanel = new CalculatorPanel();
+				contentPane.add(calculatorPanel, BorderLayout.CENTER);
 				break;
 			default:                     
 				//???DefaultPanel()???
