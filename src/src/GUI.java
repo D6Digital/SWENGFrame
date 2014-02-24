@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.Container;
 
 import javax.swing.JFrame;
+import javax.swing.Spring;
 
 /**
  * 
@@ -18,19 +19,13 @@ public class GUI extends JFrame{
 	private static final long serialVersionUID = 1L;
 	
 	Container contentPane;
-	String panelType = "utilitiesSelectionPanel";
-	String windowName = "Utilities";
-	int width = 200;
-	int height = 250;
-	
 	/**
 	 * Create a simple JFrame and then populate it with specified JPanel type
-	 * string panelType, string windowName int width, int height
 	 * @return 
 	 */
 
-	public GUI() {
-		setTitle("Grimoire - " + windowName);
+	public GUI(String panelType, String windowName, int width, int height) {
+		setTitle(windowName);
 		setSize(width, height);
 		setVisible(true);
 		
