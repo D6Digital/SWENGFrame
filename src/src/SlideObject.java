@@ -12,6 +12,13 @@ public class SlideObject {
 	private int y_coord;
 	private String file;
 
+	
+	/**
+	 * 
+	 * @param x_coord
+	 * @param y_coord
+	 * @param file
+	 */
 	public SlideObject(int x_coord, int y_coord, String file) {
 		super();
 		this.x_coord = x_coord;

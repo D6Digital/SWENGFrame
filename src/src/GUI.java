@@ -3,6 +3,9 @@ package src;
 import java.awt.BorderLayout;
 import java.awt.Container;
 
+import javax.swing.JFrame;
+import javax.swing.Spring;
+
 /**
  * 
  * @author Andrew Walter
@@ -14,18 +17,15 @@ public class GUI extends JFrame{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	Container contentPane;
-	string panelType = "utilitiesSelectionPanel";
-	string windowName = "Utilities";
-	int width = 200;
-	int height = 250;
 	
+	Container contentPane;
 	/**
 	 * Create a simple JFrame and then populate it with specified JPanel type
-	 * string panelType, string windowName int width, int height
+	 * @return 
 	 */
-	public GUI() {
-		setTitle("Grimoire - " + windowName);
+
+	public GUI(String panelType, String windowName, int width, int height) {
+		setTitle(windowName);
 		setSize(width, height);
 		setVisible(true);
 		
@@ -33,31 +33,33 @@ public class GUI extends JFrame{
 		contentPane.setLayout(new BorderLayout());
 		
 		switch (panelType) {
-			case bookSelectionPanel:    
+			case "bookSelectionPanel":   
 				//BookPanel();
 				break;
-			case mainMenuPanel:          
+			case "mainMenuPanel":          
 				//MenuPanel();
 				break;
-			case bookMainPanel:          
+			case "bookMainPanel":          
 				//ContentsPanel();
 				//ControlPanel();
 				break;
-			case videoDisplayPanel:      
+			case "videoDisplayPanel":      
 				//VideoPanel();
 				break;
-			case audioMenuPanel:         
+			case "audioMenuPanel":         
 				//AudioPanel();
 				break;
-			case utilitiesSelectionPanel:
+			case "utilitiesSelectionPanel":
 				UtilitiesPanel utilitiesSelectionPanel = new UtilitiesPanel();
-				contentPane.add(utilitiesSelectionPanel, BorderLayout.EAST);
+				contentPane.add(utilitiesSelectionPanel, BorderLayout.CENTER);
 				break;
-			case diceRollerPanel:        
-				//DicePanel();
+			case "diceRollerPanel":
+				DicePanel diceRollerPanel = new DicePanel();
+				contentPane.add(diceRollerPanel, BorderLayout.CENTER);
 				break;
-			case calculatorPanel:        
-				//CalculatorPanel();
+			case "calculatorPanel":        
+				CalculatorPanel calculatorPanel = new CalculatorPanel();
+				contentPane.add(calculatorPanel, BorderLayout.CENTER);
 				break;
 			default:                     
 				//???DefaultPanel()???

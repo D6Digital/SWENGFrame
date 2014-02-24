@@ -1,10 +1,10 @@
 package src;
 
+import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.AbstractButton;
-import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
@@ -23,6 +23,7 @@ public class UtilitiesPanel extends JPanel implements ActionListener{
 	
 	public boolean diceRollerExists;
 	public boolean calculatorExists;
+	JPanel UtilitiesPanel;
 	
 	
 	/**
@@ -32,7 +33,7 @@ public class UtilitiesPanel extends JPanel implements ActionListener{
 		//Calls JPanel to create the UtilitiesPanel object.
 		//Sets the layout to BoxLayout
 		super();
-		UtilitiesPanel.setLayout(new BoxLayout(UtilitiesPanel, BoxLayout.Y_AXIS));
+		setLayout(null);
 		
 		// When the panel is first created the utilities will not exist but when they are
 		// instantiated, these fields should be updated so we don't get multiple utilities
@@ -40,21 +41,25 @@ public class UtilitiesPanel extends JPanel implements ActionListener{
 		calculatorExists = false;
 		
 		//Adds JButtons for diceRoller and calculator
-		JButton diceButton = new JButton("Launch Dice Roller");
+		JButton diceButton = new JButton("Dice Roller");
 		diceButton.setVerticalTextPosition(AbstractButton.CENTER);
 		diceButton.setHorizontalTextPosition(AbstractButton.CENTER);
+		diceButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+		diceButton.setBounds(17, 25, 150, 50);
 		diceButton.setActionCommand("diceRollerLaunch");
 		diceButton.addActionListener(this);
 		diceButton.setToolTipText("Opens the dice roller application");
-		UtilitiesPanel.add(contrastButton);
+		add(diceButton);
 		
-		JButton calculatorButton = new JButton("Launch Modifier Calculator");
+		JButton calculatorButton = new JButton("Modifier Calculator");
 		calculatorButton.setVerticalTextPosition(AbstractButton.CENTER);
 		calculatorButton.setHorizontalTextPosition(AbstractButton.CENTER);
+		calculatorButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+		calculatorButton.setBounds(17, 100, 150, 50);
 		calculatorButton.setActionCommand("calculatorLaunch");
 		calculatorButton.addActionListener(this);
 		calculatorButton.setToolTipText("Opens the modifier calculator application");
-		UtilitiesPanel.add(calculatorButton);
+		add(calculatorButton);
 	}
 	
 	
