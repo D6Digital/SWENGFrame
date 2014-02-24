@@ -24,9 +24,6 @@ public class Image extends SlideObject {
 	 */
 	public Image(int x_coord, int y_coord, String file, int width, int height) {
 		super(x_coord, y_coord, file);
-		this.x_coord = x_coord;
-		this.y_coord = y_coord;
-		this.file = file;
 		this.width = width;
 		this.height = height;
 		
