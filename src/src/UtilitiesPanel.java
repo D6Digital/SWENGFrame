@@ -72,8 +72,7 @@ public class UtilitiesPanel extends JPanel implements ActionListener{
 		// TODO manage button presses
 		
 	}
-
-
+	
 	//public void setVisibility(boolean visible){
 	//		this.setVisible(visible);
 	//	}

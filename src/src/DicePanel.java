@@ -23,6 +23,9 @@ public class DicePanel extends JFrame{
 	 */
 
 	public DicePanel() {
-
+		super();
+		setLayout(null);
+		
+		// TODO populate DicePanel
 	}
 }

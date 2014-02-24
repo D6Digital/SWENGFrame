@@ -24,13 +24,12 @@ public class Overall {
 		Player presPlayer = new Player(slideList);
 		presPlayer.play();
 	}
+	
 	public static void main(String[] args) {
-		String panelType = "utilitiesSelectionPanel";
-		String windowName = "Utilities";
-		int width = 200;
-		int height = 225;
+		//Currently setup to test UtilitiesPanel
+		String panelType = "diceRollerPanel";
 		
-		GUI utilities = new GUI(panelType, windowName, width, height);
+		GUI utilities = new GUI(panelType);
 	}
 
 }

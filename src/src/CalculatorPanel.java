@@ -23,6 +23,9 @@ public class CalculatorPanel extends JFrame{
 	 */
 
 	public CalculatorPanel() {
-
+		super();
+		setLayout(null);
+		
+		// TODO populate CalculatorPanel
 	}
 }
