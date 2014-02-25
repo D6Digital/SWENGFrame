@@ -55,18 +55,30 @@ public void resetText(){
 	text = new ArrayList<TextContent>(0);
 }
 
+/**
+ * @return the colour of the text
+ */
 public String getColour() {
 	return colour;
 }
 
+/**
+ * @param colour sets the colour of the text
+ */
 public void setColour(String colour) {
 	this.colour = colour;
 }
 
+/**
+ * @return the size of the text
+ */
 public int getSize() {
 	return size;
 }
 
+/**
+ * @param size the size of the text
+ */
 public void setSize(int size) {
 	this.size = size;
 }
