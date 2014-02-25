@@ -40,13 +40,23 @@ public class SlidePanel extends JPanel implements ActionListener{
 	}
 	
 	/**
-	 * Using the information in slide add the media components to the slide panel 
+	 * Using the information in Slide, add the media components to the slide panel 
 	 * 
 	 * @param newSlide
 	 */
 	public void setupSlide(Slide newSlide){
 		//TODO Go through all media components of the slide and add them using there stored information
+		// This should use the simple methods for adding media in this class
 		// Also set the ID, name and current slide fields
+	}
+	
+	/**
+	 * The SlidePanel should be cleared so it becomes an empty SlidePanel
+	 * 
+	 * After Clearing the panel setupSlide method above should be called to show a new slide
+	 */
+	public void clearSlide(){
+		// TODO Delete all objects on the SlidePanel
 	}
 	
 	
@@ -71,6 +81,9 @@ public class SlidePanel extends JPanel implements ActionListener{
 	
 	/**
 	 * Manage the user interaction with media objects on the slide
+	 * Find where the action came from and call the appropriate method
+	 * 
+	 * For example a particular JButton which has a reference to the next slide
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -81,18 +94,29 @@ public class SlidePanel extends JPanel implements ActionListener{
 	//private JPanel addShape(Shapes shape){
 		
 		// TODO make a JPanel to represent the size and location of the shape
-		// Eventually Use the bought in module to improve this method
+		// Eventually Use the bought-in module to improve this method
 	//	return null;
 	//}
 	
+	
+	/**
+	 * 
+	 * @param image
+	 * @return A JLabel which contains the image
+	 */
 	private JLabel addImage(Image image){
 	
 		// TODO make a JLabel containing an image
-		// Eventually Use the bought in module to improve this method
+		// Eventually Use the bought-in module to improve this method
 		return null;
 	}
 	
 	
+	/**
+	 * 
+	 * @param video
+	 * @return The JPanel that holds the video player
+	 */
 	private JPanel addVideo(Video video){
 		
 		// TODO instantiate the video player when available and the video player controls
@@ -109,6 +133,12 @@ public class SlidePanel extends JPanel implements ActionListener{
 	//	return null;
 	//}
 	
+	
+	/**
+	 * 
+	 * @param text
+	 * @return The JPanel which contains the text
+	 */
 	private JPanel addText(Text text){
 		
 		// TODO use the Scribe class when available to add the text to a JPanel
