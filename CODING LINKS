@@ -1,0 +1,34 @@
+
+USEFUL AND ESSENTIAL LINKS
+
+
+Resources(media and vlc):
+
+
+	(Drive/SWENG/Software/Resources/resources.zip)
+
+		- Extract into the SWENGFrame project folder in your repository workspace when using any media(video,images,xml,music)
+
+
+Essential Links
+
+	http://docs.oracle.com/javase/7/docs/api/
+
+		- Java API which contains pretty much all you need to learn java
+
+
+	(Drive/SWENG/Software/D6Digital Coding Standards)
+
+		- OUR CODING STANDARDS / to be added
+
+
+Example code
+
+	http://docs.oracle.com/javase/tutorial/uiswing/examples/components/
+
+		- Alot of GUI examples using SWING, good enough for almost the entire project
+
+
+	http://www.capricasoftware.co.uk/projects/vlcj/tutorial2.html
+	
+		-How to use vlcj for making a simple video player
