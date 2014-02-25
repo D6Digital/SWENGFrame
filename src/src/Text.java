@@ -3,10 +3,6 @@ package src;
 import java.util.ArrayList;
 
 /**
- * 
- */
-
-/**
  * @author Robert Mills
  *
  */
@@ -53,6 +49,24 @@ public void add(TextContent textCont) {
 public void resetText(){
 	text = null;
 	text = new ArrayList<TextContent>(0);
+}
+
+
+/**
+ * @param index
+ * @return the TextContent object at a given index
+ * @see java.util.ArrayList#get(int)
+ */
+public TextContent get(int index) {
+	return text.get(index);
+}
+
+/**
+ * @return the size of the text ArrayList
+ * @see java.util.ArrayList#size()
+ */
+public int size() {
+	return text.size();
 }
 
 /**
