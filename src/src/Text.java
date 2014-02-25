@@ -12,6 +12,9 @@ import java.util.ArrayList;
  */
 public class Text extends SlideObject {
 ArrayList<TextContent> text;
+String colour;
+int size;
+
 
 /**
  * @param x_coord
