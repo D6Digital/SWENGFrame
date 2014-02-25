@@ -3,6 +3,9 @@
  */
 package src;
 
+import gUIModule.GUI;
+import gUIModule.Player;
+
 import java.util.ArrayList;
 
 import slideModule.Slide;

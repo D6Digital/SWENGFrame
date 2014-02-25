@@ -1,4 +1,4 @@
-package src;
+package gUIModule;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
