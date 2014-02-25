@@ -75,7 +75,7 @@ public class TextContent {
 		this.scriptType = scriptType;
 	}
 	/**
-	 * @return bold returns true if the text iws bold 
+	 * @return bold returns true if the text is bold 
 	 */
 	public boolean isBold() {
 		return bold;
