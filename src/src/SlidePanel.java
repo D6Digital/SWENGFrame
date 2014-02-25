@@ -1,5 +1,7 @@
 package src;
 
+
+
 import java.awt.Shape;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -24,6 +26,8 @@ public class SlidePanel extends JPanel implements ActionListener{
 	String slideName;
 	Slide currentSlide;
 	
+	
+	
 	/**
 	 * Create a panel ready to have all the necessary slide media added
 	 */
@@ -39,6 +43,8 @@ public class SlidePanel extends JPanel implements ActionListener{
 		// TODO ensure this panel is ready to be displayed when necessary
 	}
 	
+	
+	
 	/**
 	 * Using the information in Slide, add the media components to the slide panel 
 	 * 
@@ -50,6 +56,8 @@ public class SlidePanel extends JPanel implements ActionListener{
 		// Also set the ID, name and current slide fields
 	}
 	
+	
+	
 	/**
 	 * The SlidePanel should be cleared so it becomes an empty SlidePanel
 	 * 
@@ -60,6 +68,7 @@ public class SlidePanel extends JPanel implements ActionListener{
 	}
 	
 	
+	
 	/**
 	 * 
 	 * @param visible
@@ -67,6 +76,7 @@ public class SlidePanel extends JPanel implements ActionListener{
 	public void setVisibility(boolean visible){
 		this.setVisible(visible);
 	}
+	
 	
 	
 	/**
@@ -91,12 +101,16 @@ public class SlidePanel extends JPanel implements ActionListener{
 		
 	}
 	
+	
+	
 	//private JPanel addShape(Shapes shape){
 		
 		// TODO make a JPanel to represent the size and location of the shape
+		// set the position ( .setBounds ) to the video x,y etc
 		// Eventually Use the bought-in module to improve this method
 	//	return null;
 	//}
+	
 	
 	
 	/**
@@ -106,10 +120,11 @@ public class SlidePanel extends JPanel implements ActionListener{
 	 */
 	private JLabel addImage(Image image){
 	
-		// TODO make a JLabel containing an image
+		// TODO make a JLabel containing an image and set the position ( .setBounds ) to the image x,y etc
 		// Eventually Use the bought-in module to improve this method
 		return null;
 	}
+	
 	
 	
 	/**
@@ -120,18 +135,23 @@ public class SlidePanel extends JPanel implements ActionListener{
 	private JPanel addVideo(Video video){
 		
 		// TODO instantiate the video player when available and the video player controls
+		// set the position ( .setBounds ) to the video x,y etc
 		// Start paused by default
 		
 		return null;
 	}
 	
+	
+	
 	//private EmbeddedMusicPlayer addSound(Sound sound){
 		
 		// TODO instantiate the embedded slide music player when available
+		// set the position ( .setBounds ) to the sound x,y etc
 		// Start paused by default
 		
 	//	return null;
 	//}
+	
 	
 	
 	/**
@@ -142,6 +162,7 @@ public class SlidePanel extends JPanel implements ActionListener{
 	private JPanel addText(Text text){
 		
 		// TODO use the Scribe class when available to add the text to a JPanel
+		// set the position ( .setBounds ) to the text x,y etc
 		
 		return null;
 	}
