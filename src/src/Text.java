@@ -24,5 +24,20 @@ public Text(int x_coord, int y_coord, String file) {
 	this.text = new ArrayList<TextContent>(0);
 }
 
+public ArrayList<TextContent> getText() {
+	return text;
+}
+
+public void setText(ArrayList<TextContent> text) {
+	this.text = text;
+}
+
+public void add(TextContent textCont) {
+	text.add(textCont);
+}
+public void resetText(){
+	text = null;
+	text = new ArrayList<TextContent>(0);
+}
 
 }
