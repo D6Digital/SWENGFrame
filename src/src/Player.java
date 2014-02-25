@@ -2,6 +2,8 @@ package src;
 
 import java.util.ArrayList;
 
+import slideModule.Slide;
+
 public class Player {
 
 	public Player(ArrayList<Slide> slideList) {

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package src;
+package slideModule;
 
 import java.util.ArrayList;
 

@@ -7,6 +7,9 @@ import java.util.ArrayList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
+import slideModule.Slide;
+import slideModule.SlidePanel;
+
 /**
  * 
  * @author Sam Pick

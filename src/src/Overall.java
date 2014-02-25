@@ -5,6 +5,9 @@ package src;
 
 import java.util.ArrayList;
 
+import slideModule.Slide;
+import slideModule.XMLParser;
+
 /**
  * @author Robert
  *

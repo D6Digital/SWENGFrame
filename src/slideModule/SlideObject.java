@@ -1,7 +1,7 @@
 /**
  * 
  */
-package src;
+package slideModule;
 
 /**
  * @author Robert

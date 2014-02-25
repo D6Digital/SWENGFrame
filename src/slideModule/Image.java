@@ -1,19 +1,19 @@
-package src;
-
 /**
  * 
- * @author Josh Drake
+ */
+package slideModule;
+
+/**
+ * @author Robert, Josh Drake
  *
  */
-public class Video extends SlideObject {
-
+public class Image extends SlideObject {
 	private int x_coord;
 	private int y_coord;
 	private String file;
 	private int width;
 	private int height;
-	private int length;
-	
+
 	/**
 	 * 
 	 * @param x_coord
@@ -21,16 +21,13 @@ public class Video extends SlideObject {
 	 * @param file
 	 * @param width
 	 * @param height
-	 * @param length
 	 */
-	public Video(int x_coord, int y_coord, String file, int width, int height, int length) {
+	public Image(int x_coord, int y_coord, String file, int width, int height) {
 		super(x_coord, y_coord, file);
 		this.width = width;
 		this.height = height;
-		this.length = length;
 		
 	}
-	
 	/**
 	 * @return the x_coord
 	 */
@@ -68,12 +65,5 @@ public class Video extends SlideObject {
 	public int getHeight(){
 		return height;
 	}
-
-	/**
-	 * 
-	 * @return the length
-	 */
-	public int getLength(){
-		return length;
-	}
+	
 }
