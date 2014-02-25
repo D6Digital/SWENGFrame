@@ -6,12 +6,24 @@ package src;
  */
 public class TextContent {
 	public enum ScriptTypeDef { superScript , subScript, normal };
-	private boolean bold, italic, underlined, newLine;
+	private boolean bold, italic, underlined, newLine, bulletPoint;
 	private String textString;
 	private ScriptTypeDef scriptType;
 
 
 	public TextContent() {
+	}
+	/**
+	 * @return bulletPoint returns true if the text is the first part of a bullet point
+	 */
+	public boolean isBulletPoint() {
+		return bulletPoint;
+	}
+	/**
+	 * @param bulletPoint set true if teh text forms the first part of bullet point
+	 */
+	public void setBulletPoint(boolean bulletPoint) {
+		this.bulletPoint = bulletPoint;
 	}
 	/**
 	 * @return the scriptType
