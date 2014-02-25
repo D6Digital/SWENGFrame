@@ -27,20 +27,48 @@ public Text(int x_coord, int y_coord, String file) {
 	this.text = new ArrayList<TextContent>(0);
 }
 
+/**
+ * @return the list of text contents
+ */
 public ArrayList<TextContent> getText() {
 	return text;
 }
 
+/**
+ * @param text adds an array of textContent
+ */
 public void setText(ArrayList<TextContent> text) {
 	this.text = text;
 }
 
+/**
+ * @param textCont adds an individual instance of TxtContent to the array
+ */
 public void add(TextContent textCont) {
 	text.add(textCont);
 }
+/**
+ * resets the text Array
+ */
 public void resetText(){
 	text = null;
 	text = new ArrayList<TextContent>(0);
+}
+
+public String getColour() {
+	return colour;
+}
+
+public void setColour(String colour) {
+	this.colour = colour;
+}
+
+public int getSize() {
+	return size;
+}
+
+public void setSize(int size) {
+	this.size = size;
 }
 
 }
