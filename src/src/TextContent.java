@@ -6,24 +6,12 @@ package src;
  */
 public class TextContent {
 	public enum ScriptTypeDef { superScript , subScript, normal };
-	private boolean bold, italic, underlined;
+	private boolean bold, italic, underlined, newLine;
 	private String textString;
 	private ScriptTypeDef scriptType;
 
-	/**
-	 * @param bold
-	 * @param italic
-	 * @param underlined
-	 * @param textString
-	 * @param scriptType
-	 */
-	public TextContent(boolean bold, boolean italic, boolean underlined,
-			String textString, ScriptTypeDef scriptType) {
-		this.bold = bold;
-		this.italic = italic;
-		this.underlined = underlined;
-		this.textString = textString;
-		this.scriptType = scriptType;
+
+	public TextContent() {
 	}
 	/**
 	 * @return the scriptType
@@ -32,25 +20,68 @@ public class TextContent {
 		return scriptType;
 	}
 	/**
-	 * @return the bold
+	 * @return returns whether or not the text marks the start of a new line
+	 */
+	public boolean isNewLine() {
+		return newLine;
+	}
+	/**
+	 * @param newLine sets whether or not the text is the start of a new line
+	 */
+	public void setNewLine(boolean newLine) {
+		this.newLine = newLine;
+	}
+	/**
+	 * @param bold sets the text bold
+	 */
+	public void setBold(boolean bold) {
+		this.bold = bold;
+	}
+	/**
+	 * @param italic sets the text italic
+	 */
+	public void setItalic(boolean italic) {
+		this.italic = italic;
+	}
+	/**
+	 * @param underlined sets the text underlined
+	 */
+	public void setUnderlined(boolean underlined) {
+		this.underlined = underlined;
+	}
+	/**
+	 * @param textString the actual text string itself
+	 */
+	public void setTextString(String textString) {
+		this.textString = textString;
+	}
+	
+	/**
+	 * @param scriptType sets whether the text is super / sub or normal script
+	 */
+	public void setScriptType(ScriptTypeDef scriptType) {
+		this.scriptType = scriptType;
+	}
+	/**
+	 * @return bold returns true if the text iws bold 
 	 */
 	public boolean isBold() {
 		return bold;
 	}
 	/**
-	 * @return the italic
+	 * @return italic returns true if the text is italic
 	 */
 	public boolean isItalic() {
 		return italic;
 	}
 	/**
-	 * @return the underlined
+	 * @return underlined returns true if the text is underlined
 	 */
 	public boolean isUnderlined() {
 		return underlined;
 	}
 	/**
-	 * @return the textString
+	 * @return textString the string content of the text
 	 */
 	public String getTextString() {
 		return textString;
