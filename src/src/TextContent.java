@@ -20,7 +20,7 @@ public class TextContent {
 		return bulletPoint;
 	}
 	/**
-	 * @param bulletPoint set true if teh text forms the first part of bullet point
+	 * @param bulletPoint set true if the text forms the first part of bullet point
 	 */
 	public void setBulletPoint(boolean bulletPoint) {
 		this.bulletPoint = bulletPoint;
