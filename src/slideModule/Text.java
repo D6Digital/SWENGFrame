@@ -11,17 +11,25 @@ ArrayList<TextContent> text;
 String colour;
 int size;
 
-
 /**
  * @param x_coord
  * @param y_coord
- * @param file the file containing the ttf file
+ * @param start
+ * @param end
+ * @param layer
+ * @param file
  * @param text
+ * @param colour
+ * @param size
  */
-public Text(int x_coord, int y_coord, String file) {
-	super(x_coord, y_coord, file);
-	this.text = new ArrayList<TextContent>(0);
+public Text(int x_coord, int y_coord, int start, int end, int layer,
+		String file, ArrayList<TextContent> text, String colour, int size) {
+	super(x_coord, y_coord, start, end, layer, file);
+	this.text = text;
+	this.colour = colour;
+	this.size = size;
 }
+
 
 /**
  * @return the list of text contents
@@ -29,6 +37,8 @@ public Text(int x_coord, int y_coord, String file) {
 public ArrayList<TextContent> getText() {
 	return text;
 }
+
+
 
 /**
  * @param text adds an array of textContent
