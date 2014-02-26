@@ -7,9 +7,6 @@ package slideModule;
  */
 public class Video extends SlideObject {
 
-	private int x_coord;
-	private int y_coord;
-	private String file;
 	private int width;
 	private int height;
 	private int length;
@@ -40,28 +37,6 @@ public class Video extends SlideObject {
 		this.height = height;
 		this.length = length;
 	}
-
-	/**
-	 * @return the x_coord
-	 */
-	public int getX_coord() {
-		return x_coord;
-	}
-
-	/**
-	 * @return the y_coord
-	 */
-	public int getY_coord() {
-		return y_coord;
-	}
-	
-	/**
-	 * @return the file
-	 */
-	
-	public String getFile() {
-		return file;
-	}	
 
 	/**
 	 * 
