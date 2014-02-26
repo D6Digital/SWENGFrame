@@ -5,27 +5,87 @@ package slideModule;
 
 /**
  * @author Robert Mills
- * @version 1.0
+ * @version 1.1
  * @since 1.0
  */
 public class SlideObject {
 	private int x_coord;
 	private int y_coord;
+	private int start;
+	private int end;
+	private int layer;
 	private String file;
-
-	
 	/**
-	 * 
 	 * @param x_coord
 	 * @param y_coord
+	 * @param start
+	 * @param end
+	 * @param layer
 	 * @param file
 	 */
-	public SlideObject(int x_coord, int y_coord, String file) {
-		super();
+	public SlideObject(int x_coord, int y_coord, int start, int end, int layer,
+			String file) {
 		this.x_coord = x_coord;
 		this.y_coord = y_coord;
+		this.start = start;
+		this.end = end;
+		this.layer = layer;
 		this.file = file;
+	};
+
+
+	/**
+	 * Gets the time into the slide at which the object occurs
+	 * @return start
+	 */
+	public int getStart() {
+		return start;
 	}
+
+
+	/**
+	 * Set the time into the slide at which the object occurs
+	 * @param start 
+	 */
+	public void setStart(int start) {
+		this.start = start;
+	}
+
+
+	/**
+	 * Gets the time into the slide when the object disappears
+	 * @return end
+	 */
+	public int getEnd() {
+		return end;
+	}
+
+
+	/**
+	 * Sets the time into the slide when the object disappears 
+	 * @param end the end to set
+	 */
+	public void setEnd(int end) {
+		this.end = end;
+	}
+
+
+	/**
+	 * @return the layer
+	 */
+	public int getLayer() {
+		return layer;
+	}
+
+
+	/**
+	 * @param layer the layer to set
+	 */
+	public void setLayer(int layer) {
+		this.layer = layer;
+	}
+
+
 	/**
 	 * Sets the x coordinate of the slide object.
 	 * <p>
