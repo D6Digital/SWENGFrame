@@ -5,7 +5,8 @@ package slideModule;
 
 /**
  * @author Robert Mills
- *
+ * @version %I% %G%
+ * @since 1.0
  */
 public class SlideObject {
 	private int x_coord;
