@@ -5,6 +5,7 @@ package src;
 
 import gUIModule.GUI;
 import gUIModule.Player;
+import imageModule.ImagePainter;
 
 import java.util.ArrayList;
 
@@ -37,6 +38,9 @@ public class Overall {
 		int height = 225;
 		
 		GUI utilities = new GUI(panelType, windowName, width, height);
+		
+		ImagePainter.ProduceImage("/images/logo.jpg", "company logo");
+
 	}
 
 }
