@@ -1,4 +1,4 @@
-package slideModule;
+package gUIModule;
 
 
 
@@ -9,6 +9,11 @@ import java.util.ArrayList;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+
+import slideModule.Image;
+import slideModule.Slide;
+import slideModule.Text;
+import slideModule.Video;
 
 /**
  * 

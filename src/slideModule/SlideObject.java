@@ -75,7 +75,7 @@ public class SlideObject {
 		return y_coord;
 	}
 	/**
-	 * Retrieves the associated filename ofr the slide object
+	 * Retrieves the associated filename for the slide object
 	 * @return the file
 	 */
 	public String getFile() {

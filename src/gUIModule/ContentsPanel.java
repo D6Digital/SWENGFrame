@@ -8,7 +8,6 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
 import slideModule.Slide;
-import slideModule.SlidePanel;
 
 /**
  * 
