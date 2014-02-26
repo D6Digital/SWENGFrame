@@ -4,7 +4,8 @@
 package slideModule;
 
 /**
- * @author Robert, Josh Drake
+ * @author Robert Mills
+ * @author Josh Drake
  *
  */
 public class Image extends SlideObject {
