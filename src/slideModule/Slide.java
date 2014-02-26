@@ -106,6 +106,54 @@ public class Slide {
 	public int sizeVideo() {
 		return videoList.size();
 	}
+	/**
+	 * @return the objectList
+	 */
+	public ArrayList<SlideObject> getObjectList() {
+		return objectList;
+	}
+	/**
+	 * @param objectList the objectList to set
+	 */
+	public void setObjectList(ArrayList<SlideObject> objectList) {
+		this.objectList = objectList;
+	}
+	/**
+	 * @return the imageList
+	 */
+	public ArrayList<Image> getImageList() {
+		return imageList;
+	}
+	/**
+	 * @param imageList the imageList to set
+	 */
+	public void setImageList(ArrayList<Image> imageList) {
+		this.imageList = imageList;
+	}
+	/**
+	 * @return the textList
+	 */
+	public ArrayList<Text> getTextList() {
+		return textList;
+	}
+	/**
+	 * @param textList the textList to set
+	 */
+	public void setTextList(ArrayList<Text> textList) {
+		this.textList = textList;
+	}
+	/**
+	 * @return the videoList
+	 */
+	public ArrayList<Video> getVideoList() {
+		return videoList;
+	}
+	/**
+	 * @param videoList the videoList to set
+	 */
+	public void setVideoList(ArrayList<Video> videoList) {
+		this.videoList = videoList;
+	}
 	
 	
 }
