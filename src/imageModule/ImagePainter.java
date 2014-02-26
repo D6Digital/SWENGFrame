@@ -11,7 +11,7 @@ public class ImagePainter {
 	
 	/**
 	 * Example of the image module
-	 * @author Sam
+	 * @author Sam L
 	 * @return
 	 */
 	public static JLabel ProduceImage(String file, String description){
