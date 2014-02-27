@@ -1,3 +1,69 @@
-CODING STANDARDS
+Software & Testing Coding Standard Practise
 
-// TO BE COMPLETED
+
+• Class naming should be completely capitalised, e.g. public class MyNewClass {
+
+
+• Method naming should begin lowercase but continue capitalised, e.g. myReallyCoolMethod()
+
+
+
+• Variable naming should begin lowercase but continue capitalised, e.g. int newInteger = 0;
+
+
+
+
+
+Variable Declarations
+
+
+• Type Boolean should always be used over boolean
+
+
+• Indentations should be set to 4 spaces (Window->Preferences->Java->Code Style->Formatter-
+>Edit->Indentation = "Spaces Only")
+
+
+
+
+
+
+Documentation
+
+
+• Any incomplete methods/classes etc. should be labelled with //TODO: followed by suitable 
+
+comment explaining what work needs completing.
+
+
+• All methods should be documented using the /** JavaDoc notation and should contain @param 
+
+followed by a suitable description for the input parameter, @return for the return statement, as 
+
+well as a suitable description of the operation of the method.
+
+
+• All classes should be documented using the /** JavaDoc notation and should contain @author
+
+with author name, as well as a suitable description of the class contents and purpose.
+
+
+
+
+Testing
+
+
+• All JUnit test classes should have additional class documentation in the form of a Test ID 
+
+following immediately from the author name. The ID will relate to a given test case which has 
+
+been issued by the testing manager.
+
+
+• The use of assertTrue(x) should be avoided and should instead be replaced with: 
+
+assertEquals(“this test failed because y did not happen, caused by x being false...”, x, true); 
+
+This will enable the person running the test to found out what has failed by the description given 
+
+in the message parameter.
