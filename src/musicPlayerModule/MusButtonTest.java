@@ -1,3 +1,5 @@
+package musicPlayerModule;
+
 import static org.junit.Assert.*;
 
 import javax.swing.JButton;
