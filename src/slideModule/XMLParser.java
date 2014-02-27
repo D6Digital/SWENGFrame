@@ -1,5 +1,5 @@
 /**
- * 
+ * @author Robert Mills
  */
 package slideModule;
 
@@ -10,15 +10,13 @@ import org.xml.sax.helpers.DefaultHandler;
 import javax.xml.parsers.SAXParserFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
-enum TopProcessingElement{
-	NONE, DOCUMENTINFO, DEFAULTS, SLIDE, 
+enum ProcessingElement{
+	NONE, DOCUMENTINFO, DEFAULTS, SLIDE, NUM, X, Y, TEXT,
+	SHAPE, AUDIO, IMAGE, VIDEO, AUTHOR, VERSION, COMMENT, WIDTH, HEIGHT
 }
-enum DocumentInfoElements{
-	AUTHOR, VERSION, COMMENT, WIDTH, HEIGHT
-}
+
 /**
- * @author Robert Mills
- *
+ * 
  */
 public class XMLParser extends DefaultHandler{
 	private String fileName;
@@ -30,6 +28,7 @@ public class XMLParser extends DefaultHandler{
 	private Text newText;
 	private TextContent textContent;
 	private Video newVideo;
+	private ProcessingElement currentElement = ProcessingElement.NONE;
 	/**
 	 * 
 	 */
