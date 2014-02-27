@@ -10,14 +10,26 @@ import org.xml.sax.helpers.DefaultHandler;
 import javax.xml.parsers.SAXParserFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
-
+enum TopProcessingElement{
+	NONE, DOCUMENTINFO, DEFAULTS, SLIDE, 
+}
+enum DocumentInfoElements{
+	AUTHOR, VERSION, COMMENT, WIDTH, HEIGHT
+}
 /**
- * @author Robert
+ * @author Robert Mills
  *
  */
 public class XMLParser extends DefaultHandler{
 	private String fileName;
 	private ArrayList<Slide> slides = new ArrayList<Slide>(0);
+	private Slide newSlide;
+	private Image newImage;
+	private Point newPoint;
+	private Shapes newShape;
+	private Text newText;
+	private TextContent textContent;
+	private Video newVideo;
 	/**
 	 * 
 	 */
@@ -32,7 +44,7 @@ public class XMLParser extends DefaultHandler{
 	}
 
 	private void parse(String filename){
-				
+
 		try {			
 			// use the default parser
 			SAXParserFactory factory = SAXParserFactory.newInstance();
@@ -49,8 +61,34 @@ public class XMLParser extends DefaultHandler{
 		catch (IOException ioe) {			
 			ioe.printStackTrace();		
 		}		
-		
+
+	}
+	// overridden method for start element callback
+	public void startElement(String uri, String localName, String qName, Attributes	attrs) throws SAXException {
+		// sort out element name if (no) namespace in use		
+		String elementName = localName;
+		if ("".equals(elementName)) {
+			elementName = qName;
+		}
+		if(elementName.equals("videolist")){
+
+		}	
+		else if(elementName.equals("video")) {
+			if(currentVideo == null){
+				currentVideo = new VideoFile();
+			}
+			currentVideo.setId(attrs.getValue(0));
+		}		else if(elementName.equals("title")){
+			currentElement = ProcessingElement.TITLE;
+		}
+		else if(elementName.equals("filename")){
+			currentElement = ProcessingElement.FILENAME;
+		}
 	}
 }
+
+
+
+
 
 
