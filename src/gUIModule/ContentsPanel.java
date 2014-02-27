@@ -1,9 +1,12 @@
 package gUIModule;
 
+import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
+import javax.swing.AbstractButton;
+import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
@@ -12,7 +15,7 @@ import slideModule.Slide;
 /**
  * 
  * @author Sam Pick
- *
+ * @author Sam L
  */
 public class ContentsPanel extends JPanel implements ActionListener{
 
@@ -56,7 +59,21 @@ public class ContentsPanel extends JPanel implements ActionListener{
 	 */
 	private JScrollPane createScrollPane(ArrayList<Slide> contentsSlideList) {
 		JScrollPane contents = new JScrollPane();
-		// TODO go through the slide list and add JButtons for each one
+
+		//Cycle through all slides in the contents list and creates a JButton for each 
+
+		for (int i = 0; i < contentsSlideList.size(); i++) {
+			String currentTitle = (String) contentsSlideList.get(i).getSlideName();
+			JButton currentButton = new JButton("currentTitle");
+			currentButton.setVerticalTextPosition(AbstractButton.CENTER);
+			currentButton.setHorizontalTextPosition(AbstractButton.CENTER);
+			currentButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+			currentButton.addActionListener(this);
+			currentButton.setToolTipText("Go to " + currentTitle);	
+		//Add to contents JScrollPane	
+			contents.add(currentButton);
+		}
+		
 		return contents;
 	}
 	
