@@ -1,5 +1,10 @@
 package slideModule;
 
+/**
+ * 
+ * @author Josh Drake
+ *
+ */
 public class Sound extends SlideObject{
 
 	private boolean loop;
