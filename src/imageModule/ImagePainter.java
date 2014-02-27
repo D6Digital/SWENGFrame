@@ -2,6 +2,7 @@ package imageModule;
 
 import java.awt.Dimension;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -25,7 +26,7 @@ public class ImagePainter {
 		//Gets dimensions info to use to set size of the JLabel
 		int height = image.getIconHeight();
 		int width = image.getIconWidth();
-		
+	
 		//Creates JLabel with image on it
 		JLabel imageLabel = new JLabel(image, JLabel.CENTER);
 		
