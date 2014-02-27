@@ -14,6 +14,9 @@ public class Slide {
 	private ArrayList<Image> imageList = new ArrayList<Image>(0);
 	private ArrayList<Text> textList = new ArrayList<Text>(0);
 	private ArrayList<Video> videoList = new ArrayList<Video>(0);
+    private int slideID;
+    private Object slideName;
+    
 	/**
 	 * @param e
 	 * @return
@@ -155,5 +158,20 @@ public class Slide {
 		this.videoList = videoList;
 	}
 	
+    public int getSlideID() {
+        return slideID;
+    }
 	
+    public void setSlideID(int slideID) {
+        this.slideID = slideID;
+    }
+    
+    public Object getSlideName() {
+       return slideName;  
+    }
+	
+    public void setSlideName(String slideName) {
+        this.slideName = slideName;
+    }
+    
 }
