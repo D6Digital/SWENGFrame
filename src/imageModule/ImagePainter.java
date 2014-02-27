@@ -17,7 +17,7 @@ public class ImagePainter {
 	 * @author Sam L
 	 * @return
 	 */
-	public static JLabel ProduceImage(String file, String description){
+	public JLabel ProduceImage(String file, String description){
 				
 		//Creates image icon to be use in the JLabel
 		ImageIcon image = createImageIcon(file, description);
@@ -45,7 +45,7 @@ public class ImagePainter {
 	}
 
 	//This is a test method which displays the JLabel produced  
-	private static void showImageTest(JLabel image) {
+	private void showImageTest(JLabel image) {
 				
 		JFrame imageTestFrame = new JFrame("Image Test");
 		JPanel imageTestPanel = new JPanel();
@@ -61,7 +61,7 @@ public class ImagePainter {
 	}
 
 	// Returns an ImageIcon, or null if the path was invalid. 
-    protected static ImageIcon createImageIcon(String path, String description) {
+    protected ImageIcon createImageIcon(String path, String description) {
         java.net.URL imgURL = ImagePainter.class.getResource(path);
         
         if (imgURL != null) {
