@@ -1,6 +1,7 @@
 package slideModule;
 /**
  * @author Josh Drake
+ * @author Robert Mills
  */
 
 import java.util.ArrayList;
@@ -88,5 +89,22 @@ public class Shapes extends SlideObject {
 	 */
 	public Point getPoint(int index){
 		return pointList.get(index);
+	}
+
+	/**
+	 * @param arg0
+	 * @return
+	 * @see java.util.ArrayList#add(java.lang.Object)
+	 */
+	public boolean addPoint(Point arg0) {
+		return pointList.add(arg0);
+	}
+
+	/**
+	 * @return
+	 * @see java.util.ArrayList#size()
+	 */
+	public int sizePointList() {
+		return pointList.size();
 	}
 }
