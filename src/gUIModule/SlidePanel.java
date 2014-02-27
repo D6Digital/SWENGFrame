@@ -56,9 +56,30 @@ public class SlidePanel extends JPanel implements ActionListener{
 	 * @param newSlide
 	 */
 	public void setupSlide(Slide newSlide){
-		//TODO Go through all media components of the slide and add them using there stored information
-		// This should use the simple methods for adding media in this class
-		// Also set the ID, name and current slide fields
+	    
+	    currentSlide = newSlide;
+	   
+	    ArrayList<Image> imageList = currentSlide.getImageList();
+	    ArrayList<Text> textList = currentSlide.getTextList();
+	    ArrayList<Video> videoList = currentSlide.getVideoList();
+	    
+	    currentSlide.getSlideID();
+	    currentSlide.getSlideName();
+	        
+	    for(Image image: imageList) {
+	        JLabel imageLabel = addImage(image);
+	        add(imageLabel);
+	    }
+       for(Text text : textList) {
+            JPanel textPanel = addText(text);
+            add(textPanel);
+        }
+       for(Video video: videoList) {
+           JPanel videoPanel = addVideo(video);
+           add(videoPanel);
+       }
+	    
+	    
 	}
 	
 	
