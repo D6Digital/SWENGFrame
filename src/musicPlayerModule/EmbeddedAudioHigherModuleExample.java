@@ -15,10 +15,11 @@ public class EmbeddedAudioHigherModuleExample {
        EmbeddedAudioPlayer player = new EmbeddedAudioPlayer();
         
        frame.add(player.getPanel()); 
-       frame.setName("cunt frame");
+       frame.setTitle("twat frame");
        frame.setVisible(true);
        
-        player.playMedia("M:\\Year 2\\Java Labs\\VLCAudioTest\\Playlist\\03 - Evil.mp3");
+       
+        player.playMedia("C:\\Users\\Public\\Music\\Sample Music\\Kalimba.mp3");
     }
     
     

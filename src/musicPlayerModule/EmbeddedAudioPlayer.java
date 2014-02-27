@@ -47,13 +47,13 @@ import uk.co.caprica.vlcj.runtime.RuntimeUtil;
 import uk.co.caprica.vlcj.test.basic.PlayerControlsPanel;
 
 public class EmbeddedAudioPlayer {
-    static String vlcLibraryPath = "M:\\Year 2\\VLC\\vlc-2.0.1";
+    static String vlcLibraryPath = "M:\\JAVA\\resources\\video\\VLC\\vlc-2.0.1";
     
     //static JFrame mainFrame = new JFrame("mainFrame");
     //static JFrame playlistFrame = new JFrame("playlistFrame");
     //static JPanel playPanel = new JPanel();
     //static Container contentPane;
-    static EmbeddedMediaPlayer mediaPlayer;
+    EmbeddedMediaPlayer mediaPlayer;
     private static final long serialVersionUID = 1L;
     JPanel returnPanel = new JPanel();
     static String incomingChangeMessage = "";
@@ -64,7 +64,13 @@ public class EmbeddedAudioPlayer {
         NativeLibrary.addSearchPath(RuntimeUtil.getLibVlcLibraryName(),vlcLibraryPath);
         Native.loadLibrary(RuntimeUtil.getLibVlcLibraryName(), LibVlc.class);
         
-        getPanel();
+        Canvas canvas = new Canvas();
+        MediaPlayerFactory mediaPlayerFactory = new MediaPlayerFactory();
+        CanvasVideoSurface videoSurface = mediaPlayerFactory.newVideoSurface(canvas);
+        mediaPlayer = mediaPlayerFactory.newEmbeddedMediaPlayer();
+        mediaPlayer.setVideoSurface(videoSurface);
+        //JPanel returnPanel = new JPanel();
+        returnPanel.add(canvas); 
         //mainFrame.repaint();
         musicThread.start();
     }
@@ -85,7 +91,9 @@ public class EmbeddedAudioPlayer {
      * Does what it says on the tin.
      */
     private void internalPlayMedia() {
-       mediaPlayer.stop();
+    	if(mediaPlayer.isPlaying()==true){
+    		mediaPlayer.stop();
+    	}
        mediaPlayer.playMedia(mediaPath);
     }
     
@@ -106,24 +114,21 @@ public class EmbeddedAudioPlayer {
         incomingChangeMessage = "pause";
     }
     
-    private void makePanel() {
-        returnPanel = openMediaPlayer();
-    }
     
     public JPanel getPanel() {
         return returnPanel;
     }
     
-    private static JPanel openMediaPlayer() {
-        Canvas canvas = new Canvas();
-        MediaPlayerFactory mediaPlayerFactory = new MediaPlayerFactory();
-        CanvasVideoSurface videoSurface = mediaPlayerFactory.newVideoSurface(canvas);
-        mediaPlayer = mediaPlayerFactory.newEmbeddedMediaPlayer();
-        mediaPlayer.setVideoSurface(videoSurface);
-        JPanel returnPanel = new JPanel();
-        returnPanel.add(canvas);     
-        return returnPanel;
-    }
+//    private static JPanel openMediaPlayer() {
+//        Canvas canvas = new Canvas();
+//        MediaPlayerFactory mediaPlayerFactory = new MediaPlayerFactory();
+//        CanvasVideoSurface videoSurface = mediaPlayerFactory.newVideoSurface(canvas);
+//        mediaPlayer = mediaPlayerFactory.newEmbeddedMediaPlayer();
+//        mediaPlayer.setVideoSurface(videoSurface);
+//        JPanel returnPanel = new JPanel();
+//        returnPanel.add(canvas);     
+//        return returnPanel;
+//    }
     
     private void musicPlayerLoop() {
         switch(incomingChangeMessage) {

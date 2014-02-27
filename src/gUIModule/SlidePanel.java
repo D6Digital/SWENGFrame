@@ -6,11 +6,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
+import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import slideModule.Image;
+import slideModule.Shapes;
 import slideModule.Slide;
+import slideModule.Sound;
 import slideModule.Text;
 import slideModule.Video;
 
@@ -90,7 +93,9 @@ public class SlidePanel extends JPanel implements ActionListener{
 	 */
 	public void clearSlide(){
 		// TODO Delete all objects on the SlidePanel
+		
 	}
+	
 	
 	
 	
@@ -122,19 +127,26 @@ public class SlidePanel extends JPanel implements ActionListener{
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
+		// TODO The branch options on Images and shapes should allow a new slide to be chosen
+		// when they are clicked 
+		
+		
 		
 	}
 	
 	
-	
-	//private JPanel addShape(Shapes shape){
+	/**
+	 * 
+	 * @param shape
+	 * @return JPanel with shape on 
+	 */
+	private JPanel addShape(Shapes shape){
 		
-		// TODO make a JPanel to represent the size and location of the shape
-		// set the position ( .setBounds ) to the video x,y etc
+		// TODO makes a JPanel to represent the size and location of the shape
+		// set the position ( .setBounds ) to the shapes first x,y etc
 		// Eventually Use the bought-in module to improve this method
-	//	return null;
-	//}
+		return null;
+	}
 	
 	
 	
@@ -167,15 +179,19 @@ public class SlidePanel extends JPanel implements ActionListener{
 	}
 	
 	
-	
-	//private EmbeddedMusicPlayer addSound(Sound sound){
+	/**
+	 * 
+	 * @param sound
+	 * @return The sound container, e.g JButton
+	 */
+	private JButton addSound(Sound sound){
 		
 		// TODO instantiate the embedded slide music player when available
 		// set the position ( .setBounds ) to the sound x,y etc
 		// Start paused by default
 		
-	//	return null;
-	//}
+		return null;
+	}
 	
 	
 	
