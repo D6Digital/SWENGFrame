@@ -20,7 +20,7 @@ enum ProcessingElement{
  */
 public class XMLParser extends DefaultHandler{
 	private String fileName;
-	private ArrayList<Slide> slides = new ArrayList<Slide>(0);
+	
 	private Slide newSlide;
 	private Image newImage;
 	private Point newPoint;
@@ -29,6 +29,8 @@ public class XMLParser extends DefaultHandler{
 	private TextContent textContent;
 	private Video newVideo;
 	private ProcessingElement currentElement = ProcessingElement.NONE;
+
+	private Presentation presentation;
 	/**
 	 * 
 	 */
@@ -37,9 +39,9 @@ public class XMLParser extends DefaultHandler{
 		this.fileName = fileName;
 		parse(this.fileName);
 	}
-	public ArrayList<Slide> getSlides() {
+	public Presentation getSlides() {
 		//Insert Parser here
-		return slides;
+		return presentation;
 	}
 
 	private void parse(String filename){
@@ -70,7 +72,9 @@ public class XMLParser extends DefaultHandler{
 			elementName = qName;
 		}
 		if(elementName.equals("videolist")){
-
+			if (presentation == null) {
+				presentation = new Presentation();
+			}
 		}	
 		else if(elementName.equals("video")) {
 			if(currentVideo == null){
