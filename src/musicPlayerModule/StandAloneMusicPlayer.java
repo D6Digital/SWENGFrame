@@ -295,6 +295,9 @@ public class StandAloneMusicPlayer {
      */
     private void playMedia() {
 	   mediaPlayer.play();
+	   if(isPaused == true) {
+	       isPaused = false;
+	   }
     }
     
     /**
