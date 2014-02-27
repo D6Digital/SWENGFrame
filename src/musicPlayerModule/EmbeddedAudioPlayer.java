@@ -53,7 +53,7 @@ public class EmbeddedAudioPlayer {
     //static JFrame playlistFrame = new JFrame("playlistFrame");
     //static JPanel playPanel = new JPanel();
     //static Container contentPane;
-    EmbeddedMediaPlayer mediaPlayer;
+    static EmbeddedMediaPlayer mediaPlayer;
     private static final long serialVersionUID = 1L;
     JPanel returnPanel = new JPanel();
     static String incomingChangeMessage = "";
