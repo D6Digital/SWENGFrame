@@ -60,6 +60,7 @@ public class EmbeddedAudioPlayer {
     static String mediaPath;
     
     
+    
     public EmbeddedAudioPlayer() {
         NativeLibrary.addSearchPath(RuntimeUtil.getLibVlcLibraryName(),vlcLibraryPath);
         Native.loadLibrary(RuntimeUtil.getLibVlcLibraryName(), LibVlc.class);
