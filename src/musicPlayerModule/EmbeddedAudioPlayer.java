@@ -49,13 +49,13 @@ import uk.co.caprica.vlcj.test.basic.PlayerControlsPanel;
 public class EmbeddedAudioPlayer {
     static String vlcLibraryPath = "M:\\Year 2\\VLC\\vlc-2.0.1";
     
-    static JFrame mainFrame = new JFrame("mainFrame");
-    static JFrame playlistFrame = new JFrame("playlistFrame");
-    static JPanel playPanel = new JPanel();
-    static Container contentPane;
-    static EmbeddedMediaPlayer mediaPlayer;
+    //static JFrame mainFrame = new JFrame("mainFrame");
+    //static JFrame playlistFrame = new JFrame("playlistFrame");
+    //static JPanel playPanel = new JPanel();
+    //static Container contentPane;
+    EmbeddedMediaPlayer mediaPlayer;
     private static final long serialVersionUID = 1L;
-    
+    JPanel returnPanel = new JPanel();
     static String incomingChangeMessage = "";
     static String mediaPath;
     
@@ -64,8 +64,8 @@ public class EmbeddedAudioPlayer {
         NativeLibrary.addSearchPath(RuntimeUtil.getLibVlcLibraryName(),vlcLibraryPath);
         Native.loadLibrary(RuntimeUtil.getLibVlcLibraryName(), LibVlc.class);
         
-        setupGUI();
-        mainFrame.repaint();
+        getPanel();
+        //mainFrame.repaint();
         musicThread.start();
     }
     
@@ -106,30 +106,23 @@ public class EmbeddedAudioPlayer {
         incomingChangeMessage = "pause";
     }
     
-    private void setupGUI() {
-        JPanel playlistChooserPanel = new JPanel();
-
-        contentPane = playlistFrame.getContentPane();
-        contentPane.setLayout(new BorderLayout());
-        mediaPlayer = openMediaPlayer();
-        playlistFrame.add(playlistChooserPanel, BorderLayout.NORTH);
-        playlistFrame.add(playPanel, BorderLayout.CENTER);
-        playlistFrame.setSize(200, 300);
-        playlistFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        playlistFrame.pack();
-        playlistFrame.setVisible(true);
-        playlistFrame.validate(); 
-
+    private void makePanel() {
+        returnPanel = openMediaPlayer();
     }
     
-    private static EmbeddedMediaPlayer openMediaPlayer() {
-        final EmbeddedMediaPlayerComponent mediaPlayerComponent = new EmbeddedMediaPlayerComponent();
-        final EmbeddedMediaPlayer mediaPlayer = mediaPlayerComponent.getMediaPlayer();
-
-        mainFrame.setContentPane(mediaPlayerComponent);
-        contentPane.add(mediaPlayerComponent, BorderLayout.EAST);
-        
-        return mediaPlayer;
+    public JPanel getPanel() {
+        return returnPanel;
+    }
+    
+    private static JPanel openMediaPlayer() {
+        Canvas canvas = new Canvas();
+        MediaPlayerFactory mediaPlayerFactory = new MediaPlayerFactory();
+        CanvasVideoSurface videoSurface = mediaPlayerFactory.newVideoSurface(canvas);
+        mediaPlayer = mediaPlayerFactory.newEmbeddedMediaPlayer();
+        mediaPlayer.setVideoSurface(videoSurface);
+        JPanel returnPanel = new JPanel();
+        returnPanel.add(canvas);     
+        return returnPanel;
     }
     
     private void musicPlayerLoop() {
