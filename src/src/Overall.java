@@ -39,8 +39,6 @@ public class Overall {
 <<<<<<< HEAD
 		GUI utilities = new GUI(panelType);
 =======
-		GUI utilities = new GUI(panelType, windowName, width, height);
-		
 		ImagePainter.ProduceImage("/images/logo.jpg", "company logo");
 
 >>>>>>> branch 'master' of https://github.com/D6Digital/SWENGFrame.git

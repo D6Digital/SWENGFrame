@@ -69,8 +69,12 @@ public class UtilitiesPanel extends JPanel implements ActionListener{
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO manage button presses
-		
+		if (e.getActionCommand() == "diceRollerLaunch"){
+			GUI diceRoller = new GUI("diceRollerPanel");
+	}
+		else if (e.getActionCommand() == "calculatorLaunch") {
+			GUI calculator = new GUI("calculatorPanel");
+	}
 	}
 	
 	//public void setVisibility(boolean visible){
