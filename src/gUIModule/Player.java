@@ -1,6 +1,8 @@
-package src;
+package gUIModule;
 
 import java.util.ArrayList;
+
+import slideModule.Slide;
 
 public class Player {
 
