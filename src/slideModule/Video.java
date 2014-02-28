@@ -11,8 +11,8 @@ public class Video extends SlideObject {
 	private int width;
 	private int height;
 	private int length;
-	
-	
+
+
 	/**
 	 * @param x_coord
 	 * @param y_coord
@@ -24,6 +24,11 @@ public class Video extends SlideObject {
 	 * @param height
 	 * @param length
 	 */
+
+	public Video() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	public Video(int x_coord, int y_coord, int start, int end, int layer,
 			String file, int width, int height, int length) {
 		super(x_coord, y_coord, start, end, layer, file);
@@ -32,10 +37,6 @@ public class Video extends SlideObject {
 		this.length = length;
 	}
 
-	public Video() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
 
 	/**
 	 * 
@@ -44,7 +45,7 @@ public class Video extends SlideObject {
 	public int getWidth(){
 		return width;
 	}
-	
+
 	/**
 	 * 
 	 * @return the height
@@ -60,5 +61,5 @@ public class Video extends SlideObject {
 	public int getLength(){
 		return length;
 	}
-	
+
 }
