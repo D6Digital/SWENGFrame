@@ -32,6 +32,11 @@ public class Video extends SlideObject {
 		this.length = length;
 	}
 
+	public Video() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	/**
 	 * 
 	 * @return the width

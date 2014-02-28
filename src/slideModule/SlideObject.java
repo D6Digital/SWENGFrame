@@ -34,6 +34,11 @@ public class SlideObject {
 	};
 
 
+	public SlideObject() {
+		// TODO Auto-generated constructor stub
+	}
+
+
 	/**
 	 * Gets the time into the slide at which the object occurs
 	 * @return start
