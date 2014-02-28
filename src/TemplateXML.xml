@@ -1,0 +1,24 @@
+<slideshow>
+	<documentinfo>
+		<author></author>
+		<version></version>
+		<comment></comment>
+		<width></width>
+		<height></height></documentinfo>
+	<defaults>
+		<backgroundcolor></backgroundcolor>
+		<font></font>
+		<fontsize></fontsize>
+		<fontcolor></fontcolor>
+		<linecolor></linecolor>
+		<fillcolor></fillcolor></defaults>
+	<slide id="" duration="" lastSlide="">
+		<text font="" fontsize="" fontcolor="" starttime="" duration="" layer="" xstart="" ystart="" xend="" yend="" linecolor="">
+			<b></b>
+			<i></i>
+			<u></u></text>
+		<shape totalpoints="" width="" height="" fillcolor="" starttime="" duration="" layer="" lineColor="" branch="">
+			<point></point></shape>
+		<audio urlname="" starttime="" loop=""></audio>
+		<image urlname="" xstart="" ystart="" width="" height="" starttime="" duration="" layer="" Branch=""></image>
+		<video urlname="" startTime="" loop="" xstart="" ystart="" layer="" playTime="" Duration=""></video></slide></slideshow>
