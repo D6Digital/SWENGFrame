@@ -27,7 +27,7 @@ public class Overall {
 	
 	public static void main(String[] args) {
 		//Currently setup to test UtilitiesPanel
-		String panelType = "diceRollerPanel";
+		String panelType = "utilitiesSelectionPanel";
 		
 		GUI utilities = new GUI(panelType);
 	}
