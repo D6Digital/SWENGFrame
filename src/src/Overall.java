@@ -34,14 +34,14 @@ public class Overall {
 	
 	public static void main(String[] args) {
 		//Currently setup to test UtilitiesPanel
-		String panelType = "utilitiesSelectionPanel";
 		
-<<<<<<< HEAD
-		GUI utilities = new GUI("utilitiesSelectionPanel");
-=======
-		ImagePainter.ProduceImage("/images/logo.jpg", "company logo");
+		//GUI utilities = new GUI("utilitiesSelectionPanel");
+        GUI diceRoller = new GUI("diceRollerPanel");
+	    GUI calculator = new GUI("calculatorPanel");
 
->>>>>>> branch 'master' of https://github.com/D6Digital/SWENGFrame.git
+		//ImagePainter.ProduceImage("/images/logo.jpg", "company logo");
+
+//>>>>>>> branch 'master' of https://github.com/D6Digital/SWENGFrame.git
 	}
 
 }

@@ -4,7 +4,6 @@ import java.awt.BorderLayout;
 import java.awt.Container;
 
 import javax.swing.JFrame;
-import javax.swing.Spring;
 
 /**
  * 
@@ -18,7 +17,15 @@ public class GUI extends JFrame{
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	Container contentPane;
+	static Container selectionPane;
+	static Container menuPane;
+	static Container bookPane;
+	static Container videoPane;
+	static Container audioPane;
+	static Container utilitiesPane;
+	static Container dicePane;
+	static Container calculatorPane;
+	
 	/**
 	 * Create a simple JFrame and then populate it with specified JPanel type
 	 * @return 
@@ -26,15 +33,14 @@ public class GUI extends JFrame{
 
 	public GUI(String panelType) {
 		super();
-		
 		switch (panelType) {
 			case "bookSelectionPanel":
 				setTitle("Grimoire");
 				setSize(1000, 500);
 				setVisible(true);
 				
-				contentPane = getContentPane();
-				contentPane.setLayout(new BorderLayout());
+				selectionPane = getContentPane();
+				selectionPane.setLayout(new BorderLayout());
 				//BookPanel();
 				break;
 			case "mainMenuPanel":
@@ -42,8 +48,8 @@ public class GUI extends JFrame{
 				setSize(1000, 500);
 				setVisible(true);
 				
-				contentPane = getContentPane();
-				contentPane.setLayout(new BorderLayout());
+				menuPane = getContentPane();
+				menuPane.setLayout(new BorderLayout());
 				//MenuPanel();
 				break;
 			case "bookMainPanel":
@@ -51,8 +57,8 @@ public class GUI extends JFrame{
 				setSize(1000, 500);
 				setVisible(true);
 				
-				contentPane = getContentPane();
-				contentPane.setLayout(new BorderLayout());
+				bookPane = getContentPane();
+				bookPane.setLayout(new BorderLayout());
 				//ContentsPanel();
 				//ControlPanel();
 				break;
@@ -61,8 +67,8 @@ public class GUI extends JFrame{
 				setSize(1000, 500);
 				setVisible(true);
 				
-				contentPane = getContentPane();
-				contentPane.setLayout(new BorderLayout());
+				videoPane = getContentPane();
+				videoPane.setLayout(new BorderLayout());
 				//VideoPanel();
 				break;
 			case "audioMenuPanel":
@@ -70,8 +76,8 @@ public class GUI extends JFrame{
 				setSize(200, 300);
 				setVisible(true);
 				
-				contentPane = getContentPane();
-				contentPane.setLayout(new BorderLayout());
+				audioPane = getContentPane();
+				audioPane.setLayout(new BorderLayout());
 				//AudioPanel();
 				break;
 			case "utilitiesSelectionPanel":
@@ -79,33 +85,33 @@ public class GUI extends JFrame{
 				setSize(200, 225);
 				setVisible(true);
 				
-				contentPane = getContentPane();
-				contentPane.setLayout(new BorderLayout());
+				utilitiesPane = getContentPane();
+				utilitiesPane.setLayout(new BorderLayout());
 				
 				UtilitiesPanel utilitiesSelectionPanel = new UtilitiesPanel();
-				contentPane.add(utilitiesSelectionPanel, BorderLayout.CENTER);
+				utilitiesPane.add(utilitiesSelectionPanel, BorderLayout.CENTER);
 				break;
 			case "diceRollerPanel":
 				setTitle("Dice Roller");
 				setSize(400, 300);
 				setVisible(true);
 				
-				contentPane = getContentPane();
-				contentPane.setLayout(new BorderLayout());
+				dicePane = getContentPane();
+				dicePane.setLayout(new BorderLayout());
 				
 				DicePanel diceRollerPanel = new DicePanel();
-				contentPane.add(diceRollerPanel, BorderLayout.CENTER);
+				dicePane.add(diceRollerPanel, BorderLayout.CENTER);
 				break;
 			case "calculatorPanel":
 				setTitle("Mod. Calculator");
 				setSize(200, 300);
 				setVisible(true);
 				
-				contentPane = getContentPane();
-				contentPane.setLayout(new BorderLayout());
-				CalculatorPanel calculatorPanel = new CalculatorPanel();
+				calculatorPane = getContentPane();
+				calculatorPane.setLayout(new BorderLayout());
 				
-				contentPane.add(calculatorPanel, BorderLayout.CENTER);
+				CalculatorPanel calculatorPanel = new CalculatorPanel();
+				calculatorPane.add(calculatorPanel, BorderLayout.CENTER);
 				break;
 			default:                     
 				//???DefaultPanel()???

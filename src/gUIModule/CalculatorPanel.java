@@ -1,15 +1,17 @@
 package gUIModule;
 
 import java.awt.Container;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 /**
  * 
  * @author Andrew Walter
  *
  */
-public class CalculatorPanel extends JFrame{
+public class CalculatorPanel extends JPanel implements ActionListener{
 
 	/**
 	 * 
@@ -27,5 +29,10 @@ public class CalculatorPanel extends JFrame{
 		setLayout(null);
 		
 		// TODO populate CalculatorPanel
+	}
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		// TODO Auto-generated method stub
+		
 	}
 }

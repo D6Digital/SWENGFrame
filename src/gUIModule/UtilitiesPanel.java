@@ -8,6 +8,8 @@ import javax.swing.AbstractButton;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
+import gUIModule.GUI;
+
 /**
  * 
  * @author Sam Pick
@@ -61,7 +63,6 @@ public class UtilitiesPanel extends JPanel implements ActionListener{
 		calculatorButton.setToolTipText("Opens the modifier calculator application");
 		add(calculatorButton);
 		
-		GUI diceRoller = new GUI("diceRollerPanel");
 	}
 	
 	
