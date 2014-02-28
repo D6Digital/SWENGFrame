@@ -1,0 +1,49 @@
+<slideshow>
+	<documentinfo>
+		<author>Joshua Lant</author>
+		<version>1.0</version>
+		<comment>An example slideshow created by the One True God.</comment>
+		<width>640</width>
+		<height>480</height></documentinfo>
+	<defaults>
+		<backgroundcolor>#000000</backgroundcolor>
+		<font>Times New Roman</font>
+		<fontsize>24pt</fontsize>
+		<fontcolor>#FFFFFF</fontcolor>
+		<linecolor>#FFFFFF</linecolor>
+		<fillcolor>#FFFFFF</fillcolor></defaults>
+	<slide id="00" duration="60" lastSlide="false">
+		<text font="Courier" fontsize="36pt" fontcolor="" starttime="5" duration="25" layer="0" xstart="100" ystart="100" xend="400" yend="400" linecolor="" textbody='and the Lord said "let there be XML!"'>
+			<b></b>
+			<i></i>
+			<u></u></text>
+		<shape totalpoints="" width="" height="" fillcolor="" starttime="" duration="" layer="" lineColor="" branch="">
+			<point></point></shape>
+		<audio urlname="" starttime="" loop=""></audio>
+		<image urlname="\\XMLBits\\god" xstart="250" ystart="100" width="400" height="330" starttime="0" duration="20" layer="0" Branch=""></image>
+		<video urlname="" startTime="" loop="" xstart="" ystart="" layer="" playTime="" Duration=""></video></slide>
+			<slide id="01" duration="120" lastSlide="false">
+		<text font="" fontsize="" fontcolor="" starttime="" duration="" layer="" xstart="" ystart="" xend="" yend="" linecolor="">
+			<b></b>
+			<i></i>
+			<u></u></text>
+		<shape totalpoints="" width="" height="" fillcolor="" starttime="" duration="" layer="" lineColor="" branch="">
+			<point></point></shape>
+		<audio urlname="\\XMLBits\\john the revelator" starttime="3" loop="true"></audio>
+		<image urlname="\\XMLBits\\revelation" xstart="40" ystart="200" width="400" height="300" starttime="0" duration="" layer="" Branch=""></image>
+		<video urlname="" startTime="" loop="" xstart="" ystart="" layer="" playTime="" Duration=""></video></slide>
+			<slide id="" duration="" lastSlide="">
+		<text font="" fontsize="" fontcolor="" starttime="" duration=""
+			layer="" xstart="1" ystart="1" xend="400" yend="10" linecolor=""
+			textbody="FUCK THIS!">
+			<b></b>
+			<i></i>
+			<u></u>
+		</text>
+		<shape totalpoints="" width="" height="" fillcolor="" starttime="" duration="" layer="" lineColor="" branch="">
+			<point></point></shape>
+		<audio urlname="" starttime="" loop=""></audio>
+		<image urlname="" xstart="" ystart="" width="" height="" starttime="" duration="" layer="" Branch=""></image>
+		<video urlname="\\XMLBits\\worlds_shittest_video" startTime="10" loop="true" xstart="20" ystart="23" layer="" playTime="" Duration=""></video></slide>
+		
+		</slideshow>
