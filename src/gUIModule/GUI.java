@@ -4,6 +4,9 @@ import java.awt.BorderLayout;
 import java.awt.Container;
 
 import javax.swing.JFrame;
+import gUIModule.UtilitiesPanel;
+import gUIModule.DicePanel;
+import gUIModule.CalculatorPanel;
 
 /**
  * 
@@ -17,14 +20,14 @@ public class GUI extends JFrame{
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	static Container selectionPane;
-	static Container menuPane;
-	static Container bookPane;
-	static Container videoPane;
-	static Container audioPane;
-	static Container utilitiesPane;
-	static Container dicePane;
-	static Container calculatorPane;
+	Container selectionPane;
+	Container menuPane;
+	Container bookPane;
+	Container videoPane;
+	Container audioPane;
+	Container utilitiesPane;
+	Container dicePane;
+	Container calculatorPane;
 	
 	/**
 	 * Create a simple JFrame and then populate it with specified JPanel type
@@ -32,7 +35,6 @@ public class GUI extends JFrame{
 	 */
 
 	public GUI(String panelType) {
-		super();
 		switch (panelType) {
 			case "bookSelectionPanel":
 				setTitle("Grimoire");

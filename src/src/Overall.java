@@ -36,7 +36,7 @@ public class Overall {
 		//Currently setup to test UtilitiesPanel
 		
 		//GUI utilities = new GUI("utilitiesSelectionPanel");
-        GUI diceRoller = new GUI("diceRollerPanel");
+        //GUI diceRoller = new GUI("diceRollerPanel");
 	    GUI calculator = new GUI("calculatorPanel");
 
 		//ImagePainter.ProduceImage("/images/logo.jpg", "company logo");

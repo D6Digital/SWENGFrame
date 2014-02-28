@@ -72,10 +72,10 @@ public class UtilitiesPanel extends JPanel implements ActionListener{
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if (e.getActionCommand() == "diceRollerLaunch"){
+		if ("diceRollerLaunch".equals(e.getActionCommand())){
 			GUI diceRoller = new GUI("diceRollerPanel");
 	}
-		else if (e.getActionCommand() == "calculatorLaunch") {
+		else if ("calculatorLaunch".equals(e.getActionCommand())) {
 			GUI calculator = new GUI("calculatorPanel");
 	}
 	}
@@ -83,7 +83,5 @@ public class UtilitiesPanel extends JPanel implements ActionListener{
 	//public void setVisibility(boolean visible){
 	//		this.setVisible(visible);
 	//	}
-
-	
 	
 }
