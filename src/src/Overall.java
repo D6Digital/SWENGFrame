@@ -37,7 +37,7 @@ public class Overall {
 		String panelType = "utilitiesSelectionPanel";
 		
 <<<<<<< HEAD
-		GUI utilities = new GUI(panelType);
+		GUI utilities = new GUI("utilitiesSelectionPanel");
 =======
 		ImagePainter.ProduceImage("/images/logo.jpg", "company logo");
 

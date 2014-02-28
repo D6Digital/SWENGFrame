@@ -60,6 +60,8 @@ public class UtilitiesPanel extends JPanel implements ActionListener{
 		calculatorButton.addActionListener(this);
 		calculatorButton.setToolTipText("Opens the modifier calculator application");
 		add(calculatorButton);
+		
+		GUI diceRoller = new GUI("diceRollerPanel");
 	}
 	
 	

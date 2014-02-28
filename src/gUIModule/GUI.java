@@ -25,6 +25,7 @@ public class GUI extends JFrame{
 	 */
 
 	public GUI(String panelType) {
+		super();
 		
 		switch (panelType) {
 			case "bookSelectionPanel":
