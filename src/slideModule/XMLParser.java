@@ -1,5 +1,6 @@
 /**
  * @author Robert Mills
+ * @version 1.0
  */
 package slideModule;
 
@@ -71,16 +72,16 @@ public class XMLParser extends DefaultHandler{
 		if ("".equals(elementName)) {
 			elementName = qName;
 		}
-		if(elementName.equals("videolist")){
+		if(elementName.equals("slideshow")){
 			if (presentation == null) {
 				presentation = new Presentation();
 			}
 		}	
-		else if(elementName.equals("video")) {
-			if(currentVideo == null){
-				currentVideo = new VideoFile();
+		else if(elementName.equals("slide")) {
+			if(newSlide == null){
+				newSlide = new Slide();
 			}
-			currentVideo.setId(attrs.getValue(0));
+			newSlide.setSlideName(attrs.getValue(0));
 		}		else if(elementName.equals("title")){
 			currentElement = ProcessingElement.TITLE;
 		}
