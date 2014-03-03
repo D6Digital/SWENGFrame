@@ -43,28 +43,29 @@ public class UtilitiesPanel extends JPanel implements ActionListener{
 		calculatorExists = false;
 		
 		//Adds JButtons for diceRoller and calculator
-		JButton diceButton = new JButton("Dice Roller");
-		diceButton.setVerticalTextPosition(AbstractButton.CENTER);
-		diceButton.setHorizontalTextPosition(AbstractButton.CENTER);
-		diceButton.setAlignmentX(Component.CENTER_ALIGNMENT);
-		diceButton.setBounds(17, 25, 150, 50);
-		diceButton.setActionCommand("diceRollerLaunch");
-		diceButton.addActionListener(this);
-		diceButton.setToolTipText("Opens the dice roller application");
-		add(diceButton);
+		addButtons("Dice Roller", "diceRollerLaunch",
+				   "Opens the dice roller application", 17, 25);
 		
-		JButton calculatorButton = new JButton("Modifier Calculator");
-		calculatorButton.setVerticalTextPosition(AbstractButton.CENTER);
-		calculatorButton.setHorizontalTextPosition(AbstractButton.CENTER);
-		calculatorButton.setAlignmentX(Component.CENTER_ALIGNMENT);
-		calculatorButton.setBounds(17, 100, 150, 50);
-		calculatorButton.setActionCommand("calculatorLaunch");
-		calculatorButton.addActionListener(this);
-		calculatorButton.setToolTipText("Opens the modifier calculator application");
-		add(calculatorButton);
-		
+		addButtons("Modifier Calculator", "calculatorLaunch",
+				   "Opens the modifier calculator application", 17, 100);
 	}
 	
+	/**
+	 * Method for creating JButtons with specified paramiters
+	 */
+	public void addButtons(String buttonText, String actionCommand, String toolTip,
+						   int x_coord, int y_coord) {
+		
+		JButton button = new JButton(buttonText);
+		button.setVerticalTextPosition(AbstractButton.CENTER);
+		button.setHorizontalTextPosition(AbstractButton.CENTER);
+		button.setAlignmentX(Component.CENTER_ALIGNMENT);
+		button.setBounds(x_coord, y_coord, 150, 50);
+		button.setActionCommand(actionCommand);
+		button.addActionListener(this);
+		button.setToolTipText(toolTip);
+		add(button);
+	}
 	
 	/**
 	 * When a utility button is released instantiate the utility
@@ -73,11 +74,23 @@ public class UtilitiesPanel extends JPanel implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if ("diceRollerLaunch".equals(e.getActionCommand())){
-			GUI diceRoller = new GUI("diceRollerPanel");
-	}
+			if (diceRollerExists == false){
+				GUI diceRoller = new GUI("diceRollerPanel");
+				diceRollerExists = true;
+			}
+			else if (diceRollerExists == true){
+				//TODO bring diceRoller to the front of the screen
+			}
+		}
 		else if ("calculatorLaunch".equals(e.getActionCommand())) {
-			GUI calculator = new GUI("calculatorPanel");
-	}
+			if (calculatorExists == false){
+				GUI calculator = new GUI("calculatorPanel");
+				calculatorExists = true;
+			}
+			else if (calculatorExists == true){
+				//TODO bring calculator to front of the screen
+			}
+		}
 	}
 	
 	//public void setVisibility(boolean visible){
