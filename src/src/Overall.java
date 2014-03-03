@@ -9,6 +9,7 @@ import imageModule.ImagePainter;
 
 import java.util.ArrayList;
 
+import slideModule.Presentation;
 import slideModule.Slide;
 import slideModule.XMLParser;
 
@@ -20,7 +21,7 @@ public class Overall {
 	
 	private static final long serialVersionUID = 1L;
 	
-	private ArrayList<Slide> slideList;
+	private Presentation slideList;
 
 	/**
 	 * 
