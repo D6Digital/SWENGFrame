@@ -35,9 +35,9 @@ public class Overall {
 	public static void main(String[] args) {
 		//Currently setup to test UtilitiesPanel
 		
-		//GUI utilities = new GUI("utilitiesSelectionPanel");
+		GUI utilities = new GUI("utilitiesSelectionPanel");
         //GUI diceRoller = new GUI("diceRollerPanel");
-	    GUI calculator = new GUI("calculatorPanel");
+	    //GUI calculator = new GUI("calculatorPanel");
 
 		//ImagePainter.ProduceImage("/images/logo.jpg", "company logo");
 

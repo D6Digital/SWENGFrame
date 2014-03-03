@@ -61,7 +61,9 @@ public class GUI extends JFrame{
 				
 				bookPane = getContentPane();
 				bookPane.setLayout(new BorderLayout());
-				//ContentsPanel();
+				
+				ContentsPanel contentsPanel = new ContentsPanel(/*TODO fill inputs*/);
+				bookPane.add(contentsPanel, BorderLayout.CENTER);
 				//ControlPanel();
 				break;
 			case "videoDisplayPanel":
