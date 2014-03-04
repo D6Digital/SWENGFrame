@@ -39,7 +39,13 @@ public class Overall {
 		GUI utilities = new GUI("utilitiesSelectionPanel");  // can open all utilities from this instance
         //GUI diceRoller = new GUI("diceRollerPanel");
 	    //GUI calculator = new GUI("calculatorPanel");
-
+		
+		
+		// A simple test for the text module
+		//textModule.Scribe.showAndDisplayGUI();
+		
+		
+		// A simple test for the image module
 		//ImagePainter.ProduceImage("/images/logo.jpg", "company logo");
 
 //>>>>>>> branch 'master' of https://github.com/D6Digital/SWENGFrame.git
