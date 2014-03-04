@@ -36,7 +36,7 @@ public class Overall {
 	public static void main(String[] args) {
 		//Currently setup to test UtilitiesPanel
 		
-		GUI utilities = new GUI("utilitiesSelectionPanel");
+		GUI utilities = new GUI("utilitiesSelectionPanel");  // can open all utilities from this instance
         //GUI diceRoller = new GUI("diceRollerPanel");
 	    //GUI calculator = new GUI("calculatorPanel");
 
