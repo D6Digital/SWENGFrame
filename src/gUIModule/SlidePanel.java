@@ -20,7 +20,7 @@ import slideModule.Video;
 /**
  * 
  * @author Sam Pick
- * @author Ruba Balanehru
+ * @author Ruba Balanehru 
  *
  */
 public class SlidePanel extends JPanel implements ActionListener{
