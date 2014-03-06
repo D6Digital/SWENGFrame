@@ -107,8 +107,8 @@ public class GUI extends JFrame{
 				dicePane.add(diceRollerPanel, BorderLayout.CENTER);
 				break;
 			case "calculatorPanel":
-				setTitle("Mod. Calculator");
-				setSize(200, 300);
+				setTitle("Combat Modifier Calculator");
+				setSize(400, 600);
 				setVisible(true);
 				
 				calculatorPane = getContentPane();
