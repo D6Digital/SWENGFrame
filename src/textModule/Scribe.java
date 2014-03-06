@@ -45,7 +45,7 @@ public class Scribe extends JPanel {
 			//InputStream myStream = new BufferedInputStream(new FileInputStream("C:\\xtemp\\NINJAS.TTF"));
 			
 			
-		    font = Font.createFont(Font.TRUETYPE_FONT, new File("space age.ttf"));
+		    font = Font.createFont(Font.TRUETYPE_FONT, new File("ChineseTakeaway.ttf"));
 		    font = font.deriveFont(Font.PLAIN,50);
 
 			ge.registerFont(font);
@@ -102,7 +102,7 @@ public class Scribe extends JPanel {
 		Style def = StyleContext.getDefaultStyleContext().getStyle(StyleContext.DEFAULT_STYLE);
 		
 		Style myStyle = doc.addStyle("myStyle", def);
-		StyleConstants.setFontFamily(myStyle,"space age");
+		StyleConstants.setFontFamily(myStyle,"Chinese Takeaway");
 		StyleConstants.setFontSize(myStyle, 60);
 		StyleConstants.setBold(myStyle, true);
 		StyleConstants.setForeground(myStyle, Color.CYAN);
