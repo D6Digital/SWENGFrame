@@ -40,7 +40,15 @@
     		<element name="shape" type="tns:shape" maxOccurs="unbounded"
     			minOccurs="0">
     		</element>
-    		<element name="audio" type="tns:audio" maxOccurs="unbounded" minOccurs="0"></element>
+    		<element name="audio" type="tns:audio" maxOccurs="unbounded"
+    			minOccurs="0">
+    		</element>
+    		<element name="image" type="tns:image" maxOccurs="unbounded"
+    			minOccurs="0">
+    		</element>
+    		<element name="video" type="tns:video" maxOccurs="unbounded"
+    			minOccurs="0">
+    		</element>
     	</sequence>
     	<attribute name="id" type="int"></attribute>
     	<attribute name="duration" type="int" use="optional"></attribute>
@@ -110,11 +118,39 @@
     	<attribute name="branch" type="int" use="optional"></attribute>
     </complexType>
 
-    <complexType name="point"></complexType>
+    <complexType name="point">
+    	<attribute name="num" type="int" use="required"></attribute>
+    	<attribute name="x" type="int" use="prohibited"></attribute>
+    	<attribute name="y" type="int" use="required"></attribute>
+    </complexType>
 
     <complexType name="audio">
     	<attribute name="urlname" type="string" use="required"></attribute>
     	<attribute name="starttime" type="int" use="optional"></attribute>
     	<attribute name="loop" type="boolean" use="optional"></attribute>
+    </complexType>
+
+
+    <complexType name="image">
+    	<attribute name="urlname" type="string" use="required"></attribute>
+    	<attribute name="xstart" type="int" use="required"></attribute>
+    	<attribute name="ystart" type="int" use="required"></attribute>
+    	<attribute name="width" type="int" use="optional"></attribute>
+    	<attribute name="height" type="int" use="optional"></attribute>
+    	<attribute name="starttime" type="int" use="optional"></attribute>
+    	<attribute name="duration" type="int" use="optional"></attribute>
+    	<attribute name="layer" type="int" use="optional"></attribute>
+    	<attribute name="branch" type="int" use="optional"></attribute>
+    </complexType>
+
+    <complexType name="video">
+    	<attribute name="urlname" type="string" use="required"></attribute>
+    	<attribute name="starttime" type="int" use="optional"></attribute>
+    	<attribute name="loop" type="boolean" use="optional"></attribute>
+    	<attribute name="xstart" type="int" use="required"></attribute>
+    	<attribute name="ystart" type="int" use="required"></attribute>
+    	<attribute name="layer" type="int" use="optional"></attribute>
+    	<attribute name="playtime" type="int"></attribute>
+    	<attribute name="duration" type="int" use="optional"></attribute>
     </complexType>
 </schema>

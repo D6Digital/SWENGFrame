@@ -98,32 +98,18 @@ public class SlidePanel extends JPanel implements ActionListener{
 	 * 
 	 * After Clearing the panel setupSlide method above should be called to show a new slide
 	 */
-	public void clearSlide(Slide displayedSlide){
+	public void clearSlide(){
 	
-		currentSlide = displayedSlide;
+		this.removeAll();
+	
+	
+	}
+	
+	public void refreshSlide(Slide newSlide){
 		
-	    ArrayList<Image> imageList = currentSlide.getImageList();
-	    ArrayList<Text> textList = currentSlide.getTextList();
-	    ArrayList<Video> videoList = currentSlide.getVideoList();
-	    
-	    currentSlide.getSlideID();
-	    currentSlide.getSlideName();
-	        
-	    for(Image image: imageList) {
-	        remove(image);
-	    }
-       for(Text text : textList) {
-            remove(text);
-        }
-       for(Video video: videoList) {
-           remove(video);
-       }
-       
-       for(Shapes shape: shapesList) {
-           remove(shape);
-       }
-	
-	
+		this.removeAll();
+		this.setupSlide(newSlide);
+		
 	}
 	
 	
