@@ -11,12 +11,16 @@ import uk.co.caprica.vlcj.player.embedded.videosurface.CanvasVideoSurface;
 
 import java.awt.BorderLayout;
 import java.awt.Canvas;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JSlider;
 import javax.swing.event.ChangeEvent;
@@ -56,30 +60,69 @@ public class VideoPlayer extends JPanel{
 	    mediaPlayer = mediaPlayerFactory.newEmbeddedMediaPlayer();
 	    mediaPlayer.setVideoSurface(videoSurface);
 	    canvas.setBounds(0, 0, 720, 276);
-	
+	    
+	    // disables default rubbish action listeners
+	    mediaPlayer.setEnableMouseInputHandling(false);
+	    mediaPlayer.setEnableKeyInputHandling(false);
 	    
 	    ControlPanel = new PlayerControlsPanel(mediaPlayer);
+	    ControlPanel.setVisible(false);
+	    ControlPanel.setOpaque(false);
 	        
 	    vidpanel.add(canvas);
-	    
-	  //  ControlPanel.setVisible(false);
-     
-	    frame.add(vidpanel, BorderLayout.CENTER);
+	     
 	    frame.add(ControlPanel, BorderLayout.SOUTH);
+	    frame.add(vidpanel, BorderLayout.CENTER);
+	    
 	    
 	    frame.pack();
 	    frame.setVisible(true);
 		
 	    mediaPlayer.playMedia("resources/resources/video/avengers.mp4");
 	    
-//	    frame.addMouseListener(new java.awt.event.MouseAdapter() {   
-//	    	public void mouseEntered(java.awt.event.MouseEvent evt) {        
-//	    		ControlPanel.setVisible(true);  
-//	    		}    
-//	    	public void mouseExited(java.awt.event.MouseEvent evt) {        
-//	    		ControlPanel.setVisible(false);  
-//	    		}
-//	    	});
+	    canvas.addMouseListener(new java.awt.event.MouseAdapter() {     
+		    public void mousePressed(MouseEvent e) {
+		    	if (mediaPlayer.isPlaying()){
+		 	       mediaPlayer.pause();
+		 	       ControlPanel.setVisible(false); 
+		    	}
+		    	else{
+		    	mediaPlayer.play();
+		    	}
+		    	
+		 	       
+		 	    }
+	    	
+	    	});
+	    
+	    canvas.addMouseMotionListener(new java.awt.event.MouseMotionAdapter(){
+	    	public void mouseMoved(MouseEvent e1){
+	    		int xCoordinate = e1.getX();
+	    		int yCoordinate = e1.getY();
+	    		
+	    		System.out.println(xCoordinate + "," + yCoordinate);
+	    		
+	    		if (yCoordinate > 200){
+	    			ControlPanel.setVisible(true);
+	    		}
+	    		else{
+	    			ControlPanel.setVisible(false);
+	    		}
+	    	}
+	    });
+	    
+
+	    
+	    ControlPanel.addMouseListener(new java.awt.event.MouseAdapter() {   
+ 
+	    	public void mouseExited(java.awt.event.MouseEvent evt) {        
+	    		ControlPanel.setVisible(false);  
+	    		}
+	    	
+
+	    	});
+
+	      
 }
 	
 	public static void main(String[] args) {
