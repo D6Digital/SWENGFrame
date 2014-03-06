@@ -37,9 +37,14 @@
     		<element name="text" type="tns:text" maxOccurs="unbounded"
     			minOccurs="0">
     		</element>
-    		<element name="shape" type="tns:shape" maxOccurs="unbounded" minOccurs="0"></element>
+    		<element name="shape" type="tns:shape" maxOccurs="unbounded"
+    			minOccurs="0">
+    		</element>
+    		<element name="audio" type="tns:audio" maxOccurs="unbounded" minOccurs="0"></element>
     	</sequence>
     	<attribute name="id" type="int"></attribute>
+    	<attribute name="duration" type="int" use="optional"></attribute>
+    	<attribute name="lastslide" type="boolean" use="optional"></attribute>
     </complexType>
 
     <complexType name="defaults">
@@ -91,9 +96,25 @@
     </complexType>
 
     <complexType name="shape">
+    	<sequence>
+    		<element name="point" type="tns:point"></element>
+    	</sequence>
     	<attribute name="totalpoints" type="int" use="required"></attribute>
     	<attribute name="width" type="int" use="required"></attribute>
     	<attribute name="height" type="int" use="required"></attribute>
-    	<attribute name="filcolour" type="string" use="optional"></attribute>
+    	<attribute name="fillcolour" type="string" use="optional"></attribute>
+    	<attribute name="starttime" type="int" use="optional"></attribute>
+    	<attribute name="duration" type="int" use="optional"></attribute>
+    	<attribute name="layer" type="int" use="optional"></attribute>
+    	<attribute name="linecolour" type="string" use="optional"></attribute>
+    	<attribute name="branch" type="int" use="optional"></attribute>
+    </complexType>
+
+    <complexType name="point"></complexType>
+
+    <complexType name="audio">
+    	<attribute name="urlname" type="string" use="required"></attribute>
+    	<attribute name="starttime" type="int" use="optional"></attribute>
+    	<attribute name="loop" type="boolean" use="optional"></attribute>
     </complexType>
 </schema>
