@@ -13,7 +13,9 @@ import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 enum ProcessingElement{
 	NONE, DOCUMENTINFO, DEFAULTS, SLIDE, NUM, X, Y, TEXT,
-	SHAPE, AUDIO, IMAGE, VIDEO, AUTHOR, VERSION, COMMENT, WIDTH, HEIGHT, BACKGROUNDCOLOUR
+	SHAPE, AUDIO, IMAGE, VIDEO, AUTHOR, VERSION, COMMENT,
+	WIDTH, HEIGHT, BACKGROUNDCOLOUR, FONT, FONTCOLOUR,
+	LINECOLOUR, FILLCOLOUR, TEXTELEMENT, POINT
 }
 
 /**
@@ -115,6 +117,67 @@ public class XMLParser extends DefaultHandler{
 		else if (elementName.equals("backgroundcolour")) {
 			if (currentElement == ProcessingElement.DEFAULTS) {
 				currentElement = ProcessingElement.BACKGROUNDCOLOUR;
+			}
+		}
+		else if (elementName.equals("font")) {
+			if (currentElement == ProcessingElement.DEFAULTS) {
+				currentElement = ProcessingElement.FONT;
+			}
+		}
+		else if (elementName.equals("fontcolour")) {
+			if (currentElement == ProcessingElement.DEFAULTS) {
+				currentElement = ProcessingElement.FONTCOLOUR;
+			}
+		}
+		else if (elementName.equals("linecolour")) {
+			if (currentElement == ProcessingElement.DEFAULTS) {
+				currentElement = ProcessingElement.LINECOLOUR;
+			}
+		}
+		else if (elementName.equals("fillcolour")) {
+			if (currentElement == ProcessingElement.DEFAULTS) {
+				currentElement = ProcessingElement.FILLCOLOUR;
+			}
+		}
+		//slide
+		else if (elementName.equals("slide")) {
+			currentElement =  ProcessingElement.SLIDE;
+		}
+		else if (elementName.equals("text")) {
+			if (currentElement == ProcessingElement.SLIDE) {
+				currentElement = ProcessingElement.TEXT;
+			}
+		}
+		else if (elementName.equals("shape")) {
+			if (currentElement == ProcessingElement.SLIDE) {
+				currentElement = ProcessingElement.SHAPE;
+			}
+		}
+		else if (elementName.equals("image")) {
+			if (currentElement == ProcessingElement.SLIDE) {
+				currentElement = ProcessingElement.IMAGE;
+			}
+		}
+		else if (elementName.equals("video")) {
+			if (currentElement == ProcessingElement.SLIDE) {
+				currentElement = ProcessingElement.VIDEO;
+			}
+		}
+		else if (elementName.equals("audio")) {
+			if (currentElement == ProcessingElement.SLIDE) {
+				currentElement = ProcessingElement.AUDIO;
+			}
+		}
+		//Text element
+		else if (elementName.equals("textelement")) {
+			if (currentElement == ProcessingElement.TEXT) {
+				currentElement = ProcessingElement.TEXTELEMENT;
+			}
+		}
+		// Shape point
+		else if (elementName.equals("point")) {
+			if (currentElement == ProcessingElement.SHAPE) {
+				currentElement = ProcessingElement.POINT;
 			}
 		}
 	}
