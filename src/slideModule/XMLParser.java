@@ -13,7 +13,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 enum ProcessingElement{
 	NONE, DOCUMENTINFO, DEFAULTS, SLIDE, NUM, X, Y, TEXT,
-	SHAPE, AUDIO, IMAGE, VIDEO, AUTHOR, VERSION, COMMENT, WIDTH, HEIGHT
+	SHAPE, AUDIO, IMAGE, VIDEO, AUTHOR, VERSION, COMMENT, WIDTH, HEIGHT, BACKGROUNDCOLOUR
 }
 
 /**
@@ -72,21 +72,50 @@ public class XMLParser extends DefaultHandler{
 		if ("".equals(elementName)) {
 			elementName = qName;
 		}
+		// slideshow element
 		if(elementName.equals("slideshow")){
 			if (presentation == null) {
 				presentation = new Presentation();
 			}
-		}	
-		else if(elementName.equals("slide")) {
-			if(newSlide == null){
-				newSlide = new Slide();
-			}
-			newSlide.setSlideName(attrs.getValue(0));
-		}		else if(elementName.equals("title")){
-			currentElement = ProcessingElement.TITLE;
 		}
-		else if(elementName.equals("filename")){
-			currentElement = ProcessingElement.FILENAME;
+		//document info
+		else if(elementName.equals("documentinfo")) {
+			currentElement = ProcessingElement.DOCUMENTINFO;
+			
+		}		
+		else if(elementName.equals("author")){
+			if (currentElement == ProcessingElement.DOCUMENTINFO) {
+				currentElement = ProcessingElement.AUTHOR;
+			}
+		}
+		else if(elementName.equals("version")){
+			if (currentElement == ProcessingElement.DOCUMENTINFO) {
+				currentElement = ProcessingElement.VERSION;
+			}
+		}
+		else if (elementName.equals("comment")) {
+			if (currentElement == ProcessingElement.DOCUMENTINFO) {
+				currentElement = ProcessingElement.COMMENT;
+			}
+		}
+		else if (elementName.equals("width")) {
+			if (currentElement == ProcessingElement.DOCUMENTINFO) {
+				currentElement = ProcessingElement.WIDTH;
+			}
+		}
+		else if (elementName.equals("height")) {
+			if (currentElement == ProcessingElement.DOCUMENTINFO) {
+				currentElement = ProcessingElement.HEIGHT;
+			}
+		}
+		//defaults
+		else if (elementName.equals("defaults")) {
+			currentElement = ProcessingElement.DEFAULTS;
+		}
+		else if (elementName.equals("backgroundcolour")) {
+			if (currentElement == ProcessingElement.DEFAULTS) {
+				currentElement = ProcessingElement.BACKGROUNDCOLOUR;
+			}
 		}
 	}
 }
