@@ -74,13 +74,13 @@ public class XMLParser extends DefaultHandler{
 		if ("".equals(elementName)) {
 			elementName = qName;
 		}
-		// slideshow element
+		//slideshow element
 		if(elementName.equals("slideshow")){
 			if (presentation == null) {
 				presentation = new Presentation();
 			}
 		}
-		//document info
+		//document info element
 		else if(elementName.equals("documentinfo")) {
 			currentElement = ProcessingElement.DOCUMENTINFO;
 			
@@ -110,7 +110,7 @@ public class XMLParser extends DefaultHandler{
 				currentElement = ProcessingElement.HEIGHT;
 			}
 		}
-		//defaults
+		//defaults element
 		else if (elementName.equals("defaults")) {
 			currentElement = ProcessingElement.DEFAULTS;
 		}
@@ -174,7 +174,7 @@ public class XMLParser extends DefaultHandler{
 				currentElement = ProcessingElement.TEXTELEMENT;
 			}
 		}
-		// Shape point
+		// Shape element
 		else if (elementName.equals("point")) {
 			if (currentElement == ProcessingElement.SHAPE) {
 				currentElement = ProcessingElement.POINT;
