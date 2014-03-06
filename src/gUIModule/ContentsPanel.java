@@ -64,7 +64,7 @@ public class ContentsPanel extends JPanel implements ActionListener{
 
 		for (int i = 0; i < contentsSlideList.size(); i++) {
 			String currentTitle = (String) contentsSlideList.get(i).getSlideName();
-			JButton currentButton = new JButton("currentTitle");
+			JButton currentButton = new JButton(currentTitle);
 			currentButton.setVerticalTextPosition(AbstractButton.CENTER);
 			currentButton.setHorizontalTextPosition(AbstractButton.CENTER);
 			currentButton.setAlignmentX(Component.CENTER_ALIGNMENT);

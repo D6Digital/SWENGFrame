@@ -1,7 +1,7 @@
 package gUIModule;
 
 
-
+import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -20,6 +20,7 @@ import slideModule.Video;
 /**
  * 
  * @author Sam Pick
+ * @author Ruba Balanehru 
  *
  */
 public class SlidePanel extends JPanel implements ActionListener{
@@ -64,6 +65,8 @@ public class SlidePanel extends JPanel implements ActionListener{
 	    ArrayList<Image> imageList = currentSlide.getImageList();
 	    ArrayList<Text> textList = currentSlide.getTextList();
 	    ArrayList<Video> videoList = currentSlide.getVideoList();
+	    ArrayList<Shapes> shapesList = currentSlide.getShapesList();
+	    
 	    
 	    currentSlide.getSlideID();
 	    currentSlide.getSlideName();
@@ -80,10 +83,14 @@ public class SlidePanel extends JPanel implements ActionListener{
            JPanel videoPanel = addVideo(video);
            add(videoPanel);
        }
+       
+       for(Shapes shape: shapesList) {
+           JPanel shapesPanel = addShape(shape);
+           add(shapesPanel);
+       }
 	    
 	    
 	}
-	
 	
 	
 	/**
@@ -91,9 +98,32 @@ public class SlidePanel extends JPanel implements ActionListener{
 	 * 
 	 * After Clearing the panel setupSlide method above should be called to show a new slide
 	 */
-	public void clearSlide(){
-		// TODO Delete all objects on the SlidePanel
+	public void clearSlide(Slide displayedSlide){
+	
+		currentSlide = displayedSlide;
 		
+	    ArrayList<Image> imageList = currentSlide.getImageList();
+	    ArrayList<Text> textList = currentSlide.getTextList();
+	    ArrayList<Video> videoList = currentSlide.getVideoList();
+	    
+	    currentSlide.getSlideID();
+	    currentSlide.getSlideName();
+	        
+	    for(Image image: imageList) {
+	        remove(image);
+	    }
+       for(Text text : textList) {
+            remove(text);
+        }
+       for(Video video: videoList) {
+           remove(video);
+       }
+       
+       for(Shapes shape: shapesList) {
+           remove(shape);
+       }
+	
+	
 	}
 	
 	
@@ -208,8 +238,4 @@ public class SlidePanel extends JPanel implements ActionListener{
 		return null;
 	}
 	
-	
-	
-	
-
 }

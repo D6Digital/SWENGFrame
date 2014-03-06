@@ -120,16 +120,64 @@ public class EmbeddedAudioPlayer {
         return returnPanel;
     }
     
-//    private static JPanel openMediaPlayer() {
-//        Canvas canvas = new Canvas();
-//        MediaPlayerFactory mediaPlayerFactory = new MediaPlayerFactory();
-//        CanvasVideoSurface videoSurface = mediaPlayerFactory.newVideoSurface(canvas);
-//        mediaPlayer = mediaPlayerFactory.newEmbeddedMediaPlayer();
-//        mediaPlayer.setVideoSurface(videoSurface);
-//        JPanel returnPanel = new JPanel();
-//        returnPanel.add(canvas);     
-//        return returnPanel;
-//    }
+    public long getLengthMS() {
+        return mediaPlayer.getLength()/1000;
+    }
+    
+    public String getTrackLength() {
+        long seconds = mediaPlayer.getLength()/1000 % 60;
+        int minutes = (int) (mediaPlayer.getLength()/1000/60);
+        return minutes + ":" + seconds;
+    }
+    
+    public long getSeconds() {
+        return mediaPlayer.getLength()/1000 % 60;
+    }
+    
+    public int getMinutes() {
+        return (int) (mediaPlayer.getLength()/1000/60);
+    }
+   
+    public long getTotalLengthInSeconds() {
+        return mediaPlayer.getLength()/1000;
+    }
+    
+    public String getCurrentPosition() {
+        long totalLength = getTotalLengthInSeconds();
+        float currentPosition = mediaPlayer.getPosition();
+        float position = currentPosition*totalLength;
+        int minutes = (int) (position/60);
+        int seconds = (int) (position % 60);
+        return minutes + ":" + seconds;
+    }
+    
+    public int getCurrentPositionMinutes() {
+        long totalLength = getTotalLengthInSeconds();
+        float currentPosition = mediaPlayer.getPosition();
+        float position = currentPosition*totalLength;
+        return (int) (position/60);
+    }
+    
+    public long getCurrentPositionSeconds() {
+        long totalLength = getTotalLengthInSeconds();
+        float currentPosition = mediaPlayer.getPosition();
+        float position = currentPosition*totalLength;
+        return (long) (position % 60);
+    }
+    
+    public void setLooping(Boolean loopTrueFalse) {
+        mediaPlayer.setRepeat(loopTrueFalse);
+    }
+
+    public Boolean getLooping() {
+        return mediaPlayer.getRepeat();
+    }
+    
+    public void setVolumePercentage(int percentage) {
+        mediaPlayer.pause();
+        mediaPlayer.setVolume(percentage);
+        mediaPlayer.play();
+    }
     
     private void musicPlayerLoop() {
         switch(incomingChangeMessage) {
