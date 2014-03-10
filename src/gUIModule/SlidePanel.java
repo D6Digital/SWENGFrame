@@ -4,6 +4,8 @@ package gUIModule;
 import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.ArrayList;
 
 import javax.swing.JButton;
@@ -153,6 +155,29 @@ public class SlidePanel extends JPanel implements ActionListener{
 			
 	}
 	
+	/**
+	 * Manage the user interaction with media objects on the slide
+	 * Find where the action came from and call the appropriate method
+	 * 
+	 * For example a particular JButton which has a reference to the next slide
+	 */
+	public void mouseClicked(MouseEvent e){
+		//get the x & y possition where the mouse was clicked.
+		int x_ClickCoord = e.getX();
+		int y_ClickCoord = e.getY();
+		
+		//TODO look to see if there is an object at those coords.
+		//not sure what to replace unknownSlideObject with.
+		int x_ObjectCoord = unknownSlideObject.getX_coord();
+		int y_ObjectCoord = unknownSlideObject.getY_coord();
+		
+		//TODO see if the object has a branch value attached.
+		//getBranch() is not a property of SlideObject() only the objects that extend it.
+		int ObjectBranch = unknownSlideObject.getBranch();
+		
+		//TODO branch based on attached value.
+		
+	}
 	
 	/**
 	 * 
