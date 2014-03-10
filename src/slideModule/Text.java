@@ -98,7 +98,7 @@ public void setColour(String colour) {
 /**
  * @param converts hex colours to RGB and returns a type Color
  */
-public Color getRGBColourObject(String colour) {
+public Color getColourObject(String colour) {
 	int[] RGB = {0, 0, 0};
 	Color colourReturn;
 	if (colour.charAt(0) == '#'){
