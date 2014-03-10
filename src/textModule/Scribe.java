@@ -43,6 +43,10 @@ public class Scribe extends JPanel {
 	private Font font;
 	private Text textObject;
 
+	/**
+	 * produces a JPanel containing text from the text object
+	 * @param text
+	 */
 	public Scribe(Text text) {
 		
 		textObject = text;
@@ -128,7 +132,10 @@ public class Scribe extends JPanel {
 		return textPane;
 	}
 
-	
+	/**
+	 * adds a default style
+	 * @param doc
+	 */
 	private void addStylesToDocument(StyledDocument doc) {
 		
 		Style def = StyleContext.getDefaultStyleContext().getStyle(StyleContext.DEFAULT_STYLE);
@@ -162,7 +169,7 @@ public class Scribe extends JPanel {
 		textContents.add(myText1);
 		textContents.add(myText2);
 		textContents.add(myText3);
-		Text exampleText = new Text(0, 0, 0, 0, 0, "space age.ttf", textContents, "#0000FF", 30);
+		Text exampleText = new Text(0, 0, 0, 0, 0, "space age.ttf", textContents, "#FFA0FF", 30);
 		
 		
 		System.out.println(System.getProperty("user.dir"));
