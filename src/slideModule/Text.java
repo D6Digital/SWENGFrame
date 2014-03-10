@@ -94,6 +94,32 @@ public void setColour(String colour) {
 }
 
 /**
+ * @param converts hex colours to RGB
+ */
+public int[] getRGBColourObject(String colour) {
+	int[] RGB = {0, 0, 0};
+	if (colour.charAt(0) == '#'){
+		String colourHex = colour.substring(1,7);
+		RGB[0] = Integer.parseInt(colourHex.substring(0,2));
+		RGB[1] = Integer.parseInt(colourHex.substring(2,4));
+		RGB[2] = Integer.parseInt(colourHex.substring(4,6));
+	}
+	return RGB;
+}
+
+/**
+ * @param converts hex colours to a single integer
+ */
+public int getIntColourObject(String colour) {
+	int colourInt = 0;
+	if (colour.charAt(0) == '#'){
+		String colourHex = colour.substring(1,7);
+		colourInt = Integer.parseInt(colourHex.substring(0,6));
+	}
+	return colourInt;
+}
+
+/**
  * @return the size of the text
  */
 public int getSize() {
