@@ -240,5 +240,13 @@ public class Slide {
     public void setSlideName(String slideName) {
         this.slideName = slideName;
     }
+	public void setDuration(Object object) {
+		// TODO Auto-generated method stub
+		
+	}
+	public void setLastSlide(Object object) {
+		// TODO Auto-generated method stub
+		
+	}
     
 }

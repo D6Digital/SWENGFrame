@@ -34,9 +34,10 @@ public class XMLParser extends DefaultHandler{
 	private Sound newSound;
 
 	private ProcessingElement currentElement = ProcessingElement.NONE;
-	private ProcessingElement prevElement = ProcessingElement.NONE;
 
 	private Presentation presentation;
+	
+	private String attrVal;
 
 
 	/**
@@ -77,9 +78,8 @@ public class XMLParser extends DefaultHandler{
 	/**
 	 * @see org.xml.sax.helpers.DefaultHandler#startElement(java.lang.String, java.lang.String, java.lang.String, org.xml.sax.Attributes)
 	 */
-	public void startElement(String uri, String localName, String qName, Attributes	attrs) throws SAXException {
-		// allows the parser to keep track of what the previous state was
-		prevElement = currentElement;
+	public void startElement(String uri, String localName, String qName, Attributes	attrs)
+			throws SAXException {
 		// sort out element name if (no) namespace in use		
 		String elementName = localName;
 		if ("".equals(elementName)) {
@@ -159,6 +159,22 @@ public class XMLParser extends DefaultHandler{
 		//slide
 		else if (elementName.equals("slide")) {
 			currentElement =  ProcessingElement.SLIDE;
+			attrVal = attrs.getValue("id");
+			newSlide.setSlideID(Integer.parseInt(attrVal));
+			attrVal = attrs.getValue("duration");
+			if(attrVal == null){
+				newSlide.setDuration(null);
+			}
+			else {
+				newSlide.setDuration(Integer.parseInt(attrVal));
+			}
+			attrVal = attrs.getValue("lastslide");
+			if(attrVal == null){
+				newSlide.setLastSlide(null);
+			}
+			else {
+				newSlide.setLastSlide(Integer.parseInt(attrVal));
+			}
 		}
 		else if (elementName.equals("text")) {
 			if (currentElement == ProcessingElement.SLIDE) {
@@ -355,25 +371,10 @@ public class XMLParser extends DefaultHandler{
 			presentation.setHeight(Integer.parseInt(new String(ch, start, length)));
 			break;
 		case BACKGROUNDCOLOUR:
-			switch (prevElement){
-			case DEFAULTS:
-				presentation.setBackgroundColour(new String(ch, start, length));
-				break;
-			default:
-				break;
-			}
+			presentation.setBackgroundColour(new String(ch, start, length));
 			break;
 		case FONT:
-			switch (prevElement) {
-			case DEFAULTS:
-				presentation.setFont(new String(ch, start, length));
-				break;
-			case TEXT:
-				newText.setFont(new String(ch, start, length));
-				
-			default:
-				break;
-			}
+			presentation.setFont(new String(ch, start, length));
 			break;
 		case FONTSIZE:
 			presentation.setFontSize(new String(ch, start, length));
