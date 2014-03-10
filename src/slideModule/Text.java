@@ -1,5 +1,6 @@
 package slideModule;
 
+import java.awt.Color;
 import java.util.ArrayList;
 
 /**
@@ -95,29 +96,19 @@ public void setColour(String colour) {
 }
 
 /**
- * @param converts hex colours to RGB
+ * @param converts hex colours to RGB and returns a type Color
  */
-public int[] getRGBColourObject(String colour) {
+public Color getRGBColourObject(String colour) {
 	int[] RGB = {0, 0, 0};
+	Color colourReturn;
 	if (colour.charAt(0) == '#'){
 		String colourHex = colour.substring(1,7);
 		RGB[0] = Integer.parseInt(colourHex.substring(0,2));
 		RGB[1] = Integer.parseInt(colourHex.substring(2,4));
 		RGB[2] = Integer.parseInt(colourHex.substring(4,6));
 	}
-	return RGB;
-}
-
-/**
- * @param converts hex colours to a single integer
- */
-public int getIntColourObject(String colour) {
-	int colourInt = 0;
-	if (colour.charAt(0) == '#'){
-		String colourHex = colour.substring(1,7);
-		colourInt = Integer.parseInt(colourHex.substring(0,6));
-	}
-	return colourInt;
+	colourReturn = new Color(RGB[0], RGB[1], RGB[2]);
+	return colourReturn;
 }
 
 /**
