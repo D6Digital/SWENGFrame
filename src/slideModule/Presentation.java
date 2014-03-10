@@ -115,5 +115,21 @@ public class Presentation {
 		// TODO Auto-generated method stub
 		
 	}
+	public void setFontSize(String string) {
+		// TODO Auto-generated method stub
+		
+	}
+	public void setFontColour(String string) {
+		// TODO Auto-generated method stub
+		
+	}
+	public void setLineColour(String string) {
+		// TODO Auto-generated method stub
+		
+	}
+	public void setFillColour(String string) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }

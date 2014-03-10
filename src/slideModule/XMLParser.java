@@ -12,10 +12,10 @@ import javax.xml.parsers.SAXParserFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 enum ProcessingElement{
-	NONE, DOCUMENTINFO, DEFAULTS, SLIDE, NUM, X, Y, TEXT,
+	NONE, DOCUMENTINFO, DEFAULTS, SLIDE, NUM, TEXT,
 	SHAPE, AUDIO, IMAGE, VIDEO, AUTHOR, VERSION, COMMENT,
 	WIDTH, HEIGHT, BACKGROUNDCOLOUR, FONT, FONTCOLOUR,
-	LINECOLOUR, FILLCOLOUR, TEXTELEMENT, POINT
+	LINECOLOUR, FILLCOLOUR, TEXTELEMENT, POINT, FONTSIZE
 }
 
 /**
@@ -136,6 +136,11 @@ public class XMLParser extends DefaultHandler{
 				currentElement = ProcessingElement.FONT;
 			}
 		}
+		else if (elementName.equals("fontsize")) {
+			if (currentElement == ProcessingElement.DEFAULTS) {
+				currentElement = ProcessingElement.FONTSIZE;
+			}
+		}
 		else if (elementName.equals("fontcolour")) {
 			if (currentElement == ProcessingElement.DEFAULTS) {
 				currentElement = ProcessingElement.FONTCOLOUR;
@@ -252,6 +257,11 @@ public class XMLParser extends DefaultHandler{
 				currentElement = ProcessingElement.DEFAULTS;
 			}
 		}
+		else if (elementName.equals("fontsize")) {
+			if (currentElement == ProcessingElement.FONTSIZE) {
+				currentElement = ProcessingElement.DEFAULTS;
+			}
+		}
 		else if (elementName.equals("fontcolour")) {
 			if (currentElement == ProcessingElement.FONTCOLOUR) {
 				currentElement = ProcessingElement.DEFAULTS;
@@ -364,6 +374,18 @@ public class XMLParser extends DefaultHandler{
 			default:
 				break;
 			}
+			break;
+		case FONTSIZE:
+			presentation.setFontSize(new String(ch, start, length));
+			break;
+		case FONTCOLOUR:
+			presentation.setFontColour(new String(ch, start, length));
+			break;
+		case LINECOLOUR:
+			presentation.setLineColour(new String(ch, start, length));
+			break;
+		case  FILLCOLOUR:
+			presentation.setFillColour(new String(ch, start, length));
 			break;
 		default:
 			break;
