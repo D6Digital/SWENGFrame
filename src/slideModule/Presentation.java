@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Presentation {
 	private ArrayList<Slide> slideList = new ArrayList<Slide>(0);
-	private String author, comment, version;
+	private String author, comment, version, backgroundColour;
 	int width, height;
 	/**
 	 * @return the slideList
@@ -100,6 +100,36 @@ public class Presentation {
 	 */
 	public int size() {
 		return slideList.size();
+	}
+	
+	/**
+	 * @param string
+	 */
+	public void setBackgroundColour(String string) {
+		backgroundColour = string;
+	}
+	/**
+	 * @param string
+	 */
+	public void setFont(String string) {
+		// TODO Auto-generated method stub
+		
+	}
+	public void setFontSize(String string) {
+		// TODO Auto-generated method stub
+		
+	}
+	public void setFontColour(String string) {
+		// TODO Auto-generated method stub
+		
+	}
+	public void setLineColour(String string) {
+		// TODO Auto-generated method stub
+		
+	}
+	public void setFillColour(String string) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }

@@ -133,4 +133,13 @@ public void setSize(int size) {
 	this.size = size;
 }
 
+
+/**
+ * @param string
+ */
+public void setFont(String string) {
+	// TODO Auto-generated method stub
+	
+}
+
 }

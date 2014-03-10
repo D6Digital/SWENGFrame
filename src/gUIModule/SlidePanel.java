@@ -21,6 +21,7 @@ import slideModule.Video;
  * 
  * @author Sam Pick
  * @author Ruba Balanehru 
+ * @author Chris Sainsbury 
  *
  */
 public class SlidePanel extends JPanel implements ActionListener{
@@ -65,7 +66,8 @@ public class SlidePanel extends JPanel implements ActionListener{
 	    ArrayList<Image> imageList = currentSlide.getImageList();
 	    ArrayList<Text> textList = currentSlide.getTextList();
 	    ArrayList<Video> videoList = currentSlide.getVideoList();
-	    ArrayList<Shapes> shapesList = currentSlide.getShapesList();
+	    ArrayList<Shapes> shapeList = currentSlide.getShapeList();
+	    ArrayList<Sound> soundList = currentSlide.getSoundList();
 	    
 	    
 	    currentSlide.getSlideID();
@@ -73,22 +75,25 @@ public class SlidePanel extends JPanel implements ActionListener{
 	        
 	    for(Image image: imageList) {
 	        JLabel imageLabel = addImage(image);
-	        add(imageLabel);
+	        this.add(imageLabel);
 	    }
        for(Text text : textList) {
             JPanel textPanel = addText(text);
-            add(textPanel);
+            this.add(textPanel);
         }
        for(Video video: videoList) {
            JPanel videoPanel = addVideo(video);
-           add(videoPanel);
+           this.add(videoPanel);
        }
        
-       for(Shapes shape: shapesList) {
-           JPanel shapesPanel = addShape(shape);
-           add(shapesPanel);
+       for(Shapes shape: shapeList) {
+           JPanel shapePanel = addShape(shape);
+           this.add(shapePanel);
        }
-	    
+       for(Sound sound: soundList) {
+           JButton soundButton = addSound(sound);
+           this.add(soundButton);
+       }
 	    
 	}
 	
