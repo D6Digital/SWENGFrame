@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 /**
  * @author Robert Mills
+ * @author Andrew Walter
  *
  */
 public class Text extends SlideObject {
