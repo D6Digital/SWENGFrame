@@ -3,6 +3,7 @@ package slideModule;
 /**
  * 
  * @author Josh Drake
+ * @author Andrew Walter
  *
  */
 public class Sound extends SlideObject{
@@ -26,5 +27,9 @@ public class Sound extends SlideObject{
 	
 	public boolean getLoop(){
 		return loop;
+	}
+	
+	public void setLoop(boolean loop){
+		this.loop = loop;
 	}
 }

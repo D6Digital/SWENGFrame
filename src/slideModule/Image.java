@@ -6,6 +6,7 @@ package slideModule;
 /**
  * @author Robert Mills
  * @author Josh Drake
+ * @author Andrew Walter
  *
  */
 public class Image extends SlideObject {
@@ -41,10 +42,26 @@ public class Image extends SlideObject {
 	
 	/**
 	 * 
+	 * 
+	 */
+	public void setWidth(int width){
+		this.width = width;
+	}
+	
+	/**
+	 * 
 	 * @return the height
 	 */
 	public int getHeight(){
 		return height;
+	}
+	
+	/**
+	 * 
+	 * 
+	 */
+	public void setHeight(int height){
+		this.height = height;
 	}
 	
 }

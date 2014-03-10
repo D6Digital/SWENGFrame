@@ -2,6 +2,7 @@ package slideModule;
 /**
  * @author Josh Drake
  * @author Robert Mills
+ * @author Andrew Walter
  */
 
 import java.util.ArrayList;
@@ -52,10 +53,34 @@ public class Shapes extends SlideObject {
 		return numberOfPoints;
 	}
 	
+	/**
+	 * 
+	 * 
+	 */
+	public void setNumberOfPoints(int numberOfPoints){
+		this.numberOfPoints = numberOfPoints;
+	}
+	
 	/**	
 	 * 	
 	 * @return the width
-	 */	public int getWidth(){		return width;	}		/**	 * 	 * @return the height	 */	public int getHeight(){		return height;	}
+	 */	public int getWidth(){		return width;	}
+	
+	/**	
+	 * 	
+	 * 
+	 */
+	public void setWidth(int width){
+		this.width = width;
+	}		/**	 * 	 * @return the height	 */	public int getHeight(){		return height;	}
+	
+	/**
+	 * 
+	 * @return the height
+	 */
+	public void setHeight(int height){
+		this.height = height;
+	}
 	
 	/**
 	 * 
@@ -63,6 +88,14 @@ public class Shapes extends SlideObject {
 	 */
 	public String getFillColor(){
 		return fillColor;
+	}
+	
+	/**
+	 * 
+	 * 
+	 */
+	public void setFillColor(String fillColour){
+		this.fillColor = fillColour;
 	}
 	
 	/**
@@ -75,10 +108,26 @@ public class Shapes extends SlideObject {
 	
 	/**
 	 * 
+	 * 
+	 */
+	public void setLineColor(String lineColour){
+		this.lineColor = lineColour;
+	}
+	
+	/**
+	 * 
 	 * @return branch
 	 */
 	public int getBranch(){
 		return branch;
+	}
+	
+	/**
+	 * 
+	 * 
+	 */
+	public void setBranch(int branch){
+		this.branch = branch;
 	}
 	
 	/**
