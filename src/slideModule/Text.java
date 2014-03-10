@@ -98,14 +98,14 @@ public void setColour(String colour) {
 /**
  * @param converts hex colours to RGB and returns a type Color
  */
-public Color getColourObject(String colour) {
+public Color getColourObject() {
 	int[] RGB = {0, 0, 0};
 	Color colourReturn;
 	if (colour.charAt(0) == '#'){
 		String colourHex = colour.substring(1,7);
-		RGB[0] = Integer.parseInt(colourHex.substring(0,2));
-		RGB[1] = Integer.parseInt(colourHex.substring(2,4));
-		RGB[2] = Integer.parseInt(colourHex.substring(4,6));
+		RGB[0] = Integer.parseInt(colourHex.substring(0,2), 16);
+		RGB[1] = Integer.parseInt(colourHex.substring(2,4), 16);
+		RGB[2] = Integer.parseInt(colourHex.substring(4,6), 16);
 	}
 	colourReturn = new Color(RGB[0], RGB[1], RGB[2]);
 	return colourReturn;
