@@ -1,9 +1,11 @@
 package slideModule;
 
+import java.awt.Color;
 import java.util.ArrayList;
 
 /**
  * @author Robert Mills
+ * @author Andrew Walter
  *
  */
 public class Text extends SlideObject {
@@ -94,6 +96,22 @@ public void setColour(String colour) {
 }
 
 /**
+ * @param converts hex colours to RGB and returns a type Color
+ */
+public Color getColourObject(String colour) {
+	int[] RGB = {0, 0, 0};
+	Color colourReturn;
+	if (colour.charAt(0) == '#'){
+		String colourHex = colour.substring(1,7);
+		RGB[0] = Integer.parseInt(colourHex.substring(0,2));
+		RGB[1] = Integer.parseInt(colourHex.substring(2,4));
+		RGB[2] = Integer.parseInt(colourHex.substring(4,6));
+	}
+	colourReturn = new Color(RGB[0], RGB[1], RGB[2]);
+	return colourReturn;
+}
+
+/**
  * @return the size of the text
  */
 public int getSize() {
@@ -105,6 +123,15 @@ public int getSize() {
  */
 public void setSize(int size) {
 	this.size = size;
+}
+
+
+/**
+ * @param string
+ */
+public void setFont(String string) {
+	// TODO Auto-generated method stub
+	
 }
 
 }
