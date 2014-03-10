@@ -6,9 +6,9 @@ package slideModule;
  */
 public class TextContent {
 	public enum ScriptTypeDef { superScript , subScript, normal };
-	private boolean bold, italic, underlined, newLine, bulletPoint;
-	private String textString;
-	private ScriptTypeDef scriptType;
+	private boolean bold, italic, underlined, newLine, bulletPoint = false;
+	private String textString = null;
+	private ScriptTypeDef scriptType = ScriptTypeDef.normal;
 
 
 	public TextContent() {
