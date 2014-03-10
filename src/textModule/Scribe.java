@@ -79,7 +79,7 @@ public class Scribe extends JPanel {
 	}
 	
 	/**
-	 * 
+	 * Uses the text contents to add sections of similarly formatted text
 	 * @return The text pane
 	 */
 	private JTextPane createTextPane() {
@@ -149,6 +149,11 @@ public class Scribe extends JPanel {
 		
 	}
 	
+	
+	/**
+	 * Used to text the text module but will later be removed.
+	 * Eventually just the constructor will be used which produces the JPanel
+	 */
 	public static void showAndDisplayGUI()
 	{
 		TextContent myText1 = new TextContent();
