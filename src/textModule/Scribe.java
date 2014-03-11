@@ -2,10 +2,15 @@ package textModule;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Cursor;
 import java.awt.Font;
 import java.awt.FontFormatException;
 import java.awt.GraphicsEnvironment;
 import java.awt.LayoutManager;
+import java.awt.Point;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -19,10 +24,13 @@ import javax.swing.JPanel;
 import javax.swing.JTextPane;
 import javax.swing.text.AttributeSet;
 import javax.swing.text.BadLocationException;
+import javax.swing.text.DefaultStyledDocument;
+import javax.swing.text.Element;
 import javax.swing.text.Style;
 import javax.swing.text.StyleConstants;
 import javax.swing.text.StyleContext;
 import javax.swing.text.StyledDocument;
+import javax.swing.text.html.HTML;
 
 import slideModule.Text;
 import slideModule.TextContent;
@@ -33,7 +41,7 @@ import slideModule.TextContent.ScriptTypeDef;
  * @author samPick
  *
  */
-public class Scribe extends JPanel {
+public class Scribe extends JPanel implements MouseListener, MouseMotionListener{
 
 	/**
 	 * 
@@ -76,6 +84,9 @@ public class Scribe extends JPanel {
 		
 		// Create the JTextPane
 		JTextPane textPane = createTextPane();
+		textPane.setEditable(false);
+		textPane.addMouseListener(this);
+		textPane.addMouseMotionListener(this);
 		
 		add(textPane);
 		
@@ -113,8 +124,11 @@ public class Scribe extends JPanel {
 			
 			if(text.isNewLine())
 			{
+				newStyle.addAttribute(HTML.Attribute.HREF, "www.google.com");
+				StyleConstants.setForeground(newStyle, Color.BLUE);
+				StyleConstants.setUnderline(newStyle, true);
 				try{
-					doc.insertString(doc.getLength(), "\n", doc.getStyle("newStyle"));
+					doc.insertString(doc.getLength(), "", doc.getStyle("newStyle"));
 				} catch (BadLocationException ble) {
 					System.err.println("could't insert text into JTextPane");
 				}
@@ -154,28 +168,33 @@ public class Scribe extends JPanel {
 	{
 		TextContent myText1 = new TextContent();
 		myText1.setBold(true);
-		myText1.setTextString("this is bold \n");
+		myText1.setTextString("\u2022\tthis is bold \n\n");
 		
 		
 		TextContent myText2 = new TextContent();
 		myText2.setItalic(true);
-		myText2.setTextString("This is not ");
+		myText2.setTextString("\t\u25E6\tThis is not ");
 		
 		
 		TextContent myText3 = new TextContent();
 		myText3.setScriptType(ScriptTypeDef.subScript);
-		myText3.setTextString("This is Sub");
+		myText3.setTextString("This is Subscript \n");
+		
+		TextContent myText4 = new TextContent();
+		myText4.setNewLine(true);
+		myText4.setTextString("TO GOOGLE");
 		
 		ArrayList<TextContent> textContents = new ArrayList<TextContent>(0);;
 		textContents.add(myText1);
 		textContents.add(myText2);
 		textContents.add(myText3);
-		Text exampleText = new Text(0, 0, 0, 0, 0, "space age.ttf", textContents, "#670067", 30);
+		textContents.add(myText4);
+		Text exampleText = new Text(0, 0, 0, 0, 0, "resources/ChineseTakeaway.ttf", textContents, "#670067", 30);
 		
 		
 		System.out.println(System.getProperty("user.dir"));
 		JFrame frame = new JFrame();
-		frame.setSize(320, 240);
+		frame.setSize(640, 400);
 		frame.setLayout(new BorderLayout());
 		Scribe shakespeare = new Scribe(exampleText);
 		frame.add(shakespeare);
@@ -184,8 +203,104 @@ public class Scribe extends JPanel {
 		//frame.add(fontLabel);
 		frame.setVisible(true);
 	}
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		
+		java.awt.Desktop desktop = java.awt.Desktop.getDesktop();
+		JTextPane textPane = (JTextPane) e.getSource();
+		Point pt = new Point(e.getX(), e.getY());
+		int pos = textPane.viewToModel(pt);
 	
-	
-	
-	
+		
+		if (pos >= 0)
+		{
+			StyledDocument doc = textPane.getStyledDocument();
+			if (doc instanceof StyledDocument){
+				StyledDocument hdoc = (StyledDocument) doc;
+				Element el = hdoc.getCharacterElement(pos);
+				AttributeSet a = el.getAttributes();
+				String href = (String) a.getAttribute(HTML.Attribute.HREF);
+				
+				if (href != null){
+					try{                            
+						java.net.URI uri = new java.net.URI( href );
+						desktop.browse( uri );
+                       }
+					catch ( Exception ev ){
+						System.err.println( ev.getMessage() );
+                       }
+                }           
+			}
+		}
+		
+		
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseDragged(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseMoved(MouseEvent e) {
+		Cursor handCursor = Cursor.getPredefinedCursor(Cursor.HAND_CURSOR);
+		Cursor defaultCursor = Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR);
+		
+		JTextPane textPane = (JTextPane) e.getSource();
+		Point pt = new Point(e.getX(), e.getY());
+		int pos = textPane.viewToModel(pt);
+		
+		if (pos >= 0)
+		{
+			StyledDocument doc = textPane.getStyledDocument();
+			
+			if (doc instanceof StyledDocument){
+				StyledDocument hdoc = (StyledDocument) doc;
+				Element el = hdoc.getCharacterElement(pos);
+				AttributeSet a = el.getAttributes();
+				String href = (String) a.getAttribute(HTML.Attribute.HREF);
+				
+				if (href != null){
+					if(getCursor() != handCursor){
+						textPane.setCursor(handCursor);
+					}
+				}
+				else{
+					textPane.setCursor(defaultCursor);
+				}
+             }           
+		}
+	}
+		
 }
+	
+	
+	
+	
+
