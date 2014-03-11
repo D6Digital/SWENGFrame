@@ -63,13 +63,26 @@ public class ContentsPanel extends JPanel implements ActionListener{
 		//Cycle through all slides in the contents list and creates a JButton for each 
 
 		for (int i = 0; i < contentsSlideList.size(); i++) {
-			String currentTitle = (String) contentsSlideList.get(i).getSlideName();
+			final Slide currentSlide = contentsSlideList.get(i);
+			final String currentTitle = (String) contentsSlideList.get(i).getSlideName();
 			JButton currentButton = new JButton(currentTitle);
 			currentButton.setVerticalTextPosition(AbstractButton.CENTER);
 			currentButton.setHorizontalTextPosition(AbstractButton.CENTER);
 			currentButton.setAlignmentX(Component.CENTER_ALIGNMENT);
-			currentButton.addActionListener(this);
 			currentButton.setToolTipText("Go to " + currentTitle);	
+			
+	        currentButton.addActionListener(new ActionListener() {
+	        	 
+	            public void actionPerformed(ActionEvent e)
+	            {
+	                //Execute when button is pressed
+	                System.out.println("You chose " + currentTitle);
+	                SlidePanel newSlide = new SlidePanel();
+	                newSlide.refreshSlide(currentSlide);
+	                
+	            }
+	        });
+	        
 		//Add to contents JScrollPane	
 			contents.add(currentButton);
 		}
