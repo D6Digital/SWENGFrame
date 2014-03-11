@@ -50,25 +50,28 @@ public class Scribe extends JPanel {
 	public Scribe(Text text) {
 		
 		textObject = text;
-		GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
-		try {
-			
-			
-		    font = Font.createFont(Font.TRUETYPE_FONT, new File(textObject.getFile()));
-		    font = font.deriveFont(Font.PLAIN,textObject.getSize());
-
-			ge.registerFont(font);
-		} catch (FontFormatException | IOException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
+		
+		
+		
+		
+		font = new Font(textObject.getFile(), Font.PLAIN, 12);
+		if(font.getFamily().equals("Dialog")){
+		// create a font object for a user defined font
+			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+			for (String name : ge.getAvailableFontFamilyNames()) {
+				System.out.println(name);
+			}
+			try {
+			    font = Font.createFont(Font.TRUETYPE_FONT, new File(textObject.getFile()));
+			    font = font.deriveFont(Font.PLAIN,textObject.getSize());
+	
+				ge.registerFont(font);
+			} catch (FontFormatException | IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		}
 
-		
-		
-		
-		
-		
-		
 		setLayout(new BorderLayout());
 		
 		// Create the JTextPane
@@ -88,10 +91,7 @@ public class Scribe extends JPanel {
 		StyledDocument doc = textPane.getStyledDocument();
 		addStylesToDocument(doc);
 		
-		
 		Style newStyle = doc.addStyle("newStyle", doc.getStyle("defaultStyle"));
-		
-		
 		
 		for (TextContent text : textObject.getText()) {
 			
@@ -127,8 +127,6 @@ public class Scribe extends JPanel {
 			}
 		}
 		
-		
-		
 		return textPane;
 	}
 
@@ -143,8 +141,6 @@ public class Scribe extends JPanel {
 		Style defaultStyle = doc.addStyle("defaultStyle", def);
 		StyleConstants.setFontFamily(defaultStyle,font.getFamily());
 		StyleConstants.setFontSize(defaultStyle, textObject.getSize());
-		//StyleConstants.setFontSize(myStyle, 60);
-		//StyleConstants.setBold(myStyle, true);
 		StyleConstants.setForeground(defaultStyle,textObject.getColourObject());
 		
 	}
@@ -167,14 +163,14 @@ public class Scribe extends JPanel {
 		
 		
 		TextContent myText3 = new TextContent();
-		myText3.setScriptType(ScriptTypeDef.superScript);
-		myText3.setTextString("This is Super duper");
+		myText3.setScriptType(ScriptTypeDef.subScript);
+		myText3.setTextString("This is Sub");
 		
 		ArrayList<TextContent> textContents = new ArrayList<TextContent>(0);;
 		textContents.add(myText1);
 		textContents.add(myText2);
 		textContents.add(myText3);
-		Text exampleText = new Text(0, 0, 0, 0, 0, "space age.ttf", textContents, "#FFA0FF", 30);
+		Text exampleText = new Text(0, 0, 0, 0, 0, "space age.ttf", textContents, "#670067", 30);
 		
 		
 		System.out.println(System.getProperty("user.dir"));
