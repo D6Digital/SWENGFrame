@@ -71,6 +71,7 @@ public class ContentsPanel extends JPanel implements ActionListener{
 			currentButton.setAlignmentX(Component.CENTER_ALIGNMENT);
 			currentButton.setToolTipText("Go to " + currentTitle);	
 			
+			//Action listener will display the relevant slide when a button is pressed
 	        currentButton.addActionListener(new ActionListener() {
 	        	 
 	            public void actionPerformed(ActionEvent e)
@@ -89,8 +90,6 @@ public class ContentsPanel extends JPanel implements ActionListener{
 		
 		return contents;
 	}
-	
-	
 	
 	/**
 	 * Check the which button is released and then change slidePanel
