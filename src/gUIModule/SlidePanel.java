@@ -23,7 +23,8 @@ import slideModule.Video;
  * 
  * @author Sam Pick
  * @author Ruba Balanehru 
- * @author Chris Sainsbury 
+ * @author Chris Sainsbury
+ * @author Andrew Walter
  *
  */
 public class SlidePanel extends JPanel implements ActionListener{
