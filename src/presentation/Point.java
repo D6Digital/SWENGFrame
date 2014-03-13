@@ -1,4 +1,4 @@
-package slideModule;
+package presentation;
 
 public class Point {
 

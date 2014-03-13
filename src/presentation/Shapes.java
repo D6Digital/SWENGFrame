@@ -1,4 +1,4 @@
-package slideModule;
+package presentation;
 /**
  * @author Josh Drake
  * @author Robert Mills

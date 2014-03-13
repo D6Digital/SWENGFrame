@@ -2,7 +2,7 @@
  * @author Robert Mills
  * @version 1.0
  */
-package slideModule;
+package presentation;
 
 import java.io.IOException;
 import java.util.ArrayList;

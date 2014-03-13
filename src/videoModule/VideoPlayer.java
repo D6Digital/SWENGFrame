@@ -3,7 +3,6 @@ package videoModule;
 /**
  * @author Josh Drake
  */
-import slideModule.Video;
 import uk.co.caprica.vlcj.player.MediaPlayerFactory;
 import uk.co.caprica.vlcj.player.embedded.EmbeddedMediaPlayer;
 import uk.co.caprica.vlcj.player.embedded.videosurface.CanvasVideoSurface;
@@ -20,6 +19,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JSlider;
+
+import presentation.Video;
 import uk.co.caprica.vlcj.runtime.RuntimeUtil;
 
 import com.sun.jna.NativeLibrary;

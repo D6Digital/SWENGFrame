@@ -29,9 +29,10 @@ import javax.swing.text.StyleContext;
 import javax.swing.text.StyledDocument;
 import javax.swing.text.html.HTML;
 
-import slideModule.Text;
-import slideModule.TextContent;
-import slideModule.TextContent.ScriptTypeDef;
+import presentation.Text;
+import presentation.TextContent;
+import presentation.TextContent.ScriptTypeDef;
+
 
 /**
  * 

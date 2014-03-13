@@ -2,8 +2,9 @@ package gUIModule;
 
 import java.util.ArrayList;
 
-import slideModule.Presentation;
-import slideModule.Slide;
+import presentation.Presentation;
+import presentation.Slide;
+
 
 public class Player {
 
