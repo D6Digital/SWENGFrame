@@ -1,30 +1,27 @@
 package textModule;
 
+
+
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Font;
 import java.awt.FontFormatException;
 import java.awt.GraphicsEnvironment;
-import java.awt.LayoutManager;
 import java.awt.Point;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
-import java.net.URL;
 import java.util.ArrayList;
-import java.util.Iterator;
 
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextPane;
 import javax.swing.text.AttributeSet;
 import javax.swing.text.BadLocationException;
-import javax.swing.text.DefaultStyledDocument;
 import javax.swing.text.Element;
 import javax.swing.text.Style;
 import javax.swing.text.StyleConstants;
@@ -114,7 +111,7 @@ public class Scribe extends JPanel implements MouseListener, MouseMotionListener
 			
 			if(text.getScriptType() == ScriptTypeDef.superScript){
 				StyleConstants.setSuperscript(newStyle, true);
-				StyleConstants.setForeground(newStyle, Color.RED);
+				//StyleConstants.setForeground(newStyle, Color.RED);
 			}
 			else{ 
 				if(text.getScriptType() == ScriptTypeDef.subScript){
@@ -192,17 +189,14 @@ public class Scribe extends JPanel implements MouseListener, MouseMotionListener
 		Text exampleText = new Text(0, 0, 0, 0, 0, "resources/ChineseTakeaway.ttf", textContents, "#670067", 30);
 		
 		
-		System.out.println(System.getProperty("user.dir"));
 		JFrame frame = new JFrame();
 		frame.setSize(640, 400);
 		frame.setLayout(new BorderLayout());
 		Scribe shakespeare = new Scribe(exampleText);
 		frame.add(shakespeare);
-		JLabel fontLabel = new JLabel(shakespeare.font.getFamily());
-		fontLabel.setFont(shakespeare.font);
-		//frame.add(fontLabel);
 		frame.setVisible(true);
 	}
+
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
@@ -300,7 +294,7 @@ public class Scribe extends JPanel implements MouseListener, MouseMotionListener
 		
 }
 	
-	
+
 	
 	
 
