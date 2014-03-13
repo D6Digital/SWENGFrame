@@ -1,11 +1,17 @@
 package slideModule;
 
+/**
+ * @author Robert Mills
+ * @author Ruba Balanehru 
+ */
+
 import java.util.ArrayList;
 
 public class Presentation {
 	private ArrayList<Slide> slideList = new ArrayList<Slide>(0);
-	private String author, comment, version, backgroundColour;
+	private String author, comment, version, backgroundColour, fontColour, font, fontSize, lineColour, fillColour;
 	int width, height;
+
 	/**
 	 * @return the slideList
 	 */
@@ -108,28 +114,48 @@ public class Presentation {
 	public void setBackgroundColour(String string) {
 		backgroundColour = string;
 	}
+	public String getBackgroundColour(){
+		return backgroundColour;
+	}
 	/**
 	 * @param string
 	 */
 	public void setFont(String string) {
-		// TODO Auto-generated method stub
-		
+		font = string;
+	}
+	public String getFont() {
+		return font;
 	}
 	public void setFontSize(String string) {
-		// TODO Auto-generated method stub
-		
+		fontSize = string;
+	}
+	public String getFontSize() {
+		return fontSize;
 	}
 	public void setFontColour(String string) {
-		// TODO Auto-generated method stub
-		
+		fontColour = string;
+	}
+	public String getFontColour() {
+		return fontColour;
 	}
 	public void setLineColour(String string) {
-		// TODO Auto-generated method stub
-		
+		lineColour = string;
+	}
+	public String getLineColour(){
+		return lineColour;
 	}
 	public void setFillColour(String string) {
-		// TODO Auto-generated method stub
-		
+		fillColour = string;
 	}
+	public String getFillColour(){
+		return fillColour;
+	}
+	
+
+	
+
+
+
+	
 	
 }
