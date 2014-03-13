@@ -1,11 +1,17 @@
 package slideModule;
 
+/**
+ * @author Robert Mills
+ * @author Ruba Balanehru
+ */
+
 import java.util.ArrayList;
 
 public class Presentation {
 	private ArrayList<Slide> slideList = new ArrayList<Slide>(0);
-	private String author, comment, version, backgroundColour, fontColour;
+	private String author, comment, version, backgroundColour, fontColour, font, fontSize, lineColour, fillColour;
 	int width, height;
+
 	/**
 	 * @return the slideList
 	 */
@@ -108,40 +114,48 @@ public class Presentation {
 	public void setBackgroundColour(String string) {
 		backgroundColour = string;
 	}
+	public String getBackgroundColour(){
+		return backgroundColour;
+	}
 	/**
 	 * @param string
 	 */
 	public void setFont(String string) {
-		// TODO Auto-generated method stub
-		
-	}
-	public void setFontSize(String string) {
-		// TODO Auto-generated method stub
-		
-	}
-	public void setFontColour(String string) {
-		// TODO Auto-generated method stub
-		
-	}
-	public void setLineColour(String string) {
-		// TODO Auto-generated method stub
-		
-	}
-	public void setFillColour(String string) {
-		// TODO Auto-generated method stub
-		
+		font = string;
 	}
 	public String getFont() {
-		// TODO Auto-generated method stub
-		return null;
+		return font;
 	}
-	public int getFontSize() {
-		// TODO Auto-generated method stub
-		return null;
+	public void setFontSize(String string) {
+		fontSize = string;
+	}
+	public String getFontSize() {
+		return fontSize;
+	}
+	public void setFontColour(String string) {
+		fontColour = string;
 	}
 	public String getFontColour() {
-		// TODO Auto-generated method stub
-		return null;
+		return fontColour;
 	}
+	public void setLineColour(String string) {
+		lineColour = string;
+	}
+	public String getLineColour(){
+		return lineColour;
+	}
+	public void setFillColour(String string) {
+		fillColour = string;
+	}
+	public String getFillColour(){
+		return fillColour;
+	}
+	
+
+	
+
+
+
+	
 	
 }
