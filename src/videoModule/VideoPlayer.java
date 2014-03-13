@@ -3,6 +3,7 @@ package videoModule;
 /**
  * @author Josh Drake
  */
+import slideModule.Video;
 import uk.co.caprica.vlcj.player.MediaPlayerFactory;
 import uk.co.caprica.vlcj.player.embedded.EmbeddedMediaPlayer;
 import uk.co.caprica.vlcj.player.embedded.videosurface.CanvasVideoSurface;
@@ -11,21 +12,14 @@ import uk.co.caprica.vlcj.player.embedded.videosurface.CanvasVideoSurface;
 
 import java.awt.BorderLayout;
 import java.awt.Canvas;
-import java.awt.Dimension;
-import java.awt.FlowLayout;
-import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JSlider;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
-
 import uk.co.caprica.vlcj.runtime.RuntimeUtil;
 
 import com.sun.jna.NativeLibrary;
@@ -38,64 +32,90 @@ public class VideoPlayer extends JPanel{
 	protected static JPanel vidpanel;
 	protected static JFrame frame;
 	protected static JSlider bar;
+	protected static ImageIcon img, img2;
 	protected static PlayerControlsPanel ControlPanel;
+	protected static JLabel pausedLabel;
 	
 	
-	public VideoPlayer() {
+	public VideoPlayer(Video Video) {
+		
 	
 		NativeLibrary.addSearchPath(
                 RuntimeUtil.getLibVlcLibraryName(), "resources/resources/lib/vlc-2.0.1"
             );
+		int xcoord = Video.getX_coord();
+		int ycoord = Video.getY_coord();
+		int start = Video.getStart();
+		int end = Video.getEnd();
+		int layer = Video.getLayer();
+		String file = Video.getFile();
+		int width = Video.getWidth();
+		int height = Video.getHeight();
+		int length = Video.getLength();
+		
+		
+		System.out.println("xcoord = " + xcoord);
+		System.out.println("ycoord = " + ycoord);
+		System.out.println("start = " + start);
+		System.out.println("end = " + end);
+		System.out.println("layer = " + layer);
+		System.out.println("file = " + file);
+		System.out.println("Width = " + width);
+		System.out.println("Height = " + height);
+		System.out.println("Length = " + length);
 		
 		frame = new JFrame("Video Player");
+		vidpanel = new JPanel();
+		img = new ImageIcon("resources/resources/buttons/pauseText.png");
+	    img2 = new ImageIcon("resources/resources/buttons/StoppedText.png");
+	    pausedLabel = new JLabel(img);
+	    Canvas canvas = new Canvas();    
+		
 		frame.setLayout(new BorderLayout());
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	    vidpanel = new JPanel();
-	   
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);    
 	    
-	    
-	    Canvas canvas = new Canvas();
 	    MediaPlayerFactory mediaPlayerFactory = new MediaPlayerFactory();
 	    CanvasVideoSurface videoSurface = mediaPlayerFactory.newVideoSurface(canvas);
 	    mediaPlayer = mediaPlayerFactory.newEmbeddedMediaPlayer();
 	    mediaPlayer.setVideoSurface(videoSurface);
 	    canvas.setBounds(0, 0, 720, 276);
 	    
-	    // disables default rubbish action listeners
+	    ControlPanel = new PlayerControlsPanel(mediaPlayer);
+	    
+	    // disables default VLCJ action listeners
 	    mediaPlayer.setEnableMouseInputHandling(false);
 	    mediaPlayer.setEnableKeyInputHandling(false);
 	    
-	    ControlPanel = new PlayerControlsPanel(mediaPlayer);
+	    
 	    ControlPanel.setVisible(false);
 	    ControlPanel.setOpaque(false);
 	        
 	    vidpanel.add(canvas);
-	     
+	    
 	    frame.add(ControlPanel, BorderLayout.SOUTH);
-	    frame.add(vidpanel, BorderLayout.CENTER);
-	    
-	    
+	    frame.add(vidpanel, BorderLayout.CENTER);    
 	    frame.pack();
 	    frame.setVisible(true);
 		
-	    mediaPlayer.playMedia("resources/resources/video/avengers.mp4");
+	    mediaPlayer.playMedia("resources/resources/video/"+file);
 	    
-	    canvas.addMouseListener(new java.awt.event.MouseAdapter() {     
+	    canvas.addMouseListener(new java.awt.event.MouseAdapter() {  
+	    	@Override
 		    public void mousePressed(MouseEvent e) {
 		    	if (mediaPlayer.isPlaying()){
 		 	       mediaPlayer.pause();
-		 	       ControlPanel.setVisible(false); 
+		 	       ControlPanel.setVisible(false);
+		 	       vidpanel.setVisible(false);
+		 	       frame.add(pausedLabel, BorderLayout.CENTER);		 	      
 		    	}
 		    	else{
 		    	mediaPlayer.play();
-		    	}
-		    	
-		 	       
-		 	    }
-	    	
+		    		}		 		 	       
+		 	    }	    	
 	    	});
 	    
 	    canvas.addMouseMotionListener(new java.awt.event.MouseMotionAdapter(){
+	    	@Override
 	    	public void mouseMoved(MouseEvent e1){
 	    		int xCoordinate = e1.getX();
 	    		int yCoordinate = e1.getY();
@@ -114,26 +134,51 @@ public class VideoPlayer extends JPanel{
 
 	    
 	    ControlPanel.addMouseListener(new java.awt.event.MouseAdapter() {   
- 
+	    	@Override
 	    	public void mouseExited(java.awt.event.MouseEvent evt) {        
 	    		ControlPanel.setVisible(false);  
 	    		}
-	    	
-
 	    	});
 
 	      
-}
-	
+
+	 pausedLabel.addMouseListener(new java.awt.event.MouseAdapter() {   
+		 	@Override
+		    public void mousePressed(MouseEvent e) {
+		    	frame.remove(pausedLabel);
+		    	vidpanel.setVisible(true);
+		    	mediaPlayer.play();
+		    	PlayerControlsPanel.setPlayButton();		    	
+		    	}	    	
+	    	});
+	}
+	/**
+	 * Shows pause label when pause button is pressed
+	 */
+//	public static void setPause(){
+//		if (mediaPlayer.isPlaying()){
+//		 ControlPanel.setVisible(false);
+//	     vidpanel.setVisible(false);
+//	     frame.add(pausedLabel, BorderLayout.CENTER);
+//		}
+//		else{
+//			ControlPanel.setVisible(true);
+//			frame.remove(pausedLabel);
+//		     vidpanel.setVisible(true);
+//		     
+//		}
+//	}
+
 	public static void main(String[] args) {
-	
-               new VideoPlayer();
+		
+		Video Video = new Video(3, 5, 4, 3, 8, "avengers.mp4", 4, 76, 89);
+        new VideoPlayer(Video);
                                      
 
 	}
 	
-		
 	
 	
+
 
 }
