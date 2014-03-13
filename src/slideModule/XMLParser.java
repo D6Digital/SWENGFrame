@@ -162,24 +162,19 @@ public class XMLParser extends DefaultHandler{
 			attrVal = attrs.getValue("id");
 			newSlide.setSlideID(Integer.parseInt(attrVal));
 			attrVal = attrs.getValue("duration");
-			if(attrVal == null){
-				newSlide.setDuration(null);
-			}
-			else {
+			if(attrVal != null){
 				newSlide.setDuration(Integer.parseInt(attrVal));
 			}
 			attrVal = attrs.getValue("lastslide");
-			if(attrVal == null){
-				newSlide.setLastSlide(null);
-			}
-			else {
-				newSlide.setLastSlide(Integer.parseInt(attrVal));
+			if(attrVal != null){
+				newSlide.setLastSlide(Boolean.parseBoolean(attrVal));
 			}
 		}
 		else if (elementName.equals("text")) {
 			if (currentElement == ProcessingElement.SLIDE) {
 				currentElement = ProcessingElement.TEXT;
 			}
+			
 		}
 		else if (elementName.equals("shape")) {
 			if (currentElement == ProcessingElement.SLIDE) {
