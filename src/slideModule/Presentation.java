@@ -2,7 +2,7 @@ package slideModule;
 
 /**
  * @author Robert Mills
- * @author Ruba Balanehru
+ * @author Ruba Balanehru 
  */
 
 import java.util.ArrayList;
