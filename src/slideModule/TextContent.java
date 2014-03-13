@@ -6,43 +6,21 @@ package slideModule;
  */
 public class TextContent {
 	public enum ScriptTypeDef { superScript , subScript, normal };
-	private boolean bold, italic, underlined, newLine, bulletPoint = false;
+	private boolean bold, italic, underlined = false;
 	private String textString = null;
 	private ScriptTypeDef scriptType = ScriptTypeDef.normal;
 
 
 	public TextContent() {
 	}
-	/**
-	 * @return bulletPoint returns true if the text is the first part of a bullet point
-	 */
-	public boolean isBulletPoint() {
-		return bulletPoint;
-	}
-	/**
-	 * @param bulletPoint set true if the text forms the first part of bullet point
-	 */
-	public void setBulletPoint(boolean bulletPoint) {
-		this.bulletPoint = bulletPoint;
-	}
+	
 	/**
 	 * @return the scriptType
 	 */
 	public ScriptTypeDef getScriptType() {
 		return scriptType;
 	}
-	/**
-	 * @return returns whether or not the text marks the start of a new line
-	 */
-	public boolean isNewLine() {
-		return newLine;
-	}
-	/**
-	 * @param newLine sets whether or not the text is the start of a new line
-	 */
-	public void setNewLine(boolean newLine) {
-		this.newLine = newLine;
-	}
+	
 	/**
 	 * @param bold sets the text bold
 	 */
