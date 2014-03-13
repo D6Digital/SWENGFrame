@@ -10,9 +10,10 @@ import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-import slideModule.Text;
-import slideModule.TextContent;
-import slideModule.TextContent.ScriptTypeDef;
+import presentation.Text;
+import presentation.TextContent;
+import presentation.TextContent.ScriptTypeDef;
+
 
 
 /**

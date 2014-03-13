@@ -13,17 +13,20 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import slideModule.Image;
-import slideModule.Shapes;
-import slideModule.Slide;
-import slideModule.Sound;
-import slideModule.Text;
-import slideModule.Video;
+
+import presentation.Image;
+import presentation.Shapes;
+import presentation.Slide;
+import presentation.Sound;
+import presentation.Text;
+import presentation.Video;
 
 import graphicsModule.GraphicsPainter;
 import imageModule.ImagePainter;
 import videoModule.VideoPainter;
 import textModule.Scribe;
+
+
 
 /**
  * 

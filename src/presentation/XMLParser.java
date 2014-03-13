@@ -2,7 +2,7 @@
  * @author Robert Mills
  * @version 1.0
  */
-package slideModule;
+package presentation;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -204,10 +204,10 @@ public class XMLParser extends DefaultHandler{
 			}
 			attrVal = attrs.getValue("duration");
 			if(attrVal == null){
-				newText.setSize(presentation.getFontSize());
+				newText.setEnd(0)
 			}
 			else {
-				newText.setSize(Integer.parseInt(attrVal));
+				newText.setEnd(Integer.parseInt(attrVal));
 			}
 		}
 		else if (elementName.equals("shape")) {

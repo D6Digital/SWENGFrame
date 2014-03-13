@@ -58,6 +58,7 @@ public class EmbeddedAudioPlayer {
     JPanel returnPanel = new JPanel();
     static String incomingChangeMessage = "";
     static String mediaPath;
+    int endTimeSeconds;
     
     
     
@@ -93,8 +94,9 @@ public class EmbeddedAudioPlayer {
      */
     private void internalPlayMedia() {
     	if(mediaPlayer.isPlaying()==true){
-    		mediaPlayer.stop();
+    		mediaPlayer.pause();
     	}
+    	//mediaPlayer.startMedia(mediaPath);
        mediaPlayer.playMedia(mediaPath);
     }
     
@@ -109,6 +111,10 @@ public class EmbeddedAudioPlayer {
     public void playMedia(String mediaPathAndFileName) {
         mediaPath = mediaPathAndFileName;
         incomingChangeMessage = "play";
+    }
+    
+    public void play() {
+       mediaPlayer.play();
     }
     
     public void pauseMedia() {
@@ -165,6 +171,14 @@ public class EmbeddedAudioPlayer {
         return (long) (position % 60);
     }
     
+    public void setStartTime(int startTimeSeconds) {
+        mediaPlayer.setPosition(startTimeSeconds);
+    }
+    
+    public void setEndTime(int endTimeSeconds) {
+        this.endTimeSeconds = endTimeSeconds;
+    }
+    
     public void setLooping(Boolean loopTrueFalse) {
         mediaPlayer.setRepeat(loopTrueFalse);
     }
@@ -195,6 +209,14 @@ public class EmbeddedAudioPlayer {
                 break;
         default: break;
         }
+        
+        if(endTimeSeconds != 0) {
+            if (getCurrentPositionSeconds() == endTimeSeconds) {
+                mediaPlayer.stop();
+                endTimeSeconds = 0;
+            }
+        }
+        
     }
     
     

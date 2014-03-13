@@ -1,4 +1,4 @@
-package slideModule;
+package presentation;
 /**
  * @author Josh Drake
  * @author Robert Mills
@@ -65,7 +65,10 @@ public class Shapes extends SlideObject {
 	/**	
 	 * 	
 	 * @return the width
-	 */	public int getWidth(){		return width;	}
+	 */
+	public int getWidth(){
+		return width;
+	}
 	
 	/**	
 	 * 	
@@ -73,7 +76,15 @@ public class Shapes extends SlideObject {
 	 */
 	public void setWidth(int width){
 		this.width = width;
-	}		/**	 * 	 * @return the height	 */	public int getHeight(){		return height;	}
+	}
+	
+	/**
+	 * 
+	 * @return the height
+	 */
+	public int getHeight(){
+		return height;
+	}
 	
 	/**
 	 * 
@@ -173,4 +184,4 @@ public class Shapes extends SlideObject {
 	public int sizePointList() {
 		return pointList.size();
 	}
-}
+}

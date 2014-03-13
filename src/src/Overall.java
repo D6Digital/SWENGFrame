@@ -9,9 +9,10 @@ import imageModule.ImagePainter;
 
 import java.util.ArrayList;
 
-import slideModule.Presentation;
-import slideModule.Slide;
-import slideModule.XMLParser;
+import presentation.Presentation;
+import presentation.Slide;
+import presentation.XMLParser;
+
 
 /**
  * @author Robert

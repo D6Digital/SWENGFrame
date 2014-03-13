@@ -48,7 +48,22 @@ public class EmbeddedAudioHigherModuleExample {
                 
                 @Override
                 public void actionPerformed(ActionEvent arg0) {
-                    player.playMedia("http://uybc.org.uk/d6digital/johntherevelator.mp3");
+                    //player.playMedia("http://uybc.org.uk/d6digital/johntherevelator.mp3");
+                    player.playMedia("C:\\xtemp\\Neil_Landstrumm_22_02_14_HOG_21st_birthday.mp3");
+                    player.pauseMedia();
+                    System.out.println("are we here?");
+                    try {
+                        Thread.sleep(3);
+                    } catch (InterruptedException e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                    }
+                    
+                    player.setStartTime(30);
+                    player.setEndTime(45);
+                    
+                    
+                    player.play();
                     //player.playMedia("C:\\Users\\Public\\Music\\Sample Music\\Kalimba.mp3");
                     //player.playMedia("M:\\Year 2\\Engineering for Hearing and Voice\\Lab 1- Week 3\\Audio Samples\\aI Light rising.wav");
                 }
