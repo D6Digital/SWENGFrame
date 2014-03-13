@@ -16,12 +16,18 @@ public class ImagePainter {
 	 * filepath of the image. String description gives a small description of the image.
 	 * 
 	 * @author Sam L
+	 * @author Chris S
 	 * @return
 	 */
-	public JLabel ProduceImage(String file, String description){
+	
+	public ImagePainter() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public static JLabel produceImage(String file){
 				
 		//Creates image icon to be use in the JLabel
-		ImageIcon image = createImageIcon(file, description);
+		ImageIcon image = createImageIcon(file, "");
 		
 		//Gets dimensions info to use to set size of the JLabel
 		int height = image.getIconHeight();
@@ -37,10 +43,10 @@ public class ImagePainter {
 		imageLabel.setOpaque(true);
 		
 		//Shows the description of the image when cursor is hovered over image
-		imageLabel.setToolTipText(description);
+		//imageLabel.setToolTipText(description);
 		
 		//Test method which creates a JFrame to display the JLabel produced        
-        showImageTest(imageLabel);
+        //showImageTest(imageLabel);
 		
 		return imageLabel;
 	}
@@ -62,7 +68,7 @@ public class ImagePainter {
 	}
 
 	// Returns an ImageIcon, or null if the path was invalid. 
-    protected ImageIcon createImageIcon(String path, String description) {
+    protected static ImageIcon createImageIcon(String path, String description) {
         java.net.URL imgURL = ImagePainter.class.getResource(path);
         
         if (imgURL != null) {

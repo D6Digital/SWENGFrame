@@ -1,6 +1,7 @@
 package gUIModule;
 
 
+import java.awt.Color;
 import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -18,6 +19,11 @@ import slideModule.Slide;
 import slideModule.Sound;
 import slideModule.Text;
 import slideModule.Video;
+
+import graphicsModule.GraphicsPainter;
+import imageModule.ImagePainter;
+import videoModule.VideoPainter;
+import textModule.Scribe;
 
 /**
  * 
@@ -76,26 +82,20 @@ public class SlidePanel extends JPanel implements ActionListener{
 	    currentSlide.getSlideID();
 	    currentSlide.getSlideName();
 	        
-	    for(Image image: imageList) {
-	        JLabel imageLabel = addImage(image);
-	        this.add(imageLabel);
-	    }
+	   for(Image image: imageList) {
+	        addImage(image);
+	   }
        for(Text text : textList) {
-            JPanel textPanel = addText(text);
-            this.add(textPanel);
-        }
-       for(Video video: videoList) {
-           JPanel videoPanel = addVideo(video);
-           this.add(videoPanel);
+            addText(text);
        }
-       
+       for(Video video: videoList) {
+           addVideo(video);
+       }
        for(Shapes shape: shapeList) {
-           JPanel shapePanel = addShape(shape);
-           this.add(shapePanel);
+           addShape(shape);
        }
        for(Sound sound: soundList) {
-           JButton soundButton = addSound(sound);
-           this.add(soundButton);
+           addSound(sound);
        }
 	    
 	}
@@ -183,14 +183,14 @@ public class SlidePanel extends JPanel implements ActionListener{
 	/**
 	 * 
 	 * @param shape
-	 * @return JPanel with shape on 
 	 */
-	private JPanel addShape(Shapes shape){
-		
-		// TODO makes a JPanel to represent the size and location of the shape
-		// set the position ( .setBounds ) to the shapes first x,y etc
+	private void addShape(Shapes shape){
 		// Eventually Use the bought-in module to improve this method
-		return null;
+		
+		JPanel shapePanel = GraphicsPainter.producePanel(shape.getWidth(), shape.getHeight(), shape.getFillColourObject());
+		
+		shapePanel.setBounds(shape.getX_coord(), shape.getY_coord(), shape.getWidth(), shape.getHeight());
+        this.add(shapePanel);
 	}
 	
 	
@@ -198,13 +198,14 @@ public class SlidePanel extends JPanel implements ActionListener{
 	/**
 	 * 
 	 * @param image
-	 * @return A JLabel which contains the image
 	 */
-	private JLabel addImage(Image image){
-	
-		// TODO make a JLabel containing an image and set the position ( .setBounds ) to the image x,y etc
+	private void addImage(Image image){
 		// Eventually Use the bought-in module to improve this method
-		return null;
+		
+		JLabel imageLabel = ImagePainter.produceImage(image.getFile());
+		
+		imageLabel.setBounds(image.getX_coord(), image.getY_coord(), image.getWidth(), image.getHeight());
+        this.add(imageLabel);
 	}
 	
 	
@@ -212,30 +213,32 @@ public class SlidePanel extends JPanel implements ActionListener{
 	/**
 	 * 
 	 * @param video
-	 * @return The JPanel that holds the video player
 	 */
-	private JPanel addVideo(Video video){
+	private void addVideo(Video video){
 		
-		// TODO instantiate the video player when available and the video player controls
-		// set the position ( .setBounds ) to the video x,y etc
+		// TODO Replace with the embedded video player when available
 		// Start paused by default
 		
-		return null;
+		JButton videoPanel = VideoPainter.ProduceButton(video.getFile());
+		
+		videoPanel.setBounds(video.getX_coord(), video.getY_coord(), video.getWidth(), video.getHeight());
+        this.add(videoPanel);
 	}
 	
 	
 	/**
 	 * 
 	 * @param sound
-	 * @return The sound container, e.g JButton
 	 */
-	private JButton addSound(Sound sound){
+	private void addSound(Sound sound){
 		
-		// TODO instantiate the embedded slide music player when available
-		// set the position ( .setBounds ) to the sound x,y etc
+		// TODO Replace with the embedded slide music player when available
 		// Start paused by default
 		
-		return null;
+		JButton soundButton = VideoPainter.ProduceButton(sound.getFile());
+        
+		soundButton.setLocation(sound.getX_coord(), sound.getY_coord());
+		this.add(soundButton);
 	}
 	
 	
@@ -243,14 +246,14 @@ public class SlidePanel extends JPanel implements ActionListener{
 	/**
 	 * 
 	 * @param text
-	 * @return The JPanel which contains the text
 	 */
-	private JPanel addText(Text text){
+	private void addText(Text text){
 		
-		// TODO use the Scribe class when available to add the text to a JPanel
-		// set the position ( .setBounds ) to the text x,y etc
+		// TODO use .setBounds to define panel size when Text.java has updated
+		JPanel textPanel = new Scribe(text);
 		
-		return null;
+		textPanel.setLocation(text.getX_coord(), text.getY_coord());
+        this.add(textPanel);
 	}
 	
 }

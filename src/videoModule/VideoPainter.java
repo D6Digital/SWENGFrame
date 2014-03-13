@@ -27,18 +27,16 @@ public class VideoPainter {
 	 * This method creates a JButton with the given title and colour
 	 * @author Sam L 
 	 * @param filename
-	 * @param colour
 	 * @return videoButton
 	 */
-	public static JButton ProduceButton(String filename, Color colour){
+	public static JButton ProduceButton(String filename){
 		
 		//Create and setup new JButton
 		JButton videoButton = new JButton(filename);
 		videoButton.setVerticalTextPosition(AbstractButton.CENTER);
 		videoButton.setHorizontalTextPosition(AbstractButton.CENTER);
 		videoButton.setAlignmentX(Component.CENTER_ALIGNMENT);
-		videoButton.setBackground(colour);
-
+		
 		return videoButton;
 		
 	}

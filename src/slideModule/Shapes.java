@@ -5,6 +5,7 @@ package slideModule;
  * @author Andrew Walter
  */
 
+import java.awt.Color;
 import java.util.ArrayList;
 
 public class Shapes extends SlideObject {
@@ -96,6 +97,22 @@ public class Shapes extends SlideObject {
 	 */
 	public void setFillColor(String fillColour){
 		this.fillColor = fillColour;
+	}
+	
+	/**
+	 * @param converts hex colours to RGB and returns a type Color
+	 */
+	public Color getFillColourObject() {
+		int[] RGB = {0, 0, 0};
+		Color colourReturn;
+		if (fillColor.charAt(0) == '#'){
+			String colourHex = fillColor.substring(1,7);
+			RGB[0] = Integer.parseInt(colourHex.substring(0,2), 16);
+			RGB[1] = Integer.parseInt(colourHex.substring(2,4), 16);
+			RGB[2] = Integer.parseInt(colourHex.substring(4,6), 16);
+		}
+		colourReturn = new Color(RGB[0], RGB[1], RGB[2]);
+		return colourReturn;
 	}
 	
 	/**
