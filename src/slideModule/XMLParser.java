@@ -174,6 +174,27 @@ public class XMLParser extends DefaultHandler{
 			if (currentElement == ProcessingElement.SLIDE) {
 				currentElement = ProcessingElement.TEXT;
 			}
+			attrVal = attrs.getValue("font");
+			if(attrVal == null){
+				newText.setFont(presentation.getFont());
+			}
+			else {
+				newText.setFont(attrVal);
+			}
+			attrVal = attrs.getValue("fontsize");
+			if(attrVal == null){
+				newText.setSize(presentation.getFontSize());
+			}
+			else {
+				newText.setSize(Integer.parseInt(attrVal));
+			}
+			attrVal = attrs.getValue("fontcolour");
+			if(attrVal == null){
+				newText.setColour(presentation.getFontColour());
+			}
+			else {
+				newText.setColour(attrVal);
+			}
 			
 		}
 		else if (elementName.equals("shape")) {
