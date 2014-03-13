@@ -119,7 +119,7 @@ public class Scribe extends JPanel implements MouseListener, MouseMotionListener
 				}
 			}
 			
-			if(text.isNewLine())
+			if(text.isHyperlink())
 			{
 				newStyle.addAttribute(HTML.Attribute.HREF, "www.google.com");
 				StyleConstants.setForeground(newStyle, Color.BLUE);
@@ -178,7 +178,7 @@ public class Scribe extends JPanel implements MouseListener, MouseMotionListener
 		myText3.setTextString("This is Subscript \n");
 		
 		TextContent myText4 = new TextContent();
-		myText4.setNewLine(true);
+		myText4.setHyperlink(true);
 		myText4.setTextString("TO GOOGLE");
 		
 		ArrayList<TextContent> textContents = new ArrayList<TextContent>(0);;

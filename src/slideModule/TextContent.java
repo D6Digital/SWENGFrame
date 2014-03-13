@@ -6,7 +6,7 @@ package slideModule;
  */
 public class TextContent {
 	public enum ScriptTypeDef { superScript , subScript, normal };
-	private boolean bold, italic, underlined = false;
+	private boolean bold, italic, underlined, hyperlink = false;
 	private String textString = null;
 	private ScriptTypeDef scriptType = ScriptTypeDef.normal;
 
@@ -75,6 +75,20 @@ public class TextContent {
 	 */
 	public String getTextString() {
 		return textString;
+	}
+
+	/**
+	 * @return the hyperlink
+	 */
+	public boolean isHyperlink() {
+		return hyperlink;
+	}
+
+	/**
+	 * @param hyperlink the hyperlink to set
+	 */
+	public void setHyperlink(boolean hyperlink) {
+		this.hyperlink = hyperlink;
 	}
 
 }

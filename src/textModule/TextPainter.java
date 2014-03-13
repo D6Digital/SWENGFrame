@@ -52,7 +52,7 @@ public class TextPainter {
 		myText3.setTextString("This is Subscript \n");
 		
 		TextContent myText4 = new TextContent();
-		myText4.setNewLine(true);
+		myText4.setHyperlink(true);
 		myText4.setTextString("TO GOOGLE");
 		
 		ArrayList<TextContent> textContents = new ArrayList<TextContent>(0);;
