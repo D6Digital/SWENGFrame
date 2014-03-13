@@ -195,7 +195,20 @@ public class XMLParser extends DefaultHandler{
 			else {
 				newText.setColour(attrVal);
 			}
-			
+			attrVal = attrs.getValue("starttime");
+			if(attrVal == null){
+				newText.setStart(0);
+			}
+			else {
+				newText.setStart(Integer.parseInt(attrVal));
+			}
+			attrVal = attrs.getValue("duration");
+			if(attrVal == null){
+				newText.setSize(presentation.getFontSize());
+			}
+			else {
+				newText.setSize(Integer.parseInt(attrVal));
+			}
 		}
 		else if (elementName.equals("shape")) {
 			if (currentElement == ProcessingElement.SLIDE) {
