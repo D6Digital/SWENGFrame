@@ -18,6 +18,7 @@ import presentation.Image;
 import presentation.Shapes;
 import presentation.Slide;
 import presentation.SlideObject;
+import presentation.slideMediaObject;
 import presentation.Sound;
 import presentation.Text;
 import presentation.Video;
@@ -37,7 +38,7 @@ import textModule.Scribe;
  * @author Andrew Walter
  *
  */
-public class SlidePanel extends JPanel implements ActionListener{
+public class SlidePanel extends JPanel implements MouseListener{
 
 	/**
 	 * 
@@ -153,12 +154,11 @@ public class SlidePanel extends JPanel implements ActionListener{
 	 * 
 	 * For example a particular JButton which has a reference to the next slide
 	 */
-	@Override
-	public void actionPerformed(ActionEvent e) {
+	public void mouseClicked(MouseEvent e) {
 		
 		//Returns the object that triggered the action listener and casts it to
 		//a slideObject
-		SlideObject eventSource = (SlideObject) e.getSource();
+		slideMediaObject eventSource = (slideMediaObject) e.getSource();
 		
 		//Get the branch value assigned to the object of type slideObject
 		int branch = eventSource.getBranch();
@@ -197,26 +197,30 @@ public class SlidePanel extends JPanel implements ActionListener{
 	 */
 	private void addShape(Shapes shape){
 		// Eventually Use the bought-in module to improve this method
-		
 		JPanel shapePanel = GraphicsPainter.producePanel(shape.getWidth(), shape.getHeight(), shape.getFillColourObject());
-		
 		shapePanel.setBounds(shape.getX_coord(), shape.getY_coord(), shape.getWidth(), shape.getHeight());
-        this.add(shapePanel);
+        
+		slideMediaObject shapeObject = new slideMediaObject(shape.getBranch());
+        shapeObject.addMouseListener(shapeObject);
+		
+        shapeObject.add(shapePanel);
+        this.add(shapeObject);
 	}
-	
-	
-	
+
 	/**
 	 * 
 	 * @param image
 	 */
 	private void addImage(Image image){
 		// Eventually Use the bought-in module to improve this method
-		
 		JLabel imageLabel = ImagePainter.produceImage(image.getFile());
-		
 		imageLabel.setBounds(image.getX_coord(), image.getY_coord(), image.getWidth(), image.getHeight());
-        this.add(imageLabel);
+        
+		slideMediaObject imageObject = new slideMediaObject(image.getBranch());
+		imageObject.addMouseListener(imageObject);
+		
+		imageObject.add(imageLabel);
+		this.add(imageObject);
 	}
 	
 	
@@ -259,12 +263,47 @@ public class SlidePanel extends JPanel implements ActionListener{
 	 * @param text
 	 */
 	private void addText(Text text){
-		
 		// TODO use .setBounds to define panel size when Text.java has updated
 		JPanel textPanel = new Scribe(text);
-		
 		textPanel.setLocation(text.getX_coord(), text.getY_coord());
-        this.add(textPanel);
+		
+		slideMediaObject textObject = new slideMediaObject(text.getBranch());
+		textObject.addMouseListener(textObject);
+		
+		textObject.add(textPanel);
+		this.add(textObject);
+	}
+
+
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }
