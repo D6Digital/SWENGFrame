@@ -73,6 +73,7 @@ public class EmbeddedAudioPlayer {
         mediaPlayer.setVideoSurface(videoSurface);
         //JPanel returnPanel = new JPanel();
         returnPanel.add(canvas); 
+        returnPanel.setBounds(0, 0, 0, 0);
         //mainFrame.repaint();
         musicThread.start();
     }
@@ -237,7 +238,9 @@ public class EmbeddedAudioPlayer {
         mediaPlayer = mediaPlayerFactory.newEmbeddedMediaPlayer();
         mediaPlayer.setVideoSurface(videoSurface);
         //JPanel returnPanel = new JPanel();
+        canvas.setBounds(0,0,0,0);
         returnPanel.add(canvas); 
+        returnPanel.setBounds(0, 0, 0, 0);
         //mainFrame.repaint();
         musicThread.start();
     }

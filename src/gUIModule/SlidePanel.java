@@ -51,6 +51,8 @@ public class SlidePanel extends JPanel implements MouseListener{
 	String slideName;
 	Slide currentSlide;
 	
+	EmbeddedAudioPlayer audioPlayer;
+	
 	
 	
 	/**
@@ -59,6 +61,7 @@ public class SlidePanel extends JPanel implements MouseListener{
 	public SlidePanel() {
 		super();
 		
+		audioPlayer = new EmbeddedAudioPlayer();
 		// set layout manager to null so media components can be added to their specific co-ordinates
 		this.setLayout(null);
 		
@@ -88,7 +91,9 @@ public class SlidePanel extends JPanel implements MouseListener{
 	    
 	    currentSlide.getSlideID();
 	    currentSlide.getSlideName();
-	        
+	   for(Sound sound: soundList) {
+           addSound(sound);
+       }    
 	   for(Image image: imageList) {
 	        addImage(image);
 	   }
@@ -98,9 +103,7 @@ public class SlidePanel extends JPanel implements MouseListener{
        for(Shapes shape: shapeList) {
            addShape(shape);
        }
-       for(Sound sound: soundList) {
-           addSound(sound);
-       }
+       
        for(Text text : textList) {
             addText(text);
        }
@@ -200,12 +203,13 @@ public class SlidePanel extends JPanel implements MouseListener{
 	private void addShape(Shapes shape){
 		// Eventually Use the bought-in module to improve this method
 		JPanel shapePanel = GraphicsPainter.producePanel(shape.getWidth(), shape.getHeight(), shape.getFillColourObject());
-		shapePanel.setBounds(shape.getX_coord(), shape.getY_coord(), shape.getWidth(), shape.getHeight());
+		
         
 		slideMediaObject shapeObject = new slideMediaObject(shape.getBranch());
         shapeObject.addMouseListener(shapeObject);
 		
         shapeObject.add(shapePanel);
+        shapeObject.setBounds(shape.getX_coord(), shape.getY_coord(), shape.getWidth(), shape.getHeight());
         this.add(shapeObject);
 	}
 
@@ -216,12 +220,13 @@ public class SlidePanel extends JPanel implements MouseListener{
 	private void addImage(Image image){
 		// Eventually Use the bought-in module to improve this method
 		JLabel imageLabel = ImagePainter.produceImage(image.getFile());
-		imageLabel.setBounds(image.getX_coord(), image.getY_coord(), image.getWidth(), image.getHeight());
+		
         
 		slideMediaObject imageObject = new slideMediaObject(image.getBranch());
 		imageObject.addMouseListener(imageObject);
 		
 		imageObject.add(imageLabel);
+		imageObject.setBounds(image.getX_coord(), image.getY_coord(), image.getWidth(), image.getHeight());
 		this.add(imageObject);
 	}
 	
@@ -251,18 +256,22 @@ public class SlidePanel extends JPanel implements MouseListener{
 		
 		// TODO Replace with the embedded slide music player when available
 		// Start paused by default
-		EmbeddedAudioPlayer audioPlayer = new EmbeddedAudioPlayer();
-		audioPlayer.getPanel();
+		JPanel audioPanel = audioPlayer.getPanel();
+		//setComponentZOrder(audioPanel, 0);
+		this.add(audioPanel);
 		
-		sound.getFile()
-		
-		
-		JButton soundButton = VideoPainter.ProduceButton(sound.getFile());
+		//JButton soundButton = VideoPainter.ProduceButton(sound.getFile());
         
-		soundButton.setLocation(sound.getX_coord(), sound.getY_coord());
-		this.add(soundButton);
+		//soundButton.setLocation(sound.getX_coord(), sound.getY_coord());
+		
 	}
 	
+	public void playSounds(){
+		ArrayList<Sound> soundList = currentSlide.getSoundList();
+		Sound sound = soundList.get(0);
+		audioPlayer.prepareMedia(sound.getFile(), sound.getStart());
+		audioPlayer.play();
+	}
 	
 	
 	/**
@@ -273,11 +282,11 @@ public class SlidePanel extends JPanel implements MouseListener{
 		// TODO use .setBounds to define panel size when Text.java has updated
 		JPanel textPanel = new Scribe(text);
 		
-		textPanel.setBounds(text.getX_coord(), text.getY_coord(), text.getXend(), text.getYend());
 		slideMediaObject textObject = new slideMediaObject(text.getBranch());
 		textObject.addMouseListener(textObject);
 		
 		textObject.add(textPanel);
+		textObject.setBounds(text.getX_coord(), text.getY_coord(), text.getXend(), text.getYend());
 		this.add(textObject);
 	}
 
@@ -312,5 +321,9 @@ public class SlidePanel extends JPanel implements MouseListener{
 		// TODO Auto-generated method stub
 		
 	}
+
+
+
+	
 	
 }
