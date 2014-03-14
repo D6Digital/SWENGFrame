@@ -117,6 +117,9 @@ public class EmbeddedAudioPlayer {
        mediaPlayer.play();
     }
     
+    /**
+     * Pauses the media, time remains at point where it was paused.
+     */
     public void pauseMedia() {
         incomingChangeMessage = "pause";
     }
@@ -172,7 +175,7 @@ public class EmbeddedAudioPlayer {
     }
     
     public void setStartTime(int startTimeSeconds) {
-        mediaPlayer.setPosition(startTimeSeconds);
+        mediaPlayer.setTime(startTimeSeconds*1000);
     }
     
     public void setEndTime(int endTimeSeconds) {
@@ -217,6 +220,111 @@ public class EmbeddedAudioPlayer {
             }
         }
         
+    }
+
+    /**
+     * Constructor for media player.
+     * @param vlcLibraryPath- The path to the vlc library on system. 
+     */
+    public EmbeddedAudioPlayer(String vlcLibraryPath) {
+        this.vlcLibraryPath = vlcLibraryPath;
+        NativeLibrary.addSearchPath(RuntimeUtil.getLibVlcLibraryName(),vlcLibraryPath);
+        Native.loadLibrary(RuntimeUtil.getLibVlcLibraryName(), LibVlc.class);
+        
+        Canvas canvas = new Canvas();
+        MediaPlayerFactory mediaPlayerFactory = new MediaPlayerFactory();
+        CanvasVideoSurface videoSurface = mediaPlayerFactory.newVideoSurface(canvas);
+        mediaPlayer = mediaPlayerFactory.newEmbeddedMediaPlayer();
+        mediaPlayer.setVideoSurface(videoSurface);
+        //JPanel returnPanel = new JPanel();
+        returnPanel.add(canvas); 
+        //mainFrame.repaint();
+        musicThread.start();
+    }
+
+    /**
+     * Play whatever media has been prepared. (plays from beginning of file)
+     */
+    public void playMedia() {
+       mediaPlayer.play();
+    }
+
+    /**     
+     * Prepares media for playback, simply call playMedia(void) method after calling this method to 
+     * playback files with altered start and end times.
+     * @param filePathURL - path or URL and filename to media
+     * @param startTimeSeconds
+     */
+    public void prepareMedia(String filePathURL, int startTimeSeconds) {
+        mediaPlayer.prepareMedia(filePathURL);
+        mediaPlayer.play();
+        int x = 1;
+        do {
+            x++;
+            try {
+                Thread.sleep(20);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        while(!mediaPlayer.isPlaying() && (x < 1000));
+        mediaPlayer.pause();
+        setEndTime((int) getTotalLengthInSeconds());
+        setStartTime(startTimeSeconds);
+    }
+
+    /**
+     *  Prepares media for playback, simply call playMedia(void) method after calling this method to 
+     * playback files with altered start and end times.
+     * @param filePathURL - path or URL and filename to media
+     * @param startTimeSeconds
+     * @param endTimeSeconds
+     */
+    public void prepareMedia(String filePathURL, int startTimeSeconds, int endTimeSeconds) {
+        mediaPlayer.prepareMedia(filePathURL);
+        mediaPlayer.play();
+        int x = 1;
+        do {
+            x++;
+            try {
+                Thread.sleep(20);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        while(!mediaPlayer.isPlaying() && (x < 1000));
+        mediaPlayer.pause();
+        setEndTime(endTimeSeconds);
+        setStartTime(startTimeSeconds);
+    }
+
+    /**
+     * Prepares media for playback, simply call playMedia(void) method after calling this method to 
+     * playback files with altered start and end times.
+     * @param filePathURL - path or URL and filename to media
+     * @param startTimeSeconds 
+     * @param endTimeSeconds
+     * @param looping
+     */
+    public void prepareMedia(String filePathURL, int startTimeSeconds, int endTimeSeconds, Boolean looping) {
+        mediaPlayer.prepareMedia(filePathURL);
+        mediaPlayer.play();
+        int x = 1;
+        do {
+            x++;
+            try {
+                Thread.sleep(20);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        while(!mediaPlayer.isPlaying() && (x < 1000));
+        mediaPlayer.pause();
+        System.out.println("here");
+        
+        setEndTime(endTimeSeconds);
+        setStartTime(startTimeSeconds);
+        setLooping(looping);
     }
     
     
