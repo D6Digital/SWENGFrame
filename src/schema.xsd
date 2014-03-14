@@ -92,7 +92,6 @@
     	<attribute name="ystart" type="int" use="required"></attribute>
     	<attribute name="xend" type="int" use="required"></attribute>
     	<attribute name="yend" type="int" use="required"></attribute>
-    	<attribute name="linecolour" type="string" use="optional"></attribute>
     </complexType>
 
     <complexType name="textelement">
@@ -100,7 +99,7 @@
     	<attribute name="bold" type="boolean" use="optional"></attribute>
     	<attribute name="italic" type="boolean" use="optional"></attribute>
     	<attribute name="underlined" type="boolean" use="optional"></attribute>
-    	<attribute name="newline" type="boolean" use="optional"></attribute>
+    	<attribute name="hyperlink" type="string"></attribute>
     </complexType>
 
     <complexType name="shape">

@@ -19,20 +19,24 @@ public class Image extends SlideObject {
 	 * @param x_coord
 	 * @param y_coord
 	 * @param start
-	 * @param end
+	 * @param duration
 	 * @param layer
 	 * @param file
 	 * @param width
 	 * @param height
 	 * @param branch
 	 */
-	public Image(int x_coord, int y_coord, int start, int end, int layer,
+	public Image(int x_coord, int y_coord, int start, int duration, int layer,
 			String file, int width, int height, int branch) {
-		super(x_coord, y_coord, start, end, layer, file, branch);
+		super(x_coord, y_coord, start, duration, layer, file, branch);
 		this.width = width;
 		this.height = height;
 	}
 	
+	public Image() {
+		// TODO Auto-generated constructor stub
+	}
+
 	/**
 	 * 
 	 * @return the width

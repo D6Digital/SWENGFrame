@@ -101,7 +101,7 @@ public class Scribe extends JPanel implements MouseListener, MouseMotionListener
 		addStylesToDocument(doc);
 		
 		Style newStyle = doc.addStyle("newStyle", doc.getStyle("defaultStyle"));
-		
+		System.out.println(textObject.getText().size());
 		for (TextContent text : textObject.getText()) {
 			
 			newStyle = doc.getStyle("defaultStyle");
@@ -187,7 +187,7 @@ public class Scribe extends JPanel implements MouseListener, MouseMotionListener
 		textContents.add(myText2);
 		textContents.add(myText3);
 		textContents.add(myText4);
-		Text exampleText = new Text(0, 0, 0, 0, 0, "resources/ChineseTakeaway.ttf", textContents, "#670067", 30);
+		Text exampleText = new Text(0, 0, 0, 0, 0, "resources/ChineseTakeaway.ttf", textContents, "#670067", 30,0);
 		
 		
 		JFrame frame = new JFrame();

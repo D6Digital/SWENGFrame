@@ -12,7 +12,7 @@ public class SlideObject {
 	private int x_coord;
 	private int y_coord;
 	private int start;
-	private int end;
+	private int duration;
 	private int layer;
 	private String file;
 	private int branch;
@@ -30,7 +30,7 @@ public class SlideObject {
 		this.x_coord = x_coord;
 		this.y_coord = y_coord;
 		this.start = start;
-		this.end = end;
+		this.duration = end;
 		this.layer = layer;
 		this.file = file;
 		this.branch = branch;
@@ -64,8 +64,8 @@ public class SlideObject {
 	 * Gets the time into the slide when the object disappears
 	 * @return end
 	 */
-	public int getEnd() {
-		return end;
+	public int getDuration() {
+		return duration;
 	}
 
 
@@ -73,8 +73,8 @@ public class SlideObject {
 	 * Sets the time into the slide when the object disappears 
 	 * @param end the end to set
 	 */
-	public void setEnd(int end) {
-		this.end = end;
+	public void setDuration(int end) {
+		this.duration = end;
 	}
 
 

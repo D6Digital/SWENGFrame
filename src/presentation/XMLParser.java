@@ -158,6 +158,11 @@ public class XMLParser extends DefaultHandler{
 		}
 		//slide
 		else if (elementName.equals("slide")) {
+			
+			if (newSlide == null) {
+				newSlide = new Slide();
+			}
+			
 			currentElement =  ProcessingElement.SLIDE;
 			attrVal = attrs.getValue("id");
 			newSlide.setSlideID(Integer.parseInt(attrVal));
@@ -174,12 +179,17 @@ public class XMLParser extends DefaultHandler{
 			if (currentElement == ProcessingElement.SLIDE) {
 				currentElement = ProcessingElement.TEXT;
 			}
+			
+			if (newText == null) {
+				newText = new Text();
+			}
+			
 			attrVal = attrs.getValue("font");
 			if(attrVal == null){
-				newText.setFont(presentation.getFont());
+				newText.setFile(presentation.getFont());
 			}
 			else {
-				newText.setFont(attrVal);
+				newText.setFile(attrVal);
 			}
 			attrVal = attrs.getValue("fontsize");
 			if(attrVal == null){
@@ -204,43 +214,277 @@ public class XMLParser extends DefaultHandler{
 			}
 			attrVal = attrs.getValue("duration");
 			if(attrVal == null){
-				newText.setEnd(0)
+				newText.setDuration(0);
 			}
 			else {
-				newText.setEnd(Integer.parseInt(attrVal));
+				newText.setDuration(Integer.parseInt(attrVal));
 			}
+			attrVal = attrs.getValue("layer");
+			if(attrVal == null){
+				newText.setLayer(0);
+			}
+			else {
+				newText.setLayer(Integer.parseInt(attrVal));
+			}
+			attrVal = attrs.getValue("xstart");
+			newText.setX_coord(Integer.parseInt(attrVal));
+			attrVal = attrs.getValue("ystart");
+			newText.setY_coord(Integer.parseInt(attrVal));
+			attrVal = attrs.getValue("xend");
+			newText.setXend(Integer.parseInt(attrVal));
+			attrVal = attrs.getValue("yend");
+			newText.setYend(Integer.parseInt(attrVal));
+			
+			
 		}
+		
+		// Shape
 		else if (elementName.equals("shape")) {
 			if (currentElement == ProcessingElement.SLIDE) {
 				currentElement = ProcessingElement.SHAPE;
 			}
+			
+			if (newShape == null) {
+				newShape = new Shapes();
+			}
+			
+			attrVal = attrs.getValue("totalpoints");
+			newShape.setNumberOfPoints(Integer.parseInt(attrVal));
+			attrVal = attrs.getValue("width");
+			newShape.setWidth(Integer.parseInt(attrVal));
+			attrVal = attrs.getValue("height");
+			newShape.setHeight(Integer.parseInt(attrVal));
+			attrVal = attrs.getValue("fillcolour");
+			if(attrVal == null){
+				newShape.setFillColor(presentation.getFillColour());
+			}
+			else {
+				newShape.setFillColor(attrVal);
+			}
+			attrVal = attrs.getValue("starttime");
+			if(attrVal == null){
+				newShape.setStart(0);
+			}
+			else {
+				newShape.setStart(Integer.parseInt(attrVal));
+			}
+			attrVal = attrs.getValue("duration");
+			if(attrVal == null){
+				newShape.setDuration(0);
+			}
+			else {
+				newShape.setDuration(Integer.parseInt(attrVal));
+			}
+			attrVal = attrs.getValue("layer");
+			if(attrVal == null){
+				newShape.setLayer(0);
+			}
+			else {
+				newShape.setLayer(Integer.parseInt(attrVal));
+			}
+			attrVal = attrs.getValue("linecolour");
+			if(attrVal == null){
+				newShape.setLineColor(presentation.getLineColour());
+			}
+			else {
+				newShape.setLineColor(attrVal);
+			}
+			attrVal = attrs.getValue("branch");
+			if(attrVal == null){
+				newShape.setBranch(-1);
+			}
+			else {
+				newShape.setBranch(Integer.parseInt(attrVal));
+			}
+			
 		}
+		// Image
 		else if (elementName.equals("image")) {
 			if (currentElement == ProcessingElement.SLIDE) {
 				currentElement = ProcessingElement.IMAGE;
 			}
+			
+			if (newImage == null) {
+				newImage = new Image();
+			}
+			
+			attrVal = attrs.getValue("urlname");
+			newImage.setFile(attrVal);
+			attrVal = attrs.getValue("xstart");
+			newImage.setX_coord(Integer.parseInt(attrVal));
+			attrVal = attrs.getValue("ystart");
+			newImage.setY_coord(Integer.parseInt(attrVal));
+			attrVal = attrs.getValue("width");
+			if(attrVal == null){
+				newImage.setWidth(0);
+			}
+			else {
+				newImage.setWidth(Integer.parseInt(attrVal));
+			}
+			attrVal = attrs.getValue("height");
+			if(attrVal == null){
+				newImage.setHeight(0);
+			}
+			else {
+				newImage.setHeight(Integer.parseInt(attrVal));
+			}
+			attrVal = attrs.getValue("starttime");
+			if(attrVal == null){
+				newImage.setStart(0);
+			}
+			else {
+				newImage.setStart(Integer.parseInt(attrVal));
+			}
+			attrVal = attrs.getValue("duration");
+			if(attrVal == null){
+				newImage.setDuration(0);
+			}
+			else {
+				newImage.setDuration(Integer.parseInt(attrVal));
+			}
+			attrVal = attrs.getValue("layer");
+			if(attrVal == null){
+				newImage.setLayer(0);
+			}
+			else {
+				newImage.setLayer(Integer.parseInt(attrVal));
+			}
+			attrVal = attrs.getValue("branch");
+			if(attrVal == null){
+				newImage.setBranch(-1);
+			}
+			else {
+				newImage.setBranch(Integer.parseInt(attrVal));
+			}
+			
 		}
+		// Video
 		else if (elementName.equals("video")) {
 			if (currentElement == ProcessingElement.SLIDE) {
 				currentElement = ProcessingElement.VIDEO;
 			}
+			
+			if (newVideo == null) {
+				newVideo = new Video();
+			}
+			
+			attrVal = attrs.getValue("urlname");
+			newVideo.setFile(attrVal);
+			attrVal = attrs.getValue("xstart");
+			newVideo.setX_coord(Integer.parseInt(attrVal));
+			attrVal = attrs.getValue("ystart");
+			newVideo.setY_coord(Integer.parseInt(attrVal));
+			attrVal = attrs.getValue("starttime");
+			if(attrVal == null){
+				newVideo.setStart(0);
+			}
+			else {
+				newVideo.setStart(Integer.parseInt(attrVal));
+			}
+			attrVal = attrs.getValue("loop");
+			if(attrVal == null){
+				newVideo.setLooping(false);
+			}
+			else {
+				newVideo.setLooping(Boolean.parseBoolean(attrVal));
+			}
+			attrVal = attrs.getValue("duration");
+			if(attrVal == null){
+				newVideo.setDuration(0);
+			}
+			else {
+				newVideo.setDuration(Integer.parseInt(attrVal));
+			}
+			attrVal = attrs.getValue("playtime");
+			if(attrVal == null){
+				newVideo.setPlaytime(0);
+			}
+			else {
+				newVideo.setPlaytime(Integer.parseInt(attrVal));
+			}
+			attrVal = attrs.getValue("layer");
+			if(attrVal == null){
+				newVideo.setLayer(0);
+			}
+			else {
+				newVideo.setLayer(Integer.parseInt(attrVal));
+			}
+			
 		}
+		// Audio
 		else if (elementName.equals("audio")) {
 			if (currentElement == ProcessingElement.SLIDE) {
 				currentElement = ProcessingElement.AUDIO;
 			}
+			
+			if (newSound == null) {
+				newSound = new Sound();
+			}
+			
+			attrVal = attrs.getValue("urlname");
+			newSound.setFile(attrVal);
+			attrVal = attrs.getValue("starttime");
+			if(attrVal == null){
+				newSound.setStart(0);
+			}
+			else {
+				newSound.setStart(Integer.parseInt(attrVal));
+			}
+			attrVal = attrs.getValue("loop");
+			if(attrVal == null){
+				newSound.setLoop(false);
+			}
+			else {
+				newSound.setLoop(Boolean.parseBoolean(attrVal));
+			}
+			
+			
 		}
 		//Text element
-		else if (elementName.equals("textelement")) {
+		else if (elementName.equals("textbody")) {
+			
+			if (newTextContent == null) {
+				newTextContent = new TextContent();
+			}
+			
 			if (currentElement == ProcessingElement.TEXT) {
 				currentElement = ProcessingElement.TEXTELEMENT;
 			}
+			
+			attrVal = attrs.getValue("bold");
+			if(attrVal != null){
+				newTextContent.setBold(Boolean.parseBoolean(attrVal));
+			}
+			attrVal = attrs.getValue("italic");
+			if(attrVal != null){
+				newTextContent.setItalic(Boolean.parseBoolean(attrVal));
+			}
+			attrVal = attrs.getValue("underlined");
+			if(attrVal != null){
+				newTextContent.setUnderlined(Boolean.parseBoolean(attrVal));
+			}
+			attrVal = attrs.getValue("hyperlink");
+			if(attrVal != null){
+				newTextContent.setHyperlink(Boolean.parseBoolean(attrVal));
+			}
+			
 		}
 		// Shape element
 		else if (elementName.equals("point")) {
 			if (currentElement == ProcessingElement.SHAPE) {
 				currentElement = ProcessingElement.POINT;
 			}
+			
+			if (newPoint == null) {
+				newPoint = new Point();
+			}
+			
+			attrVal = attrs.getValue("num");
+			newPoint.setNum(Integer.parseInt(attrVal));
+			attrVal = attrs.getValue("x");
+			newPoint.setX(Integer.parseInt(attrVal));
+			attrVal = attrs.getValue("y");
+			newPoint.setY(Integer.parseInt(attrVal));
 		}
 	}
 
@@ -326,6 +570,7 @@ public class XMLParser extends DefaultHandler{
 		else if (elementName.equals("slide")) {
 			currentElement =  ProcessingElement.NONE;
 			presentation.add(newSlide);
+			newSlide = null;
 		}
 		else if (elementName.equals("text")) {
 			if (currentElement == ProcessingElement.TEXT) {
@@ -363,7 +608,7 @@ public class XMLParser extends DefaultHandler{
 			}
 		}
 		//Text element
-		else if (elementName.equals("textelement")) {
+		else if (elementName.equals("textbody")) {
 			if (currentElement == ProcessingElement.TEXTELEMENT) {
 				currentElement = ProcessingElement.TEXT;
 				newText.add(newTextContent);
@@ -406,7 +651,7 @@ public class XMLParser extends DefaultHandler{
 			presentation.setFont(new String(ch, start, length));
 			break;
 		case FONTSIZE:
-			presentation.setFontSize(new String(ch, start, length));
+			presentation.setFontSize(Integer.parseInt(new String(ch, start, length)));
 			break;
 		case FONTCOLOUR:
 			presentation.setFontColour(new String(ch, start, length));
@@ -416,6 +661,9 @@ public class XMLParser extends DefaultHandler{
 			break;
 		case  FILLCOLOUR:
 			presentation.setFillColour(new String(ch, start, length));
+			break;
+		case  TEXTELEMENT:
+			newTextContent.setTextString(new String(ch, start, length));
 			break;
 		default:
 			break;

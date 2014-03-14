@@ -61,7 +61,7 @@ public class TextPainter {
 		textContents.add(myText2);
 		textContents.add(myText3);
 		textContents.add(myText4);
-		Text exampleText = new Text(0, 0, 0, 0, 0, "resources/ChineseTakeaway.ttf", textContents, "#670067", 30);
+		Text exampleText = new Text(0, 0, 0, 0, 0, "resources/ChineseTakeaway.ttf", textContents, "#670067", 30,0);
 		
 		
 		JFrame frame = new JFrame();

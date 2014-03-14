@@ -21,7 +21,7 @@ public class Shapes extends SlideObject {
 	 * @param x_coord
 	 * @param y_coord
 	 * @param start
-	 * @param end
+	 * @param duration
 	 * @param layer
 	 * @param file
 	 * @param numberOfPoints
@@ -32,10 +32,10 @@ public class Shapes extends SlideObject {
 	 * @param branch
 	 * @param pointList
 	 */
-	public Shapes(int x_coord, int y_coord, int start, int end, int layer,
+	public Shapes(int x_coord, int y_coord, int start, int duration, int layer,
 			String file, int numberOfPoints, int width, int height,
 			String fillColor, String lineColor, ArrayList<Point> pointList, int branch) {
-		super(x_coord, y_coord, start, end, layer, file, branch);
+		super(x_coord, y_coord, start, duration, layer, file, branch);
 		this.numberOfPoints = numberOfPoints;
 		this.width = width;
 		this.height = height;
@@ -45,6 +45,10 @@ public class Shapes extends SlideObject {
 		this.pointList = pointList;
 	}
 	
+	public Shapes() {
+		// TODO Auto-generated constructor stub
+	}
+
 	/**
 	 * 
 	 * @return numberOfPoints

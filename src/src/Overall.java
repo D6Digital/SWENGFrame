@@ -31,6 +31,9 @@ public class Overall {
 		XMLParser parser = new XMLParser(fileName);
 		slideList = parser.getSlides();
 		Player presPlayer = new Player(slideList);
+		
+		
+		
 		presPlayer.play();
 	}
 	
@@ -40,14 +43,17 @@ public class Overall {
 		//GUI utilities = new GUI("utilitiesSelectionPanel");  // can open all utilities from this instance
         //GUI diceRoller = new GUI("diceRollerPanel");
 	    //GUI calculator = new GUI("calculatorPanel");
+		Overall ThisIsIt = new Overall("src/BasicExample.xml");
+		System.out.println(ThisIsIt.slideList.getFont());
+		
 		
 		
 		// A simple test for the text module
-		textModule.Scribe.showAndDisplayGUI();
+		//textModule.Scribe.showAndDisplayGUI();
 		
 		
 		// A simple test for the image module
-		//ImagePainter.ProduceImage("/images/logo.jpg", "company logo");
+		//ImagePainter.produceImage("/images/logo.jpg");
 
 //>>>>>>> branch 'master' of https://github.com/D6Digital/SWENGFrame.git
 	}

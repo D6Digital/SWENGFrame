@@ -13,6 +13,8 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import musicPlayerModule.EmbeddedAudioPlayer;
+
 
 import presentation.Image;
 import presentation.Shapes;
@@ -89,9 +91,6 @@ public class SlidePanel extends JPanel implements ActionListener{
 	   for(Image image: imageList) {
 	        addImage(image);
 	   }
-       for(Text text : textList) {
-            addText(text);
-       }
        for(Video video: videoList) {
            addVideo(video);
        }
@@ -100,6 +99,9 @@ public class SlidePanel extends JPanel implements ActionListener{
        }
        for(Sound sound: soundList) {
            addSound(sound);
+       }
+       for(Text text : textList) {
+            addText(text);
        }
 	    
 	}
@@ -245,6 +247,11 @@ public class SlidePanel extends JPanel implements ActionListener{
 		
 		// TODO Replace with the embedded slide music player when available
 		// Start paused by default
+		EmbeddedAudioPlayer audioPlayer = new EmbeddedAudioPlayer();
+		audioPlayer.getPanel();
+		audioPlayer.
+		sound.getFile()
+		
 		
 		JButton soundButton = VideoPainter.ProduceButton(sound.getFile());
         
@@ -262,8 +269,8 @@ public class SlidePanel extends JPanel implements ActionListener{
 		
 		// TODO use .setBounds to define panel size when Text.java has updated
 		JPanel textPanel = new Scribe(text);
-		
-		textPanel.setLocation(text.getX_coord(), text.getY_coord());
+		System.out.println(text.get(0).getTextString());
+		textPanel.setBounds(text.getX_coord(), text.getY_coord(), text.getXend(), text.getYend());
         this.add(textPanel);
 	}
 	

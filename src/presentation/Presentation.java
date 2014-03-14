@@ -9,8 +9,8 @@ import java.util.ArrayList;
 
 public class Presentation {
 	private ArrayList<Slide> slideList = new ArrayList<Slide>(0);
-	private String author, comment, version, backgroundColour, fontColour, font, fontSize, lineColour, fillColour;
-	int width, height;
+	private String author, comment, version, backgroundColour, fontColour, font, lineColour, fillColour;
+	int width, height, fontSize;
 
 	/**
 	 * @return the slideList
@@ -126,10 +126,10 @@ public class Presentation {
 	public String getFont() {
 		return font;
 	}
-	public void setFontSize(String string) {
-		fontSize = string;
+	public void setFontSize(int integer) {
+		fontSize = integer;
 	}
-	public String getFontSize() {
+	public int getFontSize() {
 		return fontSize;
 	}
 	public void setFontColour(String string) {
