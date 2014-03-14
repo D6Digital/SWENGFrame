@@ -18,11 +18,10 @@ public class Sound extends SlideObject{
 	 * @param layer
 	 * @param file
 	 * @param loop
-	 * @param branch
 	 */
 	public Sound(int start, int end,
-			String file, boolean loop, int branch) {
-		super(0, 0, start, end, 0, file, branch);
+			String file, boolean loop) {
+		super(0, 0, start, end, 0, file, 0);
 		this.loop = loop;
 	}
 	
