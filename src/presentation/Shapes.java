@@ -34,9 +34,8 @@ public class Shapes extends SlideObject {
 	 */
 	public Shapes(int x_coord, int y_coord, int start, int end, int layer,
 			String file, int numberOfPoints, int width, int height,
-			String fillColor, String lineColor, int branch,
-			ArrayList<Point> pointList) {
-		super(x_coord, y_coord, start, end, layer, file);
+			String fillColor, String lineColor, ArrayList<Point> pointList, int branch) {
+		super(x_coord, y_coord, start, end, layer, file, branch);
 		this.numberOfPoints = numberOfPoints;
 		this.width = width;
 		this.height = height;
@@ -140,22 +139,6 @@ public class Shapes extends SlideObject {
 	 */
 	public void setLineColor(String lineColour){
 		this.lineColor = lineColour;
-	}
-	
-	/**
-	 * 
-	 * @return branch
-	 */
-	public int getBranch(){
-		return branch;
-	}
-	
-	/**
-	 * 
-	 * 
-	 */
-	public void setBranch(int branch){
-		this.branch = branch;
 	}
 	
 	/**

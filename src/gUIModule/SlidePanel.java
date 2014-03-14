@@ -154,9 +154,10 @@ public class SlidePanel extends JPanel implements ActionListener{
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO The branch options on Images and shapes should allow a new slide to be chosen
-		// when they are clicked 
-			
+		//Returns the object that triggered the action listener
+		Object eventSource = e.getSource();
+		
+		eventSource.
 	}
 	
 	/**

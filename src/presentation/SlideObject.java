@@ -15,6 +15,7 @@ public class SlideObject {
 	private int end;
 	private int layer;
 	private String file;
+	private int branch;
 	/**
 	 * @param x_coord
 	 * @param y_coord
@@ -22,15 +23,17 @@ public class SlideObject {
 	 * @param end
 	 * @param layer
 	 * @param file
+	 * @param branch
 	 */
 	public SlideObject(int x_coord, int y_coord, int start, int end, int layer,
-			String file) {
+			String file, int branch) {
 		this.x_coord = x_coord;
 		this.y_coord = y_coord;
 		this.start = start;
 		this.end = end;
 		this.layer = layer;
 		this.file = file;
+		this.branch = branch;
 	};
 
 
@@ -145,5 +148,21 @@ public class SlideObject {
 	 */
 	public String getFile() {
 		return file;
+	}
+	
+	/**
+	 * 
+	 * @return branch
+	 */
+	public int getBranch(){
+		return branch;
+	}
+	
+	/**
+	 * 
+	 * 
+	 */
+	public void setBranch(int branch){
+		this.branch = branch;
 	}
 }

@@ -23,10 +23,11 @@ int size;
  * @param text
  * @param colour
  * @param size
+ * @param branch
  */
 public Text(int x_coord, int y_coord, int start, int end, int layer,
-		String file, ArrayList<TextContent> text, String colour, int size) {
-	super(x_coord, y_coord, start, end, layer, file);
+		String file, ArrayList<TextContent> text, String colour, int size, int branch) {
+	super(x_coord, y_coord, start, end, layer, file, branch);
 	this.text = text;
 	this.colour = colour;
 	this.size = size;

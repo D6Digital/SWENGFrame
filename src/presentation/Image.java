@@ -24,10 +24,11 @@ public class Image extends SlideObject {
 	 * @param file
 	 * @param width
 	 * @param height
+	 * @param branch
 	 */
 	public Image(int x_coord, int y_coord, int start, int end, int layer,
-			String file, int width, int height) {
-		super(x_coord, y_coord, start, end, layer, file);
+			String file, int width, int height, int branch) {
+		super(x_coord, y_coord, start, end, layer, file, branch);
 		this.width = width;
 		this.height = height;
 	}
