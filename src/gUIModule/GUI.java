@@ -97,7 +97,7 @@ public class GUI extends JFrame{
 				break;
 			case "diceRollerPanel":
 				setTitle("Dice Roller");
-				setSize(400, 300);
+				setSize(405, 640);
 				setVisible(true);
 				
 				dicePane = getContentPane();
