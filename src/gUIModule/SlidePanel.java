@@ -1,10 +1,9 @@
 package gUIModule;
 
 
-import java.awt.Color;
-import java.awt.Container;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import graphicsModule.GraphicsPainter;
+import imageModule.ImagePainter;
+
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
@@ -14,21 +13,15 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import musicPlayerModule.EmbeddedAudioPlayer;
-
-
 import presentation.Image;
 import presentation.Shapes;
 import presentation.Slide;
-import presentation.SlideObject;
-import presentation.slideMediaObject;
 import presentation.Sound;
 import presentation.Text;
 import presentation.Video;
-
-import graphicsModule.GraphicsPainter;
-import imageModule.ImagePainter;
-import videoModule.VideoPainter;
+import presentation.slideMediaObject;
 import textModule.Scribe;
+import videoModule.VideoPainter;
 
 
 
@@ -87,6 +80,7 @@ public class SlidePanel extends JPanel implements MouseListener{
 	    ArrayList<Video> videoList = currentSlide.getVideoList();
 	    ArrayList<Shapes> shapeList = currentSlide.getShapeList();
 	    ArrayList<Sound> soundList = currentSlide.getSoundList();
+	    
 	    
 	    
 	    currentSlide.getSlideID();

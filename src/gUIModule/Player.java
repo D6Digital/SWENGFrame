@@ -1,13 +1,8 @@
 package gUIModule;
 
-import java.util.ArrayList;
-
 import javax.swing.JFrame;
 
-import musicPlayerModule.EmbeddedAudioPlayer;
-
 import presentation.Presentation;
-import presentation.Slide;
 
 
 public class Player {
