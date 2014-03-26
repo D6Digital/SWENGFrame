@@ -96,7 +96,7 @@ public class Scribe extends JPanel implements MouseListener, MouseMotionListener
 	 */
 	private JTextPane createTextPane() {
 		
-		JTextPane textPane = new JTextPane();
+		TransparentTextPane textPane = new TransparentTextPane();
 		StyledDocument doc = textPane.getStyledDocument();
 		addStylesToDocument(doc);
 		

@@ -1,8 +1,12 @@
 package textModule;
 
+import java.awt.Dimension;
+import java.io.ObjectInputStream.GetField;
 import java.util.ArrayList;
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JLayeredPane;
 
 import presentation.Text;
 import presentation.TextContent;
@@ -49,15 +53,27 @@ public static void main(String[] args) {
 	textContents.add(myText3);
 	Text exampleText = new Text(0, 0, 0, 0, 0, "Times New Roman", textContents, "#670067", 30,0);
 	
+	JLabel background = imageModule.ImagePainter.produceImage("/images/logo.jpg");
+	background.setBounds(0,0,500,150);
+	
+	JLayeredPane LPane = new JLayeredPane();
+	LPane.setBounds(50,50,600,150);
+	LPane.setLayout(null);
+	
 	JFrame frame = new JFrame();
 	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	frame.setSize(640, 400);
+	frame.setPreferredSize(new Dimension(640,480));
 	frame.setLayout(null);
 	Scribe shakespeare = new Scribe(exampleText);
+	shakespeare.setOpaque(false);
 	
-	shakespeare.setBounds(50,50,500,150);
-	frame.add(shakespeare);
+	shakespeare.setBounds(0,0,500,150);
+	LPane.add(shakespeare, 1);
+	LPane.add(background, 2);
+	frame.add(LPane);
+	frame.pack();
 	frame.setVisible(true);
+	
 	
 }
 

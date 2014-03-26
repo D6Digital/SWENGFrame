@@ -17,12 +17,12 @@ import javax.swing.JFrame;
  */
 public class EmbeddedAudioPlayerExample {
 
-	String vlcLibraryPath = "..\\..\\resources\\lib\\vlc-2.0.1";
+	static String vlcLibraryPath = "..\\..\\resources\\lib\\vlc-2.0.1";
 	
 	public static void main(String[] args) throws InterruptedException {
 		
 		JFrame frame = new JFrame(); 
-	    EmbeddedAudioPlayer player = new EmbeddedAudioPlayer();
+	    EmbeddedAudioPlayer player = new EmbeddedAudioPlayer(vlcLibraryPath);
 		frame.add(player.getPanel()); 
 	    frame.setTitle("Audio Example");
 	    frame.setSize(640, 480);
