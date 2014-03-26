@@ -12,8 +12,6 @@ import javax.swing.JSlider;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
-import uk.co.caprica.vlcj.test.basic.PlayerControlsPanel;
-
 
 public class EmbeddedAudioHigherModuleExample {
     static JFrame frame = new JFrame(); 

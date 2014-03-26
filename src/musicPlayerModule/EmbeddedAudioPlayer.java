@@ -14,7 +14,7 @@ import com.sun.jna.Native;
 import com.sun.jna.NativeLibrary;
 
 public class EmbeddedAudioPlayer {
-    static String vlcLibraryPath = "..\\..\\resources\\lib\\vlc-2.0.1";
+    String vlcLibraryPath = "..\\..\\resources\\lib\\vlc-2.0.1";
     
     //static JFrame mainFrame = new JFrame("mainFrame");
     //static JFrame playlistFrame = new JFrame("playlistFrame");
