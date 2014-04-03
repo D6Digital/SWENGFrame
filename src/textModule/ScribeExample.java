@@ -47,7 +47,7 @@ public static void main(String[] args) {
 	myText3.setScriptType(ScriptTypeDef.subScript);
 	myText3.setTextString("This is Subscript \n");
 	
-	ArrayList<TextContent> textContents = new ArrayList<TextContent>(0);;
+	ArrayList<TextContent> textContents = new ArrayList<TextContent>(0);
 	textContents.add(myText1);
 	textContents.add(myText2);
 	textContents.add(myText3);

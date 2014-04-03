@@ -13,7 +13,7 @@ public class Player {
 		testFrame.setBounds(0, 0, presentation.getWidth(), presentation.getHeight());
 		SlidePanel slidePanel = new SlidePanel();
 		
-		slidePanel.setupSlide(presentation.get(0));
+		slidePanel.setupSlide(presentation.get(1));
 		slidePanel.setVisibility(true);
 		
 		testFrame.add(slidePanel);		
