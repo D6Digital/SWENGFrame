@@ -14,11 +14,4 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>src/images/revelation.png</name>
-			<type>1</type>
-			<location>M:/JAVA/SWENG/SWENGFrame/src/images/revelation.png</location>
-		</link>
-	</linkedResources>
 </projectDescription>
