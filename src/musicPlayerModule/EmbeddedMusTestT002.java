@@ -24,8 +24,6 @@ public class EmbeddedMusTestT002 {
         static String mediaPath = "C:\\Users\\Public\\Music\\Sample Music\\Kalimba.mp3";
         static String serverPath = "http://uybc.org.uk/d6digital/johntherevelator.mp3";
         static String shortTrackPath = "M:\\Year 2\\Ex11-ILovePhyicalModellingOriginal.wav";
-        //static String vlcLibraryPath = "M:\\Year 2\\VLC\\vlc-2.0.1";
-        // static String vlcLibraryPath = "M:\\Year 2\\VLC\\vlc-2.0.1";
         static String vlcLibraryPath = "M:\\Year 2\\Java Labs\\SWENGFrame\\vlc-2.1.3-win32\\vlc-2.1.3";  
         int timeout;
         
@@ -120,7 +118,7 @@ public class EmbeddedMusTestT002 {
         */
         
         // Step 7. User is able to select start and stop times for the media, ie begin 20 seconds in, end 5 before end.
-        /* TODO:  
+        /* TODO: Uncomment once issue #6 has been resolved.
         // Test whether individual methods can be used for setting start and end times.
         musicPlayer.stopMedia();
         Thread.sleep(SLEEPMS);
