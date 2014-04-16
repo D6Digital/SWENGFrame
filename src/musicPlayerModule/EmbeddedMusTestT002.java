@@ -14,7 +14,6 @@ import org.junit.Test;
 /**
  * T002- A test to check that the embedded music player works correctly.
  * @author Joshua Lant
- *
  */
 public class EmbeddedMusTestT002 {
         private static final long SLEEPMS = 2000;

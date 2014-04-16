@@ -25,12 +25,12 @@ public class SlideObject {
 	 * @param file
 	 * @param branch
 	 */
-	public SlideObject(int x_coord, int y_coord, int start, int end, int layer,
+	public SlideObject(int x_coord, int y_coord, int start, int duration, int layer,
 			String file, int branch) {
 		this.x_coord = x_coord;
 		this.y_coord = y_coord;
 		this.start = start;
-		this.duration = end;
+		this.duration = duration;
 		this.layer = layer;
 		this.file = file;
 		this.branch = branch;
