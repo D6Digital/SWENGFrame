@@ -9,7 +9,7 @@ package presentation;
  * @since 1.0
  */
 public class SlideObject {
-	private int x_coord;
+	private Integer x_coord;
 	private int y_coord;
 	private int start;
 	private int duration;
@@ -25,7 +25,7 @@ public class SlideObject {
 	 * @param file
 	 * @param branch
 	 */
-	public SlideObject(int x_coord, int y_coord, int start, int duration, int layer,
+	public SlideObject(Integer x_coord, int y_coord, int start, int duration, int layer,
 			String file, int branch) {
 		this.x_coord = x_coord;
 		this.y_coord = y_coord;
