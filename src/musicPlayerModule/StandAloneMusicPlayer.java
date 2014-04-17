@@ -53,8 +53,8 @@ import uk.co.caprica.vlcj.runtime.RuntimeUtil;
 import uk.co.caprica.vlcj.test.basic.PlayerControlsPanel;
 import uk.co.caprica.vlcj.test.list.TestMediaListEmbeddedPlayer;
 
-import uk.co.caprica.vlcj.player.list.MediaList;
-//import uk.co.caprica.vlcj.medialist.MediaList;
+//import uk.co.caprica.vlcj.player.list.MediaList;
+import uk.co.caprica.vlcj.medialist.MediaList;
 
 /**
  * @author Josh Lant

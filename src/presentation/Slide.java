@@ -20,6 +20,8 @@ public class Slide {
     private int slideID;
     private Object slideName;
     
+    
+    
 	/**
 	 * @param e
 	 * @return

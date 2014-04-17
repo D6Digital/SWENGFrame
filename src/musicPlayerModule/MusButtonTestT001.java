@@ -17,7 +17,7 @@ import org.junit.Test;
  * @author Joshua Lant
  *
  */
-public class MusButtonTest {
+public class MusButtonTestT001 {
     private static final long SLEEPMS = 2000;
     static JButton 
     stopButton, playButton, pauseButton, nextButton, previousButton, openPlaylistButton 
@@ -27,8 +27,8 @@ public class MusButtonTest {
     static JPanel mainPanel = new JPanel();
     StandAloneMusicPlayer  musicPlayer;
     static String currentFilePath = "M:\\Year 2\\Engineering for Hearing and Voice\\Lab 1- Week 3\\Audio Samples";
-    static String vlcLibraryPath = "M:\\Year 2\\VLC\\vlc-2.0.1";
-    
+   // static String vlcLibraryPath = "M:\\Year 2\\VLC\\vlc-2.0.1";
+    static String vlcLibraryPath = "M:\\Year 2\\Java Labs\\SWENGFrame\\vlc-2.1.3-win32\\vlc-2.1.3";
     
     @Before
     public void setUp() throws Exception {

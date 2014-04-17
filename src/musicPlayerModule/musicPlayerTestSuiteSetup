@@ -1,0 +1,4 @@
+Test Package Setup:
+
+VMArgs to set:
+vlcLibraryPath = <Path to the vlc library on your system that the player will use to open VLC and create instances of players.>

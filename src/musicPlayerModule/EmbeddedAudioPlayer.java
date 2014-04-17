@@ -14,8 +14,8 @@ import com.sun.jna.Native;
 import com.sun.jna.NativeLibrary;
 
 public class EmbeddedAudioPlayer {
-    String vlcLibraryPath = "..\\..\\resources\\lib\\vlc-2.0.1";
-    
+    //String vlcLibraryPath = "..\\..\\resources\\lib\\vlc-2.0.1";
+    String vlcLibraryPath = "M:\\Year 2\\Java Labs\\SWENGFrame\\vlc-2.1.3-win32\\vlc-2.1.3";
     //static JFrame mainFrame = new JFrame("mainFrame");
     //static JFrame playlistFrame = new JFrame("playlistFrame");
     //static JPanel playPanel = new JPanel();
@@ -190,7 +190,8 @@ public class EmbeddedAudioPlayer {
     }
 
     /**
-     * Constructor for media player.
+     * Constructor for media player. TODO: create override to invoke class assuming
+     * vlc library already loaded previously, empty string or boolean to check etc.
      * @param vlcLibraryPath- The path to the vlc library on system. 
      */
     public EmbeddedAudioPlayer(String vlcLibraryPath) {
