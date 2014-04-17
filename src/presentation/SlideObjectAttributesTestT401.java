@@ -6,6 +6,10 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * T401, a test to determine whether the slide object getters and setters and constructor work correctly.
+ * @author Joshua Lant
+ */
 public class SlideObjectAttributesTestT401 {
     int x_coord, y_coord, start, duration, layer, branch;
     String file;
