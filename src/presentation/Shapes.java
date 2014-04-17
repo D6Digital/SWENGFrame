@@ -171,4 +171,12 @@ public class Shapes extends SlideObject {
 	public int sizePointList() {
 		return pointList.size();
 	}
+
+    public ArrayList<Point> getPointList() {
+        return pointList;
+    }
+
+    public void setPointList(ArrayList<Point> pointList) {
+        this.pointList = pointList;        
+    }
 }
