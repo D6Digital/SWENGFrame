@@ -187,7 +187,7 @@ public class Scribe extends JPanel implements MouseListener, MouseMotionListener
 		textContents.add(myText2);
 		textContents.add(myText3);
 		textContents.add(myText4);
-		Text exampleText = new Text(0, 0, 0, 0, 0, "resources/ChineseTakeaway.ttf", textContents, "#670067", 30,0);
+		Text exampleText = new Text(0, 0, 0, 0, 0, "github resources/ChineseTakeaway.ttf", textContents, "#670067", 30,0);
 		
 		
 		JFrame frame = new JFrame();
