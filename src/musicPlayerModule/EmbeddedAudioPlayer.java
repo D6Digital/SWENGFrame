@@ -26,9 +26,28 @@ public class EmbeddedAudioPlayer {
     String mediaPath;
     int endTimeSeconds;
     
-    
-    
+
     public EmbeddedAudioPlayer() {
+        
+        Canvas canvas = new Canvas();
+        MediaPlayerFactory mediaPlayerFactory = new MediaPlayerFactory();
+        CanvasVideoSurface videoSurface = mediaPlayerFactory.newVideoSurface(canvas);
+        mediaPlayer = mediaPlayerFactory.newEmbeddedMediaPlayer();
+        mediaPlayer.setVideoSurface(videoSurface);
+        //JPanel returnPanel = new JPanel();
+        returnPanel.add(canvas); 
+        returnPanel.setBounds(0, 0, 0, 0);
+        //mainFrame.repaint();
+        musicThread.start();
+    }
+    
+    /**
+     * Constructor for media player. TODO: create override to invoke class assuming
+     * vlc library already loaded previously, empty string or boolean to check etc.
+     * @param vlcLibraryPath- The path to the vlc library on system. Used to load  
+     */
+    public EmbeddedAudioPlayer(String vlcLibraryPath) {
+        this.vlcLibraryPath = vlcLibraryPath;
         NativeLibrary.addSearchPath(RuntimeUtil.getLibVlcLibraryName(),vlcLibraryPath);
         Native.loadLibrary(RuntimeUtil.getLibVlcLibraryName(), LibVlc.class);
         
@@ -38,6 +57,7 @@ public class EmbeddedAudioPlayer {
         mediaPlayer = mediaPlayerFactory.newEmbeddedMediaPlayer();
         mediaPlayer.setVideoSurface(videoSurface);
         //JPanel returnPanel = new JPanel();
+        canvas.setBounds(0,0,0,0);
         returnPanel.add(canvas); 
         returnPanel.setBounds(0, 0, 0, 0);
         //mainFrame.repaint();
@@ -189,28 +209,7 @@ public class EmbeddedAudioPlayer {
         
     }
 
-    /**
-     * Constructor for media player. TODO: create override to invoke class assuming
-     * vlc library already loaded previously, empty string or boolean to check etc.
-     * @param vlcLibraryPath- The path to the vlc library on system. 
-     */
-    public EmbeddedAudioPlayer(String vlcLibraryPath) {
-        this.vlcLibraryPath = vlcLibraryPath;
-        NativeLibrary.addSearchPath(RuntimeUtil.getLibVlcLibraryName(),vlcLibraryPath);
-        Native.loadLibrary(RuntimeUtil.getLibVlcLibraryName(), LibVlc.class);
-        
-        Canvas canvas = new Canvas();
-        MediaPlayerFactory mediaPlayerFactory = new MediaPlayerFactory();
-        CanvasVideoSurface videoSurface = mediaPlayerFactory.newVideoSurface(canvas);
-        mediaPlayer = mediaPlayerFactory.newEmbeddedMediaPlayer();
-        mediaPlayer.setVideoSurface(videoSurface);
-        //JPanel returnPanel = new JPanel();
-        canvas.setBounds(0,0,0,0);
-        returnPanel.add(canvas); 
-        returnPanel.setBounds(0, 0, 0, 0);
-        //mainFrame.repaint();
-        musicThread.start();
-    }
+
 
     /**
      * Play whatever media has been prepared. (plays from beginning of file)

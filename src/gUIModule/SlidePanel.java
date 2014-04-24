@@ -43,7 +43,7 @@ public class SlidePanel extends JPanel implements MouseListener{
 	int slideID;
 	String slideName;
 	Slide currentSlide;
-	
+	String vlcLibraryPath = "resources/lib/vlc-2.1.3";
 	EmbeddedAudioPlayer audioPlayer;
 	
 	
@@ -54,7 +54,7 @@ public class SlidePanel extends JPanel implements MouseListener{
 	public SlidePanel() {
 		super();
 		
-		audioPlayer = new EmbeddedAudioPlayer();
+		audioPlayer = new EmbeddedAudioPlayer(vlcLibraryPath);
 		// set layout manager to null so media components can be added to their specific co-ordinates
 		this.setLayout(null);
 		
