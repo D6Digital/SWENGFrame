@@ -110,7 +110,6 @@ public void setColour(String colour) {
 public Color getColourObject() {
 	int[] RGB = {0, 0, 0};
 	Color colourReturn;
-	System.out.println(colour);
 	if (colour.charAt(0) == '#'){
 		String colourHex = colour.substring(1,7);
 		RGB[0] = Integer.parseInt(colourHex.substring(0,2), 16);
