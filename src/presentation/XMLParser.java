@@ -4,13 +4,23 @@
  */
 package presentation;
 
+import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+
 import java.util.ArrayList;
 import org.xml.sax.*;
 import org.xml.sax.helpers.DefaultHandler;
 import javax.xml.parsers.SAXParserFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
+
+import javax.xml.XMLConstants;
+import javax.xml.transform.Source;
+import javax.xml.transform.stream.StreamSource;
+import javax.xml.validation.*;
+
 enum ProcessingElement{
 	NONE, DOCUMENTINFO, DEFAULTS, SLIDE, NUM, TEXT,
 	SHAPE, AUDIO, IMAGE, VIDEO, AUTHOR, VERSION, COMMENT,
@@ -41,10 +51,28 @@ public class XMLParser extends DefaultHandler{
 
 
 	/**
+	 * @throws MalformedURLException 
+	 * @throws SAXException 
 	 * 
 	 */
-	public XMLParser(String fileName) {
+	public XMLParser(String fileName) throws MalformedURLException, SAXException {
 		super();
+		URL schemaFile = new URL("http://www-users.york.ac.uk/~rjm529/schema.xsd");
+		Source xmlFile = new StreamSource(new File(fileName));
+		SchemaFactory schemaFactory = SchemaFactory
+		    .newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
+		Schema schema = schemaFactory.newSchema(schemaFile);
+		Validator validator = schema.newValidator();
+		try {
+		  validator.validate(xmlFile);
+		  System.out.println(xmlFile.getSystemId() + " is valid");
+		} catch (SAXException e) {
+		  System.out.println(xmlFile.getSystemId() + " is NOT valid");
+		  System.out.println("Reason: " + e.getLocalizedMessage());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		this.fileName = fileName;
 		parse(this.fileName);
 	}
