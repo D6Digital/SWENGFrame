@@ -24,7 +24,11 @@ public class EmbeddedAudioPlayer {
     JPanel returnPanel = new JPanel();
     String incomingChangeMessage = "";
     String mediaPath;
-    int endTimeSeconds;
+    //int endTimeSeconds;
+    private Boolean loopingGlobal = false;
+    private Boolean startedAllreadyGlobal = false;
+    private String playingPathGlobal;
+    private int startTimeGlobal, endTimeGlobal = 0;
     
 
     public EmbeddedAudioPlayer() {
@@ -72,6 +76,7 @@ public class EmbeddedAudioPlayer {
         }
     };
     
+    
     private void internalStopMedia() {
         mediaPlayer.stop();
     }
@@ -93,15 +98,18 @@ public class EmbeddedAudioPlayer {
     
     public void stopMedia() {
         incomingChangeMessage = "stop";
+        startedAllreadyGlobal = false;
     }
     
     public void playMedia(String mediaPathAndFileName) {
         mediaPath = mediaPathAndFileName;
         incomingChangeMessage = "play";
+        setStartedAllready();
     }
     
     public void play() {
        mediaPlayer.play();
+       setStartedAllready();
     }
     
     /**
@@ -166,15 +174,16 @@ public class EmbeddedAudioPlayer {
     }
     
     public void setEndTime(int endTimeSeconds) {
-        this.endTimeSeconds = endTimeSeconds;
+        //this.endTimeSeconds = endTimeSeconds;
     }
     
     public void setLooping(Boolean loopTrueFalse) {
-        mediaPlayer.setRepeat(loopTrueFalse);
+        loopingGlobal = loopTrueFalse;
+        //mediaPlayer.setRepeat(loopTrueFalse);
     }
 
     public Boolean getLooping() {
-        return mediaPlayer.getRepeat();
+        return loopingGlobal;
     }
     
     public void setVolumePercentage(int percentage) {
@@ -200,12 +209,22 @@ public class EmbeddedAudioPlayer {
         default: break;
         }
         
-        if(endTimeSeconds != 0) {
-            if (getCurrentPositionSeconds() == endTimeSeconds) {
-                mediaPlayer.stop();
-                endTimeSeconds = 0;
-            }
+        
+        if(!mediaPlayer.isPlaying() && loopingGlobal && startedAllreadyGlobal) {
+            mediaPlayer.playMedia(playingPathGlobal, ":start-time=" + startTimeGlobal, ":stop-time=" + endTimeGlobal);
+            setStartedAllready();
+            System.out.println("here" + endTimeGlobal);
         }
+            
+        
+        
+        
+//        if(endTimeSeconds != 0) {
+//            if (getCurrentPositionSeconds() == endTimeSeconds) {
+//                mediaPlayer.stop();
+//                endTimeSeconds = 0;
+//            }
+//        }
         
     }
 
@@ -216,6 +235,7 @@ public class EmbeddedAudioPlayer {
      */
     public void playMedia() {
        mediaPlayer.play();
+       setStartedAllready();
     }
 
     /**     
@@ -225,22 +245,31 @@ public class EmbeddedAudioPlayer {
      * @param startTimeSeconds
      */
     public void prepareMedia(String filePathURL, int startTimeSeconds) {
-        mediaPlayer.prepareMedia(filePathURL);
-        mediaPlayer.play();
-        int x = 1;
-        do {
-            x++;
-            try {
-                Thread.sleep(20);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-        while(!mediaPlayer.isPlaying() && (x < 1000));
-        mediaPlayer.pause();
-        setEndTime((int) getTotalLengthInSeconds());
-        setStartTime(startTimeSeconds);
-    }
+        mediaPlayer.prepareMedia(filePathURL, ":start-time=" + startTimeSeconds);
+        playingPathGlobal = filePathURL;
+        startTimeGlobal = startTimeSeconds;
+        startedAllreadyGlobal = false;
+    } 
+    
+//    public void prepareMedia(String filePathURL, int startTimeSeconds) {
+//        mediaPlayer.prepareMedia(filePathURL);
+//        mediaPlayer.play();
+//        int x = 1;
+//        do {
+//            x++;
+//            try {
+//                Thread.sleep(20);
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
+//        }
+//        while(!mediaPlayer.isPlaying() && (x < 1000));
+//        mediaPlayer.pause();
+//        setEndTime((int) getTotalLengthInSeconds());
+//        setStartTime(startTimeSeconds);
+//    }
+    
+    
 
     /**
      *  Prepares media for playback, simply call playMedia(void) method after calling this method to 
@@ -250,22 +279,30 @@ public class EmbeddedAudioPlayer {
      * @param endTimeSeconds
      */
     public void prepareMedia(String filePathURL, int startTimeSeconds, int endTimeSeconds) {
-        mediaPlayer.prepareMedia(filePathURL);
-        mediaPlayer.play();
-        int x = 1;
-        do {
-            x++;
-            try {
-                Thread.sleep(20);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-        while(!mediaPlayer.isPlaying() && (x < 1000));
-        mediaPlayer.pause();
-        setEndTime(endTimeSeconds);
-        setStartTime(startTimeSeconds);
-    }
+        mediaPlayer.prepareMedia(filePathURL, ":start-time=" + startTimeSeconds, ":stop-time=" + endTimeSeconds);
+        playingPathGlobal = filePathURL;
+        startTimeGlobal = startTimeSeconds;
+        endTimeGlobal = endTimeSeconds;
+        startedAllreadyGlobal = false;
+    } 
+    
+//    public void prepareMedia(String filePathURL, int startTimeSeconds, int endTimeSeconds) {
+//        mediaPlayer.prepareMedia(filePathURL);
+//        mediaPlayer.play();
+//        int x = 1;
+//        do {
+//            x++;
+//            try {
+//                Thread.sleep(20);
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
+//        }
+//        while(!mediaPlayer.isPlaying() && (x < 1000));
+//        mediaPlayer.pause();
+//        setEndTime(endTimeSeconds);
+//        setStartTime(startTimeSeconds);
+//    }
 
     /**
      * Prepares media for playback, simply call playMedia(void) method after calling this method to 
@@ -276,24 +313,48 @@ public class EmbeddedAudioPlayer {
      * @param looping
      */
     public void prepareMedia(String filePathURL, int startTimeSeconds, int endTimeSeconds, Boolean looping) {
-        mediaPlayer.prepareMedia(filePathURL);
-        mediaPlayer.play();
-        int x = 1;
+        mediaPlayer.prepareMedia(filePathURL, ":start-time=" + startTimeSeconds, ":stop-time=" + endTimeSeconds);
+        loopingGlobal = looping;
+        playingPathGlobal = filePathURL;
+        startTimeGlobal = startTimeSeconds;
+        endTimeGlobal = endTimeSeconds;
+        startedAllreadyGlobal = false;
+//        mediaPlayer.prepareMedia(filePathURL);
+//        mediaPlayer.play();
+//        int x = 1;
+//        do {
+//            x++;
+//            try {
+//                Thread.sleep(20);
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
+//        }
+//        while(!mediaPlayer.isPlaying() && (x < 1000));
+//        mediaPlayer.pause();
+//        System.out.println("here");
+//        
+//        setEndTime(endTimeSeconds);
+//        setStartTime(startTimeSeconds);
+//        setLooping(looping);
+    }
+    
+    private void setStartedAllready() {
+        int x = 0;
+        Boolean mediaStarted = false;
         do {
-            x++;
+            mediaStarted = mediaPlayer.isPlaying();
+            if(mediaStarted) {
+                startedAllreadyGlobal = true;
+            }
             try {
-                Thread.sleep(20);
+                Thread.sleep(200);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+            x = x + 200;
         }
-        while(!mediaPlayer.isPlaying() && (x < 1000));
-        mediaPlayer.pause();
-        System.out.println("here");
-        
-        setEndTime(endTimeSeconds);
-        setStartTime(startTimeSeconds);
-        setLooping(looping);
+        while(x < 5000 && mediaStarted == false);    
     }
     
     
