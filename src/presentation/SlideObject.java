@@ -9,13 +9,13 @@ package presentation;
  * @since 1.0
  */
 public class SlideObject {
-	private Integer x_coord;
-	private int y_coord;
-	private int start;
-	private int duration;
-	private int layer;
+	private Integer x_coord = null;
+	private Integer y_coord = null;
+	private Integer start = null;
+	private Integer duration = null;
+	private Integer layer = null;
 	private String file;
-	private int branch;
+	private Integer branch = null;
 	/**
 	 * @param x_coord
 	 * @param y_coord

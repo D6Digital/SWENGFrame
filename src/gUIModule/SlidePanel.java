@@ -203,7 +203,8 @@ public class SlidePanel extends JPanel implements MouseListener{
         shapeObject.addMouseListener(shapeObject);
 		
         shapeObject.add(shapePanel);
-        shapeObject.setBounds(shape.getX_coord(), shape.getY_coord(), shape.getWidth(), shape.getHeight());
+        // The x and y of a shape needs to be derived from the leftmost x and highest y co-ordinate in the point array 
+        shapeObject.setBounds(shape.getPoint(0).getX(), shape.getPoint(0).getY(), shape.getWidth(), shape.getHeight());
         this.add(shapeObject);
 	}
 
@@ -282,12 +283,10 @@ public class SlidePanel extends JPanel implements MouseListener{
 		// TODO use .setBounds to define panel size when Text.java has updated
 		JPanel textPanel = new Scribe(text);
 		
-		slideMediaObject textObject = new slideMediaObject(text.getBranch());
-		textObject.addMouseListener(textObject);
 		
-		textObject.add(textPanel);
-		textObject.setBounds(text.getX_coord(), text.getY_coord(), text.getXend(), text.getYend());
-		this.add(textObject);
+		
+		textPanel.setBounds(text.getX_coord(), text.getY_coord(), text.getXend(), text.getYend());
+		this.add(textPanel);
 	}
 
 

@@ -43,6 +43,8 @@ public class Shapes extends SlideObject {
 		this.lineColor = lineColor;
 		this.branch = branch;
 		this.pointList = pointList;
+		this.setX_coord(0);
+		this.setY_coord(0);
 	}
 	
 	public Shapes() {
