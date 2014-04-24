@@ -2,5 +2,5 @@
 /resources/**
 
 *.class
-*.jar
 /bin
+/resources
