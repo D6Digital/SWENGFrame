@@ -47,7 +47,7 @@ public class EmbeddedAudioHigherModuleExample {
                 @Override
                 public void actionPerformed(ActionEvent arg0) {
                     
-                    player.prepareMedia("http://uybc.org.uk/d6digital/johntherevelator.mp3", 30, 40);
+                    player.prepareMedia("C:\\Users\\Public\\Music\\Sample Music\\Kalimba.mp3", 30, 40);
                     player.play();
 //                    //player.playMedia("C:\\xtemp\\Neil_Landstrumm_22_02_14_HOG_21st_birthday.mp3");
 //                    player.pauseMedia();

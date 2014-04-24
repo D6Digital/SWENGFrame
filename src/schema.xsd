@@ -95,11 +95,12 @@
     </complexType>
 
     <complexType name="textelement">
-    	<attribute name="textcontent" type="string" use="required"></attribute>
+    	<sequence></sequence>
     	<attribute name="bold" type="boolean" use="optional"></attribute>
     	<attribute name="italic" type="boolean" use="optional"></attribute>
     	<attribute name="underlined" type="boolean" use="optional"></attribute>
-    	<attribute name="hyperlink" type="string"></attribute>
+    	<attribute name="hyperlink" type="boolean"></attribute>
+    	<attribute name="branch" type="int"></attribute>
     </complexType>
 
     <complexType name="shape">
