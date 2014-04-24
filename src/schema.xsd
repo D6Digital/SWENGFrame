@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/schema" xmlns:tns="http://www.example.org/schema" elementFormDefault="qualified">
+<schema targetNamespace="SchemaValid" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="SchemaValid">
 
 
 
     <complexType name="slideshow">
     	<sequence>
-    		<element name="documentinfo" type="tns:documentinfo" maxOccurs="1" minOccurs="1"></element>
-    		<element name="defaults" type="tns:defaults" maxOccurs="1" minOccurs="1"></element>
-    		<element name="slide" type="tns:slide" maxOccurs="unbounded" minOccurs="1"></element>
+    		<element name="documentinfo" type="tns:documentInfo" maxOccurs="1" minOccurs="1"></element>
+    		<element name="defaults" type="tns:dEfaults" maxOccurs="1" minOccurs="1"></element>
+    		<element name="slide" type="tns:sLide" maxOccurs="unbounded" minOccurs="1"></element>
     	</sequence>
     </complexType>
 
-    <complexType name="documentinfo">
+    <complexType name="documentInfo">
     	<sequence>
     		<element name="author" type="string" maxOccurs="1"
     			minOccurs="1">
@@ -32,18 +32,18 @@
 
     <element name="slideshow" type="tns:slideshow"></element>
 
-    <complexType name="slide">
+    <complexType name="sLide">
     	<sequence>
-    		<element name="text" type="tns:text" maxOccurs="unbounded"
+    		<element name="text" type="tns:tExt" maxOccurs="unbounded"
     			minOccurs="0">
     		</element>
-    		<element name="shape" type="tns:shape" maxOccurs="unbounded"
+    		<element name="shape" type="tns:sHape" maxOccurs="unbounded"
     			minOccurs="0">
     		</element>
-    		<element name="audio" type="tns:audio" maxOccurs="unbounded"
+    		<element name="audio" type="tns:aUdio" maxOccurs="unbounded"
     			minOccurs="0">
     		</element>
-    		<element name="image" type="tns:image" maxOccurs="unbounded"
+    		<element name="image" type="tns:iMage" maxOccurs="unbounded"
     			minOccurs="0">
     		</element>
     		<element name="video" type="tns:video" maxOccurs="unbounded"
@@ -55,7 +55,7 @@
     	<attribute name="lastslide" type="boolean" use="optional"></attribute>
     </complexType>
 
-    <complexType name="defaults">
+    <complexType name="dEfaults">
     	<sequence>
     		<element name="backgroundcolour" type="string" maxOccurs="1"
     			minOccurs="1">
@@ -78,9 +78,9 @@
     	</sequence>
     </complexType>
 
-    <complexType name="text">
+    <complexType name="tExt">
     	<sequence>
-    		<element name="textelement" type="tns:textelement" maxOccurs="unbounded" minOccurs="1"></element>
+    		<element name="textelement" type="tns:textElement" maxOccurs="unbounded" minOccurs="1"></element>
     	</sequence>
     	<attribute name="font" type="string" use="optional"></attribute>
     	<attribute name="fontsize" type="int" use="optional"></attribute>
@@ -94,7 +94,7 @@
     	<attribute name="yend" type="int" use="required"></attribute>
     </complexType>
 
-    <complexType name="textelement">
+    <complexType name="textElement">
     	<sequence></sequence>
     	<attribute name="bold" type="boolean" use="optional"></attribute>
     	<attribute name="italic" type="boolean" use="optional"></attribute>
@@ -103,7 +103,7 @@
     	<attribute name="branch" type="int"></attribute>
     </complexType>
 
-    <complexType name="shape">
+    <complexType name="sHape">
     	<sequence>
     		<element name="point" type="tns:point"></element>
     	</sequence>
@@ -124,14 +124,14 @@
     	<attribute name="y" type="int" use="required"></attribute>
     </complexType>
 
-    <complexType name="audio">
+    <complexType name="aUdio">
     	<attribute name="urlname" type="string" use="required"></attribute>
     	<attribute name="starttime" type="int" use="optional"></attribute>
     	<attribute name="loop" type="boolean" use="optional"></attribute>
     </complexType>
 
 
-    <complexType name="image">
+    <complexType name="iMage">
     	<attribute name="urlname" type="string" use="required"></attribute>
     	<attribute name="xstart" type="int" use="required"></attribute>
     	<attribute name="ystart" type="int" use="required"></attribute>
