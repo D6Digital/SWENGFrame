@@ -180,8 +180,7 @@ public class VideoPlayer extends JPanel{
 
 	}
 	
-	
-	
+
 
 
 }
