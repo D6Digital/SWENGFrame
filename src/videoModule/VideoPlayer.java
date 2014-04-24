@@ -47,7 +47,7 @@ public class VideoPlayer extends JPanel{
 		int xcoord = Video.getX_coord();
 		int ycoord = Video.getY_coord();
 		int start = Video.getStart();
-		int end = Video.getDuration();
+		int end = Video.getStart() + Video.getDuration();
 		int layer = Video.getLayer();
 		String file = Video.getFile();
 		int width = Video.getWidth();
@@ -98,7 +98,9 @@ public class VideoPlayer extends JPanel{
 	    frame.pack();
 	    frame.setVisible(true);
 		
-	    mediaPlayer.playMedia("resources/resources/video/"+file);
+	   // mediaPlayer.playMedia("resources/resources/video/"+file);
+	    mediaPlayer.playMedia("resources/resources/video/"+file, ":start-time="+start, ":stop-time="+end);
+
 	    
 	    canvas.addMouseListener(new java.awt.event.MouseAdapter() {  
 	    	@Override
@@ -172,7 +174,7 @@ public class VideoPlayer extends JPanel{
 
 	public static void main(String[] args) {
 		
-		Video Video = new Video(3, 5, 4, 3, 8, "avengers.mp4", 4, 76, 89);
+		Video Video = new Video(3, 5, 30, 50, 8, "avengers.mp4", 4, 76, 89);
         new VideoPlayer(Video);
                                      
 
