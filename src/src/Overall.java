@@ -49,7 +49,7 @@ public class Overall {
 		
 		
 		// A simple test for the text module
-		//textModule.Scribe.showAndDisplayGUI();
+		//textModule.D6Digital_Scribe.showAndDisplayGUI();
 		
 		
 		// A simple test for the image module

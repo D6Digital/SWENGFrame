@@ -48,6 +48,7 @@ public class Scribe extends JPanel implements MouseListener, MouseMotionListener
 	
 	private Font font;
 	private Text textObject;
+	public JTextPane textPane;
 
 	/**
 	 * produces a JPanel containing text from the text object
@@ -81,7 +82,7 @@ public class Scribe extends JPanel implements MouseListener, MouseMotionListener
 		setLayout(new BorderLayout());
 		
 		// Create the JTextPane
-		JTextPane textPane = createTextPane();
+		textPane = createTextPane();
 		textPane.setEditable(false);
 		textPane.addMouseListener(this);
 		textPane.addMouseMotionListener(this);

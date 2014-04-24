@@ -38,7 +38,7 @@ import javax.swing.text.html.HTML;
  * @author samPick
  *
  */
-public class TextModule extends JPanel implements MouseListener, MouseMotionListener{
+public class D6Digital_Scribe extends JPanel{
 
 	/**
 	 * 
@@ -52,7 +52,7 @@ public class TextModule extends JPanel implements MouseListener, MouseMotionList
 	 * produces a JPanel containing text from the text object
 	 * @param text
 	 */
-	public TextModule(Text text) {
+	public D6Digital_Scribe(Text text) {
 		
 		textObject = text;
 		
@@ -82,8 +82,6 @@ public class TextModule extends JPanel implements MouseListener, MouseMotionList
 		// Create the JTextPane
 		JTextPane textPane = createTextPane();
 		textPane.setEditable(false);
-		textPane.addMouseListener(this);
-		textPane.addMouseMotionListener(this);
 		
 		add(textPane);
 		
@@ -101,7 +99,7 @@ public class TextModule extends JPanel implements MouseListener, MouseMotionList
 		
 		Style newStyle = doc.addStyle("newStyle", doc.getStyle("defaultStyle"));
 		int i = 0;
-		while(textObject.getBody(i) != null )
+		while(i< 2 )
 		{
 			TextBody text;
 			text = textObject.getBody(i);
@@ -175,7 +173,7 @@ public class TextModule extends JPanel implements MouseListener, MouseMotionList
 		TextBody myText4 = new TextBody();
 		myText4.setText("NOT TO GOOGLE");
 		
-		ArrayList<TextBody> textContents = new ArrayList<TextBody>(0);;
+		ArrayList<TextBody> textContents = new ArrayList<TextBody>();
 		textContents.add(myText1);
 		textContents.add(myText2);
 		textContents.add(myText3);
@@ -186,109 +184,11 @@ public class TextModule extends JPanel implements MouseListener, MouseMotionList
 		JFrame frame = new JFrame();
 		frame.setSize(640, 400);
 		frame.setLayout(new BorderLayout());
-		TextModule shakespeare = new TextModule(exampleText);
+		D6Digital_Scribe shakespeare = new D6Digital_Scribe(exampleText);
 		frame.add(shakespeare);
 		frame.setVisible(true);
 	}
 
 
-	@Override
-	public void mouseClicked(MouseEvent e) {
-		
-		java.awt.Desktop desktop = java.awt.Desktop.getDesktop();
-		JTextPane textPane = (JTextPane) e.getSource();
-		Point pt = new Point(e.getX(), e.getY());
-		int pos = textPane.viewToModel(pt);
-	
-		
-		if (pos >= 0)
-		{
-			StyledDocument doc = textPane.getStyledDocument();
-			if (doc instanceof StyledDocument){
-				StyledDocument hdoc = (StyledDocument) doc;
-				Element el = hdoc.getCharacterElement(pos);
-				AttributeSet a = el.getAttributes();
-				String href = (String) a.getAttribute(HTML.Attribute.HREF);
-				
-				if (href != null){
-					try{                            
-						java.net.URI uri = new java.net.URI( href );
-						desktop.browse( uri );
-                       }
-					catch ( Exception ev ){
-						System.err.println( ev.getMessage() );
-                       }
-                }           
-			}
-		}
-		
-		
-	}
-
-	@Override
-	public void mouseEntered(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mouseExited(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mousePressed(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mouseReleased(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mouseDragged(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mouseMoved(MouseEvent e) {
-		Cursor handCursor = Cursor.getPredefinedCursor(Cursor.HAND_CURSOR);
-		Cursor defaultCursor = Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR);
-		
-		JTextPane textPane = (JTextPane) e.getSource();
-		Point pt = new Point(e.getX(), e.getY());
-		int pos = textPane.viewToModel(pt);
-		
-		if (pos >= 0)
-		{
-			StyledDocument doc = textPane.getStyledDocument();
-			
-			if (doc instanceof StyledDocument){
-				StyledDocument hdoc = (StyledDocument) doc;
-				Element el = hdoc.getCharacterElement(pos);
-				AttributeSet a = el.getAttributes();
-				String href = (String) a.getAttribute(HTML.Attribute.HREF);
-				
-				if (href != null){
-					if(getCursor() != handCursor){
-						textPane.setCursor(handCursor);
-					}
-				}
-				else{
-					textPane.setCursor(defaultCursor);
-				}
-             }           
-		}
-	}
-		
 }
-	
-
-	
-	
 
