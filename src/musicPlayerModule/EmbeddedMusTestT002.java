@@ -23,7 +23,7 @@ public class EmbeddedMusTestT002 {
         static String mediaPath = "C:\\Users\\Public\\Music\\Sample Music\\Kalimba.mp3";
         static String serverPath = "http://uybc.org.uk/d6digital/johntherevelator.mp3";
         static String shortTrackPath = "M:\\Year 2\\Ex11-ILovePhyicalModellingOriginal.wav";
-        static String vlcLibraryPath = "M:\\Year 2\\Java Labs\\SWENGFrame\\vlc-2.1.3-win32\\vlc-2.1.3";  
+        static String vlcLibraryPath = "resources\\lib\\vlc-2.1.3";  
         int timeout;
         
         @Before
