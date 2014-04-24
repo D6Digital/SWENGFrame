@@ -55,24 +55,39 @@ public class XMLParser extends DefaultHandler{
 	 * @throws SAXException 
 	 * 
 	 */
-	public XMLParser(String fileName) throws MalformedURLException, SAXException {
+	public XMLParser(String fileName){
 		super();
-		URL schemaFile = new URL("http://www-users.york.ac.uk/~rjm529/schema.xsd");
+		URL schemaFile;
+		Schema schema;
 		Source xmlFile = new StreamSource(new File(fileName));
 		SchemaFactory schemaFactory = SchemaFactory
 		    .newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
-		Schema schema = schemaFactory.newSchema(schemaFile);
-		Validator validator = schema.newValidator();
 		try {
-		  validator.validate(xmlFile);
-		  System.out.println(xmlFile.getSystemId() + " is valid");
-		} catch (SAXException e) {
-		  System.out.println(xmlFile.getSystemId() + " is NOT valid");
-		  System.out.println("Reason: " + e.getLocalizedMessage());
-		} catch (IOException e) {
+			schemaFile = new URL("http://www-users.york.ac.uk/~rjm529/schema.xsd");
+			try {
+				schema = schemaFactory.newSchema(schemaFile);
+			} catch (SAXException e1) {
+				// TODO Auto-generated catch block
+				schema = null;
+				e1.printStackTrace();
+			}
+			Validator validator = schema.newValidator();
+			try {
+			  validator.validate(xmlFile);
+			  System.out.println(xmlFile.getSystemId() + " is valid");
+			} catch (SAXException e) {
+			  System.out.println(xmlFile.getSystemId() + " is NOT valid");
+			  System.out.println("Reason: " + e.getLocalizedMessage());
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		} catch (MalformedURLException e1) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			e1.printStackTrace();
 		}
+
+
 		this.fileName = fileName;
 		parse(this.fileName);
 	}
