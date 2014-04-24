@@ -85,9 +85,9 @@ public class SlidePanel extends JPanel implements MouseListener{
 	    
 	    currentSlide.getSlideID();
 	    currentSlide.getSlideName();
-	   for(Sound sound: soundList) {
-           addSound(sound);
-       }    
+	   
+        addSound();
+          
 	   for(Image image: imageList) {
 	        addImage(image);
 	   }
@@ -243,15 +243,14 @@ public class SlidePanel extends JPanel implements MouseListener{
 	
 	
 	/**
-	 * 
-	 * @param sound
+	 * The sounds are not added to the slidePanel, instead the audioPanel which allows the sound to play is 
+	 * added to the slidePanel, then the sounds are played from the timers method
 	 */
-	private void addSound(Sound sound){
+	private void addSound(){
 		
-		// TODO Replace with the embedded slide music player when available
+		
 		// Start paused by default
 		JPanel audioPanel = audioPlayer.getPanel();
-		//setComponentZOrder(audioPanel, 0);
 		this.add(audioPanel);
 		
 		//JButton soundButton = VideoPainter.ProduceButton(sound.getFile());
@@ -260,6 +259,10 @@ public class SlidePanel extends JPanel implements MouseListener{
 		
 	}
 	
+	/**
+	 * This method was used to test the embedded music player and will not be used 
+	 * as the functionality will be inside a timers method
+	 */
 	public void playSounds(){
 		ArrayList<Sound> soundList = currentSlide.getSoundList();
 		if(!soundList.isEmpty())
