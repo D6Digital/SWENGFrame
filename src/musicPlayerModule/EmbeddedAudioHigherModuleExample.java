@@ -57,7 +57,8 @@ public class EmbeddedAudioHigherModuleExample {
                 @Override
                 public void actionPerformed(ActionEvent arg0) {
                     
-                    player.prepareMedia("resouces/", 30, 40);
+                    player.prepareMedia("src/XMLBits/RunWithUs.mp3", 30, 40);
+                    //player.prepareMedia("src/XMLBits/RunWithUs.mp3", 30);
                     player.play();
 //                    //player.playMedia("C:\\xtemp\\Neil_Landstrumm_22_02_14_HOG_21st_birthday.mp3");
 //                    player.pauseMedia();
