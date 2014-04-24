@@ -12,19 +12,29 @@ import javax.swing.JSlider;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
+import uk.co.caprica.vlcj.binding.LibVlc;
+import uk.co.caprica.vlcj.runtime.RuntimeUtil;
+
+import com.sun.jna.Native;
+import com.sun.jna.NativeLibrary;
+
 
 public class EmbeddedAudioHigherModuleExample {
     static JFrame frame = new JFrame(); 
     static JLabel label = new JLabel();
     static JPanel panel = new JPanel();
-    static EmbeddedAudioPlayer player = new EmbeddedAudioPlayer();
+    static EmbeddedAudioPlayer player; 
     static JButton stop, play, pause, loop;
     static JSlider volume;
+    static String vlcLibraryPath = "resources\\lib\\vlc-2.1.3";
     
     public static void main(String[] args) throws IOException, ClassNotFoundException {
 
-        
+        NativeLibrary.addSearchPath(RuntimeUtil.getLibVlcLibraryName(),vlcLibraryPath);
+       Native.loadLibrary(RuntimeUtil.getLibVlcLibraryName(), LibVlc.class);
       
+        
+       player = new EmbeddedAudioPlayer(vlcLibraryPath);
         
        frame.add(player.getPanel()); 
        frame.setTitle("twat frame");
@@ -47,7 +57,7 @@ public class EmbeddedAudioHigherModuleExample {
                 @Override
                 public void actionPerformed(ActionEvent arg0) {
                     
-                    player.prepareMedia("C:\\Users\\Public\\Music\\Sample Music\\Kalimba.mp3", 30, 40);
+                    player.prepareMedia("resouces/", 30, 40);
                     player.play();
 //                    //player.playMedia("C:\\xtemp\\Neil_Landstrumm_22_02_14_HOG_21st_birthday.mp3");
 //                    player.pauseMedia();
