@@ -23,14 +23,19 @@ public class EmbeddedAudioPlayer {
     EmbeddedMediaPlayer mediaPlayer;
     JPanel returnPanel = new JPanel();
     String incomingChangeMessage = "";
-    String mediaPath;
     //int endTimeSeconds;
     private Boolean loopingGlobal = false;
     private Boolean startedAllreadyGlobal = false;
+    private Boolean isPausedGlobal = false;
     private String playingPathGlobal;
-    private int startTimeGlobal, endTimeGlobal = 0;
+    private Integer startTimeGlobal, endTimeGlobal = null;
+    private Integer pauseTime = 0;
     
 
+    /**
+     * Constructor for headless media player. Used to generate the media player with
+     * vlc previously loaded.
+     */
     public EmbeddedAudioPlayer() {
         
         Canvas canvas = new Canvas();
@@ -46,9 +51,8 @@ public class EmbeddedAudioPlayer {
     }
     
     /**
-     * Constructor for media player. TODO: create override to invoke class assuming
-     * vlc library already loaded previously, empty string or boolean to check etc.
-     * @param vlcLibraryPath- The path to the vlc library on system. Used to load  
+     * Constructor for media player. Used to load vlc from supplied library path
+     * and then generate media player.
      */
     public EmbeddedAudioPlayer(String vlcLibraryPath) {
         this.vlcLibraryPath = vlcLibraryPath;
@@ -75,6 +79,13 @@ public class EmbeddedAudioPlayer {
             }  
         }
     };
+   
+    public boolean threadKill() {
+        musicThread.stop();
+        musicThread.destroy();
+        mediaPlayer.release();
+        return(musicThread.isAlive());
+    }
     
     
     private void internalStopMedia() {
@@ -84,39 +95,68 @@ public class EmbeddedAudioPlayer {
     /**
      * Does what it says on the tin.
      */
-    private void internalPlayMedia() {
-    	if(mediaPlayer.isPlaying()==true){
-    		mediaPlayer.pause();
-    	}
-    	//mediaPlayer.startMedia(mediaPath);
-       mediaPlayer.playMedia(mediaPath);
-    }
+//    private void internalPlayMedia() {
+//    	if(mediaPlayer.isPlaying()==true){
+//    		mediaPlayer.pause();
+//    		isPausedGlobal = true;
+//    	}
+//       this.playMedia();
+//    }
     
     private void internalPauseMedia() {
+        isPausedGlobal = true;
         mediaPlayer.pause();
     }
     
-    public void stopMedia() {
-        incomingChangeMessage = "stop";
+    public void stopMedia() {       
         startedAllreadyGlobal = false;
+        startTimeGlobal = 0;
+        isPausedGlobal = false;
+        endTimeGlobal = 0;
+        mediaPlayer.stop();
     }
     
     public void playMedia(String mediaPathAndFileName) {
-        mediaPath = mediaPathAndFileName;
-        incomingChangeMessage = "play";
-        setStartedAllready();
+        playingPathGlobal = mediaPathAndFileName;
+        isPausedGlobal = false;
+        playMedia(); 
+    }
+    
+    /**
+     * Play whatever media has been prepared. (old values are kept for start and end times.)
+     */
+    public void playMedia() {
+       if(isPausedGlobal) {
+           mediaPlayer.playMedia(playingPathGlobal, ":start-time=" + pauseTime, ":stop-time=" + endTimeGlobal);
+       }
+       else {
+           mediaPlayer.playMedia(playingPathGlobal, ":start-time=" + startTimeGlobal, ":stop-time=" + endTimeGlobal);
+       }
+       isPausedGlobal = false;
+       setStartedAllready();
     }
     
     public void play() {
+       //mediaPlayer.start();
        mediaPlayer.play();
        setStartedAllready();
+       isPausedGlobal = false;
     }
     
     /**
      * Pauses the media, time remains at point where it was paused.
      */
     public void pauseMedia() {
-        incomingChangeMessage = "pause";
+        //incomingChangeMessage = "pause";
+        
+
+        if(!isPausedGlobal) {
+            isPausedGlobal = true;
+            mediaPlayer.pause();
+            pauseTime = (int) this.getCurrentPositionSeconds();
+        }
+        
+        
     }
     
     
@@ -171,10 +211,22 @@ public class EmbeddedAudioPlayer {
     
     public void setStartTime(int startTimeSeconds) {
         mediaPlayer.setTime(startTimeSeconds*1000);
+        startTimeGlobal = startTimeSeconds;
     }
     
     public void setEndTime(int endTimeSeconds) {
         //this.endTimeSeconds = endTimeSeconds;
+        endTimeGlobal = endTimeSeconds;
+    }
+    
+    public long getSecondsRemaining() {
+        return this.getTotalLengthInSeconds() - this.getCurrentPositionMinutes()*60 - this.getCurrentPositionSeconds();
+    }
+    
+    public String getTimeRemaining() {
+        long seconds = getSecondsRemaining() % 60;
+        int minutes = (int) (getSecondsRemaining()/60);
+        return minutes + ":" + seconds;
     }
     
     public void setLooping(Boolean loopTrueFalse) {
@@ -187,56 +239,28 @@ public class EmbeddedAudioPlayer {
     }
     
     public void setVolumePercentage(int percentage) {
-        mediaPlayer.pause();
-        mediaPlayer.setVolume(percentage);
-        mediaPlayer.play();
+         //mediaPlayer.pause();
+        if((percentage <= 100) && (percentage >= 0)) {
+            mediaPlayer.setVolume(percentage);
+        }
+        else {
+            System.err.println("Cannot supply a volume below 0 or above 100");
+        }
+        //mediaPlayer.play();
     }
     
     private void musicPlayerLoop() {
-        switch(incomingChangeMessage) {
-            case "stop":        
-                internalStopMedia();
-                incomingChangeMessage = "";
-                break;
-            case "pause":
-                internalPauseMedia();
-                incomingChangeMessage = "";
-                break;
-            case "play":
-                internalPlayMedia();
-                incomingChangeMessage = "";
-                break;
-        default: break;
-        }
-        
-        
-        if(!mediaPlayer.isPlaying() && loopingGlobal && startedAllreadyGlobal) {
+
+        if(!mediaPlayer.isPlaying() && loopingGlobal && startedAllreadyGlobal && !isPausedGlobal) {
             mediaPlayer.playMedia(playingPathGlobal, ":start-time=" + startTimeGlobal, ":stop-time=" + endTimeGlobal);
             setStartedAllready();
-            System.out.println("here" + endTimeGlobal);
         }
-            
-        
-        
-        
-//        if(endTimeSeconds != 0) {
-//            if (getCurrentPositionSeconds() == endTimeSeconds) {
-//                mediaPlayer.stop();
-//                endTimeSeconds = 0;
-//            }
-//        }
         
     }
 
 
 
-    /**
-     * Play whatever media has been prepared. (plays from beginning of file)
-     */
-    public void playMedia() {
-       mediaPlayer.play();
-       setStartedAllready();
-    }
+
 
     /**     
      * Prepares media for playback, simply call playMedia(void) method after calling this method to 
@@ -248,6 +272,9 @@ public class EmbeddedAudioPlayer {
         mediaPlayer.prepareMedia(filePathURL, ":start-time=" + startTimeSeconds);
         playingPathGlobal = filePathURL;
         startTimeGlobal = startTimeSeconds;
+        endTimeGlobal = 0;
+        loopingGlobal = false;
+        isPausedGlobal = false;
         startedAllreadyGlobal = false;
     } 
     
@@ -283,6 +310,8 @@ public class EmbeddedAudioPlayer {
         playingPathGlobal = filePathURL;
         startTimeGlobal = startTimeSeconds;
         endTimeGlobal = endTimeSeconds;
+        loopingGlobal = false;
+        isPausedGlobal = false;
         startedAllreadyGlobal = false;
     } 
     
@@ -316,8 +345,19 @@ public class EmbeddedAudioPlayer {
         mediaPlayer.prepareMedia(filePathURL, ":start-time=" + startTimeSeconds, ":stop-time=" + endTimeSeconds);
         loopingGlobal = looping;
         playingPathGlobal = filePathURL;
-        startTimeGlobal = startTimeSeconds;
-        endTimeGlobal = endTimeSeconds;
+        isPausedGlobal = false;
+        if(startTimeSeconds == 0){
+            startTimeGlobal = null;
+        }
+        else {
+            startTimeGlobal = startTimeSeconds;
+        }
+        if(endTimeSeconds == 0) {
+            endTimeGlobal = null;
+        }
+        else {
+            endTimeGlobal = endTimeSeconds;
+        }
         startedAllreadyGlobal = false;
 //        mediaPlayer.prepareMedia(filePathURL);
 //        mediaPlayer.play();
@@ -354,8 +394,13 @@ public class EmbeddedAudioPlayer {
             }
             x = x + 200;
         }
-        while(x < 5000 && mediaStarted == false);    
+        while(x < 5000 && mediaStarted == false);
+        if(!mediaStarted) {
+            System.err.println("Media not started after 5 seconds,");
+        }
     }
+
+
     
     
 }

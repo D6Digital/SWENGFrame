@@ -23,6 +23,7 @@ public class EmbeddedMusTestT002 {
         static String mediaPath = "C:\\Users\\Public\\Music\\Sample Music\\Kalimba.mp3";
         static String serverPath = "http://uybc.org.uk/d6digital/johntherevelator.mp3";
         static String shortTrackPath = "M:\\Year 2\\Ex11-ILovePhyicalModellingOriginal.wav";
+        //static String shortTrackPath = "M:\\Year 2\\Engineering for Hearing and Voice\\Lab 1- Week 3\\Audio Samples\\7.b pit.wav";
         static String vlcLibraryPath = "resources\\lib\\vlc-2.1.3";  
         int timeout;
         
@@ -90,8 +91,10 @@ public class EmbeddedMusTestT002 {
                 initialPosition, concatPosition);
         assertNotNull("Could not retrieve the total track length",
                 musicPlayer.getTrackLength());
-        /* TODO: Implement rest of step 5 once issue #4 has been addressed https://github.com/D6Digital/SWENGFrame/issues/4 */
         Thread.sleep(SLEEPMS);
+        assertEquals("The time remaining was not correct",
+                musicPlayer.getTotalLengthInSeconds() - musicPlayer.getCurrentPositionMinutes()*60 - musicPlayer.getCurrentPositionSeconds(),
+                musicPlayer.getSecondsRemaining());
         
         // Step 6. User is able to set the volume for media between 0 & 100%. Volume changes are immediate.
         musicPlayer.setVolumePercentage(0);
@@ -109,29 +112,28 @@ public class EmbeddedMusTestT002 {
         assertFalse("Volume could be set below zero", 
                 -1 == musicPlayer.mediaPlayer.getVolume());
         Thread.sleep(SLEEPMS);
-        /** TODO: uncomment once issue #5 has been addressed https://github.com/D6Digital/SWENGFrame/issues/4 
         musicPlayer.setVolumePercentage(101);
         Thread.sleep(100);
         assertFalse("Volume could be set above 101, it was set to:" + musicPlayer.mediaPlayer.getVolume(), 
                 101 == musicPlayer.mediaPlayer.getVolume());
-        */
+        
         
         // Step 7. User is able to select start and stop times for the media, ie begin 20 seconds in, end 5 before end.
-        /* TODO: Uncomment once issue #6 has been resolved.
+         //TODO: Uncomment once issue #6 has been resolved.
         // Test whether individual methods can be used for setting start and end times.
         musicPlayer.stopMedia();
         Thread.sleep(SLEEPMS);
         musicPlayer.setStartTime(10);
         musicPlayer.setEndTime(15);
         Thread.sleep(SLEEPMS);
-        musicPlayer.play();
+        musicPlayer.playMedia();
         
         timeout = 0;
         do {
             Thread.sleep(20);
             timeout = timeout + 20;
         }
-        while(!musicPlayer.mediaPlayer.isPlaying() && timeout <= 2000);
+        while(!musicPlayer.mediaPlayer.isPlaying() && timeout <= 4000);
         assertEquals("The media did not start from the correct position",
                 musicPlayer.getCurrentPosition(), "0:10");
         
@@ -150,7 +152,7 @@ public class EmbeddedMusTestT002 {
         musicPlayer.stopMedia();
         Thread.sleep(SLEEPMS);
         musicPlayer.prepareMedia(mediaPath, 10, 15);
-        musicPlayer.play();
+        musicPlayer.playMedia();
         
         int timeout = 0;
         do {
@@ -169,7 +171,7 @@ public class EmbeddedMusTestT002 {
         while((musicPlayer.getCurrentPosition() != "0:15") && timeout <= 10000);
         Thread.sleep(1000);
         assertEquals("media still playing after it should have been stopped",
-                false, musicPlayer.mediaPlayer.isPlaying());*/
+                false, musicPlayer.mediaPlayer.isPlaying());
         
         // Step 8. The user is able to select whether or not the media will loop and play again once it reaches the end. 
         
@@ -198,12 +200,14 @@ public class EmbeddedMusTestT002 {
         assertEquals("The media is not looping, as media is no longer playing",
                 true, musicPlayer.mediaPlayer.isPlaying());
         
+        System.out.println("HERE1");
+        
         // Check whether the preparemedia method can be used to set looping to be true and the audio will loop.
         musicPlayer.stopMedia();
         Thread.sleep(SLEEPMS);
         musicPlayer.prepareMedia(shortTrackPath, 0, 0, true);
-        musicPlayer.play();
-        
+        musicPlayer.playMedia();
+  
         timeout = 0;
         do {
             Thread.sleep(20);
@@ -217,12 +221,13 @@ public class EmbeddedMusTestT002 {
             timeout = timeout + 20;
         }
         while(timeout <= musicPlayer.getTotalLengthInSeconds()*1000);
-        
+
         Thread.sleep(SLEEPMS);
         
         assertEquals("The media is not looping, as media is no longer playing",
                 true, musicPlayer.mediaPlayer.isPlaying());
         
+        System.out.println("TEST COMPLETE!");
     }
 
 
