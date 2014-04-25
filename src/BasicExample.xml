@@ -6,39 +6,39 @@
 	xmlns:tns="http://www-users.york.ac.uk/~rjm529/schema.xsd">
 
 	<documentinfo>
-		<author>Joshua Lant Andrew Walter</author>
-		<version>2.0</version>
+		<author>D6 Digital</author>
+		<version>2.1</version>
 		<title>Basic Example</title>
 		<comment>An example slideshow.</comment>
-		<width>640</width>
-		<height>480</height>
+		<width>720</width>
+		<height>640</height>
 	</documentinfo>
 	<defaults>
-		<backgroundcolour>#000000</backgroundcolour>
+		<backgroundcolour>#FFFFFF</backgroundcolour>
 		<font>Times New Roman</font>
 		<fontsize>24</fontsize>
-		<fontcolour>#FFFFFF</fontcolour>
-		<linecolour>#FFFFFF</linecolour>
-		<fillcolour>#FFFFFF</fillcolour>
+		<fontcolour>#000000</fontcolour>
+		<linecolour>#000000</linecolour>
+		<fillcolour>#000000</fillcolour>
 	</defaults>
 	<slide id="1" duration="60" lastSlide="false">
-		<text font="Arial" fontsize="36" fontcolour="#FF9500" starttime="5"
-			duration="25" layer="0" xstart="100" ystart="100" xend="400" yend="400">
+		<text font="Arial" fontsize="36" fontcolour="#291F9F" starttime="5"
+			duration="25" layer="0" xstart="90" ystart="350" xend="610" yend="640">
 			<textbody bold="false" italic="false" underlined="false"
 				branch="0">This is the first slide of the basic example.</textbody>
 			<textbody bold="true" italic="false" underlined="false"
 				branch="0">This should be in bold.</textbody>
 		</text>
-		<shape totalpoints="3" width="10" height="10" fillcolour="#0000FF"
-			starttime="10" duration="30" layer="2" lineColour="#FFFFFF" branch="0">
-			<point num="00" x="10" y="10"></point>
-			<point num="01" x="15" y="15"></point>
-			<point num="02" x="10" y="15"></point>
+		<shape totalpoints="3" width="100" height="100" fillcolour="#0000FF"
+			starttime="500" duration="30" layer="2" lineColour="#FFFFFF" branch="0">
+			<point num="00" x="600" y="10"></point>
+			<point num="01" x="700" y="40"></point>
+			<point num="02" x="650" y="150"></point>
 		</shape>
-		<audio urlname="src/XMLBits/RunWithUs.mp3" starttime="30" loop="true"></audio>
-		<image urlname="/images/revelation.png" xstart="40" ystart="200"
-			width="400" height="300" starttime="0" duration="100" layer="1"
-			branch="0"></image>
+		<audio urlname="src/XMLBits/27 Swarmers Attack.mp3" starttime="0" loop="true"></audio>
+		<image urlname="/images/logo.png" xstart="10" ystart="10"
+			width="459" height="196" starttime="0" duration="100" layer="1"
+			branch="1"></image>
 	</slide>
 	<slide id="2" duration="240" lastSlide="true">
 		<text font="Arial" fontsize="40" fontcolour="#FF9500" starttime="20"
