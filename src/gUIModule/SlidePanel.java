@@ -5,6 +5,7 @@ import graphicsModule.GraphicsPainter;
 import imageModule.ImagePainter;
 
 
+import java.awt.Color;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
@@ -75,6 +76,7 @@ public class SlidePanel extends JPanel implements MouseListener{
 	
 	public void loadPresentation(Presentation presentation) {
 		this.presentation = presentation;
+		this.setBackground(Color.ORANGE);
 	}
 	
 	
@@ -96,6 +98,7 @@ public class SlidePanel extends JPanel implements MouseListener{
 	    
 	    currentSlide.getSlideID();
 	    currentSlide.getSlideName();
+	    
 	   
         addSound();
           
@@ -304,9 +307,6 @@ public class SlidePanel extends JPanel implements MouseListener{
 	private void addText(Text text){
 		// TODO use .setBounds to define panel size when Text.java has updated
 		JPanel textPanel = new Scribe(text);
-		
-		
-		
 		textPanel.setBounds(text.getX_coord(), text.getY_coord(), text.getXend(), text.getYend());
 		this.add(textPanel);
 	}
