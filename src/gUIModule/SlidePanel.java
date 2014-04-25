@@ -4,6 +4,7 @@ package gUIModule;
 import graphicsModule.GraphicsPainter;
 import imageModule.ImagePainter;
 
+import java.awt.Dimension;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
@@ -11,6 +12,9 @@ import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+
+import Images.ImagePanel;
+import Images.TImage;
 
 import musicPlayerModule.EmbeddedAudioPlayer;
 import presentation.Image;
@@ -216,14 +220,23 @@ public class SlidePanel extends JPanel implements MouseListener{
 	 */
 	private void addImage(Image image){
 		// Eventually Use the bought-in module to improve this method
-		JLabel imageLabel = ImagePainter.produceImage(image.getFile());
 		
-        
+		TImage im = new TImage(image.getFile(),0,0);
+		
+//		JLabel imageLabel = ImagePainter.produceImage(image.getFile());
+		
+		ImagePanel imagePanel = new ImagePanel(im);
+		//imagePanel.setSize(new Dimension(image.getWidth(), image.getHeight()));
+		imagePanel.setBounds(0,0, image.getWidth(), image.getHeight());
+		
 		slideMediaObject imageObject = new slideMediaObject(image.getBranch());
 		imageObject.addMouseListener(imageObject);
 		
-		imageObject.add(imageLabel);
-		imageObject.setBounds(image.getX_coord(), image.getY_coord(), image.getWidth(), image.getHeight());
+		imageObject.add(imagePanel);
+		//imageObject.setSize(new Dimension(image.getWidth(), image.getHeight()));
+		imageObject.setBounds(image.getX_coord(),image.getY_coord(), image.getWidth(), image.getHeight());
+		imageObject.setVisible(true);
+		
 		this.add(imageObject);
 	}
 	
