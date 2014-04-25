@@ -4,6 +4,7 @@ package gUIModule;
 import graphicsModule.GraphicsPainter;
 import imageModule.ImagePainter;
 
+import java.awt.Color;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
@@ -14,6 +15,7 @@ import javax.swing.JPanel;
 
 import musicPlayerModule.EmbeddedAudioPlayer;
 import presentation.Image;
+import presentation.Presentation;
 import presentation.Shapes;
 import presentation.Slide;
 import presentation.Sound;
@@ -43,6 +45,7 @@ public class SlidePanel extends JPanel implements MouseListener{
 	int slideID;
 	String slideName;
 	Slide currentSlide;
+	Presentation presentation;
 	
 	EmbeddedAudioPlayer audioPlayer;
 
@@ -56,6 +59,7 @@ public class SlidePanel extends JPanel implements MouseListener{
 	public SlidePanel() {
 		super();
 		
+		
 		audioPlayer = new EmbeddedAudioPlayer(vlcLibraryPath );
 		// set layout manager to null so media components can be added to their specific co-ordinates
 		this.setLayout(null);
@@ -64,6 +68,10 @@ public class SlidePanel extends JPanel implements MouseListener{
 		this.setVisibility(false);
 		
 		// TODO ensure this panel is ready to be displayed when necessary
+	}
+	
+	public void loadPresentation(Presentation presentation) {
+		this.presentation = presentation;
 	}
 	
 	
@@ -82,8 +90,6 @@ public class SlidePanel extends JPanel implements MouseListener{
 	    ArrayList<Video> videoList = currentSlide.getVideoList();
 	    ArrayList<Shapes> shapeList = currentSlide.getShapeList();
 	    ArrayList<Sound> soundList = currentSlide.getSoundList();
-	    
-	    
 	    
 	    currentSlide.getSlideID();
 	    currentSlide.getSlideName();
@@ -123,6 +129,7 @@ public class SlidePanel extends JPanel implements MouseListener{
 		
 		this.removeAll();
 		this.setupSlide(newSlide);
+		this.repaint();
 		
 	}
 	
@@ -164,6 +171,7 @@ public class SlidePanel extends JPanel implements MouseListener{
 		//Get the branch value assigned to the object of type slideObject
 		int branch = eventSource.getBranch();
 		if (branch != 0){
+			this.refreshSlide(presentation.getSlideList().get(branch));
 			//branch to slide specified by the object
 		}
 	}
