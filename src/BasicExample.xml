@@ -1,8 +1,7 @@
 <?xml version="1.0"?>
-<slideshow 
+<Presentation xmlns="http://www-users.york.ac.uk/~rjm529/schema.xsd"></Presentation><slideshow 
 	
-	xmlns:xs="http://www.w3.org/2001/XMLSchema"
-	xmlns="http://www-users.york.ac.uk/~rjm529/schema.xsd">
+	xmlns="http://www-users.york.ac.uk/~rjm529/schema.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
 	<documentinfo>
 		<author>D6 Digital</author>
@@ -50,4 +49,5 @@
 		<video urlname="/XMLBits/worlds_shittest_video.avi" startTime="10"
 			loop="true" xstart="20" ystart="23" layer="1"></video>
 	</slide>
+	
 </slideshow>
