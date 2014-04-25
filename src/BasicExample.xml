@@ -35,7 +35,7 @@
 			<point num="02" x="650" y="150"></point>
 		</shape>
 		<audio urlname="src/XMLBits/27 Swarmers Attack.mp3" starttime="0" loop="true"></audio>
-		<image urlname="/images/logo.png" xstart="10" ystart="10"
+		<image urlname="src/images/logo.png" xstart="10" ystart="10"
 			width="459" height="196" starttime="0" duration="100" layer="1"
 			branch="1"></image>
 	</slide>
