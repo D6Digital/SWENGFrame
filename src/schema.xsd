@@ -89,7 +89,7 @@
 
 	<xs:complexType name="tExt">
 		<xs:sequence>
-			<xs:element name="textelement" type="textElement"
+			<xs:element name="textbody" type="textElement"
 				maxOccurs="unbounded" minOccurs="1"></xs:element>
 		</xs:sequence>
 		<xs:attribute name="font" type="xs:string" use="optional"></xs:attribute>
@@ -105,12 +105,13 @@
 	</xs:complexType>
 
 	<xs:complexType name="textElement">
-		<xs:sequence></xs:sequence>
+		<xs:sequence>
+		</xs:sequence>
 		<xs:attribute name="bold" type="xs:boolean" use="optional"></xs:attribute>
 		<xs:attribute name="italic" type="xs:boolean" use="optional"></xs:attribute>
 		<xs:attribute name="underlined" type="xs:boolean" use="optional"></xs:attribute>
-		<xs:attribute name="hyperlink" type="xs:boolean"></xs:attribute>
-		<xs:attribute name="branch" type="xs:int"></xs:attribute>
+		<xs:attribute name="hyperlink" type="xs:boolean" use="optional"></xs:attribute>
+		<xs:attribute name="branch" type="xs:int" use="optional"></xs:attribute>
 	</xs:complexType>
 
 	<xs:complexType name="sHape">
