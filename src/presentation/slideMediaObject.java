@@ -1,5 +1,6 @@
 package presentation;
 
+import java.awt.LayoutManager;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
@@ -18,6 +19,7 @@ public class slideMediaObject extends JPanel implements MouseListener{
 	 */
 	public slideMediaObject(int branch) {
 		super();
+		this.setLayout(null);
 		this.branch = branch;
 	}
 	
