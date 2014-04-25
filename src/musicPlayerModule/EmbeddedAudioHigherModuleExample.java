@@ -42,7 +42,7 @@ public class EmbeddedAudioHigherModuleExample {
        panel.add(label);
        frame.add(panel);
 
-       player.prepareMedia("src/XMLBits/RunWithUs.mp3", 30, 40);
+       player.prepareMediaWithDuration("src/XMLBits/RunWithUs.mp3", 30, 5, false);
       // player.playMedia("C:\\Users\\Public\\Music\\Sample Music\\Kalimba.mp3");
        
        play = new JButton("PLAY");

@@ -67,7 +67,7 @@ public class EmbeddedMusTestT002 {
         String futurePosition = musicPlayer.getCurrentPosition();
         assertEquals("Audio is not currently paused, although it should be...",
                 initialPosition, futurePosition);
-        musicPlayer.play();
+        musicPlayer.playMedia();
         initialPosition = musicPlayer.getCurrentPosition();
         assertEquals("When restarting paused audio, it did not begin from position it was paused in.",
                 initialPosition, futurePosition);
@@ -76,7 +76,7 @@ public class EmbeddedMusTestT002 {
         // Step 4. User is able to stop the media, then play again from the beginning.
         musicPlayer.stopMedia();
         Thread.sleep(SLEEPMS);
-        musicPlayer.play();
+        musicPlayer.playMedia();
         //Thread.sleep(SLEEPMS);
         initialPosition = musicPlayer.getCurrentPosition();
         assertEquals("When restarting stopped audio, it did not begin from beginning of file.",

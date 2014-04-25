@@ -13,6 +13,19 @@ import uk.co.caprica.vlcj.runtime.RuntimeUtil;
 import com.sun.jna.Native;
 import com.sun.jna.NativeLibrary;
 
+/**
+ * A class which can be used to play pieces of audio headlessly.
+ * Providing methods to prepare and play audio, with various options.
+ * JPanel must be retrieved using getPanel() and plaed on a frame
+ * before the audio player features can be utilised...
+ * NOTE: In order to prevent unnecessary CPU usage when the 
+ * use of EmbeddedAudioPlayer is no longer required it is strongly
+ * advised that the threadKill() method is called. This method
+ * will release the player, destroy the thread and return true if
+ * the thread has been correctly destroyed.
+ * @author Joshua Lant
+ *
+ */
 public class EmbeddedAudioPlayer {
     //String vlcLibraryPath = "..\\..\\resources\\lib\\vlc-2.0.1";
     String vlcLibraryPath = "resources\\lib\\vlc-2.1.3";
@@ -34,7 +47,7 @@ public class EmbeddedAudioPlayer {
 
     /**
      * Constructor for headless media player. Used to generate the media player with
-     * vlc previously loaded.
+     * vlc previously loaded outside the EmbeddedAudioPlayer class.
      */
     public EmbeddedAudioPlayer() {
         
@@ -80,34 +93,22 @@ public class EmbeddedAudioPlayer {
         }
     };
    
+    /**
+     * destroys the thread and releases the media player. If new audio is required
+     * after this a new EmbeddedAudioPlayer must be instantiated.
+     * @return true if the thread has been destroyed, otherwise returns false.
+     */
     public boolean threadKill() {
         musicThread.stop();
         musicThread.destroy();
         mediaPlayer.release();
-        return(musicThread.isAlive());
-    }
-    
-    
-    private void internalStopMedia() {
-        mediaPlayer.stop();
+        return(!musicThread.isAlive());
     }
     
     /**
-     * Does what it says on the tin.
+     * Stops the media, and when play resumes it will be from the beginning
+     * of the file, or at the point where start time was defined (if supplied)
      */
-//    private void internalPlayMedia() {
-//    	if(mediaPlayer.isPlaying()==true){
-//    		mediaPlayer.pause();
-//    		isPausedGlobal = true;
-//    	}
-//       this.playMedia();
-//    }
-    
-    private void internalPauseMedia() {
-        isPausedGlobal = true;
-        mediaPlayer.pause();
-    }
-    
     public void stopMedia() {       
         startedAllreadyGlobal = false;
         startTimeGlobal = 0;
@@ -116,6 +117,10 @@ public class EmbeddedAudioPlayer {
         mediaPlayer.stop();
     }
     
+    /**
+     * Plays a new piece of media, from the start of the track.
+     * @param mediaPathAndFileName - path to the file to play.
+     */
     public void playMedia(String mediaPathAndFileName) {
         playingPathGlobal = mediaPathAndFileName;
         isPausedGlobal = false;
@@ -124,6 +129,8 @@ public class EmbeddedAudioPlayer {
     
     /**
      * Play whatever media has been prepared. (old values are kept for start and end times.)
+     * If media is paused currently then media will begin playing from point in track 
+     * at which it was paused.
      */
     public void playMedia() {
        if(isPausedGlobal) {
@@ -136,37 +143,44 @@ public class EmbeddedAudioPlayer {
        setStartedAllready();
     }
     
-    public void play() {
-       //mediaPlayer.start();
-       mediaPlayer.play();
-       setStartedAllready();
-       isPausedGlobal = false;
-    }
+//    public void play() {
+//       mediaPlayer.play();
+//       setStartedAllready();
+//       isPausedGlobal = false;
+//    }
     
     /**
      * Pauses the media, time remains at point where it was paused.
+     * This method cannot be used to initiate playback. once paused
+     * the playMedia() method must be called, at which point the audio will
+     * be unpaused.
      */
     public void pauseMedia() {
-        //incomingChangeMessage = "pause";
-        
-
         if(!isPausedGlobal) {
             isPausedGlobal = true;
             mediaPlayer.pause();
             pauseTime = (int) this.getCurrentPositionSeconds();
         }
-        
-        
     }
     
-    
+    /**
+     * Get the panel upon which the media player is seated. Panel
+     * must be retrieved and placed upon a frame for media to playback.
+     * otherwise vlcj exceptions will be thrown.
+     * @return JPanel containing media player.
+     */
     public JPanel getPanel() {
         return returnPanel;
     }
     
+    /**
+     * Get the length of the track in milliseconds.
+     * @return long track length
+     */
     public long getLengthMS() {
         return mediaPlayer.getLength()/1000;
     }
+    
     
     public String getTrackLength() {
         long seconds = mediaPlayer.getLength()/1000 % 60;
@@ -209,11 +223,19 @@ public class EmbeddedAudioPlayer {
         return (long) (position % 60);
     }
     
+    /**
+     * Set the start time in seconds of the audio playback.
+     * @param startTimeSeconds
+     */
     public void setStartTime(int startTimeSeconds) {
         mediaPlayer.setTime(startTimeSeconds*1000);
         startTimeGlobal = startTimeSeconds;
     }
     
+    /**
+     * set the stop time in seconds of the audio playback.
+     * @param endTimeSeconds
+     */
     public void setEndTime(int endTimeSeconds) {
         //this.endTimeSeconds = endTimeSeconds;
         endTimeGlobal = endTimeSeconds;
@@ -229,6 +251,9 @@ public class EmbeddedAudioPlayer {
         return minutes + ":" + seconds;
     }
     
+    /**
+     * @param loopTrueFalse- true for looping, false for play once.
+     */
     public void setLooping(Boolean loopTrueFalse) {
         loopingGlobal = loopTrueFalse;
         //mediaPlayer.setRepeat(loopTrueFalse);
@@ -238,6 +263,11 @@ public class EmbeddedAudioPlayer {
         return loopingGlobal;
     }
     
+    /**
+     * Set the volume between 0 and 100. Values above or below
+     * will not be accepted and the old value of volume will remain.
+     * @param percentage
+     */
     public void setVolumePercentage(int percentage) {
          //mediaPlayer.pause();
         if((percentage <= 100) && (percentage >= 0)) {
@@ -258,10 +288,6 @@ public class EmbeddedAudioPlayer {
         
     }
 
-
-
-
-
     /**     
      * Prepares media for playback, simply call playMedia(void) method after calling this method to 
      * playback files with altered start and end times.
@@ -277,26 +303,6 @@ public class EmbeddedAudioPlayer {
         isPausedGlobal = false;
         startedAllreadyGlobal = false;
     } 
-    
-//    public void prepareMedia(String filePathURL, int startTimeSeconds) {
-//        mediaPlayer.prepareMedia(filePathURL);
-//        mediaPlayer.play();
-//        int x = 1;
-//        do {
-//            x++;
-//            try {
-//                Thread.sleep(20);
-//            } catch (InterruptedException e) {
-//                e.printStackTrace();
-//            }
-//        }
-//        while(!mediaPlayer.isPlaying() && (x < 1000));
-//        mediaPlayer.pause();
-//        setEndTime((int) getTotalLengthInSeconds());
-//        setStartTime(startTimeSeconds);
-//    }
-    
-    
 
     /**
      *  Prepares media for playback, simply call playMedia(void) method after calling this method to 
@@ -314,24 +320,6 @@ public class EmbeddedAudioPlayer {
         isPausedGlobal = false;
         startedAllreadyGlobal = false;
     } 
-    
-//    public void prepareMedia(String filePathURL, int startTimeSeconds, int endTimeSeconds) {
-//        mediaPlayer.prepareMedia(filePathURL);
-//        mediaPlayer.play();
-//        int x = 1;
-//        do {
-//            x++;
-//            try {
-//                Thread.sleep(20);
-//            } catch (InterruptedException e) {
-//                e.printStackTrace();
-//            }
-//        }
-//        while(!mediaPlayer.isPlaying() && (x < 1000));
-//        mediaPlayer.pause();
-//        setEndTime(endTimeSeconds);
-//        setStartTime(startTimeSeconds);
-//    }
 
     /**
      * Prepares media for playback, simply call playMedia(void) method after calling this method to 
@@ -359,24 +347,34 @@ public class EmbeddedAudioPlayer {
             endTimeGlobal = endTimeSeconds;
         }
         startedAllreadyGlobal = false;
-//        mediaPlayer.prepareMedia(filePathURL);
-//        mediaPlayer.play();
-//        int x = 1;
-//        do {
-//            x++;
-//            try {
-//                Thread.sleep(20);
-//            } catch (InterruptedException e) {
-//                e.printStackTrace();
-//            }
-//        }
-//        while(!mediaPlayer.isPlaying() && (x < 1000));
-//        mediaPlayer.pause();
-//        System.out.println("here");
-//        
-//        setEndTime(endTimeSeconds);
-//        setStartTime(startTimeSeconds);
-//        setLooping(looping);
+    }
+    
+    /**
+     * Prepares media for playback, simply call playMedia(void) method after calling this method to 
+     * playback files with altered start time and duration.
+     * @param filePathURL - path or URL and filename to media
+     * @param startTimeSeconds 
+     * @param durationSeconds
+     * @param looping
+     */
+    public void prepareMediaWithDuration(String filePathURL, int startTimeSeconds, int durationSeconds, Boolean looping) {
+        mediaPlayer.prepareMedia(filePathURL, ":start-time=" + startTimeSeconds, ":stop-time=" + (startTimeSeconds + durationSeconds));
+        loopingGlobal = looping;
+        playingPathGlobal = filePathURL;
+        isPausedGlobal = false;
+        if(startTimeSeconds == 0){
+            startTimeGlobal = null;
+        }
+        else {
+            startTimeGlobal = startTimeSeconds;
+        }
+        if((startTimeSeconds + durationSeconds) == 0) {
+            endTimeGlobal = null;
+        }
+        else {
+            endTimeGlobal = (startTimeSeconds + durationSeconds);
+        }
+        startedAllreadyGlobal = false;
     }
     
     private void setStartedAllready() {
