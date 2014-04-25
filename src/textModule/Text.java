@@ -142,5 +142,14 @@ public class Text {
 	{
 		textbody.add(body);
 	}
+	
+	/**
+	 * This is an additional method required by the text module to process the text body
+	 * @return the array list of text body
+	 */
+	public ArrayList<TextBody> getTextBody()
+	{
+		return textbody;
+	}
 
 }
