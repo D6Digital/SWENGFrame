@@ -237,7 +237,7 @@ public class SlidePanel extends JPanel implements MouseListener{
 		imagePanel.setBounds(0,0, image.getWidth(), image.getHeight());
 		
 		slideMediaObject imageObject = new slideMediaObject(image.getBranch());
-		imageObject.addMouseListener(imageObject);
+		imageObject.addMouseListener(this);
 		
 		imageObject.add(imagePanel);
 		//imageObject.setSize(new Dimension(image.getWidth(), image.getHeight()));
