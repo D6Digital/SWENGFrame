@@ -1,143 +1,166 @@
 <?xml version="1.0"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
- targetNamespace = "http://www-users.york.ac.uk/~rjm529/schema.xsd"
- xmlns:tns = "http://www-users.york.ac.uk/~rjm529/schema.xsd"
- elementFormDefault="qualified">
+<xs:schema targetNamespace="http://www-users.york.ac.uk/~rjm529/schema.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://www-users.york.ac.uk/~rjm529/schema.xsd"
+
+	elementFormDefault="qualified">
 
 
-    <xs:complexType name="slideshow">
-    	<xs:sequence>
-    		<xs:element name="documentinfo" type="tns:documentInfo" maxOccurs="1" minOccurs="1"></xs:element>
-    		<xs:element name="defaults" type="tns:dEfaults" maxOccurs="1" minOccurs="1"></xs:element>
-    		<xs:element name="slide" type="tns:sLide" maxOccurs="unbounded" minOccurs="1"></xs:element>
-    	</xs:sequence>
-    </xs:complexType>
+	<xs:complexType name="slideshow">
+		<xs:sequence>
+			<xs:element name="documentinfo" type="documentInfo"
+				maxOccurs="1" minOccurs="1"></xs:element>
+			<xs:element name="defaults" type="dEfaults" maxOccurs="1"
+				minOccurs="1"></xs:element>
+			<xs:element name="slide" type="sLide" maxOccurs="unbounded"
+				minOccurs="1"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
 
-    <xs:complexType name="documentInfo">
-    	<xs:sequence>
-    		<xs:element name="author" type="string" maxOccurs="1" minOccurs="1">
-    		</xs:element>
-    		<xs:element name="version" type="string" minOccurs="1" maxOccurs="1">
-    		</xs:element>
-    		<xs:element name="comment" type="string" maxOccurs="1" minOccurs="1">
-    		</xs:element>
-    		<xs:element name="width" type="int" maxOccurs="1" minOccurs="1">
-    		</xs:element>
-    		<xs:element name="height" type="int" maxOccurs="1" minOccurs="1"></xs:element>
-    	</xs:sequence>
-    </xs:complexType>
-
-
-    <xs:element name="slideshow" type="tns:slideshow"></xs:element>
-
-    <xs:complexType name="sLide">
-    	<xs:sequence>
-    		<xs:element name="text" type="tns:tExt" maxOccurs="unbounded" minOccurs="0">
-    		</xs:element>
-    		<xs:element name="shape" type="tns:sHape" maxOccurs="unbounded" minOccurs="0">
-    		</xs:element>
-    		<xs:element name="audio" type="tns:aUdio" maxOccurs="unbounded" minOccurs="0">
-    		</xs:element>
-    		<xs:element name="image" type="tns:iMage" maxOccurs="unbounded" minOccurs="0">
-    		</xs:element>
-    		<xs:element name="video" type="tns:video" maxOccurs="unbounded" minOccurs="0">
-    		</xs:element>
-    	</xs:sequence>
-    	<xs:attribute name="id" type="int"></xs:attribute>
-    	<xs:attribute name="duration" type="int" use="optional"></xs:attribute>
-    	<xs:attribute name="lastslide" type="boolean" use="optional"></xs:attribute>
-    </xs:complexType>
-
-    <xs:complexType name="dEfaults">
-    	<xs:sequence>
-    		<xs:element name="backgroundcolour" type="string" maxOccurs="1" minOccurs="1">
-    		</xs:element>
-    		<xs:element name="font" type="string" maxOccurs="1" minOccurs="1">
-    		</xs:element>
-    		<xs:element name="fontsize" type="string" maxOccurs="1" minOccurs="1">
-    		</xs:element>
-    		<xs:element name="fontcolour" type="string" maxOccurs="1" minOccurs="1">
-    		</xs:element>
-    		<xs:element name="linecolour" type="string" maxOccurs="1" minOccurs="1">
-    		</xs:element>
-    		<xs:element name="fillcolour" type="string" maxOccurs="1" minOccurs="1">
-    		</xs:element>
-    	</xs:sequence>
-    </xs:complexType>
-
-    <xs:complexType name="tExt">
-    	<xs:sequence>
-    		<xs:element name="textelement" type="tns:textElement" maxOccurs="unbounded" minOccurs="1"></xs:element>
-    	</xs:sequence>
-    	<xs:attribute name="font" type="string" use="optional"></xs:attribute>
-    	<xs:attribute name="fontsize" type="int" use="optional"></xs:attribute>
-    	<xs:attribute name="fontcolour" type="string" use="optional"></xs:attribute>
-    	<xs:attribute name="starttime" type="int" use="optional"></xs:attribute>
-    	<xs:attribute name="duration" type="int" use="optional"></xs:attribute>
-    	<xs:attribute name="layer" type="int"></xs:attribute>
-    	<xs:attribute name="xstart" type="int" use="required"></xs:attribute>
-    	<xs:attribute name="ystart" type="int" use="required"></xs:attribute>
-    	<xs:attribute name="xend" type="int" use="required"></xs:attribute>
-    	<xs:attribute name="yend" type="int" use="required"></xs:attribute>
-    </xs:complexType>
-
-    <xs:complexType name="textElement">
-    	<xs:sequence></xs:sequence>
-    	<xs:attribute name="bold" type="boolean" use="optional"></xs:attribute>
-    	<xs:attribute name="italic" type="boolean" use="optional"></xs:attribute>
-    	<xs:attribute name="underlined" type="boolean" use="optional"></xs:attribute>
-    	<xs:attribute name="hyperlink" type="boolean"></xs:attribute>
-    	<xs:attribute name="branch" type="int"></xs:attribute>
-    </xs:complexType>
-
-    <xs:complexType name="sHape">
-    	<xs:sequence>
-    		<xs:element name="point" type="tns:point"></xs:element>
-    	</xs:sequence>
-    	<xs:attribute name="totalpoints" type="int" use="required"></xs:attribute>
-    	<xs:attribute name="width" type="int" use="required"></xs:attribute>
-    	<xs:attribute name="height" type="int" use="required"></xs:attribute>
-    	<xs:attribute name="fillcolour" type="string" use="optional"></xs:attribute>
-    	<xs:attribute name="starttime" type="int" use="optional"></xs:attribute>
-    	<xs:attribute name="duration" type="int" use="optional"></xs:attribute>
-    	<xs:attribute name="layer" type="int" use="optional"></xs:attribute>
-    	<xs:attribute name="linecolour" type="string" use="optional"></xs:attribute>
-    	<xs:attribute name="branch" type="int" use="optional"></xs:attribute>
-    </xs:complexType>
-
-    <xs:complexType name="point">
-    	<xs:attribute name="num" type="int" use="required"></xs:attribute>
-    	<xs:attribute name="x" type="int" use="prohibited"></xs:attribute>
-    	<xs:attribute name="y" type="int" use="required"></xs:attribute>
-    </xs:complexType>
-
-    <xs:complexType name="aUdio">
-    	<xs:attribute name="urlname" type="string" use="required"></xs:attribute>
-    	<xs:attribute name="starttime" type="int" use="optional"></xs:attribute>
-    	<xs:attribute name="loop" type="boolean" use="optional"></xs:attribute>
-    </xs:complexType>
+	<xs:complexType name="documentInfo">
+		<xs:sequence>
+			<xs:element name="author" type="xs:string" maxOccurs="1"
+				minOccurs="1">
+			</xs:element>
+			<xs:element name="version" type="xs:string" minOccurs="1"
+				maxOccurs="1">
+			</xs:element>
+            <xs:element name="title" type="xs:string" maxOccurs="1" minOccurs="1"></xs:element>
+            <xs:element name="comment" type="xs:string" maxOccurs="1"
+				minOccurs="1">
+			</xs:element>
+			<xs:element name="width" type="xs:int" maxOccurs="1"
+				minOccurs="1">
+			</xs:element>
+			<xs:element name="height" type="xs:int" maxOccurs="1"
+				minOccurs="1">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
 
 
-    <xs:complexType name="iMage">
-    	<xs:attribute name="urlname" type="string" use="required"></xs:attribute>
-    	<xs:attribute name="xstart" type="int" use="required"></xs:attribute>
-    	<xs:attribute name="ystart" type="int" use="required"></xs:attribute>
-    	<xs:attribute name="width" type="int" use="optional"></xs:attribute>
-    	<xs:attribute name="height" type="int" use="optional"></xs:attribute>
-    	<xs:attribute name="starttime" type="int" use="optional"></xs:attribute>
-    	<xs:attribute name="duration" type="int" use="optional"></xs:attribute>
-    	<xs:attribute name="layer" type="int" use="optional"></xs:attribute>
-    	<xs:attribute name="branch" type="int" use="optional"></xs:attribute>
-    </xs:complexType>
+	<xs:element name="slideshow" type="slideshow"></xs:element>
 
-    <xs:complexType name="video">
-    	<xs:attribute name="urlname" type="string" use="required"></xs:attribute>
-    	<xs:attribute name="starttime" type="int" use="optional"></xs:attribute>
-    	<xs:attribute name="loop" type="boolean" use="optional"></xs:attribute>
-    	<xs:attribute name="xstart" type="int" use="required"></xs:attribute>
-    	<xs:attribute name="ystart" type="int" use="required"></xs:attribute>
-    	<xs:attribute name="layer" type="int" use="optional"></xs:attribute>
-    	<xs:attribute name="playtime" type="int"></xs:attribute>
-    	<xs:attribute name="duration" type="int" use="optional"></xs:attribute>
-    </xs:complexType>
+	<xs:complexType name="sLide">
+		<xs:sequence>
+			<xs:element name="text" type="tExt" maxOccurs="unbounded"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="shape" type="sHape" maxOccurs="unbounded"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="audio" type="aUdio" maxOccurs="unbounded"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="image" type="iMage" maxOccurs="unbounded"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="video" type="video" maxOccurs="unbounded"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:int"></xs:attribute>
+		<xs:attribute name="duration" type="xs:int" use="optional"></xs:attribute>
+		<xs:attribute name="lastSlide" type="xs:boolean" use="optional"></xs:attribute>
+	</xs:complexType>
+
+	<xs:complexType name="dEfaults">
+		<xs:sequence>
+			<xs:element name="backgroundcolour" type="xs:string"
+				maxOccurs="1" minOccurs="1">
+			</xs:element>
+			<xs:element name="font" type="xs:string" maxOccurs="1"
+				minOccurs="1">
+			</xs:element>
+			<xs:element name="fontsize" type="xs:string" maxOccurs="1"
+				minOccurs="1">
+			</xs:element>
+			<xs:element name="fontcolour" type="xs:string" maxOccurs="1"
+				minOccurs="1">
+			</xs:element>
+			<xs:element name="linecolour" type="xs:string" maxOccurs="1"
+				minOccurs="1">
+			</xs:element>
+			<xs:element name="fillcolour" type="xs:string" maxOccurs="1"
+				minOccurs="1">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="tExt">
+		<xs:sequence>
+			<xs:element name="textelement" type="textElement"
+				maxOccurs="unbounded" minOccurs="1"></xs:element>
+		</xs:sequence>
+		<xs:attribute name="font" type="xs:string" use="optional"></xs:attribute>
+		<xs:attribute name="fontsize" type="xs:int" use="optional"></xs:attribute>
+		<xs:attribute name="fontcolour" type="xs:string" use="optional"></xs:attribute>
+		<xs:attribute name="starttime" type="xs:int" use="optional"></xs:attribute>
+		<xs:attribute name="duration" type="xs:int" use="optional"></xs:attribute>
+		<xs:attribute name="layer" type="xs:int"></xs:attribute>
+		<xs:attribute name="xstart" type="xs:int" use="required"></xs:attribute>
+		<xs:attribute name="ystart" type="xs:int" use="required"></xs:attribute>
+		<xs:attribute name="xend" type="xs:int" use="required"></xs:attribute>
+		<xs:attribute name="yend" type="xs:int" use="required"></xs:attribute>
+	</xs:complexType>
+
+	<xs:complexType name="textElement">
+		<xs:sequence></xs:sequence>
+		<xs:attribute name="bold" type="xs:boolean" use="optional"></xs:attribute>
+		<xs:attribute name="italic" type="xs:boolean" use="optional"></xs:attribute>
+		<xs:attribute name="underlined" type="xs:boolean" use="optional"></xs:attribute>
+		<xs:attribute name="hyperlink" type="xs:boolean"></xs:attribute>
+		<xs:attribute name="branch" type="xs:int"></xs:attribute>
+	</xs:complexType>
+
+	<xs:complexType name="sHape">
+		<xs:sequence>
+			<xs:element name="point" type="point"></xs:element>
+		</xs:sequence>
+		<xs:attribute name="totalpoints" type="xs:int" use="required"></xs:attribute>
+		<xs:attribute name="width" type="xs:int" use="required"></xs:attribute>
+		<xs:attribute name="height" type="xs:int" use="required"></xs:attribute>
+		<xs:attribute name="fillcolour" type="xs:string" use="optional"></xs:attribute>
+		<xs:attribute name="starttime" type="xs:int" use="optional"></xs:attribute>
+		<xs:attribute name="duration" type="xs:int" use="optional"></xs:attribute>
+		<xs:attribute name="layer" type="xs:int" use="optional"></xs:attribute>
+		<xs:attribute name="linecolour" type="xs:string" use="optional"></xs:attribute>
+		<xs:attribute name="branch" type="xs:int" use="optional"></xs:attribute>
+	</xs:complexType>
+
+	<xs:complexType name="point">
+		<xs:attribute name="num" type="xs:int" use="required"></xs:attribute>
+		<xs:attribute name="x" type="xs:int" use="prohibited"></xs:attribute>
+		<xs:attribute name="y" type="xs:int" use="required"></xs:attribute>
+	</xs:complexType>
+
+	<xs:complexType name="aUdio">
+		<xs:attribute name="urlname" type="xs:string" use="required"></xs:attribute>
+		<xs:attribute name="starttime" type="xs:int" use="optional"></xs:attribute>
+		<xs:attribute name="loop" type="xs:boolean" use="optional"></xs:attribute>
+	</xs:complexType>
+
+
+	<xs:complexType name="iMage">
+		<xs:attribute name="urlname" type="xs:string" use="required"></xs:attribute>
+		<xs:attribute name="xstart" type="xs:int" use="required"></xs:attribute>
+		<xs:attribute name="ystart" type="xs:int" use="required"></xs:attribute>
+		<xs:attribute name="width" type="xs:int" use="optional"></xs:attribute>
+		<xs:attribute name="height" type="xs:int" use="optional"></xs:attribute>
+		<xs:attribute name="starttime" type="xs:int" use="optional"></xs:attribute>
+		<xs:attribute name="duration" type="xs:int" use="optional"></xs:attribute>
+		<xs:attribute name="layer" type="xs:int" use="optional"></xs:attribute>
+		<xs:attribute name="branch" type="xs:int" use="optional"></xs:attribute>
+	</xs:complexType>
+
+	<xs:complexType name="video">
+		<xs:attribute name="urlname" type="xs:string" use="required"></xs:attribute>
+		<xs:attribute name="starttime" type="xs:int" use="optional"></xs:attribute>
+		<xs:attribute name="loop" type="xs:boolean" use="optional"></xs:attribute>
+		<xs:attribute name="xstart" type="xs:int" use="required"></xs:attribute>
+		<xs:attribute name="ystart" type="xs:int" use="required"></xs:attribute>
+		<xs:attribute name="layer" type="xs:int" use="optional"></xs:attribute>
+		<xs:attribute name="playtime" type="xs:int"></xs:attribute>
+		<xs:attribute name="duration" type="xs:int" use="optional"></xs:attribute>
+	</xs:complexType>
 </xs:schema>
