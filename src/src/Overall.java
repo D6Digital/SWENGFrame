@@ -42,7 +42,7 @@ public class Overall {
 		
 		//GUI utilities = new GUI("utilitiesSelectionPanel");  // can open all utilities from this instance
         //GUI diceRoller = new GUI("diceRollerPanel");
-	    //GUI calculator = new GUI("calculatorPanel");
+	    GUI calculator = new GUI("calculatorPanel");
 		Overall ThisIsIt = new Overall("src/BasicExample.xml");
 		System.out.println(ThisIsIt.slideList.getFont());
 		

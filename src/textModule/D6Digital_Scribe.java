@@ -42,8 +42,12 @@ public class D6Digital_Scribe extends JPanel{
 
 	/**
 	 * produces a JPanel containing text from the Text object which is not editable
-	 * and is transparent by default. when resized so that lines of text are longer than
-	 * the width the text will wrap onto the next line, text at the bottom will be invisible 
+	 * and is transparent by default. 
+	 * 
+	 * when resized so that lines of text are longer than
+	 * the width the text will wrap onto the next line. 
+	 * 
+	 * Text at the bottom will be invisible 
 	 * if the height of the panel is too small to contain the text.
 	 * @param text
 	 */
@@ -144,42 +148,7 @@ public class D6Digital_Scribe extends JPanel{
 	}
 	
 	
-	/**
-	 * Used to text the text module but will later be removed.
-	 * Eventually just the constructor will be used which produces the JPanel
-	 */
-	public static void showAndDisplayGUI()
-	{
-		TextBody myText1 = new TextBody();
-		myText1.setBold(true);
-		myText1.setText("\u2022\tThis is bold! \n\n");
-		
-		
-		TextBody myText2 = new TextBody();
-		myText2.setItalic(true);
-		myText2.setText("\t\u25E6\tI would challenge you to a battle of wits, but I see you are unarmed! \n\n");
-		
-		
-		TextBody myText3 = new TextBody();
-		myText3.setUnderlined(true);
-		myText3.setText("\n\nThis is underlined");
-		
-		Text exampleText = new Text();
-		exampleText.setBody(myText1);
-		exampleText.setBody(myText2);
-		exampleText.setBody(myText3);
-		
-		exampleText.setFontSize(30);
-		exampleText.setFontColor("#5555FF");
-		
-		JFrame frame = new JFrame();
-		frame.setSize(640, 400);
-		frame.setLayout(new BorderLayout());
-		D6Digital_Scribe shakespeare = new D6Digital_Scribe(exampleText);
-		shakespeare.setBackground(new Color(0,200,100));
-		frame.add(shakespeare);
-		frame.setVisible(true);
-	}
+	
 
 
 }
