@@ -222,18 +222,16 @@ public class SlidePanel extends JPanel implements MouseListener{
 		// Eventually Use the bought-in module to improve this method
 		
 		TImage im = new TImage(image.getFile(),0,0);
-		
-//		JLabel imageLabel = ImagePainter.produceImage(image.getFile());
-		
+				
 		ImagePanel imagePanel = new ImagePanel(im);
-		//imagePanel.setSize(new Dimension(image.getWidth(), image.getHeight()));
+
 		imagePanel.setBounds(0,0, image.getWidth(), image.getHeight());
 		
 		slideMediaObject imageObject = new slideMediaObject(image.getBranch());
 		imageObject.addMouseListener(imageObject);
 		
 		imageObject.add(imagePanel);
-		//imageObject.setSize(new Dimension(image.getWidth(), image.getHeight()));
+
 		imageObject.setBounds(image.getX_coord(),image.getY_coord(), image.getWidth(), image.getHeight());
 		imageObject.setVisible(true);
 		
