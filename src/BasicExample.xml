@@ -34,14 +34,14 @@
 		</text>
 		
 		<shape totalpoints="3" width="100" height="100" fillcolour="#0000FF"
-			starttime="500" duration="30" layer="2" lineColour="#FFFFFF" branch="0">
+			starttime="500" duration="6" layer="2" lineColour="#FFFFFF" branch="0">
 			<point num="00" x="600" y="10"></point>
 			<point num="01" x="700" y="40"></point>
 			<point num="02" x="650" y="150"></point>
 		</shape>
-		<audio urlname="src/XMLBits/03 The First Steps.mp3" starttime="0" loop="true"></audio>
+		<audio urlname="src/XMLBits/03 The First Steps.mp3" starttime="8" loop="true"></audio>
 		<image urlname="src/XMLBits/char1jovian_spy.jpg" xstart="10" ystart="10"
-			width="282" height="463" starttime="0" duration="100" layer="1"
+			width="282" height="463" starttime="2" duration="100" layer="1"
 			branch="1"></image>
 	</slide>
 	<slide id="2" duration="240" lastSlide="true">

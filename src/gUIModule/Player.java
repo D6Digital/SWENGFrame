@@ -15,12 +15,10 @@ public class Player {
 		
 		slidePanel.setupSlide(presentation.get(0));
 		slidePanel.loadPresentation(presentation);
-		slidePanel.setVisibility(true);
 		
-		testFrame.add(slidePanel);		
+		testFrame.add(slidePanel);	
 		testFrame.setVisible(true);
 		
-		slidePanel.playSounds();
 		
 		testFrame.revalidate();
 		

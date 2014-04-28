@@ -6,6 +6,8 @@ import imageModule.ImagePainter;
 
 
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
@@ -13,6 +15,7 @@ import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.Timer;
 
 
 import Graphics.graphicsObject;
@@ -57,6 +60,7 @@ public class SlidePanel extends JPanel implements MouseListener{
 	String slideName;
 	Slide currentSlide;
 	Presentation presentation;
+	Timer theTimer;
 	
 	EmbeddedAudioPlayer audioPlayer;
 
@@ -108,7 +112,7 @@ public class SlidePanel extends JPanel implements MouseListener{
 	    
 	   
         addSound();
-          
+       /*   
 	   for(Image image: imageList) {
 	        addImage(image);
 	   }
@@ -120,8 +124,50 @@ public class SlidePanel extends JPanel implements MouseListener{
        }
        for(Text text : textList) {
             addText(text);
-       }
+       }*/
 	    
+       
+       int delay = 1000; // 1000ms or 1 second timer
+       ActionListener taskPerformer= new ActionListener() {
+		int count = 0;
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			for(Image image: currentSlide.getImageList()) {
+				if(image.getStart() == count)
+				{
+					addImage(image);
+				}
+		   }
+	       for(Video video: currentSlide.getVideoList()) {
+	    	   if(video.getStart() == count)
+				{
+					addVideo(video);
+				}
+	       }
+	       for(Shapes shape: currentSlide.getShapeList()) {
+	    	   if(shape.getStart() == count)
+				{
+					addShape(shape);
+				}
+	       }
+	       for(Text text : currentSlide.getTextList()) {
+	    	   if(text.getStart() == count)
+				{
+					addText(text);
+				}
+	       }
+	       for(Sound sound : currentSlide.getSoundList()) {
+	    	   audioPlayer.prepareMedia(sound.getFile(), sound.getStart());
+	   		   audioPlayer.playMedia();
+	       }
+		count ++;
+		
+		}
+       };
+       theTimer = new Timer(delay, taskPerformer);
+       theTimer.start();
+       
+       this.setVisible(true);
 	}
 	
 	
@@ -277,6 +323,7 @@ public class SlidePanel extends JPanel implements MouseListener{
 		imageObject.setVisible(true);
 		
 		this.add(imageObject);
+		this.repaint();
 	}
 	
 	
@@ -294,6 +341,7 @@ public class SlidePanel extends JPanel implements MouseListener{
 		
 		videoPanel.setBounds(video.getX_coord(), video.getY_coord(), video.getWidth(), video.getHeight());
         this.add(videoPanel);
+        this.repaint();
 	}
 	
 	
@@ -338,6 +386,7 @@ public class SlidePanel extends JPanel implements MouseListener{
 		JPanel textPanel = new Scribe(text);
 		textPanel.setBounds(text.getX_coord(), text.getY_coord(), text.getXend(), text.getYend());
 		this.add(textPanel);
+		this.repaint();
 	}
 
 
