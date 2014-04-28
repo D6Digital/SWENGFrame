@@ -38,25 +38,26 @@ public class VideoPlayer {
 	protected static PlayerControlsPanel ControlPanel;
 	protected static JLabel pausedLabel;
 	
-	
-	public VideoPlayer(Video Video) {
+
+	public VideoPlayer(Video video) {
 		
 	
 		NativeLibrary.addSearchPath(
                 RuntimeUtil.getLibVlcLibraryName(), "resources/lib/vlc-2.1.3"
             );
 		
-		
-		int xcoord = Video.getX_coord();
-		int ycoord = Video.getY_coord();
-		int start = Video.getStart();
-		int end = Video.getStart() + Video.getDuration();
-		int layer = Video.getLayer();
-		String file = Video.getFile();
-		int width = Video.getWidth();
-		int height = Video.getHeight();
-		int length = Video.getLength();
+	    int xcoord = video.getX_coord();
+	    final int ycoord = video.getY_coord();
+	    int start = video.getStart();
+	    int end = video.getStart() + video.getDuration();
+	    int layer = video.getLayer();
+	    String file = video.getFile();
+	    int width = video.getWidth();
+	    final int height = video.getHeight();
+	    int length = video.getLength();
+
 		masterPanel = new JPanel();
+		masterPanel.setBounds(0, 0, video.getWidth(), video.getHeight());
 		
 		System.out.println("xcoord = " + xcoord);
 		System.out.println("ycoord = " + ycoord);
@@ -100,12 +101,14 @@ public class VideoPlayer {
 	    
 	    masterPanel.add(ControlPanel, BorderLayout.SOUTH);
 	    masterPanel.add(vidpanel, BorderLayout.CENTER);    
+	    //masterPanel.add(vidpanel);    
 	    //frame.pack();
 	    //frame.setVisible(true);
 		
 	   // mediaPlayer.playMedia("resources/resources/video/"+file);
 	   // mediaPlayer.playMedia("resources/video/video/"+file, ":start-time="+start, ":stop-time="+end);
-
+	    System.out.println(masterPanel.getLocation().x);
+	    System.out.println(masterPanel.getLocation().y);
 	    
 	    canvas.addMouseListener(new java.awt.event.MouseAdapter() {  
 	    	@Override
@@ -122,19 +125,27 @@ public class VideoPlayer {
 		 	    }	    	
 	    	});
 	    
-	    canvas.addMouseMotionListener(new java.awt.event.MouseMotionAdapter(){
+	    masterPanel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter(){
 	    	@Override
 	    	public void mouseMoved(MouseEvent e1){
 	    		int xCoordinate = e1.getX();
 	    		int yCoordinate = e1.getY();
 	    		
-	    		System.out.println(xCoordinate + "," + yCoordinate);
+	    		//System.out.println(xCoordinate + "," + yCoordinate);
+	    		System.out.println("---------listener------------");
+	    		System.out.println(yCoordinate);
+	    		System.out.println((ycoord + height)- (height*0.2));
+	    		System.out.println("---------END listener------------");
 	    		
-	    		if (yCoordinate > 200){
-	    			ControlPanel.setVisible(true);
+	    		if (yCoordinate > ((ycoord + height)- (height*0.2))){
+	    			//if(!ControlPanel.isVisible()) {
+	    			    ControlPanel.setVisible(true);
+	    			//}
 	    		}
-	    		else{
-	    			ControlPanel.setVisible(false);
+	    		else {
+                    //if(ControlPanel.isVisible()) {
+                        ControlPanel.setVisible(false);
+                    //}
 	    		}
 	    	}
 	    });
@@ -147,7 +158,13 @@ public class VideoPlayer {
 	    		ControlPanel.setVisible(false);  
 	    		}
 	    	});
-
+        
+        ControlPanel.addMouseListener(new java.awt.event.MouseAdapter() {   
+            @Override
+            public void mouseEntered(java.awt.event.MouseEvent evt) {        
+                ControlPanel.setVisible(true);  
+                }
+            });
 	      
 
 	 pausedLabel.addMouseListener(new java.awt.event.MouseAdapter() {   
@@ -160,6 +177,11 @@ public class VideoPlayer {
 		    	}	    	
 	    	});
 	}
+	
+	public void setupListeners(int controlPanelYLocation) {
+	    
+	}
+	
 	/**
 	 * Shows pause label when pause button is pressed
 	 */
