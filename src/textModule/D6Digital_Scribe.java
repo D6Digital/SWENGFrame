@@ -5,29 +5,21 @@ package textModule;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Cursor;
 import java.awt.Font;
 import java.awt.FontFormatException;
 import java.awt.GraphicsEnvironment;
-import java.awt.Point;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.awt.event.MouseMotionListener;
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextPane;
-import javax.swing.text.AttributeSet;
 import javax.swing.text.BadLocationException;
-import javax.swing.text.Element;
 import javax.swing.text.Style;
 import javax.swing.text.StyleConstants;
 import javax.swing.text.StyleContext;
 import javax.swing.text.StyledDocument;
-import javax.swing.text.html.HTML;
+
 
 
 
@@ -49,10 +41,15 @@ public class D6Digital_Scribe extends JPanel{
 	private Text textObject;
 
 	/**
-	 * produces a JPanel containing text from the text object
+	 * produces a JPanel containing text from the Text object which is not editable
+	 * and is transparent by default. when resized so that lines of text are longer than
+	 * the width the text will wrap onto the next line, text at the bottom will be invisible 
+	 * if the height of the panel is too small to contain the text.
 	 * @param text
 	 */
 	public D6Digital_Scribe(Text text) {
+		
+		this.setOpaque(false);
 		
 		textObject = text;
 		
@@ -98,12 +95,8 @@ public class D6Digital_Scribe extends JPanel{
 		addStylesToDocument(doc);
 		
 		Style newStyle = doc.addStyle("newStyle", doc.getStyle("defaultStyle"));
-		int i = 0;
-		while(i< 2 )
+		for(TextBody text : textObject.getTextBody())
 		{
-			TextBody text;
-			text = textObject.getBody(i);
-			i++;
 			
 			newStyle = doc.getStyle("defaultStyle");
 	
@@ -124,7 +117,7 @@ public class D6Digital_Scribe extends JPanel{
 	}
 
 	/**
-	 * adds a default style
+	 * adds the default style to the document which uses the font, size and colour in Text
 	 * @param doc
 	 */
 	private void addStylesToDocument(StyledDocument doc) {
@@ -159,32 +152,31 @@ public class D6Digital_Scribe extends JPanel{
 	{
 		TextBody myText1 = new TextBody();
 		myText1.setBold(true);
-		myText1.setText("\u2022\tthis is bold \n\n");
+		myText1.setText("\u2022\tThis is bold! \n\n");
 		
 		
 		TextBody myText2 = new TextBody();
 		myText2.setItalic(true);
-		myText2.setText("\t\u25E6\tThis is not ");
+		myText2.setText("\t\u25E6\tI would challenge you to a battle of wits, but I see you are unarmed! \n\n");
 		
 		
 		TextBody myText3 = new TextBody();
-		myText3.setText("This is not Subscript \n");
+		myText3.setUnderlined(true);
+		myText3.setText("\n\nThis is underlined");
 		
-		TextBody myText4 = new TextBody();
-		myText4.setText("NOT TO GOOGLE");
-		
-		ArrayList<TextBody> textContents = new ArrayList<TextBody>();
-		textContents.add(myText1);
-		textContents.add(myText2);
-		textContents.add(myText3);
-		textContents.add(myText4);
 		Text exampleText = new Text();
+		exampleText.setBody(myText1);
+		exampleText.setBody(myText2);
+		exampleText.setBody(myText3);
 		
+		exampleText.setFontSize(30);
+		exampleText.setFontColor("#5555FF");
 		
 		JFrame frame = new JFrame();
 		frame.setSize(640, 400);
 		frame.setLayout(new BorderLayout());
 		D6Digital_Scribe shakespeare = new D6Digital_Scribe(exampleText);
+		shakespeare.setBackground(new Color(0,200,100));
 		frame.add(shakespeare);
 		frame.setVisible(true);
 	}

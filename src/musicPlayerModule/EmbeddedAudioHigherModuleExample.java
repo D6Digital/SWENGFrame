@@ -42,7 +42,7 @@ public class EmbeddedAudioHigherModuleExample {
        panel.add(label);
        frame.add(panel);
 
-       
+       player.prepareMediaWithDuration("src/XMLBits/RunWithUs.mp3", 30, 5, false);
       // player.playMedia("C:\\Users\\Public\\Music\\Sample Music\\Kalimba.mp3");
        
        play = new JButton("PLAY");
@@ -57,9 +57,9 @@ public class EmbeddedAudioHigherModuleExample {
                 @Override
                 public void actionPerformed(ActionEvent arg0) {
                     
-                    player.prepareMedia("src/XMLBits/RunWithUs.mp3", 30, 40);
+                   
                     //player.prepareMedia("src/XMLBits/RunWithUs.mp3", 30);
-                    player.play();
+                    player.playMedia();
 //                    //player.playMedia("C:\\xtemp\\Neil_Landstrumm_22_02_14_HOG_21st_birthday.mp3");
 //                    player.pauseMedia();
 //                    System.out.println("are we here?");

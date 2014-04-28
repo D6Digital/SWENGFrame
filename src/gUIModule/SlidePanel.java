@@ -4,6 +4,8 @@ package gUIModule;
 import graphicsModule.GraphicsPainter;
 import imageModule.ImagePainter;
 
+
+import java.awt.Color;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
@@ -12,11 +14,19 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+
 import Graphics.graphicsObject;
+
+import Images.ImagePanel;
+import Images.TImage;
 
 import musicPlayerModule.EmbeddedAudioPlayer;
 import presentation.Image;
+
 import presentation.Point;
+
+import presentation.Presentation;
+
 import presentation.Shapes;
 import presentation.Slide;
 import presentation.Sound;
@@ -46,6 +56,7 @@ public class SlidePanel extends JPanel implements MouseListener{
 	int slideID;
 	String slideName;
 	Slide currentSlide;
+	Presentation presentation;
 	
 	EmbeddedAudioPlayer audioPlayer;
 
@@ -59,6 +70,7 @@ public class SlidePanel extends JPanel implements MouseListener{
 	public SlidePanel() {
 		super();
 		
+		
 		audioPlayer = new EmbeddedAudioPlayer(vlcLibraryPath );
 		// set layout manager to null so media components can be added to their specific co-ordinates
 		this.setLayout(null);
@@ -67,6 +79,11 @@ public class SlidePanel extends JPanel implements MouseListener{
 		this.setVisibility(false);
 		
 		// TODO ensure this panel is ready to be displayed when necessary
+	}
+	
+	public void loadPresentation(Presentation presentation) {
+		this.presentation = presentation;
+		this.setBackground(Color.ORANGE);
 	}
 	
 	
@@ -86,10 +103,9 @@ public class SlidePanel extends JPanel implements MouseListener{
 	    ArrayList<Shapes> shapeList = currentSlide.getShapeList();
 	    ArrayList<Sound> soundList = currentSlide.getSoundList();
 	    
-	    
-	    
 	    currentSlide.getSlideID();
 	    currentSlide.getSlideName();
+	    
 	   
         addSound();
           
@@ -125,6 +141,7 @@ public class SlidePanel extends JPanel implements MouseListener{
 		
 		this.removeAll();
 		this.setupSlide(newSlide);
+		this.repaint();
 		
 	}
 	
@@ -166,6 +183,7 @@ public class SlidePanel extends JPanel implements MouseListener{
 		//Get the branch value assigned to the object of type slideObject
 		int branch = eventSource.getBranch();
 		if (branch != 0){
+			this.refreshSlide(presentation.getSlideList().get(branch));
 			//branch to slide specified by the object
 		}
 	}
@@ -263,14 +281,23 @@ public class SlidePanel extends JPanel implements MouseListener{
 	 */
 	private void addImage(Image image){
 		// Eventually Use the bought-in module to improve this method
-		JLabel imageLabel = ImagePainter.produceImage(image.getFile());
 		
-        
+		TImage im = new TImage(image.getFile(),0,0);
+		
+//		JLabel imageLabel = ImagePainter.produceImage(image.getFile());
+		
+		ImagePanel imagePanel = new ImagePanel(im);
+		//imagePanel.setSize(new Dimension(image.getWidth(), image.getHeight()));
+		imagePanel.setBounds(0,0, image.getWidth(), image.getHeight());
+		
 		slideMediaObject imageObject = new slideMediaObject(image.getBranch());
-		imageObject.addMouseListener(imageObject);
+		imageObject.addMouseListener(this);
 		
-		imageObject.add(imageLabel);
-		imageObject.setBounds(image.getX_coord(), image.getY_coord(), image.getWidth(), image.getHeight());
+		imageObject.add(imagePanel);
+		//imageObject.setSize(new Dimension(image.getWidth(), image.getHeight()));
+		imageObject.setBounds(image.getX_coord(),image.getY_coord(), image.getWidth(), image.getHeight());
+		imageObject.setVisible(true);
+		
 		this.add(imageObject);
 	}
 	
@@ -331,9 +358,6 @@ public class SlidePanel extends JPanel implements MouseListener{
 	private void addText(Text text){
 		// TODO use .setBounds to define panel size when Text.java has updated
 		JPanel textPanel = new Scribe(text);
-		
-		
-		
 		textPanel.setBounds(text.getX_coord(), text.getY_coord(), text.getXend(), text.getYend());
 		this.add(textPanel);
 	}
