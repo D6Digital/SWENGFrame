@@ -12,8 +12,11 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import Graphics.graphicsObject;
+
 import musicPlayerModule.EmbeddedAudioPlayer;
 import presentation.Image;
+import presentation.Point;
 import presentation.Shapes;
 import presentation.Slide;
 import presentation.Sound;
@@ -99,7 +102,6 @@ public class SlidePanel extends JPanel implements MouseListener{
        for(Shapes shape: shapeList) {
            addShape(shape);
        }
-       
        for(Text text : textList) {
             addText(text);
        }
@@ -197,16 +199,61 @@ public class SlidePanel extends JPanel implements MouseListener{
 	 * @param shape
 	 */
 	private void addShape(Shapes shape){
-		// Eventually Use the bought-in module to improve this method
-		JPanel shapePanel = GraphicsPainter.producePanel(shape.getWidth(), shape.getHeight(), shape.getFillColourObject());
+		int pointX = 0;
+		int pointY = 0;
+		int highX = 0;
+		int lowX = 0; 
+		int highY = 0;
+		int lowY = 0;
+		int boundWidth = 0;
+		int boundHeight = 0;
 		
-        
+		graphicsObject graphic = new graphicsObject(shape.getLineColor(), shape.getFillColor());
+		
+		graphic.setTotalPoints(shape.getNumberOfPoints());
+		
+		if(shape.getPointList().size() > 1){			
+			for(int i=0; i<(shape.getNumberOfPoints()); i++){
+				pointX = shape.getPoint(i).getX();
+				pointY = shape.getPoint(i).getY();
+				graphic.setPoint (i+1, pointX, pointY);
+				if (i==0){
+					highX = pointX;
+					lowX = pointX;
+					highY = pointY;
+					lowY = pointY;
+				}
+				else{
+					if (pointX > highX) highX = pointX;
+					if (pointX < lowX) lowX = pointX;
+					if (pointY > highY) highY = pointY;
+					if (pointY < lowY) lowY = pointY;
+				}
+			}
+		}
+		else{
+			graphic.setWidth(shape.getWidth());
+			graphic.setHeight(shape.getHeight());
+			graphic.setPoint(1, shape.getX_coord(), shape.getY_coord());
+			graphic.setIsRegularShape(true);
+			lowX = shape.getX_coord() - (shape.getWidth()/2);
+			lowY = shape.getY_coord() - (shape.getHeight()/2);
+			highX = shape.getX_coord() + (shape.getWidth()/2);
+			highY = shape.getY_coord() + (shape.getHeight()/2);
+		}
+		
+		boundWidth = highX - lowX;
+		if (boundWidth == 0) boundWidth = 1;
+		boundHeight = highY - lowY;
+		if (boundHeight == 0) boundHeight = 1;
+				
 		slideMediaObject shapeObject = new slideMediaObject(shape.getBranch());
         shapeObject.addMouseListener(shapeObject);
 		
-        shapeObject.add(shapePanel);
+        shapeObject.add(graphic);
+     
         // The x and y of a shape needs to be derived from the leftmost x and highest y co-ordinate in the point array 
-        shapeObject.setBounds(shape.getPoint(0).getX(), shape.getPoint(0).getY(), shape.getWidth(), shape.getHeight());
+        shapeObject.setBounds(lowX, lowY, boundWidth, boundHeight);
         this.add(shapeObject);
 	}
 
