@@ -39,6 +39,16 @@
 			<point num="01" x="700" y="40"></point>
 			<point num="02" x="650" y="150"></point>
 		</shape>
+		<shape totalpoints="4" width="80" height="170" lineColour="#000000"
+			fillcolour="#00FF00" layer="3" branch="1" duration="40" starttime="80">
+			<point num="00" x="500" y="400"></point>
+		</shape>
+		<shape lineColour="#FF0000" totalpoints="2" fillcolour="#FFFFFF"
+			layer="00" branch="0" duration="20" height="50" starttime="10"
+			width="50">
+			<point num="00" x="100" y="550"></point>
+			<point num="00" x="350" y="550"></point>
+		</shape>
 		<audio urlname="src/XMLBits/03 The First Steps.mp3" starttime="0" loop="true"></audio>
 		<image urlname="src/XMLBits/char1jovian_spy.jpg" xstart="10" ystart="10"
 			width="282" height="463" starttime="0" duration="100" layer="1"

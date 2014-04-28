@@ -19,6 +19,7 @@ public class slideMediaObject extends JPanel implements MouseListener{
 	 */
 	public slideMediaObject(int branch) {
 		super();
+		this.setOpaque(false);
 		this.setLayout(null);
 		this.branch = branch;
 	}
