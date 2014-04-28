@@ -346,7 +346,7 @@ public class SlidePanel extends JPanel implements MouseListener{
 		{
 		Sound sound = soundList.get(0);
 		audioPlayer.prepareMedia(sound.getFile(), sound.getStart());
-		audioPlayer.play();
+		audioPlayer.playMedia();
 		}
 	}
 	
