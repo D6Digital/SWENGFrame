@@ -59,7 +59,7 @@ public class Scribe extends JPanel implements MouseListener, MouseMotionListener
 		textObject = text;
 		
 		
-		
+		this.setOpaque(false);
 		
 		font = new Font(textObject.getFile(), Font.PLAIN, 12);
 		if(font.getFamily().equals("Dialog")){
