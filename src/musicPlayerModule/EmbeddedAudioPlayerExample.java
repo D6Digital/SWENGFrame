@@ -43,7 +43,7 @@ public class EmbeddedAudioPlayerExample {
 	    
 	    // set a start and end time for the music then start playing
 	    player.prepareMedia("C:\\Users\\Public\\Music\\Sample Music\\Kalimba.mp3", 50, 60);
-	    player.play();
+	    player.playMedia();
 	    
 	    Thread.sleep(15000);
 	    
@@ -53,7 +53,7 @@ public class EmbeddedAudioPlayerExample {
 		
 	    Thread.sleep(5000);
 	    
-	    player.play();
+	    player.playMedia();
 	    
 	}
 	
