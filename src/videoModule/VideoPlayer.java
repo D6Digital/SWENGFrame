@@ -25,12 +25,13 @@ import uk.co.caprica.vlcj.runtime.RuntimeUtil;
 
 import com.sun.jna.NativeLibrary;
 
-public class VideoPlayer extends JPanel{
+public class VideoPlayer {
 
 	protected static JButton playButton, stopButton, closeButton;
 	protected static EmbeddedMediaPlayer mediaPlayer;
 	protected static JPanel vidControlPanel;
 	protected static JPanel vidpanel;
+	protected static JPanel masterPanel;
 	protected static JFrame frame;
 	protected static JSlider bar;
 	protected static ImageIcon img, img2;
@@ -42,8 +43,10 @@ public class VideoPlayer extends JPanel{
 		
 	
 		NativeLibrary.addSearchPath(
-                RuntimeUtil.getLibVlcLibraryName(), "resources/resources/lib/vlc-2.0.1"
+                RuntimeUtil.getLibVlcLibraryName(), "resources/lib/vlc-2.1.3"
             );
+		
+		
 		int xcoord = Video.getX_coord();
 		int ycoord = Video.getY_coord();
 		int start = Video.getStart();
@@ -53,7 +56,7 @@ public class VideoPlayer extends JPanel{
 		int width = Video.getWidth();
 		int height = Video.getHeight();
 		int length = Video.getLength();
-		
+		masterPanel = new JPanel();
 		
 		System.out.println("xcoord = " + xcoord);
 		System.out.println("ycoord = " + ycoord);
@@ -67,8 +70,8 @@ public class VideoPlayer extends JPanel{
 		
 		frame = new JFrame("Video Player");
 		vidpanel = new JPanel();
-		img = new ImageIcon("resources/resources/buttons/pauseText.png");
-	    img2 = new ImageIcon("resources/resources/buttons/StoppedText.png");
+		img = new ImageIcon("resources/buttons/pauseText.png");
+	    img2 = new ImageIcon("resources/buttons/StoppedText.png");
 	    pausedLabel = new JLabel(img);
 	    Canvas canvas = new Canvas();    
 		
@@ -93,13 +96,15 @@ public class VideoPlayer extends JPanel{
 	        
 	    vidpanel.add(canvas);
 	    
-	    frame.add(ControlPanel, BorderLayout.SOUTH);
-	    frame.add(vidpanel, BorderLayout.CENTER);    
-	    frame.pack();
-	    frame.setVisible(true);
+	    
+	    
+	    masterPanel.add(ControlPanel, BorderLayout.SOUTH);
+	    masterPanel.add(vidpanel, BorderLayout.CENTER);    
+	    //frame.pack();
+	    //frame.setVisible(true);
 		
 	   // mediaPlayer.playMedia("resources/resources/video/"+file);
-	    mediaPlayer.playMedia("resources/resources/video/"+file, ":start-time="+start, ":stop-time="+end);
+	   // mediaPlayer.playMedia("resources/video/video/"+file, ":start-time="+start, ":stop-time="+end);
 
 	    
 	    canvas.addMouseListener(new java.awt.event.MouseAdapter() {  
@@ -172,13 +177,18 @@ public class VideoPlayer extends JPanel{
 //		}
 //	}
 
-	public static void main(String[] args) {
-		
-		Video Video = new Video(3, 5, 30, 50, 8, "avengers.mp4", 4, 76, 89);
-        new VideoPlayer(Video);
-                                     
 
-	}
+    public JPanel getPanel() {
+        return masterPanel;
+    }
+
+//	public static void main(String[] args) {
+//		
+//		Video Video = new Video(3, 5, 30, 50, 8, "monstersinc_high.mpg", 4, 76, 89);
+//        new VideoPlayer(Video);
+//                                     
+//
+//	}
 	
  
 

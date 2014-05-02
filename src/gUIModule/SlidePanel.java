@@ -6,8 +6,12 @@ import imageModule.ImagePainter;
 
 
 import java.awt.Color;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import java.awt.Dimension;
+
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
@@ -87,7 +91,7 @@ public class SlidePanel extends JPanel implements MouseListener{
 	
 	public void loadPresentation(Presentation presentation) {
 		this.presentation = presentation;
-		this.setBackground(Color.ORANGE);
+		//this.setBackground(Color.ORANGE);
 	}
 	
 	
@@ -250,15 +254,21 @@ public class SlidePanel extends JPanel implements MouseListener{
 		int boundWidth = 0;
 		int boundHeight = 0;
 		
+		System.out.printf("Adding Shape%n");
+		
 		graphicsObject graphic = new graphicsObject(shape.getLineColor(), shape.getFillColor());
+		
+		System.out.printf("Set Graphic%n");
 		
 		graphic.setTotalPoints(shape.getNumberOfPoints());
 		
-		if(shape.getPointList().size() > 1){			
+		if(shape.getPointList().size() > 1){
+			System.out.printf("Point Shape: %d%n", shape.getPointList().size());
 			for(int i=0; i<(shape.getNumberOfPoints()); i++){
+				
 				pointX = shape.getPoint(i).getX();
 				pointY = shape.getPoint(i).getY();
-				graphic.setPoint (i+1, pointX, pointY);
+				System.out.printf("Reading Point %d, x %d, y %d%n", i, pointX, pointY);
 				if (i==0){
 					highX = pointX;
 					lowX = pointX;
@@ -272,31 +282,49 @@ public class SlidePanel extends JPanel implements MouseListener{
 					if (pointY < lowY) lowY = pointY;
 				}
 			}
+			for(int i=0; i<(shape.getNumberOfPoints()); i++){
+				
+				pointX = shape.getPoint(i).getX() - lowX;
+				pointY = shape.getPoint(i).getY() - lowY;
+				System.out.printf("Setting Point %d, x %d, y %d%n", i, pointX, pointY);
+				graphic.setPoint (i+1, pointX, pointY);
+			}
 		}
 		else{
+			System.out.printf("Regular %d Side Shape%n", shape.getNumberOfPoints());
 			graphic.setWidth(shape.getWidth());
 			graphic.setHeight(shape.getHeight());
-			graphic.setPoint(1, shape.getX_coord(), shape.getY_coord());
+			graphic.setPoint(1, shape.getWidth()/2, shape.getHeight()/2);
 			graphic.setIsRegularShape(true);
-			lowX = shape.getX_coord() - (shape.getWidth()/2);
-			lowY = shape.getY_coord() - (shape.getHeight()/2);
-			highX = shape.getX_coord() + (shape.getWidth()/2);
-			highY = shape.getY_coord() + (shape.getHeight()/2);
+			lowX = shape.getPoint(0).getX() - (shape.getWidth()/2);
+			lowY = shape.getPoint(0).getX() - (shape.getHeight()/2);
+			highX = lowX + shape.getWidth();
+			highY = lowY + shape.getHeight();
 		}
+				
+		System.out.printf("Fill Colour %s, Line Colour %s%n", shape.getFillColor(), shape.getLineColor());
 		
 		boundWidth = highX - lowX;
 		if (boundWidth == 0) boundWidth = 1;
 		boundHeight = highY - lowY;
 		if (boundHeight == 0) boundHeight = 1;
+		
+		System.out.printf("Shape lowX %d, Shape lowY %d%n", lowX, lowY);
+		System.out.printf("Shape Width %d, Shape Height %d%n", boundWidth, boundHeight);
 				
 		slideMediaObject shapeObject = new slideMediaObject(shape.getBranch());
-        shapeObject.addMouseListener(shapeObject);
-		
-        shapeObject.add(graphic);
+        shapeObject.addMouseListener(this);
+        
+        graphic.setBounds(0, 0, boundWidth+1, boundHeight+1);
+		shapeObject.add(graphic);
+        
+        System.out.printf("Added Shape%n");
      
         // The x and y of a shape needs to be derived from the leftmost x and highest y co-ordinate in the point array 
-        shapeObject.setBounds(lowX, lowY, boundWidth, boundHeight);
+        shapeObject.setBounds(lowX, lowY, boundWidth +1, boundHeight +1);
         this.add(shapeObject);
+        
+        System.out.printf("Added Media Object%n");
 	}
 
 	/**
@@ -307,18 +335,16 @@ public class SlidePanel extends JPanel implements MouseListener{
 		// Eventually Use the bought-in module to improve this method
 		
 		TImage im = new TImage(image.getFile(),0,0);
-		
-//		JLabel imageLabel = ImagePainter.produceImage(image.getFile());
-		
+				
 		ImagePanel imagePanel = new ImagePanel(im);
-		//imagePanel.setSize(new Dimension(image.getWidth(), image.getHeight()));
+
 		imagePanel.setBounds(0,0, image.getWidth(), image.getHeight());
 		
 		slideMediaObject imageObject = new slideMediaObject(image.getBranch());
 		imageObject.addMouseListener(this);
 		
 		imageObject.add(imagePanel);
-		//imageObject.setSize(new Dimension(image.getWidth(), image.getHeight()));
+
 		imageObject.setBounds(image.getX_coord(),image.getY_coord(), image.getWidth(), image.getHeight());
 		imageObject.setVisible(true);
 		
