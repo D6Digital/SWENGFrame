@@ -25,7 +25,7 @@ public class VideoPlayerTestT601 {
     @Before
     public void setUp() throws Exception {
         
-        video = new Video(50, 90, 10, 10, 0, file, 300, 301, -10000000);
+        video = new Video(50, 60, 10, 10, 0, file, 300, 301, -10000000);
         videoPlayer = new VideoPlayer(video);
         frame = new JFrame();
     }
@@ -37,9 +37,14 @@ public class VideoPlayerTestT601 {
     @Test
     public void test() throws InterruptedException {
        Thread.sleep(SLEEPMS);
+       
        panel = videoPlayer.getPanel();
-       frame.add(panel, BorderLayout.CENTER);
-       frame.setBounds(0, 0, 600, 480);
+       //panel.setLayout(null);
+       panel.setLocation(video.getX_coord(), video.getY_coord());
+       frame.add(panel);
+       frame.setBounds(0, 0, 600, 600);
+       System.out.println(panel.getLocation());
+       frame.pack();
        frame.setVisible(true);
        Thread.sleep(SLEEPMS*10);
        
