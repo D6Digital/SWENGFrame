@@ -13,14 +13,14 @@
 		<fontcolor>#000000</fontcolor>
 		<linecolor>#000000</linecolor>
 		<fillcolor>#000000</fillcolor></defaults>
-	<slide id="" duration="" lastSlide="">
-		<text font="" fontsize="" fontcolor="" starttime="" duration="" layer="" xstart="" ystart="" xend="" yend="">
-			<textBody bold="" italic="" underlined="" branch=""></textBody></text>
+	<slide id="1" duration="" lastSlide="false">
+		<text font="Arial" fontsize="36" fontcolor="#000000" starttime="0" duration="" layer="0" xstart="10" ystart="10" xend="110" yend="30">
+			<textBody bold="true" italic="false" underlined="true" branch="0">Reference - Character Creation</textBody></text>
 		<image urlname="" xstart="" ystart="" width="" height="" starttime="" duration="" layer="" Branch=""></image></slide>
 	<slide id="" duration="" lastSlide="">
-		<text font="" fontsize="" fontcolor="" starttime="" duration=""
-			layer="" xstart="" ystart="" xend="" yend="">
-			<textBody bold="" italic="" underlined="" branch=""></textBody>
+		<text font="Arial" fontsize="36" fontcolor="#000000" starttime="0" duration=""
+			layer="0" xstart="10" ystart="10" xend="110" yend="30">
+			<textBody bold="true" italic="false" underlined="true" branch="0"></textBody>
 		</text>
 		<image urlname="" xstart="" ystart="" width="" height=""
 			starttime="" duration="" layer="" Branch="">
