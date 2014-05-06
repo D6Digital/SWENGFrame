@@ -1,54 +1,39 @@
-<slideshow>
-	<documentinfo>
-		<author>D6 Digital</author>
-		<version>1.0</version>
-		<title>Eclipse Phase - GM Reference Tables</title><comment>Reference tables from the back of the core book</comment>
-		<width>720</width>
-		<height>640</height>
-		</documentinfo>
-	<defaults>
-		<backgroundcolor>#FFFFFF</backgroundcolor>
-		<font>Times New Roman</font>
-		<fontsize>24</fontsize>
-		<fontcolor>#000000</fontcolor>
-		<linecolor>#000000</linecolor>
-		<fillcolor>#000000</fillcolor></defaults>
-	<slide id="1" duration="" lastSlide="false">
-		<text font="Arial" fontsize="36" fontcolor="#000000" starttime="0" duration="" layer="0" xstart="10" ystart="10" xend="110" yend="30">
-			<textBody bold="true" italic="false" underlined="true" branch="0">Reference - Character Creation</textBody></text>
-		<text font="Times New Roman" fontsize="24" fontcolor="#000000" starttime="0" duration=""
-			layer="0" xstart="10" ystart="40" xend="110" yend="440">
-			<textBody bold="false" italic="false" underlined="true" branch="0">Summary</textBody>
-			<textBody bold="false" italic="true" underlined="false" branch="0">1) Define character concept</textBody>
-			<textBody bold="false" italic="true" underlined="false" branch="0">2) Choose background</textBody>
-			<textBody bold="false" italic="true" underlined="false" branch="0">3) Choose faction</textBody>
-			<textBody bold="false" italic="true" underlined="false" branch="0">4) Spend free points: a) 105 aptitude points b) 1 Moxie c) 5,000 Credits d) 50 Rep e) Native tongue</textBody>
-			<textBody bold="false" italic="true" underlined="false" branch="0">5) Spend customisation points: a) 1,000 CP to spend / 15 CP = 1 Moxie / 10 CP = 1 apitude point / 5 CP = 1 psi sleight / 5 CP = 1 specialisation / 1 CP = 1 skill point (up to 60) / 2 CP = 1 skill point (61-80) / 1 CP = 1,000 Credits / 1 CP = 10 Rep b) Active skill minimum: 400 CP c) Knowledge skill minimum: 300 CP d) Choose starting Morph e) Choose traits</textBody>
-			<textBody bold="false" italic="true" underlined="false" branch="0">6) Purchase gear</textBody>
-			<textBody bold="false" italic="true" underlined="false" branch="0">7) Choose motivation</textBody>
-			<textBody bold="false" italic="true" underlined="false" branch="0">8) Calculate remaining stats</textBody>
-			<textBody bold="false" italic="true" underlined="false" branch="0">9) Detail the character</textBody>
+<?xml version="1.0"?><collection	xmlns="http://www-users.york.ac.uk/~rjm529/schema.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"><slideshow><documentinfo>		<author>D6 Digital</author>		<version>1.0</version>		<title>GM Reference Tables</title>		<comment>Reference tables for the GM to use during play</comment>		<width>720</width>		<height>640</height>	</documentinfo>	<defaults>		<backgroundcolour>#FFFFFF</backgroundcolour>		<font>Times New Roman</font>		<fontsize>24</fontsize>		<fontcolour>#000000</fontcolour>		<linecolour>#000000</linecolour>		<fillcolour>#000000</fillcolour>	</defaults>	<slide id="1" duration="60" lastSlide="false">		<text font="Arial" fontsize="36" fontcolour="#000000" starttime="0"			duration="" layer="0" xstart="10" ystart="10" xend="110" yend="30">			<textbody bold="true" italic="false" underlined="true"				branch="0"><textstring>Character creation</textstring></textbody>		</text>		<text font="Arial" fontsize="24" fontcolour="#000000" starttime="0"			duration="" layer="0" xstart="10" ystart="40" xend="110" yend="400">			<textbody bold="false" italic="false" underlined="true"				branch="0"><textstring>Summary \n</textstring></textbody>
+			<textbody bold="false" italic="true" underlined="false" branch="0">
+				<textstring>1) Define Character Concept \n</textstring></textbody>
+			<textbody bold="false" italic="true" underlined="false" branch="0">
+				<textstring>2) Choose Background \n</textstring></textbody>
+			<textbody bold="false" italic="true" underlined="false" branch="0">
+				<textstring>3) Choose Faction \n</textstring>
+			</textbody>
+			<textbody bold="false" italic="true" underlined="false" branch="0">
+				<textstring>4) Spend Free Points: \n a) 105 Aptitude points \n b) 1 Moxie \n c) 5,000 Credits \n d) 50 Rep \n e) Native Tongue \n</textstring></textbody>
+			<textbody bold="false" italic="true" underlined="false" branch="0">
+				<textstring>5) Spend Customisation Points: \n a) 1,000 CP to spend \n 15 CP = 1 Moxie \n 10 CP = 1 Aptitude point \n 5 CP = 1 Psi sleight \n 5 CP = 1 Specialisation \n 1 CP = 1 Skill point (up to 60) \n 2 CP = 1 Skill point (61-80) \n 1 CP = 1,000 Credits \n 1 CP = 10 Rep \n b) Active skill minimum: 400 CP \n c) Knowledge skill minimum: 300 CP \n d) Choose starting Morph \n e) Choose Traits \n</textstring></textbody>
+			<textbody bold="false" italic="true" underlined="false" branch="0">
+				<textstring>6) Purchase Gear</textstring></textbody>
+			<textbody bold="false" italic="true" underlined="false" branch="0">
+				<textstring>7) Choose Motivation</textstring></textbody>
+			<textbody bold="false" italic="true" underlined="false" branch="0">
+				<textstring>8) Calculate Remaining Stats</textstring></textbody>
+			<textbody bold="false" italic="true" underlined="false" branch="0">
+				<textstring>9) Detail the Character</textstring></textbody>
+		</text>		<image urlname="src/XMLBits/char1jovian_spy.jpg" xstart="10" ystart="10"			width="282" height="463" starttime="0" duration="100" layer="1"			branch="1"></image>	</slide>	<slide id="2" duration="" lastSlide="false">		<text font="Arial" fontsize="36" fontcolour="#000000" starttime="0"			duration="" layer="0" xstart="10" ystart="10" xend="110" yend="30">			<textbody bold="true" italic="false" underlined="true"				branch="0"><textstring>Skills and Traits</textstring></textbody>		</text>
+		<text font="" fontsize="" fontcolour="" starttime="" duration=""
+			layer="" xstart="" ystart="" xend="" yend="">
+			<textbody bold="" italic="" underlined="" branch="">
+				<textstring></textstring></textbody>
 		</text>
-		<image urlname="" xstart="" ystart="" width="" height="" starttime="" duration="" layer="" Branch=""></image>
-		</slide>
-	<slide id="2" duration="" lastSlide="false">
-		<text font="Arial" fontsize="36" fontcolor="#000000" starttime="0" duration=""
-			layer="0" xstart="10" ystart="10" xend="110" yend="30">
-			<textBody bold="true" italic="false" underlined="true" branch="0">Reference - Skills and Traits</text>
-		<image urlname="" xstart="" ystart=" width="" height=""
-			starttime="" duration="" layer="" Branch="">
-		</image></slide>
+	</slide>
 	<slide id="3" duration="" lastSlide="false">
-		<text font="Arial" fontsize="36" fontcolor="#000000" starttime="0" duration=""
+		<text font="Arial" fontsize="36" fontcolour="#000000" starttime="0" duration=""
 			layer="0" xstart="10" ystart="10" xend="110" yend="30">
-			<textBody bold="true" italic="false" underlined="true" branch="0">Reference - Combat and Action</textBody>
-		</text>
-		<image urlname="" xstart="" ystart="" width="" height=""
-			starttime="" duration="" layer="" Branch="">
-		</image></slide>
+			<textbody bold="true" italic="false" underlined="true" branch="0">
+				<textstring>Combat and Action</textstring></textbody>
+		</text></slide>
 	<slide id="4" duration="" lastSlide="true">
-		<text font="Arial" fontsize="36" fontcolor="#000000" starttime="0" duration=""
+		<text font="Arial" fontsize="36" fontcolour="#000000" starttime="0" duration=""
 			layer="0" xstart="10" ystart="10" xend="110" yend="30">
-			<textBody bold="true" italic="false" underlined="true" branch="0">Reference - Mesh and Hacking</textBody><image urlname="" xstart="" ystart="" width="" height=""
-			starttime="" duration="" layer="" Branch="">
-		</image></slide></slideshow>
+			<textbody bold="true" italic="false" underlined="true" branch="0">
+				<textstring>Mesh and Hacking</textstring></textbody>
+		</text></slide></slideshow></collection>
