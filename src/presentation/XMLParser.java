@@ -525,6 +525,12 @@ public class XMLParser extends DefaultHandler{
 			}
 			
 		}
+		//Text String
+		else if (elementName.equals("textstring")) {
+			if(currentElement.equals(ProcessingElement.TEXTELEMENT)){
+				currentElement = ProcessingElement.TEXTSTRING;
+			}
+		}
 		// Shape element
 		else if (elementName.equals("point")) {
 			if (currentElement == ProcessingElement.SHAPE) {
@@ -675,6 +681,10 @@ public class XMLParser extends DefaultHandler{
 				newTextContent = null;
 			}
 		}
+		//Text string
+		else if (elementName.equals("textstring")) {
+			currentElement = ProcessingElement.TEXTELEMENT;
+		}
 		// Shape element
 		else if (elementName.equals("point")) {
 			if (currentElement == ProcessingElement.POINT) {
@@ -722,7 +732,7 @@ public class XMLParser extends DefaultHandler{
 		case  FILLCOLOUR:
 			presentation.setFillColour(new String(ch, start, length));
 			break;
-		case  TEXTELEMENT:
+		case  TEXTSTRING:
 			newTextContent.setTextString(new String(ch, start, length));
 			break;
 		default:
