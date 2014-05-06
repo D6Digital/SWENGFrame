@@ -91,7 +91,7 @@ public class SlidePanel extends JPanel implements MouseListener{
 	
 	public void loadPresentation(Presentation presentation) {
 		this.presentation = presentation;
-		//this.setBackground(Color.ORANGE);
+		this.setBackground(Color.ORANGE);
 	}
 	
 	
