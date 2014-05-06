@@ -87,27 +87,27 @@ public class PlayerControlsPanel extends JPanel {
     chapterLabel = new JLabel("00/00");
 
     rewindButton = new JButton();
-    ImageIcon img = new ImageIcon("resources/resources/buttons/rewind.png");
+    ImageIcon img = new ImageIcon("resources/buttons/rewind.png");
     rewindButton.setIcon(img);
     rewindButton.setToolTipText("Skip back");
     rewindButton.setPreferredSize(new Dimension(45, 45));
 
     
     stopButton = new JButton();
-    ImageIcon img1 = new ImageIcon("resources/resources/buttons/stop.png");
+    ImageIcon img1 = new ImageIcon("resources/buttons/stop.png");
     stopButton.setIcon(img1);
     stopButton.setToolTipText("Stop");
     stopButton.setPreferredSize(new Dimension(45, 45));
     
     playButton = new JButton();
-    img3 = new ImageIcon("resources/resources/buttons/play.png");
-    img2 = new ImageIcon("resources/resources/buttons/pause.png");
+    img3 = new ImageIcon("resources/buttons/play.png");
+    img2 = new ImageIcon("resources/buttons/pause.png");
     playButton.setIcon(img2);
     playButton.setToolTipText("Play");
     playButton.setPreferredSize(new Dimension(45, 45));
     
     fastForwardButton = new JButton();
-    ImageIcon img4 = new ImageIcon("resources/resources/buttons/fastforward.png");
+    ImageIcon img4 = new ImageIcon("resources/buttons/fastforward.png");
     fastForwardButton.setIcon(img4);
     fastForwardButton.setToolTipText("Skip forward");
     fastForwardButton.setPreferredSize(new Dimension(45, 45));
@@ -125,7 +125,7 @@ public class PlayerControlsPanel extends JPanel {
     fullScreenButton.setToolTipText("Toggle full-screen");
     
     loop = new JButton();
-    ImageIcon img5 = new ImageIcon("resources/resources/buttons/loop.png");
+    ImageIcon img5 = new ImageIcon("resources/buttons/loop.png");
     loop.setIcon(img5);
     loop.setToolTipText("Loop video");
     loop.setPreferredSize(new Dimension(45, 45));

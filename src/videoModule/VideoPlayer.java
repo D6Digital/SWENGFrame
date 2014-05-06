@@ -25,35 +25,39 @@ import uk.co.caprica.vlcj.runtime.RuntimeUtil;
 
 import com.sun.jna.NativeLibrary;
 
-public class VideoPlayer extends JPanel{
+public class VideoPlayer {
 
 	protected static JButton playButton, stopButton, closeButton;
 	protected static EmbeddedMediaPlayer mediaPlayer;
 	protected static JPanel vidControlPanel;
 	protected static JPanel vidpanel;
+	protected static JPanel masterPanel;
 	protected static JFrame frame;
 	protected static JSlider bar;
 	protected static ImageIcon img, img2;
 	protected static PlayerControlsPanel ControlPanel;
 	protected static JLabel pausedLabel;
 	
-	
-	public VideoPlayer(Video Video) {
+
+	public VideoPlayer(Video video) {
 		
 	
 		NativeLibrary.addSearchPath(
-                RuntimeUtil.getLibVlcLibraryName(), "resources/resources/lib/vlc-2.0.1"
+                RuntimeUtil.getLibVlcLibraryName(), "resources/lib/vlc-2.1.3"
             );
-		int xcoord = Video.getX_coord();
-		int ycoord = Video.getY_coord();
-		int start = Video.getStart();
-		int end = Video.getStart() + Video.getDuration();
-		int layer = Video.getLayer();
-		String file = Video.getFile();
-		int width = Video.getWidth();
-		int height = Video.getHeight();
-		int length = Video.getLength();
 		
+	    int xcoord = video.getX_coord();
+	    final int ycoord = video.getY_coord();
+	    int start = video.getStart();
+	    int end = video.getStart() + video.getDuration();
+	    int layer = video.getLayer();
+	    String file = video.getFile();
+	    int width = video.getWidth();
+	    final int height = video.getHeight();
+	    int length = video.getLength();
+
+		masterPanel = new JPanel();
+		masterPanel.setBounds(0, 0, video.getWidth(), video.getHeight());
 		
 		System.out.println("xcoord = " + xcoord);
 		System.out.println("ycoord = " + ycoord);
@@ -67,8 +71,8 @@ public class VideoPlayer extends JPanel{
 		
 		frame = new JFrame("Video Player");
 		vidpanel = new JPanel();
-		img = new ImageIcon("resources/resources/buttons/pauseText.png");
-	    img2 = new ImageIcon("resources/resources/buttons/StoppedText.png");
+		img = new ImageIcon("resources/buttons/pauseText.png");
+	    img2 = new ImageIcon("resources/buttons/StoppedText.png");
 	    pausedLabel = new JLabel(img);
 	    Canvas canvas = new Canvas();    
 		
@@ -93,14 +97,18 @@ public class VideoPlayer extends JPanel{
 	        
 	    vidpanel.add(canvas);
 	    
-	    frame.add(ControlPanel, BorderLayout.SOUTH);
-	    frame.add(vidpanel, BorderLayout.CENTER);    
-	    frame.pack();
-	    frame.setVisible(true);
+	    
+	    
+	    masterPanel.add(ControlPanel, BorderLayout.SOUTH);
+	    masterPanel.add(vidpanel, BorderLayout.CENTER);    
+	    //masterPanel.add(vidpanel);    
+	    //frame.pack();
+	    //frame.setVisible(true);
 		
 	   // mediaPlayer.playMedia("resources/resources/video/"+file);
-	    mediaPlayer.playMedia("resources/resources/video/"+file, ":start-time="+start, ":stop-time="+end);
-
+	   // mediaPlayer.playMedia("resources/video/video/"+file, ":start-time="+start, ":stop-time="+end);
+	    System.out.println(masterPanel.getLocation().x);
+	    System.out.println(masterPanel.getLocation().y);
 	    
 	    canvas.addMouseListener(new java.awt.event.MouseAdapter() {  
 	    	@Override
@@ -117,19 +125,27 @@ public class VideoPlayer extends JPanel{
 		 	    }	    	
 	    	});
 	    
-	    canvas.addMouseMotionListener(new java.awt.event.MouseMotionAdapter(){
+	    masterPanel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter(){
 	    	@Override
 	    	public void mouseMoved(MouseEvent e1){
 	    		int xCoordinate = e1.getX();
 	    		int yCoordinate = e1.getY();
 	    		
-	    		System.out.println(xCoordinate + "," + yCoordinate);
+	    		//System.out.println(xCoordinate + "," + yCoordinate);
+	    		System.out.println("---------listener------------");
+	    		System.out.println(yCoordinate);
+	    		System.out.println((ycoord + height)- (height*0.2));
+	    		System.out.println("---------END listener------------");
 	    		
-	    		if (yCoordinate > 200){
-	    			ControlPanel.setVisible(true);
+	    		if (yCoordinate > ((ycoord + height)- (height*0.2))){
+	    			//if(!ControlPanel.isVisible()) {
+	    			    ControlPanel.setVisible(true);
+	    			//}
 	    		}
-	    		else{
-	    			ControlPanel.setVisible(false);
+	    		else {
+                    //if(ControlPanel.isVisible()) {
+                        ControlPanel.setVisible(false);
+                    //}
 	    		}
 	    	}
 	    });
@@ -142,7 +158,13 @@ public class VideoPlayer extends JPanel{
 	    		ControlPanel.setVisible(false);  
 	    		}
 	    	});
-
+        
+        ControlPanel.addMouseListener(new java.awt.event.MouseAdapter() {   
+            @Override
+            public void mouseEntered(java.awt.event.MouseEvent evt) {        
+                ControlPanel.setVisible(true);  
+                }
+            });
 	      
 
 	 pausedLabel.addMouseListener(new java.awt.event.MouseAdapter() {   
@@ -155,6 +177,11 @@ public class VideoPlayer extends JPanel{
 		    	}	    	
 	    	});
 	}
+	
+	public void setupListeners(int controlPanelYLocation) {
+	    
+	}
+	
 	/**
 	 * Shows pause label when pause button is pressed
 	 */
@@ -172,13 +199,18 @@ public class VideoPlayer extends JPanel{
 //		}
 //	}
 
-	public static void main(String[] args) {
-		
-		Video Video = new Video(3, 5, 30, 50, 8, "avengers.mp4", 4, 76, 89);
-        new VideoPlayer(Video);
-                                     
 
-	}
+    public JPanel getPanel() {
+        return masterPanel;
+    }
+
+//	public static void main(String[] args) {
+//		
+//		Video Video = new Video(3, 5, 30, 50, 8, "monstersinc_high.mpg", 4, 76, 89);
+//        new VideoPlayer(Video);
+//                                     
+//
+//	}
 	
  
 

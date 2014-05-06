@@ -6,6 +6,12 @@ import imageModule.ImagePainter;
 
 
 import java.awt.Color;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import java.awt.Dimension;
+
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
@@ -13,13 +19,21 @@ import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.Timer;
+
+
+import Graphics.graphicsObject;
 
 import Images.ImagePanel;
 import Images.TImage;
 
 import musicPlayerModule.EmbeddedAudioPlayer;
 import presentation.Image;
+
+import presentation.Point;
+
 import presentation.Presentation;
+
 import presentation.Shapes;
 import presentation.Slide;
 import presentation.Sound;
@@ -50,6 +64,7 @@ public class SlidePanel extends JPanel implements MouseListener{
 	String slideName;
 	Slide currentSlide;
 	Presentation presentation;
+	Timer theTimer;
 	
 	EmbeddedAudioPlayer audioPlayer;
 
@@ -76,7 +91,7 @@ public class SlidePanel extends JPanel implements MouseListener{
 	
 	public void loadPresentation(Presentation presentation) {
 		this.presentation = presentation;
-		this.setBackground(Color.ORANGE);
+		//this.setBackground(Color.ORANGE);
 	}
 	
 	
@@ -101,7 +116,7 @@ public class SlidePanel extends JPanel implements MouseListener{
 	    
 	   
         addSound();
-          
+       /*   
 	   for(Image image: imageList) {
 	        addImage(image);
 	   }
@@ -111,11 +126,52 @@ public class SlidePanel extends JPanel implements MouseListener{
        for(Shapes shape: shapeList) {
            addShape(shape);
        }
-       
        for(Text text : textList) {
             addText(text);
-       }
+       }*/
 	    
+       
+       int delay = 1000; // 1000ms or 1 second timer
+       ActionListener taskPerformer= new ActionListener() {
+		int count = 0;
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			for(Image image: currentSlide.getImageList()) {
+				if(image.getStart() == count)
+				{
+					addImage(image);
+				}
+		   }
+	       for(Video video: currentSlide.getVideoList()) {
+	    	   if(video.getStart() == count)
+				{
+					addVideo(video);
+				}
+	       }
+	       for(Shapes shape: currentSlide.getShapeList()) {
+	    	   if(shape.getStart() == count)
+				{
+					addShape(shape);
+				}
+	       }
+	       for(Text text : currentSlide.getTextList()) {
+	    	   if(text.getStart() == count)
+				{
+					addText(text);
+				}
+	       }
+	       for(Sound sound : currentSlide.getSoundList()) {
+	    	   audioPlayer.prepareMedia(sound.getFile(), sound.getStart());
+	   		   audioPlayer.playMedia();
+	       }
+		count ++;
+		
+		}
+       };
+       theTimer = new Timer(delay, taskPerformer);
+       theTimer.start();
+       
+       this.setVisible(true);
 	}
 	
 	
@@ -182,46 +238,93 @@ public class SlidePanel extends JPanel implements MouseListener{
 		}
 	}
 	
-//	/**
-//	 * Manage the user interaction with media objects on the slide
-//	 * Find where the action came from and call the appropriate method
-//	 * 
-//	 * For example a particular JButton which has a reference to the next slide
-//	 */
-//	public void mouseClicked(MouseEvent e){
-//		//get the x & y possition where the mouse was clicked.
-//		int x_ClickCoord = e.getX();
-//		int y_ClickCoord = e.getY();
-//		
-//		//TODO look to see if there is an object at those coords.
-//		//not sure what to replace unknownSlideObject with.
-//		int x_ObjectCoord = unknownSlideObject.getX_coord();
-//		int y_ObjectCoord = unknownSlideObject.getY_coord();
-//		
-//		//TODO see if the object has a branch value attached.
-//		//getBranch() is not a property of SlideObject() only the objects that extend it.
-//		int ObjectBranch = unknownSlideObject.getBranch();
-//		
-//		//TODO branch based on attached value.
-//		
-//	}
+
 	
 	/**
 	 * 
 	 * @param shape
 	 */
 	private void addShape(Shapes shape){
-		// Eventually Use the bought-in module to improve this method
-		JPanel shapePanel = GraphicsPainter.producePanel(shape.getWidth(), shape.getHeight(), shape.getFillColourObject());
+		int pointX = 0;
+		int pointY = 0;
+		int highX = 0;
+		int lowX = 0; 
+		int highY = 0;
+		int lowY = 0;
+		int boundWidth = 0;
+		int boundHeight = 0;
 		
-        
+		System.out.printf("Adding Shape%n");
+		
+		graphicsObject graphic = new graphicsObject(shape.getLineColor(), shape.getFillColor());
+		
+		System.out.printf("Set Graphic%n");
+		
+		graphic.setTotalPoints(shape.getNumberOfPoints());
+		
+		if(shape.getPointList().size() > 1){
+			System.out.printf("Point Shape: %d%n", shape.getPointList().size());
+			for(int i=0; i<(shape.getNumberOfPoints()); i++){
+				
+				pointX = shape.getPoint(i).getX();
+				pointY = shape.getPoint(i).getY();
+				System.out.printf("Reading Point %d, x %d, y %d%n", i, pointX, pointY);
+				if (i==0){
+					highX = pointX;
+					lowX = pointX;
+					highY = pointY;
+					lowY = pointY;
+				}
+				else{
+					if (pointX > highX) highX = pointX;
+					if (pointX < lowX) lowX = pointX;
+					if (pointY > highY) highY = pointY;
+					if (pointY < lowY) lowY = pointY;
+				}
+			}
+			for(int i=0; i<(shape.getNumberOfPoints()); i++){
+				
+				pointX = shape.getPoint(i).getX() - lowX;
+				pointY = shape.getPoint(i).getY() - lowY;
+				System.out.printf("Setting Point %d, x %d, y %d%n", i, pointX, pointY);
+				graphic.setPoint (i+1, pointX, pointY);
+			}
+		}
+		else{
+			System.out.printf("Regular %d Side Shape%n", shape.getNumberOfPoints());
+			graphic.setWidth(shape.getWidth());
+			graphic.setHeight(shape.getHeight());
+			graphic.setPoint(1, shape.getWidth()/2, shape.getHeight()/2);
+			graphic.setIsRegularShape(true);
+			lowX = shape.getPoint(0).getX() - (shape.getWidth()/2);
+			lowY = shape.getPoint(0).getX() - (shape.getHeight()/2);
+			highX = lowX + shape.getWidth();
+			highY = lowY + shape.getHeight();
+		}
+				
+		System.out.printf("Fill Colour %s, Line Colour %s%n", shape.getFillColor(), shape.getLineColor());
+		
+		boundWidth = highX - lowX;
+		if (boundWidth == 0) boundWidth = 1;
+		boundHeight = highY - lowY;
+		if (boundHeight == 0) boundHeight = 1;
+		
+		System.out.printf("Shape lowX %d, Shape lowY %d%n", lowX, lowY);
+		System.out.printf("Shape Width %d, Shape Height %d%n", boundWidth, boundHeight);
+				
 		slideMediaObject shapeObject = new slideMediaObject(shape.getBranch());
-        shapeObject.addMouseListener(shapeObject);
-		
-        shapeObject.add(shapePanel);
+        shapeObject.addMouseListener(this);
+        
+        graphic.setBounds(0, 0, boundWidth+1, boundHeight+1);
+		shapeObject.add(graphic);
+        
+        System.out.printf("Added Shape%n");
+     
         // The x and y of a shape needs to be derived from the leftmost x and highest y co-ordinate in the point array 
-        shapeObject.setBounds(shape.getPoint(0).getX(), shape.getPoint(0).getY(), shape.getWidth(), shape.getHeight());
+        shapeObject.setBounds(lowX, lowY, boundWidth +1, boundHeight +1);
         this.add(shapeObject);
+        
+        System.out.printf("Added Media Object%n");
 	}
 
 	/**
@@ -232,22 +335,21 @@ public class SlidePanel extends JPanel implements MouseListener{
 		// Eventually Use the bought-in module to improve this method
 		
 		TImage im = new TImage(image.getFile(),0,0);
-		
-//		JLabel imageLabel = ImagePainter.produceImage(image.getFile());
-		
+				
 		ImagePanel imagePanel = new ImagePanel(im);
-		//imagePanel.setSize(new Dimension(image.getWidth(), image.getHeight()));
+
 		imagePanel.setBounds(0,0, image.getWidth(), image.getHeight());
 		
 		slideMediaObject imageObject = new slideMediaObject(image.getBranch());
 		imageObject.addMouseListener(this);
 		
 		imageObject.add(imagePanel);
-		//imageObject.setSize(new Dimension(image.getWidth(), image.getHeight()));
+
 		imageObject.setBounds(image.getX_coord(),image.getY_coord(), image.getWidth(), image.getHeight());
 		imageObject.setVisible(true);
 		
 		this.add(imageObject);
+		this.repaint();
 	}
 	
 	
@@ -265,6 +367,7 @@ public class SlidePanel extends JPanel implements MouseListener{
 		
 		videoPanel.setBounds(video.getX_coord(), video.getY_coord(), video.getWidth(), video.getHeight());
         this.add(videoPanel);
+        this.repaint();
 	}
 	
 	
@@ -295,7 +398,7 @@ public class SlidePanel extends JPanel implements MouseListener{
 		{
 		Sound sound = soundList.get(0);
 		audioPlayer.prepareMedia(sound.getFile(), sound.getStart());
-		audioPlayer.play();
+		audioPlayer.playMedia();
 		}
 	}
 	
@@ -309,6 +412,7 @@ public class SlidePanel extends JPanel implements MouseListener{
 		JPanel textPanel = new Scribe(text);
 		textPanel.setBounds(text.getX_coord(), text.getY_coord(), text.getXend(), text.getYend());
 		this.add(textPanel);
+		this.repaint();
 	}
 
 
