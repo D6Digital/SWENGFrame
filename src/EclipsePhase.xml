@@ -1,24 +1,43 @@
 <slideshow>
 	<documentinfo>
-		<author></author>
-		<version></version>
-		<comment></comment>
-		<width></width>
-		<height></height></documentinfo>
+		<author>D6 Digital</author>
+		<version>1.0</version>
+		<title>Eclipse Phase - GM Reference Tables</title><comment>Reference tables from the back of the core book</comment>
+		<width>720</width>
+		<height>640</height>
+		</documentinfo>
 	<defaults>
-		<backgroundcolor></backgroundcolor>
-		<font></font>
-		<fontsize></fontsize>
-		<fontcolor></fontcolor>
-		<linecolor></linecolor>
-		<fillcolor></fillcolor></defaults>
+		<backgroundcolor>#FFFFFF</backgroundcolor>
+		<font>Times New Roman</font>
+		<fontsize>24</fontsize>
+		<fontcolor>#000000</fontcolor>
+		<linecolor>#000000</linecolor>
+		<fillcolor>#000000</fillcolor></defaults>
 	<slide id="" duration="" lastSlide="">
-		<text font="" fontsize="" fontcolor="" starttime="" duration="" layer="" xstart="" ystart="" xend="" yend="" linecolor="">
-			<b></b>
-			<i></i>
-			<u></u></text>
-		<shape totalpoints="" width="" height="" fillcolor="" starttime="" duration="" layer="" lineColor="" branch="">
-			<point></point></shape>
-		<audio urlname="" starttime="" loop=""></audio>
-		<image urlname="" xstart="" ystart="" width="" height="" starttime="" duration="" layer="" Branch=""></image>
-		<video urlname="" startTime="" loop="" xstart="" ystart="" layer="" playTime="" Duration=""></video></slide></slideshow>
+		<text font="" fontsize="" fontcolor="" starttime="" duration="" layer="" xstart="" ystart="" xend="" yend="">
+			<textBody bold="" italic="" underlined="" branch=""></textBody></text>
+		<image urlname="" xstart="" ystart="" width="" height="" starttime="" duration="" layer="" Branch=""></image></slide>
+	<slide id="" duration="" lastSlide="">
+		<text font="" fontsize="" fontcolor="" starttime="" duration=""
+			layer="" xstart="" ystart="" xend="" yend="">
+			<textBody bold="" italic="" underlined="" branch=""></textBody>
+		</text>
+		<image urlname="" xstart="" ystart="" width="" height=""
+			starttime="" duration="" layer="" Branch="">
+		</image></slide>
+	<slide id="" duration="" lastSlide="">
+		<text font="" fontsize="" fontcolor="" starttime="" duration=""
+			layer="" xstart="" ystart="" xend="" yend="">
+			<textBody bold="" italic="" underlined="" branch=""></textBody>
+		</text>
+		<image urlname="" xstart="" ystart="" width="" height=""
+			starttime="" duration="" layer="" Branch="">
+		</image></slide>
+	<slide id="" duration="" lastSlide="">
+		<text font="" fontsize="" fontcolor="" starttime="" duration=""
+			layer="" xstart="" ystart="" xend="" yend="">
+			<textBody bold="" italic="" underlined="" branch=""></textBody>
+		</text>
+		<image urlname="" xstart="" ystart="" width="" height=""
+			starttime="" duration="" layer="" Branch="">
+		</image></slide></slideshow>
