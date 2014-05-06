@@ -22,10 +22,10 @@ import javax.xml.transform.stream.StreamSource;
 import javax.xml.validation.*;
 
 enum ProcessingElement{
-	NONE, DOCUMENTINFO, DEFAULTS, SLIDE, NUM, TEXT,
+	NONE, PRESENTATION, COLLECTION, DOCUMENTINFO, DEFAULTS, SLIDE, NUM, TEXT,
 	SHAPE, AUDIO, IMAGE, VIDEO, AUTHOR, VERSION, COMMENT,
 	WIDTH, HEIGHT, BACKGROUNDCOLOUR, FONT, FONTCOLOUR,
-	LINECOLOUR, FILLCOLOUR, TEXTELEMENT, POINT, FONTSIZE
+	LINECOLOUR, FILLCOLOUR, TEXTELEMENT, TEXTSTRING, POINT, FONTSIZE
 }
 
 /**
@@ -46,6 +46,9 @@ public class XMLParser extends DefaultHandler{
 	private ProcessingElement currentElement = ProcessingElement.NONE;
 
 	private Presentation presentation;
+	
+	private Collection collection;
+	private boolean isCollection = false;
 	
 	private String attrVal;
 
@@ -94,7 +97,11 @@ public class XMLParser extends DefaultHandler{
 	}
 	public Presentation getSlides() {
 		//Insert Parser here
+		if(presentation == null) presentation = collection.get(0);
 		return presentation;
+	}
+	public Collection getCollection(){
+		return collection;
 	}
 
 	private void parse(String filename){
@@ -129,9 +136,14 @@ public class XMLParser extends DefaultHandler{
 		if ("".equals(elementName)) {
 			elementName = qName;
 		}
+		//collection
+		if(elementName.equals("collection")){
+			collection = new Collection();
+			isCollection = true;
+		}
 
 		//slideshow element
-		if(elementName.equals("slideshow")){
+		else if(elementName.equals("slideshow")){
 			if (presentation == null) {
 				presentation = new Presentation();
 			}
@@ -545,6 +557,10 @@ public class XMLParser extends DefaultHandler{
 		//slideshow element
 		if(elementName.equals("slideshow")){
 			currentElement = ProcessingElement.NONE;
+			if(isCollection){
+				collection.add(presentation);
+				presentation = null;
+			}
 		}
 		//document info element
 		else if(elementName.equals("documentinfo")) {
