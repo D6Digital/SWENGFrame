@@ -42,8 +42,8 @@ public class Overall {
 		
 		//GUI utilities = new GUI("utilitiesSelectionPanel");  // can open all utilities from this instance
         //GUI diceRoller = new GUI("diceRollerPanel");
-	    GUI calculator = new GUI("calculatorPanel");
-		Overall ThisIsIt = new Overall("src/BasicExample.xml");
+	    //GUI calculator = new GUI("calculatorPanel");
+		Overall ThisIsIt = new Overall("src/EclipsePhase.xml");
 		System.out.println(ThisIsIt.slideList.getFont());
 		
 		
