@@ -28,12 +28,12 @@ import com.sun.jna.NativeLibrary;
  */
 public class EmbeddedAudioPlayer {
     //String vlcLibraryPath = "..\\..\\resources\\lib\\vlc-2.0.1";
-    String vlcLibraryPath = "resources\\lib\\vlc-2.1.3";
+    String vlcLibraryPath;// = "resources\\lib\\vlc-2.1.3";
     //static JFrame mainFrame = new JFrame("mainFrame");
     //static JFrame playlistFrame = new JFrame("playlistFrame");
     //static JPanel playPanel = new JPanel();
     //static Container contentPane;
-    EmbeddedMediaPlayer mediaPlayer;
+    protected EmbeddedMediaPlayer mediaPlayer;
     JPanel returnPanel = new JPanel();
     String incomingChangeMessage = "";
     //int endTimeSeconds;
@@ -69,6 +69,7 @@ public class EmbeddedAudioPlayer {
      */
     public EmbeddedAudioPlayer(String vlcLibraryPath) {
         this.vlcLibraryPath = vlcLibraryPath;
+        
         NativeLibrary.addSearchPath(RuntimeUtil.getLibVlcLibraryName(),vlcLibraryPath);
         Native.loadLibrary(RuntimeUtil.getLibVlcLibraryName(), LibVlc.class);
         

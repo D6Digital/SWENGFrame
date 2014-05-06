@@ -3,6 +3,7 @@ package videoModule;
 import static org.junit.Assert.*;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -20,14 +21,16 @@ public class VideoPlayerTestT601 {
     Video video;
     JFrame frame;
     JPanel panel;
-    String file = "monstersinc_high.mpg";
+    String file = "resources/video/video/monstersinc_high.mpg";
     
     @Before
     public void setUp() throws Exception {
         
-        video = new Video(50, 60, 10, 10, 0, file, 300, 301, -10000000);
+        video = new Video(50, 60, 0, 10, 0, file, 300, 301, -10000000);
         videoPlayer = new VideoPlayer(video);
         frame = new JFrame();
+        frame.setSize(600, 600);
+        frame.setPreferredSize(new Dimension(600,600));
     }
 
     @After
@@ -38,12 +41,11 @@ public class VideoPlayerTestT601 {
     public void test() throws InterruptedException {
        Thread.sleep(SLEEPMS);
        
-       panel = videoPlayer.getPanel();
        //panel.setLayout(null);
-       panel.setLocation(video.getX_coord(), video.getY_coord());
-       frame.add(panel);
+       //videoPlayer.setLocation(video.getX_coord(), video.getY_coord());
        frame.setBounds(0, 0, 600, 600);
-       System.out.println(panel.getLocation());
+       frame.add(videoPlayer);
+       System.out.println(videoPlayer.getLocation());
        frame.pack();
        frame.setVisible(true);
        Thread.sleep(SLEEPMS*10);

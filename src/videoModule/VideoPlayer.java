@@ -11,6 +11,7 @@ import uk.co.caprica.vlcj.player.embedded.videosurface.CanvasVideoSurface;
 
 import java.awt.BorderLayout;
 import java.awt.Canvas;
+import java.awt.Color;
 import java.awt.event.MouseEvent;
 
 import javax.swing.ImageIcon;
@@ -25,14 +26,13 @@ import uk.co.caprica.vlcj.runtime.RuntimeUtil;
 
 import com.sun.jna.NativeLibrary;
 
-public class VideoPlayer {
+public class VideoPlayer extends JPanel{
 
 	protected static JButton playButton, stopButton, closeButton;
 	protected static EmbeddedMediaPlayer mediaPlayer;
 	protected static JPanel vidControlPanel;
 	protected static JPanel vidpanel;
 	protected static JPanel masterPanel;
-	protected static JFrame frame;
 	protected static JSlider bar;
 	protected static ImageIcon img, img2;
 	protected static PlayerControlsPanel ControlPanel;
@@ -56,8 +56,8 @@ public class VideoPlayer {
 	    final int height = video.getHeight();
 	    int length = video.getLength();
 
-		masterPanel = new JPanel();
-		masterPanel.setBounds(0, 0, video.getWidth(), video.getHeight());
+		this.setLayout(null);
+		this.setBounds(0, 0, video.getWidth(), video.getHeight());
 		
 		System.out.println("xcoord = " + xcoord);
 		System.out.println("ycoord = " + ycoord);
@@ -69,23 +69,31 @@ public class VideoPlayer {
 		System.out.println("Height = " + height);
 		System.out.println("Length = " + length);
 		
-		frame = new JFrame("Video Player");
+		//frame = new JFrame("Video Player");
+		
 		vidpanel = new JPanel();
+		vidpanel.setLayout(null);
+		vidpanel.setBounds(0, 0, width, height);
 		img = new ImageIcon("resources/buttons/pauseText.png");
 	    img2 = new ImageIcon("resources/buttons/StoppedText.png");
 	    pausedLabel = new JLabel(img);
+	    pausedLabel.setBounds(width/2, height/2, 50, 50);
 	    Canvas canvas = new Canvas();    
 		
-		frame.setLayout(new BorderLayout());
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);    
+		//frame.setLayout(new BorderLayout());
+		//frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);    
 	    
 	    MediaPlayerFactory mediaPlayerFactory = new MediaPlayerFactory();
 	    CanvasVideoSurface videoSurface = mediaPlayerFactory.newVideoSurface(canvas);
 	    mediaPlayer = mediaPlayerFactory.newEmbeddedMediaPlayer();
 	    mediaPlayer.setVideoSurface(videoSurface);
-	    canvas.setBounds(0, 0, 720, 276);
+	    canvas.setBounds(0, 0, width, height);
 	    
 	    ControlPanel = new PlayerControlsPanel(mediaPlayer);
+	    //ControlPanel.setLayout(null);
+	    ControlPanel.setBounds(0, height-70, width, 70);
+	    ControlPanel.setBackground(Color.black);
+	    ControlPanel.setOpaque(false);
 	    
 	    // disables default VLCJ action listeners
 	    mediaPlayer.setEnableMouseInputHandling(false);
@@ -93,22 +101,22 @@ public class VideoPlayer {
 	    
 	    
 	    ControlPanel.setVisible(false);
-	    ControlPanel.setOpaque(false);
 	        
 	    vidpanel.add(canvas);
 	    
 	    
 	    
-	    masterPanel.add(ControlPanel, BorderLayout.SOUTH);
-	    masterPanel.add(vidpanel, BorderLayout.CENTER);    
-	    //masterPanel.add(vidpanel);    
+	    this.add(ControlPanel);
+	    this.add(vidpanel);    
+	    //this.add(vidpanel);    
 	    //frame.pack();
 	    //frame.setVisible(true);
 		
 	   // mediaPlayer.playMedia("resources/resources/video/"+file);
 	   // mediaPlayer.playMedia("resources/video/video/"+file, ":start-time="+start, ":stop-time="+end);
-	    System.out.println(masterPanel.getLocation().x);
-	    System.out.println(masterPanel.getLocation().y);
+	    mediaPlayer.prepareMedia(file, ":start-time="+start, ":stop-time="+end);
+	    System.out.println(this.getLocation().x);
+	    System.out.println(this.getLocation().y);
 	    
 	    canvas.addMouseListener(new java.awt.event.MouseAdapter() {  
 	    	@Override
@@ -117,7 +125,9 @@ public class VideoPlayer {
 		 	       mediaPlayer.pause();
 		 	       ControlPanel.setVisible(false);
 		 	       vidpanel.setVisible(false);
-		 	       frame.add(pausedLabel, BorderLayout.CENTER);		 	      
+		 	       Canvas theCanvas = (Canvas)e.getSource();
+		 	       theCanvas.getParent().add(pausedLabel);
+		 	       //frame.add(pausedLabel, BorderLayout.CENTER);		 	      
 		    	}
 		    	else{
 		    	mediaPlayer.play();
@@ -125,7 +135,7 @@ public class VideoPlayer {
 		 	    }	    	
 	    	});
 	    
-	    masterPanel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter(){
+	    canvas.addMouseMotionListener(new java.awt.event.MouseMotionAdapter(){
 	    	@Override
 	    	public void mouseMoved(MouseEvent e1){
 	    		int xCoordinate = e1.getX();
@@ -134,10 +144,10 @@ public class VideoPlayer {
 	    		//System.out.println(xCoordinate + "," + yCoordinate);
 	    		System.out.println("---------listener------------");
 	    		System.out.println(yCoordinate);
-	    		System.out.println((ycoord + height)- (height*0.2));
+	    		System.out.println((height)- (height*0.2));
 	    		System.out.println("---------END listener------------");
 	    		
-	    		if (yCoordinate > ((ycoord + height)- (height*0.2))){
+	    		if (yCoordinate > ((height)- (height*0.2))){
 	    			//if(!ControlPanel.isVisible()) {
 	    			    ControlPanel.setVisible(true);
 	    			//}
@@ -169,8 +179,10 @@ public class VideoPlayer {
 
 	 pausedLabel.addMouseListener(new java.awt.event.MouseAdapter() {   
 		 	@Override
-		    public void mousePressed(MouseEvent e) {
-		    	frame.remove(pausedLabel);
+		    public void mouseClicked(MouseEvent e) {
+		    	//frame.remove(pausedLabel);
+		 	   Canvas theCanvas = (Canvas)e.getSource();
+               theCanvas.getParent().remove(pausedLabel);
 		    	vidpanel.setVisible(true);
 		    	mediaPlayer.play();
 		    	PlayerControlsPanel.setPlayButton();		    	
@@ -200,9 +212,9 @@ public class VideoPlayer {
 //	}
 
 
-    public JPanel getPanel() {
+    /*public JPanel getPanel() {
         return masterPanel;
-    }
+    }*/
 
 //	public static void main(String[] args) {
 //		
