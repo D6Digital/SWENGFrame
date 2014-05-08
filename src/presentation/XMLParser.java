@@ -4,14 +4,22 @@
  */
 package presentation;
 
+import java.awt.color.CMMException;
 import java.io.File;
 import java.io.IOException;
+import java.io.StringReader;
 import java.net.MalformedURLException;
 import java.net.URL;
 
 import java.util.ArrayList;
+import java.util.regex.Matcher;
+
 import org.xml.sax.*;
+import org.xml.sax.ext.LexicalHandler;
 import org.xml.sax.helpers.DefaultHandler;
+import org.xml.sax.helpers.XMLFilterImpl;
+import org.xml.sax.helpers.XMLReaderFactory;
+
 import javax.xml.parsers.SAXParserFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
@@ -25,7 +33,7 @@ enum ProcessingElement{
 	NONE, PRESENTATION, COLLECTION, DOCUMENTINFO, DEFAULTS, SLIDE, NUM, TEXT,
 	SHAPE, AUDIO, IMAGE, VIDEO, AUTHOR, VERSION, COMMENT,
 	WIDTH, HEIGHT, BACKGROUNDCOLOUR, FONT, FONTCOLOUR,
-	LINECOLOUR, FILLCOLOUR, TEXTELEMENT, TEXTSTRING, POINT, FONTSIZE
+	LINECOLOUR, FILLCOLOUR, TEXTELEMENT, TEXTSTRING, POINT, FONTSIZE, TITLE
 }
 
 /**
@@ -51,7 +59,8 @@ public class XMLParser extends DefaultHandler{
 	private boolean isCollection = false;
 	
 	private String attrVal;
-
+	
+	
 
 	/**
 	 * @throws MalformedURLException 
@@ -90,10 +99,13 @@ public class XMLParser extends DefaultHandler{
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-
-
+		
 		this.fileName = fileName;
-		parse(this.fileName);
+	    parse(this.fileName);
+
+
+		
+		//parse(this.fileName);
 	}
 	public Presentation getSlides() {
 		//Insert Parser here
@@ -161,6 +173,11 @@ public class XMLParser extends DefaultHandler{
 		else if(elementName.equals("version")){
 			if (currentElement == ProcessingElement.DOCUMENTINFO) {
 				currentElement = ProcessingElement.VERSION;
+			}
+		}
+		else if(elementName.equals("title")){
+			if (currentElement == ProcessingElement.DOCUMENTINFO) {
+				currentElement = ProcessingElement.TITLE;
 			}
 		}
 		else if (elementName.equals("comment")) {
@@ -583,6 +600,11 @@ public class XMLParser extends DefaultHandler{
 				currentElement = ProcessingElement.DOCUMENTINFO;
 			}
 		}
+		else if(elementName.equals("title")){
+			if (currentElement == ProcessingElement.TITLE) {
+				currentElement = ProcessingElement.DOCUMENTINFO;
+			}
+		}
 		else if (elementName.equals("comment")) {
 			if (currentElement == ProcessingElement.COMMENT) {
 				currentElement = ProcessingElement.DOCUMENTINFO;
@@ -705,6 +727,9 @@ public class XMLParser extends DefaultHandler{
 		case VERSION:
 			presentation.setVersion(new String(ch, start, length));
 			break;
+		case TITLE:
+			presentation.setTitle(new String(ch, start, length));
+			break;
 		case COMMENT:
 			presentation.setComment(new String(ch, start, length));
 			break;
@@ -733,7 +758,19 @@ public class XMLParser extends DefaultHandler{
 			presentation.setFillColour(new String(ch, start, length));
 			break;
 		case  TEXTSTRING:
-			newTextContent.setTextString(new String(ch, start, length));
+			String textString = new String(ch, start, length);
+			//ringBuffer buffer = new StringBuffer();
+			//Matcher match = new Matcher();
+			//match.reset(textString);
+			//match.appendReplacement( buffer, Matcher.quoteReplacement("\n"));
+			char[] newline = {'\n'};
+			String newlineString = new String(newline,0,1);
+			textString = textString.replace("\\n", newlineString);
+			char[] tab = {'\t'};
+			String tabString = new String(tab,0,1);
+			textString = textString.replace("\\t", tabString);
+			newTextContent.setTextString(textString);
+			
 			break;
 		default:
 			break;

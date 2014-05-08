@@ -7,7 +7,10 @@ import gUIModule.GUI;
 import gUIModule.Player;
 import imageModule.ImagePainter;
 
+import java.io.IOException;
 import java.util.ArrayList;
+
+import org.xml.sax.SAXException;
 
 import presentation.Presentation;
 import presentation.Slide;
@@ -25,9 +28,11 @@ public class Overall {
 	private Presentation slideList;
 
 	/**
+	 * @throws SAXException 
+	 * @throws IOException 
 	 * 
 	 */
-	public Overall(String fileName) {
+	public Overall(String fileName){
 		XMLParser parser = new XMLParser(fileName);
 		slideList = parser.getSlides();
 		Player presPlayer = new Player(slideList);
@@ -43,7 +48,7 @@ public class Overall {
 		//GUI utilities = new GUI("utilitiesSelectionPanel");  // can open all utilities from this instance
         //GUI diceRoller = new GUI("diceRollerPanel");
 	    //GUI calculator = new GUI("calculatorPanel");
-		Overall ThisIsIt = new Overall("src/EclipsePhase.xml");
+		Overall ThisIsIt = new Overall("src/BasicExample.xml");
 		System.out.println(ThisIsIt.slideList.getFont());
 		
 		

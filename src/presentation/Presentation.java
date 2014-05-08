@@ -5,11 +5,12 @@ package presentation;
  * @author Ruba Balanehru 
  */
 
+import java.awt.Color;
 import java.util.ArrayList;
 
 public class Presentation {
 	private ArrayList<Slide> slideList = new ArrayList<Slide>(0);
-	private String author, comment, version, backgroundColour, fontColour, font, lineColour, fillColour;
+	private String author, comment, version, backgroundColour, fontColour, font, lineColour, fillColour, title;
 	int width, height, fontSize;
 
 	/**
@@ -151,6 +152,29 @@ public class Presentation {
 		return fillColour;
 	}
 	
+	/**
+	 * @param converts hex colours to RGB and returns a type Color
+	 */
+	public Color getBackgroundColourObject() {
+		int[] RGB = {0, 0, 0};
+		Color colourReturn;
+		if (backgroundColour.charAt(0) == '#'){
+			String colourHex = backgroundColour.substring(1,7);
+			RGB[0] = Integer.parseInt(colourHex.substring(0,2), 16);
+			RGB[1] = Integer.parseInt(colourHex.substring(2,4), 16);
+			RGB[2] = Integer.parseInt(colourHex.substring(4,6), 16);
+		}
+		colourReturn = new Color(RGB[0], RGB[1], RGB[2]);
+		return colourReturn;
+	}
+	public void setTitle(String string) {
+		title = string;
+		
+	}
+	
+	public String getTitle() {
+		return title;
+	}
 
 	
 

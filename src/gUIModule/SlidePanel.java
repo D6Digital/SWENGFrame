@@ -91,7 +91,7 @@ public class SlidePanel extends JPanel implements MouseListener{
 	
 	public void loadPresentation(Presentation presentation) {
 		this.presentation = presentation;
-		this.setBackground(Color.ORANGE);
+		this.setBackground(presentation.getBackgroundColourObject());
 	}
 	
 	
@@ -161,14 +161,21 @@ public class SlidePanel extends JPanel implements MouseListener{
 				}
 	       }
 	       for(Sound sound : currentSlide.getSoundList()) {
+	    	   if(sound.getStart() == count+1 || (sound.getStart() == 0 && count == 0))
+	    	   {
 	    	   audioPlayer.prepareMedia(sound.getFile(), sound.getStart());
+	    	   }
+	    	   if(sound.getStart() == count)
+	    	   {
 	   		   audioPlayer.playMedia();
+	    	   }
 	       }
 		count ++;
 		
 		}
        };
        theTimer = new Timer(delay, taskPerformer);
+       theTimer.setInitialDelay(0);
        theTimer.start();
        
        this.setVisible(true);
@@ -188,7 +195,8 @@ public class SlidePanel extends JPanel implements MouseListener{
 	}
 	
 	public void refreshSlide(Slide newSlide){
-		
+		this.theTimer.stop();
+		this.audioPlayer.stopMedia();
 		this.removeAll();
 		this.setupSlide(newSlide);
 		this.repaint();
@@ -254,21 +262,21 @@ public class SlidePanel extends JPanel implements MouseListener{
 		int boundWidth = 0;
 		int boundHeight = 0;
 		
-		System.out.printf("Adding Shape%n");
+		//System.out.printf("Adding Shape%n");
 		
 		graphicsObject graphic = new graphicsObject(shape.getLineColor(), shape.getFillColor());
 		
-		System.out.printf("Set Graphic%n");
+		//System.out.printf("Set Graphic%n");
 		
 		graphic.setTotalPoints(shape.getNumberOfPoints());
 		
 		if(shape.getPointList().size() > 1){
-			System.out.printf("Point Shape: %d%n", shape.getPointList().size());
+			//System.out.printf("Point Shape: %d%n", shape.getPointList().size());
 			for(int i=0; i<(shape.getNumberOfPoints()); i++){
 				
 				pointX = shape.getPoint(i).getX();
 				pointY = shape.getPoint(i).getY();
-				System.out.printf("Reading Point %d, x %d, y %d%n", i, pointX, pointY);
+				//System.out.printf("Reading Point %d, x %d, y %d%n", i, pointX, pointY);
 				if (i==0){
 					highX = pointX;
 					lowX = pointX;
@@ -286,12 +294,12 @@ public class SlidePanel extends JPanel implements MouseListener{
 				
 				pointX = shape.getPoint(i).getX() - lowX;
 				pointY = shape.getPoint(i).getY() - lowY;
-				System.out.printf("Setting Point %d, x %d, y %d%n", i, pointX, pointY);
+				//System.out.printf("Setting Point %d, x %d, y %d%n", i, pointX, pointY);
 				graphic.setPoint (i+1, pointX, pointY);
 			}
 		}
 		else{
-			System.out.printf("Regular %d Side Shape%n", shape.getNumberOfPoints());
+			//System.out.printf("Regular %d Side Shape%n", shape.getNumberOfPoints());
 			graphic.setWidth(shape.getWidth());
 			graphic.setHeight(shape.getHeight());
 			graphic.setPoint(1, shape.getWidth()/2, shape.getHeight()/2);
@@ -302,15 +310,15 @@ public class SlidePanel extends JPanel implements MouseListener{
 			highY = lowY + shape.getHeight();
 		}
 				
-		System.out.printf("Fill Colour %s, Line Colour %s%n", shape.getFillColor(), shape.getLineColor());
+		//System.out.printf("Fill Colour %s, Line Colour %s%n", shape.getFillColor(), shape.getLineColor());
 		
 		boundWidth = highX - lowX;
 		if (boundWidth == 0) boundWidth = 1;
 		boundHeight = highY - lowY;
 		if (boundHeight == 0) boundHeight = 1;
 		
-		System.out.printf("Shape lowX %d, Shape lowY %d%n", lowX, lowY);
-		System.out.printf("Shape Width %d, Shape Height %d%n", boundWidth, boundHeight);
+		//System.out.printf("Shape lowX %d, Shape lowY %d%n", lowX, lowY);
+		//System.out.printf("Shape Width %d, Shape Height %d%n", boundWidth, boundHeight);
 				
 		slideMediaObject shapeObject = new slideMediaObject(shape.getBranch());
         shapeObject.addMouseListener(this);
@@ -318,13 +326,14 @@ public class SlidePanel extends JPanel implements MouseListener{
         graphic.setBounds(0, 0, boundWidth+1, boundHeight+1);
 		shapeObject.add(graphic);
         
-        System.out.printf("Added Shape%n");
+        //System.out.printf("Added Shape%n");
      
         // The x and y of a shape needs to be derived from the leftmost x and highest y co-ordinate in the point array 
         shapeObject.setBounds(lowX, lowY, boundWidth +1, boundHeight +1);
         this.add(shapeObject);
+        this.repaint();
         
-        System.out.printf("Added Media Object%n");
+        //System.out.printf("Added Media Object%n");
 	}
 
 	/**
@@ -408,11 +417,12 @@ public class SlidePanel extends JPanel implements MouseListener{
 	 * @param text
 	 */
 	private void addText(Text text){
-		// TODO use .setBounds to define panel size when Text.java has updated
+		
 		JPanel textPanel = new Scribe(text);
 		textPanel.setBounds(text.getX_coord(), text.getY_coord(), text.getXend(), text.getYend());
 		this.add(textPanel);
 		this.repaint();
+		
 	}
 
 

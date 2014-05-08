@@ -1,131 +1,128 @@
 <?xml version="1.0"?>
-<collection
-
-	xmlns="http://www-users.york.ac.uk/~rjm529/schema.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-<slideshow>
-<documentinfo>
-		<author>D6 Digital</author>
-		<version>2.1</version>
-		<title>Characters</title>
-		<comment>A slideshow with information about characters</comment>
-		<width>720</width>
-		<height>640</height>
-	</documentinfo>
-	<defaults>
-		<backgroundcolour>#FFFFFF</backgroundcolour>
-		<font>Times New Roman</font>
-		<fontsize>24</fontsize>
-		<fontcolour>#000000</fontcolour>
-		<linecolour>#000000</linecolour>
-		<fillcolour>#000000</fillcolour>
-	</defaults>
-	<slide id="1" duration="60" lastSlide="false">
-		<text font="Arial" fontsize="36" fontcolour="#291F9F" starttime="5"
-			duration="25" layer="0" xstart="300" ystart="200" xend="700" yend="230">
-			<textbody bold="true" italic="false" underlined="false"
-				branch="0"><textstring>Jovian Spy</textstring></textbody>
-		</text>
-		<text font="Arial" fontsize="25" fontcolour="#291F9F" starttime="5"
-			duration="25" layer="0" xstart="300" ystart="250" xend="700" yend="640">
-		<textbody bold="true" italic="true" underlined="false"
-				branch="0"><textstring>Background:</textstring> </textbody>
-			<textbody bold="false" italic="true" underlined="false"
-				branch="0"><textstring>Original Space Colonist</textstring></textbody>
-		</text>
-		
-		<shape totalpoints="3" width="100" height="100" fillcolour="#0000FF"
-
-			starttime="500" duration="30" layer="2" linecolour="#FFFFFF" branch="0">
-
-			starttime="500" duration="6" layer="2" lineColour="#FFFFFF" branch="0">
-			
-			<point num="00" x="600" y="10"></point>
-			<point num="01" x="700" y="40"></point>
-			<point num="02" x="650" y="150"></point>
-		</shape>
-
-		<audio urlname="src/XMLBits/03 The First Steps.mp3" starttime="8" loop="true"></audio>
-
-		<shape totalpoints="4" width="80" height="170" lineColour="#000000"
-			fillcolour="#00FF00" layer="3" branch="1" duration="40" starttime="80">
-			<point num="00" x="500" y="400"></point>
-		</shape>
-		<shape lineColour="#FF0000" totalpoints="2" fillcolour="#FFFFFF"
-			layer="00" branch="0" duration="20" height="50" starttime="10"
-			width="50">
-			<point num="00" x="100" y="550"></point>
-			<point num="00" x="350" y="550"></point>
-		</shape>
-		<audio urlname="src/XMLBits/03 The First Steps.mp3" starttime="0" loop="true"></audio>
- 
-		<image urlname="src/XMLBits/char1jovian_spy.jpg" xstart="10" ystart="10"
-			width="282" height="463" starttime="2" duration="100" layer="1"
-			branch="1"></image>
-	</slide>
-	<slide id="2" duration="240" lastSlide="true">
-		<text font="Arial" fontsize="40" fontcolour="#FF9500" starttime="20"
-			duration="100" layer="0" xstart="50" ystart="50" xend="400" yend="200">
-			<textbody bold="false" italic="false" underlined="true"
-				branch="0"><textstring>This is a title. Its underlined and everything.</textstring></textbody>
-			<textbody bold="false" italic="false" underlined="false"
-				branch="01"><textstring>CLICK ME</textstring></textbody>
-		</text>
-		<video urlname="/XMLBits/worlds_shittest_video.avi" starttime="10"
-			loop="true" xstart="20" ystart="23" layer="1"></video>
-	</slide>
-	
-</slideshow>
-
-<slideshow
-	
-	xmlns="http://www-users.york.ac.uk/~rjm529/schema.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-
-	<documentinfo>
-		<author>D6 Digital</author>
-		<version>2.1</version>
-		<title>Combat</title>
-		<comment>A slideshow with rules on Combat.</comment>
-		<width>720</width>
-		<height>640</height>
-	</documentinfo>
-	<defaults>
-		<backgroundcolour>#FFFFFF</backgroundcolour>
-		<font>Times New Roman</font>
-		<fontsize>24</fontsize>
-		<fontcolour>#000000</fontcolour>
-		<linecolour>#000000</linecolour>
-		<fillcolour>#000000</fillcolour>
-	</defaults>
-	<slide id="1" duration="60" lastSlide="false">
-		<text font="Arial" fontsize="36" fontcolour="#291F9F" starttime="5"
-			duration="25" layer="0" xstart="90" ystart="350" xend="610" yend="640">
-			<textbody bold="false" italic="false" underlined="false"
-				branch="0"><textstring>This is the first slide of the basic example.</textstring></textbody>
-			<textbody bold="true" italic="false" underlined="false"
-				branch="0"><textstring>This should be in bold.</textstring></textbody>
-		</text>
-		<shape totalpoints="3" width="100" height="100" fillcolour="#0000FF"
-			starttime="500" duration="30" layer="2" linecolour="#FFFFFF" branch="0">
-			<point num="00" x="600" y="10"></point>
-			<point num="01" x="700" y="40"></point>
-			<point num="02" x="650" y="150"></point>
-		</shape>
-		<audio urlname="src/XMLBits/27 Swarmers Attack.mp3" starttime="0" loop="true"></audio>
-		<image urlname="src/images/logo.png" xstart="10" ystart="10"
-			width="459" height="196" starttime="0" duration="100" layer="1"
-			branch="1"></image>
-	</slide>
-	<slide id="2" duration="240" lastSlide="true">
-		<text font="Arial" fontsize="40" fontcolour="#FF9500" starttime="20"
-			duration="100" layer="0" xstart="50" ystart="50" xend="400" yend="200">
-			<textbody bold="false" italic="false" underlined="true"
-				branch="0"><textstring>This is a title. Its underlined and everything.</textstring></textbody>
-			<textbody bold="false" italic="false" underlined="false"
-				branch="01"><textstring>CLICK ME</textstring></textbody>
-		</text>
-		<video urlname="/XMLBits/worlds_shittest_video.avi" starttime="10"
-			loop="true" xstart="20" ystart="23" layer="1"></video>
-	</slide>
-	
-</slideshow>
+<collection xmlns="http://www-users.york.ac.uk/~rjm529/schema.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<slideshow>
+		<documentinfo>
+			<author>D6 Digital</author>
+			<version>2.1</version>
+			<title>Characters</title>
+			<comment>A slideshow with information about characters</comment>
+			<width>720</width>
+			<height>640</height>
+		</documentinfo>
+		<defaults>
+			<backgroundcolour>#000055</backgroundcolour>
+			<font>Times New Roman</font>
+			<fontsize>24</fontsize>
+			<fontcolour>#000000</fontcolour>
+			<linecolour>#000000</linecolour>
+			<fillcolour>#000000</fillcolour>
+		</defaults>
+		<slide id="1" duration="60" lastSlide="false">
+			<text font="Arial" fontsize="36" fontcolour="#291F9F" starttime="0"
+				duration="25" layer="0" xstart="300" ystart="200" xend="700" yend="230">
+				<textbody bold="true" italic="false" underlined="false"
+					branch="0">
+					<textstring>Jovian Spy</textstring>
+				</textbody>
+			</text>
+			<text font="Arial" fontsize="25" fontcolour="#291F9F" starttime="0"
+				duration="25" layer="0" xstart="300" ystart="250" xend="700" yend="640">
+				<textbody bold="true" italic="true" underlined="false"
+					branch="0">
+					<textstring>Background:</textstring>
+				</textbody>
+				<textbody bold="false" italic="true" underlined="false"
+					branch="0">
+					<textstring>Original Space Colonist</textstring>
+				</textbody>
+			</text>
+			<shape totalpoints="3" width="100" height="100" fillcolour="#0000FF"
+				starttime="8" duration="30" layer="2" linecolour="#FFFFFF" branch="1">
+				<point num="00" x="600" y="10"></point>
+				<point num="01" x="700" y="40"></point>
+				<point num="02" x="650" y="150"></point>
+			</shape>
+			<audio urlname="src/XMLBits/03 The First Steps.mp3" starttime="3"
+				loop="true"></audio>
+			<image urlname="src/XMLBits/char1jovian_spy.jpg" xstart="10"
+				ystart="10" width="282" height="463" starttime="0" duration="100"
+				layer="1" branch="1"></image>
+		</slide>
+		<slide id="2" duration="240" lastSlide="true">
+			<text font="Arial" fontsize="40" fontcolour="#FF9500" starttime="20"
+				duration="100" layer="0" xstart="50" ystart="50" xend="400" yend="200">
+				<textbody bold="false" italic="false" underlined="true"
+					branch="0">
+					<textstring>This is a title. \nIts underlined and everything.\n</textstring>
+				</textbody>
+				<textbody bold="false" italic="false" underlined="false"
+					branch="01">
+					<textstring>\t\tDouble Tab!!</textstring>
+				</textbody>
+			</text>
+			<video urlname="/XMLBits/worlds_shittest_video.avi" starttime="10"
+				loop="true" xstart="20" ystart="23" layer="1"></video>
+		</slide>
+	</slideshow>
+	<slideshow xmlns="http://www-users.york.ac.uk/~rjm529/schema.xsd"
+		xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		<documentinfo>
+			<author>D6 Digital</author>
+			<version>2.1</version>
+			<title>Combat</title>
+			<comment>A slideshow with rules on Combat.</comment>
+			<width>720</width>
+			<height>640</height>
+		</documentinfo>
+		<defaults>
+			<backgroundcolour>#FFFFFF</backgroundcolour>
+			<font>Times New Roman</font>
+			<fontsize>24</fontsize>
+			<fontcolour>#000000</fontcolour>
+			<linecolour>#000000</linecolour>
+			<fillcolour>#000000</fillcolour>
+		</defaults>
+		<slide id="1" duration="60" lastSlide="false">
+			<text font="Arial" fontsize="36" fontcolour="#291F9F" starttime="5"
+				duration="25" layer="0" xstart="90" ystart="350" xend="610" yend="640">
+				<textbody bold="false" italic="false" underlined="false"
+					branch="0">
+					<textstring>This is the first slide of the basic example.
+					</textstring>
+				</textbody>
+				<textbody bold="true" italic="false" underlined="false"
+					branch="0">
+					<textstring>This should be in bold.</textstring>
+				</textbody>
+			</text>
+			<shape totalpoints="3" width="100" height="100" fillcolour="#0000FF"
+				starttime="5" duration="30" layer="2" linecolour="#FFFFFF" branch="0">
+				<point num="00" x="600" y="10"></point>
+				<point num="01" x="700" y="40"></point>
+				<point num="02" x="650" y="150"></point>
+			</shape>
+			<audio urlname="src/XMLBits/27 Swarmers Attack.mp3" starttime="0"
+				loop="true"></audio>
+			<image urlname="src/images/logo.png" xstart="10" ystart="10"
+				width="459" height="196" starttime="0" duration="100" layer="1"
+				branch="1"></image>
+		</slide>
+		<slide id="2" duration="240" lastSlide="true">
+			<text font="Arial" fontsize="40" fontcolour="#FF9500" starttime="20"
+				duration="100" layer="0" xstart="50" ystart="50" xend="400" yend="200">
+				<textbody bold="false" italic="false" underlined="true"
+					branch="0">
+					<textstring>This is a title. Its underlined and everything.
+					</textstring>
+				</textbody>
+				<textbody bold="false" italic="false" underlined="false"
+					branch="01">
+					<textstring>CLICK ME</textstring>
+				</textbody>
+			</text>
+			<video urlname="/XMLBits/worlds_shittest_video.avi" starttime="10"
+				loop="true" xstart="20" ystart="23" layer="1"></video>
+		</slide>
+	</slideshow>
 </collection>

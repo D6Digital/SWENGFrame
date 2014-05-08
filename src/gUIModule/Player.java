@@ -9,7 +9,7 @@ public class Player {
 
 	public Player(Presentation presentation) {
 		
-		JFrame testFrame = new JFrame("TEST");
+		JFrame testFrame = new JFrame(presentation.getTitle());
 		testFrame.setBounds(0, 0, presentation.getWidth(), presentation.getHeight());
 		SlidePanel slidePanel = new SlidePanel();
 		
