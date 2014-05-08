@@ -36,7 +36,7 @@ public class DicePanel extends JPanel implements ActionListener{
 	JComboBox secondDiceQuantity;
 	
 	JRadioButton multiDice;
-	int multiDiceEnabled = 0;
+	Boolean multiDiceEnabled = false;
 	
 	JButton rollButton;
 	JTextArea firstResultOutput;
@@ -157,19 +157,19 @@ public class DicePanel extends JPanel implements ActionListener{
 		//If the multiDice JRadioButton is used,
 		//toggle the additional JComboBoxes as appropreate
 		else if ("multiDiceClicked".equals(e.getActionCommand())){
-			if (multiDiceEnabled == 0){
+			if (!multiDiceEnabled){
 				secondDiceType.setEnabled(true);
 				secondDiceQuantity.setEnabled(true);
-				multiDiceEnabled = 1;
+				multiDiceEnabled = true;
 			}
-			else if (multiDiceEnabled == 1){
+			else if (multiDiceEnabled){
 				secondDiceType.setEnabled(false);
 				secondDiceQuantity.setEnabled(false);
 				
 				secondResultOutput.setText("");
 				secondResultOutput.setEnabled(false);
 				
-				multiDiceEnabled = 0;
+				multiDiceEnabled = false;
 			}
 		}
 		//If the dice type JComboBox is used, record the user selected dice type
@@ -280,7 +280,7 @@ public class DicePanel extends JPanel implements ActionListener{
 		firstResultOutput.append(" 1s rolled = " + firstDiceTypeTotalCriticalSuccesses + ".\r\n");
 		firstResultOutput.append(" " + upperRange + "s rolled = " + firstDiceTypeTotalCriticalFails + ".\r\n");
 		
-		if (multiDiceEnabled == 1){
+		if (multiDiceEnabled){
 			lineOverflow = 0;
 			
 			//Switch case statement to set the bounds of the algorithum based on the user

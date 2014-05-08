@@ -24,15 +24,10 @@ public class DicePanelTestT203 {
 
     @After
     public void tearDown() throws Exception {
-        int x = 1;
-//        do {
-//            
-//        }
-//        while(x == 1);
     }
 
     @Test
-    public void test() {
+    public void test() throws InterruptedException {
         frame.add(dicePanel);
         frame.validate();
         
@@ -45,7 +40,14 @@ public class DicePanelTestT203 {
         
         }
         
-        
+        // Step 2. User should be able to select the number of dice types they wish to roll.
+        dicePanel.multiDice.doClick();
+        assertTrue("cannot have multiple dice types...",
+             dicePanel.multiDiceEnabled);
+        dicePanel.secondDiceType.setSelectedIndex(0);
+        dicePanel.diceType.setSelectedIndex(1);
+        assertTrue("cannot have multiple dice types...",
+             dicePanel.secondDiceType != dicePanel.diceType);   
         
         // Step 3. The types of dice that the user can roll should be D2, D4, D6, D10, D20, D100.
         Boolean d2, d3, d4, d6, d8, d10, d12, d20, d100;
@@ -112,6 +114,8 @@ public class DicePanelTestT203 {
         assertTrue("d20 was not in list", d20);
         assertTrue("d100 was not in list", d100);
 
+        // Step 4. Visual inspection. Perform calculation.
+        Thread.sleep(20000);
         
         
     }
