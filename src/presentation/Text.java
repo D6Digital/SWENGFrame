@@ -100,7 +100,6 @@ public String getColour() {
  * @param colour sets the colour of the text
  */
 public void setColour(String colour) {
-	System.out.println(colour);
 	this.colour = colour;
 }
 

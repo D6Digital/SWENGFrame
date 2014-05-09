@@ -43,7 +43,7 @@
 				<point num="01" x="700" y="40"></point>
 				<point num="02" x="650" y="150"></point>
 			</shape>
-			<audio urlname="src/XMLBits/03 The First Steps.mp3" starttime="3"
+			<audio urlname="src/XMLBits/21 Imperial Battle.mp3" starttime="3"
 				loop="true"></audio>
 			<image urlname="src/XMLBits/char1jovian_spy.jpg" xstart="10"
 				ystart="10" width="282" height="463" starttime="0" duration="100"

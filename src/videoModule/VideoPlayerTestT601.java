@@ -26,7 +26,7 @@ public class VideoPlayerTestT601 {
     @Before
     public void setUp() throws Exception {
         
-        video = new Video(50, 60, 0, 10, 0, file, 300, 301, -10000000);
+        video = new Video(50, 60, 30, 80, 0, file, 300, 301, -10000000);
         videoPlayer = new VideoPlayer(video);
         frame = new JFrame();
         frame.setSize(600, 600);
@@ -48,7 +48,7 @@ public class VideoPlayerTestT601 {
        System.out.println(videoPlayer.getLocation());
        frame.pack();
        frame.setVisible(true);
-       Thread.sleep(SLEEPMS*10);
+       Thread.sleep(SLEEPMS*20);
        
     }
 

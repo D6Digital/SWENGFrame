@@ -9,14 +9,12 @@ import uk.co.caprica.vlcj.player.embedded.videosurface.CanvasVideoSurface;
 
 
 
-import java.awt.BorderLayout;
 import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.event.MouseEvent;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JSlider;
@@ -28,15 +26,22 @@ import com.sun.jna.NativeLibrary;
 
 public class VideoPlayer extends JPanel{
 
-	protected static JButton playButton, stopButton, closeButton;
-	protected static EmbeddedMediaPlayer mediaPlayer;
-	protected static JPanel vidControlPanel;
-	protected static JPanel vidpanel;
-	protected static JPanel masterPanel;
-	protected static JSlider bar;
-	protected static ImageIcon img, img2;
-	protected static PlayerControlsPanel ControlPanel;
-	protected static JLabel pausedLabel;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	
+	private JButton playButton, stopButton, closeButton;
+	private EmbeddedMediaPlayer mediaPlayer;
+	private JPanel vidControlPanel;
+	private JPanel vidpanel;
+	private JPanel masterPanel;
+	private JPanel overlayPanel;
+	private JSlider bar;
+	private ImageIcon img;
+	private PlayerControlsPanel ControlPanel;
+	private JLabel pausedLabel;
 	
 
 	public VideoPlayer(Video video) {
@@ -75,10 +80,18 @@ public class VideoPlayer extends JPanel{
 		vidpanel.setLayout(null);
 		vidpanel.setBounds(0, 0, width, height);
 		img = new ImageIcon("resources/buttons/pauseText.png");
-	    img2 = new ImageIcon("resources/buttons/StoppedText.png");
-	    pausedLabel = new JLabel(img);
-	    pausedLabel.setBounds(width/2, height/2, 50, 50);
-	    Canvas canvas = new Canvas();    
+	    //img2 = new ImageIcon("resources/buttons/StoppedText.png");
+	    
+	    overlayPanel = new JPanel();
+	    overlayPanel.setLayout(null);
+	    overlayPanel.setOpaque(false);
+	    overlayPanel.setBounds(0, 0, width, height);
+	    //pausedLabel = new JLabel(img);
+	    //pausedLabel.setOpaque(true);
+	    //pausedLabel.setBounds(width/2, height/2, 50, 50);
+	    //overlayPanel.add(pausedLabel);
+	    Canvas canvas = new Canvas();
+	    canvas.setBackground(Color.BLACK);
 		
 		//frame.setLayout(new BorderLayout());
 		//frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);    
@@ -91,9 +104,9 @@ public class VideoPlayer extends JPanel{
 	    
 	    ControlPanel = new PlayerControlsPanel(mediaPlayer);
 	    //ControlPanel.setLayout(null);
-	    ControlPanel.setBounds(0, height-70, width, 70);
+	    ControlPanel.setBounds(0, height-80, width, 80);
 	    ControlPanel.setBackground(Color.black);
-	    ControlPanel.setOpaque(false);
+	    ControlPanel.setOpaque(true);
 	    
 	    // disables default VLCJ action listeners
 	    mediaPlayer.setEnableMouseInputHandling(false);
@@ -123,14 +136,13 @@ public class VideoPlayer extends JPanel{
 		    public void mousePressed(MouseEvent e) {
 		    	if (mediaPlayer.isPlaying()){
 		 	       mediaPlayer.pause();
-		 	       ControlPanel.setVisible(false);
-		 	       vidpanel.setVisible(false);
-		 	       Canvas theCanvas = (Canvas)e.getSource();
-		 	       theCanvas.getParent().add(pausedLabel);
-		 	       //frame.add(pausedLabel, BorderLayout.CENTER);		 	      
+		 	       ControlPanel.setPlayButton();
+		 	       add(overlayPanel);	
+		 	       //repaint();
 		    	}
 		    	else{
 		    	mediaPlayer.play();
+		    	ControlPanel.setPauseButton();
 		    		}		 		 	       
 		 	    }	    	
 	    	});
@@ -144,19 +156,32 @@ public class VideoPlayer extends JPanel{
 	    		//System.out.println(xCoordinate + "," + yCoordinate);
 	    		System.out.println("---------listener------------");
 	    		System.out.println(yCoordinate);
-	    		System.out.println((height)- (height*0.2));
+	    		System.out.println((height)- 80);
 	    		System.out.println("---------END listener------------");
 	    		
-	    		if (yCoordinate > ((height)- (height*0.2))){
-	    			//if(!ControlPanel.isVisible()) {
-	    			    ControlPanel.setVisible(true);
-	    			//}
+	    		if(!mediaPlayer.isPlaying())
+	    		{
+	    			ControlPanel.setVisible(true);
 	    		}
-	    		else {
+	    		else
+	    		{
+	    			if (yCoordinate > ((height)- 80)){
+		    			//if(!ControlPanel.isVisible()) {
+		    			    ControlPanel.setVisible(true);
+		    			//}
+		    		}
+	    			else
+	    			{
+	    			ControlPanel.setVisible(false);
+	    			}
+	    		}
+	    		
+	    		
+	    		//else {
                     //if(ControlPanel.isVisible()) {
-                        ControlPanel.setVisible(false);
+                        //ControlPanel.setVisible(false);
                     //}
-	    		}
+	    		//}
 	    	}
 	    });
 	    
@@ -177,15 +202,14 @@ public class VideoPlayer extends JPanel{
             });
 	      
 
-	 pausedLabel.addMouseListener(new java.awt.event.MouseAdapter() {   
+	 overlayPanel.addMouseListener(new java.awt.event.MouseAdapter() {   
 		 	@Override
 		    public void mouseClicked(MouseEvent e) {
-		    	//frame.remove(pausedLabel);
-		 	   Canvas theCanvas = (Canvas)e.getSource();
-               theCanvas.getParent().remove(pausedLabel);
+		 	    remove(overlayPanel);
 		    	vidpanel.setVisible(true);
-		    	mediaPlayer.play();
-		    	PlayerControlsPanel.setPlayButton();		    	
+		    	mediaPlayer.play();	
+		    	ControlPanel.setPauseButton();
+		    	repaint();
 		    	}	    	
 	    	});
 	}

@@ -5,6 +5,7 @@ package videoModule;
  */
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
@@ -36,9 +37,9 @@ public class PlayerControlsPanel extends JPanel {
 
   private static final int SKIP_TIME_MS = 10 * 1000;
   
-  private final ScheduledExecutorService executorService = Executors.newSingleThreadScheduledExecutor();
+  private ScheduledExecutorService executorService = Executors.newSingleThreadScheduledExecutor();
 
-  private final EmbeddedMediaPlayer mediaPlayer;
+  private EmbeddedMediaPlayer mediaPlayer;
   
   private JLabel timeLabel;
   private JSlider positionSlider;
@@ -47,7 +48,7 @@ public class PlayerControlsPanel extends JPanel {
   
   private JButton rewindButton;
   private JButton stopButton;
-  protected static JButton playButton;
+  private JButton playButton;
   private JButton fastForwardButton;
   private JSlider volumeSlider;
   
@@ -58,8 +59,8 @@ public class PlayerControlsPanel extends JPanel {
   
   private boolean mousePressedPlaying = false;
   
-  protected static ImageIcon img2;
-  protected static ImageIcon img3;
+  private ImageIcon img2;
+  private ImageIcon img3;
 
   public PlayerControlsPanel(EmbeddedMediaPlayer mediaPlayer) {
     this.mediaPlayer = mediaPlayer;
@@ -77,14 +78,19 @@ public class PlayerControlsPanel extends JPanel {
    
   private void createControls() {
     timeLabel = new JLabel("hh:mm:ss");
+    timeLabel.setOpaque(false);
+    timeLabel.setForeground(Color.WHITE);
     
     positionSlider = new JSlider();
+    positionSlider.setOpaque(false);
     positionSlider.setMinimum(0);
     positionSlider.setMaximum(1000);
     positionSlider.setValue(0);
     positionSlider.setToolTipText("Position");
     
     chapterLabel = new JLabel("00/00");
+    chapterLabel.setOpaque(false);
+    chapterLabel.setForeground(Color.WHITE);
 
     rewindButton = new JButton();
     ImageIcon img = new ImageIcon("resources/buttons/rewind.png");
@@ -102,7 +108,7 @@ public class PlayerControlsPanel extends JPanel {
     playButton = new JButton();
     img3 = new ImageIcon("resources/buttons/play.png");
     img2 = new ImageIcon("resources/buttons/pause.png");
-    playButton.setIcon(img2);
+    playButton.setIcon(img3);
     playButton.setToolTipText("Play");
     playButton.setPreferredSize(new Dimension(45, 45));
     
@@ -138,10 +144,12 @@ public class PlayerControlsPanel extends JPanel {
     setLayout(new BorderLayout());
 
     JPanel positionPanel = new JPanel();
+    positionPanel.setOpaque(false);
     positionPanel.setLayout(new GridLayout(1, 1));
     positionPanel.add(positionSlider);
     
     JPanel topPanel = new JPanel();
+    topPanel.setOpaque(false);
     topPanel.setLayout(new BorderLayout(8, 0));
     
     topPanel.add(timeLabel, BorderLayout.WEST);
@@ -151,6 +159,7 @@ public class PlayerControlsPanel extends JPanel {
     add(topPanel, BorderLayout.NORTH);
     
     JPanel bottomPanel = new JPanel();
+    bottomPanel.setOpaque(false);
     
     bottomPanel.setLayout(new FlowLayout());
     
@@ -369,7 +378,12 @@ public class PlayerControlsPanel extends JPanel {
     volumeSlider.setValue(value);
   }
   
-  protected static void setPlayButton(){
+  public void setPlayButton(){
+	  playButton.setIcon(img3);
+  }
+  
+  public void setPauseButton(){
 	  playButton.setIcon(img2);
   }
+  
 }
