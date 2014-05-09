@@ -15,8 +15,8 @@ import org.junit.Test;
  *
  */
 public class SlideShapeTestT404 {
-    int numberOfPoints, width, height, branch;
-    int x_coord, y_coord, start, duration, layer;
+    int numberOfPoints, width, height;
+    Integer x_coord, y_coord, start, duration, layer, branch;
     String fillColor, lineColor;
     String file;
     ArrayList<Point> pointList = new ArrayList<Point>(0);

@@ -25,8 +25,8 @@ public class SlideObject {
 	 * @param file
 	 * @param branch
 	 */
-	public SlideObject(Integer x_coord, int y_coord, int start, int duration, int layer,
-			String file, int branch) {
+	public SlideObject(Integer x_coord, Integer y_coord, Integer start, Integer duration, Integer layer,
+			String file, Integer branch) {
 		this.x_coord = x_coord;
 		this.y_coord = y_coord;
 		this.start = start;
@@ -46,7 +46,7 @@ public class SlideObject {
 	 * Gets the time into the slide at which the object occurs
 	 * @return start
 	 */
-	public int getStart() {
+	public Integer getStart() {
 		return start;
 	}
 
@@ -55,7 +55,7 @@ public class SlideObject {
 	 * Set the time into the slide at which the object occurs
 	 * @param start 
 	 */
-	public void setStart(int start) {
+	public void setStart(Integer start) {
 		this.start = start;
 	}
 
@@ -64,7 +64,7 @@ public class SlideObject {
 	 * Gets the time into the slide when the object disappears
 	 * @return end
 	 */
-	public int getDuration() {
+	public Integer getDuration() {
 		return duration;
 	}
 
@@ -73,7 +73,7 @@ public class SlideObject {
 	 * Sets the time into the slide when the object disappears 
 	 * @param end the end to set
 	 */
-	public void setDuration(int end) {
+	public void setDuration(Integer end) {
 		this.duration = end;
 	}
 
@@ -81,7 +81,7 @@ public class SlideObject {
 	/**
 	 * @return the layer
 	 */
-	public int getLayer() {
+	public Integer getLayer() {
 		return layer;
 	}
 
@@ -89,7 +89,7 @@ public class SlideObject {
 	/**
 	 * @param layer the layer to set
 	 */
-	public void setLayer(int layer) {
+	public void setLayer(Integer layer) {
 		this.layer = layer;
 	}
 
@@ -109,7 +109,7 @@ public class SlideObject {
 	 * For music files this will be ignored
 	 * @param y_coord the y-coordinate
 	 */
-	public void setY_coord(int y_coord) {
+	public void setY_coord(Integer y_coord) {
 		this.y_coord = y_coord;
 	}
 	/**
@@ -131,7 +131,7 @@ public class SlideObject {
 	 * Retrieves the x coordinate of the slide object
 	 * @return the x_coord
 	 */
-	public int getX_coord() {
+	public Integer getX_coord() {
 		return x_coord;
 	}
 
@@ -139,7 +139,7 @@ public class SlideObject {
 	 * Retrieves the y-coordinate of the slide object
 	 * @return the y_coord
 	 */
-	public int getY_coord() {
+	public Integer getY_coord() {
 		return y_coord;
 	}
 	/**
@@ -154,7 +154,7 @@ public class SlideObject {
 	 * 
 	 * @return branch
 	 */
-	public int getBranch(){
+	public Integer getBranch(){
 		return branch;
 	}
 	
@@ -162,7 +162,7 @@ public class SlideObject {
 	 * 
 	 * 
 	 */
-	public void setBranch(int branch){
+	public void setBranch(Integer branch){
 		this.branch = branch;
 	}
 }

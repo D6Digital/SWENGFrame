@@ -11,8 +11,8 @@ import org.junit.Test;
  * @author Joshua Lant
  */
 public class SlideVideoTestT409 {
-
-	int x_coord, y_coord, start, duration, layer, width, height, length;
+    int width, height, length;
+	Integer x_coord, y_coord, start, duration, layer;
 	String file;
 	
 	@Before

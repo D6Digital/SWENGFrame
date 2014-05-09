@@ -32,7 +32,7 @@ public class SlideTextContentTestT408 {
 	@Test
 	public void testSteps1to2() {
 		// Step 1. Instantiate TextContent supplying values to construcor.
-		TextContent textContent = new TextContent();
+		TextContent textContent = new TextContent(scriptType, bold, italic, underlined, hyperlink, textString);
 
 		// Step 2. Check that the getters and constructor work properly.
 		assertEquals("scriptType has a problem with the constructor or the getters",

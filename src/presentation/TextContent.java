@@ -6,11 +6,22 @@ package presentation;
  */
 public class TextContent {
 	public enum ScriptTypeDef { superScript , subScript, normal };
-	private boolean bold, italic, underlined, hyperlink = false;
+	private Boolean bold, italic, underlined, hyperlink = false;
 	private String textString = null;
 	private ScriptTypeDef scriptType = ScriptTypeDef.normal;
 
 
+	public TextContent(ScriptTypeDef scriptType, Boolean bold, Boolean italic,
+	                   Boolean underlined, Boolean hyperlink, String textString) {
+	    this.scriptType = scriptType;
+	    this.bold = bold;
+	    this.italic = italic;
+	    this.underlined = underlined;
+	    this.hyperlink = hyperlink;
+	    this.textString = textString;
+	}
+	
+	
 	public TextContent() {
 	}
 	

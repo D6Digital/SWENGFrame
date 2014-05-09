@@ -11,7 +11,7 @@ import org.junit.Test;
  * @author Joshua Lant
  */
 public class SlideObjectAttributesTestT401 {
-    int x_coord, y_coord, start, duration, layer, branch;
+    Integer x_coord, y_coord, start, duration, layer, branch;
     String file;
     
     @Before
@@ -88,56 +88,56 @@ public class SlideObjectAttributesTestT401 {
     
     @Test
     public void teststeps4to6() {
-//        // Step 4. Instantiate the SlideObject class, supplying null values for each of the input parameters.
-//        SlideObject slide = new SlideObject(null, null, null, null, null, null, null);
-//    
-//        // Step 5. All parameters should be gettable.
-//        assertEquals("cannot get x coordinate",
-//                slide.getX_coord(), null);
-//        assertEquals("cannot get y coordinate",
-//                slide.getY_coord(), null);
-//        assertEquals("cannot get start",
-//                slide.getStart(), null);
-//        assertEquals("cannot get duration",
-//                slide.getDuration(), null);
-//        assertEquals("cannot get layer",
-//                slide.getLayer(), null);
-//        assertEquals("cannot get branch",
-//                slide.getBranch(), null);
-//        assertEquals("cannot get branch",
-//                slide.getFile(), null);
-//        
-//        
-//        // Step 6. All parameters should be settable.
-//        x_coord = 9876543;
-//        y_coord = 143254;
-//        start = 5432;
-//        duration =4236;
-//        layer = 732344;
-//        branch = 222222222;
-//        file = "nulllllfldsfsfdsfdsfdsaf";
-//        
-//        slide.setX_coord(x_coord);
-//        slide.setY_coord(y_coord);
-//        slide.setStart(start);
-//        slide.setDuration(duration);
-//        slide.setLayer(layer);
-//        slide.setBranch(branch);
-//        slide.setFile(file);
-//        
-//        assertEquals("cannot get x coordinate",
-//                slide.getX_coord(), x_coord);
-//        assertEquals("cannot get y coordinate",
-//                slide.getY_coord(), y_coord);
-//        assertEquals("cannot get start",
-//                slide.getStart(), start);
-//        assertEquals("cannot get duration",
-//                slide.getDuration(), duration);
-//        assertEquals("cannot get layer",
-//                slide.getLayer(), layer);
-//        assertEquals("cannot get branch",
-//                slide.getBranch(), branch);
-//        assertEquals("cannot get branch",
-//                slide.getFile(), file);
+        // Step 4. Instantiate the SlideObject class, supplying null values for each of the input parameters.
+        SlideObject slide = new SlideObject(null, null, null, null, null, null, null);
+    
+        // Step 5. All parameters should be gettable.
+        assertNull("cannot get x coordinate",
+                slide.getX_coord());
+        assertNull("cannot get y coordinate",
+                slide.getY_coord());
+        assertNull("cannot get start",
+                slide.getStart());
+        assertNull("cannot get duration",
+                slide.getDuration());
+        assertNull("cannot get layer",
+                slide.getLayer());
+        assertNull("cannot get branch",
+                slide.getBranch());
+        assertNull("cannot get branch",
+                slide.getFile());
+        
+        
+        // Step 6. All parameters should be settable.
+        x_coord = 9876543;
+        y_coord = 143254;
+        start = 5432;
+        duration =4236;
+        layer = 732344;
+        branch = 222222222;
+        file = "nulllllfldsfsfdsfdsfdsaf";
+        
+        slide.setX_coord(x_coord);
+        slide.setY_coord(y_coord);
+        slide.setStart(start);
+        slide.setDuration(duration);
+        slide.setLayer(layer);
+        slide.setBranch(branch);
+        slide.setFile(file);
+        
+        assertEquals("cannot get x coordinate",
+                slide.getX_coord(), x_coord);
+        assertEquals("cannot get y coordinate",
+                slide.getY_coord(), y_coord);
+        assertEquals("cannot get start",
+                slide.getStart(), start);
+        assertEquals("cannot get duration",
+                slide.getDuration(), duration);
+        assertEquals("cannot get layer",
+                slide.getLayer(), layer);
+        assertEquals("cannot get branch",
+                slide.getBranch(), branch);
+        assertEquals("cannot get branch",
+                slide.getFile(), file);
     }
 }

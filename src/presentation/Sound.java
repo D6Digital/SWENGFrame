@@ -6,9 +6,12 @@ package presentation;
  * @author Andrew Walter
  *
  */
-public class Sound extends SlideObject{
+public class Sound {
 
-	private boolean loop;
+	private Boolean loop;
+    private int start;
+    private int duration;
+    private String file;
 
 	/**
 	 * @param x_coord
@@ -19,15 +22,39 @@ public class Sound extends SlideObject{
 	 * @param file
 	 * @param loop
 	 */
-	public Sound(int start, int duration,
-			String file, boolean loop) {
-		super(0, 0, start, duration, 0, file, 0);
+	public Sound(int start, int duration, String file, boolean loop) {
+		this.start = start;
+		this.duration = duration;
+		this.file = file;
 		this.loop = loop;
 	}
 	
 	public Sound() {
-		// TODO Auto-generated constructor stub
 	}
+	
+	public void setStart(int start) {
+	    this.start = start;
+	}
+	
+	public int getStart() {
+	    return start;
+	}
+	
+   public void setDuration(int duration) {
+        this.duration = duration;
+    }
+    
+    public int getDuration() {
+        return duration;
+    }
+    
+    public void setFile(String file) {
+        this.file = file;
+    }
+    
+    public String getFile() {
+        return file;
+    }
 
 	public boolean getLoop(){
 		return loop;

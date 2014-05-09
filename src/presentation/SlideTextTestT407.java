@@ -14,8 +14,8 @@ import org.junit.Test;
  *
  */
 public class SlideTextTestT407 {
-
-    int x_coord, y_coord, start, duration, layer, size, branch;
+    int size;
+    Integer x_coord, y_coord, start, duration, layer, branch;
     String file, colour, textString;
     ArrayList<TextContent> text;
 
