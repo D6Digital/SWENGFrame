@@ -13,7 +13,13 @@ import javax.swing.JPanel;
  */
 public class slideMediaObject extends JPanel implements MouseListener{
 
-	private int branch;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	
+	private Integer branch;
 	/**
 	 * @param branch
 	 */

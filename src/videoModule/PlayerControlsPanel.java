@@ -119,6 +119,7 @@ public class PlayerControlsPanel extends JPanel {
     fastForwardButton.setPreferredSize(new Dimension(45, 45));
     
     volumeSlider = new JSlider();
+    volumeSlider.setOpaque(false);
     volumeSlider.setOrientation(JSlider.HORIZONTAL);
     volumeSlider.setMinimum(LibVlcConst.MIN_VOLUME);
     volumeSlider.setMaximum(LibVlcConst.MAX_VOLUME);
@@ -136,6 +137,9 @@ public class PlayerControlsPanel extends JPanel {
     loop.setToolTipText("Loop video");
     loop.setPreferredSize(new Dimension(45, 45));
    
+    loopLabel.setOpaque(false);
+    loopLabel.setForeground(Color.WHITE);
+    
   }
   
   private void layoutControls() {

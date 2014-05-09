@@ -9,6 +9,7 @@ import java.awt.Color;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
 
 import java.awt.Dimension;
 
@@ -19,7 +20,12 @@ import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextPane;
 import javax.swing.Timer;
+import javax.swing.text.AttributeSet;
+import javax.swing.text.Element;
+import javax.swing.text.StyledDocument;
+import javax.swing.text.html.HTML;
 
 
 import Graphics.graphicsObject;
@@ -42,6 +48,7 @@ import presentation.Video;
 import presentation.slideMediaObject;
 import textModule.Scribe;
 import videoModule.VideoPainter;
+import videoModule.VideoPlayer;
 
 
 
@@ -66,7 +73,10 @@ public class SlidePanel extends JPanel implements MouseListener{
 	Presentation presentation;
 	Timer theTimer;
 	
+	MouseAdapter textBranchListener;
+	
 	EmbeddedAudioPlayer audioPlayer;
+	VideoPlayer videoPlayer;
 
 	private String vlcLibraryPath = "resources/lib/vlc-2.1.3";
 	
@@ -79,16 +89,23 @@ public class SlidePanel extends JPanel implements MouseListener{
 		super();
 		
 		
+		
+		
+		
 		audioPlayer = new EmbeddedAudioPlayer(vlcLibraryPath );
 		// set layout manager to null so media components can be added to their specific co-ordinates
-		this.setLayout(null);
+		setLayout(null);
+		
+		setupTextListener();
 		
 		// By default the panel is invisible until the player chooses to display it
-		this.setVisibility(false);
+		setVisibility(false);
 		
 		// TODO ensure this panel is ready to be displayed when necessary
 	}
 	
+	
+
 	public void loadPresentation(Presentation presentation) {
 		this.presentation = presentation;
 		this.setBackground(presentation.getBackgroundColourObject());
@@ -143,7 +160,7 @@ public class SlidePanel extends JPanel implements MouseListener{
 				}
 		   }
 	       for(Video video: currentSlide.getVideoList()) {
-	    	   if(video.getStart() == count)
+	    	   if(video.getPlaytime() == count)
 				{
 					addVideo(video);
 				}
@@ -196,7 +213,14 @@ public class SlidePanel extends JPanel implements MouseListener{
 	
 	public void refreshSlide(Slide newSlide){
 		this.theTimer.stop();
-		this.audioPlayer.stopMedia();
+		if(audioPlayer != null)
+		{
+			this.audioPlayer.stopMedia();
+		}
+		if(videoPlayer != null)
+		{
+			this.videoPlayer.stopMedia();
+		}
 		this.removeAll();
 		this.setupSlide(newSlide);
 		this.repaint();
@@ -237,13 +261,15 @@ public class SlidePanel extends JPanel implements MouseListener{
 		//Returns the object that triggered the action listener and casts it to
 		//a slideObject
 		slideMediaObject eventSource = (slideMediaObject) e.getSource();
-		
-		//Get the branch value assigned to the object of type slideObject
-		int branch = eventSource.getBranch();
-		if (branch != 0){
-			this.refreshSlide(presentation.getSlideList().get(branch));
-			//branch to slide specified by the object
+		if(eventSource != null){
+			//Get the branch value assigned to the object of type slideObject
+			Integer branch = eventSource.getBranch();
+			if (branch != null){
+				this.refreshSlide(presentation.getSlideList().get(branch));
+				//branch to slide specified by the object
+			}
 		}
+		
 	}
 	
 
@@ -371,11 +397,8 @@ public class SlidePanel extends JPanel implements MouseListener{
 		
 		// TODO Replace with the embedded video player when available
 		// Start paused by default
-		
-		JButton videoPanel = VideoPainter.ProduceButton(video.getFile());
-		
-		videoPanel.setBounds(video.getX_coord(), video.getY_coord(), video.getWidth(), video.getHeight());
-        this.add(videoPanel);
+		videoPlayer = new VideoPlayer(video);
+        this.add(videoPlayer);
         this.repaint();
 	}
 	
@@ -418,7 +441,7 @@ public class SlidePanel extends JPanel implements MouseListener{
 	 */
 	private void addText(Text text){
 		
-		JPanel textPanel = new Scribe(text);
+		JPanel textPanel = new Scribe(text,textBranchListener);
 		textPanel.setBounds(text.getX_coord(), text.getY_coord(), text.getXend(), text.getYend());
 		this.add(textPanel);
 		this.repaint();
@@ -457,7 +480,54 @@ public class SlidePanel extends JPanel implements MouseListener{
 		
 	}
 
-
+	/**
+	 * Create a mouse listener to branch from sections of text
+	 */
+	private void setupTextListener() {
+		textBranchListener = new MouseAdapter() {
+			
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				java.awt.Desktop desktop = java.awt.Desktop.getDesktop();
+				JTextPane textPane = (JTextPane) e.getSource();
+				if(textPane != null)
+				{
+					java.awt.Point pt = new java.awt.Point(e.getX(), e.getY());
+					int pos = textPane.viewToModel(pt);
+				
+					
+					if (pos >= 0)
+					{
+						StyledDocument doc = textPane.getStyledDocument();
+						if (doc instanceof StyledDocument){
+							StyledDocument hdoc = (StyledDocument) doc;
+							Element el = hdoc.getCharacterElement(pos);
+							AttributeSet a = el.getAttributes();
+							String href = (String) a.getAttribute(HTML.Attribute.HREF);
+							
+							if (href != null){
+								try{                            
+									java.net.URI uri = new java.net.URI( href );
+									desktop.browse( uri );
+			                       }
+								catch ( Exception ev ){
+									System.err.println( ev.getMessage() );
+			                       }
+								
+			                }
+							Integer branch = (Integer) a.getAttribute(HTML.Attribute.LINK);
+							
+							if (branch != null){
+								refreshSlide(presentation.getSlideList().get(branch));
+							}
+						}
+					}
+				}
+			}
+			
+		};
+		
+	}
 
 	
 	

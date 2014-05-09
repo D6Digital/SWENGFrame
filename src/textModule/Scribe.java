@@ -10,6 +10,7 @@ import java.awt.Font;
 import java.awt.FontFormatException;
 import java.awt.GraphicsEnvironment;
 import java.awt.Point;
+import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
@@ -54,7 +55,10 @@ public class Scribe extends JPanel implements MouseListener, MouseMotionListener
 	 * produces a JPanel containing text from the text object
 	 * @param text
 	 */
-	public Scribe(Text text) {
+	
+	
+	
+	public Scribe(Text text, MouseAdapter listener) {
 		
 		textObject = text;
 		
@@ -84,8 +88,47 @@ public class Scribe extends JPanel implements MouseListener, MouseMotionListener
 		// Create the JTextPane
 		textPane = createTextPane();
 		textPane.setEditable(false);
-		textPane.addMouseListener(this);
+		//textPane.addMouseListener(this);
 		textPane.addMouseMotionListener(this);
+		textPane.addMouseListener(listener);
+		
+		add(textPane);
+		
+	}
+	
+public Scribe(Text text) {
+		
+		textObject = text;
+		
+		
+		this.setOpaque(false);
+		
+		font = new Font(textObject.getFile(), Font.PLAIN, 12);
+		if(font.getFamily().equals("Dialog")){
+		// create a font object for a user defined font
+			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+			for (String name : ge.getAvailableFontFamilyNames()) {
+				System.out.println(name);
+			}
+			try {
+			    font = Font.createFont(Font.TRUETYPE_FONT, new File(textObject.getFile()));
+			    font = font.deriveFont(Font.PLAIN,textObject.getSize());
+	
+				ge.registerFont(font);
+			} catch (FontFormatException | IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		}
+
+		setLayout(new BorderLayout());
+		
+		// Create the JTextPane
+		textPane = createTextPane();
+		textPane.setEditable(false);
+		//textPane.addMouseListener(this);
+		textPane.addMouseMotionListener(this);
+		textPane.addMouseListener(this);
 		
 		add(textPane);
 		
@@ -131,6 +174,11 @@ public class Scribe extends JPanel implements MouseListener, MouseMotionListener
 				} catch (BadLocationException ble) {
 					System.err.println("could't insert text into JTextPane");
 				}
+			}
+			
+			if(text.getBranch() != null)
+			{
+				newStyle.addAttribute(HTML.Attribute.LINK, text.getBranch());
 			}
 			
 			try{
@@ -198,6 +246,8 @@ public class Scribe extends JPanel implements MouseListener, MouseMotionListener
 		frame.add(shakespeare);
 		frame.setVisible(true);
 	}
+	
+	
 
 
 	@Override
@@ -226,7 +276,13 @@ public class Scribe extends JPanel implements MouseListener, MouseMotionListener
 					catch ( Exception ev ){
 						System.err.println( ev.getMessage() );
                        }
-                }           
+					
+                }
+				Integer branch = (Integer) a.getAttribute(HTML.Attribute.LINK);
+				
+				if (branch != null){
+					
+				}
 			}
 		}
 		
@@ -283,6 +339,17 @@ public class Scribe extends JPanel implements MouseListener, MouseMotionListener
 				String href = (String) a.getAttribute(HTML.Attribute.HREF);
 				
 				if (href != null){
+					if(getCursor() != handCursor){
+						textPane.setCursor(handCursor);
+					}
+				}
+				else{
+					textPane.setCursor(defaultCursor);
+				}
+				
+				Integer branch = (Integer) a.getAttribute(HTML.Attribute.LINK);
+				
+				if (branch != null){
 					if(getCursor() != handCursor){
 						textPane.setCursor(handCursor);
 					}

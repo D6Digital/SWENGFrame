@@ -62,7 +62,7 @@ public class VideoPlayer extends JPanel{
 	    int length = video.getLength();
 
 		this.setLayout(null);
-		this.setBounds(0, 0, video.getWidth(), video.getHeight());
+		this.setBounds(video.getX_coord(), video.getY_coord(), video.getWidth(), video.getHeight());
 		
 		System.out.println("xcoord = " + xcoord);
 		System.out.println("ycoord = " + ycoord);
@@ -154,10 +154,10 @@ public class VideoPlayer extends JPanel{
 	    		int yCoordinate = e1.getY();
 	    		
 	    		//System.out.println(xCoordinate + "," + yCoordinate);
-	    		System.out.println("---------listener------------");
-	    		System.out.println(yCoordinate);
-	    		System.out.println((height)- 80);
-	    		System.out.println("---------END listener------------");
+	    		//System.out.println("---------listener------------");
+	    		//System.out.println(yCoordinate);
+	    		//System.out.println((height)- 80);
+	    		//System.out.println("---------END listener------------");
 	    		
 	    		if(!mediaPlayer.isPlaying())
 	    		{
@@ -216,6 +216,10 @@ public class VideoPlayer extends JPanel{
 	
 	public void setupListeners(int controlPanelYLocation) {
 	    
+	}
+	
+	public void stopMedia(){
+		mediaPlayer.stop();
 	}
 	
 	/**

@@ -7,6 +7,7 @@ package presentation;
 public class TextContent {
 	public enum ScriptTypeDef { superScript , subScript, normal };
 	private Boolean bold, italic, underlined, hyperlink = false;
+	private Integer branch = null;
 	private String textString = null;
 	private ScriptTypeDef scriptType = ScriptTypeDef.normal;
 
@@ -100,6 +101,22 @@ public class TextContent {
 	 */
 	public void setHyperlink(boolean hyperlink) {
 		this.hyperlink = hyperlink;
+	}
+
+
+	/**
+	 * @return the branch
+	 */
+	public Integer getBranch() {
+		return branch;
+	}
+
+
+	/**
+	 * @param branch is the branch number to be set
+	 */
+	public void setBranch(int branch) {
+		this.branch = branch;
 	}
 
 }

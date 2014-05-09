@@ -447,6 +447,10 @@ public class XMLParser extends DefaultHandler{
 			newVideo.setX_coord(Integer.parseInt(attrVal));
 			attrVal = attrs.getValue("ystart");
 			newVideo.setY_coord(Integer.parseInt(attrVal));
+			attrVal = attrs.getValue("width");
+			newVideo.setWidth(Integer.parseInt(attrVal));
+			attrVal = attrs.getValue("height");
+			newVideo.setHeight(Integer.parseInt(attrVal));
 			attrVal = attrs.getValue("starttime");
 			if(attrVal == null){
 				newVideo.setStart(0);
@@ -539,6 +543,10 @@ public class XMLParser extends DefaultHandler{
 			attrVal = attrs.getValue("hyperlink");
 			if(attrVal != null){
 				newTextContent.setHyperlink(Boolean.parseBoolean(attrVal));
+			}
+			attrVal = attrs.getValue("branch");
+			if(attrVal != null){
+				newTextContent.setBranch(Integer.parseInt(attrVal));
 			}
 			
 		}

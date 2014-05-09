@@ -15,7 +15,6 @@ public class Shapes extends SlideObject {
 	private int height;
 	private String fillColor;
 	private String lineColor;
-	private int branch;
 	private ArrayList<Point> pointList = new ArrayList<Point>(0);
 	/**
 	 * @param x_coord
@@ -41,7 +40,6 @@ public class Shapes extends SlideObject {
 		this.height = height;
 		this.fillColor = fillColor;
 		this.lineColor = lineColor;
-		this.branch = branch;
 		this.pointList = pointList;
 		this.setX_coord(0);
 		this.setY_coord(0);
