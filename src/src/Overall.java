@@ -25,6 +25,8 @@ public class Overall {
 	
 	private static final long serialVersionUID = 1L;
 	
+	public static GUI bookMain; 
+	
 	private Presentation slideList;
 
 	/**
@@ -51,7 +53,7 @@ public class Overall {
 		Overall ThisIsIt = new Overall("src/EclipsePhase.xml");
 		System.out.println(ThisIsIt.slideList.getFont());
 		
-		GUI bookMain = new GUI("bookMainPanel");
+		bookMain = new GUI("bookMainPanel");
 		
 		
 		// A simple test for the text module

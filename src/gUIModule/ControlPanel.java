@@ -16,7 +16,10 @@ import javax.swing.JSlider;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
+import presentation.Slide;
+
 import musicPlayerModule.EmbeddedAudioPlayer;
+import src.Overall;
 import uk.co.caprica.vlcj.binding.LibVlc;
 import uk.co.caprica.vlcj.runtime.RuntimeUtil;
 
@@ -31,13 +34,15 @@ public class ControlPanel extends JPanel{
     static JSlider volume;
     static String vlcLibraryPath = "resources\\lib\\vlc-2.1.3";
     static JPanel musicPanel = new JPanel();
+	JButton nextSlide = new JButton("Next");
+	JButton previousSlide = new JButton("Previous");
+    
 	
 	public ControlPanel(){
 		super();
 		setLayout(null);
 		setOpaque(false);
-		JButton nextSlide = new JButton("Next");
-		JButton previousSlide = new JButton("Previous");
+
 
 		
 		nextSlide.setVerticalTextPosition(AbstractButton.CENTER);
@@ -55,6 +60,35 @@ public class ControlPanel extends JPanel{
 		 MusicPlayer();
 		 musicPanel.setBounds(100, 0, 540, 50);
 		 add(musicPanel);
+		 
+		 nextSlide.addActionListener(
+				 new ActionListener() {
+		                
+		                @Override
+		                public void actionPerformed(ActionEvent arg0) {
+		                   
+//		                   int currSlideID = Overall.bookMain.getCurrentSlideID();
+//		                   currSlideID ++;
+//		                   Overall.bookMain.setCurrentSlideID(currSlideID);
+//		                   
+//		                   Slide currSlide = Overall.bookMain.getNextSlide();
+		                   Overall.bookMain.showNextSlide();
+		                }
+		            });
+		 previousSlide.addActionListener(
+				 new ActionListener() {
+		                
+		                @Override
+		                public void actionPerformed(ActionEvent arg0) {
+		                   
+//		                   int currSlideID = Overall.bookMain.getCurrentSlideID();
+//		                   currSlideID ++;
+//		                   Overall.bookMain.setCurrentSlideID(currSlideID);
+//		                   
+//		                   Slide currSlide = Overall.bookMain.getNextSlide();
+		                   Overall.bookMain.showPreviousSlide();
+		                }
+		            });
 	}
 	
 	public void MusicPlayer(){
