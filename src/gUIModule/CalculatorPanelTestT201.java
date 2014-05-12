@@ -28,11 +28,11 @@ public class CalculatorPanelTestT201 {
 
     @Test
     public void test() {
-//        boolean x = true;
-//        do {
-//            
-//        }
-//        while(x);
+        boolean x = true;
+        do {
+            
+        }
+        while(x);
         System.err.println("T201 TEST NOT IMPLEMENTED WITH AUTOMATION");
         System.err.println("FAIL ISSUE#24, ISSUE#25, ISSUE#26");
         System.err.println("PASS ONCE RESOLVED");
