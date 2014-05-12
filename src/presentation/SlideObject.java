@@ -9,7 +9,7 @@ package presentation;
  * @since 1.0
  */
 public class SlideObject {
-	private Integer x_coord = null;
+	private Integer x_coord2 = null;
 	private Integer y_coord = null;
 	private Integer start = null;
 	private Integer duration = null;
@@ -27,14 +27,19 @@ public class SlideObject {
 	 */
 	public SlideObject(Integer x_coord, Integer y_coord, Integer start, Integer duration, Integer layer,
 			String file, Integer branch) {
-		this.x_coord = x_coord;
+	    System.err.println("TEST: " + x_coord);
+		//x_coord2 = x_coord;
+		this.setX_coord(x_coord);
+		int testx = this.getX_coord();
+		System.err.println("TEST x_coord2: " + this.getX_coord());
+		System.err.println("TEST x_coord2: " + x_coord2);
 		this.y_coord = y_coord;
 		this.start = start;
 		this.duration = duration;
 		this.layer = layer;
 		this.file = file;
 		this.branch = branch;
-	};
+	}
 
 
 	public SlideObject() {
@@ -100,8 +105,8 @@ public class SlideObject {
 	 * For music files this will be ignored
 	 * @param x_coord the x-coordinate
 	 */
-	public void setX_coord(int x_coord) {
-		this.x_coord = x_coord;
+	public void setX_coord(Integer x_coord) {
+		x_coord2 = x_coord;
 	}
 	/**
 	 * Sets the y coordinate of the slide object
@@ -132,7 +137,8 @@ public class SlideObject {
 	 * @return the x_coord
 	 */
 	public Integer getX_coord() {
-		return x_coord;
+	    System.err.println("here " + x_coord2);
+		return x_coord2;
 	}
 
 	/**

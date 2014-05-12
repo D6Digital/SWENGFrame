@@ -115,7 +115,7 @@ public class DicePanelTestT203 {
         assertTrue("d100 was not in list", d100);
 
         // Step 4. Visual inspection. Perform calculation.
-        Thread.sleep(20000);
+        System.err.println("TEST T203 STEP 4 SUCCESSFUL, VISUAL INSPECTION, NO AUTOMATION REQUIRED...");
         
         
     }
