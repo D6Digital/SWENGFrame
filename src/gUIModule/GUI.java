@@ -65,27 +65,30 @@ public class GUI extends JFrame{
 				
 				//set up jframe
 				setTitle("Grimoire");
-				setSize(1000, 500);
+				setSize(slideList.getWidth()+200, slideList.getHeight()+100);
 				setVisible(true);			
 				bookPane = getContentPane();
-				bookPane.setLayout(new BorderLayout());
 				
 				//set up slide
-				bookPane.setBounds(0, 0, slideList.getWidth(), slideList.getHeight());
+				bookPane.setBounds(0, 0, slideList.getWidth()+100, slideList.getHeight()+100);
 				SlidePanel slidePanel = new SlidePanel();		
 				slidePanel.setupSlide(slideList.get(0));
 				slidePanel.loadPresentation(slideList);
-				bookPane.add(slidePanel, BorderLayout.CENTER);	
+				slidePanel.setBounds(0, 0, slideList.getWidth(), slideList.getHeight());
+					
 				
 				//set up controls
 				ControlPanel controls = new ControlPanel();
-				bookPane.add(controls, BorderLayout.SOUTH);	
-				
+				controls.setBounds(0, slideList.getHeight(), slideList.getWidth()+200, 100);
+				bookPane.add(controls);
+
 				//set up utilities
 				UtilitiesPanel utilities = new UtilitiesPanel();
-				bookPane.add(utilities, BorderLayout.EAST);
-				
+				utilities.setBounds(slideList.getWidth(), 0, 200, slideList.getHeight());
+				bookPane.add(utilities);
+				bookPane.add(slidePanel);
 				bookPane.setVisible(true);
+				
 				break;
 			case "videoDisplayPanel":
 				setTitle("Video Guide");

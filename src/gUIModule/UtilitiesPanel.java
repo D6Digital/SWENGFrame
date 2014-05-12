@@ -36,6 +36,7 @@ public class UtilitiesPanel extends JPanel implements ActionListener{
 		//Sets the layout to BoxLayout
 		super();
 		setLayout(null);
+		setOpaque(false);
 		
 		// When the panel is first created the utilities will not exist but when they are
 		// instantiated, these fields should be updated so we don't get multiple utilities

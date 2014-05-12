@@ -15,20 +15,22 @@ public class ControlPanel extends JPanel{
 	
 	public ControlPanel(){
 		super();
+		setLayout(null);
+		setOpaque(false);
 		JButton nextSlide = new JButton("Next");
 		JButton previousSlide = new JButton("Previous");
-		setLayout(null);
+
 		
 		nextSlide.setVerticalTextPosition(AbstractButton.CENTER);
 		nextSlide.setHorizontalTextPosition(AbstractButton.CENTER);
 		nextSlide.setAlignmentX(Component.CENTER_ALIGNMENT);
-		nextSlide.setBounds(0, 0, 100, 30);
+		nextSlide.setBounds(640, 0, 100, 30);
 		add(nextSlide);
 
 		previousSlide.setVerticalTextPosition(AbstractButton.CENTER);
 		previousSlide.setHorizontalTextPosition(AbstractButton.CENTER);
 		previousSlide.setAlignmentX(Component.CENTER_ALIGNMENT);
-		previousSlide.setBounds(900, 0, 100, 30);
+		previousSlide.setBounds(0, 0, 100, 30);
 		add(previousSlide);
 	}
 }
