@@ -51,6 +51,7 @@ public class Overall {
 		Overall ThisIsIt = new Overall("src/BasicExample.xml");
 		System.out.println(ThisIsIt.slideList.getFont());
 		
+		GUI bookMain = new GUI("bookMainPanel");
 		
 		
 		// A simple test for the text module

@@ -4,6 +4,9 @@ import java.awt.BorderLayout;
 import java.awt.Container;
 
 import javax.swing.JFrame;
+
+import presentation.Presentation;
+import presentation.XMLParser;
 import gUIModule.UtilitiesPanel;
 import gUIModule.DicePanel;
 import gUIModule.CalculatorPanel;
@@ -28,6 +31,7 @@ public class GUI extends JFrame{
 	Container utilitiesPane;
 	Container dicePane;
 	Container calculatorPane;
+	private Presentation slideList;
 	
 	/**
 	 * Create a simple JFrame and then populate it with specified JPanel type
@@ -55,16 +59,33 @@ public class GUI extends JFrame{
 				//MenuPanel();
 				break;
 			case "bookMainPanel":
-				setTitle("Girmoire");
-				setSize(1000, 500);
-				setVisible(true);
+				//get slides
+				XMLParser parser = new XMLParser("src/BasicExample.xml");	
+				slideList = parser.getSlides();
 				
+				//set up jframe
+				setTitle("Grimoire");
+				setSize(1000, 500);
+				setVisible(true);			
 				bookPane = getContentPane();
 				bookPane.setLayout(new BorderLayout());
 				
-				//ContentsPanel contentsPanel = new ContentsPanel(/*TODO fill inputs*/);
-				//bookPane.add(contentsPanel, BorderLayout.CENTER);
-				//ControlPanel();
+				//set up slide
+				bookPane.setBounds(0, 0, slideList.getWidth(), slideList.getHeight());
+				SlidePanel slidePanel = new SlidePanel();		
+				slidePanel.setupSlide(slideList.get(0));
+				slidePanel.loadPresentation(slideList);
+				bookPane.add(slidePanel, BorderLayout.CENTER);	
+				
+				//set up controls
+				ControlPanel controls = new ControlPanel();
+				bookPane.add(controls, BorderLayout.SOUTH);	
+				
+				//set up utilities
+				UtilitiesPanel utilities = new UtilitiesPanel();
+				bookPane.add(utilities, BorderLayout.EAST);
+				
+				bookPane.setVisible(true);
 				break;
 			case "videoDisplayPanel":
 				setTitle("Video Guide");
