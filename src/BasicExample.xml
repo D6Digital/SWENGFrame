@@ -126,8 +126,7 @@
 			</text>
 			<video urlname="resources/video/video/monstersinc_high.mpg"
 				starttime="10" loop="true" xstart="20" ystart="23" layer="1"
-				width="300" height="200">
-			</video>
+				width="300" height="200"></video>
 		</slide>
 	</slideshow>
 </collection>
