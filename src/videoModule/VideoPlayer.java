@@ -32,16 +32,16 @@ public class VideoPlayer extends JPanel{
 	private static final long serialVersionUID = 1L;
 	
 	
-	private JButton playButton, stopButton, closeButton;
-	private EmbeddedMediaPlayer mediaPlayer;
-	private JPanel vidControlPanel;
-	private JPanel vidpanel;
-	private JPanel masterPanel;
-	private JPanel overlayPanel;
-	private JSlider bar;
-	private ImageIcon img;
-	private PlayerControlsPanel ControlPanel;
-	private JLabel pausedLabel;
+	JButton playButton, stopButton, closeButton;
+	 EmbeddedMediaPlayer mediaPlayer;
+	 JPanel vidControlPanel;
+	 JPanel vidpanel;
+	 JPanel masterPanel;
+	 JPanel overlayPanel;
+	 JSlider bar;
+	 ImageIcon img;
+	 PlayerControlsPanel ControlPanel;
+	 JLabel pausedLabel;
 	
 
 	public VideoPlayer(Video video) {
@@ -59,7 +59,6 @@ public class VideoPlayer extends JPanel{
 	    String file = video.getFile();
 	    int width = video.getWidth();
 	    final int height = video.getHeight();
-	    int length = video.getLength();
 
 		this.setLayout(null);
 		this.setBounds(video.getX_coord(), video.getY_coord(), video.getWidth(), video.getHeight());
@@ -72,7 +71,6 @@ public class VideoPlayer extends JPanel{
 		System.out.println("file = " + file);
 		System.out.println("Width = " + width);
 		System.out.println("Height = " + height);
-		System.out.println("Length = " + length);
 		
 		//frame = new JFrame("Video Player");
 		

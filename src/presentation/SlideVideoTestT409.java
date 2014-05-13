@@ -11,7 +11,7 @@ import org.junit.Test;
  * @author Joshua Lant
  */
 public class SlideVideoTestT409 {
-    int width, height, length;
+    int width, height;
 	Integer x_coord, y_coord, start, duration, layer;
 	String file;
 	
@@ -24,14 +24,13 @@ public class SlideVideoTestT409 {
 		layer = 5918;
 		width = 1939;
 		height = 888;
-		length = 999;	
 		file = "fdsfdsfdsfsdwweerr3334r";
 	}
 
 	@Test
 	public void testSteps1to2() {
 		// Step 1. Instantiate video object supplying all values to constructor.
-		Video video = new Video(x_coord, y_coord, start, duration, layer, file, width, height, length);
+		Video video = new Video(x_coord, y_coord, start, duration, layer, file, width, height);
 		
 		// Step 2. confirm that the constructor and getters work properly.
 		assertEquals("xcoord incorrect, problem with getter or constructor",
@@ -48,8 +47,6 @@ public class SlideVideoTestT409 {
 				width, video.getWidth());
 		assertEquals("height incorrect, problem with getter or constructor",
 				height, video.getHeight());
-		assertEquals("length incorrect, problem with getter or constructor",
-				length, video.getLength());
 		assertEquals("file incorrect, problem with getter or constructor",
 				file, video.getFile());
 	}
@@ -66,7 +63,6 @@ public class SlideVideoTestT409 {
 		layer = 18;
 		width = 19;
 		height = 8;
-		length = 99;	
 		file = "fdsfdsffsfdrrrrrrrrrrrrrrrr3334r";
 		
 		video.setX_coord(x_coord);
@@ -76,7 +72,6 @@ public class SlideVideoTestT409 {
 		video.setLayer(layer);
 		video.setWidth(width);
 		video.setHeight(height);
-		video.setLength(length);
 		video.setFile(file);	
 			
 		// Step 4. confirm that the setters and getters work properly.
@@ -94,8 +89,6 @@ public class SlideVideoTestT409 {
 				width, video.getWidth());
 		assertEquals("height incorrect, problem with getter or setter",
 				height, video.getHeight());
-		assertEquals("length incorrect, problem with getter or setter",
-				length, video.getLength());
 		assertEquals("file incorrect, problem with getter or setter",
 				file, video.getFile());
 	}

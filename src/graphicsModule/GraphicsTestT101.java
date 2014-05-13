@@ -24,7 +24,6 @@ public class GraphicsTestT101 {
     JPanel panel;
     Color color;
     graphicsObject graphicsObject, graphicsObject2, graphicsObject3, graphicsObject4, graphicsObject5, graphicsObject6;
-    //GraphicsPainter painter;
     Random rand;
     private String fillColor = "#FADC2F";
     private String lineColor = "#00FAE4";
@@ -87,26 +86,29 @@ public class GraphicsTestT101 {
         frame.setVisible(false); 
         frame.remove(graphicsObject);
         
-        graphicsObject.setTotalPoints(5);
-        graphicsObject.setPoint(1, 150, 150);
-        graphicsObject.setWidth(300);
-        graphicsObject.setHeight(300);
-        graphicsObject.setIsRegularShape(true);
-        frame.add(graphicsObject);
+        graphicsObject2.setTotalPoints(5);
+        graphicsObject2.setPoint(1, 150, 150);
+        graphicsObject2.setWidth(300);
+        graphicsObject2.setHeight(300);
+        graphicsObject2.setIsRegularShape(true);
+        frame.add(graphicsObject2);
         frame.setVisible(true);
         
         Thread.sleep(SLEEPMS);
         
+        frame.setVisible(false); 
+        frame.remove(graphicsObject2);
         
-        // Step 1. validate that the settings provided to the graphics painter are correct.
-//        assertEquals("Red value was incorrect",
-//                125, panel.getBackground().getRed());    
-//        assertEquals("Green value was incorrect",
-//                78, panel.getBackground().getGreen());    
-//        assertEquals("Blue value was incorrect",
-//                92, panel.getBackground().getBlue());  
-//        assertEquals("Alpha value was incorrect",
-//                196, panel.getBackground().getAlpha());  
+        graphicsObject3.setTotalPoints(6);
+        graphicsObject3.setPoint(1, 150, 150);
+        graphicsObject3.setWidth(300);
+        graphicsObject3.setHeight(300);
+        graphicsObject3.setIsRegularShape(true);
+        frame.add(graphicsObject3);
+        frame.setVisible(true);
+        
+        Thread.sleep(SLEEPMS);
+         
     }
 
 }

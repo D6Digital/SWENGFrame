@@ -11,7 +11,6 @@ public class Video extends SlideObject {
 
 	private int width;
 	private int height;
-	private int length;
 	private boolean looping;
 	private int playtime;
 
@@ -33,11 +32,10 @@ public class Video extends SlideObject {
 		// TODO Auto-generated constructor stub
 	}
 	public Video(int x_coord, int y_coord, int start, int duration, int layer,
-			String file, int width, int height, int length) {
+			String file, int width, int height) {
 		super(x_coord, y_coord, start, duration, layer, file, 0);
 		this.width = width;
 		this.height = height;
-		this.length = length;
 	}
 
 
@@ -73,21 +71,6 @@ public class Video extends SlideObject {
 		this.height = height;
 	}
 
-	/**
-	 * 
-	 * @return the length
-	 */
-	public int getLength(){
-		return length;
-	}
-	
-	/**
-	 * 
-	 *
-	 */
-	public void setLength(int length){
-		this.length = length;
-	}
 	/**
 	 * @return the looping
 	 */
