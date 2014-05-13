@@ -2,6 +2,7 @@ package gUIModule;
 
 import java.awt.BorderLayout;
 import java.awt.Container;
+import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -109,20 +110,22 @@ public class GUI extends JFrame{
 				//get slides
 				XMLParser parser = new XMLParser("src/BasicExample.xml");	
 				slideList = parser.getSlides();
+				setLayout(null);
 				
 				//set up jframe
 				setTitle("Grimoire");
-				setSize(slideList.getWidth()+borderSize+borderSize, slideList.getHeight()+borderSize+borderSize);
+				setSize(slideList.getWidth()+borderSize+borderSize+utilitiesWidth, 720);
 				setVisible(true);			
 				bookPane = getContentPane();
 				
+				System.out.println("size="+(slideList.getWidth()+borderSize+borderSize)+","+(slideList.getHeight()+borderSize+borderSize));
 				//set up slide
 				bookPane.setBounds(borderSize, borderSize, slideList.getWidth()+100, slideList.getHeight()+borderSize+borderSize);
-						
+					
+				slidePanel.loadPresentation(slideList);
 				slidePanel.setupSlide(slideList.get(0));
 				currentVisibleSlideID = 0;
 				previousSlideButton.setVisible(false);
-				slidePanel.loadPresentation(slideList);
 				slidePanel.setBounds(borderSize, borderSize, slideList.getWidth(), slideList.getHeight());
 				bookPane.add(slidePanel);	
 

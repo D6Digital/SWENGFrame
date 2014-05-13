@@ -43,20 +43,12 @@ public class SlideShapeTestT404 {
         
     }
 
-
-
     @Test
     public void testSteps1to2() {
         // Step 1. instantiate class with all parameters containing values.
-        Shapes shapes = new Shapes(x_coord, y_coord, start, duration, layer, file, numberOfPoints, width, height, fillColor, lineColor, pointList, branch);
-        System.err.println("TEST: " + x_coord);
-        System.err.println("TEST: " + this.x_coord);
+        Shapes shapes = new Shapes(start, duration, layer, file, numberOfPoints, width, height, fillColor, lineColor, pointList, branch);
 
         // Step 2. test the getters to see if they work.
-        assertEquals("xcoord constructor or setter not working correctly",
-                x_coord, shapes.getX_coord());
-        assertEquals("ycoord constructor or setter not working correctly",
-                y_coord, shapes.getY_coord());
         assertEquals("start constructor or setter not working correctly",
                 start, shapes.getStart());
         assertEquals("duration constructor or setter not working correctly",
@@ -83,8 +75,6 @@ public class SlideShapeTestT404 {
                 branch, shapes.getBranch());
         
         
-        shapes.setX_coord(x_coord);
-        shapes.setY_coord(y_coord);
         shapes.setStart(start);
         shapes.setDuration(duration);
         shapes.setLayer(layer);
