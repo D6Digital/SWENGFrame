@@ -25,6 +25,8 @@ public class Overall {
 	
 	private static final long serialVersionUID = 1L;
 	
+	public static GUI bookMain; 
+	
 	private Presentation slideList;
 
 	/**
@@ -48,9 +50,10 @@ public class Overall {
 		//GUI utilities = new GUI("utilitiesSelectionPanel");  // can open all utilities from this instance
         //GUI diceRoller = new GUI("diceRollerPanel");
 	    //GUI calculator = new GUI("calculatorPanel");
-		Overall ThisIsIt = new Overall("src/BasicExample.xml");
+		Overall ThisIsIt = new Overall("src/EclipsePhase.xml");
 		System.out.println(ThisIsIt.slideList.getFont());
 		
+		bookMain = new GUI("bookMainPanel");
 		
 		
 		// A simple test for the text module

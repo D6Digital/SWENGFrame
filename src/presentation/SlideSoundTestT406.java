@@ -13,7 +13,7 @@ import org.junit.Test;
  */
 public class SlideSoundTestT406 {
     Boolean loop;
-    int start, duration;
+    Integer start, duration;
     String file;
 
     @Before

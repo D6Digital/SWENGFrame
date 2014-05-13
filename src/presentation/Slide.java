@@ -17,12 +17,46 @@ public class Slide {
 	private ArrayList<Video> videoList = new ArrayList<Video>(0);
 	private ArrayList<Sound> soundList = new ArrayList<Sound>(0);
 	private ArrayList<Shapes> shapeList = new ArrayList<Shapes>(0);
-    private int slideID;
-    private Object slideName;
+    private Integer slideID;
+    private String slideName;
+    private Integer duration = null;
+    private Boolean isItLastSlide = false;
     
+    public Slide(ArrayList<SlideObject> objectList, ArrayList<Image> imageList, ArrayList<Text> textList,
+            ArrayList<Video> videoList, ArrayList<Sound> soundList, ArrayList<Shapes> shapeList,
+            Integer slideID, String slideName) {
+        this.objectList = objectList;
+        this.imageList = imageList;
+        this.textList = textList;
+        this.videoList = videoList;
+        this.soundList = soundList;
+        this.shapeList = shapeList;
+        this.slideID = slideID;
+        this.slideName = slideName;
+    }
     
+    public Slide() {
+        
+    }
     
-	/**
+	public Slide(ArrayList<SlideObject> objectList,
+            ArrayList<Image> imageList, ArrayList<Text> textList,
+            ArrayList<Video> videoList, ArrayList<Sound> soundList,
+            ArrayList<Shapes> shapeList, Integer slideID, String slideName,
+            Integer duration, Boolean isItLastSlide) {
+        this.objectList = objectList;
+        this.imageList = imageList;
+        this.textList = textList;
+        this.videoList = videoList;
+        this.soundList = soundList;
+        this.shapeList = shapeList;
+        this.slideID = slideID;
+        this.slideName = slideName;
+        this.duration = duration;
+        this.isItLastSlide = isItLastSlide;
+    }
+
+    /**
 	 * @param e
 	 * @return
 	 * @see java.util.ArrayList#add(java.lang.Object)
@@ -33,16 +67,16 @@ public class Slide {
 	/**
 	 * @param index
 	 * @return
-	 * @see java.util.ArrayList#get(int)
+	 * @see java.util.ArrayList#get(Integer)
 	 */
-	public Image getImage(int index) {
+	public Image getImage(Integer index) {
 		return imageList.get(index);
 	}
 	/**
 	 * @return
 	 * @see java.util.ArrayList#size()
 	 */
-	public int sizeImage() {
+	public Integer sizeImage() {
 		return imageList.size();
 	}
 	/**
@@ -56,16 +90,16 @@ public class Slide {
 	/**
 	 * @param index
 	 * @return
-	 * @see java.util.ArrayList#get(int)
+	 * @see java.util.ArrayList#get(Integer)
 	 */
-	public SlideObject getObject(int index) {
+	public SlideObject getObject(Integer index) {
 		return objectList.get(index);
 	}
 	/**
 	 * @return
 	 * @see java.util.ArrayList#size()
 	 */
-	public int sizeObject() {
+	public Integer sizeObject() {
 		return objectList.size();
 	}
 	/**
@@ -79,16 +113,16 @@ public class Slide {
 	/**
 	 * @param index
 	 * @return
-	 * @see java.util.ArrayList#get(int)
+	 * @see java.util.ArrayList#get(Integer)
 	 */
-	public Text getText(int index) {
+	public Text getText(Integer index) {
 		return textList.get(index);
 	}
 	/**
 	 * @return
 	 * @see java.util.ArrayList#size()
 	 */
-	public int sizeText() {
+	public Integer sizeText() {
 		return textList.size();
 	}
 	/**
@@ -102,16 +136,16 @@ public class Slide {
 	/**
 	 * @param index
 	 * @return
-	 * @see java.util.ArrayList#get(int)
+	 * @see java.util.ArrayList#get(Integer)
 	 */
-	public Video getVideo(int index) {
+	public Video getVideo(Integer index) {
 		return videoList.get(index);
 	}
 	/**
 	 * @return
 	 * @see java.util.ArrayList#size()
 	 */
-	public int sizeVideo() {
+	public Integer sizeVideo() {
 		return videoList.size();
 	}	
 	/**
@@ -125,16 +159,16 @@ public class Slide {
 	/**
 	 * @param index
 	 * @return
-	 * @see java.util.ArrayList#get(int)
+	 * @see java.util.ArrayList#get(Integer)
 	 */
-	public Sound getSound(int index) {
+	public Sound getSound(Integer index) {
 		return soundList.get(index);
 	}
 	/**
 	 * @return
 	 * @see java.util.ArrayList#size()
 	 */
-	public int sizeSound() {
+	public Integer sizeSound() {
 		return soundList.size();
 	}
 	/**
@@ -148,16 +182,16 @@ public class Slide {
 	/**
 	 * @param index
 	 * @return
-	 * @see java.util.ArrayList#get(int)
+	 * @see java.util.ArrayList#get(Integer)
 	 */
-	public Shapes getShape(int index) {
+	public Shapes getShape(Integer index) {
 		return shapeList.get(index);
 	}
 	/**
 	 * @return
 	 * @see java.util.ArrayList#size()
 	 */
-	public int sizeShape() {
+	public Integer sizeShape() {
 		return shapeList.size();
 	}	
 	/**
@@ -227,11 +261,11 @@ public class Slide {
 		this.shapeList = shapeList;
 	}
 	
-    public int getSlideID() {
+    public Integer getSlideID() {
         return slideID;
     }
 	
-    public void setSlideID(int slideID) {
+    public void setSlideID(Integer slideID) {
         this.slideID = slideID;
     }
     
@@ -242,13 +276,21 @@ public class Slide {
     public void setSlideName(String slideName) {
         this.slideName = slideName;
     }
-	public void setDuration(Object object) {
-		// TODO Auto-generated method stub
-		
-	}
-	public void setLastSlide(Object object) {
-		// TODO Auto-generated method stub
-		
-	}
+    
+    public void setDuration(Integer duration) {
+        this.duration = duration;
+    }
+    
+    public Integer getDuration() {
+        return duration;
+    }
+    
+    public void setLastSlide(Boolean isItLastSlide) {
+        this.isItLastSlide = isItLastSlide;
+    }
+    
+    public Boolean getLastSlide() {
+        return isItLastSlide;
+    }
     
 }
