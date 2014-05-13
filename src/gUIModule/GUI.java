@@ -62,6 +62,7 @@ public class GUI extends JFrame{
 	} 
 	
 	public Slide showNextSlide() {
+		if(slideList.get(currentVisibleSlideID).getLastSlide()==false){
 		int nextSlideID = currentVisibleSlideID + 1;
 		Slide nextSlide = slideList.get(nextSlideID);
 		slidePanel.refreshSlide(nextSlide);
@@ -70,11 +71,14 @@ public class GUI extends JFrame{
 		System.out.println("Next slide = " + nextSlide.getLastSlide());
 		if(nextSlide.getLastSlide()==true){
 			nextSlideButton.setBorderPainted(false);
+
+		}
 		}
 		return null;
 	}
 	
 	public Slide showPreviousSlide() {
+		if(currentVisibleSlideID==1){
 		nextSlideButton.setBorderPainted(true);
 		if (currentVisibleSlideID ==1){
 			previousSlideButton.setBorderPainted(false);
@@ -84,7 +88,7 @@ public class GUI extends JFrame{
 		Slide previousSlide = slideList.get(previousSlideID);
 		slidePanel.refreshSlide(previousSlide);
 		setCurrentSlideID(previousSlideID);
-			
+		}	
 		return null;
 	}
 
@@ -117,7 +121,8 @@ public class GUI extends JFrame{
 				//set up jframe
 				setTitle("Grimoire");
 				setSize(slideList.getWidth()+borderSize+borderSize+utilitiesWidth, 720);
-				setVisible(true);			
+				setVisible(true);		
+				setUndecorated(true);
 				bookPane = getContentPane();
 				
 				System.out.println("size="+(slideList.getWidth()+borderSize+borderSize)+","+(slideList.getHeight()+borderSize+borderSize));
@@ -127,7 +132,6 @@ public class GUI extends JFrame{
 				slidePanel.loadPresentation(slideList);
 				slidePanel.setupSlide(slideList.get(0));
 				currentVisibleSlideID = 0;
-				previousSlideButton.setBorderPainted(false);
 				slidePanel.setBounds(borderSize, borderSize, slideList.getWidth(), slideList.getHeight());
 				bookPane.add(slidePanel);	
 
@@ -141,7 +145,8 @@ public class GUI extends JFrame{
 				bookPane.add(previousSlideButton);
 				nextSlideButton.setBounds((slideList.getWidth()+utilitiesWidth+borderSize+borderSize)/2, slideList.getHeight()+borderSize,(slideList.getWidth()+utilitiesWidth+borderSize+borderSize)/2, borderSize);
 				bookPane.add(nextSlideButton);
-				
+				previousSlideButton.setBorderPainted(false);				
+				//previousSlideButton.setEnabled(false);
 				
 				//borders
 				leftBorder.setBounds(0,borderSize,borderSize,slideList.getHeight());
