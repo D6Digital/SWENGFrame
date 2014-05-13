@@ -53,7 +53,7 @@ public class Overall {
 		Overall ThisIsIt = new Overall("src/EclipsePhase.xml");
 		System.out.println(ThisIsIt.slideList.getFont());
 		
-		//bookMain = new GUI("bookMainPanel");
+		GUI bookMain = new GUI("bookMainPanel");
 		
 		
 		// A simple test for the text module

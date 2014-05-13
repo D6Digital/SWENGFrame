@@ -2,12 +2,17 @@ package gUIModule;
 
 import java.awt.BorderLayout;
 import java.awt.Container;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 import presentation.Presentation;
 import presentation.Slide;
 import presentation.XMLParser;
+import src.Overall;
 import gUIModule.UtilitiesPanel;
 import gUIModule.DicePanel;
 import gUIModule.CalculatorPanel;
@@ -32,10 +37,16 @@ public class GUI extends JFrame{
 	Container utilitiesPane;
 	Container dicePane;
 	Container calculatorPane;
-	private Presentation slideList;
+	static Presentation slideList;
 	private static Integer currentVisibleSlideID;
 	private SlidePanel slidePanel = new SlidePanel();
-	ControlPanel controls = new ControlPanel();
+	JPanel leftBorder = new JPanel();
+	JPanel rightBorder = new JPanel();
+	JPanel topBorder = new JPanel();
+	JButton nextSlideButton = new JButton();
+	JButton previousSlideButton = new JButton();
+	int borderSize = 20;
+	int utilitiesWidth = 200;
 	
 	/**
 	 * Create a simple JFrame and then populate it with specified JPanel type
@@ -54,19 +65,22 @@ public class GUI extends JFrame{
 		Slide nextSlide = slideList.get(nextSlideID);
 		slidePanel.refreshSlide(nextSlide);
 		setCurrentSlideID(nextSlideID);
-		controls.previousSlide.setVisible(true);
+		previousSlideButton.setVisible(true);
+		if(nextSlide.getLastSlide()==true){
+			nextSlideButton.setVisible(false);
+		}
 		return null;
 	}
 	
 	public Slide showPreviousSlide() {
 		if (currentVisibleSlideID ==1){
-			controls.previousSlide.setVisible(false);
+			previousSlideButton.setVisible(false);
 		}
 		
-		int nextSlideID = currentVisibleSlideID - 1;
-		Slide nextSlide = slideList.get(nextSlideID);
-		slidePanel.refreshSlide(nextSlide);
-		setCurrentSlideID(nextSlideID);
+		int previousSlideID = currentVisibleSlideID - 1;
+		Slide previousSlide = slideList.get(previousSlideID);
+		slidePanel.refreshSlide(previousSlide);
+		setCurrentSlideID(previousSlideID);
 			
 		return null;
 	}
@@ -98,30 +112,41 @@ public class GUI extends JFrame{
 				
 				//set up jframe
 				setTitle("Grimoire");
-				setSize(slideList.getWidth()+200, slideList.getHeight()+100);
+				setSize(slideList.getWidth()+borderSize+borderSize, slideList.getHeight()+borderSize+borderSize);
 				setVisible(true);			
 				bookPane = getContentPane();
 				
 				//set up slide
-				bookPane.setBounds(0, 0, slideList.getWidth()+100, slideList.getHeight()+100);
+				bookPane.setBounds(borderSize, borderSize, slideList.getWidth()+100, slideList.getHeight()+borderSize+borderSize);
 						
 				slidePanel.setupSlide(slideList.get(0));
 				currentVisibleSlideID = 0;
-				controls.previousSlide.setVisible(false);
+				previousSlideButton.setVisible(false);
 				slidePanel.loadPresentation(slideList);
-				slidePanel.setBounds(0, 0, slideList.getWidth(), slideList.getHeight());
-					
+				slidePanel.setBounds(borderSize, borderSize, slideList.getWidth(), slideList.getHeight());
+				bookPane.add(slidePanel);	
 
 				//set up utilities
 				UtilitiesPanel utilities = new UtilitiesPanel();
-				utilities.setBounds(slideList.getWidth(), 0, 200, slideList.getHeight());
+				utilities.setBounds(slideList.getWidth()+borderSize, borderSize, utilitiesWidth, slideList.getHeight());
 				bookPane.add(utilities);
 				
-				//set up controls
-				controls.setBounds(0, slideList.getHeight(), slideList.getWidth()+200, 100);
-				bookPane.add(controls);
+				//set up buttons
+				previousSlideButton.setBounds(0, slideList.getHeight()+borderSize, (slideList.getWidth()+utilitiesWidth+borderSize+borderSize)/2, borderSize);
+				bookPane.add(previousSlideButton);
+				nextSlideButton.setBounds((slideList.getWidth()+utilitiesWidth+borderSize+borderSize)/2, slideList.getHeight()+borderSize,(slideList.getWidth()+utilitiesWidth+borderSize+borderSize)/2, borderSize);
+				bookPane.add(nextSlideButton);
 				
-				bookPane.add(slidePanel);
+				
+				//borders
+				leftBorder.setBounds(0,borderSize,borderSize,slideList.getHeight());
+				bookPane.add(leftBorder);
+				rightBorder.setBounds(slideList.getWidth()+utilitiesWidth+borderSize,borderSize,borderSize,slideList.getHeight());
+				bookPane.add(rightBorder);
+				topBorder.setBounds(0,0,slideList.getWidth()+utilitiesWidth+borderSize+borderSize,borderSize);
+				bookPane.add(topBorder);
+				
+				
 				bookPane.setVisible(true);
 						
 				break;
@@ -180,6 +205,25 @@ public class GUI extends JFrame{
 				//???DefaultPanel()???
 				break;
 		};
+		nextSlideButton.addActionListener(
+				 new ActionListener() {
+		                
+		                @Override
+		                public void actionPerformed(ActionEvent arg0) {
+		                   
+		                   showNextSlide();
+		                }
+		            });
+		
+		 previousSlideButton.addActionListener(
+				 new ActionListener() {
+		                
+		                @Override
+		                public void actionPerformed(ActionEvent arg0) {
+		                   
+		                   showPreviousSlide();
+		                }
+		            });
 	}
 
 
