@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <booklist version="1.0" xmlns="http://www-users.york.ac.uk/~rjm529/booklist.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www-users.york.ac.uk/~rjm529/booklist.xsd booklist.xsd ">
   <book id="001">
-    <title>Eclipse Phase</title>
+    <title>GM Main Book</title>
     <filename>src\EclipsePhase.xml</filename>
-    <icon>src\XMLBits\char1jovian_spy.jpg</icon>
+    <icon>src\XMLBits\god.png</icon>
   </book>
   <book id="002">
-    <title>Another Book</title>
-    <filename>src\AnotherBook.XML</filename>
-    <icon>src\XMLBits\god.png</icon>
+    <title>Jovian Spy</title>
+    <filename>src\JovianSpy.XML</filename>
+    <icon>src\XMLBits\char1jovian_spy.jpg</icon>
   </book>
 </booklist>

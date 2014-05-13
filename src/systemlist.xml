@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<systemlist xmlns="http://www-users.york.ac.uk/~rjm529/systemlist.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www-users.york.ac.uk/~rjm529/systemlist.xsd systemlist.xsd ">
+	<system name="Eclipse Phase" description="Post-apocolyptic transhuman conspiracy and horror"
+		logofilename="src\XMLBits\god.png" xmlfilename="src\EcplisePhase.xml" />
+	<system name="Dungeons and Dragons" description="Set in dungeons"
+		logofilename="src\XMLBits\samson.png" xmlfilename="src\BasicExampls.xml" />
+</systemlist>
