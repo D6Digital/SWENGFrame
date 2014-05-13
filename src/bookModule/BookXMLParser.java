@@ -3,12 +3,23 @@
  */
 package bookModule;
 
+import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 
+import javax.xml.XMLConstants;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
+import javax.xml.transform.Source;
+import javax.xml.transform.stream.StreamSource;
+import javax.xml.validation.Schema;
+import javax.xml.validation.SchemaFactory;
+import javax.xml.validation.Validator;
+
 import org.xml.sax.*;
 import org.xml.sax.helpers.DefaultHandler;
 
@@ -19,7 +30,7 @@ enum ProcessingElement{
 
 /**
  * @author Sam Lambert
- *
+ * @author Robert Mills
  */
 public class BookXMLParser extends DefaultHandler{
 	
@@ -38,6 +49,41 @@ public class BookXMLParser extends DefaultHandler{
 	
 
 	public BookList readBookXML(String inputFile) {
+		//Check to see if xml is valid
+		URL schemaFile;
+		Schema schema;
+		Source xmlFile = new StreamSource(new File(inputFile));
+		SchemaFactory schemaFactory = SchemaFactory
+		    .newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
+		try {
+			schemaFile = new URL("http://www-users.york.ac.uk/~rjm529/booklist.xsd");
+			try {
+				schema = schemaFactory.newSchema(schemaFile);
+			} catch (SAXException e1) {
+				// TODO Auto-generated catch block
+				schema = null;
+				e1.printStackTrace();
+			}
+			//generate validator
+			Validator validator = schema.newValidator();
+			try {
+				// run validator on the desired xml file
+			  validator.validate(xmlFile);
+			  System.out.println(xmlFile.getSystemId() + " is valid");
+			  System.out.println("Is Valid");
+			} catch (SAXException e) {
+				//say isn't valid and report where the error is
+			  System.out.println(xmlFile.getSystemId() + " is NOT valid");
+			  System.out.println("Reason: " + e.getLocalizedMessage());
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		} catch (MalformedURLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		//parse the xml file
 		try {
 			// use the default parser
 			SAXParserFactory factory = SAXParserFactory.newInstance();
@@ -68,62 +114,52 @@ public class BookXMLParser extends DefaultHandler{
 		
 		
 
-		if (elementName.equals("bookList")) {
+		if (elementName.equals("booklist")) {
 			if (bookList == null) {
 				bookList = new BookList(attrs.getValue(0));
 			}
-		} else if (elementName.equals("book")) {
+		}
+		//handle book element start
+		else if (elementName.equals("book")) {
 			currentBook = new Book(attrs.getValue(0));
-		} else if (elementName.equals("title")) {
+		}
+		//handle title element start
+		else if (elementName.equals("title")) {
 			currentElement = ProcessingElement.TITLE;
-		} else if (elementName.equals("filename")) {
+		}
+		//handle filename element start
+		else if (elementName.equals("filename")) {
 			currentElement = ProcessingElement.FILENAME;
 		}
+		//handle icon filename element start
 		else if (elementName.equals("icon")) {
 			currentElement = ProcessingElement.ICON;
-			
-			if (newIcon == null) {
-				newIcon = new Image();
-			}
-			attrVal = attrs.getValue("urlname");
-			newIcon.setFile(attrVal);
-			attrVal = attrs.getValue("xstart");
-			newIcon.setX_coord(Integer.parseInt(attrVal));
-			attrVal = attrs.getValue("ystart");
-			newIcon.setY_coord(Integer.parseInt(attrVal));
-			attrVal = attrs.getValue("width");
-			if(attrVal == null){
-				newIcon.setWidth(0);
-			}
-			else {
-				newIcon.setWidth(Integer.parseInt(attrVal));
-			}
-			attrVal = attrs.getValue("height");
-			if(attrVal == null){
-				newIcon.setHeight(0);
-			}
-			else {
-				newIcon.setHeight(Integer.parseInt(attrVal));
-			}
-			
-			currentBook.setButtonIcon(newIcon);
-		}
+		}	
 	}
-	
+	// handle contents of elements
 	public void characters(char ch[], int start, int length)
 			throws SAXException {
 
 		switch (currentElement) {
+		//extracts title of book
 		case TITLE:
 			currentBook.setTitle(new String(ch, start, length));
+			System.out.println(new String(ch, start, length) + " :: " + currentBook.getTitle());
+			
 			break;
+		//extracts filename
 		case FILENAME:
 			currentBook.setFileName(new String(ch, start, length));
+			System.out.println(new String(ch, start, length));
+			break;
+		//extract icon filename		
+		case ICON:
+			currentBook.setButtonIcon(new String(ch, start, length));
+			System.out.println(new String(ch, start, length)); 
 			break;
 		default:
 			break;
 		}
-
 	}
 	
 	public void endElement(String uri, String localName, String qName)
@@ -135,7 +171,7 @@ public class BookXMLParser extends DefaultHandler{
 		}
 		if (elementName.equals("book")) {
 			bookList.addBook(currentBook);
-		} else if (elementName.equals("filename")) {
+		} else if(elementName.equals("title")){
 			currentElement = ProcessingElement.NONE;
 		} else if (elementName.equals("filename")) {
 			currentElement = ProcessingElement.NONE;
@@ -154,11 +190,11 @@ public class BookXMLParser extends DefaultHandler{
 	/* Test method. To be deleted after testing */
 	private void writeBookinfo() {
 		System.out.println("BookList version: " + BookList.getVersion());
-		List<Book> books = BookList.getList();
+		ArrayList<Book> books = BookList.getList();
 		
 		for(Book currentBook : books){
 		System.out.println("Title: " + currentBook.getTitle());
-		System.out.println("FIlename: " + currentBook.getFileName());
+		System.out.println("Filename: " + currentBook.getFileName());
 		}
 	}
 }

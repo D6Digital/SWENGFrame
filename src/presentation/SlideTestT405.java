@@ -63,7 +63,7 @@ public class SlideTestT405 {
         
         point.setX(x_coord);
         pointList.add(point);
-        shapes = new Shapes(x_coord, y_coord, start, duration, layer, file, numberOfPoints, width, height, fillColor, lineColor, pointList, branch);
+        shapes = new Shapes(start, duration, layer, file, numberOfPoints, width, height, fillColor, lineColor, pointList, branch);
         
         objectList.add(slideObject);
         imageList.add(image);

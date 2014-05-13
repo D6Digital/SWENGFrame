@@ -8,11 +8,12 @@ import presentation.Image;
 /**
  * 
  * @author Sam Lambert
+ * @author Robert Mills
  *
  */
 public class Book {
 	private String title,fileName;
-	private Image buttonIcon;
+	private String iconFileName;
 	private String id;
 	
 public Book(String id) {
@@ -50,15 +51,15 @@ public void setFileName(String fileName){
 /**
  * @return the button icon
  */
-public Image getButtonIcon() {
-	return buttonIcon;
+public String getButtonIcon() {
+	return iconFileName;
 }
 
 /**
  * @param set the button icon
  */
-public void setButtonIcon(Image buttonIcon) {
-	this.buttonIcon = buttonIcon;
+public void setButtonIcon(String file) {
+	iconFileName = file;
 }
 
 /**

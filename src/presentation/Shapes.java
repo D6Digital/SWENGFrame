@@ -8,14 +8,19 @@ package presentation;
 import java.awt.Color;
 import java.util.ArrayList;
 
-public class Shapes extends SlideObject {
+public class Shapes {
 
 	private int numberOfPoints;
 	private int width;
 	private int height;
+	private int start;
+	private int duration;
+	private int layer;
 	private String fillColor;
 	private String lineColor;
 	private ArrayList<Point> pointList = new ArrayList<Point>(0);
+    private String file;
+    private int branch;
 	/**
 	 * @param x_coord
 	 * @param y_coord
@@ -31,19 +36,21 @@ public class Shapes extends SlideObject {
 	 * @param branch
 	 * @param pointList
 	 */
-	public Shapes(int x_coord, int y_coord, int start, int duration, int layer,
+	public Shapes(int start, int duration, int layer,
 			String file, int numberOfPoints, int width, int height,
 			String fillColor, String lineColor, ArrayList<Point> pointList, int branch) {
-		super(x_coord, y_coord, start, duration, layer, file, branch);
-		System.err.println("TEST: " + x_coord);
-		this.numberOfPoints = numberOfPoints;
+		//super(x_coord, y_coord, start, duration, layer, file, branch);
+		this.start = start;
+		this.duration = duration;
+		this.layer = layer;
+		this.file = file;
+		this.branch = branch;
+	    this.numberOfPoints = numberOfPoints;
 		this.width = width;
 		this.height = height;
 		this.fillColor = fillColor;
 		this.lineColor = lineColor;
 		this.pointList = pointList;
-		this.setX_coord(0);
-		this.setY_coord(0);
 	}
 	
 	public Shapes() {
@@ -180,4 +187,79 @@ public class Shapes extends SlideObject {
     public void setPointList(ArrayList<Point> pointList) {
         this.pointList = pointList;        
     }
+
+    /**
+     * Gets the time into the slide at which the object occurs
+     * @return start
+     */
+    public Integer getStart() {
+        return start;
+    }
+
+
+    /**
+     * Set the time into the slide at which the object occurs
+     * @param start 
+     */
+    public void setStart(Integer start) {
+        this.start = start;
+    }
+    
+    /**
+     * Gets the time into the slide when the object disappears
+     * @return end
+     */
+    public Integer getDuration() {
+        return duration;
+    }
+
+
+    /**
+     * Sets the time into the slide when the object disappears 
+     * @param end the end to set
+     */
+    public void setDuration(Integer end) {
+        this.duration = end;
+    }
+
+    /**
+     * @return the layer
+     */
+    public Integer getLayer() {
+        return layer;
+    }
+
+
+    /**
+     * @param layer the layer to set
+     */
+    public void setLayer(Integer layer) {
+        this.layer = layer;
+    }
+    
+    public void setFile(String file) {
+        this.file = file;
+    }
+    
+    public String getFile() {
+        return file;
+    }
+    
+    /**
+     * 
+     * @return branch
+     */
+    public Integer getBranch(){
+        return branch;
+    }
+    
+    /**
+     * 
+     * 
+     */
+    public void setBranch(Integer branch){
+        this.branch = branch;
+    }
+    
+    
 }
