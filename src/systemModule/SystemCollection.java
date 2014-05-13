@@ -10,9 +10,9 @@ import java.util.ArrayList;
  *
  */
 public class SystemCollection {
-	ArrayList<GameSystem> systems;
+	ArrayList<GameSystem> systems = new ArrayList<GameSystem>(0);
 	public SystemCollection() {
-		systems = new ArrayList<GameSystem>(0);
+
 	}
 	/**
 	 * @param e the system to add to the collection

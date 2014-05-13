@@ -72,6 +72,10 @@ public class SystemXMLParser extends DefaultHandler{
 		
 		this.fileName = fileName;
 	    parse(this.fileName);
+	    
+	    for(int i = 0; i < collection.size(); i++){
+	    	System.out.println(collection.get(i).getName());
+	    }
 	}
 
 	private void parse(String filename) {
