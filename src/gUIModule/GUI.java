@@ -66,16 +66,17 @@ public class GUI extends JFrame{
 		Slide nextSlide = slideList.get(nextSlideID);
 		slidePanel.refreshSlide(nextSlide);
 		setCurrentSlideID(nextSlideID);
-		previousSlideButton.setVisible(true);
+		previousSlideButton.setBorderPainted(true);
+		System.out.println("Next slide = " + nextSlide.getLastSlide());
 		if(nextSlide.getLastSlide()==true){
-			nextSlideButton.setVisible(false);
+			nextSlideButton.setBorderPainted(false);
 		}
 		return null;
 	}
 	
 	public Slide showPreviousSlide() {
 		if (currentVisibleSlideID ==1){
-			previousSlideButton.setVisible(false);
+			previousSlideButton.setBorderPainted(false);
 		}
 		
 		int previousSlideID = currentVisibleSlideID - 1;
@@ -125,7 +126,7 @@ public class GUI extends JFrame{
 				slidePanel.loadPresentation(slideList);
 				slidePanel.setupSlide(slideList.get(0));
 				currentVisibleSlideID = 0;
-				previousSlideButton.setVisible(false);
+				previousSlideButton.setBorderPainted(false);
 				slidePanel.setBounds(borderSize, borderSize, slideList.getWidth(), slideList.getHeight());
 				bookPane.add(slidePanel);	
 
