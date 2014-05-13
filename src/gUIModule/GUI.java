@@ -75,6 +75,7 @@ public class GUI extends JFrame{
 	}
 	
 	public Slide showPreviousSlide() {
+		nextSlideButton.setBorderPainted(true);
 		if (currentVisibleSlideID ==1){
 			previousSlideButton.setBorderPainted(false);
 		}

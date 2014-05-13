@@ -243,7 +243,7 @@ public class XMLParser extends DefaultHandler{
 			if(attrVal != null){
 				newSlide.setDuration(Integer.parseInt(attrVal));
 			}
-			attrVal = attrs.getValue("lastslide");
+			attrVal = attrs.getValue("lastSlide");
 			if(attrVal != null){
 				newSlide.setLastSlide(Boolean.parseBoolean(attrVal));
 			}
