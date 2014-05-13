@@ -9,8 +9,8 @@ package presentation;
 public class Sound {
 
 	private Boolean loop;
-    private int start;
-    private int duration;
+    private Integer start;
+    private Integer duration;
     private String file;
 
 	/**
@@ -22,7 +22,7 @@ public class Sound {
 	 * @param file
 	 * @param loop
 	 */
-	public Sound(int start, int duration, String file, boolean loop) {
+	public Sound(Integer start, Integer duration, String file, boolean loop) {
 		this.start = start;
 		this.duration = duration;
 		this.file = file;
@@ -32,19 +32,19 @@ public class Sound {
 	public Sound() {
 	}
 	
-	public void setStart(int start) {
+	public void setStart(Integer start) {
 	    this.start = start;
 	}
 	
-	public int getStart() {
+	public Integer getStart() {
 	    return start;
 	}
 	
-   public void setDuration(int duration) {
+   public void setDuration(Integer duration) {
         this.duration = duration;
     }
     
-    public int getDuration() {
+    public Integer getDuration() {
         return duration;
     }
     

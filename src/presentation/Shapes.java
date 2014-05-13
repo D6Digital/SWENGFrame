@@ -35,6 +35,7 @@ public class Shapes extends SlideObject {
 			String file, int numberOfPoints, int width, int height,
 			String fillColor, String lineColor, ArrayList<Point> pointList, int branch) {
 		super(x_coord, y_coord, start, duration, layer, file, branch);
+		System.err.println("TEST: " + x_coord);
 		this.numberOfPoints = numberOfPoints;
 		this.width = width;
 		this.height = height;

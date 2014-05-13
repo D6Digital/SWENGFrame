@@ -44,6 +44,7 @@ import videoModule.*;
     // Video Module
     VideoPlayerTestT601.class
 })
+
 public class AllTests {
    
 }

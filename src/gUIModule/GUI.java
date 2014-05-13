@@ -4,6 +4,10 @@ import java.awt.BorderLayout;
 import java.awt.Container;
 
 import javax.swing.JFrame;
+
+import presentation.Presentation;
+import presentation.Slide;
+import presentation.XMLParser;
 import gUIModule.UtilitiesPanel;
 import gUIModule.DicePanel;
 import gUIModule.CalculatorPanel;
@@ -28,11 +32,44 @@ public class GUI extends JFrame{
 	Container utilitiesPane;
 	Container dicePane;
 	Container calculatorPane;
+	private Presentation slideList;
+	private static Integer currentVisibleSlideID;
+	private SlidePanel slidePanel = new SlidePanel();
+	ControlPanel controls = new ControlPanel();
 	
 	/**
 	 * Create a simple JFrame and then populate it with specified JPanel type
 	 * @return 
 	 */
+	private void setCurrentSlideID(Integer newSlideID) {
+		this.currentVisibleSlideID = newSlideID;
+	}
+	
+	private Integer getCurrentSlideID() {
+		return currentVisibleSlideID;
+	}
+	
+	public Slide showNextSlide() {
+		int nextSlideID = currentVisibleSlideID + 1;
+		Slide nextSlide = slideList.get(nextSlideID);
+		slidePanel.refreshSlide(nextSlide);
+		setCurrentSlideID(nextSlideID);
+		controls.previousSlide.setVisible(true);
+		return null;
+	}
+	
+	public Slide showPreviousSlide() {
+		if (currentVisibleSlideID ==1){
+			controls.previousSlide.setVisible(false);
+		}
+		
+		int nextSlideID = currentVisibleSlideID - 1;
+		Slide nextSlide = slideList.get(nextSlideID);
+		slidePanel.refreshSlide(nextSlide);
+		setCurrentSlideID(nextSlideID);
+			
+		return null;
+	}
 
 	public GUI(String panelType) {
 		switch (panelType) {
@@ -55,16 +92,38 @@ public class GUI extends JFrame{
 				//MenuPanel();
 				break;
 			case "bookMainPanel":
-				setTitle("Girmoire");
-				setSize(1000, 500);
-				setVisible(true);
+				//get slides
+				XMLParser parser = new XMLParser("src/BasicExample.xml");	
+				slideList = parser.getSlides();
 				
+				//set up jframe
+				setTitle("Grimoire");
+				setSize(slideList.getWidth()+200, slideList.getHeight()+100);
+				setVisible(true);			
 				bookPane = getContentPane();
-				bookPane.setLayout(new BorderLayout());
 				
-				//ContentsPanel contentsPanel = new ContentsPanel(/*TODO fill inputs*/);
-				//bookPane.add(contentsPanel, BorderLayout.CENTER);
-				//ControlPanel();
+				//set up slide
+				bookPane.setBounds(0, 0, slideList.getWidth()+100, slideList.getHeight()+100);
+						
+				slidePanel.setupSlide(slideList.get(0));
+				currentVisibleSlideID = 0;
+				controls.previousSlide.setVisible(false);
+				slidePanel.loadPresentation(slideList);
+				slidePanel.setBounds(0, 0, slideList.getWidth(), slideList.getHeight());
+					
+
+				//set up utilities
+				UtilitiesPanel utilities = new UtilitiesPanel();
+				utilities.setBounds(slideList.getWidth(), 0, 200, slideList.getHeight());
+				bookPane.add(utilities);
+				
+				//set up controls
+				controls.setBounds(0, slideList.getHeight(), slideList.getWidth()+200, 100);
+				bookPane.add(controls);
+				
+				bookPane.add(slidePanel);
+				bookPane.setVisible(true);
+						
 				break;
 			case "videoDisplayPanel":
 				setTitle("Video Guide");
@@ -122,4 +181,6 @@ public class GUI extends JFrame{
 				break;
 		};
 	}
+
+
 }

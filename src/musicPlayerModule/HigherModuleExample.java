@@ -20,7 +20,7 @@ public class HigherModuleExample {
     static JPanel mainPanel = new JPanel();
     static String currentFilePath = "M:\\Year 2\\Engineering for Hearing and Voice\\Lab 1- Week 3\\Audio Samples";
     //static String vlcLibraryPath = "M:\\Year 2\\VLC\\vlc-2.0.1";
-    static String vlcLibraryPath = "M:\\Year 2\\Java Labs\\SWENGFrame\\vlc-2.1.3-win32\\vlc-2.1.3";
+    static String vlcLibraryPath = "M:\\Year 2\\Java Labs\\SWENGFrame\\resources\\lib\\vlc-2.1.3";
     
     public static void main(String[] args) throws IOException {
         StandAloneMusicPlayer  musicPlayer = new StandAloneMusicPlayer(vlcLibraryPath, currentFilePath);
