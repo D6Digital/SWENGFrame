@@ -30,7 +30,7 @@ enum ProcessingElement{
 
 /**
  * @author Sam Lambert
- *
+ * @author Robert Mills
  */
 public class BookXMLParser extends DefaultHandler{
 	
@@ -64,12 +64,15 @@ public class BookXMLParser extends DefaultHandler{
 				schema = null;
 				e1.printStackTrace();
 			}
+			//generate validator
 			Validator validator = schema.newValidator();
 			try {
+				// run validator on the desired xml file
 			  validator.validate(xmlFile);
 			  System.out.println(xmlFile.getSystemId() + " is valid");
 			  System.out.println("Is Valid");
 			} catch (SAXException e) {
+				//say isn't valid and report where the error is
 			  System.out.println(xmlFile.getSystemId() + " is NOT valid");
 			  System.out.println("Reason: " + e.getLocalizedMessage());
 			} catch (IOException e) {
@@ -80,7 +83,7 @@ public class BookXMLParser extends DefaultHandler{
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-		//parse the xml
+		//parse the xml file
 		try {
 			// use the default parser
 			SAXParserFactory factory = SAXParserFactory.newInstance();
@@ -115,33 +118,46 @@ public class BookXMLParser extends DefaultHandler{
 			if (bookList == null) {
 				bookList = new BookList(attrs.getValue(0));
 			}
-		} else if (elementName.equals("book")) {
+		}
+		//handle book element start
+		else if (elementName.equals("book")) {
 			currentBook = new Book(attrs.getValue(0));
-		} else if (elementName.equals("title")) {
+		}
+		//handle title element start
+		else if (elementName.equals("title")) {
 			currentElement = ProcessingElement.TITLE;
-		} else if (elementName.equals("filename")) {
+		}
+		//handle filename element start
+		else if (elementName.equals("filename")) {
 			currentElement = ProcessingElement.FILENAME;
 		}
+		//handle icon filename element start
 		else if (elementName.equals("icon")) {
 			currentElement = ProcessingElement.ICON;
 		}	
 	}
-	
+	// handle contents of elements
 	public void characters(char ch[], int start, int length)
 			throws SAXException {
 
 		switch (currentElement) {
+		//extracts title of book
 		case TITLE:
 			currentBook.setTitle(new String(ch, start, length));
+			System.out.println(new String(ch, start, length) + " :: " + currentBook.getTitle());
+			
 			break;
+		//extracts filename
 		case FILENAME:
 			currentBook.setFileName(new String(ch, start, length));
+			System.out.println(new String(ch, start, length));
+			break;
+		//extract icon filename		
+		case ICON:
+			currentBook.setButtonIcon(new String(ch, start, length));
+			System.out.println(new String(ch, start, length)); 
 			break;
 		default:
-			break;
-		
-		case ICON:
-			currentBook.setButtonIcon(new String(ch, start, length)); 
 			break;
 		}
 	}
@@ -155,7 +171,7 @@ public class BookXMLParser extends DefaultHandler{
 		}
 		if (elementName.equals("book")) {
 			bookList.addBook(currentBook);
-		} else if (elementName.equals("filename")) {
+		} else if(elementName.equals("title")){
 			currentElement = ProcessingElement.NONE;
 		} else if (elementName.equals("filename")) {
 			currentElement = ProcessingElement.NONE;
@@ -178,7 +194,7 @@ public class BookXMLParser extends DefaultHandler{
 		
 		for(Book currentBook : books){
 		System.out.println("Title: " + currentBook.getTitle());
-		System.out.println("FIlename: " + currentBook.getFileName());
+		System.out.println("Filename: " + currentBook.getFileName());
 		}
 	}
 }
