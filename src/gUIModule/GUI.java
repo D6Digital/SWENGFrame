@@ -52,6 +52,8 @@ public class GUI extends JFrame{
 	int borderSize = 20;
 	int utilitiesWidth = 200;
 	UtilitiesPanel utilities = new UtilitiesPanel();
+	JLayeredPane layers = new JLayeredPane();
+	boolean utilitiesShowing = false;
 	
 	/**
 	 * Create a simple JFrame and then populate it with specified JPanel type
@@ -127,7 +129,6 @@ public class GUI extends JFrame{
 				setSize(slideList.getWidth()+borderSize+borderSize+borderSize, 720);
 				setVisible(true);			
 				bookPane = getContentPane();
-				JLayeredPane layers = new JLayeredPane();
 				layers.setLayout(null);
 				
 				layers.setBounds(0,0,slideList.getWidth()+borderSize+borderSize+borderSize, 720);
@@ -251,20 +252,32 @@ public class GUI extends JFrame{
 		 public void mouseEntered(MouseEvent e){
 			 utilities.setVisible(true);
 			 System.out.println("Mouse detected in right border");
+			 utilitiesShowing = true;
 		 }
 		 
 	 
 	 });
-	 utilities.addMouseListener(new java.awt.event.MouseAdapter(){
-		 @Override
-		 public void mouseExited(MouseEvent e){
-			 utilities.setVisible(false);
-			 System.out.println("Mouse detected in right border");
-		 }
-		 
-	 
+	 layers.addMouseMotionListener(new java.awt.event.MouseMotionAdapter(){
+	    	@Override
+	    	public void mouseMoved(MouseEvent e1){
+	    		int xCoordinate = e1.getX();
+	    		int yCoordinate = e1.getY();
+	    		
+	    		if(utilitiesShowing==true){
+	    			if((xCoordinate>(slideList.getWidth()+borderSize-utilitiesWidth))&(xCoordinate<(slideList.getWidth()+borderSize+borderSize))){
+	    				if((yCoordinate>borderSize)&(yCoordinate<(slideList.getHeight()+borderSize))){
+	    					
+	    				}else{
+	    					utilities.setVisible(false);
+	    				}
+	    			}else{
+	    				utilities.setVisible(false);
+	    			}
+	    		}else{
+	    			utilitiesShowing = false;
+	    		}
+	    	}
 	 });
-
 
 	}
 }
