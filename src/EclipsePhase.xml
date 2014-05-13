@@ -159,5 +159,10 @@
 				<textstring>+10 Pilot: Aircraft, +10 \n to one skill of your choice, +20 \n Networking: Hypercorps skill \n</textstring></textbody>
 		</text>
 		<image urlname="src/XMLBits/char1jovian_spy.jpg" xstart="10" ystart="10" width="282" height="463" starttime="0" layer="0" branch="0"></image>
-		
-	</slide></slideshow></collection>
+
+		<shape totalpoints="3" width="100" height="100" fillcolour="#0000FF"
+				starttime="1" duration="30" layer="4" linecolour="#FFFFFF" branch="1">
+				<point num="00" x="400" y="10"></point>
+				<point num="01" x="700" y="40"></point>
+				<point num="02" x="650" y="150"></point>
+			</shape></slide></slideshow></collection>

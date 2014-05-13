@@ -19,6 +19,7 @@ import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
 import javax.swing.JTextPane;
 import javax.swing.Timer;
@@ -80,6 +81,8 @@ public class SlidePanel extends JPanel implements MouseListener{
 
 	private String vlcLibraryPath = "resources/lib/vlc-2.1.3";
 	
+	JLayeredPane layeredPane;
+	
 	
 	
 	/**
@@ -109,6 +112,9 @@ public class SlidePanel extends JPanel implements MouseListener{
 	public void loadPresentation(Presentation presentation) {
 		this.presentation = presentation;
 		this.setBackground(presentation.getBackgroundColourObject());
+		
+
+	    
 	}
 	
 	
@@ -131,7 +137,12 @@ public class SlidePanel extends JPanel implements MouseListener{
 	    currentSlide.getSlideID();
 	    currentSlide.getSlideName();
 	    
-	   
+	    layeredPane = new JLayeredPane();
+	    //layeredPane.setPreferredSize(new Dimension(presentation.getWidth(),presentation.getHeight()));
+	    layeredPane.setBounds(0, 0, presentation.getWidth(), presentation.getHeight());
+	    layeredPane.setLayout(null);
+	    add(layeredPane);
+
         addSound();
        /*   
 	   for(Image image: imageList) {
@@ -157,6 +168,7 @@ public class SlidePanel extends JPanel implements MouseListener{
 				if(image.getStart() == count)
 				{
 					addImage(image);
+					
 				}
 		   }
 	       for(Video video: currentSlide.getVideoList()) {
@@ -356,7 +368,9 @@ public class SlidePanel extends JPanel implements MouseListener{
      
         // The x and y of a shape needs to be derived from the leftmost x and highest y co-ordinate in the point array 
         shapeObject.setBounds(lowX, lowY, boundWidth +1, boundHeight +1);
-        this.add(shapeObject);
+       
+        
+        layeredPane.add(shapeObject,shape.getLayer());
         this.repaint();
         
         //System.out.printf("Added Media Object%n");
@@ -372,7 +386,7 @@ public class SlidePanel extends JPanel implements MouseListener{
 		TImage im = new TImage(image.getFile(),0,0);
 				
 		ImagePanel imagePanel = new ImagePanel(im);
-
+		imagePanel.setOpaque(false);
 		imagePanel.setBounds(0,0, image.getWidth(), image.getHeight());
 		
 		slideMediaObject imageObject = new slideMediaObject(image.getBranch());
@@ -383,7 +397,8 @@ public class SlidePanel extends JPanel implements MouseListener{
 		imageObject.setBounds(image.getX_coord(),image.getY_coord(), image.getWidth(), image.getHeight());
 		imageObject.setVisible(true);
 		
-		this.add(imageObject);
+		
+		layeredPane.add(imageObject,image.getLayer());
 		this.repaint();
 	}
 	
@@ -398,7 +413,8 @@ public class SlidePanel extends JPanel implements MouseListener{
 		// TODO Replace with the embedded video player when available
 		// Start paused by default
 		videoPlayer = new VideoPlayer(video);
-        this.add(videoPlayer);
+        //this.add(videoPlayer);
+        layeredPane.add(videoPlayer,video.getLayer());
         this.repaint();
 	}
 	
@@ -443,7 +459,9 @@ public class SlidePanel extends JPanel implements MouseListener{
 		
 		JPanel textPanel = new Scribe(text,textBranchListener);
 		textPanel.setBounds(text.getX_coord(), text.getY_coord(), text.getXend(), text.getYend());
-		this.add(textPanel);
+		
+		//this.add(textPanel);
+		layeredPane.add(textPanel, text.getLayer());
 		this.repaint();
 		
 	}
