@@ -59,7 +59,7 @@ public class GUI extends JFrame{
 	
 	private Integer getCurrentSlideID() {
 		return currentVisibleSlideID;
-	}
+	} 
 	
 	public Slide showNextSlide() {
 		int nextSlideID = currentVisibleSlideID + 1;
