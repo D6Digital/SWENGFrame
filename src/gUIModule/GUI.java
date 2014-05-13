@@ -1,13 +1,16 @@
 package gUIModule;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
 
 import presentation.Presentation;
@@ -48,6 +51,7 @@ public class GUI extends JFrame{
 	JButton previousSlideButton = new JButton();
 	int borderSize = 20;
 	int utilitiesWidth = 200;
+	UtilitiesPanel utilities = new UtilitiesPanel();
 	
 	/**
 	 * Create a simple JFrame and then populate it with specified JPanel type
@@ -62,6 +66,7 @@ public class GUI extends JFrame{
 	} 
 	
 	public Slide showNextSlide() {
+		if(slideList.get(currentVisibleSlideID).getLastSlide()==false){
 		int nextSlideID = currentVisibleSlideID + 1;
 		Slide nextSlide = slideList.get(nextSlideID);
 		slidePanel.refreshSlide(nextSlide);
@@ -70,11 +75,14 @@ public class GUI extends JFrame{
 		System.out.println("Next slide = " + nextSlide.getLastSlide());
 		if(nextSlide.getLastSlide()==true){
 			nextSlideButton.setBorderPainted(false);
+
+		}
 		}
 		return null;
 	}
 	
 	public Slide showPreviousSlide() {
+		if(currentVisibleSlideID==1){
 		nextSlideButton.setBorderPainted(true);
 		if (currentVisibleSlideID ==1){
 			previousSlideButton.setBorderPainted(false);
@@ -84,7 +92,7 @@ public class GUI extends JFrame{
 		Slide previousSlide = slideList.get(previousSlideID);
 		slidePanel.refreshSlide(previousSlide);
 		setCurrentSlideID(previousSlideID);
-			
+		}	
 		return null;
 	}
 
@@ -116,9 +124,13 @@ public class GUI extends JFrame{
 				
 				//set up jframe
 				setTitle("Grimoire");
-				setSize(slideList.getWidth()+borderSize+borderSize+utilitiesWidth, 720);
+				setSize(slideList.getWidth()+borderSize+borderSize+borderSize, 720);
 				setVisible(true);			
 				bookPane = getContentPane();
+				JLayeredPane layers = new JLayeredPane();
+				layers.setLayout(null);
+				
+				layers.setBounds(0,0,slideList.getWidth()+borderSize+borderSize+borderSize, 720);
 				
 				System.out.println("size="+(slideList.getWidth()+borderSize+borderSize)+","+(slideList.getHeight()+borderSize+borderSize));
 				//set up slide
@@ -127,31 +139,35 @@ public class GUI extends JFrame{
 				slidePanel.loadPresentation(slideList);
 				slidePanel.setupSlide(slideList.get(0));
 				currentVisibleSlideID = 0;
-				previousSlideButton.setBorderPainted(false);
 				slidePanel.setBounds(borderSize, borderSize, slideList.getWidth(), slideList.getHeight());
-				bookPane.add(slidePanel);	
+				layers.add(slidePanel,1);	
 
 				//set up utilities
-				UtilitiesPanel utilities = new UtilitiesPanel();
-				utilities.setBounds(slideList.getWidth()+borderSize, borderSize, utilitiesWidth, slideList.getHeight());
-				bookPane.add(utilities);
+				utilities.setBounds(slideList.getWidth()+borderSize-utilitiesWidth, borderSize, utilitiesWidth, slideList.getHeight());
+				utilities.setBackground(Color.BLACK);
+				utilities.setVisible(false);
+				layers.add(utilities,0);
 				
 				//set up buttons
-				previousSlideButton.setBounds(0, slideList.getHeight()+borderSize, (slideList.getWidth()+utilitiesWidth+borderSize+borderSize)/2, borderSize);
-				bookPane.add(previousSlideButton);
-				nextSlideButton.setBounds((slideList.getWidth()+utilitiesWidth+borderSize+borderSize)/2, slideList.getHeight()+borderSize,(slideList.getWidth()+utilitiesWidth+borderSize+borderSize)/2, borderSize);
-				bookPane.add(nextSlideButton);
-				
+				previousSlideButton.setBounds(0, slideList.getHeight()+borderSize, (slideList.getWidth()+borderSize+borderSize)/2, borderSize);
+				layers.add(previousSlideButton,1);
+				nextSlideButton.setBounds((slideList.getWidth()+borderSize+borderSize)/2, slideList.getHeight()+borderSize,(slideList.getWidth()+utilitiesWidth+borderSize+borderSize)/2, borderSize);
+				layers.add(nextSlideButton,1);
+				previousSlideButton.setBorderPainted(false);				
+				//previousSlideButton.setEnabled(false);
 				
 				//borders
 				leftBorder.setBounds(0,borderSize,borderSize,slideList.getHeight());
-				bookPane.add(leftBorder);
-				rightBorder.setBounds(slideList.getWidth()+utilitiesWidth+borderSize,borderSize,borderSize,slideList.getHeight());
-				bookPane.add(rightBorder);
-				topBorder.setBounds(0,0,slideList.getWidth()+utilitiesWidth+borderSize+borderSize,borderSize);
-				bookPane.add(topBorder);
+				layers.add(leftBorder,0);
+				leftBorder.setBackground(Color.GREEN);
+				rightBorder.setBounds(slideList.getWidth()+borderSize,borderSize,borderSize,slideList.getHeight());
+				layers.add(rightBorder,0);
+				rightBorder.setBackground(Color.GREEN);
+				topBorder.setBounds(0,0,slideList.getWidth()+borderSize+borderSize,borderSize);
+				layers.add(topBorder,1);
+				topBorder.setBackground(Color.GREEN);
 				
-				
+				bookPane.add(layers);
 				bookPane.setVisible(true);
 						
 				break;
@@ -229,7 +245,26 @@ public class GUI extends JFrame{
 		                   showPreviousSlide();
 		                }
 		            });
+	
+	 rightBorder.addMouseListener(new java.awt.event.MouseAdapter(){
+		 @Override
+		 public void mouseEntered(MouseEvent e){
+			 utilities.setVisible(true);
+			 System.out.println("Mouse detected in right border");
+		 }
+		 
+	 
+	 });
+	 utilities.addMouseListener(new java.awt.event.MouseAdapter(){
+		 @Override
+		 public void mouseExited(MouseEvent e){
+			 utilities.setVisible(false);
+			 System.out.println("Mouse detected in right border");
+		 }
+		 
+	 
+	 });
+
+
 	}
-
-
 }
