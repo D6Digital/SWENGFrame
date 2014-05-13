@@ -4,16 +4,16 @@
 package bookModule;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @author Sam Lambert
+ * @author Robert Mills
  *
  */
 public class BookList {
 	
 	private static String version;
-	private static List<Book> books;
+	private static ArrayList<Book> books;
 
 	public BookList(String version) {
 		BookList.version = version;
@@ -24,12 +24,25 @@ public class BookList {
 		books.add(currentBook);
 		}
 
-	public static List<Book> getList() {
-		return books;
+	public Book getBook(int i){
+		return books.get(i);
 	}
 
-	public static String getVersion() {
+	public String getVersion() {
 		return version;
 	}	
+	
+	public ArrayList getTitles(){
+		ArrayList<String> titleList = new ArrayList<String>(0);
+		int size = books.size();
+		for (int i = 0; i < size ; i++){
+			titleList.add(books.get(i).getTitle());
+		}
+		
+		return titleList;
+		
+	}
+	
+	
 
 }
