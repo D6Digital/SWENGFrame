@@ -57,8 +57,8 @@ public Image getButtonIcon() {
 /**
  * @param set the button icon
  */
-public void setButtonIcon(Image buttonIcon) {
-	this.buttonIcon = buttonIcon;
+public void setButtonIcon(String file) {
+	this.buttonIcon.setFile(file);
 }
 
 /**

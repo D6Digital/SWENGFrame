@@ -4,6 +4,7 @@
 package bookModule;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author Sam Lambert
@@ -28,7 +29,7 @@ public class BookList {
 		return books.get(i);
 	}
 
-	public String getVersion() {
+	public static String getVersion() {
 		return version;
 	}	
 	
@@ -41,6 +42,11 @@ public class BookList {
 		
 		return titleList;
 		
+	}
+
+	public static ArrayList<Book> getList() {
+		// TODO Auto-generated method stub
+		return books;
 	}
 	
 	
