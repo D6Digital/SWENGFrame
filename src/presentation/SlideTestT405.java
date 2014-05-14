@@ -50,7 +50,7 @@ public class SlideTestT405 {
     private SlideObject slideObject = new SlideObject(x_coord, y_coord, start, duration, layer, file, branch);
     private Image image = new Image(x_coord, y_coord, start, duration, layer, file, width, height, branch);
     private Text textObject; 
-    private Video video = new Video(x_coord, y_coord, start, duration, layer, file, width, height, length);
+    private Video video = new Video(x_coord, y_coord, start, duration, layer, file, width, height);
     private Sound sound = new Sound(start, duration, file, loop);   
     private Shapes shapes; 
     
@@ -91,8 +91,6 @@ public class SlideTestT405 {
                 slide.getImageList().get(0).getLayer(), layer);
         assertEquals("the TextList was not set correctly.",
                 slide.getTextList().get(0).getSize(), size);
-        assertEquals("the videoList was not set correctly.",
-                slide.getVideoList().get(0).getLength(), length);
         assertEquals("the Sound List was not set correctly.",
                 slide.getSoundList().get(0).getDuration(), duration);
         assertEquals("the Shape List was not set correctly.",

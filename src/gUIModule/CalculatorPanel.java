@@ -99,12 +99,14 @@ public class CalculatorPanel extends JPanel implements ActionListener{
 		
 		//adds JTextArea for display of currently included modifiers
 		displayIncludedMods = new JTextArea();
+		displayIncludedMods.setEditable(false);
 		displayIncludedMods.setBounds(10, 80, 365, 430);
 		add(displayIncludedMods);
 		displayIncludedMods.setEnabled(false);
 		
 		//adds JTextArea for display of total roll modifier
 		displayTotalMod = new JTextArea();
+        displayTotalMod.setEditable(false);
 		displayTotalMod.setBounds(10, 520, 365, 30);
 		add(displayTotalMod);
 		displayTotalMod.setEnabled(false);

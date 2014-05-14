@@ -97,6 +97,9 @@ public class PlayerControlsPanel extends JPanel {
     rewindButton.setIcon(img);
     rewindButton.setToolTipText("Skip back");
     rewindButton.setPreferredSize(new Dimension(45, 45));
+    rewindButton.setBorderPainted(false); 
+    rewindButton.setContentAreaFilled(false); 
+    rewindButton.setFocusPainted(false);
 
     
     stopButton = new JButton();
@@ -104,6 +107,9 @@ public class PlayerControlsPanel extends JPanel {
     stopButton.setIcon(img1);
     stopButton.setToolTipText("Stop");
     stopButton.setPreferredSize(new Dimension(45, 45));
+    stopButton.setBorderPainted(false); 
+    stopButton.setContentAreaFilled(false); 
+    stopButton.setFocusPainted(false);
     
     playButton = new JButton();
     img3 = new ImageIcon("resources/buttons/play.png");
@@ -111,12 +117,18 @@ public class PlayerControlsPanel extends JPanel {
     playButton.setIcon(img3);
     playButton.setToolTipText("Play");
     playButton.setPreferredSize(new Dimension(45, 45));
+    playButton.setBorderPainted(false); 
+    playButton.setContentAreaFilled(false); 
+    playButton.setFocusPainted(false);
     
     fastForwardButton = new JButton();
     ImageIcon img4 = new ImageIcon("resources/buttons/fastforward.png");
     fastForwardButton.setIcon(img4);
     fastForwardButton.setToolTipText("Skip forward");
     fastForwardButton.setPreferredSize(new Dimension(45, 45));
+    fastForwardButton.setBorderPainted(false); 
+    fastForwardButton.setContentAreaFilled(false); 
+    fastForwardButton.setFocusPainted(false);
     
     volumeSlider = new JSlider();
     volumeSlider.setOpaque(false);
@@ -136,6 +148,9 @@ public class PlayerControlsPanel extends JPanel {
     loop.setIcon(img5);
     loop.setToolTipText("Loop video");
     loop.setPreferredSize(new Dimension(45, 45));
+    loop.setBorderPainted(false); 
+    loop.setContentAreaFilled(false); 
+    loop.setFocusPainted(false);
    
     loopLabel.setOpaque(false);
     loopLabel.setForeground(Color.WHITE);
@@ -314,13 +329,11 @@ public class PlayerControlsPanel extends JPanel {
         	if (loopOn==false){
         	loopOn=true;
         	mediaPlayer.setRepeat(true);
-        	loop.setBorderPainted(false);
         	loopLabel.setText("Loop On");
         	}
         	else{
         	loopOn=false;
         	mediaPlayer.setRepeat(false);
-        	loop.setBorderPainted(true);
         	loopLabel.setText("Loop Off");
         	}
         }

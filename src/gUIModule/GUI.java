@@ -1,13 +1,23 @@
 package gUIModule;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
 
 import presentation.Presentation;
@@ -41,13 +51,19 @@ public class GUI extends JFrame{
 	static Presentation slideList;
 	private static Integer currentVisibleSlideID;
 	private SlidePanel slidePanel = new SlidePanel();
-	JPanel leftBorder = new JPanel();
-	JPanel rightBorder = new JPanel();
-	JPanel topBorder = new JPanel();
+
 	JButton nextSlideButton = new JButton();
 	JButton previousSlideButton = new JButton();
 	int borderSize = 20;
 	int utilitiesWidth = 200;
+	int contentsWidth = 150;
+	UtilitiesPanel utilities = new UtilitiesPanel();
+	//ContentsPanel contents = new ContentsPanel(null, null, null);
+	JLayeredPane layers = new JLayeredPane();
+	boolean utilitiesShowing = false;
+	boolean contentsShowing = false;
+	JLabel leftBorderLabel = new JLabel();
+	JLabel rightBorderLabel = new JLabel();
 	
 	/**
 	 * Create a simple JFrame and then populate it with specified JPanel type
@@ -59,30 +75,36 @@ public class GUI extends JFrame{
 	
 	private Integer getCurrentSlideID() {
 		return currentVisibleSlideID;
-	}
+	} 
 	
 	public Slide showNextSlide() {
+		if(slideList.get(currentVisibleSlideID).getLastSlide()==false){
 		int nextSlideID = currentVisibleSlideID + 1;
 		Slide nextSlide = slideList.get(nextSlideID);
 		slidePanel.refreshSlide(nextSlide);
 		setCurrentSlideID(nextSlideID);
-		previousSlideButton.setVisible(true);
+		previousSlideButton.setBorderPainted(true);
+		System.out.println("Next slide = " + nextSlide.getLastSlide());
 		if(nextSlide.getLastSlide()==true){
-			nextSlideButton.setVisible(false);
+			nextSlideButton.setBorderPainted(false);
+
+		}
 		}
 		return null;
 	}
 	
 	public Slide showPreviousSlide() {
+		if(currentVisibleSlideID==1){
+		nextSlideButton.setBorderPainted(true);
 		if (currentVisibleSlideID ==1){
-			previousSlideButton.setVisible(false);
+			previousSlideButton.setBorderPainted(false);
 		}
 		
 		int previousSlideID = currentVisibleSlideID - 1;
 		Slide previousSlide = slideList.get(previousSlideID);
 		slidePanel.refreshSlide(previousSlide);
 		setCurrentSlideID(previousSlideID);
-			
+		}	
 		return null;
 	}
 
@@ -114,42 +136,83 @@ public class GUI extends JFrame{
 				
 				//set up jframe
 				setTitle("Grimoire");
-				setSize(slideList.getWidth()+borderSize+borderSize+utilitiesWidth, 720);
+				setSize(slideList.getWidth()+borderSize+borderSize+borderSize, 720);
 				setVisible(true);			
 				bookPane = getContentPane();
+				layers.setLayout(null);
 				
-				System.out.println("size="+(slideList.getWidth()+borderSize+borderSize)+","+(slideList.getHeight()+borderSize+borderSize));
+				layers.setBounds(0,0,slideList.getWidth()+borderSize+borderSize+borderSize, 720);
+				
+				System.out.println("size="+(slideList.getWidth()+borderSize+borderSize)+","+(slideList.getHeight()+borderSize+borderSize));		
+				
 				//set up slide
 				bookPane.setBounds(borderSize, borderSize, slideList.getWidth()+100, slideList.getHeight()+borderSize+borderSize);
 					
 				slidePanel.loadPresentation(slideList);
 				slidePanel.setupSlide(slideList.get(0));
 				currentVisibleSlideID = 0;
-				previousSlideButton.setVisible(false);
 				slidePanel.setBounds(borderSize, borderSize, slideList.getWidth(), slideList.getHeight());
-				bookPane.add(slidePanel);	
+				layers.add(slidePanel,1);	
 
 				//set up utilities
-				UtilitiesPanel utilities = new UtilitiesPanel();
-				utilities.setBounds(slideList.getWidth()+borderSize, borderSize, utilitiesWidth, slideList.getHeight());
-				bookPane.add(utilities);
+				utilities.setBounds(slideList.getWidth()+borderSize-utilitiesWidth, borderSize, utilitiesWidth, slideList.getHeight());
+				utilities.setBackground(Color.BLACK);
+				utilities.setVisible(false);
+				layers.add(utilities,0);
+				
+				//set up contents
+				//contents.setBounds(borderSize, borderSize, contentsWidth, slideList.getHeight());
+				//contents.setBackground(Color.BLACK);
+				//contents.setVisible(false);
+				//layers.add(contents,0);
 				
 				//set up buttons
-				previousSlideButton.setBounds(0, slideList.getHeight()+borderSize, (slideList.getWidth()+utilitiesWidth+borderSize+borderSize)/2, borderSize);
-				bookPane.add(previousSlideButton);
-				nextSlideButton.setBounds((slideList.getWidth()+utilitiesWidth+borderSize+borderSize)/2, slideList.getHeight()+borderSize,(slideList.getWidth()+utilitiesWidth+borderSize+borderSize)/2, borderSize);
-				bookPane.add(nextSlideButton);
+				 try {
+					    Image previousSlideImage = ImageIO.read(new File("resources/buttons/PreviousSlide.png"));
+					    previousSlideButton.setIcon(new ImageIcon(previousSlideImage));
+					  } catch (IOException ex) {
+					  }
+				previousSlideButton.setBounds(0, slideList.getHeight()+borderSize, (slideList.getWidth()+borderSize+borderSize)/2, borderSize);
+				layers.add(previousSlideButton,1);
+				try {
+				    Image nextSlideImage = ImageIO.read(new File("resources/buttons/NextSlide.png"));
+				    nextSlideButton.setIcon(new ImageIcon(nextSlideImage));
+				  } catch (IOException ex) {
+				  }
+				nextSlideButton.setBounds((slideList.getWidth()+borderSize+borderSize)/2, slideList.getHeight()+borderSize,(slideList.getWidth()+utilitiesWidth+borderSize+borderSize)/2, borderSize);
+				layers.add(nextSlideButton,1);
+				previousSlideButton.setBorderPainted(false);				
+				//previousSlideButton.setEnabled(false);
 				
+				//Drop down
 				
 				//borders
-				leftBorder.setBounds(0,borderSize,borderSize,slideList.getHeight());
-				bookPane.add(leftBorder);
-				rightBorder.setBounds(slideList.getWidth()+utilitiesWidth+borderSize,borderSize,borderSize,slideList.getHeight());
-				bookPane.add(rightBorder);
-				topBorder.setBounds(0,0,slideList.getWidth()+utilitiesWidth+borderSize+borderSize,borderSize);
-				bookPane.add(topBorder);
-				
-				
+			BufferedImage topBorderImage;
+			try {
+				topBorderImage = ImageIO.read(new File("resources/buttons/Border.png"));
+				JLabel topBorderLabel = new JLabel(new ImageIcon(topBorderImage));
+				topBorderLabel.setBounds(0,0,slideList.getWidth()+borderSize+borderSize,borderSize);
+				layers.add(topBorderLabel,1);
+			} catch (IOException e2) {
+				// TODO Auto-generated catch block
+				e2.printStackTrace();
+			}
+			BufferedImage sideBorderImage;
+			try {
+				sideBorderImage = ImageIO.read(new File("resources/buttons/BorderSide.png"));
+				leftBorderLabel = new JLabel(new ImageIcon(sideBorderImage));
+				leftBorderLabel.setBounds(0,borderSize,borderSize,slideList.getHeight());
+				layers.add(leftBorderLabel,1);
+				rightBorderLabel = new JLabel(new ImageIcon(sideBorderImage));
+				rightBorderLabel.setBounds(slideList.getWidth()+borderSize,borderSize,borderSize,slideList.getHeight());
+				layers.add(rightBorderLabel,1);
+			} catch (IOException e2) {
+				// TODO Auto-generated catch block
+				e2.printStackTrace();
+			}
+
+			
+				bookPane.add(layers);
 				bookPane.setVisible(true);
 						
 				break;
@@ -227,7 +290,53 @@ public class GUI extends JFrame{
 		                   showPreviousSlide();
 		                }
 		            });
+	
+		 rightBorderLabel.addMouseListener(new java.awt.event.MouseAdapter(){
+		 @Override
+		 public void mouseEntered(MouseEvent e){
+			 utilities.setVisible(true);
+			 System.out.println("Mouse detected in right border");
+			 utilitiesShowing = true;
+		 }
+		 
+	 
+	 });
+	 
+	 leftBorderLabel.addMouseListener(new java.awt.event.MouseAdapter(){
+		 @Override
+		 public void mouseEntered(MouseEvent e){
+			 //contents.setVisible(true);
+			 System.out.println("Mouse detected in left border");
+			 contentsShowing = true;
+		 }
+		 
+	 
+	 });
+	 layers.addMouseMotionListener(new java.awt.event.MouseMotionAdapter(){
+	    	@Override
+	    	public void mouseMoved(MouseEvent e1){
+	    		int xCoordinate = e1.getX();
+	    		int yCoordinate = e1.getY();
+	    		
+	    		if(utilitiesShowing==true){
+	    			if((xCoordinate>(slideList.getWidth()+borderSize-utilitiesWidth))&(xCoordinate<(slideList.getWidth()+borderSize+borderSize))){
+	    				if((yCoordinate>borderSize)&(yCoordinate<(slideList.getHeight()+borderSize))){
+	    					
+	    				}else{
+	    					utilities.setVisible(false);
+	    				}
+	    			}else{
+	    				utilities.setVisible(false);
+	    			}
+	    		}else{
+	    			utilitiesShowing = false;
+	    		}
+	    		
+	    		if (contentsShowing==true){
+	    			
+	    		}
+	    	}
+	 });
+
 	}
-
-
 }

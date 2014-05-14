@@ -25,7 +25,7 @@ import videoModule.*;
     CalculatorPanelTestT201.class,
     DicePanelTestT203.class,
     // Image module
-    ImagePainterTestT301.class,
+    ImagePainterTestT301INTERNAL.class,
     // music player module
     EmbeddedMusTestT002.class,
     MusButtonTestT001.class,
