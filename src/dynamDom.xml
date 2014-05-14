@@ -43,4 +43,26 @@
 	<video urlname="resources/video/video/monstersinc_high.mpg" xstart="161" ystart="107" width="374" height="265" layer="1" starttime="0" playtime="1" loop="false"/>
 	</slide>
 	
+	<slide id="2" duration="60" lastSlide="false"><text xstart="162" ystart="72" xend="458" yend="173" layer="2" starttime="0" duration="-1" font="Aharoni" fontcolour="#FF0000" fontsize="20"><textbody bold="false" italic="false" underlined="false" branch="-1"><textstring>PRETTTYYYYY\n</textstring>
+	</textbody>
+	</text>
+	<image urlname="resources/images/Tulips.jpg" xstart="0" ystart="0" width="720" height="540" layer="1" starttime="0" duration="-1" branch="-1"/>
+	</slide>
+	
+	<slide id="3" duration="60" lastSlide="true"><shape fillcolour="#CB6C1D" linecolour="#FFFFFF" layer="6" starttime="0" duration="-1" branch="-1" totalpoints="8" width="114" height="68"><point num="0" x="180" y="160"/>
+	<point num="1" x="246" y="196"/>
+	<point num="2" x="222" y="206"/>
+	<point num="3" x="294" y="200"/>
+	<point num="4" x="255" y="158"/>
+	<point num="5" x="262" y="181"/>
+	<point num="6" x="204" y="138"/>
+	<point num="7" x="180" y="160"/>
+	</shape>
+	<text xstart="39" ystart="43" xend="335" yend="104" layer="4" starttime="0" duration="-1" font="Aharoni" fontcolour="#92D050" fontsize="20"><textbody bold="false" italic="false" underlined="false" branch="-1"><textstring>\n Look at this crazy koala!\n I think he likes you…
+\n</textstring>
+	</textbody>
+	</text>
+	<image urlname="resources/images/Koala.jpg" xstart="0" ystart="0" width="720" height="540" layer="3" starttime="0" duration="-1" branch="-1"/>
+	</slide>
+	
 </slideshow></collection>

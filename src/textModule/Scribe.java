@@ -96,8 +96,6 @@ public class Scribe extends JPanel implements MouseListener, MouseMotionListener
 		
 		add(textPane);
 		
-		System.out.println(textPane.getMaximumSize());
-		
 	}
 	
 public Scribe(Text text) {

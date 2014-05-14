@@ -27,6 +27,7 @@ import com.sun.jna.NativeLibrary;
  * will release the player, destroy the thread and return true if
  * the thread has been correctly destroyed.
  * @author Joshua Lant
+ * @author samPick
  *
  */
 public class EmbeddedAudioPlayer {
@@ -117,6 +118,7 @@ public class EmbeddedAudioPlayer {
      * @return true if the thread has been destroyed, otherwise returns false.
      */
     public boolean threadKill() {
+    	theTimer.stop();
         musicThread.stop();
         musicThread.destroy();
         mediaPlayer.release();
@@ -127,7 +129,11 @@ public class EmbeddedAudioPlayer {
      * Stops the media, and when play resumes it will be from the beginning
      * of the file, or at the point where start time was defined (if supplied)
      */
-    public void stopMedia() {       
+    public void stopMedia() {  
+    	if(theTimer != null)
+    	{
+    	theTimer.stop();
+    	}
         startedAllreadyGlobal = false;
         startTimeGlobal = 0;
         isPausedGlobal = false;

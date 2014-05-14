@@ -227,6 +227,8 @@ public class SlidePanel extends JPanel implements MouseListener{
 	
 	public void refreshSlide(Slide newSlide){
 		this.theTimer.stop();
+		this.removeAll();
+		this.setupSlide(newSlide);
 		if(audioPlayer != null)
 		{
 			this.audioPlayer.stopMedia();
@@ -235,8 +237,6 @@ public class SlidePanel extends JPanel implements MouseListener{
 		{
 			this.videoPlayer.stopMedia();
 		}
-		this.removeAll();
-		this.setupSlide(newSlide);
 		this.repaint();
 		
 	}
