@@ -1,8 +1,11 @@
 package musicPlayerModule;
 
 import java.awt.Canvas;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JPanel;
+import javax.swing.Timer;
 
 import uk.co.caprica.vlcj.binding.LibVlc;
 import uk.co.caprica.vlcj.player.MediaPlayerFactory;
@@ -43,6 +46,8 @@ public class EmbeddedAudioPlayer {
     private String playingPathGlobal;
     private Integer startTimeGlobal, endTimeGlobal = null;
     private Integer pauseTime = 0;
+    private Thread musicThread;
+    private Timer theTimer;
     
 
     /**
@@ -51,6 +56,15 @@ public class EmbeddedAudioPlayer {
      */
     public EmbeddedAudioPlayer() {
         
+    	musicThread = new Thread("Socket") {
+            public void run() {
+                    while (true) {
+                        musicPlayerLoop();                      
+                }  
+            }
+        };
+    	
+    	
         Canvas canvas = new Canvas();
         MediaPlayerFactory mediaPlayerFactory = new MediaPlayerFactory();
         CanvasVideoSurface videoSurface = mediaPlayerFactory.newVideoSurface(canvas);
@@ -68,6 +82,15 @@ public class EmbeddedAudioPlayer {
      * and then generate media player.
      */
     public EmbeddedAudioPlayer(String vlcLibraryPath) {
+    	
+    	musicThread = new Thread("Socket") {
+            public void run() {
+                    while (true) {
+                        musicPlayerLoop();                      
+                }  
+            }
+        };
+    	
         this.vlcLibraryPath = vlcLibraryPath;
         
         NativeLibrary.addSearchPath(RuntimeUtil.getLibVlcLibraryName(),vlcLibraryPath);
@@ -86,13 +109,7 @@ public class EmbeddedAudioPlayer {
         musicThread.start();
     }
     
-    Thread musicThread = new Thread("Socket") {
-        public void run() {
-                while (true) {
-                    musicPlayerLoop();                      
-            }  
-        }
-    };
+    
    
     /**
      * destroys the thread and releases the media player. If new audio is required
@@ -141,7 +158,7 @@ public class EmbeddedAudioPlayer {
            mediaPlayer.playMedia(playingPathGlobal, ":start-time=" + startTimeGlobal, ":stop-time=" + endTimeGlobal);
        }
        isPausedGlobal = false;
-       setStartedAllready();
+       startTimer();
     }
     
 //    public void play() {
@@ -150,7 +167,24 @@ public class EmbeddedAudioPlayer {
 //       isPausedGlobal = false;
 //    }
     
-    /**
+    private void startTimer() {
+    	int delay = 200; // 1000ms or 1 second timer
+        ActionListener taskPerformer= new ActionListener() {
+     		int x = 0;
+     		@Override
+     		public void actionPerformed(ActionEvent e) {
+            
+            x = setStartedAllready(x);
+            
+     		}
+ 		};
+ 		theTimer = new Timer(delay, taskPerformer);
+        theTimer.setInitialDelay(0);
+        theTimer.start();
+		
+	}
+
+	/**
      * Pauses the media, time remains at point where it was paused.
      * This method cannot be used to initiate playback. once paused
      * the playMedia() method must be called, at which point the audio will
@@ -284,7 +318,10 @@ public class EmbeddedAudioPlayer {
 
         if(!mediaPlayer.isPlaying() && loopingGlobal && startedAllreadyGlobal && !isPausedGlobal) {
             mediaPlayer.playMedia(playingPathGlobal, ":start-time=" + startTimeGlobal, ":stop-time=" + endTimeGlobal);
-            setStartedAllready();
+            
+            
+            startTimer();
+            
         }
         
     }
@@ -378,25 +415,27 @@ public class EmbeddedAudioPlayer {
         startedAllreadyGlobal = false;
     }
     
-    private void setStartedAllready() {
-        int x = 0;
+    private int setStartedAllready(int x) {
+        
         Boolean mediaStarted = false;
-        do {
-            mediaStarted = mediaPlayer.isPlaying();
-            if(mediaStarted) {
-                startedAllreadyGlobal = true;
-            }
-            try {
-                Thread.sleep(200);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+        
+        mediaStarted = mediaPlayer.isPlaying();
+        if(mediaStarted) {
+              startedAllreadyGlobal = true;
+              theTimer.stop();
+         }
+            //try {
+            //    Thread.sleep(200);
+           // } catch (InterruptedException e) {
+            //    e.printStackTrace();
+            //}
             x = x + 200;
+        
+        if(x > 5000 && mediaStarted == false){
+	        System.err.println("Media not started after 5 seconds,");
+	        theTimer.stop();
         }
-        while(x < 5000 && mediaStarted == false);
-        if(!mediaStarted) {
-            System.err.println("Media not started after 5 seconds,");
-        }
+		return x;
     }
 
 

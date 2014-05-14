@@ -35,26 +35,11 @@
 					<textstring>Original Space Colonist</textstring>
 				</textbody>
 			</text>
-			<shape fillcolour="#4F81BD" linecolour="#385D8A" layer="12" starttime="0" duration="-1" branch="-1" totalpoints="8" width="305" height="142"><point num="0" x="442" y="54"/>
-	<point num="1" x="344" y="118"/>
-	<point num="2" x="604" y="196"/>
-	<point num="3" x="423" y="120"/>
-	<point num="4" x="635" y="122"/>
-	<point num="5" x="444" y="100"/>
-	<point num="6" x="649" y="73"/>
-	<point num="7" x="442" y="54"/>
-	</shape>
-	<shape fillcolour="#00FF00" linecolour="#385D8A" layer="11" starttime="0" duration="-1" branch="-1" totalpoints="4" width="240" height="224"><point num="0" x="250" y="338"/>
-	<point num="1" x="334" y="150"/>
-	<point num="2" x="490" y="262"/>
-	<point num="3" x="386" y="374"/>
-	</shape>
-			<shape fillcolour="#0000FF" linecolour="#C07000" layer="2" starttime="0" duration="-1" branch="-1" totalpoints="6" width="141" height="130"><point num="0" x="394" y="356"/>
-				<point num="1" x="430" y="281"/>
-				<point num="2" x="535" y="313"/>
-				<point num="3" x="488" y="411"/>
-				<point num="4" x="458" y="358"/>
-				<point num="5" x="394" y="356"/>
+			<shape totalpoints="3" width="100" height="100" fillcolour="#0000FF"
+				starttime="8" duration="30" layer="2" linecolour="#FFFFFF" branch="1">
+				<point num="00" x="600" y="10"></point>
+				<point num="01" x="700" y="40"></point>
+				<point num="02" x="650" y="150"></point>
 			</shape>
 			<audio urlname="src/XMLBits/21 Imperial Battle.mp3" starttime="3"
 				loop="true"></audio>

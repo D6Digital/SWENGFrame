@@ -1,0 +1,46 @@
+<?xml version="1.0"?><!--sample xml file created using XML DOM object.--><collection xmlns="http://www-users.york.ac.uk/~rjm529/schema.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<slideshow xmlns="">
+	<documentinfo><author>D6 Digital</author><version>2.1</version><title>DynamicDom</title><comment>A crazy superhero saves the day</comment><width>720</width><height>540</height></documentinfo>
+	<defaults><backgroundcolour>#953735</backgroundcolour><font>Times New Roman</font><fontsize>24</fontsize><fontcolour>#000000</fontcolour><linecolour>#000000</linecolour><fillcolour>#000000</fillcolour></defaults>
+	
+	<slide id="0" duration="60" lastSlide="false"><image urlname="resources/images/Penguins.jpg" xstart="184" ystart="77" width="312" height="187" layer="5" starttime="0" duration="-1" branch="-1"/>
+	<text xstart="224" ystart="293" xend="536" yend="457" layer="2" starttime="0" duration="-1" font="Calibri" fontcolour="#000000" fontsize="18"><textbody bold="false" italic="false" underlined="false" branch="-1"><textstring>HEYYYYYY!!!! I should be wrapping right about now!\n</textstring>
+	</textbody>
+	<textbody bold="false" italic="false" underlined="false" branch="-1"><textstring>HEYYYYYY!!!!\n</textstring>
+	</textbody>
+	</text>
+	<image urlname="resources/images/Desert.jpg" xstart="0" ystart="0" width="720" height="540" layer="1" starttime="0" duration="-1" branch="-1"/>
+	</slide>
+	
+	<slide id="1" duration="60" lastSlide="false"><shape fillcolour="#4F81BD" linecolour="#385D8A" layer="9" starttime="0" duration="-1" branch="-1" totalpoints="8" width="305" height="142"><point num="0" x="442" y="54"/>
+	<point num="1" x="344" y="118"/>
+	<point num="2" x="604" y="196"/>
+	<point num="3" x="423" y="120"/>
+	<point num="4" x="635" y="122"/>
+	<point num="5" x="444" y="100"/>
+	<point num="6" x="649" y="73"/>
+	<point num="7" x="442" y="54"/>
+	</shape>
+	<shape fillcolour="#00FF00" linecolour="#385D8A" layer="8" starttime="0" duration="-1" branch="-1" totalpoints="4" width="187" height="201"><point num="0" x="228" y="487"/>
+	<point num="1" x="48" y="469"/>
+	<point num="2" x="113" y="325"/>
+	<point num="3" x="231" y="377"/>
+	</shape>
+	<text xstart="394" ystart="150" xend="690" yend="251" layer="5" starttime="0" duration="-1" font="Aharoni" fontcolour="#FF0000" fontsize="20"><textbody bold="false" italic="false" underlined="false" branch="-1"><textstring>the middle \I   \n</textstring>
+	</textbody>
+	<textbody bold="false" italic="false" underlined="false" branch="-1"><textstring>There we go WRITINGGGGGGGGGG lots of stuff\n</textstring>
+	</textbody>
+	</text>
+	<image urlname="resources/images/Chrysanthemum.jpg" xstart="4" ystart="259" width="129" height="25" layer="4" starttime="0" duration="-1" branch="-1"/>
+	<audio urlname="C:\\Users\\Public\\Music\\Sample Music\\Kalimba.mp3" starttime="0" loop="false"/>
+	<shape fillcolour="#FF0000" linecolour="#0070C0" layer="2" starttime="0" duration="-1" branch="-1" totalpoints="6" width="248" height="187"><point num="0" x="430" y="461"/>
+	<point num="1" x="493" y="353"/>
+	<point num="2" x="678" y="399"/>
+	<point num="3" x="596" y="540"/>
+	<point num="4" x="542" y="463"/>
+	<point num="5" x="430" y="461"/>
+	</shape>
+	<video urlname="resources/video/video/monstersinc_high.mpg" xstart="161" ystart="107" width="374" height="265" layer="1" starttime="0" playtime="1" loop="false"/>
+	</slide>
+	
+</slideshow></collection>

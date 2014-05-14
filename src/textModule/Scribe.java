@@ -6,6 +6,7 @@ package textModule;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Cursor;
+import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.FontFormatException;
 import java.awt.GraphicsEnvironment;
@@ -91,8 +92,11 @@ public class Scribe extends JPanel implements MouseListener, MouseMotionListener
 		//textPane.addMouseListener(this);
 		textPane.addMouseMotionListener(this);
 		textPane.addMouseListener(listener);
+		textPane.setMaximumSize(new Dimension(text.getXend()-text.getX_coord(),text.getYend()-text.getY_coord()));
 		
 		add(textPane);
+		
+		System.out.println(textPane.getMaximumSize());
 		
 	}
 	

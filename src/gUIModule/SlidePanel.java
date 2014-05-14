@@ -143,7 +143,8 @@ public class SlidePanel extends JPanel implements MouseListener{
 	    layeredPane.setLayout(null);
 	    add(layeredPane);
 
-        addSound();
+	    addSound();
+        
        /*   
 	   for(Image image: imageList) {
 	        addImage(image);
@@ -204,8 +205,9 @@ public class SlidePanel extends JPanel implements MouseListener{
 		}
        };
        theTimer = new Timer(delay, taskPerformer);
-       theTimer.setInitialDelay(0);
+       theTimer.setInitialDelay(2);
        theTimer.start();
+       
        
        this.setVisible(true);
 	}
@@ -276,7 +278,7 @@ public class SlidePanel extends JPanel implements MouseListener{
 		if(eventSource != null){
 			//Get the branch value assigned to the object of type slideObject
 			Integer branch = eventSource.getBranch();
-			if (branch != null){
+			if (branch != null && branch != -1){
 				this.refreshSlide(presentation.getSlideList().get(branch));
 				//branch to slide specified by the object
 			}
@@ -384,6 +386,8 @@ public class SlidePanel extends JPanel implements MouseListener{
 		// Eventually Use the bought-in module to improve this method
 		
 		TImage im = new TImage(image.getFile(),0,0);
+		im.setWidth(image.getWidth());
+		im.setHeight(image.getHeight());
 				
 		ImagePanel imagePanel = new ImagePanel(im);
 		imagePanel.setOpaque(false);
@@ -458,7 +462,7 @@ public class SlidePanel extends JPanel implements MouseListener{
 	private void addText(Text text){
 		
 		JPanel textPanel = new Scribe(text,textBranchListener);
-		textPanel.setBounds(text.getX_coord(), text.getY_coord(), text.getXend(), text.getYend());
+		textPanel.setBounds(text.getX_coord(), text.getY_coord(), text.getXend()-text.getX_coord(), text.getYend()-text.getY_coord());
 		
 		//this.add(textPanel);
 		layeredPane.add(textPanel, text.getLayer());
@@ -535,7 +539,7 @@ public class SlidePanel extends JPanel implements MouseListener{
 			                }
 							Integer branch = (Integer) a.getAttribute(HTML.Attribute.LINK);
 							
-							if (branch != null){
+							if (branch != null && branch != -1){
 								refreshSlide(presentation.getSlideList().get(branch));
 							}
 						}
