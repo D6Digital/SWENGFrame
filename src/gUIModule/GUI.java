@@ -108,7 +108,7 @@ public class GUI extends JFrame{
 				break;
 			case "bookMainPanel":
 				//get slides
-				XMLParser parser = new XMLParser("src/BasicExample.xml");	
+				XMLParser parser = new XMLParser("src/dynamDom.xml");	
 				slideList = parser.getSlides();
 				setLayout(null);
 				
