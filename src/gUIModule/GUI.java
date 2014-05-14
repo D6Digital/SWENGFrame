@@ -7,9 +7,15 @@ import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
 
@@ -51,9 +57,14 @@ public class GUI extends JFrame{
 	JButton previousSlideButton = new JButton();
 	int borderSize = 20;
 	int utilitiesWidth = 200;
+	int contentsWidth = 150;
 	UtilitiesPanel utilities = new UtilitiesPanel();
+	//ContentsPanel contents = new ContentsPanel(null, null, null);
 	JLayeredPane layers = new JLayeredPane();
 	boolean utilitiesShowing = false;
+	boolean contentsShowing = false;
+	JLabel leftBorderLabel = new JLabel();
+	JLabel rightBorderLabel = new JLabel();
 	
 	/**
 	 * Create a simple JFrame and then populate it with specified JPanel type
@@ -149,6 +160,12 @@ public class GUI extends JFrame{
 				utilities.setVisible(false);
 				layers.add(utilities,0);
 				
+				//set up contents
+				//contents.setBounds(borderSize, borderSize, contentsWidth, slideList.getHeight());
+				//contents.setBackground(Color.BLACK);
+				//contents.setVisible(false);
+				//layers.add(contents,0);
+				
 				//set up buttons
 				previousSlideButton.setBounds(0, slideList.getHeight()+borderSize, (slideList.getWidth()+borderSize+borderSize)/2, borderSize);
 				layers.add(previousSlideButton,1);
@@ -158,15 +175,30 @@ public class GUI extends JFrame{
 				//previousSlideButton.setEnabled(false);
 				
 				//borders
-				leftBorder.setBounds(0,borderSize,borderSize,slideList.getHeight());
-				layers.add(leftBorder,0);
-				leftBorder.setBackground(Color.GREEN);
-				rightBorder.setBounds(slideList.getWidth()+borderSize,borderSize,borderSize,slideList.getHeight());
-				layers.add(rightBorder,0);
-				rightBorder.setBackground(Color.GREEN);
-				topBorder.setBounds(0,0,slideList.getWidth()+borderSize+borderSize,borderSize);
-				layers.add(topBorder,1);
-				topBorder.setBackground(Color.GREEN);
+			BufferedImage topBorderImage;
+			try {
+				topBorderImage = ImageIO.read(new File("resources/buttons/Border.png"));
+				JLabel topBorderLabel = new JLabel(new ImageIcon(topBorderImage));
+				topBorderLabel.setBounds(0,0,slideList.getWidth()+borderSize+borderSize,borderSize);
+				layers.add(topBorderLabel,1);
+			} catch (IOException e2) {
+				// TODO Auto-generated catch block
+				e2.printStackTrace();
+			}
+			BufferedImage sideBorderImage;
+			try {
+				sideBorderImage = ImageIO.read(new File("resources/buttons/BorderSide.png"));
+				leftBorderLabel = new JLabel(new ImageIcon(sideBorderImage));
+				leftBorderLabel.setBounds(0,borderSize,borderSize,slideList.getHeight());
+				layers.add(leftBorderLabel,1);
+				rightBorderLabel = new JLabel(new ImageIcon(sideBorderImage));
+				rightBorderLabel.setBounds(slideList.getWidth()+borderSize,borderSize,borderSize,slideList.getHeight());
+				layers.add(rightBorderLabel,1);
+			} catch (IOException e2) {
+				// TODO Auto-generated catch block
+				e2.printStackTrace();
+			}
+
 				
 				bookPane.add(layers);
 				bookPane.setVisible(true);
@@ -247,12 +279,23 @@ public class GUI extends JFrame{
 		                }
 		            });
 	
-	 rightBorder.addMouseListener(new java.awt.event.MouseAdapter(){
+		 rightBorderLabel.addMouseListener(new java.awt.event.MouseAdapter(){
 		 @Override
 		 public void mouseEntered(MouseEvent e){
 			 utilities.setVisible(true);
 			 System.out.println("Mouse detected in right border");
 			 utilitiesShowing = true;
+		 }
+		 
+	 
+	 });
+	 
+	 leftBorderLabel.addMouseListener(new java.awt.event.MouseAdapter(){
+		 @Override
+		 public void mouseEntered(MouseEvent e){
+			 //contents.setVisible(true);
+			 System.out.println("Mouse detected in left border");
+			 contentsShowing = true;
 		 }
 		 
 	 
@@ -275,6 +318,10 @@ public class GUI extends JFrame{
 	    			}
 	    		}else{
 	    			utilitiesShowing = false;
+	    		}
+	    		
+	    		if (contentsShowing==true){
+	    			
 	    		}
 	    	}
 	 });
