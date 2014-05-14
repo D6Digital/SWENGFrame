@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -166,8 +167,18 @@ public class GUI extends JFrame{
 				//layers.add(contents,0);
 				
 				//set up buttons
+				 try {
+					    Image previousSlideImage = ImageIO.read(new File("resources/buttons/PreviousSlide.png"));
+					    previousSlideButton.setIcon(new ImageIcon(previousSlideImage));
+					  } catch (IOException ex) {
+					  }
 				previousSlideButton.setBounds(0, slideList.getHeight()+borderSize, (slideList.getWidth()+borderSize+borderSize)/2, borderSize);
 				layers.add(previousSlideButton,1);
+				try {
+				    Image nextSlideImage = ImageIO.read(new File("resources/buttons/NextSlide.png"));
+				    nextSlideButton.setIcon(new ImageIcon(nextSlideImage));
+				  } catch (IOException ex) {
+				  }
 				nextSlideButton.setBounds((slideList.getWidth()+borderSize+borderSize)/2, slideList.getHeight()+borderSize,(slideList.getWidth()+utilitiesWidth+borderSize+borderSize)/2, borderSize);
 				layers.add(nextSlideButton,1);
 				previousSlideButton.setBorderPainted(false);				
