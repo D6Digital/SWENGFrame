@@ -50,9 +50,7 @@ public class GUI extends JFrame{
 	static Presentation slideList;
 	private static Integer currentVisibleSlideID;
 	private SlidePanel slidePanel = new SlidePanel();
-	JPanel leftBorder = new JPanel();
-	JPanel rightBorder = new JPanel();
-	JPanel topBorder = new JPanel();
+
 	JButton nextSlideButton = new JButton();
 	JButton previousSlideButton = new JButton();
 	int borderSize = 20;
@@ -144,7 +142,8 @@ public class GUI extends JFrame{
 				
 				layers.setBounds(0,0,slideList.getWidth()+borderSize+borderSize+borderSize, 720);
 				
-				System.out.println("size="+(slideList.getWidth()+borderSize+borderSize)+","+(slideList.getHeight()+borderSize+borderSize));
+				System.out.println("size="+(slideList.getWidth()+borderSize+borderSize)+","+(slideList.getHeight()+borderSize+borderSize));		
+				
 				//set up slide
 				bookPane.setBounds(borderSize, borderSize, slideList.getWidth()+100, slideList.getHeight()+borderSize+borderSize);
 					
@@ -174,6 +173,8 @@ public class GUI extends JFrame{
 				previousSlideButton.setBorderPainted(false);				
 				//previousSlideButton.setEnabled(false);
 				
+				//Drop down
+				
 				//borders
 			BufferedImage topBorderImage;
 			try {
@@ -199,7 +200,7 @@ public class GUI extends JFrame{
 				e2.printStackTrace();
 			}
 
-				
+			
 				bookPane.add(layers);
 				bookPane.setVisible(true);
 						
