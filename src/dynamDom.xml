@@ -1,55 +1,95 @@
 <?xml version="1.0"?><!--sample xml file created using XML DOM object.--><collection xmlns="http://www-users.york.ac.uk/~rjm529/schema.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
 	<slideshow xmlns="">
 	<documentinfo><author>D6 Digital</author><version>2.1</version><title>DynamicDom</title><comment>A crazy superhero saves the day</comment><width>720</width><height>540</height></documentinfo>
-	<defaults><backgroundcolour>#953735</backgroundcolour><font>Times New Roman</font><fontsize>24</fontsize><fontcolour>#000000</fontcolour><linecolour>#000000</linecolour><fillcolour>#000000</fillcolour></defaults>
+	<defaults><backgroundcolour>#000000</backgroundcolour><font>Times New Roman</font><fontsize>24</fontsize><fontcolour>#000000</fontcolour><linecolour>#000000</linecolour><fillcolour>#000000</fillcolour></defaults>
 	
-	<slide id="0" duration="60" lastSlide="false"><image urlname="resources/images/Penguins.jpg" xstart="184" ystart="77" width="312" height="187" layer="5" starttime="0" duration="-1" branch="-1"/>
-	<text xstart="224" ystart="293" xend="536" yend="457" layer="2" starttime="0" duration="-1" font="Calibri" fontcolour="#000000" fontsize="18"><textbody bold="false" italic="false" underlined="false" branch="-1"><textstring>HEYYYYYY!!!! I should be wrapping right about now!\n</textstring>
+	<slide id="0" duration="60" lastSlide="false"><text xstart="-2" ystart="2" xend="695" yend="541" layer="2" duration="2" starttime="1" font="Calibri" fontcolour="#000000" fontsize="18"><textbody italic="true" bold="true" underlined="true"><textstring>HEYYYYYY!!! SortedTextIndexes(K)! </textstring>
 	</textbody>
-	<textbody bold="false" italic="false" underlined="false" branch="-1"><textstring>HEYYYYYY!!!!\n</textstring>
+	<textbody branch="1" italic="false" bold="false" underlined="true"><textstring>HEYYYYYY!!! YAAAAAAAH\n</textstring>
 	</textbody>
 	</text>
-	<image urlname="resources/images/Desert.jpg" xstart="0" ystart="0" width="720" height="540" layer="1" starttime="0" duration="-1" branch="-1"/>
+	<image urlname="resources/images/Desert.jpg" xstart="0" ystart="1" width="720" height="540" layer="1" starttime="0"/>
 	</slide>
 	
-	<slide id="1" duration="60" lastSlide="false"><shape fillcolour="#4F81BD" linecolour="#385D8A" layer="9" starttime="0" duration="-1" branch="-1" totalpoints="8" width="305" height="142"><point num="0" x="442" y="54"/>
-	<point num="1" x="344" y="118"/>
-	<point num="2" x="604" y="196"/>
-	<point num="3" x="423" y="120"/>
-	<point num="4" x="635" y="122"/>
-	<point num="5" x="444" y="100"/>
-	<point num="6" x="649" y="73"/>
-	<point num="7" x="442" y="54"/>
-	</shape>
-	<shape fillcolour="#00FF00" linecolour="#385D8A" layer="8" starttime="0" duration="-1" branch="-1" totalpoints="4" width="187" height="201"><point num="0" x="228" y="487"/>
-	<point num="1" x="48" y="469"/>
-	<point num="2" x="113" y="325"/>
-	<point num="3" x="231" y="377"/>
-	</shape>
-	<text xstart="394" ystart="150" xend="690" yend="251" layer="5" starttime="0" duration="-1" font="Aharoni" fontcolour="#FF0000" fontsize="20"><textbody bold="false" italic="false" underlined="false" branch="-1"><textstring>the middle \I   \n</textstring>
+	<slide id="1" duration="60" lastSlide="false"><text xstart="127" ystart="60" xend="479" yend="202" layer="5" duration="2" starttime="2" font="Aharoni" fontcolour="#FF0000" fontsize="20"><textbody branch="0" italic="true" bold="true" underlined="false"><textstring>There we go WRITINGGGGGGGGGG lots of stuff</textstring>
 	</textbody>
-	<textbody bold="false" italic="false" underlined="false" branch="-1"><textstring>There we go WRITINGGGGGGGGGG lots of stuff\n</textstring>
+	<textbody branch="2" italic="false" bold="true" underlined="false"><textstring>Branch to TULIPS!   </textstring>
+	</textbody>
+	<textbody branch="2" italic="false" bold="true" underlined="false"><textstring>Branch to TULIPS!   </textstring>
 	</textbody>
 	</text>
-	<image urlname="resources/images/Chrysanthemum.jpg" xstart="4" ystart="259" width="129" height="25" layer="4" starttime="0" duration="-1" branch="-1"/>
-	<audio urlname="C:\\Users\\Public\\Music\\Sample Music\\Kalimba.mp3" starttime="0" loop="false"/>
-	<shape fillcolour="#FF0000" linecolour="#0070C0" layer="2" starttime="0" duration="-1" branch="-1" totalpoints="6" width="248" height="187"><point num="0" x="430" y="461"/>
-	<point num="1" x="493" y="353"/>
-	<point num="2" x="678" y="399"/>
-	<point num="3" x="596" y="540"/>
-	<point num="4" x="542" y="463"/>
-	<point num="5" x="430" y="461"/>
-	</shape>
-	<video urlname="resources/video/video/monstersinc_high.mpg" xstart="161" ystart="107" width="374" height="265" layer="1" starttime="0" playtime="1" loop="false"/>
+	<image urlname="Resources/images/Jellyfish.jpg" xstart="105" ystart="38" width="340" height="164" layer="4" starttime="0" branch="3"/>
+	<audio urlname="C:\\Users\\Public\\Music\\Sample Music\\Kalimba.mp3" starttime="3" loop="false"/>
+	<video urlname="resources/video/video/monstersinc_high.mpg" xstart="181" ystart="372" width="205" height="136" layer="2" starttime="0" playtime="1" loop="false"/>
+	<image urlname="resources/images/Chrysanthemum.jpg" xstart="0" ystart="-1" width="720" height="540" layer="1" starttime="0"/>
 	</slide>
 	
-	<slide id="2" duration="60" lastSlide="false"><text xstart="162" ystart="72" xend="458" yend="173" layer="2" starttime="0" duration="-1" font="Aharoni" fontcolour="#FF0000" fontsize="20"><textbody bold="false" italic="false" underlined="false" branch="-1"><textstring>PRETTTYYYYY\n</textstring>
+	<slide id="2" duration="60" lastSlide="false"><shape fillcolour="#BCBCBC" linecolour="#000000" layer="9" duration="3" starttime="9" totalpoints="5" width="81" height="38"><point num="0" x="495" y="435"/>
+	<point num="1" x="518" y="468"/>
+	<point num="2" x="540" y="474"/>
+	<point num="3" x="576" y="441"/>
+	<point num="4" x="495" y="435"/>
+	</shape>
+	<shape fillcolour="#000000" linecolour="#000000" layer="8" duration="3" starttime="9" totalpoints="5" width="40" height="39"><point num="0" x="522" y="397"/>
+	<point num="1" x="516" y="435"/>
+	<point num="2" x="542" y="435"/>
+	<point num="3" x="555" y="403"/>
+	<point num="4" x="522" y="397"/>
+	</shape>
+	<shape fillcolour="#000000" linecolour="#000000" layer="7" duration="3" starttime="9" totalpoints="5" width="22" height="22"><point num="0" x="574" y="385"/>
+	<point num="1" x="570" y="407"/>
+	<point num="2" x="585" y="407"/>
+	<point num="3" x="592" y="389"/>
+	<point num="4" x="574" y="385"/>
+	</shape>
+	<shape fillcolour="#000000" linecolour="#000000" layer="6" duration="3" starttime="9" totalpoints="5" width="22" height="22"><point num="0" x="494" y="375"/>
+	<point num="1" x="490" y="397"/>
+	<point num="2" x="505" y="397"/>
+	<point num="3" x="512" y="379"/>
+	<point num="4" x="494" y="375"/>
+	</shape>
+	<shape fillcolour="#A6A6A6" linecolour="#000000" layer="5" duration="3" starttime="9" branch="3" totalpoints="31" width="328" height="190"><point num="0" x="544" y="489"/>
+	<point num="1" x="476" y="464"/>
+	<point num="2" x="468" y="434"/>
+	<point num="3" x="463" y="382"/>
+	<point num="4" x="444" y="404"/>
+	<point num="5" x="394" y="405"/>
+	<point num="6" x="392" y="355"/>
+	<point num="7" x="416" y="306"/>
+	<point num="8" x="452" y="302"/>
+	<point num="9" x="472" y="343"/>
+	<point num="10" x="520" y="334"/>
+	<point num="11" x="578" y="330"/>
+	<point num="12" x="599" y="342"/>
+	<point num="13" x="620" y="352"/>
+	<point num="14" x="658" y="306"/>
+	<point num="15" x="679" y="328"/>
+	<point num="16" x="716" y="380"/>
+	<point num="17" x="719" y="386"/>
+	<point num="18" x="717" y="384"/>
+	<point num="19" x="719" y="386"/>
+	<point num="20" x="719" y="430"/>
+	<point num="21" x="710" y="451"/>
+	<point num="22" x="698" y="467"/>
+	<point num="23" x="671" y="464"/>
+	<point num="24" x="653" y="454"/>
+	<point num="25" x="638" y="431"/>
+	<point num="26" x="628" y="424"/>
+	<point num="27" x="622" y="435"/>
+	<point num="28" x="613" y="456"/>
+	<point num="29" x="598" y="482"/>
+	<point num="30" x="548" y="491"/>
+	</shape>
+	<text xstart="162" ystart="72" xend="458" yend="173" layer="2" duration="3" starttime="2" font="Aharoni" fontcolour="#FF0000" fontsize="20"><textbody italic="true" bold="true" underlined="false"><textstring>PRETTTYYYYY\n\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="true" underlined="false"><textstring>TULIPS!!!!!!</textstring>
 	</textbody>
 	</text>
-	<image urlname="resources/images/Tulips.jpg" xstart="0" ystart="0" width="720" height="540" layer="1" starttime="0" duration="-1" branch="-1"/>
+	<image urlname="resources/images/Tulips.jpg" xstart="0" ystart="0" width="720" height="540" layer="1" starttime="0"/>
 	</slide>
 	
-	<slide id="3" duration="60" lastSlide="true"><shape fillcolour="#CB6C1D" linecolour="#FFFFFF" layer="6" starttime="0" duration="-1" branch="-1" totalpoints="8" width="114" height="68"><point num="0" x="180" y="160"/>
+	<slide id="3" duration="60" lastSlide="false"><audio urlname="C:\\Users\\Public\\Music\\Sample Music\\Kalimba.mp3" starttime="0" loop="false"/>
+	<shape fillcolour="#CB6C1D" linecolour="#FFFFFF" layer="6" duration="2" starttime="3" branch="4" totalpoints="8" width="114" height="68"><point num="0" x="180" y="160"/>
 	<point num="1" x="246" y="196"/>
 	<point num="2" x="222" y="206"/>
 	<point num="3" x="294" y="200"/>
@@ -58,11 +98,136 @@
 	<point num="6" x="204" y="138"/>
 	<point num="7" x="180" y="160"/>
 	</shape>
-	<text xstart="39" ystart="43" xend="335" yend="104" layer="4" starttime="0" duration="-1" font="Aharoni" fontcolour="#92D050" fontsize="20"><textbody bold="false" italic="false" underlined="false" branch="-1"><textstring>\n Look at this crazy koala!\n I think he likes you…
-\n</textstring>
+	<text xstart="39" ystart="43" xend="335" yend="104" layer="4" starttime="0" font="Aharoni" fontcolour="#92D050" fontsize="20"><textbody italic="false" bold="false" underlined="false"><textstring>\n Look at this crazy koala!\n I think he likes you…
+</textstring>
 	</textbody>
 	</text>
-	<image urlname="resources/images/Koala.jpg" xstart="0" ystart="0" width="720" height="540" layer="3" starttime="0" duration="-1" branch="-1"/>
+	<image urlname="resources/images/Koala.jpg" xstart="0" ystart="0" width="720" height="540" layer="3" duration="1" starttime="2"/>
+	</slide>
+	
+	<slide id="4" duration="60" lastSlide="false"><audio urlname="C:\\Users\\Public\\Music\\Sample Music\\Kalimba.mp3" starttime="0" loop="false"/>
+	<shape fillcolour="#CB6C1D" linecolour="#FFFFFF" layer="4" duration="2" starttime="3" branch="5" totalpoints="8" width="114" height="68"><point num="0" x="180" y="160"/>
+	<point num="1" x="246" y="196"/>
+	<point num="2" x="222" y="206"/>
+	<point num="3" x="294" y="200"/>
+	<point num="4" x="255" y="158"/>
+	<point num="5" x="262" y="181"/>
+	<point num="6" x="204" y="138"/>
+	<point num="7" x="180" y="160"/>
+	</shape>
+	<text xstart="41" ystart="41" xend="337" yend="102" layer="2" starttime="0" font="Aharoni" fontcolour="#92D050" fontsize="20"><textbody italic="false" bold="false" underlined="false"><textstring>\n Look at this crazy koala!\n I think he likes you…
+</textstring>
+	</textbody>
+	</text>
+	<image urlname="resources/images/Koala.jpg" xstart="-133" ystart="-70" width="947" height="710" layer="1" duration="1" starttime="2"/>
+	</slide>
+	
+	<slide id="5" duration="60" lastSlide="true"><video urlname="resources/video/video/monstersinc_high.mpg" xstart="413" ystart="402" width="285" height="126" layer="24" starttime="0" playtime="1" loop="false"/>
+	<text xstart="20" ystart="291" xend="484" yend="399" layer="18" duration="3" starttime="2" font="Albertus Extra Bold" fontcolour="#FF0000" fontsize="16"><textbody italic="true" bold="true" underlined="false"><textstring>Text must be within a “bounding” empty text box with the desired formatting \n (new lines) \n </textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>This is a separate textbody</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>, Italic/bold/underline\n </textstring>
+	</textbody>
+	<textbody italic="false" bold="false" underlined="false"><textstring>Can change on the same line, use </textstring>
+	</textbody>
+	</text>
+	<text xstart="14" ystart="426" xend="237" yend="527" layer="16" duration="3" starttime="2" font="Albertus Extra Bold" fontcolour="#FF0000" fontsize="20"><textbody italic="false" bold="true" underlined="false"><textstring>Video is a Chart with a title containing the video urlName</textstring>
+	</textbody>
+	</text>
+	<text xstart="16" ystart="174" xend="239" yend="294" layer="13" duration="3" starttime="2" font="Albertus Extra Bold" fontcolour="#FF0000" fontsize="20"><textbody italic="true" bold="true" underlined="false"><textstring>Shapes are created from a freeform shape \n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="true"><textstring>KOALA</textstring>
+	</textbody>
+	</text>
+	<text xstart="14" ystart="32" xend="237" yend="149" layer="11" duration="3" starttime="2" font="Aharoni" fontcolour="#FF0000" fontsize="20"><textbody italic="true" bold="true" underlined="false"><textstring>The images use An AutoShape and the urlName is wrote into the shape.</textstring>
+	</textbody>
+	</text>
+	<shape fillcolour="#F79646" linecolour="#FFFFFF" layer="10" starttime="0" totalpoints="8" width="97" height="66"><point num="0" x="253" y="467"/>
+	<point num="1" x="316" y="467"/>
+	<point num="2" x="315" y="443"/>
+	<point num="3" x="350" y="476"/>
+	<point num="4" x="321" y="510"/>
+	<point num="5" x="320" y="486"/>
+	<point num="6" x="257" y="484"/>
+	<point num="7" x="253" y="467"/>
+	</shape>
+	<shape fillcolour="#F79646" linecolour="#FFFFFF" layer="9" starttime="0" totalpoints="8" width="97" height="66"><point num="0" x="255" y="215"/>
+	<point num="1" x="318" y="215"/>
+	<point num="2" x="317" y="191"/>
+	<point num="3" x="352" y="224"/>
+	<point num="4" x="323" y="257"/>
+	<point num="5" x="322" y="233"/>
+	<point num="6" x="259" y="232"/>
+	<point num="7" x="255" y="215"/>
+	</shape>
+	<shape fillcolour="#F79646" linecolour="#FFFFFF" layer="8" starttime="0" totalpoints="8" width="97" height="66"><point num="0" x="254" y="85"/>
+	<point num="1" x="317" y="85"/>
+	<point num="2" x="315" y="61"/>
+	<point num="3" x="351" y="94"/>
+	<point num="4" x="321" y="127"/>
+	<point num="5" x="320" y="103"/>
+	<point num="6" x="257" y="102"/>
+	<point num="7" x="254" y="85"/>
+	</shape>
+	<shape fillcolour="#BCBCBC" linecolour="#000000" layer="7" duration="3" starttime="9" totalpoints="5" width="78" height="37"><point num="0" x="484" y="272"/>
+	<point num="1" x="507" y="304"/>
+	<point num="2" x="528" y="309"/>
+	<point num="3" x="563" y="278"/>
+	<point num="4" x="484" y="272"/>
+	</shape>
+	<shape fillcolour="#000000" linecolour="#000000" layer="6" duration="3" starttime="9" totalpoints="5" width="38" height="38"><point num="0" x="511" y="234"/>
+	<point num="1" x="505" y="271"/>
+	<point num="2" x="530" y="271"/>
+	<point num="3" x="543" y="240"/>
+	<point num="4" x="511" y="234"/>
+	</shape>
+	<shape fillcolour="#000000" linecolour="#000000" layer="5" duration="3" starttime="9" totalpoints="5" width="22" height="21"><point num="0" x="562" y="221"/>
+	<point num="1" x="559" y="242"/>
+	<point num="2" x="573" y="242"/>
+	<point num="3" x="581" y="225"/>
+	<point num="4" x="562" y="221"/>
+	</shape>
+	<shape fillcolour="#000000" linecolour="#000000" layer="4" duration="3" starttime="9" totalpoints="5" width="22" height="21"><point num="0" x="482" y="211"/>
+	<point num="1" x="479" y="232"/>
+	<point num="2" x="493" y="232"/>
+	<point num="3" x="501" y="214"/>
+	<point num="4" x="482" y="211"/>
+	</shape>
+	<shape fillcolour="#A6A6A6" linecolour="#000000" layer="3" duration="3" starttime="9" branch="3" totalpoints="31" width="318" height="185"><point num="0" x="529" y="332"/>
+	<point num="1" x="463" y="307"/>
+	<point num="2" x="455" y="279"/>
+	<point num="3" x="450" y="228"/>
+	<point num="4" x="431" y="249"/>
+	<point num="5" x="383" y="250"/>
+	<point num="6" x="381" y="201"/>
+	<point num="7" x="405" y="154"/>
+	<point num="8" x="439" y="149"/>
+	<point num="9" x="458" y="190"/>
+	<point num="10" x="506" y="181"/>
+	<point num="11" x="561" y="177"/>
+	<point num="12" x="582" y="189"/>
+	<point num="13" x="601" y="198"/>
+	<point num="14" x="639" y="154"/>
+	<point num="15" x="659" y="176"/>
+	<point num="16" x="694" y="225"/>
+	<point num="17" x="697" y="232"/>
+	<point num="18" x="696" y="230"/>
+	<point num="19" x="698" y="232"/>
+	<point num="20" x="698" y="275"/>
+	<point num="21" x="689" y="295"/>
+	<point num="22" x="678" y="311"/>
+	<point num="23" x="652" y="308"/>
+	<point num="24" x="634" y="298"/>
+	<point num="25" x="619" y="276"/>
+	<point num="26" x="610" y="268"/>
+	<point num="27" x="604" y="279"/>
+	<point num="28" x="595" y="300"/>
+	<point num="29" x="580" y="325"/>
+	<point num="30" x="532" y="334"/>
+	</shape>
+	<image urlname="resources/images/Desert.jpg" xstart="383" ystart="15" width="272" height="122" layer="2" starttime="0"/>
+	<audio urlname="C:\\Users\\Public\\Music\\Sample Music\\Kalimba.mp3" starttime="0" loop="false"/>
 	</slide>
 	
 </slideshow></collection>
