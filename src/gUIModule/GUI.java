@@ -162,9 +162,9 @@ public class GUI extends JFrame implements WindowStateListener{
 			break;
 		case "bookMainPanel":
 			//get slides
-			XMLParser parser = new XMLParser("src/dynamDom.xml");	
+			XMLParser parser = new XMLParser("github resources/dynamDom.xml");	
 			slideList = parser.getSlides();
-			XMLParser parser2 = new XMLParser("src/dynamDom.xml");
+			XMLParser parser2 = new XMLParser("github resources/dynamDom.xml");
 			bigSlideList = parser2.getSlides();
 			System.out.println("HOOOOOO");
 			setLayout(null);

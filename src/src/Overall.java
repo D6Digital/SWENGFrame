@@ -50,7 +50,7 @@ public class Overall {
 		//GUI utilities = new GUI("utilitiesSelectionPanel");  // can open all utilities from this instance
         //GUI diceRoller = new GUI("diceRollerPanel");
 	    //GUI calculator = new GUI("calculatorPanel");
-		Overall ThisIsIt = new Overall("src/dynamDom.xml");
+		Overall ThisIsIt = new Overall("github resources/dynamDom.xml");
 		System.out.println(ThisIsIt.slideList.getFont());
 		
 		bookMain = new GUI("bookMainPanel");
