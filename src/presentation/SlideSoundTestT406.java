@@ -31,7 +31,7 @@ public class SlideSoundTestT406 {
     @Test
     public void testStep1to2() {
         // Step 1. instantiate a sound object supplying all parameters to constructor.
-        Sound sound = new Sound(start, duration, file, loop);
+        Sound sound = new Sound(start, duration, file, loop,0);
         
         // Step 2. check that getters return all correct values from the input parameters.
         assertEquals("start getter or constructor not working properly.",

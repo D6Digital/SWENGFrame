@@ -464,7 +464,7 @@ public Presentation reScale(Presentation slideList, double scaleFactorX, double 
 				text.setY_coord((int)((double)text.getY_coord()*scaleFactorY));
 				text.setXend((int)((double)text.getXend()*scaleFactorX));
 				text.setYend((int)((double)text.getYend()*scaleFactorY));
-				text.setSize((int)((double)text.getSize()*scaleFactorX));
+				text.setSize(((int)((double)text.getSize()*scaleFactorX)+(int)((double)text.getSize()*scaleFactorX))/2);
 			}
 		}
 		

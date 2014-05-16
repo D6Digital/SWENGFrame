@@ -430,6 +430,12 @@ public class XMLParser extends DefaultHandler{
 				newImage.setBranch(Integer.parseInt(attrVal));
 			}
 			
+			if(newImage.getFile().contains("Dice")){
+				newImage.setStart(newImage.getStart()*10);
+				newImage.setDuration(newImage.getDuration()/5);
+				newImage.setFile("resources/images/"+newImage.getFile());
+			}
+			
 		}
 		// Video
 		else if (elementName.equals("video")) {

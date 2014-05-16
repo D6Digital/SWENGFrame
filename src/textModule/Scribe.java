@@ -178,9 +178,13 @@ public Scribe(Text text) {
 				}
 			}
 			
-			if(text.getBranch() != null)
+			if(text.getBranch() != null && text.getBranch() != -1)
 			{
 				newStyle.addAttribute(HTML.Attribute.LINK, text.getBranch());
+			}
+			else
+			{
+				newStyle.addAttribute(HTML.Attribute.LINK, -1);
 			}
 			
 			try{
@@ -282,7 +286,7 @@ public Scribe(Text text) {
                 }
 				Integer branch = (Integer) a.getAttribute(HTML.Attribute.LINK);
 				
-				if (branch != null){
+				if (branch != null && branch != -1){
 					
 				}
 			}
@@ -339,19 +343,8 @@ public Scribe(Text text) {
 				Element el = hdoc.getCharacterElement(pos);
 				AttributeSet a = el.getAttributes();
 				String href = (String) a.getAttribute(HTML.Attribute.HREF);
-				
-				if (href != null){
-					if(getCursor() != handCursor){
-						textPane.setCursor(handCursor);
-					}
-				}
-				else{
-					textPane.setCursor(defaultCursor);
-				}
-				
 				Integer branch = (Integer) a.getAttribute(HTML.Attribute.LINK);
-				
-				if (branch != null){
+				if (href != null || (branch != null && branch !=-1)){
 					if(getCursor() != handCursor){
 						textPane.setCursor(handCursor);
 					}
@@ -359,6 +352,7 @@ public Scribe(Text text) {
 				else{
 					textPane.setCursor(defaultCursor);
 				}
+				
              }           
 		}
 	}

@@ -76,6 +76,8 @@ public class SlidePanel extends JPanel implements MouseListener{
 	
 	MouseAdapter textBranchListener;
 	
+	ArrayList<slideMediaObject> mediaObjects;
+	
 	EmbeddedAudioPlayer audioPlayer;
 	VideoPlayer videoPlayer;
 
@@ -93,7 +95,7 @@ public class SlidePanel extends JPanel implements MouseListener{
 		
 		
 		
-		
+		mediaObjects = new ArrayList<slideMediaObject>();
 		
 		audioPlayer = new EmbeddedAudioPlayer(vlcLibraryPath );
 		// set layout manager to null so media components can be added to their specific co-ordinates
@@ -160,7 +162,7 @@ public class SlidePanel extends JPanel implements MouseListener{
        }*/
 	    
        
-       int delay = 1000; // 1000ms or 1 second timer
+       int delay = 10; // 1000ms or 1 second timer
        ActionListener taskPerformer= new ActionListener() {
 		int count = 0;
 		@Override
@@ -191,17 +193,27 @@ public class SlidePanel extends JPanel implements MouseListener{
 				}
 	       }
 	       for(Sound sound : currentSlide.getSoundList()) {
-	    	   if(sound.getStart() == count+1 || (sound.getStart() == 0 && count == 0))
+	    	   if(sound.getObjectStartTime() == count+1 || (sound.getStart() == 0 && count == 0))
 	    	   {
-	    	   audioPlayer.prepareMedia(sound.getFile(), sound.getStart());
+	    		   audioPlayer.prepareMedia(sound.getFile(), sound.getStart());
 	    	   }
-	    	   if(sound.getStart() == count)
+	    	   if(sound.getObjectStartTime() == count)
 	    	   {
-	   		   audioPlayer.playMedia();
+	    		   audioPlayer.playMedia();
+	    	   }
+	    	   if(sound.getDuration()+sound.getObjectStartTime() == count && count != 0)
+	    	   {
+	    		   audioPlayer.stopMedia();
 	    	   }
 	       }
+	       for(slideMediaObject object: mediaObjects){
+	    	   if(object.getFinishTime() == count && count != 0){
+	    		   layeredPane.remove(object);
+	    		   layeredPane.repaint();
+	    	   }
+	    	   
+	       }
 		count ++;
-		
 		}
        };
        theTimer = new Timer(delay, taskPerformer);
@@ -219,7 +231,7 @@ public class SlidePanel extends JPanel implements MouseListener{
 	 * After Clearing the panel setupSlide method above should be called to show a new slide
 	 */
 	public void clearSlide(){
-	
+		mediaObjects.clear();
 		this.removeAll();
 	
 	
@@ -227,7 +239,7 @@ public class SlidePanel extends JPanel implements MouseListener{
 	
 	public void refreshSlide(Slide newSlide){
 		this.theTimer.stop();
-		this.removeAll();
+		clearSlide();
 		this.setupSlide(newSlide);
 		if(audioPlayer != null)
 		{
@@ -360,7 +372,7 @@ public class SlidePanel extends JPanel implements MouseListener{
 		//System.out.printf("Shape lowX %d, Shape lowY %d%n", lowX, lowY);
 		//System.out.printf("Shape Width %d, Shape Height %d%n", boundWidth, boundHeight);
 				
-		slideMediaObject shapeObject = new slideMediaObject(shape.getBranch());
+		slideMediaObject shapeObject = new slideMediaObject(shape.getBranch(),shape.getDuration(),shape.getStart());
         shapeObject.addMouseListener(this);
         
         graphic.setBounds(0, 0, boundWidth+1, boundHeight+1);
@@ -371,7 +383,7 @@ public class SlidePanel extends JPanel implements MouseListener{
         // The x and y of a shape needs to be derived from the leftmost x and highest y co-ordinate in the point array 
         shapeObject.setBounds(lowX, lowY, boundWidth +1, boundHeight +1);
        
-        
+        mediaObjects.add(shapeObject);
         layeredPane.add(shapeObject,shape.getLayer());
         this.repaint();
         
@@ -393,7 +405,7 @@ public class SlidePanel extends JPanel implements MouseListener{
 		imagePanel.setOpaque(false);
 		imagePanel.setBounds(0,0, image.getWidth(), image.getHeight());
 		
-		slideMediaObject imageObject = new slideMediaObject(image.getBranch());
+		slideMediaObject imageObject = new slideMediaObject(image.getBranch(),image.getDuration(),image.getStart());
 		imageObject.addMouseListener(this);
 		
 		imageObject.add(imagePanel);
@@ -402,6 +414,7 @@ public class SlidePanel extends JPanel implements MouseListener{
 		imageObject.setVisible(true);
 		
 		
+		mediaObjects.add(imageObject);
 		layeredPane.add(imageObject,image.getLayer());
 		this.repaint();
 	}
@@ -462,10 +475,16 @@ public class SlidePanel extends JPanel implements MouseListener{
 	private void addText(Text text){
 		
 		JPanel textPanel = new Scribe(text,textBranchListener);
-		textPanel.setBounds(text.getX_coord(), text.getY_coord(), text.getXend()-text.getX_coord(), text.getYend()-text.getY_coord());
+		textPanel.setBounds(0,0, text.getXend()-text.getX_coord(), text.getYend()-text.getY_coord());
 		
+		
+		slideMediaObject textObject = new slideMediaObject(-1,text.getDuration(),text.getStart());
+		textObject.add(textPanel);
+		textObject.setBounds(text.getX_coord(), text.getY_coord(), text.getXend()-text.getX_coord(), text.getYend()-text.getY_coord());
 		//this.add(textPanel);
-		layeredPane.add(textPanel, text.getLayer());
+		layeredPane.add(textObject, text.getLayer());
+		
+		mediaObjects.add(textObject);
 		this.repaint();
 		
 	}

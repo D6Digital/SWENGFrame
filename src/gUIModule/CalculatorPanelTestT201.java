@@ -28,7 +28,7 @@ public class CalculatorPanelTestT201 {
 
     @Test
     public void test() {
-        boolean x = true;
+        boolean x = false;
         do {
             
         }
