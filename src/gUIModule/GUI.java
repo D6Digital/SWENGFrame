@@ -19,6 +19,8 @@ import java.awt.event.WindowStateListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
@@ -72,10 +74,15 @@ public class GUI extends JFrame implements WindowStateListener{
 	int utilitiesWidth = 200;
 	int contentsWidth = 150;
 	UtilitiesPanel utilities = new UtilitiesPanel();
+	JPanel topPanel = new JPanel();
 	//ContentsPanel contents = new ContentsPanel(null, null, null);
+	JPanel contents = new JPanel();
 	JLayeredPane layers = new JLayeredPane();
 	boolean utilitiesShowing = false;
 	boolean contentsShowing = false;
+	boolean topPanelShowing = false;
+	boolean nextButtonShowing = false;
+	boolean previousButtonShowing = false;
 	JLabel leftBorderLabel = new JLabel();
 	JLabel rightBorderLabel = new JLabel();
 	JLabel topBorderLabel;
@@ -83,6 +90,12 @@ public class GUI extends JFrame implements WindowStateListener{
 	Insets insets;
 	private double scaleFactorY = 1;
 	private double scaleFactorX = 1;
+	
+	JPanel utilitiesTab = new JPanel();
+	JPanel contentsTab = new JPanel();
+	JPanel nextTab = new JPanel();
+	JPanel previousTab = new JPanel();
+	
 
 	/**
 	 * Create a simple JFrame and then populate it with specified JPanel type
@@ -172,98 +185,164 @@ public class GUI extends JFrame implements WindowStateListener{
 			//set up jframe
 			insets = this.getInsets();
 			setTitle("Grimoire");
-			setSize(slideList.getWidth()+borderSize+borderSize+insets.left+insets.right,
-					slideList.getHeight() + borderSize*2+insets.top+insets.bottom);
-			setVisible(true);			
+			setSize(slideList.getWidth()+insets.left+insets.right,
+					slideList.getHeight()+insets.top+insets.bottom);
+			setVisible(true);	
+			setLayout(null);
 			bookPane = getContentPane();
-
-
-
+			bookPane.setBounds(0, 0, slideList.getWidth(), slideList.getHeight());
 
 			layers.setLayout(null);
-
-			layers.setBounds(0,0,slideList.getWidth()+borderSize+borderSize+borderSize, slideList.getHeight() + borderSize*2+insets.top+insets.bottom);
-
-			System.out.println("size="+(slideList.getWidth()+borderSize+borderSize)+","+(slideList.getHeight()+borderSize+borderSize));		
+			layers.setBounds(0,0,slideList.getWidth(), slideList.getHeight()+insets.top+insets.bottom);
 
 			//set up slide
-			bookPane.setBounds(borderSize, borderSize, slideList.getWidth()+100, slideList.getHeight()+borderSize+borderSize);
-
 			slidePanel.loadPresentation(slideList);
 			slidePanel.setupSlide(slideList.get(0));
 			currentVisibleSlideID = 0;
-			slidePanel.setBounds(borderSize, borderSize, slideList.getWidth(), slideList.getHeight());
-			layers.add(slidePanel,1);	
+			slidePanel.setBounds(0, 0, slideList.getWidth(), slideList.getHeight());	
 
+			//set up tabs
+			//utilities tab
+			utilitiesTab.setBounds(slideList.getWidth()-15,(slideList.getHeight()/2)-60,15,120);
+			BufferedImage utilitiesTabImage;
+			try{
+				utilitiesTabImage = ImageIO.read(new File("resources/buttons/utilitiesTab.png"));
+				Image scaledUTab = utilitiesTabImage.getScaledInstance(15, 100, java.awt.Image.SCALE_SMOOTH);
+				JLabel uTabLabel = new JLabel(new ImageIcon(scaledUTab));
+				uTabLabel.setBounds(0, 0, 15, 120);
+				uTabLabel.setOpaque(false);
+				utilitiesTab.add(uTabLabel);
+			}catch (IOException ex){
+				
+			}
+			utilitiesTab.setOpaque(false);
+			utilitiesTab.setVisible(false);
+			
+			//contents tab
+			contentsTab.setBounds(0,(slideList.getHeight()/2)-60,15,120);
+			BufferedImage contentsTabImage;
+			try{
+				contentsTabImage = ImageIO.read(new File("resources/buttons/contentsTab.png"));
+				Image scaledCTab = contentsTabImage.getScaledInstance(15, 100, java.awt.Image.SCALE_SMOOTH);
+				JLabel cTabLabel = new JLabel(new ImageIcon(scaledCTab));
+				cTabLabel.setBounds(0, 0, 15, 120);
+				cTabLabel.setOpaque(false);
+				contentsTab.add(cTabLabel);
+			}catch (IOException ex){
+				
+			}
+			contentsTab.setOpaque(false);
+			contentsTab.setVisible(false);
+			
+			//next tab
+			nextTab.setBounds(slideList.getWidth()-90,(slideList.getHeight())-20,90,20);
+			BufferedImage nextTabImage;
+			try{
+				nextTabImage = ImageIO.read(new File("resources/buttons/nextTab.png"));
+				Image scaledNTab = nextTabImage.getScaledInstance(80, 15, java.awt.Image.SCALE_SMOOTH);
+				JLabel nTabLabel = new JLabel(new ImageIcon(scaledNTab));
+				nTabLabel.setBounds(0, 0, 80, 15);
+				nTabLabel.setOpaque(false);
+				nextTab.add(nTabLabel);
+			}catch (IOException ex){
+				
+			}
+			nextTab.setOpaque(false);
+			nextTab.setVisible(false);
+			
+			//previous tab
+			previousTab.setBounds(0,(slideList.getHeight())-20,100,20);
+			BufferedImage previousTabImage;
+			try{
+				previousTabImage = ImageIO.read(new File("resources/buttons/previousTab.png"));
+				Image scaledPTab = previousTabImage.getScaledInstance(90, 15, java.awt.Image.SCALE_SMOOTH);
+				JLabel pTabLabel = new JLabel(new ImageIcon(scaledPTab));
+				pTabLabel.setBounds(0, 0, 90, 15);
+				pTabLabel.setOpaque(false);
+				previousTab.add(pTabLabel);
+			}catch (IOException ex){
+				
+			}
+			previousTab.setOpaque(false);
+			previousTab.setVisible(false);
+			
+			
+			//set up buttons
+			//previous button
+			BufferedImage previousSlideImage;
+			try{
+				previousSlideImage = ImageIO.read(new File("resources/buttons/Previous.png"));
+				Image scaledPButton = previousSlideImage.getScaledInstance(150,50,java.awt.Image.SCALE_SMOOTH);
+				previousSlideButton.setIcon(new ImageIcon(scaledPButton));
+			}catch (IOException ex){
+				
+			}
+			previousSlideButton.setBounds(0,slideList.getHeight()-70,150,50);
+			previousSlideButton.setVisible(false);
+			
+			//next button
+			BufferedImage nextSlideImage;
+			try{
+				nextSlideImage = ImageIO.read(new File("resources/buttons/Next.png"));
+				Image scaledNButton = nextSlideImage.getScaledInstance(150,50,java.awt.Image.SCALE_SMOOTH);
+				nextSlideButton.setIcon(new ImageIcon(scaledNButton));
+			}catch (IOException ex){
+				
+			}
+			nextSlideButton.setBounds(slideList.getWidth()-150,slideList.getHeight()-70,150,50);
+			nextSlideButton.setVisible(false);
+			
 			//set up utilities
-			utilities.setBounds(slideList.getWidth()+borderSize-utilitiesWidth, borderSize, utilitiesWidth, slideList.getHeight());
-			utilities.setBackground(Color.BLACK);
+			utilities.setBounds(slideList.getWidth()-utilitiesWidth, 0, utilitiesWidth, slideList.getHeight());
+			utilities.setBackground(Color.GRAY);
 			utilities.setVisible(false);
-			layers.add(utilities,0);
+
 
 			//set up contents
-			//contents.setBounds(borderSize, borderSize, contentsWidth, slideList.getHeight());
-			//contents.setBackground(Color.BLACK);
-			//contents.setVisible(false);
-			//layers.add(contents,0);
-
-			//set up buttons
-			try {
-				Image previousSlideImage = ImageIO.read(new File("resources/buttons/PreviousSlide.png"));
-				previousSlideButton.setIcon(new ImageIcon(previousSlideImage));
-			} catch (IOException ex) {
-			}
-			previousSlideButton.setBounds(0, slideList.getHeight()+borderSize, (slideList.getWidth()+borderSize+borderSize)/2, borderSize);
-			layers.add(previousSlideButton,1);
-			try {
-				Image nextSlideImage = ImageIO.read(new File("resources/buttons/NextSlide.png"));
-				nextSlideButton.setIcon(new ImageIcon(nextSlideImage));
-			} catch (IOException ex) {
-			}
-			nextSlideButton.setBounds((slideList.getWidth()+borderSize+borderSize)/2, slideList.getHeight()+borderSize,(slideList.getWidth()+utilitiesWidth+borderSize+borderSize)/2, borderSize);
-			layers.add(nextSlideButton,1);
-			previousSlideButton.setBorderPainted(false);				
-			//previousSlideButton.setEnabled(false);
+			contents.setBounds(0, 0, contentsWidth, slideList.getHeight());
+			contents.setBackground(Color.GRAY);
+			contents.setVisible(false);
 
 			//Drop down
-
-			//borders
-			BufferedImage topBorderImage;
-			try {
-				topBorderImage = ImageIO.read(new File("resources/buttons/Border.png"));
-				topBorderLabel = new JLabel(new ImageIcon(topBorderImage));
-				topBorderLabel.setBounds(0,0,slideList.getWidth()+borderSize+borderSize,borderSize);
-				layers.add(topBorderLabel,1);
-			} catch (IOException e2) {
-				// TODO Auto-generated catch block
-				e2.printStackTrace();
-			}
-			BufferedImage sideBorderImage;
-			try {
-				sideBorderImage = ImageIO.read(new File("resources/buttons/BorderSide.png"));
-				leftBorderLabel = new JLabel(new ImageIcon(sideBorderImage));
-				leftBorderLabel.setBounds(0,borderSize,borderSize,slideList.getHeight());
-				layers.add(leftBorderLabel,1);
-				rightBorderLabel = new JLabel(new ImageIcon(sideBorderImage));
-				rightBorderLabel.setBounds(slideList.getWidth()+borderSize,borderSize,borderSize,slideList.getHeight());
-				layers.add(rightBorderLabel,1);
-			} catch (IOException e2) {
-				// TODO Auto-generated catch block
+			topPanel.setBounds(0,0,slideList.getWidth(),150);
+			topPanel.setVisible(false);
+			topPanel.setLayout(null);
+			topPanel.setOpaque(false);
+			BufferedImage titleImage;
+			try{
+				titleImage = ImageIO.read(new File("resources/buttons/Logo.png"));
+				Image scaledTitle = titleImage.getScaledInstance(300,200,java.awt.Image.SCALE_SMOOTH);
+				JLabel titleLabel = new JLabel(new ImageIcon(scaledTitle));
+				titleLabel.setBounds((slideList.getWidth()/2)-150, 0, 300, 200);
+				topPanel.add(titleLabel);
+			}catch(IOException e2){
 				e2.printStackTrace();
 			}
 
+
+			layers.add(utilities,0);
+			layers.add(contents,1);
+			layers.add(topPanel,2);
+			layers.add(nextSlideButton,3);
+			layers.add(previousSlideButton,4);
+			layers.add(utilitiesTab,5);
+			layers.add(contentsTab,6);
+			layers.add(nextTab,7);
+			layers.add(previousTab,8);
+			layers.add(slidePanel,9);
+			
 
 			bookPane.add(layers);
 			bookPane.setVisible(true);
 			this.setVisible(true);
 			insets = this.getInsets();
-			this.setPreferredSize(new Dimension(slideList.getWidth()+borderSize+borderSize+insets.left+insets.right,
-					slideList.getHeight() + borderSize*2+insets.top+insets.bottom));
+			this.setPreferredSize(new Dimension(slideList.getWidth()+insets.left+insets.right,
+					slideList.getHeight() +insets.top+insets.bottom));
 			this.pack();
 
 			System.out.println(availableScreenSize);
-			scaleFactorX = (double)(availableScreenSize.width-(borderSize*2))/(double)slideList.getWidth();
-			scaleFactorY = (double)(availableScreenSize.height-(borderSize*2)-insets.top)/(double)slideList.getHeight();
+			scaleFactorX = (double)(availableScreenSize.width)/(double)slideList.getWidth();
+			scaleFactorY = (double)(availableScreenSize.height-insets.top)/(double)slideList.getHeight();
 			System.out.println("scale X: " + scaleFactorX + "scale Y: " + scaleFactorY);
 			
 			
@@ -346,53 +425,110 @@ public class GUI extends JFrame implements WindowStateListener{
 					}
 				});
 
-		rightBorderLabel.addMouseListener(new java.awt.event.MouseAdapter(){
-			@Override
-			public void mouseEntered(MouseEvent e){
-				utilities.setVisible(true);
-				System.out.println("Mouse detected in right border");
-				utilitiesShowing = true;
-			}
-
-
-		});
-
-		leftBorderLabel.addMouseListener(new java.awt.event.MouseAdapter(){
-			@Override
-			public void mouseEntered(MouseEvent e){
-				//contents.setVisible(true);
-				System.out.println("Mouse detected in left border");
-				contentsShowing = true;
-			}
-
-
-		});
 		layers.addMouseMotionListener(new java.awt.event.MouseMotionAdapter(){
 			@Override
 			public void mouseMoved(MouseEvent e1){
 				int xCoordinate = e1.getX();
 				int yCoordinate = e1.getY();
-
-				if(utilitiesShowing==true){
-					if((xCoordinate>(slideList.getWidth()+borderSize-utilitiesWidth))&(xCoordinate<(slideList.getWidth()+borderSize+borderSize))){
-						if((yCoordinate>borderSize)&(yCoordinate<(slideList.getHeight()+borderSize))){
-
-						}else{
-							utilities.setVisible(false);
-						}
-					}else{
+				
+				if (xCoordinate>(slideList.getWidth()-borderSize)){
+					utilities.setVisible(true);
+					utilitiesShowing=true;
+					utilitiesTab.setVisible(false);
+					contentsTab.setVisible(false);
+					nextTab.setVisible(false);
+					previousTab.setVisible(false);
+				}
+				if (xCoordinate<(slideList.getWidth()-200)){
+					if(utilitiesShowing==true){
 						utilities.setVisible(false);
+						utilitiesShowing=false;
 					}
-				}else{
-					utilitiesShowing = false;
 				}
-
-				if (contentsShowing==true){
-
+				if(yCoordinate<borderSize){
+					topPanel.setVisible(true);
+					topPanelShowing = true;
+					utilitiesTab.setVisible(false);
+					contentsTab.setVisible(false);
+					nextTab.setVisible(false);
+					previousTab.setVisible(false);
 				}
+				if(yCoordinate>100){
+					if(topPanelShowing==true){
+						topPanel.setVisible(false);
+						topPanelShowing=false;
+					}
+				}
+				if(xCoordinate<borderSize){
+					contents.setVisible(true);
+					contentsShowing=true;
+					utilitiesTab.setVisible(false);
+					contentsTab.setVisible(false);
+					nextTab.setVisible(false);
+					previousTab.setVisible(false);
+				}
+				if(xCoordinate>contentsWidth){
+					if(contentsShowing==true){
+						contents.setVisible(false);
+						contentsShowing=false;
+					}
+				}
+				if((xCoordinate>slideList.getWidth()/2)&(yCoordinate>(slideList.getHeight()-borderSize))){
+					nextSlideButton.setVisible(true);
+					nextButtonShowing=true;
+					utilitiesTab.setVisible(false);
+					contentsTab.setVisible(false);
+					nextTab.setVisible(false);
+					previousTab.setVisible(false);
+				}
+				if((xCoordinate<slideList.getWidth()/2)|(yCoordinate<(slideList.getHeight()-100))){
+					if(nextButtonShowing==true){
+						nextSlideButton.setVisible(false);
+						nextButtonShowing=false;
+					}
+				}
+				if((xCoordinate<slideList.getWidth()/2)&(yCoordinate>(slideList.getHeight()-borderSize))){
+					previousSlideButton.setVisible(true);
+					previousButtonShowing=true;
+					utilitiesTab.setVisible(false);
+					contentsTab.setVisible(false);
+					nextTab.setVisible(false);
+					previousTab.setVisible(false);
+				}
+				if((xCoordinate>slideList.getWidth()/2)|(yCoordinate<(slideList.getHeight()-100))){
+					if(previousButtonShowing==true){
+						previousSlideButton.setVisible(false);
+						previousButtonShowing=false;
+					}
+				}
+				if((xCoordinate>50)&(xCoordinate<(slideList.getWidth()-50))&(yCoordinate>50)&(yCoordinate<(slideList.getHeight()-50))){
+					utilitiesTab.setVisible(true);
+					contentsTab.setVisible(true);
+					if(nextSlideButton.isVisible()==false){
+						nextTab.setVisible(true);
+					}
+					if(previousSlideButton.isVisible()==false){
+						previousTab.setVisible(true);
+					}
+					Timer timer = new Timer(true);
+					tabTimer t = new tabTimer();
+					timer.schedule(t,3000,1);
+				}
+				
 			}
 		});
 
+	}
+	
+	public class tabTimer extends TimerTask{
+		
+		public void run(){
+			utilitiesTab.setVisible(false);
+			contentsTab.setVisible(false);
+			nextTab.setVisible(false);
+			previousTab.setVisible(false);
+			this.cancel(); 
+		}
 	}
 
 	@Override
