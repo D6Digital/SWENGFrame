@@ -100,7 +100,6 @@ public class GUI extends JFrame implements WindowStateListener{
 	JPanel contentsTab = new JPanel();
 	JPanel nextTab = new JPanel();
 	JPanel previousTab = new JPanel();
-	
 
 	/**
 	 * Create a simple JFrame and then populate it with specified JPanel type
@@ -437,6 +436,8 @@ public class GUI extends JFrame implements WindowStateListener{
 			public void mouseMoved(MouseEvent e1){
 				int xCoordinate = e1.getX();
 				int yCoordinate = e1.getY();
+				
+				System.out.println("x="+xCoordinate+"y="+yCoordinate);
 				
 				if (xCoordinate>(slideWidth-borderSize)){
 					utilities.setVisible(true);
