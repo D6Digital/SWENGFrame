@@ -1,5 +1,6 @@
 package gUIModule;
 
+import java.awt.Color;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -7,6 +8,8 @@ import java.awt.event.ActionListener;
 import javax.swing.AbstractButton;
 import javax.swing.JButton;
 import javax.swing.JPanel;
+
+import src.Overall;
 
 import gUIModule.GUI;
 
@@ -26,6 +29,8 @@ public class UtilitiesPanel extends JPanel implements ActionListener{
 	public boolean diceRollerExists;
 	public boolean calculatorExists;
 	JPanel UtilitiesPanel;
+	JPanel multiPanel= new JPanel();
+	CalculatorPanel calculator = new CalculatorPanel();
 	
 	
 	/**
@@ -48,6 +53,12 @@ public class UtilitiesPanel extends JPanel implements ActionListener{
 		
 		addButtons("Modifier Calculator", "calculatorLaunch",
 				   "Opens the modifier calculator application", 17, 100);
+		multiPanel.setBounds(0,200,GUI.utilitiesWidth,400);
+		multiPanel.setBackground(Color.BLACK);
+		calculator.setBounds(0,0,GUI.utilitiesWidth,400);
+		multiPanel.add(calculator);
+		add(multiPanel);
+		
 	}
 	
 	/**
