@@ -92,6 +92,7 @@ public class FileChooser extends JPanel implements ActionListener {
 
 	        //Handle open button action.
 	        if (e.getSource() == openButton) {
+	            
 	            int returnVal = fc.showOpenDialog(FileChooser.this);
 
 	            if (returnVal == JFileChooser.APPROVE_OPTION) {
