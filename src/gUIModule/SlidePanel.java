@@ -61,7 +61,7 @@ import videoModule.VideoPlayer;
  * @author Andrew Walter
  *
  */
-public class SlidePanel extends JPanel implements MouseListener{
+public class SlidePanel extends JPanel{
 
 	/**
 	 * 
@@ -74,8 +74,8 @@ public class SlidePanel extends JPanel implements MouseListener{
 	Presentation presentation;
 	Timer theTimer;
 	
-	MouseAdapter textBranchListener;
-	
+	private MouseAdapter textBranchListener;
+	private MouseAdapter branchListener;
 	ArrayList<slideMediaObject> mediaObjects;
 	
 	EmbeddedAudioPlayer audioPlayer;
@@ -84,6 +84,8 @@ public class SlidePanel extends JPanel implements MouseListener{
 	private String vlcLibraryPath = "resources/lib/vlc-2.1.3";
 	
 	JLayeredPane layeredPane;
+
+	
 	
 	
 	
@@ -102,7 +104,7 @@ public class SlidePanel extends JPanel implements MouseListener{
 		setLayout(null);
 		
 		setupTextListener();
-		
+		setupBranchListener();
 		// By default the panel is invisible until the player chooses to display it
 		setVisibility(false);
 		
@@ -162,7 +164,7 @@ public class SlidePanel extends JPanel implements MouseListener{
        }*/
 	    
        
-       int delay = 10; // 1000ms or 1 second timer
+       int delay = 100; // 1000ms or 1 second timer
        ActionListener taskPerformer= new ActionListener() {
 		int count = 0;
 		@Override
@@ -282,7 +284,7 @@ public class SlidePanel extends JPanel implements MouseListener{
 	 * 
 	 * For example a particular JButton which has a reference to the next slide
 	 */
-	public void mouseClicked(MouseEvent e) {
+	/*public void mouseClicked(MouseEvent e) {
 		
 		//Returns the object that triggered the action listener and casts it to
 		//a slideObject
@@ -296,7 +298,7 @@ public class SlidePanel extends JPanel implements MouseListener{
 			}
 		}
 		
-	}
+	}*/
 	
 
 	
@@ -373,7 +375,7 @@ public class SlidePanel extends JPanel implements MouseListener{
 		//System.out.printf("Shape Width %d, Shape Height %d%n", boundWidth, boundHeight);
 				
 		slideMediaObject shapeObject = new slideMediaObject(shape.getBranch(),shape.getDuration(),shape.getStart());
-        shapeObject.addMouseListener(this);
+        shapeObject.addMouseListener(branchListener);
         
         graphic.setBounds(0, 0, boundWidth+1, boundHeight+1);
 		shapeObject.add(graphic);
@@ -406,7 +408,7 @@ public class SlidePanel extends JPanel implements MouseListener{
 		imagePanel.setBounds(0,0, image.getWidth(), image.getHeight());
 		
 		slideMediaObject imageObject = new slideMediaObject(image.getBranch(),image.getDuration(),image.getStart());
-		imageObject.addMouseListener(this);
+		imageObject.addMouseListener(branchListener);
 		
 		imageObject.add(imagePanel);
 
@@ -489,38 +491,6 @@ public class SlidePanel extends JPanel implements MouseListener{
 		
 	}
 
-
-
-	@Override
-	public void mouseEntered(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-
-	@Override
-	public void mouseExited(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-
-	@Override
-	public void mousePressed(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-
-	@Override
-	public void mouseReleased(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
 	/**
 	 * Create a mouse listener to branch from sections of text
 	 */
@@ -568,6 +538,30 @@ public class SlidePanel extends JPanel implements MouseListener{
 			
 		};
 		
+	}
+	
+	private void setupBranchListener() {
+		branchListener = new MouseAdapter() {
+			
+			@Override
+			public void mouseClicked(MouseEvent e){
+						
+						//Returns the object that triggered the action listener and casts it to
+						//a slideObject
+						slideMediaObject eventSource = (slideMediaObject) e.getSource();
+						if(eventSource != null){
+							//Get the branch value assigned to the object of type slideObject
+							Integer branch = eventSource.getBranch();
+							if (branch != null && branch != -1){
+								refreshSlide(presentation.getSlideList().get(branch));
+								//branch to slide specified by the object
+							}
+						}
+						
+					}
+				
+			
+		};
 	}
 
 	

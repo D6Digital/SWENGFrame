@@ -41,13 +41,14 @@ import presentation.TextContent.ScriptTypeDef;
  * @author samPick
  *
  */
-public class Scribe extends JPanel implements MouseListener, MouseMotionListener{
+public class Scribe extends JPanel{
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
+	private MouseAdapter textHandListener;
+	private MouseAdapter textbBranchListener;
 	private Font font;
 	private Text textObject;
 	public JTextPane textPane;
@@ -85,12 +86,14 @@ public class Scribe extends JPanel implements MouseListener, MouseMotionListener
 		}
 
 		setLayout(new BorderLayout());
+		setupHandListener();
+		setupBranchListener();
 		
 		// Create the JTextPane
 		textPane = createTextPane();
 		textPane.setEditable(false);
 		//textPane.addMouseListener(this);
-		textPane.addMouseMotionListener(this);
+		textPane.addMouseMotionListener(textHandListener);
 		textPane.addMouseListener(listener);
 		textPane.setMaximumSize(new Dimension(text.getXend()-text.getX_coord(),text.getYend()-text.getY_coord()));
 		
@@ -129,8 +132,8 @@ public Scribe(Text text) {
 		textPane = createTextPane();
 		textPane.setEditable(false);
 		//textPane.addMouseListener(this);
-		textPane.addMouseMotionListener(this);
-		textPane.addMouseListener(this);
+		textPane.addMouseMotionListener(textHandListener);
+		textPane.addMouseListener(textbBranchListener);
 		
 		add(textPane);
 		
@@ -256,8 +259,11 @@ public Scribe(Text text) {
 	
 
 
-	@Override
-	public void mouseClicked(MouseEvent e) {
+	private void setupBranchListener() {
+		textbBranchListener = new MouseAdapter() {
+			
+			@Override
+			public void mouseClicked(MouseEvent e){
 		
 		java.awt.Desktop desktop = java.awt.Desktop.getDesktop();
 		JTextPane textPane = (JTextPane) e.getSource();
@@ -293,70 +299,48 @@ public Scribe(Text text) {
 		}
 		
 		
-	}
-
-	@Override
-	public void mouseEntered(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mouseExited(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mousePressed(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mouseReleased(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mouseDragged(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mouseMoved(MouseEvent e) {
-		Cursor handCursor = Cursor.getPredefinedCursor(Cursor.HAND_CURSOR);
-		Cursor defaultCursor = Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR);
-		
-		JTextPane textPane = (JTextPane) e.getSource();
-		Point pt = new Point(e.getX(), e.getY());
-		int pos = textPane.viewToModel(pt);
-		
-		if (pos >= 0)
-		{
-			StyledDocument doc = textPane.getStyledDocument();
-			
-			if (doc instanceof StyledDocument){
-				StyledDocument hdoc = (StyledDocument) doc;
-				Element el = hdoc.getCharacterElement(pos);
-				AttributeSet a = el.getAttributes();
-				String href = (String) a.getAttribute(HTML.Attribute.HREF);
-				Integer branch = (Integer) a.getAttribute(HTML.Attribute.LINK);
-				if (href != null || (branch != null && branch !=-1)){
-					if(getCursor() != handCursor){
-						textPane.setCursor(handCursor);
-					}
-				}
-				else{
-					textPane.setCursor(defaultCursor);
-				}
-				
-             }           
 		}
+	};
 	}
-		
+
+	private void setupHandListener() {
+		textbBranchListener = new MouseAdapter() {
+
+			@Override
+			public void mouseMoved(MouseEvent e) {
+				Cursor handCursor = Cursor.getPredefinedCursor(Cursor.HAND_CURSOR);
+				Cursor defaultCursor = Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR);
+				
+				JTextPane textPane = (JTextPane) e.getSource();
+				Point pt = new Point(e.getX(), e.getY());
+				int pos = textPane.viewToModel(pt);
+				
+				if (pos >= 0)
+				{
+					StyledDocument doc = textPane.getStyledDocument();
+					
+					if (doc instanceof StyledDocument){
+						StyledDocument hdoc = (StyledDocument) doc;
+						Element el = hdoc.getCharacterElement(pos);
+						AttributeSet a = el.getAttributes();
+						String href = (String) a.getAttribute(HTML.Attribute.HREF);
+						Integer branch = (Integer) a.getAttribute(HTML.Attribute.LINK);
+						if (href != null || (branch != null && branch !=-1)){
+							if(getCursor() != handCursor){
+								textPane.setCursor(handCursor);
+							}
+						}
+						else{
+							textPane.setCursor(defaultCursor);
+						}
+						
+		             }           
+				}
+			}
+			
+		};
+	}
+				
 }
 	
 
