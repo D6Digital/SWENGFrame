@@ -10,6 +10,8 @@ import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.File;
@@ -30,6 +32,7 @@ import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
+import javax.swing.JScrollPane;
 import javax.swing.JSlider;
 import javax.swing.ListModel;
 import javax.swing.Painter;
@@ -63,22 +66,36 @@ import uk.co.caprica.vlcj.medialist.MediaList;
  * enabling the user to perform other tasks simultaneously with music play.
  */
 public class StandAloneMusicPlayer {
-    static String vlcLibraryPath;
-	static DefaultListModel listModel = new DefaultListModel<String>();
-    static JFrame mainFrame = new JFrame("mainFrame");
-    static JFrame playlistFrame = new JFrame("playlistFrame");
-    static JPanel playPanel = new JPanel();
-    static JList playContents = new JList(listModel);
-    static Container contentPane;
-    static EmbeddedMediaPlayer mediaPlayer;
-    static MediaList mediaList;
-    static MediaListPlayer mediaListPlayer;
-    private static final long serialVersionUID = 1L;
-    static String currentPlayIndex;
-    static String currentFilePath;
-    static String newFilePath;
-    static FileChooser fileChooser = new FileChooser(newFilePath);
-    static Boolean isPaused = false;
+     String vlcLibraryPath;
+	 DefaultListModel listModel = new DefaultListModel<String>();
+     JFrame mainFrame = new JFrame("mainFrame");
+     JFrame f = new JFrame("vlcj embedded media list player test");
+     JFrame playlistFrame = new JFrame("playlistFrame");
+     JPanel playPanel = new JPanel();
+     JList playContents = new JList(listModel);
+     static JLabel timeLabel = new JLabel();
+     static JSlider timeSlider = new JSlider();
+     static JPanel fullPanel = new JPanel();
+     
+     private String currentTime = "";
+     private String newTime = "";
+     
+     Container contentPane;
+     JScrollPane scrollPane = new JScrollPane();
+     EmbeddedMediaPlayer mediaPlayer;
+      MediaList mediaList;
+     MediaListPlayer mediaListPlayer;
+    private  final long serialVersionUID = 1L;
+    int currentPlayIndex = 0;
+    Boolean newIndex = false;
+     String currentFilePath;
+      String newFilePath;
+     FileChooser fileChooser = new FileChooser(newFilePath);
+     Boolean isPaused = false;
+    protected boolean threadKilled = false;
+    
+    protected boolean changingTimeByHand;
+    protected boolean changingSelectedPlaylistByHand;
 
     /**
      * Constructor for StandAloneMusicPlayer() class.
@@ -106,11 +123,23 @@ public class StandAloneMusicPlayer {
      */
     Thread musicThread = new Thread() {
         public void run() {
-            while (true) {
-                musicPlayerLoop();                      
+            while (!threadKilled ) {
+                musicPlayerLoop();    
+                try {
+                    Thread.sleep(20);
+                } catch (InterruptedException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
             }
         }
     };
+    
+    
+    public void killThread() {
+        this.threadKilled = true;
+    }
+    
    
     /**
      * Perform loop of instructions from Thread.
@@ -118,9 +147,59 @@ public class StandAloneMusicPlayer {
     private void musicPlayerLoop() {
         String newPlayIndex = (String) playContents.getSelectedValue();
         chooseNewPlaylist();
+        updateTime();
+        updateVisibleSelectedPlaylist();
+       
     }
     
     
+    private void updateVisibleSelectedPlaylist() {
+        String[] splitStringTotal = null;
+        String[] splitStringCurrent = null;
+
+        splitStringTotal = getTrackLength().split(":");
+        splitStringCurrent = getCurrentPosition().split(":");
+
+        if(splitStringTotal[0].equals(splitStringCurrent[0]) 
+            && ((Integer.parseInt(splitStringTotal[1]) -1) == (Integer.parseInt(splitStringCurrent[1])))) {
+                    try {
+                        musicThread.sleep(500);
+                    } catch (InterruptedException e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                    }
+                    newIndex = true;
+                    mediaPlayer.stop();
+                    mediaListPlayer.playNext();
+                    System.out.println("STARTED NEXT TRACK");
+        }
+        
+        if(newIndex) {
+            playContents.setSelectedIndex(playContents.getSelectedIndex() + 1);
+            playContents.repaint();
+            newIndex = false;
+        }       
+    }
+
+
+    private void updateTime() {
+        newTime = this.getCurrentPosition() + "/" + this.getTrackLength();
+        
+        if(!(currentTime.equals(newTime))) {
+            timeLabel.setText(newTime);
+           
+            float totalTimeSeconds = ((float) mediaPlayer.getLength())/1000;
+            float timeAlong = ((float) mediaPlayer.getPosition())*1000;
+            float proportion = timeAlong/totalTimeSeconds;
+            
+            timeSlider.setValue((int) (mediaPlayer.getPosition()*1000));
+            timeSlider.repaint();
+            fullPanel.repaint();
+            currentTime = newTime;
+        } 
+    }
+
+
     /**
      * Retrieves the new filepath for the new playlist, then fills an arraylist of strings with the names
      * of each of the files, and adds them to the media list after the old list has been removed.
@@ -131,21 +210,37 @@ public class StandAloneMusicPlayer {
     	
     	// Only change the playlist if the new path is different from the old one.
     	if((currentFilePath != newFilePath)  && (newFilePath != null)) {
+    	    mediaPlayer.stop();
+    	    mediaListPlayer.stop();
+    	    
+    	    
     		ArrayList<String> files = getFilenames(newFilePath);
     		createList(files);
     		currentFilePath = newFilePath;
     		System.out.println("size is " + mediaList.size());
     		
     		// Remove all media items from the list.
-    		for(int i = mediaList.size(); i >= 0; i--) {
-    		    mediaList.removeMedia(i);
-    		}
+//    		for(int i = mediaList.size(); i >= 0; i--) {
+//    		    mediaList.removeMedia(i);
+//    		}
+    		mediaList.clear();
+    		
     		
     		// Add the new items to the playlist.
     		for(String filename : files) {
     		    mediaList.addMedia(newFilePath + "\\" + filename, options);	
+    		    System.out.println("" + filename);
     		}
     		mediaListPlayer.setMediaList(mediaList);
+            mediaListPlayer.setMode(MediaListPlayerMode.LOOP);
+            mediaListPlayer.setMediaPlayer(mediaPlayer);
+            
+            mediaPlayer.release();
+            mainFrame.dispose();
+            mainFrame.setVisible(false);
+            mediaPlayer = openMediaPlayer();
+    		currentPlayIndex = 0;
+    		playContents.repaint();
     	}
 	}
 
@@ -153,7 +248,7 @@ public class StandAloneMusicPlayer {
 	/**
 	 * Plays the selected file from the JList. Called whenever the user chooses an item from the list.
 	 */
-	private static void chooseFromPlaylist() {
+	private void chooseFromPlaylist() {
 	    mediaListPlayer.playItem(playContents.getSelectedIndex());
 	}
     
@@ -196,13 +291,84 @@ public class StandAloneMusicPlayer {
      * should be LOWERCASE entirely.
      */
     private void setupListenerAndAction(final JSlider sliderName, final String playerMethodCaseName) {
+        sliderName.addMouseListener(new MouseListener() {
+            
+            @Override
+            public void mouseReleased(MouseEvent arg0) {
+                switch (playerMethodCaseName) {
+                case "volume":                              break;
+                case "time":       changingTimeByHand = false;  break;
+                }
+            }
+            
+            @Override
+            public void mousePressed(MouseEvent arg0) {
+                switch (playerMethodCaseName) {
+                case "volume":                              break;
+                case "time":       changingTimeByHand = true;   break;
+                } 
+            }
+
+            @Override
+            public void mouseClicked(MouseEvent e) {}
+
+            @Override
+            public void mouseEntered(MouseEvent e) {}
+
+            @Override
+            public void mouseExited(MouseEvent e) {}
+           
+        });
+        
         sliderName.addChangeListener(new ChangeListener() {
             @Override
             public void stateChanged(ChangeEvent arg0) {
-                adjustVolume(sliderName.getValue());
+                if(!sliderName.getValueIsAdjusting()) {
+                    switch (playerMethodCaseName) {
+                    case "volume":      
+                        adjustVolume(sliderName.getValue()); break;
+                    case "time":        
+                        if(changingTimeByHand) {
+                            adjustTime(sliderName.getValue()); 
+                        }
+                        break;
+                    }
+                }
             }  
         });
     }
+    
+    private void adjustTime(int valueInt) {
+        float valueFloat = ((float) valueInt)/1000;
+        
+        float totalTimeSeconds = mediaPlayer.getLength()/1000;
+        float timeToGoTo = totalTimeSeconds - (totalTimeSeconds*(1 - valueFloat));
+        mediaPlayer.setTime(((long) timeToGoTo)*1000);   
+        System.out.println("TIME " + totalTimeSeconds +  " SLIDER " + timeToGoTo + " SLIDER " + valueInt + " FLOAT " + valueFloat);
+    }
+
+
+    public JPanel getFullControlPanel() {
+       
+        fullPanel.add(getPlayButton());
+        fullPanel.add(getPauseButton());
+        fullPanel.add(getStopButton());
+        fullPanel.add(getNextButton());
+        fullPanel.add(getPreviousButton());
+        fullPanel.add(getOpenPlaylistButton());
+        fullPanel.add(getVolumeSlider());
+        fullPanel.add(getTimeLabel());
+        fullPanel.add(getScrollSlider());
+        return fullPanel;
+    }
+    
+
+    private JLabel getTimeLabel() {
+        timeLabel.setText(this.getCurrentPosition() + "/" + this.getTrackLength());               
+        return timeLabel;
+        // mainPanel.repaint();
+    }
+
 
     /**
      * Gets the JButton to open the playlist window when it is closed.
@@ -272,22 +438,22 @@ public class StandAloneMusicPlayer {
         JSlider slider = new JSlider();
         slider.setMinimum(0);
         slider.setMaximum(100);
-        setupListenerAndAction(slider, "previous");
+        setupListenerAndAction(slider, "volume");
         return slider;
+    }
+    
+    public JSlider getScrollSlider() {
+        timeSlider.setMinimum(0);
+        timeSlider.setMaximum(1000);
+        setupListenerAndAction(timeSlider, "time");
+        return timeSlider;
     }
     
     /**
      * Pauses media if it is playing, plays media if it is paused.
      */
     private void pauseMedia() {
-        if(isPaused == false) {
-            mediaPlayer.pause();
-            isPaused = true;
-        }
-        else if(isPaused == true) {
-            mediaPlayer.play();
-            isPaused = false;
-        }
+        mediaPlayer.pause();
     }
     
     /**
@@ -305,6 +471,7 @@ public class StandAloneMusicPlayer {
      */
     private void nextMedia() {
     	mediaListPlayer.playNext();
+    	playContents.setSelectedIndex(playContents.getSelectedIndex() + 1);
     }
     
     /**
@@ -312,6 +479,7 @@ public class StandAloneMusicPlayer {
      */
     private void previousMedia() {
         mediaListPlayer.playPrevious();
+        playContents.setSelectedIndex(playContents.getSelectedIndex() - 1);
     }
 
     /**
@@ -320,9 +488,9 @@ public class StandAloneMusicPlayer {
      * @param volumePercent
      */
     private void adjustVolume(int volumePercent) {
-        mediaPlayer.pause();
+        //mediaPlayer.pause();
     	mediaPlayer.setVolume(volumePercent);
-    	mediaPlayer.play(); 	
+    	//mediaPlayer.play(); 	
     }
     
     /**TODO implement
@@ -362,6 +530,26 @@ public class StandAloneMusicPlayer {
     private void unlockPlaylistFromPresentation() {
     	
     }
+    
+    public String getCurrentPosition() {
+        long totalLength = getTotalLengthInSeconds();
+        float currentPosition = mediaPlayer.getPosition();
+        float position = currentPosition*totalLength;
+        int minutes = (int) (position/60);
+        int seconds = (int) (position % 60);
+        return minutes + ":" + seconds;
+    }
+    
+    public long getTotalLengthInSeconds() {
+        return mediaPlayer.getLength()/1000;
+    }
+    
+    public String getTrackLength() {
+        long seconds = mediaPlayer.getLength()/1000 % 60;
+        int minutes = (int) (mediaPlayer.getLength()/1000/60);
+        return minutes + ":" + seconds;
+    }
+    
 
     /**
      * sets up the GUI for the playlist, adding the browse button and playlist to a panel, fills
@@ -393,20 +581,44 @@ public class StandAloneMusicPlayer {
 	 * the listModel, which is then placed on the JPanel.
 	 * @param nameList, arraylist of strings containing the names of each of file to be added to the playlist.
 	 */
-    private static void createList(ArrayList<String> nameList) {
+    private void createList(ArrayList<String> nameList) {
     	listModel.clear();
     	
         for(String listItem : nameList){
         	listModel.addElement(listItem);
         }
-        
-        playPanel.add(playContents);
+        scrollPane.setViewportView(playContents);
+        playPanel.add(scrollPane);
         playlistFrame.pack();
         // Add listener which plays a piece of media whenever the user chooses it in the JList.
-        playContents.addListSelectionListener(new ListSelectionListener() {    
+        playContents.addMouseListener(new MouseListener() {
+            
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                changingSelectedPlaylistByHand = false;
+            }
+            
+            @Override
+            public void mousePressed(MouseEvent e) {
+                changingSelectedPlaylistByHand = true;
+            }
+            
+            @Override
+            public void mouseExited(MouseEvent e) {}
+            
+            @Override
+            public void mouseEntered(MouseEvent e) { }
+            
+            @Override
+            public void mouseClicked(MouseEvent e) {}
+        });
+        
+        playContents.addListSelectionListener(new ListSelectionListener() {  
             @Override
             public void valueChanged(ListSelectionEvent arg0) {
-                chooseFromPlaylist();
+                if(changingSelectedPlaylistByHand) {
+                    chooseFromPlaylist();
+                }
             }
         });
     }
@@ -433,7 +645,7 @@ public class StandAloneMusicPlayer {
      * Sets up the media player with the initial playlist, adds it to Panels and frames, ready for play.
      * @return EmbeddedMediaPlayer.
      */
-    private static EmbeddedMediaPlayer openMediaPlayer() {
+    private EmbeddedMediaPlayer openMediaPlayer() {
         MediaPlayerFactory mediaPlayerFactory = new MediaPlayerFactory();
         final EmbeddedMediaPlayerComponent mediaPlayerComponent = new EmbeddedMediaPlayerComponent();
         Canvas canvas = new Canvas();
@@ -449,7 +661,7 @@ public class StandAloneMusicPlayer {
         cp.setLayout(new BorderLayout());
         cp.add(canvas, BorderLayout.CENTER);
                
-        JFrame f = new JFrame("vlcj embedded media list player test");
+        
         f.setIconImage(new ImageIcon(TestMediaListEmbeddedPlayer.class.getResource("/icons/vlcj-logo.png")).getImage());
         f.setContentPane(cp);
         f.setSize(800, 600);
