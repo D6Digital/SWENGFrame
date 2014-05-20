@@ -9,6 +9,8 @@ import javax.swing.AbstractButton;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
+import musicPlayerModule.StandAloneMusicPlayer;
+
 import src.Overall;
 
 import gUIModule.GUI;
@@ -26,12 +28,16 @@ public class UtilitiesPanel extends JPanel implements ActionListener{
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	public boolean diceRollerExists;
-	public boolean calculatorExists;
-	JPanel UtilitiesPanel;
+
+	//JPanel UtilitiesPanel;
 	JPanel multiPanel= new JPanel();
-	CalculatorPanel calculator = new CalculatorPanel();
-	
+	CalculatorPanel calculatorPanel = new CalculatorPanel(); //= new CalculatorPanel();
+	DicePanel dicePanel = new DicePanel();
+	JPanel standAloneMusicPlayerPanel = new JPanel();
+	StandAloneMusicPlayer standAloneMusicPlayer = new StandAloneMusicPlayer(); //= new StandAloneMusicPlayer();
+//	GUI diceRoller;
+//	GUI calculatorGUI;
+//	GUI audioPlayer;
 	
 	/**
 	 * Create a simple panel and add the JButtons for the utilities
@@ -39,13 +45,11 @@ public class UtilitiesPanel extends JPanel implements ActionListener{
 	public UtilitiesPanel() {
 		//Calls JPanel to create the UtilitiesPanel object.
 		//Sets the layout to BoxLayout
+	    
 		super();
 		setLayout(null);
 		
-		// When the panel is first created the utilities will not exist but when they are
-		// instantiated, these fields should be updated so we don't get multiple utilities
-		diceRollerExists = false;
-		calculatorExists = false;
+		standAloneMusicPlayerPanel = standAloneMusicPlayer.getFullControlPanel();
 		
 		//Adds JButtons for diceRoller and calculator
 		addButtons("Dice Roller", "diceRollerLaunch",
@@ -53,11 +57,21 @@ public class UtilitiesPanel extends JPanel implements ActionListener{
 		
 		addButtons("Modifier Calculator", "calculatorLaunch",
 				   "Opens the modifier calculator application", 17, 100);
+		
+	    addButtons("Standalone Audio Player", "audioPlayerLaunch",
+                  "Opens the audio player application", 17, 175);
+		
+	    multiPanel.setLayout(null);
 		multiPanel.setBounds(0,200,GUI.utilitiesWidth,400);
 		multiPanel.setBackground(Color.BLACK);
-		calculator.setBounds(0,0,GUI.utilitiesWidth,400);
-		multiPanel.add(calculator);
-		add(multiPanel);
+		calculatorPanel.setBounds(0,0,GUI.utilitiesWidth,400);
+		dicePanel.setBounds(0,0,GUI.utilitiesWidth,400);
+		standAloneMusicPlayerPanel.setBounds(0,0,GUI.utilitiesWidth,400);
+		multiPanel.add(calculatorPanel);
+		multiPanel.add(standAloneMusicPlayerPanel);
+		multiPanel.add(dicePanel);
+		multiPanel.setOpaque(false);
+		this.add(multiPanel);
 		
 	}
 	
@@ -85,27 +99,37 @@ public class UtilitiesPanel extends JPanel implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if ("diceRollerLaunch".equals(e.getActionCommand())){
-			if (diceRollerExists == false){
-				GUI diceRoller = new GUI("diceRollerPanel");
-				diceRollerExists = true;
-			}
-			else if (diceRollerExists == true){
-				//TODO bring diceRoller to the front of the screen
-			}
+			setPanelVisible("dicePanel");
 		}
 		else if ("calculatorLaunch".equals(e.getActionCommand())) {
-			if (calculatorExists == false){
-				GUI calculator = new GUI("calculatorPanel");
-				calculatorExists = true;
-			}
-			else if (calculatorExists == true){
-				//TODO bring calculator to front of the screen
-			}
+		    setPanelVisible("calculatorPanel");
 		}
+	    else if ("audioPlayerLaunch".equals(e.getActionCommand())) {
+	        setPanelVisible("standAloneMusicPlayerPanel");
+        }
+	   
 	}
-	
-	//public void setVisibility(boolean visible){
-	//		this.setVisible(visible);
-	//	}
+
+	private void setPanelVisible(String panel) {
+	    switch(panel) {
+	    case "dicePanel":
+            dicePanel.setVisible(true);
+            calculatorPanel.setVisible(false);
+            standAloneMusicPlayerPanel.setVisible(false);
+	    break;    
+	    case "calculatorPanel":
+            dicePanel.setVisible(false);
+            calculatorPanel.setVisible(true);
+            standAloneMusicPlayerPanel.setVisible(false);
+	    break;
+	    case "standAloneMusicPlayerPanel":
+            dicePanel.setVisible(false);
+            calculatorPanel.setVisible(false);
+            standAloneMusicPlayerPanel.setVisible(true);  
+	    break;
+	    default: break;
+	    }
+	    multiPanel.repaint();
+	}
 	
 }

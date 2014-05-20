@@ -92,29 +92,6 @@ public class ContentsPanel extends JPanel implements ActionListener{
 		}
 		contents.setViewportView(contentsList);
 		
-		contentsList.addMouseListener(new MouseListener() {
-			
-			@Override
-			public void mouseReleased(MouseEvent e) {}
-			
-			@Override
-			public void mousePressed(MouseEvent e) {}
-			
-			@Override
-			public void mouseExited(MouseEvent e) {	}
-			
-			@Override
-			public void mouseEntered(MouseEvent e) {}
-			
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				if(e.getClickCount() == 2) {
-					int x = contentsList.getSelectedIndex();
-					contentsList.clearSelection();
-					System.out.println("NEW SELECTION MADE: " + x);
-				}
-			}
-		});
 		
 		return contents;
 
@@ -145,6 +122,14 @@ public class ContentsPanel extends JPanel implements ActionListener{
 //		}
 //		
 //		return contents;
+	}
+	
+	public JList getContentsList() {
+	    return contentsList;
+	}
+	
+	public void setContentsList(JList contentsList) {
+	    this.contentsList = contentsList;
 	}
 	
 	/**

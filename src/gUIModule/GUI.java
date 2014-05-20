@@ -7,12 +7,14 @@ import java.awt.Dimension;
 import java.awt.Frame;
 import java.awt.Image;
 import java.awt.Insets;
+import java.awt.Rectangle;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ContainerEvent;
 import java.awt.event.ContainerListener;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 import java.awt.event.WindowStateListener;
@@ -28,7 +30,10 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
+import javax.swing.JList;
 import javax.swing.JPanel;
+
+import musicPlayerModule.StandAloneMusicPlayer;
 
 import presentation.Point;
 import presentation.Presentation;
@@ -62,6 +67,7 @@ public class GUI extends JFrame implements WindowStateListener{
 	Container utilitiesPane;
 	Container dicePane;
 	Container calculatorPane;
+	Container audioPlayerPane;
 	private Presentation slideList;
 	private Presentation bigSlideList;
 	static Integer currentVisibleSlideID;
@@ -304,10 +310,44 @@ public class GUI extends JFrame implements WindowStateListener{
 			utilities.setVisible(false);
 
 
+			// TODO: CHANGES MADE HERE BY JOSHUA LANT
 			//set up contents
+			ContentsPanel contentsPanel = new ContentsPanel(slideList.getSlideList());
+			contentsPanel.setBounds(30, 30, contentsWidth, slideList.getHeight());
+			
+			contentsPanel.setPreferredSize(new Dimension(contentsWidth, slideList.getHeight()));
+			contents.add(contentsPanel);
+			contentsPanel.repaint();
+	        contentsPanel.setVisible(true);
 			contents.setBounds(0, 0, contentsWidth, slideList.getHeight());
 			contents.setBackground(Color.GRAY);
+			contents.repaint();
 			contents.setVisible(false);
+			
+			final JList contentsList = contentsPanel.getContentsList();
+			
+		     contentsPanel.getContentsList().addMouseListener(new MouseListener() {
+		            
+		            @Override
+		            public void mouseReleased(MouseEvent e) {}
+		            
+		            @Override
+		            public void mousePressed(MouseEvent e) {}
+		            
+		            @Override
+		            public void mouseExited(MouseEvent e) { }
+		            
+		            @Override
+		            public void mouseEntered(MouseEvent e) {}
+		            
+		            @Override
+		            public void mouseClicked(MouseEvent e) {
+		                if(e.getClickCount() == 2) {            
+		                    slidePanel.refreshSlide(slideList.getSlideList().get(contentsList.getSelectedIndex()));  
+		                    contentsList.clearSelection();  
+		                }
+		            }
+		        });
 
 			//Drop down
 			topPanel.setBounds((slideList.getWidth()/2)-150, 0, 300, 200);
@@ -371,6 +411,8 @@ public class GUI extends JFrame implements WindowStateListener{
 
 			audioPane = getContentPane();
 			audioPane.setLayout(new BorderLayout());
+			StandAloneMusicPlayer standAloneMusicPlayer = new StandAloneMusicPlayer();
+			audioPane.add(standAloneMusicPlayer.getFullControlPanel(), BorderLayout.CENTER);
 			//AudioPanel();
 			break;
 		case "utilitiesSelectionPanel":
@@ -470,6 +512,7 @@ public class GUI extends JFrame implements WindowStateListener{
 				}
 				if(xCoordinate<borderSize){
 					contents.setVisible(true);
+					contents.repaint();
 					contentsShowing=true;
 					utilitiesTab.setVisible(false);
 					contentsTab.setVisible(false);

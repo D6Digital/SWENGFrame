@@ -8,6 +8,7 @@ import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -69,7 +70,7 @@ public class StandAloneMusicPlayer {
      String vlcLibraryPath;
 	 DefaultListModel listModel = new DefaultListModel<String>();
      JFrame mainFrame = new JFrame("mainFrame");
-     JFrame f = new JFrame("vlcj embedded media list player test");
+     //JFrame f = new JFrame("vlcj embedded media list player test");
      JFrame playlistFrame = new JFrame("playlistFrame");
      JPanel playPanel = new JPanel();
      JList playContents = new JList(listModel);
@@ -119,6 +120,47 @@ public class StandAloneMusicPlayer {
     }
     
     /**
+     * Constructor for StandAloneMusicPlayer() class. To be used when the VLCJ library has already
+     * been loaded earlier in the program, external to the module.
+     * @param currentFilePathConstructor, full file path to initial playlist folder. note need for 
+     * "\\" directory separation instead of single "\" to deal with Java escape character issues.
+     */
+    public StandAloneMusicPlayer(String currentFilePathConstructor) {
+        //vlcLibraryPath = vlcLibraryPathConstructor;
+        currentFilePath = currentFilePathConstructor;
+        newFilePath = currentFilePath;
+        
+        //NativeLibrary.addSearchPath(RuntimeUtil.getLibVlcLibraryName(),vlcLibraryPath);
+        //Native.loadLibrary(RuntimeUtil.getLibVlcLibraryName(), LibVlc.class);
+        ArrayList<String> files = getFilenames(currentFilePath);
+        setupGUI(files);
+        mainFrame.repaint();
+        
+        musicThread.start();
+    }
+    
+    /**
+     * Constructor for StandAloneMusicPlayer() class. To be used when the VLCJ library has already
+     * been loaded earlier in the program and there is no default path to load into the player.
+     */
+    public StandAloneMusicPlayer() {
+        //vlcLibraryPath = vlcLibraryPathConstructor;
+        currentFilePath = "";
+        newFilePath = currentFilePath;
+        
+        NativeLibrary.addSearchPath(RuntimeUtil.getLibVlcLibraryName(),vlcLibraryPath);
+        Native.loadLibrary(RuntimeUtil.getLibVlcLibraryName(), LibVlc.class);
+        ArrayList<String> files = new ArrayList<String>(0);   //getFilenames(currentFilePath);
+        setupGUI(files);
+        mainFrame.repaint();
+        
+        musicThread.start();
+    }
+    
+    
+    
+    
+    /**
      * Initialise music player thread and go into infinite loop of instructions while thread intact.
      */
     Thread musicThread = new Thread() {
@@ -138,6 +180,9 @@ public class StandAloneMusicPlayer {
     
     public void killThread() {
         this.threadKilled = true;
+        mediaPlayer.release();
+        mediaList.release();
+        mediaListPlayer.release();
     }
     
    
@@ -374,7 +419,7 @@ public class StandAloneMusicPlayer {
      * Gets the JButton to open the playlist window when it is closed.
      * @return JButton, opens the playlist.
      */
-    public JButton getOpenPlaylistButton() {
+    private JButton getOpenPlaylistButton() {
         JButton button = new JButton("Open Playlist");
         setupListenerAndAction(button, "openplaylist");      
         return button;     
@@ -384,7 +429,7 @@ public class StandAloneMusicPlayer {
      * Gets the JButton to stop media being played back and return play position to beginning of track.
      * @return JButton
      */
-    public JButton getStopButton() {
+    private JButton getStopButton() {
         JButton button = new JButton("Stop");
         setupListenerAndAction(button, "stop");      
         return button;     
@@ -394,7 +439,7 @@ public class StandAloneMusicPlayer {
      * Gets the JButton to pause media playback, retaining play position.
      * @return JButton
      */
-    public JButton getPauseButton() {
+    private JButton getPauseButton() {
         JButton button = new JButton("Pause");
         setupListenerAndAction(button, "pause");      
         return button;     
@@ -404,7 +449,7 @@ public class StandAloneMusicPlayer {
      * Gets the JButton to play media, plays the current selected track, if it is paused or stopped.
      * @return JButton
      */
-    public JButton getPlayButton() {
+    private JButton getPlayButton() {
         JButton button = new JButton("Play");
         setupListenerAndAction(button, "play");      
         return button;     
@@ -414,7 +459,7 @@ public class StandAloneMusicPlayer {
      * Gets the JButton that plays the next media in the playlist, loops round if at end of playlist.
      * @return JButton
      */
-    public JButton getNextButton() {
+    private JButton getNextButton() {
         JButton button = new JButton("Next");
         setupListenerAndAction(button, "next");      
         return button;     
@@ -424,7 +469,7 @@ public class StandAloneMusicPlayer {
      * Gets the JButton that plays the previous media in the playlist, loops back round if at beginning of playlist.
      * @return JButton
      */
-    public JButton getPreviousButton() {
+    private JButton getPreviousButton() {
         JButton button = new JButton("Previous");
         setupListenerAndAction(button, "previous");      
         return button;     
@@ -434,15 +479,16 @@ public class StandAloneMusicPlayer {
      * Returns the JSlider which controls the volume of playback, valued from 0-100.
      * @return JSlider
      */
-    public JSlider getVolumeSlider() {
+    private JSlider getVolumeSlider() {
         JSlider slider = new JSlider();
         slider.setMinimum(0);
         slider.setMaximum(100);
+        slider.setValue(100);
         setupListenerAndAction(slider, "volume");
         return slider;
     }
     
-    public JSlider getScrollSlider() {
+    private JSlider getScrollSlider() {
         timeSlider.setMinimum(0);
         timeSlider.setMaximum(1000);
         setupListenerAndAction(timeSlider, "time");
@@ -567,12 +613,15 @@ public class StandAloneMusicPlayer {
         
         mediaPlayer = openMediaPlayer();
         
-        playlistFrame.add(playlistChooserPanel, BorderLayout.NORTH);
-        playlistFrame.add(playPanel, BorderLayout.CENTER);
-        playlistFrame.setSize(200, 300);
-        playlistFrame.pack();
-        playlistFrame.setVisible(true);
-        playlistFrame.validate(); 
+        fullPanel.add(playlistChooserPanel);
+        fullPanel.add(playPanel);
+        
+//        playlistFrame.add(playlistChooserPanel, BorderLayout.NORTH);
+//        playlistFrame.add(playPanel, BorderLayout.CENTER);
+//        playlistFrame.setSize(200, 300);
+//        playlistFrame.pack();
+//        playlistFrame.setVisible(true);
+//        playlistFrame.validate(); 
 
     }
 
@@ -634,10 +683,11 @@ public class StandAloneMusicPlayer {
        File[] shit = folder.listFiles();
        ArrayList<String> returnList = new ArrayList();
        
-       for(int i = 0; i < shit.length; i ++) {
-           returnList.add(shit[i].getName());
+       if(!newFilePath.equals("")) {
+           for(int i = 0; i < shit.length; i ++) {
+               returnList.add(shit[i].getName());
+           }
        }
-   
        return returnList;
     }
 
@@ -661,12 +711,14 @@ public class StandAloneMusicPlayer {
         cp.setLayout(new BorderLayout());
         cp.add(canvas, BorderLayout.CENTER);
                
+        cp.setBounds(new Rectangle(0, 0, 0, 0));
+        fullPanel.add(cp);
         
-        f.setIconImage(new ImageIcon(TestMediaListEmbeddedPlayer.class.getResource("/icons/vlcj-logo.png")).getImage());
-        f.setContentPane(cp);
-        f.setSize(800, 600);
-        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        f.setVisible(true);
+        //f.setIconImage(new ImageIcon(TestMediaListEmbeddedPlayer.class.getResource("/icons/vlcj-logo.png")).getImage());
+        //f.setContentPane(cp);
+        //f.setSize(800, 600);
+        //f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //f.setVisible(true);
         mediaList = mediaPlayerFactory.newMediaList();
         String[] options = {};
         
