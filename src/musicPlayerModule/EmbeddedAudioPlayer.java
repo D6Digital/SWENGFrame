@@ -167,6 +167,11 @@ public class EmbeddedAudioPlayer {
        startTimer();
     }
     
+    
+    public boolean isPlaying() {
+        return mediaPlayer.isPlaying();
+    }
+    
 //    public void play() {
 //       mediaPlayer.play();
 //       setStartedAllready();

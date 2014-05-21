@@ -77,7 +77,7 @@ public class GUI extends JFrame { // implements WindowStateListener{
 	JButton nextSlideButton = new JButton();
 	JButton previousSlideButton = new JButton();
 	int borderSize = 20;
-	static int utilitiesWidth = 200;
+	static int utilitiesWidth = 300;
 	int contentsWidth = 150;
 	UtilitiesPanel utilities = new UtilitiesPanel();
 	
@@ -109,6 +109,8 @@ public class GUI extends JFrame { // implements WindowStateListener{
 	JPanel contentsTab = new JPanel();
 	JPanel nextTab = new JPanel();
 	JPanel previousTab = new JPanel();
+
+    private boolean screenSizeMaximised = false;
 	
 	/**
 	 * Create a simple JFrame and then populate it with specified JPanel type
@@ -127,6 +129,9 @@ public class GUI extends JFrame { // implements WindowStateListener{
 			int nextSlideID	 = slidePanel.currentSlide.getSlideID() + 1;
 			Slide nextSlide = slideList.get(nextSlideID);
 			slidePanel.refreshSlide(nextSlide);
+			if(screenSizeMaximised) {
+			    setMaxSize();
+			}
 			previousSlideButton.setBorderPainted(true);
 			System.out.println("Next slide = " + nextSlide.getLastSlide());
 			if(slidePanel.currentSlide.getLastSlide()==true){
@@ -150,6 +155,9 @@ public class GUI extends JFrame { // implements WindowStateListener{
 			int previousSlideID = slidePanel.currentSlide.getSlideID() - 1;
 			Slide previousSlide = slideList.get(previousSlideID);
 			slidePanel.refreshSlide(previousSlide);
+	        if(screenSizeMaximised) {
+	            setMaxSize();
+	        }
 		}	
 		return null;
 	}
@@ -348,6 +356,9 @@ public class GUI extends JFrame { // implements WindowStateListener{
 		            public void mouseClicked(MouseEvent e) {
 		                if(e.getClickCount() == 2) {            
 		                    slidePanel.refreshSlide(slideList.getSlideList().get(contentsList.getSelectedIndex()));  
+		                    if(screenSizeMaximised) {
+		                        setMaxSize();
+		                    }
 		                    contentsList.clearSelection();  
 		                }
 		            }
@@ -362,11 +373,13 @@ public class GUI extends JFrame { // implements WindowStateListener{
                 public void actionPerformed(ActionEvent e) {
                     if(maximiseRestoreButton.getText().equals("MAXIMISE")){
                         setMaxSize();
-                        maximiseRestoreButton.setText("RESTORE");    
+                        maximiseRestoreButton.setText("RESTORE");
+                        screenSizeMaximised = true;
                     }
                     else if(maximiseRestoreButton.getText().equals("RESTORE")){
                         setRestoredSize();
-                        maximiseRestoreButton.setText("MAXIMISE");    
+                        maximiseRestoreButton.setText("MAXIMISE");
+                        screenSizeMaximised = false;
                     }
                 }
             });
@@ -435,6 +448,7 @@ public class GUI extends JFrame { // implements WindowStateListener{
 			audioPane.setLayout(new BorderLayout());
 			StandAloneMusicPlayer standAloneMusicPlayer = new StandAloneMusicPlayer();
 			audioPane.add(standAloneMusicPlayer.getFullControlPanel(), BorderLayout.CENTER);
+			
 			//AudioPanel();
 			break;
 		case "utilitiesSelectionPanel":
@@ -634,7 +648,9 @@ public class GUI extends JFrame { // implements WindowStateListener{
         slideWidth = bigSlideList.getWidth()-30;
         slideHeight = bigSlideList.getHeight()-60;
         fullScreen=true;
-        this.setExtendedState(Frame.MAXIMIZED_BOTH);
+        if(!screenSizeMaximised ) {
+            this.setExtendedState(Frame.MAXIMIZED_BOTH);
+        }
 	}
 	
 	private void setRestoredSize() {
@@ -655,7 +671,9 @@ public class GUI extends JFrame { // implements WindowStateListener{
         slideWidth = slideList.getWidth();
         slideHeight = slideList.getHeight();
         fullScreen=false;
-        this.setExtendedState(Frame.NORMAL);
+        if(screenSizeMaximised ) {
+            this.setExtendedState(Frame.NORMAL);
+        }
 	}
 	
 //	@Override

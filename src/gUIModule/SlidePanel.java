@@ -35,6 +35,7 @@ import Images.ImagePanel;
 import Images.TImage;
 
 import musicPlayerModule.EmbeddedAudioPlayer;
+import musicPlayerModule.LockedPlaylistValueAccess;
 import presentation.Image;
 
 import presentation.Point;
@@ -84,6 +85,8 @@ public class SlidePanel extends JPanel{
 	private String vlcLibraryPath = "resources/lib/vlc-2.1.3";
 	
 	JLayeredPane layeredPane;
+
+    private boolean playlistLocked = true;
 
 	
 	
@@ -169,6 +172,9 @@ public class SlidePanel extends JPanel{
 		int count = 0;
 		@Override
 		public void actionPerformed(ActionEvent e) {
+		    if(audioPlayer.isPlaying() && !LockedPlaylistValueAccess.lockedPlaylist) {
+		        audioPlayer.stopMedia();
+		    }
 			for(Image image: currentSlide.getImageList()) {
 				if(image.getStart() == count)
 				{
@@ -201,11 +207,15 @@ public class SlidePanel extends JPanel{
 	    	   }
 	    	   if(sound.getObjectStartTime() == count)
 	    	   {
+	    	       if(LockedPlaylistValueAccess.lockedPlaylist) {
 	    		   audioPlayer.playMedia();
+	    	       }
 	    	   }
 	    	   if(sound.getDuration()+sound.getObjectStartTime() == count && count != 0)
 	    	   {
+	    	       if(LockedPlaylistValueAccess.lockedPlaylist) {
 	    		   audioPlayer.stopMedia();
+	    	       }
 	    	   }
 	       }
 	       for(slideMediaObject object: mediaObjects){
@@ -443,12 +453,14 @@ public class SlidePanel extends JPanel{
 	 * added to the slidePanel, then the sounds are played from the timers method
 	 */
 	private void addSound(){
-		
+	    
+	    if(LockedPlaylistValueAccess.lockedPlaylist) {
+            System.out.println(LockedPlaylistValueAccess.lockedPlaylist + " are we locked off?");
 		
 		// Start paused by default
 		JPanel audioPanel = audioPlayer.getPanel();
 		this.add(audioPanel);
-		
+	    }
 		//JButton soundButton = VideoPainter.ProduceButton(sound.getFile());
         
 		//soundButton.setLocation(sound.getX_coord(), sound.getY_coord());
@@ -460,14 +472,25 @@ public class SlidePanel extends JPanel{
 	 * as the functionality will be inside a timers method
 	 */
 	public void playSounds(){
-		ArrayList<Sound> soundList = currentSlide.getSoundList();
-		if(!soundList.isEmpty())
-		{
-		Sound sound = soundList.get(0);
-		audioPlayer.prepareMedia(sound.getFile(), sound.getStart());
-		audioPlayer.playMedia();
-		}
+	    if(LockedPlaylistValueAccess.lockedPlaylist) {
+	        System.out.println(LockedPlaylistValueAccess.lockedPlaylist + " are we locked off?");
+    		ArrayList<Sound> soundList = currentSlide.getSoundList();
+    		if(!soundList.isEmpty())
+    		{
+    		Sound sound = soundList.get(0);
+    		audioPlayer.prepareMedia(sound.getFile(), sound.getStart());
+    		audioPlayer.playMedia();
+    		}
+	    }
 	}
+	
+	public void setPlaylistLocked(boolean trueFalse) {
+	    this.playlistLocked = trueFalse;
+	}
+
+    public boolean getPlaylistLocked() {
+        return playlistLocked;
+    }
 	
 	
 	/**

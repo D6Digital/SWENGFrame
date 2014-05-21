@@ -41,6 +41,7 @@ public class FileChooser extends JPanel implements ActionListener {
 
 		static public String filePath;
 	    static private final String newline = "\n";
+	    //static private boolean lockOpenPlaylistButton = false;
 	    JButton openButton;
 	    JTextArea log;
 	    JFileChooser fc;
@@ -89,23 +90,32 @@ public class FileChooser extends JPanel implements ActionListener {
 		}
 
 		public void actionPerformed(ActionEvent e) {
-
+		    if(!LockedPlaylistValueAccess.lockedPlaylist) {
 	        //Handle open button action.
-	        if (e.getSource() == openButton) {
+		        if (e.getSource() == openButton) {
 	            
-	            int returnVal = fc.showOpenDialog(FileChooser.this);
-
-	            if (returnVal == JFileChooser.APPROVE_OPTION) {
-	                File file = fc.getSelectedFile();
-	                filePath = file.getAbsolutePath();
-	              //  //This is where a real application would open the file.
-	              //  log.append("Opening: " + file.getName() + "." + newline);
-	            } else {
-	              //  log.append("Open command cancelled by user." + newline);
+	                
+	                System.out.println("HERE???" + LockedPlaylistValueAccess.lockedPlaylist);
+    	            int returnVal = fc.showOpenDialog(FileChooser.this);
+    
+    	            if (returnVal == JFileChooser.APPROVE_OPTION) {
+    	                File file = fc.getSelectedFile();
+    	                filePath = file.getAbsolutePath();
+    	              //  //This is where a real application would open the file.
+    	              //  log.append("Opening: " + file.getName() + "." + newline);
+    	            } else {
+    	              //  log.append("Open command cancelled by user." + newline);
+    	            }
+    	            log.setCaretPosition(log.getDocument().getLength());
 	            }
-	            log.setCaretPosition(log.getDocument().getLength());
-	        }
+	       }
 	    }
+		
+		public void lockTheOpenButton(boolean trueOrFalse) {
+		    System.out.println("in method 2 " + trueOrFalse);
+		    LockedPlaylistValueAccess.lockedPlaylist = trueOrFalse;
+		    System.out.println(LockedPlaylistValueAccess.lockedPlaylist + " EHEHHEEHEHEH");
+		}
 
 	    /** Returns an ImageIcon, or null if the path was invalid. */
 	    protected static ImageIcon createImageIcon(String path) {
