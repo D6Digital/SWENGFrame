@@ -242,6 +242,10 @@ public class XMLParser extends DefaultHandler{
 			if(attrVal != null){
 				newSlide.setLastSlide(Boolean.parseBoolean(attrVal));
 			}
+			attrVal = attrs.getValue("descriptor");
+			if (attrVal != null) {
+				newSlide.setDescriptor(attrVal);
+			}
 		}
 		else if (elementName.equals("text")) {
 			if (currentElement == ProcessingElement.SLIDE) {

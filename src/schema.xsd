@@ -42,21 +42,29 @@
 	<xs:element name="slideshow" type="slideshow"></xs:element>
 
 	<xs:complexType name="sLide">
-        <xs:sequence minOccurs="0" maxOccurs="unbounded">
-			<xs:element name="text" type="tExt" maxOccurs="unbounded" minOccurs="0">
+		<xs:sequence minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="text" type="tExt" maxOccurs="unbounded"
+				minOccurs="0">
 			</xs:element>
-			<xs:element name="shape" type="sHape" maxOccurs="unbounded" minOccurs="0">
+			<xs:element name="shape" type="sHape" maxOccurs="unbounded"
+				minOccurs="0">
 			</xs:element>
-			<xs:element name="audio" type="aUdio" maxOccurs="unbounded" minOccurs="0">
+			<xs:element name="audio" type="aUdio" maxOccurs="unbounded"
+				minOccurs="0">
 			</xs:element>
-			<xs:element name="image" type="iMage" maxOccurs="unbounded" minOccurs="0">
+			<xs:element name="image" type="iMage" maxOccurs="unbounded"
+				minOccurs="0">
 			</xs:element>
-			<xs:element name="video" type="video" maxOccurs="unbounded" minOccurs="0">
+			<xs:element name="video" type="video" maxOccurs="unbounded"
+				minOccurs="0">
 			</xs:element>
 		</xs:sequence>
 		<xs:attribute name="id" type="xs:int"></xs:attribute>
 		<xs:attribute name="duration" type="xs:int" use="optional"></xs:attribute>
-		<xs:attribute name="lastSlide" type="xs:boolean" use="optional"></xs:attribute>
+		<xs:attribute name="lastSlide" type="xs:boolean"
+			use="optional">
+		</xs:attribute>
+		<xs:attribute name="descriptor" type="xs:string"></xs:attribute>
 	</xs:complexType>
 
 	<xs:complexType name="dEfaults">
