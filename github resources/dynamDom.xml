@@ -3,7 +3,7 @@
 	<documentinfo><author>D6 Digital</author><version>2.1</version><title>DynamicDom</title><comment>A crazy superhero saves the day</comment><width>720</width><height>540</height></documentinfo>
 	<defaults><backgroundcolour>#558ED5</backgroundcolour><font>Times New Roman</font><fontsize>24</fontsize><fontcolour>#000000</fontcolour><linecolour>#000000</linecolour><fillcolour>#000000</fillcolour></defaults>
 	
-	<slide id="0" duration="60" lastSlide="false" backgroundcolour="#558ED5"><text xstart="288" ystart="36" xend="526" yend="68" layer="25" duration="59" starttime="3" font="Aharoni" fontcolour="#000000" fontsize="20"><textbody italic="true" bold="true" underlined="false"><textstring>Click the desert.</textstring>
+	<slide id="0" duration="60" descriptor="This Is a Slide Description OH YES IT IS!" lastSlide="false" backgroundcolour="#558ED5"><text xstart="288" ystart="36" xend="526" yend="68" layer="25" duration="59" starttime="3" font="Aharoni" fontcolour="#000000" fontsize="20"><textbody italic="true" bold="true" underlined="false"><textstring>Click the desert.</textstring>
 	</textbody>
 	</text>
 	<video urlname="resources/video/video/monstersinc_high.mpg" xstart="413" ystart="402" width="285" height="126" layer="23" starttime="0" playtime="1" loop="false"/>
@@ -99,7 +99,7 @@
 	<image urlname="" xstart="406" ystart="399" width="299" height="128" layer="1" starttime="0" branch="4"/>
 	</slide>
 	
-	<slide id="1" duration="60" lastSlide="false" backgroundcolour="#558ED5"><text xstart="288" ystart="54" xend="526" yend="86" layer="17" duration="59" starttime="4" font="Aharoni" fontcolour="#FFFFFF" fontsize="20"><textbody italic="true" bold="true" underlined="false"><textstring>Click the sun.</textstring>
+	<slide id="1" duration="60" descriptor="" lastSlide="false" backgroundcolour="#558ED5"><text xstart="288" ystart="54" xend="526" yend="86" layer="17" duration="59" starttime="4" font="Aharoni" fontcolour="#FFFFFF" fontsize="20"><textbody italic="true" bold="true" underlined="false"><textstring>Click the sun.</textstring>
 	</textbody>
 	</text>
 	<shape fillcolour="#F79646" linecolour="#FFFFFF" layer="16" duration="59" starttime="4" totalpoints="8" width="235" height="106"><point num="0" x="282" y="54"/>
@@ -189,46 +189,26 @@
 	<image urlname="resources/images/Desert.jpg" xstart="0" ystart="2" width="720" height="540" layer="1" starttime="0"/>
 	</slide>
 	
-	<slide id="2" duration="60" lastSlide="false" backgroundcolour="#558ED5"><image urlname="Dice10.png" xstart="385" ystart="381" width="132" height="140" layer="110" duration="50" starttime="10"/>
-	<image urlname="Dice9.png" xstart="395" ystart="383" width="111" height="140" layer="109" duration="50" starttime="11"/>
-	<image urlname="Dice8.png" xstart="402" ystart="382" width="97" height="140" layer="108" duration="50" starttime="12"/>
-	<image urlname="Dice7.png" xstart="417" ystart="382" width="67" height="140" layer="107" duration="50" starttime="13"/>
-	<image urlname="Dice6.png" xstart="432" ystart="383" width="37" height="140" layer="106" duration="50" starttime="14"/>
-	<image urlname="Dice5.png" xstart="442" ystart="384" width="17" height="140" layer="105" duration="50" starttime="16"/>
-	<image urlname="Dice4.png" xstart="416" ystart="381" width="52" height="140" layer="104" duration="50" starttime="17"/>
-	<image urlname="Dice3.png" xstart="406" ystart="382" width="79" height="140" layer="103" duration="50" starttime="18"/>
-	<image urlname="Dice2.png" xstart="401" ystart="382" width="98" height="140" layer="102" duration="50" starttime="19"/>
-	<image urlname="Dice1.png" xstart="384" ystart="381" width="132" height="140" layer="101" duration="50" starttime="20"/>
-	<image urlname="Dice10.png" xstart="385" ystart="380" width="132" height="140" layer="100" duration="50" starttime="9"/>
-	<image urlname="Dice9.png" xstart="394" ystart="380" width="111" height="140" layer="99" duration="50" starttime="8"/>
-	<image urlname="Dice8.png" xstart="401" ystart="380" width="97" height="140" layer="98" duration="50" starttime="7"/>
-	<image urlname="Dice7.png" xstart="420" ystart="380" width="67" height="140" layer="97" duration="50" starttime="6"/>
-	<image urlname="Dice6.png" xstart="433" ystart="382" width="37" height="140" layer="96" duration="50" starttime="5"/>
-	<image urlname="Dice5.png" xstart="442" ystart="384" width="17" height="140" layer="95" duration="50" starttime="4"/>
-	<image urlname="Dice4.png" xstart="425" ystart="383" width="52" height="140" layer="94" duration="50" starttime="3"/>
-	<image urlname="Dice3.png" xstart="414" ystart="382" width="79" height="140" layer="93" duration="50" starttime="2"/>
-	<image urlname="Dice2.png" xstart="401" ystart="381" width="98" height="140" layer="92" duration="50" starttime="1"/>
-	<image urlname="Dice1.png" xstart="388" ystart="378" width="132" height="140" layer="91" duration="50" starttime="0"/>
-	<image urlname="Dice10.png" xstart="204" ystart="195" width="132" height="140" layer="90" duration="50" starttime="10"/>
-	<image urlname="Dice9.png" xstart="215" ystart="197" width="111" height="140" layer="89" duration="50" starttime="11"/>
-	<image urlname="Dice8.png" xstart="222" ystart="196" width="97" height="140" layer="88" duration="50" starttime="12"/>
-	<image urlname="Dice7.png" xstart="237" ystart="196" width="67" height="140" layer="87" duration="50" starttime="13"/>
-	<image urlname="Dice6.png" xstart="252" ystart="197" width="37" height="140" layer="86" duration="50" starttime="14"/>
-	<image urlname="Dice5.png" xstart="262" ystart="198" width="17" height="140" layer="85" duration="50" starttime="16"/>
-	<image urlname="Dice4.png" xstart="236" ystart="195" width="52" height="140" layer="84" duration="50" starttime="17"/>
-	<image urlname="Dice3.png" xstart="225" ystart="196" width="79" height="140" layer="83" duration="50" starttime="18"/>
-	<image urlname="Dice2.png" xstart="220" ystart="196" width="98" height="140" layer="82" duration="50" starttime="19"/>
-	<image urlname="Dice1.png" xstart="204" ystart="195" width="132" height="140" layer="81" duration="50" starttime="20"/>
-	<image urlname="Dice10.png" xstart="205" ystart="194" width="132" height="140" layer="80" duration="50" starttime="9"/>
-	<image urlname="Dice9.png" xstart="214" ystart="194" width="111" height="140" layer="79" duration="50" starttime="8"/>
-	<image urlname="Dice8.png" xstart="221" ystart="194" width="97" height="140" layer="78" duration="50" starttime="7"/>
-	<image urlname="Dice7.png" xstart="240" ystart="194" width="67" height="140" layer="77" duration="50" starttime="6"/>
-	<image urlname="Dice6.png" xstart="253" ystart="196" width="37" height="140" layer="76" duration="50" starttime="5"/>
-	<image urlname="Dice5.png" xstart="262" ystart="198" width="17" height="140" layer="75" duration="50" starttime="4"/>
-	<image urlname="Dice4.png" xstart="245" ystart="197" width="52" height="140" layer="74" duration="50" starttime="3"/>
-	<image urlname="Dice3.png" xstart="234" ystart="196" width="79" height="140" layer="73" duration="50" starttime="2"/>
-	<image urlname="Dice2.png" xstart="221" ystart="195" width="98" height="140" layer="72" duration="50" starttime="1"/>
-	<image urlname="Dice1.png" xstart="208" ystart="192" width="132" height="140" layer="71" duration="50" starttime="0"/>
+	<slide id="2" duration="60" descriptor="" lastSlide="false" backgroundcolour="#558ED5"><image urlname="Dice10.png" xstart="385" ystart="381" width="132" height="140" layer="90" duration="50" starttime="10"/>
+	<image urlname="Dice9.png" xstart="395" ystart="383" width="111" height="140" layer="89" duration="50" starttime="11"/>
+	<image urlname="Dice8.png" xstart="402" ystart="382" width="97" height="140" layer="88" duration="50" starttime="12"/>
+	<image urlname="Dice7.png" xstart="417" ystart="382" width="67" height="140" layer="87" duration="50" starttime="13"/>
+	<image urlname="Dice6.png" xstart="432" ystart="383" width="37" height="140" layer="86" duration="50" starttime="14"/>
+	<image urlname="Dice5.png" xstart="442" ystart="384" width="17" height="140" layer="85" duration="50" starttime="16"/>
+	<image urlname="Dice4.png" xstart="416" ystart="381" width="52" height="140" layer="84" duration="50" starttime="17"/>
+	<image urlname="Dice3.png" xstart="406" ystart="382" width="79" height="140" layer="83" duration="50" starttime="18"/>
+	<image urlname="Dice2.png" xstart="401" ystart="382" width="98" height="140" layer="82" duration="50" starttime="19"/>
+	<image urlname="Dice1.png" xstart="384" ystart="381" width="132" height="140" layer="81" duration="50" starttime="20"/>
+	<image urlname="Dice10.png" xstart="385" ystart="380" width="132" height="140" layer="80" duration="50" starttime="9"/>
+	<image urlname="Dice9.png" xstart="394" ystart="380" width="111" height="140" layer="79" duration="50" starttime="8"/>
+	<image urlname="Dice8.png" xstart="401" ystart="380" width="97" height="140" layer="78" duration="50" starttime="7"/>
+	<image urlname="Dice7.png" xstart="420" ystart="380" width="67" height="140" layer="77" duration="50" starttime="6"/>
+	<image urlname="Dice6.png" xstart="433" ystart="382" width="37" height="140" layer="76" duration="50" starttime="5"/>
+	<image urlname="Dice5.png" xstart="442" ystart="384" width="17" height="140" layer="75" duration="50" starttime="4"/>
+	<image urlname="Dice4.png" xstart="425" ystart="383" width="52" height="140" layer="74" duration="50" starttime="3"/>
+	<image urlname="Dice3.png" xstart="414" ystart="382" width="79" height="140" layer="73" duration="50" starttime="2"/>
+	<image urlname="Dice2.png" xstart="401" ystart="381" width="98" height="140" layer="72" duration="50" starttime="1"/>
+	<image urlname="Dice1.png" xstart="388" ystart="378" width="132" height="140" layer="71" duration="50" starttime="0"/>
 	<image urlname="Dice1.png" xstart="20" ystart="365" width="142" height="143" layer="70" duration="0" starttime="0"/>
 	<image urlname="Dice10.png" xstart="531" ystart="31" width="132" height="140" layer="69" duration="0" starttime="0"/>
 	<image urlname="Dice10.png" xstart="579" ystart="197" width="132" height="140" layer="68" duration="50" starttime="10"/>
@@ -298,7 +278,7 @@ The icon looks like this!</textstring>
 	</text>
 	</slide>
 	
-	<slide id="3" duration="60" lastSlide="false" backgroundcolour="#558ED5"><text xstart="66" ystart="298" xend="285" yend="338" layer="30" duration="59" starttime="16" font="Aharoni" fontcolour="#000000" fontsize="20"><textbody italic="false" bold="false" underlined="false"><textstring>Click the speaker</textstring>
+	<slide id="3" duration="60" descriptor="" lastSlide="false" backgroundcolour="#558ED5"><text xstart="66" ystart="298" xend="285" yend="338" layer="30" duration="59" starttime="16" font="Aharoni" fontcolour="#000000" fontsize="20"><textbody italic="false" bold="false" underlined="false"><textstring>Click the speaker</textstring>
 	</textbody>
 	</text>
 	<shape fillcolour="#000000" linecolour="#000000" layer="29" duration="0" starttime="16" totalpoints="5" width="109" height="71"><point num="0" x="354" y="229"/>
@@ -408,7 +388,7 @@ The bounding box should if possible have extra space below the text bodies to al
 	</text>
 	</slide>
 	
-	<slide id="4" duration="60" lastSlide="false" backgroundcolour="#558ED5"><video urlname="resources/video/video/monstersinc_high.mpg" xstart="372" ystart="213" width="348" height="175" layer="10" starttime="0" playtime="1" loop="false"/>
+	<slide id="4" duration="60" descriptor="" lastSlide="false" backgroundcolour="#558ED5"><video urlname="resources/video/video/monstersinc_high.mpg" xstart="372" ystart="213" width="348" height="175" layer="10" starttime="0" playtime="1" loop="false"/>
 	<audio urlname="C:\\Users\\Public\\Music\\Sample Music\\Kalimba.mp3" starttime="0" loop="false"/>
 	<text xstart="5" ystart="187" xend="370" yend="327" layer="7" duration="59" starttime="0" font="Aharoni" fontcolour="#FFFFFF" fontsize="20"><textbody italic="false" bold="false" underlined="false"><textstring>The Video is similar but uses a chart in the title set in the Alt text section of the Format chart area menu. To change this right-click and select format chart area.</textstring>
 	</textbody>
@@ -423,7 +403,7 @@ The bounding box should if possible have extra space below the text bodies to al
 	</text>
 	</slide>
 	
-	<slide id="5" duration="60" lastSlide="true" backgroundcolour="#558ED5"><shape fillcolour="#FFFF00" linecolour="#385D8A" layer="50" duration="10" starttime="5" totalpoints="6" width="212" height="56"><point num="0" x="574" y="268"/>
+	<slide id="5" duration="60" descriptor="" lastSlide="true" backgroundcolour="#558ED5"><shape fillcolour="#FFFF00" linecolour="#385D8A" layer="50" duration="10" starttime="5" totalpoints="6" width="212" height="56"><point num="0" x="574" y="268"/>
 	<point num="1" x="548" y="259"/>
 	<point num="2" x="483" y="296"/>
 	<point num="3" x="576" y="328"/>
