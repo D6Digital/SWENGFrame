@@ -84,7 +84,7 @@ public class GUI extends JFrame implements WindowStateListener, ComponentListene
 	private Presentation slideList;
 	private Presentation bigSlideList;
 	static Integer currentVisibleSlideID;
-	public static SlidePanel slidePanel = new SlidePanel();
+	public SlidePanel slidePanel;
 	private Dimension availableScreenSize;
 
 	JButton nextSlideButton = new JButton();
@@ -339,6 +339,9 @@ public class GUI extends JFrame implements WindowStateListener, ComponentListene
 			nextSlideButton.setBounds(slideList.getWidth()-160,slideList.getHeight()-60,150,50);
 			nextSlideButton.setVisible(false);
 			
+			
+			slidePanel = new SlidePanel();
+			
 			//set up utilities
 			
 	        utilities = new UtilitiesPanel(utilitiesWidth, slideList.getWidth(), slideList.getHeight());
@@ -478,6 +481,7 @@ public class GUI extends JFrame implements WindowStateListener, ComponentListene
 			layers.add(slidePanel,9);
 			
 			//set up slide
+			
 			slidePanel.loadPresentation(slideList);
 			slidePanel.setupListeners(textBranchListener, objectBranchListener,videoListener);
 			slidePanel.setupSlide(slideList.get(0));
@@ -1227,6 +1231,7 @@ public void setupSlidePlayer(String filename){
 @Override
 public void windowStateChanged(WindowEvent e) {
 	System.err.println("RESIZED");
+	if(slidePanel!=null){
 	scaleFactorX = (double)getSize().width/(double)720;
 	scaleFactorY = (double)getSize().height/(double)540;
     slidePanel.setScalingFactors(scaleFactorX, scaleFactorY);
@@ -1251,6 +1256,7 @@ public void windowStateChanged(WindowEvent e) {
     contents.setBounds(0, 0, contentsWidth, (int) (slideList.getHeight()*scaleFactorY));
     slideWidth = (int) (slideList.getWidth()*scaleFactorX)-30;
     slideHeight = (int) (slideList.getHeight()*scaleFactorY)-60;
+	}
 }
 
 @Override
@@ -1268,6 +1274,7 @@ public void componentMoved(ComponentEvent e) {
 @Override
 public void componentResized(ComponentEvent e) {
 	//System.err.println("RESIZED");
+	if(slidePanel!=null){
 	scaleFactorX = (double)getSize().width/(double)720;
 	scaleFactorY = (double)getSize().height/(double)540;
     slidePanel.setScalingFactors(scaleFactorX, scaleFactorY);
@@ -1292,6 +1299,7 @@ public void componentResized(ComponentEvent e) {
     contents.setBounds(0, 0, contentsWidth, (int) (slideList.getHeight()*scaleFactorY));
     slideWidth = (int) (slideList.getWidth()*scaleFactorX)-30;
     slideHeight = (int) (slideList.getHeight()*scaleFactorY)-60;
+	}
 	
 }
 
