@@ -13,6 +13,8 @@ import java.awt.Rectangle;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ComponentEvent;
+import java.awt.event.ComponentListener;
 import java.awt.event.ContainerEvent;
 import java.awt.event.ContainerListener;
 import java.awt.event.MouseAdapter;
@@ -43,7 +45,6 @@ import javax.swing.text.StyledDocument;
 import javax.swing.text.html.HTML;
 
 import musicPlayerModule.StandAloneMusicPlayer;
-
 import presentation.Collection;
 import presentation.Point;
 import presentation.Presentation;
@@ -64,7 +65,7 @@ import gUIModule.CalculatorPanel;
  * @author Andrew Walter
  *
  */
-public class GUI extends JFrame { // implements WindowStateListener{
+public class GUI extends JFrame implements WindowStateListener, ComponentListener{
 
 	/**
 	 * 
@@ -183,7 +184,7 @@ public class GUI extends JFrame { // implements WindowStateListener{
 
 	public GUI(String panelType) {
 
-	    this.setResizable(false);
+	    //this.setResizable(false);
 		//size of the screen
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 
@@ -193,7 +194,8 @@ public class GUI extends JFrame { // implements WindowStateListener{
 
 		availableScreenSize = new Dimension(screenSize.width,screenSize.height-taskBarSize);
 
-		//addWindowStateListener(this);
+		addWindowStateListener(this);
+		addComponentListener(this);
 
 		switch (panelType) {
 		case "bookSelectionPanel":
@@ -551,9 +553,13 @@ public class GUI extends JFrame { // implements WindowStateListener{
 	private void setMaxSize() {
         System.err.println("MAXIMIZED");
         slidePanel.setScalingFactors(scaleFactorX, scaleFactorY);
-        slidePanel.loadPresentation(slideList);
-        slidePanel.refreshSlide(slideList.get(slidePanel.currentSlide.getSlideID()));
         slidePanel.setBounds(0, 0, (int) (slideList.getWidth()*scaleFactorX), (int) (slideList.getHeight()*scaleFactorY));
+        System.out.println("width: " + (int) (slideList.getWidth()*scaleFactorX) + "  Height: " + (int) (slideList.getHeight()*scaleFactorY));
+        slidePanel.resizeSlide();
+        slidePanel.repaint();
+        //slidePanel.loadPresentation(slideList);
+        //slidePanel.refreshSlide(slideList.get(slidePanel.currentSlide.getSlideID()));
+        
         layers.setBounds(0,0,(int) (slideList.getWidth()*scaleFactorX), (int) (slideList.getHeight()*scaleFactorY)+insets.top+insets.bottom);
         previousSlideButton.setBounds(10,(int) (slideList.getHeight()*scaleFactorY)-60,150,50);
         previousSlideButton.repaint();
@@ -577,8 +583,9 @@ public class GUI extends JFrame { // implements WindowStateListener{
 	private void setRestoredSize() {
         System.err.println("NORMAL");
         slidePanel.setScalingFactors(1, 1);
-        slidePanel.loadPresentation(slideList);
-        slidePanel.refreshSlide(slideList.get(slidePanel.currentSlide.getSlideID()));
+        slidePanel.resizeSlide();
+        //slidePanel.loadPresentation(slideList);
+        //slidePanel.refreshSlide(slideList.get(slidePanel.currentSlide.getSlideID()));
         slidePanel.setBounds(0, 0, slideList.getWidth(), slideList.getHeight());
         layers.setBounds(0,0,slideList.getWidth(), slideList.getHeight()+insets.top+insets.bottom);
         previousSlideButton.setBounds(10,slideList.getHeight()-60,150,50);
@@ -889,7 +896,7 @@ private void borderListenerProcess(MouseEvent e1,Boolean isObject,Boolean isText
 	if(!stopListening){
 	
 	
-	System.out.println("x="+xCoordinate+"y="+yCoordinate);
+	//System.out.println("x="+xCoordinate+"y="+yCoordinate);
 	
 	if (xCoordinate>(slideWidth-borderSize)){
 		utilities.setVisible(true);
@@ -1216,6 +1223,85 @@ public void setupSlidePlayer(String filename){
 	
 	//bigSlideList = reScale(bigSlideList,scaleFactorX,scaleFactorY);
 }
+
+@Override
+public void windowStateChanged(WindowEvent e) {
+	System.err.println("RESIZED");
+	scaleFactorX = (double)getSize().width/(double)720;
+	scaleFactorY = (double)getSize().height/(double)540;
+    slidePanel.setScalingFactors(scaleFactorX, scaleFactorY);
+    slidePanel.setBounds(0, 0, (int) (slideList.getWidth()*scaleFactorX), (int) (slideList.getHeight()*scaleFactorY));
+    System.out.println("width: " + (int) (slideList.getWidth()*scaleFactorX) + "  Height: " + (int) (slideList.getHeight()*scaleFactorY));
+    slidePanel.resizeSlide();
+    slidePanel.repaint();
+    //slidePanel.loadPresentation(slideList);
+    //slidePanel.refreshSlide(slideList.get(slidePanel.currentSlide.getSlideID()));
+    
+    layers.setBounds(0,0,(int) (slideList.getWidth()*scaleFactorX), (int) (slideList.getHeight()*scaleFactorY)+insets.top+insets.bottom);
+    previousSlideButton.setBounds(10,(int) (slideList.getHeight()*scaleFactorY)-60,150,50);
+    previousSlideButton.repaint();
+    nextSlideButton.setBounds((int) (slideList.getWidth()*scaleFactorX)-170,(int) (slideList.getHeight()*scaleFactorY)-60,150,50);
+    nextSlideButton.repaint();
+    utilities.setBounds((int) (slideList.getWidth()*scaleFactorX)-utilitiesWidth, 0, utilitiesWidth, (int) (slideList.getHeight()*scaleFactorY));
+    topPanel.setBounds(((int) (slideList.getWidth()*scaleFactorX)/2)-150, 0, 300, 200);
+    utilitiesTab.setBounds((int) (slideList.getWidth()*scaleFactorX)-25,((int) (slideList.getHeight()*scaleFactorY)/2)-60,15,120);
+    contentsTab.setBounds(0,((int) (slideList.getHeight()*scaleFactorY)/2)-60,15,120);
+    nextTab.setBounds((int) (slideList.getWidth()*scaleFactorX)-120,((int) (slideList.getHeight()*scaleFactorY))-25,90,20);
+    previousTab.setBounds(0,((int) (slideList.getHeight()*scaleFactorY))-25,100,20);
+    contents.setBounds(0, 0, contentsWidth, (int) (slideList.getHeight()*scaleFactorY));
+    slideWidth = (int) (slideList.getWidth()*scaleFactorX)-30;
+    slideHeight = (int) (slideList.getHeight()*scaleFactorY)-60;
+}
+
+@Override
+public void componentHidden(ComponentEvent e) {
+	// TODO Auto-generated method stub
+	
+}
+
+@Override
+public void componentMoved(ComponentEvent e) {
+	// TODO Auto-generated method stub
+	
+}
+
+@Override
+public void componentResized(ComponentEvent e) {
+	//System.err.println("RESIZED");
+	scaleFactorX = (double)getSize().width/(double)720;
+	scaleFactorY = (double)getSize().height/(double)540;
+    slidePanel.setScalingFactors(scaleFactorX, scaleFactorY);
+    slidePanel.setBounds(0, 0, (int) (slideList.getWidth()*scaleFactorX), (int) (slideList.getHeight()*scaleFactorY));
+    //System.out.println("width: " + (int) (slideList.getWidth()*scaleFactorX) + "  Height: " + (int) (slideList.getHeight()*scaleFactorY));
+    slidePanel.resizeSlide();
+    slidePanel.repaint();
+    //slidePanel.loadPresentation(slideList);
+    //slidePanel.refreshSlide(slideList.get(slidePanel.currentSlide.getSlideID()));
+    
+    layers.setBounds(0,0,(int) (slideList.getWidth()*scaleFactorX), (int) (slideList.getHeight()*scaleFactorY)+insets.top+insets.bottom);
+    previousSlideButton.setBounds(10,(int) (slideList.getHeight()*scaleFactorY)-60,150,50);
+    previousSlideButton.repaint();
+    nextSlideButton.setBounds((int) (slideList.getWidth()*scaleFactorX)-170,(int) (slideList.getHeight()*scaleFactorY)-60,150,50);
+    nextSlideButton.repaint();
+    utilities.setBounds((int) (slideList.getWidth()*scaleFactorX)-utilitiesWidth, 0, utilitiesWidth, (int) (slideList.getHeight()*scaleFactorY));
+    topPanel.setBounds(((int) (slideList.getWidth()*scaleFactorX)/2)-150, 0, 300, 200);
+    utilitiesTab.setBounds((int) (slideList.getWidth()*scaleFactorX)-25,((int) (slideList.getHeight()*scaleFactorY)/2)-60,15,120);
+    contentsTab.setBounds(0,((int) (slideList.getHeight()*scaleFactorY)/2)-60,15,120);
+    nextTab.setBounds((int) (slideList.getWidth()*scaleFactorX)-120,((int) (slideList.getHeight()*scaleFactorY))-25,90,20);
+    previousTab.setBounds(0,((int) (slideList.getHeight()*scaleFactorY))-25,100,20);
+    contents.setBounds(0, 0, contentsWidth, (int) (slideList.getHeight()*scaleFactorY));
+    slideWidth = (int) (slideList.getWidth()*scaleFactorX)-30;
+    slideHeight = (int) (slideList.getHeight()*scaleFactorY)-60;
+	
+}
+
+@Override
+public void componentShown(ComponentEvent e) {
+	// TODO Auto-generated method stub
+	
+}
+
+
 
 
 }

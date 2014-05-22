@@ -52,18 +52,20 @@ public class Scribe extends JPanel{
 	private Font font;
 	private Text textObject;
 	public JTextPane textPane;
+	private double scaleFactor = 1;
 
 	/**
 	 * produces a JPanel containing text from the text object
 	 * @param text
+	 * @param textSizeScale 
 	 */
 	
 	
 	
-	public Scribe(Text text, MouseAdapter listener) {
+	public Scribe(Text text, MouseAdapter listener, double textSizeScale) {
 		
 		textObject = text;
-		
+		this.scaleFactor = textSizeScale;
 		
 		this.setOpaque(false);
 		
@@ -112,12 +114,12 @@ public Scribe(Text text) {
 		if(font.getFamily().equals("Dialog")){
 		// create a font object for a user defined font
 			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
-			for (String name : ge.getAvailableFontFamilyNames()) {
+			/*for (String name : ge.getAvailableFontFamilyNames()) {
 				System.out.println(name);
-			}
+			}*/
 			try {
 			    font = Font.createFont(Font.TRUETYPE_FONT, new File(textObject.getFile()));
-			    font = font.deriveFont(Font.PLAIN,textObject.getSize());
+			    font = font.deriveFont(Font.PLAIN,(float) (textObject.getSize()*scaleFactor));
 	
 				ge.registerFont(font);
 			} catch (FontFormatException | IOException e1) {
@@ -150,7 +152,7 @@ public Scribe(Text text) {
 		addStylesToDocument(doc);
 		
 		Style newStyle = doc.addStyle("newStyle", doc.getStyle("defaultStyle"));
-		System.out.println(textObject.getText().size());
+		//System.out.println(textObject.getText().size());
 		for (TextContent text : textObject.getText()) {
 			
 			newStyle = doc.getStyle("defaultStyle");
@@ -212,7 +214,7 @@ public Scribe(Text text) {
 		
 		Style defaultStyle = doc.addStyle("defaultStyle", def);
 		StyleConstants.setFontFamily(defaultStyle,font.getFamily());
-		StyleConstants.setFontSize(defaultStyle, textObject.getSize());
+		StyleConstants.setFontSize(defaultStyle, (int) (textObject.getSize()*scaleFactor));
 		StyleConstants.setForeground(defaultStyle,textObject.getColourObject());
 		
 	}

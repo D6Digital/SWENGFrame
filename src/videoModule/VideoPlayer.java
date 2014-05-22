@@ -2,6 +2,7 @@ package videoModule;
 
 /**
  * @author Josh Drake
+ * @author samPick
  */
 import uk.co.caprica.vlcj.player.MediaPlayerFactory;
 import uk.co.caprica.vlcj.player.embedded.EmbeddedMediaPlayer;
@@ -43,7 +44,17 @@ public class VideoPlayer extends JPanel{
 	 ImageIcon img;
 	 public PlayerControlsPanel ControlPanel;
 	 JLabel pausedLabel;
-	
+	 int xcoord;
+	 int ycoord;
+	 int start;
+	 int end;
+	 String file;
+	 int width;
+	 int height;
+
+
+	private Canvas canvas;
+	 
 
 	public VideoPlayer(Video video, MouseAdapter videoListener) {
 		
@@ -52,13 +63,13 @@ public class VideoPlayer extends JPanel{
                 RuntimeUtil.getLibVlcLibraryName(), "resources/lib/vlc-2.1.3"
             );
 		
-	    int xcoord = video.getX_coord();
-	    final int ycoord = video.getY_coord();
-	    int start = video.getStart();
-	    int end = video.getStart() + video.getDuration();
-	    String file = video.getFile();
-	    int width = video.getWidth();
-	    final int height = video.getHeight();
+	    xcoord = video.getX_coord();
+	    ycoord = video.getY_coord();
+	    start = video.getStart();
+	    end = video.getStart() + video.getDuration();
+	    file = video.getFile();
+	    width = video.getWidth();
+	    height = video.getHeight();
 
 		this.setLayout(null);
 		this.setBounds(video.getX_coord(), video.getY_coord(), video.getWidth(), video.getHeight());
@@ -87,7 +98,7 @@ public class VideoPlayer extends JPanel{
 	    //pausedLabel.setOpaque(true);
 	    //pausedLabel.setBounds(width/2, height/2, 50, 50);
 	    //overlayPanel.add(pausedLabel);
-	    Canvas canvas = new Canvas();
+	    canvas = new Canvas();
 	    canvas.setBackground(Color.BLACK);
 		
 		//frame.setLayout(new BorderLayout());
@@ -224,6 +235,17 @@ public class VideoPlayer extends JPanel{
 	
 	public Boolean isPlaying(){
 		return mediaPlayer.isPlaying();
+	}
+
+	public void resizeVideo(double scalingFactorX, double scalingFactorY) {
+		
+		this.setBounds((int) (xcoord*scalingFactorX), (int) (ycoord*scalingFactorY), (int) (width*scalingFactorX), (int) (height*scalingFactorY));
+		ControlPanel.setBounds(0, (int) (height*scalingFactorY)-80, (int) (width*scalingFactorX), 80);
+		vidpanel.setBounds(0, 0, (int) (width*scalingFactorX), (int) (height*scalingFactorY));
+		canvas.setBounds(0, 0, (int) (width*scalingFactorX), (int) (height*scalingFactorY));
+		overlayPanel.setBounds(0, 0, (int) (width*scalingFactorX), (int) (height*scalingFactorY));
+		this.repaint();
+		
 	}
 	
 	/**

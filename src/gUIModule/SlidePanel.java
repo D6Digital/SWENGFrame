@@ -5,15 +5,15 @@ import graphicsModule.GraphicsPainter;
 import imageModule.ImagePainter;
 
 
-import java.awt.Color;
-import java.awt.Cursor;
 
+
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Cursor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
-
 import java.awt.Dimension;
-
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
@@ -30,19 +30,16 @@ import javax.swing.text.StyledDocument;
 import javax.swing.text.html.HTML;
 
 
-import Graphics.graphicsObject;
 
+
+import Graphics.graphicsObject;
 import Images.ImagePanel;
 import Images.TImage;
-
 import musicPlayerModule.EmbeddedAudioPlayer;
 import musicPlayerModule.LockedPlaylistValueAccess;
 import presentation.Image;
-
 import presentation.Point;
-
 import presentation.Presentation;
-
 import presentation.Shapes;
 import presentation.Slide;
 import presentation.Sound;
@@ -95,11 +92,18 @@ public class SlidePanel extends JPanel{
 
 	private double scalingFactorY = 1;
 
+	private Integer count;
+	
+
 	
 	
 	
 	
 	
+
+
+	
+
 
 
 	/**
@@ -177,6 +181,7 @@ public class SlidePanel extends JPanel{
 	    
        
        int delay = 100; // 1000ms or 1 second timer
+       setCount(0);
        ActionListener taskPerformer= new ActionListener() {
 		int count = 0;
 		@Override
@@ -230,11 +235,11 @@ public class SlidePanel extends JPanel{
 	       for(slideMediaObject object: mediaObjects){
 	    	   if(object.getFinishTime() == count && count != 0){
 	    		   layeredPane.remove(object);
-	    		   getParent().repaint();
 	    	   }
 	    	   
 	       }
 		count ++;
+		setCount(count);
 		getParent().repaint();
 		}
        };
@@ -254,7 +259,9 @@ public class SlidePanel extends JPanel{
 	 */
 	public void clearSlide(){
 		mediaObjects.clear();
+		
 		this.removeAll();
+		setCount(0);
 	
 	
 	}
@@ -276,7 +283,15 @@ public class SlidePanel extends JPanel{
 		
 	}
 	
-	
+	public Integer getCount() {
+		return count;
+	}
+
+
+
+	public void setCount(Integer count) {
+		this.count = count;
+	}
 	
 	
 	/**
@@ -350,7 +365,7 @@ public class SlidePanel extends JPanel{
 			for(int i=0; i<(shape.getNumberOfPoints()); i++){
 				
 				pointX = (int) (shape.getPoint(i).getX()*scalingFactorX);
-				pointY = (int) (shape.getPoint(i).getY()*scalingFactorX);
+				pointY = (int) (shape.getPoint(i).getY()*scalingFactorY);
 				//System.out.printf("Reading Point %d, x %d, y %d%n", i, pointX, pointY);
 				if (i==0){
 					highX = pointX;
@@ -377,10 +392,10 @@ public class SlidePanel extends JPanel{
 			//System.out.printf("Regular %d Side Shape%n", shape.getNumberOfPoints());
 			graphic.setWidth((int) (shape.getWidth()*scalingFactorX));
 			graphic.setHeight((int) (shape.getHeight()*scalingFactorY));
-			graphic.setPoint(1, (int) (shape.getWidth()*scalingFactorX/2), (int) (shape.getHeight()*scalingFactorY/2));
+			graphic.setPoint(1, (int) (shape.getWidth()*scalingFactorX/(double)2), (int) (shape.getHeight()*scalingFactorY/(double)2));
 			graphic.setIsRegularShape(true);
-			lowX = (int) (shape.getPoint(0).getX()*scalingFactorX - (shape.getWidth()*scalingFactorY/2));
-			lowY = (int) (shape.getPoint(0).getX()*scalingFactorX - (shape.getHeight()*scalingFactorY/2));
+			lowX = (int) (shape.getPoint(0).getX()*scalingFactorX - (shape.getWidth()*scalingFactorY/(double)2));
+			lowY = (int) (shape.getPoint(0).getX()*scalingFactorX - (shape.getHeight()*scalingFactorY/(double)2));
 			highX = (int) (lowX + shape.getWidth()*scalingFactorX);
 			highY = (int) (lowY + shape.getHeight()*scalingFactorY);
 		}
@@ -452,7 +467,7 @@ public class SlidePanel extends JPanel{
 	 */
 	private void addVideo(Video video){
 		
-		if(scalingFactorX!= 1)
+		if(scalingFactorX!= 1 || scalingFactorY != 1)
 		{
 			Video scaledVideo = new Video();
 			scaledVideo.setHeight((int) (video.getHeight()*scalingFactorX));
@@ -530,8 +545,17 @@ public class SlidePanel extends JPanel{
 	 * @param text
 	 */
 	private void addText(Text text){
+		double textSizeScale;
+		if(scalingFactorX > scalingFactorY)
+		{
+			textSizeScale = scalingFactorY;
+		}
+		else
+		{
+			textSizeScale = scalingFactorX;
+		}
 		
-		JPanel textPanel = new Scribe(text,textBranchListener);
+		JPanel textPanel = new Scribe(text,textBranchListener,textSizeScale);
 		textPanel.setBounds(0,0, (int) (text.getXend()*scalingFactorX)-(int) (text.getX_coord()*scalingFactorX), (int) (text.getYend()*scalingFactorY)-(int) (text.getY_coord()*scalingFactorY));
 		
 		
@@ -571,6 +595,77 @@ public class SlidePanel extends JPanel{
 	public void setScalingFactors(double scaleFactorX, double scaleFactorY) {
 		this.scalingFactorX = scaleFactorX;
 		this.scalingFactorY = scaleFactorY;
+	}
+	
+	/**
+	 * resize the slide panel to match the scaling factors provided.
+	 * This is achieved by looping through all objects added to the slidepanel and
+	 * changing there sizes or redrawing them altogether
+	 */
+	public void resizeSlide(){
+		layeredPane.setBounds(0,0,this.getSize().width,this.getSize().height);
+		for(slideMediaObject object: mediaObjects){
+	    	   if(object.getStartTime() <=  count){
+	    		   layeredPane.remove(object);
+	    	   }
+	    	   
+	       }
+		for(Image image: currentSlide.getImageList()) {
+			if(image.getStart() <= count)
+			{
+				if(image.getDuration()>0)
+				{
+					if((image.getStart() + image.getDuration()) > count){
+						addImage(image);
+					}
+				}
+				else
+				{
+					addImage(image);
+				}
+				
+			}
+	   }
+       for(Video video: currentSlide.getVideoList()) {
+    	   if(video.getPlaytime() <= count)
+			{
+    		   for(Component component: layeredPane.getComponents())
+				if(component instanceof VideoPlayer){
+					VideoPlayer videoPlayer = (VideoPlayer) component;
+					videoPlayer.resizeVideo(scalingFactorX,scalingFactorY);
+				}
+			}
+       }
+       for(Shapes shape: currentSlide.getShapeList()) {
+    	   if(shape.getStart() <= count)
+			{
+    		   if(shape.getDuration()>0)
+				{
+					if((shape.getStart() + shape.getDuration()) > count){
+						addShape(shape);
+					}
+				}
+				else
+				{
+					addShape(shape);
+				}
+			}
+       }
+       for(Text text : currentSlide.getTextList()) {
+    	   if(text.getStart() <= count)
+			{
+    		   if(text.getDuration()>0)
+				{
+					if((text.getStart() + text.getDuration()) > count){
+						addText(text);
+					}
+				}
+				else
+				{
+					addText(text);
+				}
+			}
+       }
 	}
 
 
