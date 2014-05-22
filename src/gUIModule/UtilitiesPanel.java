@@ -2,11 +2,18 @@ package gUIModule;
 
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.swing.AbstractButton;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import musicPlayerModule.StandAloneMusicPlayer;
@@ -35,7 +42,8 @@ public class UtilitiesPanel extends JPanel implements ActionListener{
 	DicePanel dicePanel = new DicePanel();
 	JPanel standAloneMusicPlayerPanel = new JPanel();
 	StandAloneMusicPlayer standAloneMusicPlayer = new StandAloneMusicPlayer(); //= new StandAloneMusicPlayer();
-//	GUI diceRoller;
+	JLabel background; 
+	//	GUI diceRoller;
 //	GUI calculatorGUI;
 //	GUI audioPlayer;
 	
@@ -51,22 +59,30 @@ public class UtilitiesPanel extends JPanel implements ActionListener{
 		
 		standAloneMusicPlayerPanel = standAloneMusicPlayer.getFullControlPanel();
 		
+		//Set up background image
+		BufferedImage backgroundImage;
+		try{
+			backgroundImage = ImageIO.read(new File("resources/buttons/Background.png"));
+			Image scaledBackground = backgroundImage.getScaledInstance(GUI.utilitiesWidth,250,java.awt.Image.SCALE_SMOOTH);
+			background = new JLabel(new ImageIcon(scaledBackground));
+			background.setBounds(0, 0, GUI.utilitiesWidth, 250);
+		}catch(IOException e2){
+			e2.printStackTrace();
+		}
+		
 		//Adds JButtons for diceRoller and calculator
-		addButtons("Dice Roller", "diceRollerLaunch",
-				   "Opens the dice roller application", 17, 25);
+		addButtons("diceRollerLaunch", "Opens the dice roller application", 17, 25, "DiceButton.png");
 		
-		addButtons("Modifier Calculator", "calculatorLaunch",
-				   "Opens the modifier calculator application", 17, 100);
+		addButtons("calculatorLaunch", "Opens the modifier calculator application", 140, 80, "CalculatorButton.png");
 		
-	    addButtons("Standalone Audio Player", "audioPlayerLaunch",
-                  "Opens the audio player application", 17, 175);
+	    addButtons("audioPlayerLaunch", "Opens the audio player application", 17, 140, "AudioButton.png");
 		
 	    multiPanel.setLayout(null);
-		multiPanel.setBounds(0,200,GUI.utilitiesWidth,400);
+		multiPanel.setBounds(0,250,GUI.utilitiesWidth,700);
 		multiPanel.setBackground(Color.BLACK);
-		calculatorPanel.setBounds(0,0,GUI.utilitiesWidth,400);
-		dicePanel.setBounds(0,0,GUI.utilitiesWidth,400);
-		standAloneMusicPlayerPanel.setBounds(0,0,GUI.utilitiesWidth,400);
+		calculatorPanel.setBounds(0,0,GUI.utilitiesWidth,700);
+		dicePanel.setBounds(0,0,GUI.utilitiesWidth,700);
+		standAloneMusicPlayerPanel.setBounds(0,0,GUI.utilitiesWidth,700);
 		multiPanel.add(calculatorPanel);
 		multiPanel.add(standAloneMusicPlayerPanel);
 		multiPanel.add(dicePanel);
@@ -78,19 +94,33 @@ public class UtilitiesPanel extends JPanel implements ActionListener{
 	/**
 	 * Method for creating JButtons with specified paramiters
 	 */
-	public void addButtons(String buttonText, String actionCommand, String toolTip,
-						   int x_coord, int y_coord) {
+	public void addButtons(String actionCommand, String toolTip,
+						   int x_coord, int y_coord, String image) {
 		
-		JButton button = new JButton(buttonText);
+		JButton button = new JButton();
 		button.setVerticalTextPosition(AbstractButton.CENTER);
 		button.setHorizontalTextPosition(AbstractButton.CENTER);
 		button.setAlignmentX(Component.CENTER_ALIGNMENT);
-		button.setBounds(x_coord, y_coord, 150, 50);
+		button.setBounds(x_coord, y_coord, 100, 100);
 		button.setActionCommand(actionCommand);
 		button.addActionListener(this);
 		button.setToolTipText(toolTip);
+		button.setBorderPainted(false); 
+		button.setContentAreaFilled(false); 
+		button.setFocusPainted(false); 
+		button.setOpaque(false);
+		BufferedImage buttonImage;
+		try{
+			buttonImage = ImageIO.read(new File("resources/buttons/"+image));
+			Image scaledButton = buttonImage.getScaledInstance(100,100,java.awt.Image.SCALE_SMOOTH);
+			button.setIcon(new ImageIcon(scaledButton));
+		}catch (IOException ex){
+			
+		}
 		add(button);
+		this.add(background);
 	}
+	
 	
 	/**
 	 * When a utility button is released instantiate the utility

@@ -78,7 +78,7 @@ public class GUI extends JFrame { // implements WindowStateListener{
 	JButton previousSlideButton = new JButton();
 	int borderSize = 20;
 	static int utilitiesWidth = 300;
-	int contentsWidth = 150;
+	static int contentsWidth = 200;
 	UtilitiesPanel utilities = new UtilitiesPanel();
 	
 	//ContentsPanel contents = new ContentsPanel(null, null, null);
@@ -634,16 +634,16 @@ public class GUI extends JFrame { // implements WindowStateListener{
         slidePanel.refreshSlide(bigSlideList.get(slidePanel.currentSlide.getSlideID()));
         slidePanel.setBounds(0, 0, bigSlideList.getWidth(), bigSlideList.getHeight());
         layers.setBounds(0,0,bigSlideList.getWidth(), bigSlideList.getHeight()+insets.top+insets.bottom);
-        previousSlideButton.setBounds(10,bigSlideList.getHeight()-120,150,50);
+        previousSlideButton.setBounds(10,bigSlideList.getHeight()-60,150,50);
         previousSlideButton.repaint();
-        nextSlideButton.setBounds(bigSlideList.getWidth()-190,bigSlideList.getHeight()-120,150,50);
+        nextSlideButton.setBounds(bigSlideList.getWidth()-170,bigSlideList.getHeight()-60,150,50);
         nextSlideButton.repaint();
         utilities.setBounds(bigSlideList.getWidth()-utilitiesWidth, 0, utilitiesWidth, bigSlideList.getHeight());
         topPanel.setBounds((bigSlideList.getWidth()/2)-150, 0, 300, 200);
-        utilitiesTab.setBounds(bigSlideList.getWidth()-45,(bigSlideList.getHeight()/2)-120,15,120);
-        contentsTab.setBounds(0,(bigSlideList.getHeight()/2)-120,15,120);
-        nextTab.setBounds(bigSlideList.getWidth()-120,(bigSlideList.getHeight())-80,90,20);
-        previousTab.setBounds(0,(bigSlideList.getHeight())-80,100,20);
+        utilitiesTab.setBounds(bigSlideList.getWidth()-25,(bigSlideList.getHeight()/2)-60,15,120);
+        contentsTab.setBounds(0,(bigSlideList.getHeight()/2)-60,15,120);
+        nextTab.setBounds(bigSlideList.getWidth()-120,(bigSlideList.getHeight())-25,90,20);
+        previousTab.setBounds(0,(bigSlideList.getHeight())-25,100,20);
         contents.setBounds(0, 0, contentsWidth, bigSlideList.getHeight());
         slideWidth = bigSlideList.getWidth()-30;
         slideHeight = bigSlideList.getHeight()-60;

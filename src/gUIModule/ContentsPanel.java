@@ -1,15 +1,21 @@
 package gUIModule;
 
 import java.awt.Component;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 
+import javax.imageio.ImageIO;
 import javax.swing.AbstractButton;
 import javax.swing.DefaultListModel;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JList;
@@ -40,6 +46,7 @@ public class ContentsPanel extends JPanel implements ActionListener{
 	JLabel bookLabel = new JLabel();
 	DefaultListModel listModel = new DefaultListModel<String>();
 	JList contentsList = new JList(listModel);
+	JLabel background;
 	
 	
 	/**
@@ -65,6 +72,17 @@ public class ContentsPanel extends JPanel implements ActionListener{
 		JScrollPane contents = createScrollPane(contentsSlideList);
 		contents.setBounds(0,260,220,200);
 		this.add(contents);
+		
+		BufferedImage backgroundImage;
+		try{
+			backgroundImage = ImageIO.read(new File("resources/buttons/Background.png"));
+			Image scaledBackground = backgroundImage.getScaledInstance( GUI.contentsWidth, 260,java.awt.Image.SCALE_SMOOTH);
+			background = new JLabel(new ImageIcon(scaledBackground));
+			background.setBounds(0, 0, GUI.contentsWidth, 260);
+			this.add(background);
+		}catch(IOException e2){
+			e2.printStackTrace();
+		}
 		// TODO add a title JLabel and ensure the panel is ready
 	}
 	
@@ -122,6 +140,9 @@ public class ContentsPanel extends JPanel implements ActionListener{
 //		}
 //		
 //		return contents;
+		
+		//Set up background image
+				
 	}
 	
 	public JList getContentsList() {

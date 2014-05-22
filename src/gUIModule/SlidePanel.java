@@ -221,11 +221,12 @@ public class SlidePanel extends JPanel{
 	       for(slideMediaObject object: mediaObjects){
 	    	   if(object.getFinishTime() == count && count != 0){
 	    		   layeredPane.remove(object);
-	    		   layeredPane.repaint();
+	    		   getParent().repaint();
 	    	   }
 	    	   
 	       }
 		count ++;
+		getParent().repaint();
 		}
        };
        theTimer = new Timer(delay, taskPerformer);
