@@ -239,21 +239,7 @@ public class GUI extends JFrame { // implements WindowStateListener{
 			setupTextListener();
 			setupVideoListener();
 
-<<<<<<< HEAD
-			//set up slide
-			slidePanel.loadPresentation(slideList);
-			slidePanel.setupListeners(textBranchListener, objectBranchListener,videoListener);
-			slidePanel.setupSlide(slideList.get(0));
-			currentVisibleSlideID = 0;
-			slidePanel.setBounds(0, 0, slideList.getWidth(), slideList.getHeight());	
-=======
-//			//set up slide
-//			slidePanel.loadPresentation(slideList);
-//			slidePanel.setupListeners(textBranchListener, objectBranchListener);
-//			slidePanel.setupSlide(slideList.get(0));
-//			currentVisibleSlideID = 0;
-//			slidePanel.setBounds(0, 0, slideList.getWidth(), slideList.getHeight());	
->>>>>>> branch 'master' of https://github.com/D6Digital/SWENGFrame.git
+
 
 			//set up tabs
 			//utilities tab
@@ -443,12 +429,11 @@ public class GUI extends JFrame { // implements WindowStateListener{
 			layers.add(slidePanel,9);
 			
 			//set up slide
-            slidePanel.loadPresentation(slideList);
-            slidePanel.setupListeners(textBranchListener, objectBranchListener);
-            slidePanel.setupSlide(slideList.get(0));
-            currentVisibleSlideID = 0;
-            slidePanel.setBounds(0, 0, slideList.getWidth(), slideList.getHeight());    
-			
+			slidePanel.loadPresentation(slideList);
+			slidePanel.setupListeners(textBranchListener, objectBranchListener,videoListener);
+			slidePanel.setupSlide(slideList.get(0));
+			currentVisibleSlideID = 0;
+			slidePanel.setBounds(0, 0, slideList.getWidth(), slideList.getHeight());	
 			
 
 			bookPane.add(layers);
