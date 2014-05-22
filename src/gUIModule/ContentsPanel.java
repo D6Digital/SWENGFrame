@@ -60,7 +60,7 @@ public class ContentsPanel extends JPanel implements ActionListener{
 		contentsSlideList = contentSlideList;
 		//slidePanel1 = slide1;
 		//slidePanel2 = slide2;
-		mainMenuButton.setBounds(25, 50, 100, 40);
+		mainMenuButton.setBounds(25, 50, 140, 50);
 		systemLabel.setBounds(10,120,130,40);
 		bookLabel.setBounds(10,190,130,40);
 		systemLabel.setText("System:");
@@ -82,6 +82,14 @@ public class ContentsPanel extends JPanel implements ActionListener{
 			this.add(background);
 		}catch(IOException e2){
 			e2.printStackTrace();
+		}
+		BufferedImage mainMenuButtonImage;
+		try{
+			mainMenuButtonImage = ImageIO.read(new File("resources/buttons/MainMenuButton.png"));
+			Image scaledButton = mainMenuButtonImage.getScaledInstance(130,50,java.awt.Image.SCALE_SMOOTH);
+			mainMenuButton.setIcon(new ImageIcon(scaledButton));
+		}catch (IOException ex){
+			
 		}
 		// TODO add a title JLabel and ensure the panel is ready
 	}
