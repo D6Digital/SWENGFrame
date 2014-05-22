@@ -11,6 +11,7 @@ import uk.co.caprica.vlcj.player.embedded.videosurface.CanvasVideoSurface;
 
 import java.awt.Canvas;
 import java.awt.Color;
+import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 import javax.swing.ImageIcon;
@@ -37,14 +38,14 @@ public class VideoPlayer extends JPanel{
 	 JPanel vidControlPanel;
 	 JPanel vidpanel;
 	 JPanel masterPanel;
-	 JPanel overlayPanel;
+	 public JPanel overlayPanel;
 	 JSlider bar;
 	 ImageIcon img;
-	 PlayerControlsPanel ControlPanel;
+	 public PlayerControlsPanel ControlPanel;
 	 JLabel pausedLabel;
 	
 
-	public VideoPlayer(Video video) {
+	public VideoPlayer(Video video, MouseAdapter videoListener) {
 		
 	
 		NativeLibrary.addSearchPath(
@@ -145,9 +146,10 @@ public class VideoPlayer extends JPanel{
 		 	    }	    	
 	    	});
 	    
-	    canvas.addMouseMotionListener(new java.awt.event.MouseMotionAdapter(){
+	    /*canvas.addMouseMotionListener(new java.awt.event.MouseMotionAdapter(){
 	    	@Override
 	    	public void mouseMoved(MouseEvent e1){
+	    		VideoPlayer videoPlayer = (VideoPlayer) e1.getSource();
 	    		int xCoordinate = e1.getX();
 	    		int yCoordinate = e1.getY();
 	    		
@@ -157,20 +159,20 @@ public class VideoPlayer extends JPanel{
 	    		//System.out.println((height)- 80);
 	    		//System.out.println("---------END listener------------");
 	    		
-	    		if(!mediaPlayer.isPlaying())
+	    		if(!videoPlayer.isPlaying())
 	    		{
-	    			ControlPanel.setVisible(true);
+	    			videoPlayer.ControlPanel.setVisible(true);
 	    		}
 	    		else
 	    		{
 	    			if (yCoordinate > ((height)- 80)){
 		    			//if(!ControlPanel.isVisible()) {
-		    			    ControlPanel.setVisible(true);
+		    			    videoPlayer.ControlPanel.setVisible(true);
 		    			//}
 		    		}
 	    			else
 	    			{
-	    			ControlPanel.setVisible(false);
+	    			videoPlayer.ControlPanel.setVisible(false);
 	    			}
 	    		}
 	    		
@@ -181,8 +183,10 @@ public class VideoPlayer extends JPanel{
                     //}
 	    		//}
 	    	}
-	    });
+	    });*/
 	    
+	    
+	    canvas.addMouseMotionListener(videoListener);
 
 	    
 	    ControlPanel.addMouseListener(new java.awt.event.MouseAdapter() {   
@@ -218,6 +222,10 @@ public class VideoPlayer extends JPanel{
 	
 	public void stopMedia(){
 		mediaPlayer.stop();
+	}
+	
+	public Boolean isPlaying(){
+		return mediaPlayer.isPlaying();
 	}
 	
 	/**
