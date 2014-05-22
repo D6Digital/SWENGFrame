@@ -42,7 +42,9 @@ public class SecondHigherModuleExample {
         musicPlayer = new StandAloneMusicPlayer();
         
         mainPanel.add(musicPlayer.getFullControlPanel());
-        mainPanel.add(killButton);
+        //mainPanel.add(killButton);
+        mainPanel.setBounds(0, 0, 200, 400);
+        mainPanel.repaint();
         killButton.addActionListener(new ActionListener() {
             
             @Override

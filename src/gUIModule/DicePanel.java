@@ -56,6 +56,7 @@ public class DicePanel extends JPanel implements ActionListener{
 	public DicePanel() {
 		super();
 		setLayout(null);
+		setBounds(0,0,400, 600);
 		
 		//adds a JComboBox for selecting the type of dice to be rolled
 		diceType = new JComboBox();

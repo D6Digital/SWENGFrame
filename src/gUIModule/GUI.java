@@ -23,6 +23,7 @@ import java.awt.event.WindowStateListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -87,7 +88,7 @@ public class GUI extends JFrame { // implements WindowStateListener{
 	int borderSize = 20;
 	static int utilitiesWidth = 300;
 	static int contentsWidth = 200;
-	UtilitiesPanel utilities = new UtilitiesPanel();
+	UtilitiesPanel utilities;
 	
 	//ContentsPanel contents = new ContentsPanel(null, null, null);
 	JPanel contents = new JPanel();
@@ -333,9 +334,51 @@ public class GUI extends JFrame { // implements WindowStateListener{
 			nextSlideButton.setVisible(false);
 			
 			//set up utilities
+			
+	        utilities = new UtilitiesPanel(utilitiesWidth, slideList.getWidth(), slideList.getHeight());
+	        utilitiesWidth = utilities.getWidth();
+			utilities.setLocation(slideList.getWidth()-utilitiesWidth, 0);
 			utilities.setBounds(slideList.getWidth()-utilitiesWidth, 0, utilitiesWidth, slideList.getHeight());
 			utilities.setBackground(Color.GRAY);
 			utilities.setVisible(false);
+			
+			ArrayList<JButton> buttons = utilities.getButtons();
+			final JButton backButton = utilities.getBackButton();
+			
+			backButton.addActionListener(new ActionListener() {
+                
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    utilities.setUtilityVisible(backButton);
+                    utilitiesWidth = utilities.getWidth();
+                    utilities.setBounds(slideList.getWidth()-utilitiesWidth, 0, utilitiesWidth, slideList.getHeight());
+                    //utilitiesWidth = 500;
+                    System.out.println(utilities.getWidth());
+                    utilities.validate();
+                    utilities.repaint();
+                    
+                }
+            });
+			
+			for(final JButton button : buttons) {
+			    button.addActionListener(new ActionListener(){
+
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        
+                        utilities.setUtilityVisible(button);
+                        utilitiesWidth = utilities.getWidth();
+                        utilities.setBounds(slideList.getWidth()-utilitiesWidth, 0, utilitiesWidth, slideList.getHeight());
+                        //utilitiesWidth = 500;
+                        System.out.println(utilities.getWidth());
+                        utilities.validate();
+                        utilities.repaint();
+                    }
+			        
+			    });
+			}
+			
+			
 
 
 			// TODO: CHANGES MADE HERE BY JOSHUA LANT, NO ACTUAL TODO, JUST REFERENCE POINT
@@ -454,60 +497,7 @@ public class GUI extends JFrame { // implements WindowStateListener{
 			bigSlideList = reScale(bigSlideList,scaleFactorX,scaleFactorY);
 
 			break;
-		case "videoDisplayPanel":
-			setTitle("Video Guide");
-			setSize(1000, 500);
-			setVisible(true);
 
-			videoPane = getContentPane();
-			videoPane.setLayout(new BorderLayout());
-			//VideoPanel();
-			break;
-		case "audioMenuPanel":
-			setTitle("Music");
-			setSize(200, 300);
-			setVisible(true);
-
-			audioPane = getContentPane();
-			audioPane.setLayout(new BorderLayout());
-			StandAloneMusicPlayer standAloneMusicPlayer = new StandAloneMusicPlayer();
-			audioPane.add(standAloneMusicPlayer.getFullControlPanel(), BorderLayout.CENTER);
-			
-			//AudioPanel();
-			break;
-		case "utilitiesSelectionPanel":
-			setTitle("Utilities");
-			setSize(200, 225);
-			setVisible(true);
-
-			utilitiesPane = getContentPane();
-			utilitiesPane.setLayout(new BorderLayout());
-
-			UtilitiesPanel utilitiesSelectionPanel = new UtilitiesPanel();
-			utilitiesPane.add(utilitiesSelectionPanel, BorderLayout.CENTER);
-			break;
-		case "diceRollerPanel":
-			setTitle("Dice Roller");
-			setSize(405, 640);
-			setVisible(true);
-
-			dicePane = getContentPane();
-			dicePane.setLayout(new BorderLayout());
-
-			DicePanel diceRollerPanel = new DicePanel();
-			dicePane.add(diceRollerPanel, BorderLayout.CENTER);
-			break;
-		case "calculatorPanel":
-			setTitle("Combat Modifier Calculator");
-			setSize(400, 600);
-			setVisible(true);
-
-			calculatorPane = getContentPane();
-			calculatorPane.setLayout(new BorderLayout());
-
-			CalculatorPanel calculatorPanel = new CalculatorPanel();
-			calculatorPane.add(calculatorPanel, BorderLayout.CENTER);
-			break;
 		default:                     
 			//???DefaultPanel()???
 			break;

@@ -415,7 +415,11 @@ public class StandAloneMusicPlayer {
 
 
     public JPanel getFullControlPanel() {
-
+        
+        fullPanel.setLayout(null);
+        fullPanel.setBounds(0,0,200,400);
+        //fullPanel.repaint();
+        
         fullPanel.add(getPlayButton());
         fullPanel.add(getPauseButton());
         fullPanel.add(getStopButton());
@@ -426,12 +430,15 @@ public class StandAloneMusicPlayer {
         fullPanel.add(getVolumeSlider());
         fullPanel.add(getTimeLabel());
         fullPanel.add(getScrollSlider());
+       
         return fullPanel;
     }
 
 
     private JButton getLockPlaylistButton() {
         JButton button = new JButton("Unlock Playlist");
+        button.setLayout(null);
+        button.setBounds(0,0,200,30);
         setupListenerAndAction(button, "lockplaylist");      
         return button;     
     }
@@ -459,6 +466,8 @@ public class StandAloneMusicPlayer {
      */
     private JButton getStopButton() {
         JButton button = new JButton("Stop");
+        button.setLayout(null);
+        button.setBounds(70,40,30,30);
         setupListenerAndAction(button, "stop");      
         return button;     
     }
@@ -469,6 +478,7 @@ public class StandAloneMusicPlayer {
      */
     private JButton getPauseButton() {
         JButton button = new JButton("Pause");
+        button.setBounds(35,40,30,30);
         setupListenerAndAction(button, "pause");      
         return button;     
     }
@@ -479,6 +489,7 @@ public class StandAloneMusicPlayer {
      */
     private JButton getPlayButton() {
         JButton button = new JButton("Play");
+        button.setBounds(0,40,30,30);
         setupListenerAndAction(button, "play");      
         return button;     
     }
@@ -489,6 +500,7 @@ public class StandAloneMusicPlayer {
      */
     private JButton getNextButton() {
         JButton button = new JButton("Next");
+        button.setBounds(0,80,30,30);
         setupListenerAndAction(button, "next");      
         return button;     
     }
@@ -499,6 +511,7 @@ public class StandAloneMusicPlayer {
      */
     private JButton getPreviousButton() {
         JButton button = new JButton("Previous");
+        button.setBounds(35,80,30,30);
         setupListenerAndAction(button, "previous");      
         return button;     
     }
@@ -509,6 +522,7 @@ public class StandAloneMusicPlayer {
      */
     private JSlider getVolumeSlider() {
         JSlider slider = new JSlider();
+        slider.setBounds(105,40,90,30);
         slider.setMinimum(0);
         slider.setMaximum(100);
         slider.setValue(100);
@@ -517,6 +531,7 @@ public class StandAloneMusicPlayer {
     }
 
     private JSlider getScrollSlider() {
+        timeSlider.setBounds(70,80,130,30);
         timeSlider.setMinimum(0);
         timeSlider.setMaximum(1000);
         setupListenerAndAction(timeSlider, "time");
@@ -659,6 +674,9 @@ public class StandAloneMusicPlayer {
     private void setupGUI(ArrayList<String> files) {
         JPanel playlistChooserPanel = new JPanel();
 
+        playlistChooserPanel.setLayout(null);
+        playlistChooserPanel.setBounds(0, 105, 200, 250);
+        
         playlistChooserPanel.add(fileChooser.openDialog());
         createList(files);
 
@@ -667,6 +685,9 @@ public class StandAloneMusicPlayer {
 
         mediaPlayer = openMediaPlayer();
 
+        fullPanel.setLayout(null);
+        fullPanel.setBounds(0, 0, 200, 350);
+        
         fullPanel.add(playlistChooserPanel);
         fullPanel.add(playPanel);
 
@@ -690,7 +711,13 @@ public class StandAloneMusicPlayer {
         for(String listItem : nameList){
             listModel.addElement(listItem);
         }
+        playContents.setLayout(null);
+        playContents.setBounds(0, 0, 200, 200);
         scrollPane.setViewportView(playContents);
+        scrollPane.setLayout(null);
+        scrollPane.setBounds(0, 0, 200, 200);
+        playPanel.setLayout(null);
+        playPanel.setBounds(0, 120, 200, 200);
         playPanel.add(scrollPane);
         playlistFrame.pack();
         // Add listener which plays a piece of media whenever the user chooses it in the JList.
