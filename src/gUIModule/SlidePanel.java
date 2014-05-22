@@ -106,8 +106,8 @@ public class SlidePanel extends JPanel{
 		// set layout manager to null so media components can be added to their specific co-ordinates
 		setLayout(null);
 		
-		setupTextListener();
-		setupBranchListener();
+		//setupTextListener();
+		//setupBranchListener();
 		// By default the panel is invisible until the player chooses to display it
 		setVisibility(false);
 		
@@ -387,6 +387,7 @@ public class SlidePanel extends JPanel{
 				
 		slideMediaObject shapeObject = new slideMediaObject(shape.getBranch(),shape.getDuration(),shape.getStart());
         shapeObject.addMouseListener(branchListener);
+        shapeObject.addMouseMotionListener(branchListener);
         
         graphic.setBounds(0, 0, boundWidth+1, boundHeight+1);
 		shapeObject.add(graphic);
@@ -420,6 +421,7 @@ public class SlidePanel extends JPanel{
 		
 		slideMediaObject imageObject = new slideMediaObject(image.getBranch(),image.getDuration(),image.getStart());
 		imageObject.addMouseListener(branchListener);
+		imageObject.addMouseMotionListener(branchListener);
 		
 		imageObject.add(imagePanel);
 
@@ -586,6 +588,18 @@ public class SlidePanel extends JPanel{
 				
 			
 		};
+	}
+	
+	/**
+	 * Set the listeners to be used by slidepanel objects to predefined listeners allowing
+	 * compatibility with the hierarchy of classes
+	 * @param textListener
+	 * @param objectListener
+	 */
+	public void setupListeners(MouseAdapter textListener, MouseAdapter objectListener){
+		this.branchListener = objectListener;
+		this.textBranchListener = textListener;
+		
 	}
 
 	

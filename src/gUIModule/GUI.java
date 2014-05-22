@@ -3,6 +3,7 @@ package gUIModule;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
+import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.Frame;
 import java.awt.Image;
@@ -13,6 +14,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ContainerEvent;
 import java.awt.event.ContainerListener;
+import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.WindowEvent;
@@ -32,6 +34,11 @@ import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
 import javax.swing.JList;
 import javax.swing.JPanel;
+import javax.swing.JTextPane;
+import javax.swing.text.AttributeSet;
+import javax.swing.text.Element;
+import javax.swing.text.StyledDocument;
+import javax.swing.text.html.HTML;
 
 import musicPlayerModule.StandAloneMusicPlayer;
 
@@ -42,6 +49,7 @@ import presentation.Slide;
 import presentation.Text;
 import presentation.Video;
 import presentation.XMLParser;
+import presentation.slideMediaObject;
 import src.Overall;
 import gUIModule.UtilitiesPanel;
 import gUIModule.DicePanel;
@@ -111,6 +119,9 @@ public class GUI extends JFrame { // implements WindowStateListener{
 	JPanel previousTab = new JPanel();
 
     private boolean screenSizeMaximised = false;
+
+	private MouseAdapter textBranchListener;
+	private MouseAdapter objectBranchListener;
 	
 	/**
 	 * Create a simple JFrame and then populate it with specified JPanel type
@@ -218,9 +229,14 @@ public class GUI extends JFrame { // implements WindowStateListener{
 
 			layers.setLayout(null);
 			layers.setBounds(0,0,slideList.getWidth(), slideList.getHeight()+insets.top+insets.bottom);
+			
+			//set up listeners for objects on the slide panel
+			setupObjectListener();
+			setupTextListener();
 
 			//set up slide
 			slidePanel.loadPresentation(slideList);
+			slidePanel.setupListeners(textBranchListener, objectBranchListener);
 			slidePanel.setupSlide(slideList.get(0));
 			currentVisibleSlideID = 0;
 			slidePanel.setBounds(0, 0, slideList.getWidth(), slideList.getHeight());	
@@ -512,104 +528,7 @@ public class GUI extends JFrame { // implements WindowStateListener{
 		layers.addMouseMotionListener(new java.awt.event.MouseMotionAdapter(){
 			@Override
 			public void mouseMoved(MouseEvent e1){
-				int xCoordinate = e1.getX();
-				int yCoordinate = e1.getY();
-				
-				System.out.println("x="+xCoordinate+"y="+yCoordinate);
-				
-				if (xCoordinate>(slideWidth-borderSize)){
-					utilities.setVisible(true);
-					utilitiesShowing=true;
-					utilitiesTab.setVisible(false);
-					contentsTab.setVisible(false);
-					nextTab.setVisible(false);
-					previousTab.setVisible(false);
-					nextSlideButton.setVisible(false);
-				}
-				if (xCoordinate<(slideWidth-utilitiesWidth)){
-					if(utilitiesShowing==true){
-						utilities.setVisible(false);
-						utilitiesShowing=false;
-					}
-				}
-				if(yCoordinate<borderSize){
-					topPanel.setVisible(true);
-					topPanelShowing = true;
-					utilitiesTab.setVisible(false);
-					contentsTab.setVisible(false);
-					nextTab.setVisible(false);
-					previousTab.setVisible(false);
-				}
-				if(yCoordinate>100){
-					if(topPanelShowing==true){
-						topPanel.setVisible(false);
-						topPanelShowing=false;
-					}
-				}
-				if(xCoordinate<borderSize){
-					contents.setVisible(true);
-					contents.repaint();
-					contentsShowing=true;
-					utilitiesTab.setVisible(false);
-					contentsTab.setVisible(false);
-					nextTab.setVisible(false);
-					previousTab.setVisible(false);
-					previousSlideButton.setVisible(false);
-				}
-				if(xCoordinate>contentsWidth){
-					if(contentsShowing==true){
-						contents.setVisible(false);
-						contentsShowing=false;
-					}
-				}
-				if((xCoordinate>slideWidth/2)&(yCoordinate>(slideHeight-borderSize))){
-					if(utilitiesShowing==false){
-						nextSlideButton.setVisible(true);
-						nextButtonShowing=true;
-						utilitiesTab.setVisible(false);
-						contentsTab.setVisible(false);
-						nextTab.setVisible(false);
-						previousTab.setVisible(false);
-					}
-				}
-				if((xCoordinate<slideWidth/2)|(yCoordinate<(slideHeight-100))){
-					if(nextButtonShowing==true){
-						nextSlideButton.setVisible(false);
-						nextButtonShowing=false;
-					}
-				}
-				if((xCoordinate<slideWidth/2)&(yCoordinate>(slideHeight-borderSize))){
-					if(contentsShowing==false){
-						previousSlideButton.setVisible(true);
-						previousButtonShowing=true;
-						utilitiesTab.setVisible(false);
-						contentsTab.setVisible(false);
-						nextTab.setVisible(false);
-						previousTab.setVisible(false);
-					}
-				}
-				if((xCoordinate>slideWidth/2)|(yCoordinate<(slideHeight-100))){
-					if(previousButtonShowing==true){
-						previousSlideButton.setVisible(false);
-						previousButtonShowing=false;
-					}
-				}
-				if((xCoordinate>50)&(xCoordinate<(slideWidth-50))&(yCoordinate>50)&(yCoordinate<(slideHeight-50))){
-					utilitiesTab.setVisible(true);
-					contentsTab.setVisible(true);
-					if(nextSlideButton.isVisible()==false){
-						nextTab.setVisible(true);
-					}
-					if(previousSlideButton.isVisible()==false){
-						previousTab.setVisible(true);
-					}
-					if(tabBool==true){
-					Timer timer = new Timer(true);
-					tabTimer t = new tabTimer();
-					timer.schedule(t,2000);
-					tabBool = false;
-					}
-				}
+				borderListenerProcess(e1,false,false);
 				
 			}
 		});
@@ -768,7 +687,232 @@ public Presentation reScale(Presentation slideList, double scaleFactorX, double 
 		return slideList;
 	}
 
+private void setupTextListener() {
+	textBranchListener = new MouseAdapter() {
+		
+		@Override
+		public void mouseClicked(MouseEvent e) {
+			java.awt.Desktop desktop = java.awt.Desktop.getDesktop();
+			JTextPane textPane = (JTextPane) e.getSource();
+			if(textPane != null)
+			{
+				java.awt.Point pt = new java.awt.Point(e.getX(), e.getY());
+				int pos = textPane.viewToModel(pt);
+			
+				
+				if (pos >= 0)
+				{
+					StyledDocument doc = textPane.getStyledDocument();
+					if (doc instanceof StyledDocument){
+						StyledDocument hdoc = (StyledDocument) doc;
+						Element el = hdoc.getCharacterElement(pos);
+						AttributeSet a = el.getAttributes();
+						String href = (String) a.getAttribute(HTML.Attribute.HREF);
+						
+						if (href != null){
+							try{                            
+								java.net.URI uri = new java.net.URI( href );
+								desktop.browse( uri );
+		                       }
+							catch ( Exception ev ){
+								System.err.println( ev.getMessage() );
+		                       }
+							
+		                }
+						Integer branch = (Integer) a.getAttribute(HTML.Attribute.LINK);
+						
+						if (branch != null && branch != -1){
+							slidePanel.refreshSlide(slideList.get(branch));
+						}
+					}
+				}
+			}
+		}
+		
+		@Override
+		public void mouseMoved(MouseEvent e) {
+			
+			
+			Cursor handCursor = Cursor.getPredefinedCursor(Cursor.HAND_CURSOR);
+			Cursor defaultCursor = Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR);
+			
+			JTextPane textPane = (JTextPane) e.getSource();
+			java.awt.Point pt = new java.awt.Point(e.getX(), e.getY());
+			int pos = textPane.viewToModel(pt);
+			
+			if (pos >= 0)
+			{
+				StyledDocument doc = textPane.getStyledDocument();
+				
+				if (doc instanceof StyledDocument){
+					StyledDocument hdoc = (StyledDocument) doc;
+					Element el = hdoc.getCharacterElement(pos);
+					AttributeSet a = el.getAttributes();
+					String href = (String) a.getAttribute(HTML.Attribute.HREF);
+					Integer branch = (Integer) a.getAttribute(HTML.Attribute.LINK);
+					if (href != null || (branch != null && branch !=-1)){
+						if(getCursor() != handCursor){
+							textPane.setCursor(handCursor);
+						}
+					}
+					else{
+						textPane.setCursor(defaultCursor);
+					}
+					
+	             }           
+			}
+			borderListenerProcess(e,false,true);
+		}
+		
+	};
+}
+
+private void setupObjectListener() {
+	objectBranchListener = new MouseAdapter() {
+		
+		@Override
+		public void mouseClicked(MouseEvent e){
+					
+					//Returns the object that triggered the action listener and casts it to
+					//a slideObject
+					slideMediaObject eventSource = (slideMediaObject) e.getSource();
+					if(eventSource != null){
+						//Get the branch value assigned to the object of type slideObject
+						Integer branch = eventSource.getBranch();
+						if (branch != null && branch != -1){
+							slidePanel.refreshSlide(slideList.get(branch));
+							//branch to slide specified by the object
+						}
+					}
+					
+				}
+		@Override
+		public void mouseMoved(MouseEvent e) {
+			borderListenerProcess(e,true,false);
+		}
+			
+		
+	};
+}
+
+
+private void borderListenerProcess(MouseEvent e1,Boolean isObject,Boolean isText){
 	
+	int xCoordinate = e1.getX();
+	int yCoordinate = e1.getY();
+	
+	if(isObject)
+	{
+	slideMediaObject eventSource = (slideMediaObject) e1.getSource();
+	xCoordinate = eventSource.getParent().getMousePosition().x;
+	yCoordinate = eventSource.getParent().getMousePosition().y;
+	}
+	else{
+		if(isText){
+		JTextPane textPane = (JTextPane) e1.getSource();	
+		xCoordinate = textPane.getParent().getMousePosition().x;
+		yCoordinate = textPane.getParent().getMousePosition().y;
+		}
+	}
+	
+	
+	System.out.println("x="+xCoordinate+"y="+yCoordinate);
+	
+	if (xCoordinate>(slideWidth-borderSize)){
+		utilities.setVisible(true);
+		utilitiesShowing=true;
+		utilitiesTab.setVisible(false);
+		contentsTab.setVisible(false);
+		nextTab.setVisible(false);
+		previousTab.setVisible(false);
+		nextSlideButton.setVisible(false);
+	}
+	if (xCoordinate<(slideWidth-utilitiesWidth)){
+		if(utilitiesShowing==true){
+			utilities.setVisible(false);
+			utilitiesShowing=false;
+		}
+	}
+	if(yCoordinate<borderSize){
+		topPanel.setVisible(true);
+		topPanelShowing = true;
+		utilitiesTab.setVisible(false);
+		contentsTab.setVisible(false);
+		nextTab.setVisible(false);
+		previousTab.setVisible(false);
+	}
+	if(yCoordinate>100){
+		if(topPanelShowing==true){
+			topPanel.setVisible(false);
+			topPanelShowing=false;
+		}
+	}
+	if(xCoordinate<borderSize){
+		contents.setVisible(true);
+		contents.repaint();
+		contentsShowing=true;
+		utilitiesTab.setVisible(false);
+		contentsTab.setVisible(false);
+		nextTab.setVisible(false);
+		previousTab.setVisible(false);
+		previousSlideButton.setVisible(false);
+	}
+	if(xCoordinate>contentsWidth){
+		if(contentsShowing==true){
+			contents.setVisible(false);
+			contentsShowing=false;
+		}
+	}
+	if((xCoordinate>slideWidth/2)&(yCoordinate>(slideHeight-borderSize))){
+		if(utilitiesShowing==false){
+			nextSlideButton.setVisible(true);
+			nextButtonShowing=true;
+			utilitiesTab.setVisible(false);
+			contentsTab.setVisible(false);
+			nextTab.setVisible(false);
+			previousTab.setVisible(false);
+		}
+	}
+	if((xCoordinate<slideWidth/2)|(yCoordinate<(slideHeight-100))){
+		if(nextButtonShowing==true){
+			nextSlideButton.setVisible(false);
+			nextButtonShowing=false;
+		}
+	}
+	if((xCoordinate<slideWidth/2)&(yCoordinate>(slideHeight-borderSize))){
+		if(contentsShowing==false){
+			previousSlideButton.setVisible(true);
+			previousButtonShowing=true;
+			utilitiesTab.setVisible(false);
+			contentsTab.setVisible(false);
+			nextTab.setVisible(false);
+			previousTab.setVisible(false);
+		}
+	}
+	if((xCoordinate>slideWidth/2)|(yCoordinate<(slideHeight-100))){
+		if(previousButtonShowing==true){
+			previousSlideButton.setVisible(false);
+			previousButtonShowing=false;
+		}
+	}
+	if((xCoordinate>50)&(xCoordinate<(slideWidth-50))&(yCoordinate>50)&(yCoordinate<(slideHeight-50))){
+		utilitiesTab.setVisible(true);
+		contentsTab.setVisible(true);
+		if(nextSlideButton.isVisible()==false){
+			nextTab.setVisible(true);
+		}
+		if(previousSlideButton.isVisible()==false){
+			previousTab.setVisible(true);
+		}
+		if(tabBool==true){
+		Timer timer = new Timer(true);
+		tabTimer t = new tabTimer();
+		timer.schedule(t,2000);
+		tabBool = false;
+		}
+	}
+}
+
 
 	
 }
