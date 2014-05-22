@@ -49,6 +49,9 @@ public class DicePanel extends JPanel implements ActionListener{
 	String secondSelectedDiceType = "d0";
 	int secondSelectedDiceQuantity = 0;
 	
+	int panelWidth;
+	int panelHeight;
+	
 	/**
 	 * Create a simple JFrame and then populate it with specified JPanel type
 	 * @return 
@@ -56,6 +59,7 @@ public class DicePanel extends JPanel implements ActionListener{
 	public DicePanel() {
 		super();
 		setLayout(null);
+		setBounds(0,0,400, 600);
 		
 		//adds a JComboBox for selecting the type of dice to be rolled
 		diceType = new JComboBox();

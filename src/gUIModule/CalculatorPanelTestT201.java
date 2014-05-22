@@ -17,6 +17,8 @@ public class CalculatorPanelTestT201 {
     public void setUp() throws Exception {
         calculatorPanel = new CalculatorPanel();
         frame = new JFrame("Calc Test");
+        frame.setLayout(null);
+        frame.setSize(400, 800);
         frame.add(calculatorPanel);
         frame.setVisible(true);
         frame.validate();
@@ -28,7 +30,7 @@ public class CalculatorPanelTestT201 {
 
     @Test
     public void test() {
-        boolean x = false;
+        boolean x = true;
         do {
             
         }

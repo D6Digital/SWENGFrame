@@ -1,0 +1,808 @@
+<?xml version="1.0"?><!--sample xml file created using XML DOM object.--><collection xmlns="http://www-users.york.ac.uk/~rjm529/schema.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<slideshow xmlns="">
+	<documentinfo><author>D6 Digital</author><version>2.1</version><title>DynamicDom</title><comment>A crazy superhero saves the day</comment><width>720</width><height>540</height></documentinfo>
+	<defaults><backgroundcolour>#558ED5</backgroundcolour><font>Times New Roman</font><fontsize>24</fontsize><fontcolour>#000000</fontcolour><linecolour>#000000</linecolour><fillcolour>#000000</fillcolour></defaults>
+	
+	<slide id="0" duration="60" descriptor="Overview of making slides in powerpoint" lastSlide="false" backgroundcolour="#558ED5"><text xstart="288" ystart="36" xend="526" yend="68" layer="25" duration="0" starttime="3" font="Aharoni" fontcolour="#000000" fontsize="20"><textbody italic="true" bold="true" underlined="false"><textstring>Click the desert.</textstring>
+	</textbody>
+	</text>
+	<video urlname="resources/video/video/monstersinc_high.mpg" xstart="413" ystart="402" width="285" height="126" layer="23" starttime="0" playtime="1" loop="false"/>
+	<text xstart="20" ystart="291" xend="505" yend="412" layer="17" duration="0" starttime="0" font="Albertus Extra Bold" fontcolour="#000000" fontsize="16"><textbody branch="3" italic="true" bold="true" underlined="false"><textstring>Text must be within a “bounding” empty text box with the desired formatting \n (new lines) \n </textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>This is a separate textbody</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>, Italic/bold/underline\n </textstring>
+	</textbody>
+	<textbody italic="false" bold="false" underlined="false"><textstring>Can change on the same line, use </textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="true"><textstring>an adjacent text body!</textstring>
+	</textbody>
+	</text>
+	<text xstart="14" ystart="426" xend="237" yend="527" layer="15" duration="0" starttime="0" font="Albertus Extra Bold" fontcolour="#000000" fontsize="20"><textbody italic="false" bold="true" underlined="false"><textstring>Video is a Chart with a title containing the video urlName</textstring>
+	</textbody>
+	</text>
+	<text xstart="16" ystart="163" xend="251" yend="283" layer="12" duration="0" starttime="0" font="Albertus Extra Bold" fontcolour="#000000" fontsize="20"><textbody italic="true" bold="true" underlined="false"><textstring>Shapes are created from a freeform shape </textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="true"><textstring>KOALA</textstring>
+	</textbody>
+	</text>
+	<text xstart="14" ystart="32" xend="252" yend="136" layer="10" duration="0" starttime="0" font="Aharoni" fontcolour="#000000" fontsize="20"><textbody italic="true" bold="true" underlined="false"><textstring>The images use A rectangle AutoShape and the urlName is wrote into the shape.</textstring>
+	</textbody>
+	</text>
+	<shape fillcolour="#F79646" linecolour="#FFFFFF" layer="9" duration="0" starttime="3" totalpoints="8" width="235" height="106"><point num="0" x="269" y="38"/>
+	<point num="1" x="422" y="38"/>
+	<point num="2" x="419" y="0"/>
+	<point num="3" x="505" y="53"/>
+	<point num="4" x="433" y="106"/>
+	<point num="5" x="430" y="67"/>
+	<point num="6" x="278" y="66"/>
+	<point num="7" x="269" y="38"/>
+	</shape>
+	<shape fillcolour="#BCBCBC" linecolour="#000000" layer="8" duration="0" starttime="0" totalpoints="5" width="79" height="37"><point num="0" x="495" y="278"/>
+	<point num="1" x="518" y="311"/>
+	<point num="2" x="539" y="316"/>
+	<point num="3" x="574" y="284"/>
+	<point num="4" x="495" y="278"/>
+	</shape>
+	<shape fillcolour="#000000" linecolour="#000000" layer="7" duration="0" starttime="0" totalpoints="5" width="39" height="38"><point num="0" x="525" y="234"/>
+	<point num="1" x="519" y="271"/>
+	<point num="2" x="545" y="271"/>
+	<point num="3" x="557" y="240"/>
+	<point num="4" x="525" y="234"/>
+	</shape>
+	<shape fillcolour="#000000" linecolour="#000000" layer="6" duration="0" starttime="0" totalpoints="5" width="22" height="21"><point num="0" x="577" y="221"/>
+	<point num="1" x="573" y="242"/>
+	<point num="2" x="588" y="242"/>
+	<point num="3" x="595" y="225"/>
+	<point num="4" x="577" y="221"/>
+	</shape>
+	<shape fillcolour="#000000" linecolour="#000000" layer="5" duration="0" starttime="0" totalpoints="5" width="22" height="21"><point num="0" x="497" y="211"/>
+	<point num="1" x="493" y="232"/>
+	<point num="2" x="508" y="232"/>
+	<point num="3" x="515" y="214"/>
+	<point num="4" x="497" y="211"/>
+	</shape>
+	<shape fillcolour="#A6A6A6" linecolour="#000000" layer="4" duration="0" starttime="0" branch="2" totalpoints="31" width="320" height="185"><point num="0" x="534" y="332"/>
+	<point num="1" x="468" y="307"/>
+	<point num="2" x="460" y="279"/>
+	<point num="3" x="455" y="228"/>
+	<point num="4" x="436" y="249"/>
+	<point num="5" x="387" y="250"/>
+	<point num="6" x="385" y="201"/>
+	<point num="7" x="409" y="154"/>
+	<point num="8" x="444" y="149"/>
+	<point num="9" x="463" y="190"/>
+	<point num="10" x="511" y="181"/>
+	<point num="11" x="567" y="177"/>
+	<point num="12" x="588" y="189"/>
+	<point num="13" x="608" y="198"/>
+	<point num="14" x="646" y="154"/>
+	<point num="15" x="665" y="176"/>
+	<point num="16" x="701" y="225"/>
+	<point num="17" x="704" y="232"/>
+	<point num="18" x="703" y="230"/>
+	<point num="19" x="705" y="232"/>
+	<point num="20" x="705" y="275"/>
+	<point num="21" x="696" y="295"/>
+	<point num="22" x="685" y="311"/>
+	<point num="23" x="658" y="308"/>
+	<point num="24" x="641" y="298"/>
+	<point num="25" x="625" y="276"/>
+	<point num="26" x="616" y="268"/>
+	<point num="27" x="611" y="279"/>
+	<point num="28" x="601" y="300"/>
+	<point num="29" x="586" y="325"/>
+	<point num="30" x="538" y="334"/>
+	</shape>
+	<image urlname="resources/images/Desert.jpg" xstart="383" ystart="15" width="272" height="122" layer="3" duration="0" starttime="0" branch="1"/>
+	<audio urlname="C:\\Users\\Public\\Music\\Sample Music\\Kalimba.mp3" starttime="0" loop="false"/>
+	<image urlname="" xstart="406" ystart="399" width="299" height="128" layer="1" starttime="0" branch="4"/>
+	</slide>
+	
+	<slide id="1" duration="60" descriptor="How to make images" lastSlide="false" backgroundcolour="#558ED5"><text xstart="288" ystart="54" xend="526" yend="86" layer="17" duration="0" starttime="4" font="Aharoni" fontcolour="#FFFFFF" fontsize="20"><textbody italic="true" bold="true" underlined="false"><textstring>Click the sun.</textstring>
+	</textbody>
+	</text>
+	<shape fillcolour="#F79646" linecolour="#FFFFFF" layer="16" duration="0" starttime="4" totalpoints="8" width="235" height="106"><point num="0" x="282" y="54"/>
+	<point num="1" x="435" y="54"/>
+	<point num="2" x="432" y="16"/>
+	<point num="3" x="518" y="69"/>
+	<point num="4" x="446" y="121"/>
+	<point num="5" x="443" y="83"/>
+	<point num="6" x="290" y="81"/>
+	<point num="7" x="282" y="54"/>
+	</shape>
+	<text xstart="56" ystart="242" xend="430" yend="333" layer="13" duration="0" starttime="0" font="Aharoni" fontcolour="#FFFFFF" fontsize="20"><textbody italic="false" bold="false" underlined="false"><textstring>Select picture as the fill type then find an image in resources taking note of the file name.</textstring>
+	</textbody>
+	</text>
+	<text xstart="54" ystart="84" xend="428" yend="164" layer="11" duration="0" starttime="0" font="Aharoni" fontcolour="#FFFFFF" fontsize="20"><textbody italic="false" bold="false" underlined="false"><textstring>To change the image right click and select format  options then select fill from the tabs. \n\n</textstring>
+	</textbody>
+	</text>
+	<shape fillcolour="#FFFF00" linecolour="#385D8A" layer="10" starttime="0" totalpoints="4" width="33" height="48"><point num="0" x="555" y="43"/>
+	<point num="1" x="534" y="7"/>
+	<point num="2" x="511" y="13"/>
+	<point num="3" x="555" y="43"/>
+	</shape>
+	<shape fillcolour="#FFFF00" linecolour="#385D8A" layer="9" starttime="0" totalpoints="4" width="78" height="50"><point num="0" x="621" y="129"/>
+	<point num="1" x="639" y="209"/>
+	<point num="2" x="665" y="191"/>
+	<point num="3" x="621" y="129"/>
+	</shape>
+	<shape fillcolour="#FFFF00" linecolour="#385D8A" layer="8" starttime="0" totalpoints="4" width="78" height="50"><point num="0" x="581" y="129"/>
+	<point num="1" x="553" y="206"/>
+	<point num="2" x="584" y="205"/>
+	<point num="3" x="581" y="129"/>
+	</shape>
+	<shape fillcolour="#FFFF00" linecolour="#385D8A" layer="7" starttime="0" totalpoints="4" width="46" height="38"><point num="0" x="659" y="102"/>
+	<point num="1" x="700" y="132"/>
+	<point num="2" x="710" y="112"/>
+	<point num="3" x="659" y="102"/>
+	</shape>
+	<shape fillcolour="#FFFF00" linecolour="#385D8A" layer="6" starttime="0" totalpoints="4" width="90" height="62"><point num="0" x="537" y="70"/>
+	<point num="1" x="446" y="43"/>
+	<point num="2" x="447" y="81"/>
+	<point num="3" x="537" y="70"/>
+	</shape>
+	<shape fillcolour="#FFFF00" linecolour="#385D8A" layer="5" starttime="0" totalpoints="4" width="90" height="66"><point num="0" x="549" y="112"/>
+	<point num="1" x="463" y="155"/>
+	<point num="2" x="490" y="184"/>
+	<point num="3" x="549" y="112"/>
+	</shape>
+	<shape fillcolour="#FFFF00" linecolour="#385D8A" layer="4" starttime="0" totalpoints="4" width="49" height="26"><point num="0" x="639" y="56"/>
+	<point num="1" x="686" y="37"/>
+	<point num="2" x="672" y="26"/>
+	<point num="3" x="639" y="56"/>
+	</shape>
+	<shape fillcolour="#FFFF00" linecolour="#385D8A" layer="3" starttime="0" branch="2" totalpoints="30" width="79" height="79"><point num="0" x="553" y="82"/>
+	<point num="1" x="554" y="102"/>
+	<point num="2" x="558" y="105"/>
+	<point num="3" x="564" y="114"/>
+	<point num="4" x="574" y="119"/>
+	<point num="5" x="585" y="121"/>
+	<point num="6" x="603" y="123"/>
+	<point num="7" x="613" y="122"/>
+	<point num="8" x="622" y="117"/>
+	<point num="9" x="627" y="111"/>
+	<point num="10" x="630" y="103"/>
+	<point num="11" x="632" y="92"/>
+	<point num="12" x="632" y="80"/>
+	<point num="13" x="632" y="76"/>
+	<point num="14" x="629" y="70"/>
+	<point num="15" x="624" y="57"/>
+	<point num="16" x="619" y="51"/>
+	<point num="17" x="613" y="46"/>
+	<point num="18" x="606" y="44"/>
+	<point num="19" x="598" y="43"/>
+	<point num="20" x="590" y="45"/>
+	<point num="21" x="582" y="46"/>
+	<point num="22" x="576" y="49"/>
+	<point num="23" x="571" y="50"/>
+	<point num="24" x="566" y="52"/>
+	<point num="25" x="562" y="56"/>
+	<point num="26" x="559" y="60"/>
+	<point num="27" x="555" y="69"/>
+	<point num="28" x="554" y="75"/>
+	<point num="29" x="553" y="82"/>
+	</shape>
+	<text xstart="56" ystart="361" xend="430" yend="452" layer="2" duration="0" starttime="0" font="Aharoni" fontcolour="#FFFFFF" fontsize="20"><textbody italic="false" bold="false" underlined="false"><textstring>Specify the file path by right-clicking the image and edit the text (click edit text) to resources/images/YourImageName.jpg</textstring>
+	</textbody>
+	</text>
+	<image urlname="resources/images/Desert.jpg" xstart="0" ystart="2" width="720" height="540" layer="1" starttime="0"/>
+	</slide>
+	
+	<slide id="2" duration="60" descriptor="How to make shapes" lastSlide="false" backgroundcolour="#558ED5"><image urlname="Dice10.png" xstart="385" ystart="381" width="132" height="140" layer="90" duration="50" starttime="10"/>
+	<image urlname="Dice9.png" xstart="395" ystart="383" width="111" height="140" layer="89" duration="50" starttime="11"/>
+	<image urlname="Dice8.png" xstart="402" ystart="382" width="97" height="140" layer="88" duration="50" starttime="12"/>
+	<image urlname="Dice7.png" xstart="417" ystart="382" width="67" height="140" layer="87" duration="50" starttime="13"/>
+	<image urlname="Dice6.png" xstart="432" ystart="383" width="37" height="140" layer="86" duration="50" starttime="14"/>
+	<image urlname="Dice5.png" xstart="442" ystart="384" width="17" height="140" layer="85" duration="50" starttime="16"/>
+	<image urlname="Dice4.png" xstart="416" ystart="381" width="52" height="140" layer="84" duration="50" starttime="17"/>
+	<image urlname="Dice3.png" xstart="406" ystart="382" width="79" height="140" layer="83" duration="50" starttime="18"/>
+	<image urlname="Dice2.png" xstart="401" ystart="382" width="98" height="140" layer="82" duration="50" starttime="19"/>
+	<image urlname="Dice1.png" xstart="384" ystart="381" width="132" height="140" layer="81" duration="50" starttime="20"/>
+	<image urlname="Dice10.png" xstart="385" ystart="380" width="132" height="140" layer="80" duration="50" starttime="9"/>
+	<image urlname="Dice9.png" xstart="394" ystart="380" width="111" height="140" layer="79" duration="50" starttime="8"/>
+	<image urlname="Dice8.png" xstart="401" ystart="380" width="97" height="140" layer="78" duration="50" starttime="7"/>
+	<image urlname="Dice7.png" xstart="420" ystart="380" width="67" height="140" layer="77" duration="50" starttime="6"/>
+	<image urlname="Dice6.png" xstart="433" ystart="382" width="37" height="140" layer="76" duration="50" starttime="5"/>
+	<image urlname="Dice5.png" xstart="442" ystart="384" width="17" height="140" layer="75" duration="50" starttime="4"/>
+	<image urlname="Dice4.png" xstart="425" ystart="383" width="52" height="140" layer="74" duration="50" starttime="3"/>
+	<image urlname="Dice3.png" xstart="414" ystart="382" width="79" height="140" layer="73" duration="50" starttime="2"/>
+	<image urlname="Dice2.png" xstart="401" ystart="381" width="98" height="140" layer="72" duration="50" starttime="1"/>
+	<image urlname="Dice1.png" xstart="388" ystart="378" width="132" height="140" layer="71" duration="50" starttime="0"/>
+	<image urlname="Dice1.png" xstart="20" ystart="365" width="142" height="143" layer="70" duration="0" starttime="0"/>
+	<image urlname="Dice10.png" xstart="531" ystart="31" width="132" height="140" layer="69" duration="0" starttime="0"/>
+	<image urlname="Dice10.png" xstart="579" ystart="197" width="132" height="140" layer="68" duration="50" starttime="10"/>
+	<image urlname="Dice9.png" xstart="590" ystart="198" width="111" height="140" layer="67" duration="50" starttime="11"/>
+	<image urlname="Dice8.png" xstart="603" ystart="197" width="97" height="140" layer="66" duration="50" starttime="12"/>
+	<image urlname="Dice7.png" xstart="616" ystart="198" width="67" height="140" layer="65" duration="50" starttime="13"/>
+	<image urlname="Dice6.png" xstart="632" ystart="198" width="37" height="140" layer="64" duration="50" starttime="14"/>
+	<image urlname="Dice5.png" xstart="636" ystart="199" width="17" height="140" layer="63" duration="50" starttime="16"/>
+	<image urlname="Dice4.png" xstart="625" ystart="199" width="52" height="140" layer="62" duration="50" starttime="17"/>
+	<image urlname="Dice3.png" xstart="609" ystart="199" width="79" height="140" layer="61" duration="50" starttime="18"/>
+	<image urlname="Dice2.png" xstart="596" ystart="195" width="98" height="140" layer="60" duration="50" starttime="19"/>
+	<image urlname="Dice1.png" xstart="579" ystart="200" width="132" height="140" layer="59" duration="50" starttime="20"/>
+	<image urlname="Dice10.png" xstart="576" ystart="198" width="132" height="140" layer="58" duration="50" starttime="9"/>
+	<image urlname="Dice9.png" xstart="585" ystart="197" width="111" height="140" layer="57" duration="50" starttime="8"/>
+	<image urlname="Dice8.png" xstart="592" ystart="197" width="97" height="140" layer="56" duration="50" starttime="7"/>
+	<image urlname="Dice7.png" xstart="611" ystart="197" width="67" height="140" layer="55" duration="50" starttime="6"/>
+	<image urlname="Dice6.png" xstart="624" ystart="199" width="37" height="140" layer="54" duration="50" starttime="5"/>
+	<image urlname="Dice5.png" xstart="633" ystart="201" width="17" height="140" layer="53" duration="50" starttime="4"/>
+	<image urlname="Dice4.png" xstart="616" ystart="200" width="52" height="140" layer="52" duration="50" starttime="3"/>
+	<image urlname="Dice3.png" xstart="605" ystart="199" width="79" height="140" layer="51" duration="50" starttime="2"/>
+	<image urlname="Dice2.png" xstart="592" ystart="198" width="98" height="140" layer="50" duration="50" starttime="1"/>
+	<image urlname="Dice1.png" xstart="579" ystart="195" width="132" height="140" layer="49" duration="50" starttime="0"/>
+	<shape fillcolour="#BCBCBC" linecolour="#000000" layer="6" duration="0" starttime="2" branch="5" totalpoints="29" width="45" height="36"><point num="0" x="310" y="89"/>
+	<point num="1" x="307" y="89"/>
+	<point num="2" x="306" y="93"/>
+	<point num="3" x="302" y="93"/>
+	<point num="4" x="294" y="105"/>
+	<point num="5" x="294" y="122"/>
+	<point num="6" x="297" y="123"/>
+	<point num="7" x="305" y="123"/>
+	<point num="8" x="318" y="124"/>
+	<point num="9" x="321" y="124"/>
+	<point num="10" x="326" y="124"/>
+	<point num="11" x="328" y="124"/>
+	<point num="12" x="330" y="123"/>
+	<point num="13" x="331" y="123"/>
+	<point num="14" x="332" y="122"/>
+	<point num="15" x="337" y="119"/>
+	<point num="16" x="338" y="115"/>
+	<point num="17" x="339" y="112"/>
+	<point num="18" x="338" y="108"/>
+	<point num="19" x="335" y="102"/>
+	<point num="20" x="330" y="103"/>
+	<point num="21" x="327" y="105"/>
+	<point num="22" x="324" y="106"/>
+	<point num="23" x="322" y="102"/>
+	<point num="24" x="320" y="100"/>
+	<point num="25" x="320" y="97"/>
+	<point num="26" x="321" y="95"/>
+	<point num="27" x="320" y="92"/>
+	<point num="28" x="310" y="89"/>
+	</shape>
+	<text xstart="54" ystart="156" xend="428" yend="310" layer="4" duration="0" starttime="0" font="Aharoni" fontcolour="#F2F2F2" fontsize="20"><textbody italic="false" bold="false" underlined="false"><textstring>Draw with as many points as you like then double-click to finish the shape.\n
+You can edit the shape accurately by right-clicking on it and selecting edit points</textstring>
+	</textbody>
+	</text>
+	<text xstart="52" ystart="19" xend="426" yend="137" layer="2" duration="0" starttime="0" font="Aharoni" fontcolour="#FFFFFF" fontsize="20"><textbody italic="false" bold="false" underlined="false"><textstring>To create a Shape you must use the freeform shape tool which can be found in shapes. \n
+The icon looks like this!</textstring>
+	</textbody>
+	</text>
+	<text xstart="174" ystart="383" xend="548" yend="457" layer="1" duration="0" starttime="3" font="Antique Olive" fontcolour="#F2F2F2" fontsize="20"><textbody branch="3" italic="false" bold="false" underlined="false"><textstring>Click Here</textstring>
+	</textbody>
+	<textbody italic="false" bold="false" underlined="false"><textstring>    when you are ready</textstring>
+	</textbody>
+	<textbody italic="false" bold="false" underlined="false"><textstring>to continue onto text</textstring>
+	</textbody>
+	</text>
+	</slide>
+	
+	<slide id="3" duration="60" descriptor="How to make text areas" lastSlide="false" backgroundcolour="#558ED5"><text xstart="66" ystart="298" xend="285" yend="338" layer="30" duration="59" starttime="16" font="Aharoni" fontcolour="#000000" fontsize="20"><textbody italic="false" bold="false" underlined="false"><textstring>Click the speaker</textstring>
+	</textbody>
+	</text>
+	<shape fillcolour="#000000" linecolour="#000000" layer="29" duration="0" starttime="16" totalpoints="5" width="109" height="71"><point num="0" x="354" y="229"/>
+	<point num="1" x="453" y="174"/>
+	<point num="2" x="462" y="207"/>
+	<point num="3" x="358" y="245"/>
+	<point num="4" x="354" y="229"/>
+	</shape>
+	<shape fillcolour="#000000" linecolour="#000000" layer="28" duration="0" starttime="16" totalpoints="5" width="109" height="71"><point num="0" x="383" y="318"/>
+	<point num="1" x="497" y="325"/>
+	<point num="2" x="487" y="357"/>
+	<point num="3" x="379" y="334"/>
+	<point num="4" x="383" y="318"/>
+	</shape>
+	<shape fillcolour="#000000" linecolour="#000000" layer="27" duration="0" starttime="16" totalpoints="5" width="109" height="71"><point num="0" x="389" y="265"/>
+	<point num="1" x="499" y="239"/>
+	<point num="2" x="499" y="274"/>
+	<point num="3" x="389" y="282"/>
+	<point num="4" x="389" y="265"/>
+	</shape>
+	<shape fillcolour="#000000" linecolour="#000000" layer="26" duration="0" starttime="16" totalpoints="5" width="109" height="71"><point num="0" x="350" y="365"/>
+	<point num="1" x="462" y="385"/>
+	<point num="2" x="448" y="416"/>
+	<point num="3" x="343" y="380"/>
+	<point num="4" x="350" y="365"/>
+	</shape>
+	<shape fillcolour="#FFFF00" linecolour="#385D8A" layer="25" duration="0" starttime="16" branch="4" totalpoints="11" width="111" height="195"><point num="0" x="218" y="294"/>
+	<point num="1" x="258" y="294"/>
+	<point num="2" x="269" y="254"/>
+	<point num="3" x="293" y="226"/>
+	<point num="4" x="326" y="208"/>
+	<point num="5" x="323" y="403"/>
+	<point num="6" x="279" y="378"/>
+	<point num="7" x="261" y="339"/>
+	<point num="8" x="257" y="320"/>
+	<point num="9" x="215" y="320"/>
+	<point num="10" x="218" y="294"/>
+	</shape>
+	<text xstart="574" ystart="222" xend="731" yend="262" layer="23" duration="0" starttime="8" font="Aharoni" fontcolour="#FFFFFF" fontsize="20"><textbody italic="false" bold="false" underlined="false"><textstring>Text body 3</textstring>
+	</textbody>
+	</text>
+	<text xstart="474" ystart="158" xend="631" yend="198" layer="21" duration="0" starttime="3" font="Aharoni" fontcolour="#FFFFFF" fontsize="20"><textbody italic="false" bold="false" underlined="false"><textstring>Text body 1</textstring>
+	</textbody>
+	</text>
+	<text xstart="489" ystart="310" xend="646" yend="350" layer="19" duration="59" starttime="10" font="Aharoni" fontcolour="#FFFFFF" fontsize="20"><textbody italic="false" bold="false" underlined="false"><textstring>Text body 4</textstring>
+	</textbody>
+	</text>
+	<shape fillcolour="#4F81BD" linecolour="#FFFFFF" layer="18" duration="0" starttime="8" totalpoints="5" width="113" height="57"><point num="0" x="574" y="211"/>
+	<point num="1" x="574" y="268"/>
+	<point num="2" x="686" y="268"/>
+	<point num="3" x="687" y="211"/>
+	<point num="4" x="574" y="211"/>
+	</shape>
+	<text xstart="422" ystart="12" xend="710" yend="138" layer="16" duration="59" starttime="8" font="Aharoni" fontcolour="#F2F2F2" fontsize="20"><textbody italic="false" bold="false" underlined="false"><textstring>Adjacent text bodies must line up to ensure the correct ordering</textstring>
+	</textbody>
+	</text>
+	<shape fillcolour="#9B2D2A" linecolour="#BE4B48" layer="15" starttime="0" totalpoints="8" width="21" height="39"><point num="0" x="566" y="489"/>
+	<point num="1" x="574" y="468"/>
+	<point num="2" x="566" y="472"/>
+	<point num="3" x="585" y="456"/>
+	<point num="4" x="587" y="479"/>
+	<point num="5" x="581" y="473"/>
+	<point num="6" x="573" y="495"/>
+	<point num="7" x="566" y="489"/>
+	</shape>
+	<text xstart="448" ystart="485" xend="635" yend="525" layer="13" duration="59" starttime="2" font="Aharoni" fontcolour="#FFFFFF" fontsize="20"><textbody italic="false" bold="false" underlined="false"><textstring>Bounding box</textstring>
+	</textbody>
+	</text>
+	<text xstart="446" ystart="223" xend="603" yend="263" layer="11" duration="0" starttime="8" font="Aharoni" fontcolour="#FFFFFF" fontsize="20"><textbody italic="false" bold="false" underlined="false"><textstring>Text body 2</textstring>
+	</textbody>
+	</text>
+	<shape fillcolour="#4F81BD" linecolour="#FFFFFF" layer="10" duration="0" starttime="3" totalpoints="5" width="248" height="66"><point num="0" x="439" y="146"/>
+	<point num="1" x="439" y="211"/>
+	<point num="2" x="685" y="211"/>
+	<point num="3" x="687" y="146"/>
+	<point num="4" x="439" y="146"/>
+	</shape>
+	<shape fillcolour="#4F81BD" linecolour="#FFFFFF" layer="9" duration="0" starttime="8" totalpoints="5" width="135" height="57"><point num="0" x="439" y="211"/>
+	<point num="1" x="439" y="268"/>
+	<point num="2" x="573" y="268"/>
+	<point num="3" x="574" y="211"/>
+	<point num="4" x="439" y="211"/>
+	</shape>
+	<shape fillcolour="#4F81BD" linecolour="#FFFFFF" layer="8" duration="0" starttime="10" totalpoints="5" width="248" height="137"><point num="0" x="439" y="268"/>
+	<point num="1" x="439" y="405"/>
+	<point num="2" x="685" y="405"/>
+	<point num="3" x="687" y="268"/>
+	<point num="4" x="439" y="268"/>
+	</shape>
+	<shape fillcolour="#4F81BD" linecolour="#E46C0A" layer="7" duration="0" starttime="1" totalpoints="5" width="248" height="312"><point num="0" x="439" y="144"/>
+	<point num="1" x="439" y="456"/>
+	<point num="2" x="685" y="456"/>
+	<point num="3" x="687" y="144"/>
+	<point num="4" x="439" y="144"/>
+	</shape>
+	<text xstart="31" ystart="337" xend="405" yend="540" layer="5" duration="59" starttime="0" font="Aharoni" fontcolour="#F2F2F2" fontsize="20"><textbody italic="false" bold="false" underlined="false"><textstring>The text formatting (size, font and colour) must be set on the bounding box  which can be done easily if you select all boxes by dragging and set the formatting\n
+Bold, Italic and Underline are set seperately for each text body based on the first characters formatting</textstring>
+	</textbody>
+	</text>
+	<text xstart="31" ystart="12" xend="405" yend="125" layer="2" duration="59" starttime="0" font="Aharoni" fontcolour="#F2F2F2" fontsize="20"><textbody italic="false" bold="false" underlined="false"><textstring>The Text requires multiple text boxes, a bounding text box which contains no text at all but contains all the text body sections</textstring>
+	</textbody>
+	</text>
+	<text xstart="31" ystart="145" xend="405" yend="324" layer="1" duration="59" starttime="0" font="Aharoni" fontcolour="#F2F2F2" fontsize="20"><textbody italic="false" bold="false" underlined="false"><textstring>The text body sections should be text boxes
+Aligned to the left and top edge of the bounding box or the previous text body.\n
+The bounding box should if possible have extra space below the text bodies to allow for text enlargment</textstring>
+	</textbody>
+	</text>
+	</slide>
+	
+	<slide id="4" duration="60" descriptor="How to add music and video" lastSlide="false" backgroundcolour="#558ED5"><video urlname="resources/video/video/monstersinc_high.mpg" xstart="372" ystart="213" width="348" height="175" layer="10" starttime="0" playtime="1" loop="false"/>
+	<audio urlname="C:\\Users\\Public\\Music\\Sample Music\\Kalimba.mp3" starttime="0" loop="false"/>
+	<text xstart="5" ystart="187" xend="370" yend="327" layer="7" duration="0" starttime="0" font="Aharoni" fontcolour="#FFFFFF" fontsize="20"><textbody italic="false" bold="false" underlined="false"><textstring>The Video is similar but uses a chart in the title set in the Alt text section of the Format chart area menu. To change this right-click and select format chart area.</textstring>
+	</textbody>
+	</text>
+	<text xstart="6" ystart="31" xend="380" yend="123" layer="2" duration="0" starttime="0" font="Aharoni" fontcolour="#FFFFFF" fontsize="20"><textbody italic="false" bold="false" underlined="false"><textstring>The Music is incorporated using a table in which the cell(1,1) is the urlName of the music</textstring>
+	</textbody>
+	</text>
+	<text xstart="183" ystart="415" xend="557" yend="489" layer="1" duration="0" starttime="3" font="Antique Olive" fontcolour="#F2F2F2" fontsize="20"><textbody branch="0" italic="false" bold="false" underlined="false"><textstring>Click Here</textstring>
+	</textbody>
+	<textbody italic="false" bold="false" underlined="false"><textstring>to return to the overview</textstring>
+	</textbody>
+	</text>
+	</slide>
+	
+	<slide id="5" duration="60" descriptor="Fun Dragon!" lastSlide="true" backgroundcolour="#558ED5"><shape fillcolour="#FFFF00" linecolour="#385D8A" layer="50" duration="10" starttime="5" totalpoints="6" width="212" height="56"><point num="0" x="574" y="268"/>
+	<point num="1" x="548" y="259"/>
+	<point num="2" x="483" y="296"/>
+	<point num="3" x="576" y="328"/>
+	<point num="4" x="694" y="335"/>
+	<point num="5" x="574" y="268"/>
+	</shape>
+	<shape fillcolour="#FFFF00" linecolour="#385D8A" layer="49" duration="10" starttime="5" totalpoints="6" width="212" height="56"><point num="0" x="574" y="237"/>
+	<point num="1" x="546" y="234"/>
+	<point num="2" x="492" y="286"/>
+	<point num="3" x="591" y="294"/>
+	<point num="4" x="706" y="271"/>
+	<point num="5" x="574" y="237"/>
+	</shape>
+	<shape fillcolour="#FFFF00" linecolour="#385D8A" layer="48" duration="10" starttime="5" totalpoints="6" width="212" height="56"><point num="0" x="579" y="216"/>
+	<point num="1" x="551" y="219"/>
+	<point num="2" x="506" y="278"/>
+	<point num="3" x="605" y="270"/>
+	<point num="4" x="715" y="229"/>
+	<point num="5" x="579" y="216"/>
+	</shape>
+	<shape fillcolour="#FFFF00" linecolour="#385D8A" layer="47" duration="10" starttime="5" totalpoints="6" width="212" height="56"><point num="0" x="579" y="194"/>
+	<point num="1" x="551" y="199"/>
+	<point num="2" x="514" y="264"/>
+	<point num="3" x="611" y="244"/>
+	<point num="4" x="715" y="190"/>
+	<point num="5" x="579" y="194"/>
+	</shape>
+	<shape fillcolour="#FFFF00" linecolour="#385D8A" layer="46" duration="10" starttime="5" totalpoints="6" width="212" height="56"><point num="0" x="564" y="180"/>
+	<point num="1" x="537" y="189"/>
+	<point num="2" x="508" y="258"/>
+	<point num="3" x="602" y="227"/>
+	<point num="4" x="699" y="161"/>
+	<point num="5" x="564" y="180"/>
+	</shape>
+	<shape fillcolour="#FFFF00" linecolour="#385D8A" layer="45" duration="10" starttime="5" totalpoints="6" width="212" height="56"><point num="0" x="552" y="168"/>
+	<point num="1" x="525" y="177"/>
+	<point num="2" x="496" y="246"/>
+	<point num="3" x="590" y="215"/>
+	<point num="4" x="687" y="149"/>
+	<point num="5" x="552" y="168"/>
+	</shape>
+	<shape fillcolour="#BCBCBC" linecolour="#000000" layer="44" duration="5" starttime="6" totalpoints="5" width="81" height="38"><point num="0" x="590" y="307"/>
+	<point num="1" x="567" y="274"/>
+	<point num="2" x="545" y="268"/>
+	<point num="3" x="509" y="301"/>
+	<point num="4" x="590" y="307"/>
+	</shape>
+	<shape fillcolour="#FFFF00" linecolour="#385D8A" layer="43" duration="7" starttime="4" totalpoints="6" width="145" height="49"><point num="0" x="480" y="265"/>
+	<point num="1" x="461" y="258"/>
+	<point num="2" x="413" y="294"/>
+	<point num="3" x="477" y="316"/>
+	<point num="4" x="559" y="314"/>
+	<point num="5" x="480" y="265"/>
+	</shape>
+	<shape fillcolour="#FFFF00" linecolour="#385D8A" layer="42" duration="7" starttime="4" totalpoints="6" width="145" height="49"><point num="0" x="480" y="239"/>
+	<point num="1" x="461" y="238"/>
+	<point num="2" x="423" y="284"/>
+	<point num="3" x="490" y="289"/>
+	<point num="4" x="570" y="268"/>
+	<point num="5" x="480" y="239"/>
+	</shape>
+	<shape fillcolour="#FFFF00" linecolour="#385D8A" layer="41" duration="7" starttime="4" totalpoints="6" width="145" height="49"><point num="0" x="486" y="223"/>
+	<point num="1" x="467" y="225"/>
+	<point num="2" x="437" y="276"/>
+	<point num="3" x="504" y="271"/>
+	<point num="4" x="579" y="237"/>
+	<point num="5" x="486" y="223"/>
+	</shape>
+	<shape fillcolour="#FFFF00" linecolour="#385D8A" layer="40" duration="7" starttime="4" totalpoints="6" width="145" height="49"><point num="0" x="487" y="204"/>
+	<point num="1" x="468" y="207"/>
+	<point num="2" x="445" y="262"/>
+	<point num="3" x="511" y="248"/>
+	<point num="4" x="581" y="205"/>
+	<point num="5" x="487" y="204"/>
+	</shape>
+	<shape fillcolour="#FFFF00" linecolour="#385D8A" layer="39" duration="7" starttime="4" totalpoints="6" width="145" height="49"><point num="0" x="474" y="193"/>
+	<point num="1" x="455" y="199"/>
+	<point num="2" x="439" y="256"/>
+	<point num="3" x="503" y="235"/>
+	<point num="4" x="567" y="184"/>
+	<point num="5" x="474" y="193"/>
+	</shape>
+	<shape fillcolour="#FFFF00" linecolour="#385D8A" layer="38" duration="7" starttime="4" totalpoints="6" width="145" height="49"><point num="0" x="462" y="181"/>
+	<point num="1" x="443" y="187"/>
+	<point num="2" x="427" y="244"/>
+	<point num="3" x="491" y="223"/>
+	<point num="4" x="555" y="172"/>
+	<point num="5" x="462" y="181"/>
+	</shape>
+	<shape fillcolour="#FFFF00" linecolour="#385D8A" layer="37" duration="5" starttime="3" totalpoints="6" width="93" height="49"><point num="0" x="402" y="263"/>
+	<point num="1" x="390" y="259"/>
+	<point num="2" x="354" y="298"/>
+	<point num="3" x="394" y="313"/>
+	<point num="4" x="450" y="302"/>
+	<point num="5" x="402" y="263"/>
+	</shape>
+	<shape fillcolour="#FFFF00" linecolour="#385D8A" layer="36" duration="5" starttime="3" totalpoints="6" width="93" height="49"><point num="0" x="401" y="242"/>
+	<point num="1" x="389" y="241"/>
+	<point num="2" x="363" y="289"/>
+	<point num="3" x="406" y="292"/>
+	<point num="4" x="458" y="268"/>
+	<point num="5" x="401" y="242"/>
+	</shape>
+	<shape fillcolour="#FFFF00" linecolour="#385D8A" layer="35" duration="5" starttime="3" totalpoints="6" width="93" height="49"><point num="0" x="407" y="229"/>
+	<point num="1" x="394" y="230"/>
+	<point num="2" x="377" y="281"/>
+	<point num="3" x="420" y="278"/>
+	<point num="4" x="467" y="245"/>
+	<point num="5" x="407" y="229"/>
+	</shape>
+	<shape fillcolour="#FFFF00" linecolour="#385D8A" layer="34" duration="5" starttime="3" totalpoints="6" width="93" height="49"><point num="0" x="417" y="213"/>
+	<point num="1" x="405" y="215"/>
+	<point num="2" x="394" y="268"/>
+	<point num="3" x="436" y="259"/>
+	<point num="4" x="479" y="222"/>
+	<point num="5" x="417" y="213"/>
+	</shape>
+	<shape fillcolour="#FFFF00" linecolour="#385D8A" layer="33" duration="5" starttime="3" totalpoints="6" width="93" height="49"><point num="0" x="396" y="203"/>
+	<point num="1" x="384" y="207"/>
+	<point num="2" x="379" y="261"/>
+	<point num="3" x="420" y="247"/>
+	<point num="4" x="458" y="205"/>
+	<point num="5" x="396" y="203"/>
+	</shape>
+	<shape fillcolour="#FFFF00" linecolour="#385D8A" layer="32" duration="5" starttime="3" totalpoints="6" width="93" height="49"><point num="0" x="384" y="191"/>
+	<point num="1" x="372" y="195"/>
+	<point num="2" x="367" y="249"/>
+	<point num="3" x="408" y="235"/>
+	<point num="4" x="446" y="193"/>
+	<point num="5" x="384" y="191"/>
+	</shape>
+	<shape fillcolour="#FFFF00" linecolour="#385D8A" layer="31" duration="2" starttime="2" totalpoints="6" width="93" height="14"><point num="0" x="328" y="286"/>
+	<point num="1" x="316" y="282"/>
+	<point num="2" x="291" y="288"/>
+	<point num="3" x="332" y="302"/>
+	<point num="4" x="381" y="311"/>
+	<point num="5" x="328" y="286"/>
+	</shape>
+	<shape fillcolour="#FFFF00" linecolour="#385D8A" layer="30" duration="2" starttime="2" totalpoints="6" width="93" height="14"><point num="0" x="336" y="268"/>
+	<point num="1" x="323" y="267"/>
+	<point num="2" x="301" y="279"/>
+	<point num="3" x="344" y="282"/>
+	<point num="4" x="394" y="278"/>
+	<point num="5" x="336" y="268"/>
+	</shape>
+	<shape fillcolour="#FFFF00" linecolour="#385D8A" layer="29" duration="2" starttime="2" totalpoints="6" width="93" height="14"><point num="0" x="347" y="254"/>
+	<point num="1" x="335" y="255"/>
+	<point num="2" x="314" y="271"/>
+	<point num="3" x="357" y="267"/>
+	<point num="4" x="406" y="256"/>
+	<point num="5" x="347" y="254"/>
+	</shape>
+	<shape fillcolour="#FFFF00" linecolour="#385D8A" layer="28" duration="2" starttime="2" totalpoints="6" width="93" height="14"><point num="0" x="353" y="236"/>
+	<point num="1" x="341" y="239"/>
+	<point num="2" x="322" y="257"/>
+	<point num="3" x="365" y="248"/>
+	<point num="4" x="412" y="230"/>
+	<point num="5" x="353" y="236"/>
+	</shape>
+	<shape fillcolour="#FFFF00" linecolour="#385D8A" layer="27" duration="2" starttime="2" totalpoints="6" width="93" height="14"><point num="0" x="344" y="227"/>
+	<point num="1" x="333" y="231"/>
+	<point num="2" x="316" y="251"/>
+	<point num="3" x="357" y="237"/>
+	<point num="4" x="402" y="214"/>
+	<point num="5" x="344" y="227"/>
+	</shape>
+	<shape fillcolour="#FFFF00" linecolour="#385D8A" layer="26" duration="2" starttime="2" totalpoints="6" width="93" height="14"><point num="0" x="332" y="215"/>
+	<point num="1" x="321" y="219"/>
+	<point num="2" x="304" y="239"/>
+	<point num="3" x="345" y="225"/>
+	<point num="4" x="390" y="202"/>
+	<point num="5" x="332" y="215"/>
+	</shape>
+	<shape fillcolour="#BCBCBC" linecolour="#000000" layer="25" duration="3" starttime="2" totalpoints="5" width="81" height="38"><point num="0" x="512" y="271"/>
+	<point num="1" x="537" y="302"/>
+	<point num="2" x="559" y="306"/>
+	<point num="3" x="593" y="272"/>
+	<point num="4" x="512" y="271"/>
+	</shape>
+	<shape fillcolour="#000000" linecolour="#000000" layer="24" duration="3" starttime="2" totalpoints="5" width="40" height="39"><point num="0" x="541" y="221"/>
+	<point num="1" x="535" y="260"/>
+	<point num="2" x="561" y="260"/>
+	<point num="3" x="574" y="228"/>
+	<point num="4" x="541" y="221"/>
+	</shape>
+	<shape fillcolour="#000000" linecolour="#000000" layer="23" duration="7" starttime="2" totalpoints="5" width="22" height="22"><point num="0" x="593" y="210"/>
+	<point num="1" x="589" y="232"/>
+	<point num="2" x="604" y="232"/>
+	<point num="3" x="611" y="214"/>
+	<point num="4" x="593" y="210"/>
+	</shape>
+	<shape fillcolour="#000000" linecolour="#000000" layer="22" duration="7" starttime="2" totalpoints="5" width="22" height="22"><point num="0" x="513" y="200"/>
+	<point num="1" x="509" y="221"/>
+	<point num="2" x="524" y="221"/>
+	<point num="3" x="531" y="203"/>
+	<point num="4" x="513" y="200"/>
+	</shape>
+	<shape fillcolour="#000000" linecolour="#385D8A" layer="21" duration="0" starttime="2" totalpoints="6" width="32" height="16"><point num="0" x="134" y="239"/>
+	<point num="1" x="129" y="239"/>
+	<point num="2" x="122" y="255"/>
+	<point num="3" x="137" y="255"/>
+	<point num="4" x="154" y="246"/>
+	<point num="5" x="134" y="239"/>
+	</shape>
+	<shape fillcolour="#000000" linecolour="#385D8A" layer="20" duration="0" starttime="2" totalpoints="6" width="32" height="16"><point num="0" x="80" y="376"/>
+	<point num="1" x="76" y="376"/>
+	<point num="2" x="68" y="392"/>
+	<point num="3" x="83" y="392"/>
+	<point num="4" x="100" y="383"/>
+	<point num="5" x="80" y="376"/>
+	</shape>
+	<shape fillcolour="#000000" linecolour="#385D8A" layer="19" duration="0" starttime="2" totalpoints="6" width="32" height="16"><point num="0" x="85" y="344"/>
+	<point num="1" x="81" y="344"/>
+	<point num="2" x="73" y="360"/>
+	<point num="3" x="89" y="360"/>
+	<point num="4" x="106" y="351"/>
+	<point num="5" x="85" y="344"/>
+	</shape>
+	<shape fillcolour="#000000" linecolour="#385D8A" layer="18" duration="0" starttime="2" totalpoints="6" width="32" height="16"><point num="0" x="138" y="287"/>
+	<point num="1" x="133" y="287"/>
+	<point num="2" x="126" y="303"/>
+	<point num="3" x="141" y="303"/>
+	<point num="4" x="158" y="294"/>
+	<point num="5" x="138" y="287"/>
+	</shape>
+	<shape fillcolour="#000000" linecolour="#385D8A" layer="17" duration="0" starttime="2" totalpoints="6" width="32" height="16"><point num="0" x="137" y="317"/>
+	<point num="1" x="133" y="317"/>
+	<point num="2" x="125" y="333"/>
+	<point num="3" x="140" y="333"/>
+	<point num="4" x="157" y="324"/>
+	<point num="5" x="137" y="317"/>
+	</shape>
+	<shape fillcolour="#000000" linecolour="#385D8A" layer="16" duration="0" starttime="2" totalpoints="6" width="32" height="16"><point num="0" x="58" y="444"/>
+	<point num="1" x="53" y="444"/>
+	<point num="2" x="46" y="460"/>
+	<point num="3" x="61" y="460"/>
+	<point num="4" x="78" y="450"/>
+	<point num="5" x="58" y="444"/>
+	</shape>
+	<shape fillcolour="#000000" linecolour="#385D8A" layer="15" duration="0" starttime="2" totalpoints="6" width="32" height="16"><point num="0" x="86" y="309"/>
+	<point num="1" x="82" y="309"/>
+	<point num="2" x="74" y="325"/>
+	<point num="3" x="89" y="325"/>
+	<point num="4" x="107" y="316"/>
+	<point num="5" x="86" y="309"/>
+	</shape>
+	<shape fillcolour="#000000" linecolour="#385D8A" layer="14" duration="0" starttime="2" totalpoints="6" width="32" height="16"><point num="0" x="186" y="231"/>
+	<point num="1" x="182" y="231"/>
+	<point num="2" x="174" y="247"/>
+	<point num="3" x="189" y="247"/>
+	<point num="4" x="207" y="238"/>
+	<point num="5" x="186" y="231"/>
+	</shape>
+	<shape fillcolour="#000000" linecolour="#385D8A" layer="13" duration="0" starttime="2" totalpoints="6" width="32" height="16"><point num="0" x="131" y="360"/>
+	<point num="1" x="127" y="360"/>
+	<point num="2" x="119" y="376"/>
+	<point num="3" x="135" y="376"/>
+	<point num="4" x="152" y="367"/>
+	<point num="5" x="131" y="360"/>
+	</shape>
+	<shape fillcolour="#000000" linecolour="#385D8A" layer="12" duration="0" starttime="2" totalpoints="6" width="32" height="16"><point num="0" x="103" y="409"/>
+	<point num="1" x="99" y="409"/>
+	<point num="2" x="91" y="425"/>
+	<point num="3" x="107" y="425"/>
+	<point num="4" x="124" y="416"/>
+	<point num="5" x="103" y="409"/>
+	</shape>
+	<shape fillcolour="#000000" linecolour="#385D8A" layer="11" duration="0" starttime="2" totalpoints="6" width="32" height="16"><point num="0" x="12" y="464"/>
+	<point num="1" x="8" y="464"/>
+	<point num="2" x="0" y="480"/>
+	<point num="3" x="16" y="480"/>
+	<point num="4" x="33" y="471"/>
+	<point num="5" x="12" y="464"/>
+	</shape>
+	<shape fillcolour="#000000" linecolour="#385D8A" layer="10" duration="0" starttime="2" totalpoints="6" width="32" height="16"><point num="0" x="114" y="271"/>
+	<point num="1" x="110" y="271"/>
+	<point num="2" x="102" y="287"/>
+	<point num="3" x="117" y="287"/>
+	<point num="4" x="135" y="278"/>
+	<point num="5" x="114" y="271"/>
+	</shape>
+	<shape fillcolour="#000000" linecolour="#385D8A" layer="9" duration="0" starttime="2" totalpoints="6" width="32" height="16"><point num="0" x="243" y="188"/>
+	<point num="1" x="239" y="188"/>
+	<point num="2" x="231" y="204"/>
+	<point num="3" x="246" y="204"/>
+	<point num="4" x="264" y="195"/>
+	<point num="5" x="243" y="188"/>
+	</shape>
+	<shape fillcolour="#000000" linecolour="#385D8A" layer="8" duration="0" starttime="2" totalpoints="6" width="32" height="16"><point num="0" x="154" y="260"/>
+	<point num="1" x="150" y="260"/>
+	<point num="2" x="142" y="276"/>
+	<point num="3" x="157" y="276"/>
+	<point num="4" x="175" y="266"/>
+	<point num="5" x="154" y="260"/>
+	</shape>
+	<shape fillcolour="#FFFF00" linecolour="#385D8A" layer="7" duration="0" starttime="2" totalpoints="6" width="49" height="28"><point num="0" x="241" y="182"/>
+	<point num="1" x="235" y="182"/>
+	<point num="2" x="223" y="210"/>
+	<point num="3" x="246" y="210"/>
+	<point num="4" x="272" y="194"/>
+	<point num="5" x="241" y="182"/>
+	</shape>
+	<shape fillcolour="#C00000" linecolour="#385D8A" layer="6" duration="0" starttime="2" totalpoints="55" width="390" height="383"><point num="0" x="-1" y="478"/>
+	<point num="1" x="43" y="436"/>
+	<point num="2" x="92" y="418"/>
+	<point num="3" x="101" y="361"/>
+	<point num="4" x="109" y="321"/>
+	<point num="5" x="111" y="311"/>
+	<point num="6" x="127" y="280"/>
+	<point num="7" x="149" y="244"/>
+	<point num="8" x="169" y="230"/>
+	<point num="9" x="193" y="191"/>
+	<point num="10" x="186" y="120"/>
+	<point num="11" x="208" y="177"/>
+	<point num="12" x="248" y="154"/>
+	<point num="13" x="240" y="172"/>
+	<point num="14" x="256" y="169"/>
+	<point num="15" x="300" y="180"/>
+	<point num="16" x="321" y="195"/>
+	<point num="17" x="337" y="209"/>
+	<point num="18" x="333" y="233"/>
+	<point num="19" x="315" y="239"/>
+	<point num="20" x="308" y="228"/>
+	<point num="21" x="296" y="242"/>
+	<point num="22" x="289" y="227"/>
+	<point num="23" x="282" y="246"/>
+	<point num="24" x="271" y="231"/>
+	<point num="25" x="258" y="240"/>
+	<point num="26" x="264" y="257"/>
+	<point num="27" x="273" y="248"/>
+	<point num="28" x="278" y="267"/>
+	<point num="29" x="287" y="252"/>
+	<point num="30" x="288" y="268"/>
+	<point num="31" x="304" y="262"/>
+	<point num="32" x="306" y="297"/>
+	<point num="33" x="294" y="300"/>
+	<point num="34" x="276" y="302"/>
+	<point num="35" x="264" y="295"/>
+	<point num="36" x="249" y="281"/>
+	<point num="37" x="242" y="271"/>
+	<point num="38" x="233" y="256"/>
+	<point num="39" x="241" y="316"/>
+	<point num="40" x="297" y="331"/>
+	<point num="41" x="374" y="322"/>
+	<point num="42" x="388" y="362"/>
+	<point num="43" x="369" y="420"/>
+	<point num="44" x="321" y="465"/>
+	<point num="45" x="259" y="491"/>
+	<point num="46" x="180" y="503"/>
+	<point num="47" x="139" y="496"/>
+	<point num="48" x="137" y="480"/>
+	<point num="49" x="142" y="442"/>
+	<point num="50" x="128" y="484"/>
+	<point num="51" x="89" y="503"/>
+	<point num="52" x="54" y="502"/>
+	<point num="53" x="20" y="496"/>
+	<point num="54" x="-1" y="478"/>
+	</shape>
+	<text xstart="162" ystart="72" xend="423" yend="126" layer="4" duration="0" starttime="2" font="Algerian" fontcolour="#FF0000" fontsize="20"><textbody italic="true" bold="true" underlined="false"><textstring>DRAGON</textstring>
+	</textbody>
+	</text>
+	<shape fillcolour="#000000" linecolour="#FFFFFF" layer="3" starttime="0" totalpoints="4" width="306" height="113"><point num="0" x="206" y="40"/>
+	<point num="1" x="107" y="121"/>
+	<point num="2" x="413" y="153"/>
+	<point num="3" x="206" y="40"/>
+	</shape>
+	<shape fillcolour="#A6A6A6" linecolour="#000000" layer="2" duration="5" starttime="2" branch="1" totalpoints="31" width="315" height="190"><point num="0" x="550" y="333"/>
+	<point num="1" x="484" y="307"/>
+	<point num="2" x="476" y="278"/>
+	<point num="3" x="471" y="226"/>
+	<point num="4" x="453" y="247"/>
+	<point num="5" x="405" y="249"/>
+	<point num="6" x="403" y="199"/>
+	<point num="7" x="426" y="150"/>
+	<point num="8" x="460" y="145"/>
+	<point num="9" x="480" y="187"/>
+	<point num="10" x="527" y="178"/>
+	<point num="11" x="582" y="174"/>
+	<point num="12" x="602" y="186"/>
+	<point num="13" x="622" y="196"/>
+	<point num="14" x="659" y="150"/>
+	<point num="15" x="679" y="172"/>
+	<point num="16" x="714" y="223"/>
+	<point num="17" x="717" y="230"/>
+	<point num="18" x="715" y="228"/>
+	<point num="19" x="718" y="230"/>
+	<point num="20" x="718" y="274"/>
+	<point num="21" x="708" y="295"/>
+	<point num="22" x="697" y="311"/>
+	<point num="23" x="671" y="308"/>
+	<point num="24" x="654" y="298"/>
+	<point num="25" x="639" y="275"/>
+	<point num="26" x="630" y="268"/>
+	<point num="27" x="625" y="279"/>
+	<point num="28" x="615" y="300"/>
+	<point num="29" x="601" y="325"/>
+	<point num="30" x="553" y="335"/>
+	</shape>
+	<image urlname="resources/images/Lighthouse.jpg" xstart="0" ystart="0" width="720" height="540" layer="1" duration="0" starttime="1"/>
+	</slide>
+	
+</slideshow></collection>
