@@ -6,6 +6,7 @@ import imageModule.ImagePainter;
 
 
 import java.awt.Color;
+import java.awt.Cursor;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -262,7 +263,7 @@ public class SlidePanel extends JPanel{
 		{
 			this.videoPlayer.stopMedia();
 		}
-		this.repaint();
+		//this.repaint();
 		
 	}
 	
@@ -399,7 +400,7 @@ public class SlidePanel extends JPanel{
        
         mediaObjects.add(shapeObject);
         layeredPane.add(shapeObject,shape.getLayer());
-        this.repaint();
+        //this.repaint();
         
         //System.out.printf("Added Media Object%n");
 	}
@@ -431,7 +432,7 @@ public class SlidePanel extends JPanel{
 		
 		mediaObjects.add(imageObject);
 		layeredPane.add(imageObject,image.getLayer());
-		this.repaint();
+		//this.repaint();
 	}
 	
 	
@@ -447,7 +448,7 @@ public class SlidePanel extends JPanel{
 		videoPlayer = new VideoPlayer(video);
         //this.add(videoPlayer);
         layeredPane.add(videoPlayer,video.getLayer());
-        this.repaint();
+       // this.repaint();
 	}
 	
 	
@@ -513,7 +514,8 @@ public class SlidePanel extends JPanel{
 		layeredPane.add(textObject, text.getLayer());
 		
 		mediaObjects.add(textObject);
-		this.repaint();
+		//this.repaint();
+		//getParent().repaint();
 		
 	}
 
@@ -585,6 +587,37 @@ public class SlidePanel extends JPanel{
 						}
 						
 					}
+			@Override
+			public void mouseMoved(MouseEvent e) {
+				Cursor handCursor = Cursor.getPredefinedCursor(Cursor.HAND_CURSOR);
+				Cursor defaultCursor = Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR);
+				
+				JTextPane textPane = (JTextPane) e.getSource();
+				java.awt.Point pt = new java.awt.Point(e.getX(), e.getY());
+				int pos = textPane.viewToModel(pt);
+				
+				if (pos >= 0)
+				{
+					StyledDocument doc = textPane.getStyledDocument();
+					
+					if (doc instanceof StyledDocument){
+						StyledDocument hdoc = (StyledDocument) doc;
+						Element el = hdoc.getCharacterElement(pos);
+						AttributeSet a = el.getAttributes();
+						String href = (String) a.getAttribute(HTML.Attribute.HREF);
+						Integer branch = (Integer) a.getAttribute(HTML.Attribute.LINK);
+						if (href != null || (branch != null && branch !=-1)){
+							if(getCursor() != handCursor){
+								textPane.setCursor(handCursor);
+							}
+						}
+						else{
+							textPane.setCursor(defaultCursor);
+						}
+						
+		             }           
+				}
+			}
 				
 			
 		};

@@ -93,7 +93,7 @@ public class Scribe extends JPanel{
 		textPane = createTextPane();
 		textPane.setEditable(false);
 		//textPane.addMouseListener(this);
-		textPane.addMouseMotionListener(textHandListener);
+		textPane.addMouseMotionListener(listener);
 		textPane.addMouseListener(listener);
 		textPane.setMaximumSize(new Dimension(text.getXend()-text.getX_coord(),text.getYend()-text.getY_coord()));
 		

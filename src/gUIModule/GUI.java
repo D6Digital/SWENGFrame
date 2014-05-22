@@ -694,35 +694,37 @@ private void setupTextListener() {
 		public void mouseClicked(MouseEvent e) {
 			java.awt.Desktop desktop = java.awt.Desktop.getDesktop();
 			JTextPane textPane = (JTextPane) e.getSource();
-			if(textPane != null)
-			{
-				java.awt.Point pt = new java.awt.Point(e.getX(), e.getY());
-				int pos = textPane.viewToModel(pt);
-			
-				
-				if (pos >= 0)
+			if(textPane.getParent().getParent().getParent().getMousePosition()!=null){
+				if(textPane != null)
 				{
-					StyledDocument doc = textPane.getStyledDocument();
-					if (doc instanceof StyledDocument){
-						StyledDocument hdoc = (StyledDocument) doc;
-						Element el = hdoc.getCharacterElement(pos);
-						AttributeSet a = el.getAttributes();
-						String href = (String) a.getAttribute(HTML.Attribute.HREF);
-						
-						if (href != null){
-							try{                            
-								java.net.URI uri = new java.net.URI( href );
-								desktop.browse( uri );
-		                       }
-							catch ( Exception ev ){
-								System.err.println( ev.getMessage() );
-		                       }
+					java.awt.Point pt = new java.awt.Point(e.getX(), e.getY());
+					int pos = textPane.viewToModel(pt);
+				
+					
+					if (pos >= 0)
+					{
+						StyledDocument doc = textPane.getStyledDocument();
+						if (doc instanceof StyledDocument){
+							StyledDocument hdoc = (StyledDocument) doc;
+							Element el = hdoc.getCharacterElement(pos);
+							AttributeSet a = el.getAttributes();
+							String href = (String) a.getAttribute(HTML.Attribute.HREF);
 							
-		                }
-						Integer branch = (Integer) a.getAttribute(HTML.Attribute.LINK);
-						
-						if (branch != null && branch != -1){
-							slidePanel.refreshSlide(slideList.get(branch));
+							if (href != null){
+								try{                            
+									java.net.URI uri = new java.net.URI( href );
+									desktop.browse( uri );
+			                       }
+								catch ( Exception ev ){
+									System.err.println( ev.getMessage() );
+			                       }
+								
+			                }
+							Integer branch = (Integer) a.getAttribute(HTML.Attribute.LINK);
+							
+							if (branch != null && branch != -1){
+								slidePanel.refreshSlide(slideList.get(branch));
+							}
 						}
 					}
 				}
@@ -737,31 +739,33 @@ private void setupTextListener() {
 			Cursor defaultCursor = Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR);
 			
 			JTextPane textPane = (JTextPane) e.getSource();
+			if(textPane.getParent().getParent().getParent().getMousePosition()!=null){
 			java.awt.Point pt = new java.awt.Point(e.getX(), e.getY());
 			int pos = textPane.viewToModel(pt);
 			
-			if (pos >= 0)
-			{
-				StyledDocument doc = textPane.getStyledDocument();
-				
-				if (doc instanceof StyledDocument){
-					StyledDocument hdoc = (StyledDocument) doc;
-					Element el = hdoc.getCharacterElement(pos);
-					AttributeSet a = el.getAttributes();
-					String href = (String) a.getAttribute(HTML.Attribute.HREF);
-					Integer branch = (Integer) a.getAttribute(HTML.Attribute.LINK);
-					if (href != null || (branch != null && branch !=-1)){
-						if(getCursor() != handCursor){
-							textPane.setCursor(handCursor);
-						}
-					}
-					else{
-						textPane.setCursor(defaultCursor);
-					}
+				if (pos >= 0)
+				{
+					StyledDocument doc = textPane.getStyledDocument();
 					
-	             }           
+					if (doc instanceof StyledDocument){
+						StyledDocument hdoc = (StyledDocument) doc;
+						Element el = hdoc.getCharacterElement(pos);
+						AttributeSet a = el.getAttributes();
+						String href = (String) a.getAttribute(HTML.Attribute.HREF);
+						Integer branch = (Integer) a.getAttribute(HTML.Attribute.LINK);
+						if (href != null || (branch != null && branch !=-1)){
+							if(getCursor() != handCursor){
+								textPane.setCursor(handCursor);
+							}
+						}
+						else{
+							textPane.setCursor(defaultCursor);
+						}
+						
+		             }           
+				}
+				borderListenerProcess(e,false,true);
 			}
-			borderListenerProcess(e,false,true);
 		}
 		
 	};
@@ -777,11 +781,13 @@ private void setupObjectListener() {
 					//a slideObject
 					slideMediaObject eventSource = (slideMediaObject) e.getSource();
 					if(eventSource != null){
-						//Get the branch value assigned to the object of type slideObject
-						Integer branch = eventSource.getBranch();
-						if (branch != null && branch != -1){
-							slidePanel.refreshSlide(slideList.get(branch));
-							//branch to slide specified by the object
+						if(eventSource.getParent().getMousePosition()!=null){
+							//Get the branch value assigned to the object of type slideObject
+							Integer branch = eventSource.getBranch();
+							if (branch != null && branch != -1){
+								slidePanel.refreshSlide(slideList.get(branch));
+								//branch to slide specified by the object
+							}
 						}
 					}
 					
@@ -801,19 +807,35 @@ private void borderListenerProcess(MouseEvent e1,Boolean isObject,Boolean isText
 	int xCoordinate = e1.getX();
 	int yCoordinate = e1.getY();
 	
+	boolean stopListening = false;
+	
 	if(isObject)
 	{
 	slideMediaObject eventSource = (slideMediaObject) e1.getSource();
-	xCoordinate = eventSource.getParent().getMousePosition().x;
-	yCoordinate = eventSource.getParent().getMousePosition().y;
+	if(eventSource.getParent().getMousePosition()!=null){
+		xCoordinate = eventSource.getParent().getMousePosition().x;
+		yCoordinate = eventSource.getParent().getMousePosition().y;
+		}
+		else
+		{
+			stopListening = true;
+		}
 	}
 	else{
 		if(isText){
-		JTextPane textPane = (JTextPane) e1.getSource();	
-		xCoordinate = textPane.getParent().getMousePosition().x;
-		yCoordinate = textPane.getParent().getMousePosition().y;
+		JTextPane textPane = (JTextPane) e1.getSource();
+		if(textPane.getParent().getParent().getParent().getMousePosition()!=null){
+			xCoordinate = textPane.getParent().getParent().getParent().getMousePosition().x;
+			yCoordinate = textPane.getParent().getParent().getParent().getMousePosition().y;
+			}
+			else
+			{
+				stopListening = true;
+			}
 		}
 	}
+	
+	if(!stopListening){
 	
 	
 	System.out.println("x="+xCoordinate+"y="+yCoordinate);
@@ -910,6 +932,7 @@ private void borderListenerProcess(MouseEvent e1,Boolean isObject,Boolean isText
 		timer.schedule(t,2000);
 		tabBool = false;
 		}
+	}
 	}
 }
 
