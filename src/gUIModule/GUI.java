@@ -1,6 +1,7 @@
 package gUIModule;
 
 import java.awt.BorderLayout;
+import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Cursor;
@@ -52,6 +53,7 @@ import presentation.Video;
 import presentation.XMLParser;
 import presentation.slideMediaObject;
 import src.Overall;
+import videoModule.VideoPlayer;
 import gUIModule.UtilitiesPanel;
 import gUIModule.DicePanel;
 import gUIModule.CalculatorPanel;
@@ -123,6 +125,8 @@ public class GUI extends JFrame { // implements WindowStateListener{
 
 	private MouseAdapter textBranchListener;
 	private MouseAdapter objectBranchListener;
+
+	private MouseAdapter videoListener;
 	
 	/**
 	 * Create a simple JFrame and then populate it with specified JPanel type
@@ -234,13 +238,9 @@ public class GUI extends JFrame { // implements WindowStateListener{
 			//set up listeners for objects on the slide panel
 			setupObjectListener();
 			setupTextListener();
+			setupVideoListener();
 
-//			//set up slide
-//			slidePanel.loadPresentation(slideList);
-//			slidePanel.setupListeners(textBranchListener, objectBranchListener);
-//			slidePanel.setupSlide(slideList.get(0));
-//			currentVisibleSlideID = 0;
-//			slidePanel.setBounds(0, 0, slideList.getWidth(), slideList.getHeight());	
+
 
 			//set up tabs
 			//utilities tab
@@ -472,12 +472,11 @@ public class GUI extends JFrame { // implements WindowStateListener{
 			layers.add(slidePanel,9);
 			
 			//set up slide
-            slidePanel.loadPresentation(slideList);
-            slidePanel.setupListeners(textBranchListener, objectBranchListener);
-            slidePanel.setupSlide(slideList.get(0));
-            currentVisibleSlideID = 0;
-            slidePanel.setBounds(0, 0, slideList.getWidth(), slideList.getHeight());    
-			
+			slidePanel.loadPresentation(slideList);
+			slidePanel.setupListeners(textBranchListener, objectBranchListener,videoListener);
+			slidePanel.setupSlide(slideList.get(0));
+			currentVisibleSlideID = 0;
+			slidePanel.setBounds(0, 0, slideList.getWidth(), slideList.getHeight());	
 			
 
 			bookPane.add(layers);
@@ -526,7 +525,7 @@ public class GUI extends JFrame { // implements WindowStateListener{
 		layers.addMouseMotionListener(new java.awt.event.MouseMotionAdapter(){
 			@Override
 			public void mouseMoved(MouseEvent e1){
-				borderListenerProcess(e1,false,false);
+				borderListenerProcess(e1,false,false,false);
 				
 			}
 		});
@@ -762,7 +761,7 @@ private void setupTextListener() {
 						
 		             }           
 				}
-				borderListenerProcess(e,false,true);
+				borderListenerProcess(e,false,true,false);
 			}
 		}
 		
@@ -792,15 +791,47 @@ private void setupObjectListener() {
 				}
 		@Override
 		public void mouseMoved(MouseEvent e) {
-			borderListenerProcess(e,true,false);
+			borderListenerProcess(e,true,false,false);
 		}
 			
 		
 	};
 }
 
+private void setupVideoListener() {
+	videoListener = new MouseAdapter() {
+	    	@Override
+	    	public void mouseMoved(MouseEvent e1){
+	    		Canvas videoCanvas = (Canvas) e1.getSource();
+	    		VideoPlayer videoPlayer = (VideoPlayer) videoCanvas.getParent().getParent();
+	    		//int xCoordinate = e1.getX();
+	    		int yCoordinate = e1.getY();
+	    		
+	    		if(!videoPlayer.isPlaying())
+	    		{
+	    			videoPlayer.ControlPanel.setVisible(true);
+	    		}
+	    		else
+	    		{
+	    			if (yCoordinate > ((videoPlayer.overlayPanel.getHeight())- 80)){
+		    			//if(!ControlPanel.isVisible()) {
+		    			    videoPlayer.ControlPanel.setVisible(true);
+		    			//}
+		    		}
+	    			else
+	    			{
+	    			videoPlayer.ControlPanel.setVisible(false);
+	    			}
+	    		}
+	    		
+	    		borderListenerProcess(e1,false,false,true);
+	    	}
+	    	
+	    
+	};
+}
 
-private void borderListenerProcess(MouseEvent e1,Boolean isObject,Boolean isText){
+private void borderListenerProcess(MouseEvent e1,Boolean isObject,Boolean isText, Boolean isVideo){
 	
 	int xCoordinate = e1.getX();
 	int yCoordinate = e1.getY();
@@ -829,6 +860,22 @@ private void borderListenerProcess(MouseEvent e1,Boolean isObject,Boolean isText
 			else
 			{
 				stopListening = true;
+			}
+		}
+		else{
+			if(isVideo){
+				Canvas videoCanvas = (Canvas) e1.getSource();
+	    		VideoPlayer videoPlayer = (VideoPlayer) videoCanvas.getParent().getParent();
+				if(videoPlayer.getParent().getParent().getParent().getMousePosition()!=null){
+					xCoordinate = videoPlayer.getParent().getParent().getParent().getMousePosition().x;
+					yCoordinate = videoPlayer.getParent().getParent().getParent().getMousePosition().y;
+					}
+					else
+					{
+						stopListening = true;
+					}
+				
+	    		
 			}
 		}
 	}

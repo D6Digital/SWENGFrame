@@ -89,6 +89,8 @@ public class SlidePanel extends JPanel{
 
     private boolean playlistLocked = true;
 
+	private MouseAdapter videoListener;
+
 	
 	
 	
@@ -446,7 +448,7 @@ public class SlidePanel extends JPanel{
 		
 		// TODO Replace with the embedded video player when available
 		// Start paused by default
-		videoPlayer = new VideoPlayer(video);
+		videoPlayer = new VideoPlayer(video,videoListener);
         //this.add(videoPlayer);
         layeredPane.add(videoPlayer,video.getLayer());
        // this.repaint();
@@ -629,10 +631,12 @@ public class SlidePanel extends JPanel{
 	 * compatibility with the hierarchy of classes
 	 * @param textListener
 	 * @param objectListener
+	 * @param videoListener 
 	 */
-	public void setupListeners(MouseAdapter textListener, MouseAdapter objectListener){
+	public void setupListeners(MouseAdapter textListener, MouseAdapter objectListener, MouseAdapter videoListener){
 		this.branchListener = objectListener;
 		this.textBranchListener = textListener;
+		this.videoListener = videoListener;
 		
 	}
 
