@@ -330,7 +330,7 @@ public class StandAloneMusicPlayer {
      * should be LOWERCASE entirely...
      * @return Return the button which was passed in.
      */
-    private JButton setupListenerAndAction(JButton buttonName, final String playerMethodCaseName) {
+    private JButton setupListenerAndAction(final JButton buttonName, final String playerMethodCaseName) {
         buttonName.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e)
             {
@@ -341,7 +341,7 @@ public class StandAloneMusicPlayer {
                 case "next":            nextMedia();                                    break;
                 case "previous":        previousMedia();                                break;
                 case "openplaylist":    openPlaylist();                                 break;
-                case "lockplaylist":    lockedAndPreventingPlayerUse(!LockedPlaylistValueAccess.lockedPlaylist);
+                case "lockplaylist":    lockedAndPreventingPlayerUse(buttonName, !LockedPlaylistValueAccess.lockedPlaylist);
                 System.out.println("???? " + LockedPlaylistValueAccess.lockedPlaylist); break;
                 default: break;
                 }
@@ -430,8 +430,8 @@ public class StandAloneMusicPlayer {
     }
 
 
-    private Component getLockPlaylistButton() {
-        JButton button = new JButton("Lock Playlist");
+    private JButton getLockPlaylistButton() {
+        JButton button = new JButton("Unlock Playlist");
         setupListenerAndAction(button, "lockplaylist");      
         return button;     
     }
@@ -613,11 +613,21 @@ public class StandAloneMusicPlayer {
 
     /**TODO implement
      */
-    private void lockedAndPreventingPlayerUse(boolean trueOrFalse) {
+    private void lockedAndPreventingPlayerUse(JButton button, boolean trueOrFalse) {
+        if(button.getText().equals("Unlock Playlist")) {
+            button.setText("Lock Playlist");
+            System.out.println("here1?");
+        }
+        else if(button.getText().equals("Lock Playlist")) {
+            button.setText("Unlock Playlist");
+            System.out.println("here2?");
+        }
         mediaPlayer.stop();
         LockedPlaylistValueAccess.lockedPlaylist = trueOrFalse;
         System.out.println("in method " + trueOrFalse);
         fileChooser.lockTheOpenButton(trueOrFalse);
+        button.repaint();
+        //fullPanel.repaint();
     }
 
 

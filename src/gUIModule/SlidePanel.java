@@ -105,7 +105,7 @@ public class SlidePanel extends JPanel{
 		
 		mediaObjects = new ArrayList<slideMediaObject>();
 		
-		audioPlayer = new EmbeddedAudioPlayer(vlcLibraryPath );
+		audioPlayer = new EmbeddedAudioPlayer(vlcLibraryPath);
 		// set layout manager to null so media components can be added to their specific co-ordinates
 		setLayout(null);
 		
@@ -233,7 +233,7 @@ public class SlidePanel extends JPanel{
 		}
        };
        theTimer = new Timer(delay, taskPerformer);
-       theTimer.setInitialDelay(2);
+       theTimer.setInitialDelay(50);
        theTimer.start();
        
        
@@ -255,8 +255,8 @@ public class SlidePanel extends JPanel{
 	
 	public void refreshSlide(Slide newSlide){
 		this.theTimer.stop();
-		clearSlide();
-		this.setupSlide(newSlide);
+        clearSlide();
+        this.setupSlide(newSlide);
 		if(audioPlayer != null)
 		{
 			this.audioPlayer.stopMedia();
@@ -265,6 +265,7 @@ public class SlidePanel extends JPanel{
 		{
 			this.videoPlayer.stopMedia();
 		}
+
 		//this.repaint();
 		
 	}
