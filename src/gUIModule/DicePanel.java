@@ -49,6 +49,9 @@ public class DicePanel extends JPanel implements ActionListener{
 	String secondSelectedDiceType = "d0";
 	int secondSelectedDiceQuantity = 0;
 	
+	int panelWidth;
+	int panelHeight;
+	
 	/**
 	 * Create a simple JFrame and then populate it with specified JPanel type
 	 * @return 

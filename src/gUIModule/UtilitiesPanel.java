@@ -225,6 +225,7 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
     private void setWidth(int width) {
         this.utilitiesWidth = width;
         multiPanel.setBounds(0,0,utilitiesWidth,700);
+        backButton.setBounds(0, 520, width, 20);
         
     }
     
