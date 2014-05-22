@@ -91,16 +91,22 @@ public class SlidePanel extends JPanel{
 
 	private MouseAdapter videoListener;
 
+	private double scalingFactorX = 1;
+
+	private double scalingFactorY = 1;
+
 	
 	
 	
 	
+	
+
+
 	/**
 	 * Create a panel ready to have all the necessary slide media added
 	 */
 	public SlidePanel() {
 		super();
-		
 		
 		
 		mediaObjects = new ArrayList<slideMediaObject>();
@@ -149,7 +155,7 @@ public class SlidePanel extends JPanel{
 	    
 	    layeredPane = new JLayeredPane();
 	    //layeredPane.setPreferredSize(new Dimension(presentation.getWidth(),presentation.getHeight()));
-	    layeredPane.setBounds(0, 0, presentation.getWidth(), presentation.getHeight());
+	    layeredPane.setBounds(0, 0, (int) (presentation.getWidth()*scalingFactorX), (int) (presentation.getHeight()*scalingFactorY));
 	    layeredPane.setLayout(null);
 	    add(layeredPane);
 
@@ -343,8 +349,8 @@ public class SlidePanel extends JPanel{
 			//System.out.printf("Point Shape: %d%n", shape.getPointList().size());
 			for(int i=0; i<(shape.getNumberOfPoints()); i++){
 				
-				pointX = shape.getPoint(i).getX();
-				pointY = shape.getPoint(i).getY();
+				pointX = (int) (shape.getPoint(i).getX()*scalingFactorX);
+				pointY = (int) (shape.getPoint(i).getY()*scalingFactorX);
 				//System.out.printf("Reading Point %d, x %d, y %d%n", i, pointX, pointY);
 				if (i==0){
 					highX = pointX;
@@ -361,22 +367,22 @@ public class SlidePanel extends JPanel{
 			}
 			for(int i=0; i<(shape.getNumberOfPoints()); i++){
 				
-				pointX = shape.getPoint(i).getX() - lowX;
-				pointY = shape.getPoint(i).getY() - lowY;
+				pointX = (int) ((shape.getPoint(i).getX()*scalingFactorX) - lowX);
+				pointY = (int) ((shape.getPoint(i).getY()*scalingFactorY) - lowY);
 				//System.out.printf("Setting Point %d, x %d, y %d%n", i, pointX, pointY);
 				graphic.setPoint (i+1, pointX, pointY);
 			}
 		}
 		else{
 			//System.out.printf("Regular %d Side Shape%n", shape.getNumberOfPoints());
-			graphic.setWidth(shape.getWidth());
-			graphic.setHeight(shape.getHeight());
-			graphic.setPoint(1, shape.getWidth()/2, shape.getHeight()/2);
+			graphic.setWidth((int) (shape.getWidth()*scalingFactorX));
+			graphic.setHeight((int) (shape.getHeight()*scalingFactorY));
+			graphic.setPoint(1, (int) (shape.getWidth()*scalingFactorX/2), (int) (shape.getHeight()*scalingFactorY/2));
 			graphic.setIsRegularShape(true);
-			lowX = shape.getPoint(0).getX() - (shape.getWidth()/2);
-			lowY = shape.getPoint(0).getX() - (shape.getHeight()/2);
-			highX = lowX + shape.getWidth();
-			highY = lowY + shape.getHeight();
+			lowX = (int) (shape.getPoint(0).getX()*scalingFactorX - (shape.getWidth()*scalingFactorY/2));
+			lowY = (int) (shape.getPoint(0).getX()*scalingFactorX - (shape.getHeight()*scalingFactorY/2));
+			highX = (int) (lowX + shape.getWidth()*scalingFactorX);
+			highY = (int) (lowY + shape.getHeight()*scalingFactorY);
 		}
 				
 		//System.out.printf("Fill Colour %s, Line Colour %s%n", shape.getFillColor(), shape.getLineColor());
@@ -416,12 +422,12 @@ public class SlidePanel extends JPanel{
 		// Eventually Use the bought-in module to improve this method
 		
 		TImage im = new TImage(image.getFile(),0,0);
-		im.setWidth(image.getWidth());
-		im.setHeight(image.getHeight());
+		im.setWidth((int) (image.getWidth()*scalingFactorX));
+		im.setHeight((int) (image.getHeight()*scalingFactorY));
 				
 		ImagePanel imagePanel = new ImagePanel(im);
 		imagePanel.setOpaque(false);
-		imagePanel.setBounds(0,0, image.getWidth(), image.getHeight());
+		imagePanel.setBounds(0,0, (int) (image.getWidth()*scalingFactorX), (int) (image.getHeight()*scalingFactorY));
 		
 		slideMediaObject imageObject = new slideMediaObject(image.getBranch(),image.getDuration(),image.getStart());
 		imageObject.addMouseListener(branchListener);
@@ -429,7 +435,7 @@ public class SlidePanel extends JPanel{
 		
 		imageObject.add(imagePanel);
 
-		imageObject.setBounds(image.getX_coord(),image.getY_coord(), image.getWidth(), image.getHeight());
+		imageObject.setBounds((int) (image.getX_coord()*scalingFactorX), (int) (image.getY_coord()*scalingFactorY), (int) (image.getWidth()*scalingFactorX), (int) (image.getHeight()*scalingFactorY));
 		imageObject.setVisible(true);
 		
 		
@@ -446,9 +452,28 @@ public class SlidePanel extends JPanel{
 	 */
 	private void addVideo(Video video){
 		
+		if(scalingFactorX!= 1)
+		{
+			Video scaledVideo = new Video();
+			scaledVideo.setHeight((int) (video.getHeight()*scalingFactorX));
+			scaledVideo.setWidth((int) (video.getWidth()*scalingFactorY));
+			scaledVideo.setFile(video.getFile());
+			scaledVideo.setStart(video.getStart());
+			scaledVideo.setLooping(video.isLooping());
+			scaledVideo.setPlaytime(video.getPlaytime());
+			scaledVideo.setDuration(video.getDuration());
+			scaledVideo.setX_coord((int) (video.getX_coord()*scalingFactorX));
+			scaledVideo.setY_coord((int) (video.getY_coord()*scalingFactorX));
+			
+			videoPlayer = new VideoPlayer(scaledVideo,videoListener);
+		}
+		else
+		{
+			videoPlayer = new VideoPlayer(video,videoListener);
+		}
 		// TODO Replace with the embedded video player when available
 		// Start paused by default
-		videoPlayer = new VideoPlayer(video,videoListener);
+		
         //this.add(videoPlayer);
         layeredPane.add(videoPlayer,video.getLayer());
        // this.repaint();
@@ -507,12 +532,12 @@ public class SlidePanel extends JPanel{
 	private void addText(Text text){
 		
 		JPanel textPanel = new Scribe(text,textBranchListener);
-		textPanel.setBounds(0,0, text.getXend()-text.getX_coord(), text.getYend()-text.getY_coord());
+		textPanel.setBounds(0,0, (int) (text.getXend()*scalingFactorX)-(int) (text.getX_coord()*scalingFactorX), (int) (text.getYend()*scalingFactorY)-(int) (text.getY_coord()*scalingFactorY));
 		
 		
 		slideMediaObject textObject = new slideMediaObject(-1,text.getDuration(),text.getStart());
 		textObject.add(textPanel);
-		textObject.setBounds(text.getX_coord(), text.getY_coord(), text.getXend()-text.getX_coord(), text.getYend()-text.getY_coord());
+		textObject.setBounds((int) (text.getX_coord()*scalingFactorX), (int) (text.getY_coord()*scalingFactorY), (int) (text.getXend()*scalingFactorX)-(int) (text.getX_coord()*scalingFactorX), (int) (text.getYend()*scalingFactorY)-(int) (text.getY_coord()*scalingFactorY));
 		//this.add(textPanel);
 		layeredPane.add(textObject, text.getLayer());
 		
@@ -521,6 +546,33 @@ public class SlidePanel extends JPanel{
 		//getParent().repaint();
 		
 	}
+	
+	/**
+	 * 
+	 * @return the current X scaling factor
+	 */
+	public double getScalingFactorX() {
+		return scalingFactorX;
+	}
+	
+	/**
+	 * 
+	 * @return the current Y scaling factor
+	 */
+	public double getScalingFactorY() {
+		return scalingFactorY;
+	}
+
+
+	/**
+	 * set the scaling factor which increases the size of the objects drawn on the panel
+	 * @param scalingFactor
+	 */
+	public void setScalingFactors(double scaleFactorX, double scaleFactorY) {
+		this.scalingFactorX = scaleFactorX;
+		this.scalingFactorY = scaleFactorY;
+	}
+
 
 	/**
 	 * Create a mouse listener to branch from sections of text
@@ -639,6 +691,10 @@ public class SlidePanel extends JPanel{
 		this.videoListener = videoListener;
 		
 	}
+
+
+
+	
 
 	
 	

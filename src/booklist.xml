@@ -6,8 +6,8 @@
     <icon>src\XMLBits\god.png</icon>
   </book>
   <book id="002">
-    <title>Jovian Spy</title>
-    <filename>src\JovianSpy.XML</filename>
+    <title>dynamic Dom</title>
+    <filename>github resources\dynamDom.xml</filename>
     <icon>src\XMLBits\char1jovian_spy.jpg</icon>
   </book>
 </booklist>

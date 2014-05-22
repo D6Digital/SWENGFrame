@@ -37,4 +37,8 @@ public class Collection {
 	public int size() {
 		return presentations.size();
 	}
+	
+	public ArrayList<Presentation> getPresentationList() {
+		return presentations;
+	}
 }

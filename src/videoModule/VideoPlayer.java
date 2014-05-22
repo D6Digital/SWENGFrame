@@ -56,7 +56,6 @@ public class VideoPlayer extends JPanel{
 	    final int ycoord = video.getY_coord();
 	    int start = video.getStart();
 	    int end = video.getStart() + video.getDuration();
-	    int layer = video.getLayer();
 	    String file = video.getFile();
 	    int width = video.getWidth();
 	    final int height = video.getHeight();
@@ -68,7 +67,6 @@ public class VideoPlayer extends JPanel{
 		System.out.println("ycoord = " + ycoord);
 		System.out.println("start = " + start);
 		System.out.println("end = " + end);
-		System.out.println("layer = " + layer);
 		System.out.println("file = " + file);
 		System.out.println("Width = " + width);
 		System.out.println("Height = " + height);

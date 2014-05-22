@@ -158,6 +158,8 @@ public Scribe(Text text) {
 			StyleConstants.setBold(newStyle, text.isBold());
 			StyleConstants.setItalic(newStyle, text.isItalic());
 			StyleConstants.setUnderline(newStyle, text.isUnderlined());
+			StyleConstants.setLineSpacing(newStyle, 0);
+			doc.setParagraphAttributes(0, text.getTextString().length(), newStyle,true);
 			
 			if(text.getScriptType() == ScriptTypeDef.superScript){
 				StyleConstants.setSuperscript(newStyle, true);
