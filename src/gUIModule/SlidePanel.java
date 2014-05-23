@@ -93,16 +93,6 @@ public class SlidePanel extends JPanel{
 	private double scalingFactorY = 1;
 
 	private Integer count;
-	
-
-	
-	
-	
-	
-	
-
-
-	
 
 
 
@@ -127,17 +117,10 @@ public class SlidePanel extends JPanel{
 		// TODO ensure this panel is ready to be displayed when necessary
 	}
 	
-	
-
 	public void loadPresentation(Presentation presentation) {
 		this.presentation = presentation;
-		this.setBackground(presentation.getBackgroundColourObject());
-		
-
-	    
+		this.setBackground(presentation.getBackgroundColourObject());   
 	}
-	
-	
 	
 	/**
 	 * Using the information in Slide, add the media components to the slide panel 
@@ -334,8 +317,6 @@ public class SlidePanel extends JPanel{
 		}
 		
 	}*/
-	
-
 	
 	/**
 	 * 
@@ -537,7 +518,6 @@ public class SlidePanel extends JPanel{
     public boolean getPlaylistLocked() {
         return playlistLocked;
     }
-	
 	
 	/**
 	 * 

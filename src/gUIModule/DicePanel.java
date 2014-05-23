@@ -184,7 +184,6 @@ public class DicePanel extends JPanel implements ActionListener{
 		displayTotalResult.setEnabled(false);
 	}
 	
-	// worthlesschange
 	/**
 	 * actionListener, stores the user selected values for dice type and quantity
 	 * calls rollDice() when the calculation is needed

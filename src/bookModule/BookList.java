@@ -21,18 +21,30 @@ public class BookList {
 		books = new ArrayList<Book>();
 	}
 
+	/**
+	 * @param adds current book
+	 */
 	public void addBook(Book currentBook) {
 		books.add(currentBook);
 		}
 
+	/**
+	 * @return books 
+	 */
 	public Book getBook(int i){
 		return books.get(i);
 	}
 
+	/**
+	 * @return version
+	 */
 	public static String getVersion() {
 		return version;
 	}	
 	
+	/**
+	 * @return title list of books available
+	 */
 	public ArrayList getTitles(){
 		ArrayList<String> titleList = new ArrayList<String>(0);
 		int size = books.size();
