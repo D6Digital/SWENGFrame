@@ -1,5 +1,6 @@
 package musicPlayerModule;
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
@@ -40,11 +41,20 @@ public class SecondHigherModuleExample {
         Native.loadLibrary(RuntimeUtil.getLibVlcLibraryName(), LibVlc.class);
         
         musicPlayer = new StandAloneMusicPlayer();
+        mainFrame.setLayout(null);
+        mainPanel.setLayout(null);
         
-        mainPanel.add(musicPlayer.getFullControlPanel());
+        mainPanel.add(musicPlayer.getFullControlPanel(300, 400));
         //mainPanel.add(killButton);
-        mainPanel.setBounds(0, 0, 200, 400);
+        mainPanel.setBounds(0, 0, 300, 400);
+        //new Color(0);
+        //mainPanel.setBackground(Color.WHITE);
         mainPanel.repaint();
+        
+        JLabel label = new JLabel("VOLUME");
+        label.setBounds(0, 0, 50,50);
+        mainPanel.add(label);
+        
         killButton.addActionListener(new ActionListener() {
             
             @Override
@@ -55,7 +65,7 @@ public class SecondHigherModuleExample {
             }
         });
         
-        mainFrame.setSize(200, 400);
+        mainFrame.setSize(300, 400);
         mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         mainFrame.add(mainPanel);
         mainFrame.setVisible(true);

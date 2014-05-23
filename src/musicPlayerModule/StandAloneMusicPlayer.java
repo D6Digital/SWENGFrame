@@ -73,7 +73,7 @@ public class StandAloneMusicPlayer {
     //JFrame f = new JFrame("vlcj embedded media list player test");
     JFrame playlistFrame = new JFrame("playlistFrame");
     JPanel playPanel = new JPanel();
-    JList playContents = new JList(listModel);
+    JList playContentsJList = new JList(listModel);
     static JLabel timeLabel = new JLabel();
     static JSlider timeSlider = new JSlider();
     static JPanel fullPanel = new JPanel();
@@ -97,8 +97,22 @@ public class StandAloneMusicPlayer {
 
     protected boolean changingTimeByHand;
     protected boolean changingSelectedPlaylistByHand;
+    
+    boolean initialLockedValue = false;
+    
     //private boolean playlistLocked = true;
-
+    
+    String playImage = "resources/buttons/play.png";
+    String pauseImage = "resources/buttons/pause.png";
+    String stopImage = "resources/buttons/stop.png";
+    String nextImage = "resources/buttons/fastforward.png";
+    String previousImage = "resources/buttons/rewind.png";
+    String lockImage = "resources/buttons/lockText.png";
+    String unlockImage = "resources/buttons/unlockText.png";
+    int heightOfLockIcon;
+    int widthOfPlayButton;
+    int heightOfPlayButton;
+    int playlistIconHeight;
 
     /**
      * Constructor for StandAloneMusicPlayer() class.
@@ -108,7 +122,7 @@ public class StandAloneMusicPlayer {
      * "\\" directory separation instead of single "\" to deal with Java escape character issues.
      */
     public StandAloneMusicPlayer(String vlcLibraryPathConstructor, String currentFilePathConstructor) {
-        LockedPlaylistValueAccess.lockedPlaylist = true;
+        LockedPlaylistValueAccess.lockedPlaylist = initialLockedValue;
 
         vlcLibraryPath = vlcLibraryPathConstructor;
         currentFilePath = currentFilePathConstructor;
@@ -130,7 +144,7 @@ public class StandAloneMusicPlayer {
      * "\\" directory separation instead of single "\" to deal with Java escape character issues.
      */
     public StandAloneMusicPlayer(String currentFilePathConstructor) {
-        LockedPlaylistValueAccess.lockedPlaylist = true;
+        LockedPlaylistValueAccess.lockedPlaylist = initialLockedValue;
         //vlcLibraryPath = vlcLibraryPathConstructor;
         currentFilePath = currentFilePathConstructor;
         newFilePath = currentFilePath;
@@ -149,7 +163,7 @@ public class StandAloneMusicPlayer {
      * been loaded earlier in the program and there is no default path to load into the player.
      */
     public StandAloneMusicPlayer() {
-        LockedPlaylistValueAccess.lockedPlaylist = true;
+        LockedPlaylistValueAccess.lockedPlaylist = initialLockedValue;
         //vlcLibraryPath = vlcLibraryPathConstructor;
         currentFilePath = "";
         newFilePath = currentFilePath;
@@ -162,9 +176,6 @@ public class StandAloneMusicPlayer {
 
         musicThread.start();
     }
-
-
-
 
     /**
      * Initialise music player thread and go into infinite loop of instructions while thread intact.
@@ -197,7 +208,7 @@ public class StandAloneMusicPlayer {
      */
     private void musicPlayerLoop() {
         if(!LockedPlaylistValueAccess.lockedPlaylist) {
-            String newPlayIndex = (String) playContents.getSelectedValue();
+            String newPlayIndex = (String) playContentsJList.getSelectedValue();
             chooseNewPlaylist();
             updateTime();
             updateVisibleSelectedPlaylist();
@@ -230,8 +241,8 @@ public class StandAloneMusicPlayer {
             }
 
             if(newIndex) {
-                playContents.setSelectedIndex(playContents.getSelectedIndex() + 1);
-                playContents.repaint();
+                playContentsJList.setSelectedIndex(playContentsJList.getSelectedIndex() + 1);
+                playContentsJList.repaint();
                 newIndex = false;
             } 
         }
@@ -299,7 +310,7 @@ public class StandAloneMusicPlayer {
                 mainFrame.setVisible(false);
                 mediaPlayer = openMediaPlayer();
                 currentPlayIndex = 0;
-                playContents.repaint();
+                playContentsJList.repaint();
             }
         }
     }
@@ -310,7 +321,7 @@ public class StandAloneMusicPlayer {
      */
     private void chooseFromPlaylist() {
         if(!LockedPlaylistValueAccess.lockedPlaylist) {
-            mediaListPlayer.playItem(playContents.getSelectedIndex());
+            mediaListPlayer.playItem(playContentsJList.getSelectedIndex());
         }
     }
 
@@ -415,36 +426,82 @@ public class StandAloneMusicPlayer {
 
 
     public JPanel getFullControlPanel(int widthOfPanel, int heightOfSlide) {
-        
+
         fullPanel.setLayout(null);
-        fullPanel.setBounds(0,0,200,400);
-        //fullPanel.repaint();
-        
-        fullPanel.add(getPlayButton());
-        fullPanel.add(getPauseButton());
-        fullPanel.add(getStopButton());
-        fullPanel.add(getNextButton());
-        fullPanel.add(getPreviousButton());
-        //fullPanel.add(getOpenPlaylistButton());
-        fullPanel.add(getLockPlaylistButton());
-        fullPanel.add(getVolumeSlider());
-        fullPanel.add(getTimeLabel());
-        fullPanel.add(getScrollSlider());
-       
+        fullPanel.setBounds(0,0,widthOfPanel,heightOfSlide);
+        fullPanel.add(getLockPlaylistButton(widthOfPanel, heightOfSlide));
+        fullPanel.add(getPlayButton(widthOfPanel, heightOfSlide));
+        fullPanel.add(getPauseButton(widthOfPanel, heightOfSlide));
+        fullPanel.add(getStopButton(widthOfPanel, heightOfSlide));
+        fullPanel.add(getVolumeSlider(widthOfPanel, heightOfSlide));
+        fullPanel.add(getVolumeLabel(widthOfPanel, heightOfSlide));
+        fullPanel.add(getNextButton(widthOfPanel, heightOfSlide));
+        fullPanel.add(getPreviousButton(widthOfPanel, heightOfSlide));
+        fullPanel.add(getTimeLabel(widthOfPanel, heightOfSlide));
+        fullPanel.add(getScrollSlider(widthOfPanel, heightOfSlide));
+
+        JButton button = fileChooser.getButton();
+//        button.setBounds(
+//                (int) (widthOfPanel*0.3),
+//                (int) (heightOfSlide*0.025*10) + heightOfLockIcon + heightOfPlayButton*3  +  (int) (heightOfSlide*0.1),
+//                (int) (widthOfPanel*0.4),
+//                (int) (heightOfSlide*0.1));
+        button.setBounds(
+                (int) (widthOfPanel/2) - (int) button.getIcon().getIconWidth()/2,
+                (int) (heightOfSlide*0.025*14) + heightOfLockIcon + heightOfPlayButton,
+                button.getIcon().getIconWidth(),
+                button.getIcon().getIconHeight());
+        playlistIconHeight = button.getIcon().getIconHeight();
+
+        fullPanel.add(getScrollPaneAsPanel(widthOfPanel, heightOfSlide));
+        fullPanel.add(button);
+
         return fullPanel;
     }
 
 
-    private JButton getLockPlaylistButton() {
-        JButton button = new JButton("Unlock Playlist");
-        button.setLayout(null);
-        button.setBounds(0,0,200,30);
-        setupListenerAndAction(button, "lockplaylist");      
-        return button;     
+    private JLabel getVolumeLabel(int widthOfPanel, int heightOfSlide) {
+        JLabel label = new JLabel("Volume");
+        label.setLayout(null);
+        label.setBounds(
+                (int) (widthOfPanel*0.385),
+                (int) (heightOfSlide*0.025*5) + heightOfLockIcon + heightOfPlayButton,
+                (int) (widthOfPanel*0.3),
+                (int) (heightOfSlide*0.075));
+       
+        return label;
     }
 
-    private JLabel getTimeLabel() {
-        timeLabel.setText(this.getCurrentPosition() + "/" + this.getTrackLength());               
+    private JButton getLockPlaylistButton(int widthOfPanel, int heightOfSlide) {
+        ImageIcon unlock = new ImageIcon(unlockImage);
+        JButton button = new JButton(unlock);
+        button.setBorderPainted(false); 
+        button.setContentAreaFilled(false); 
+        button.setFocusPainted(false); 
+        button.setOpaque(false);
+        button.setBounds(
+                (int) (widthOfPanel*0.025),
+                (int) (heightOfSlide*0.025),
+                unlock.getIconWidth(),
+                unlock.getIconHeight());
+        setupListenerAndAction(button, "lockplaylist");
+        heightOfLockIcon = unlock.getIconHeight();
+        return button;      
+    }
+
+    private JLabel getTimeLabel(int widthOfPanel, int heightOfSlide) {
+        timeLabel.setText(this.getCurrentPosition() + "/" + this.getTrackLength());
+//        timeLabel.setBounds(
+//                (int) (widthOfPanel*0.4),
+//                (int) (heightOfSlide*0.025*7) + heightOfLockIcon + heightOfPlayButton*2  +  (int) (heightOfSlide*0.2),
+//                (int) (widthOfPanel*0.2),
+//                (int) (heightOfSlide*0.1)
+//               );
+        timeLabel.setBounds(
+                (int) (widthOfPanel*0.4),
+                (int) (heightOfSlide*0.025*10) + heightOfLockIcon + heightOfPlayButton,
+                (int) (widthOfPanel*0.2),
+                (int) (heightOfSlide*0.1));
         return timeLabel;
         // mainPanel.repaint();
     }
@@ -462,76 +519,175 @@ public class StandAloneMusicPlayer {
 
     /**
      * Gets the JButton to stop media being played back and return play position to beginning of track.
+     * @param heightOfSlide 
+     * @param widthOfPanel 
      * @return JButton
      */
-    private JButton getStopButton() {
-        JButton button = new JButton("Stop");
-        button.setLayout(null);
-        button.setBounds(70,40,30,30);
+    private JButton getStopButton(int widthOfPanel, int heightOfSlide) {
+        ImageIcon stop = new ImageIcon(stopImage);
+        JButton button = new JButton(stop);
+        button.setBorderPainted(false); 
+        button.setContentAreaFilled(false); 
+        button.setFocusPainted(false); 
+        button.setOpaque(false);
+        button.setBounds(
+                (int) (widthOfPanel*0.048) + widthOfPlayButton*2,
+                (int) (heightOfSlide*0.038) + heightOfLockIcon,
+                stop.getIconWidth(),
+                stop.getIconHeight());
         setupListenerAndAction(button, "stop");      
-        return button;     
+        return button;       
     }
 
     /**
      * Gets the JButton to pause media playback, retaining play position.
+     * @param heightOfSlide 
+     * @param widthOfPanel 
      * @return JButton
      */
-    private JButton getPauseButton() {
-        JButton button = new JButton("Pause");
-        button.setBounds(35,40,30,30);
+    private JButton getPauseButton(int widthOfPanel, int heightOfSlide) {
+        ImageIcon pause = new ImageIcon(pauseImage);
+        JButton button = new JButton(pause);
+        button.setBorderPainted(false); 
+        button.setContentAreaFilled(false); 
+        button.setFocusPainted(false); 
+        button.setOpaque(false);
+        button.setBounds(
+                (int) (widthOfPanel*0.025*2) + widthOfPlayButton,
+                (int) (heightOfSlide*0.025*2) + heightOfLockIcon,
+                pause.getIconWidth(),
+                pause.getIconHeight());
         setupListenerAndAction(button, "pause");      
-        return button;     
+        return button;      
     }
 
     /**
      * Gets the JButton to play media, plays the current selected track, if it is paused or stopped.
+     * @param heightOfSlide 
+     * @param widthOfPanel 
      * @return JButton
      */
-    private JButton getPlayButton() {
-        JButton button = new JButton("Play");
-        button.setBounds(0,40,30,30);
-        setupListenerAndAction(button, "play");      
+    private JButton getPlayButton(int widthOfPanel, int heightOfSlide) {
+        ImageIcon play = new ImageIcon(playImage);
+        JButton button = new JButton(play);
+        button.setBorderPainted(false); 
+        button.setContentAreaFilled(false); 
+        button.setFocusPainted(false); 
+        button.setOpaque(false);
+        button.setBounds(
+                (int) (widthOfPanel*0.025),
+                (int) (heightOfSlide*0.025*2) + heightOfLockIcon,
+                play.getIconWidth(),
+                play.getIconHeight());
+        setupListenerAndAction(button, "play");  
+        widthOfPlayButton = play.getIconWidth();
+        heightOfPlayButton = play.getIconHeight();
         return button;     
     }
 
     /**
      * Gets the JButton that plays the next media in the playlist, loops round if at end of playlist.
+     * @param heightOfSlide 
+     * @param widthOfPanel 
      * @return JButton
      */
-    private JButton getNextButton() {
-        JButton button = new JButton("Next");
-        button.setBounds(0,80,30,30);
+    private JButton getNextButton(int widthOfPanel, int heightOfSlide) {
+        
+        ImageIcon next = new ImageIcon(nextImage);
+        JButton button = new JButton(next);
+        button.setBorderPainted(false); 
+        button.setContentAreaFilled(false); 
+        button.setFocusPainted(false); 
+        button.setOpaque(false);
+//        button.setBounds(
+//                (int) (widthOfPanel*0.025*2) + next.getIconWidth(),
+//                (int) (heightOfSlide*0.025*6) + heightOfLockIcon + heightOfPlayButton  +  (int) (heightOfSlide*0.1),
+//                next.getIconWidth(),
+//                next.getIconHeight()
+//               );
+        button.setBounds(
+                (int) (widthOfPanel*0.025)  + (int) (next.getIconWidth()*4.5),
+                (int) (heightOfSlide*0.025*2) + heightOfLockIcon,
+                next.getIconWidth(),
+                next.getIconHeight());
+        setupListenerAndAction(button, "play");  
+        widthOfPlayButton = next.getIconWidth();
+        heightOfPlayButton = next.getIconHeight();  
+        
         setupListenerAndAction(button, "next");      
         return button;     
     }
 
     /**
      * Gets the JButton that plays the previous media in the playlist, loops back round if at beginning of playlist.
+     * @param heightOfSlide 
+     * @param widthOfPanel 
      * @return JButton
      */
-    private JButton getPreviousButton() {
-        JButton button = new JButton("Previous");
-        button.setBounds(35,80,30,30);
-        setupListenerAndAction(button, "previous");      
-        return button;     
+    private JButton getPreviousButton(int widthOfPanel, int heightOfSlide) {
+        ImageIcon previous = new ImageIcon(previousImage);
+        JButton button = new JButton(previous);
+        button.setBorderPainted(false); 
+        button.setContentAreaFilled(false); 
+        button.setFocusPainted(false); 
+        button.setOpaque(false);
+//        button.setBounds(
+//                (int) (widthOfPanel*0.025),
+//                (int) (heightOfSlide*0.025*6) + heightOfLockIcon + heightOfPlayButton  +  (int) (heightOfSlide*0.1),
+//                previous.getIconWidth(),
+//                previous.getIconHeight()
+//               );
+        button.setBounds(
+                (int) (widthOfPanel*0.025)  + (int) (previous.getIconWidth()*3.5),
+                (int) (heightOfSlide*0.025*2) + heightOfLockIcon,
+                previous.getIconWidth(),
+                previous.getIconHeight());
+        setupListenerAndAction(button, "play");  
+        setupListenerAndAction(button, "play");  
+        widthOfPlayButton = previous.getIconWidth();
+        heightOfPlayButton = previous.getIconHeight();  
+        
+        setupListenerAndAction(button, "next");      
+        return button;        
     }
 
     /**
      * Returns the JSlider which controls the volume of playback, valued from 0-100.
+     * @param heightOfSlide 
+     * @param widthOfPanel 
      * @return JSlider
      */
-    private JSlider getVolumeSlider() {
+    private JSlider getVolumeSlider(int widthOfPanel, int heightOfSlide) {
         JSlider slider = new JSlider();
-        slider.setBounds(105,40,90,30);
+        slider.setBounds(
+                (int) (widthOfPanel*0.025),
+                ((int) (heightOfSlide*0.025*2)) + heightOfLockIcon + heightOfPlayButton,
+                (int) (widthOfPanel*0.95),
+                (int) (heightOfSlide*0.1));
+        
         slider.setMinimum(0);
         slider.setMaximum(100);
         slider.setValue(100);
+        slider.validate();
+        
         setupListenerAndAction(slider, "volume");
+
         return slider;
     }
 
-    private JSlider getScrollSlider() {
-        timeSlider.setBounds(70,80,130,30);
+    private JSlider getScrollSlider(int widthOfPanel, int heightOfSlide) {
+        //timeSlider.setBounds(70,80,130,30);
+//        timeSlider.setBounds(
+//                (int) (widthOfPanel*0.025),
+//                (int) (heightOfSlide*0.025*7) + heightOfLockIcon + heightOfPlayButton*2  +  (int) (heightOfSlide*0.1),
+//                (int) (widthOfPanel*0.95),
+//                (int) (heightOfSlide*0.1)
+//               );
+        timeSlider.setBounds(
+                (int) (widthOfPanel*0.025),
+                (int) (heightOfSlide*0.025*7) + heightOfLockIcon + heightOfPlayButton,
+                (int) (widthOfPanel*0.95),
+                (int) (heightOfSlide*0.1));
         timeSlider.setMinimum(0);
         timeSlider.setMaximum(1000);
         setupListenerAndAction(timeSlider, "time");
@@ -565,7 +721,7 @@ public class StandAloneMusicPlayer {
     private void nextMedia() {
         if(!LockedPlaylistValueAccess.lockedPlaylist) { 
             mediaListPlayer.playNext();
-            playContents.setSelectedIndex(playContents.getSelectedIndex() + 1);
+            playContentsJList.setSelectedIndex(playContentsJList.getSelectedIndex() + 1);
         }
     }
 
@@ -575,7 +731,7 @@ public class StandAloneMusicPlayer {
     private void previousMedia() {
         if(!LockedPlaylistValueAccess.lockedPlaylist) { 
             mediaListPlayer.playPrevious();
-            playContents.setSelectedIndex(playContents.getSelectedIndex() - 1);
+            playContentsJList.setSelectedIndex(playContentsJList.getSelectedIndex() - 1);
         }
     }
 
@@ -675,18 +831,18 @@ public class StandAloneMusicPlayer {
         JPanel playlistChooserPanel = new JPanel();
 
         playlistChooserPanel.setLayout(null);
-        playlistChooserPanel.setBounds(0, 105, 200, 250);
+        playlistChooserPanel.setBounds(0, 0, 0, 0);
         
         playlistChooserPanel.add(fileChooser.openDialog());
         createList(files);
 
         contentPane = playlistFrame.getContentPane();
-        contentPane.setLayout(new BorderLayout());
+        contentPane.setLayout(null);
 
         mediaPlayer = openMediaPlayer();
 
         fullPanel.setLayout(null);
-        fullPanel.setBounds(0, 0, 200, 350);
+        fullPanel.setBounds(0, 0, 100, 100);
         
         fullPanel.add(playlistChooserPanel);
         fullPanel.add(playPanel);
@@ -699,29 +855,31 @@ public class StandAloneMusicPlayer {
         //        playlistFrame.validate(); 
 
     }
-
-    /**
-     * Clears the existing list of filenames, then adds each element in the parameter nameList into
-     * the listModel, which is then placed on the JPanel.
-     * @param nameList, arraylist of strings containing the names of each of file to be added to the playlist.
-     */
-    private void createList(ArrayList<String> nameList) {
-        listModel.clear();
-
-        for(String listItem : nameList){
-            listModel.addElement(listItem);
-        }
-        playContents.setLayout(null);
-        playContents.setBounds(0, 0, 200, 200);
-        scrollPane.setViewportView(playContents);
-        scrollPane.setLayout(null);
-        scrollPane.setBounds(0, 0, 200, 200);
-        playPanel.setLayout(null);
-        playPanel.setBounds(0, 120, 200, 200);
-        playPanel.add(scrollPane);
-        playlistFrame.pack();
+    
+    public JPanel getScrollPaneAsPanel(int widthOfPanel, int heightOfSlide) {
+        JPanel panel = new JPanel();
+        panel.setLayout(null);
+        panel.setBounds(               
+        (int) (widthOfPanel*0.025),
+        (int) (heightOfSlide*0.025*10) + heightOfLockIcon + heightOfPlayButton*3  +  (int) (heightOfSlide*0.2),
+        (int) (widthOfPanel*0.95),
+        (int) (heightOfSlide*0.5));
+        panel.setBounds(
+                (int) (widthOfPanel*0.025),
+                (int) (heightOfSlide*0.025*14) + heightOfLockIcon + heightOfPlayButton + playlistIconHeight,
+                (int) (widthOfPanel*0.95),
+                (int) (heightOfSlide*0.2));
+        //playContentsJList.setLayout(null);
+        //playContentsJList.setBounds(0, 0, 200, 200);
+        //scrollPane.setLayout(null);
+        scrollPane.setViewportView(playContentsJList);
+        scrollPane.setBounds(0, 0, (int) (widthOfPanel*0.95),
+                (int) (heightOfSlide*0.2));
+        
+        panel.add(scrollPane);
+        
         // Add listener which plays a piece of media whenever the user chooses it in the JList.
-        playContents.addMouseListener(new MouseListener() {
+        playContentsJList.addMouseListener(new MouseListener() {
 
             @Override
             public void mouseReleased(MouseEvent e) {
@@ -743,7 +901,7 @@ public class StandAloneMusicPlayer {
             public void mouseClicked(MouseEvent e) {}
         });
 
-        playContents.addListSelectionListener(new ListSelectionListener() {  
+        playContentsJList.addListSelectionListener(new ListSelectionListener() {  
             @Override
             public void valueChanged(ListSelectionEvent arg0) {
                 if(changingSelectedPlaylistByHand) {
@@ -751,6 +909,67 @@ public class StandAloneMusicPlayer {
                 }
             }
         });
+        
+        return panel;
+        
+    }
+
+    /**
+     * Clears the existing list of filenames, then adds each element in the parameter nameList into
+     * the listModel, which is then placed on the JPanel.
+     * @param nameList, arraylist of strings containing the names of each of file to be added to the playlist.
+     */
+    private void createList(ArrayList<String> nameList) {
+        System.out.println("new list creating");
+        
+        listModel.clear();
+
+        for(String listItem : nameList){
+            listModel.addElement(listItem);
+        }
+        
+        scrollPane.repaint();
+        
+//        playContentsJList.setLayout(null);
+//        playContentsJList.setBounds(0, 0, 100, 100);
+//        scrollPane.setViewportView(playContentsJList);
+//        scrollPane.setLayout(null);
+//        scrollPane.setBounds(0, 0, 100, 100);
+//        playPanel.setLayout(null);
+//        playPanel.setBounds(0, 0, 100, 100);
+//        playPanel.add(scrollPane);
+//        playlistFrame.pack();
+//        // Add listener which plays a piece of media whenever the user chooses it in the JList.
+//        playContentsJList.addMouseListener(new MouseListener() {
+//
+//            @Override
+//            public void mouseReleased(MouseEvent e) {
+//                changingSelectedPlaylistByHand = false;
+//            }
+//
+//            @Override
+//            public void mousePressed(MouseEvent e) {
+//                changingSelectedPlaylistByHand = true;
+//            }
+//
+//            @Override
+//            public void mouseExited(MouseEvent e) {}
+//
+//            @Override
+//            public void mouseEntered(MouseEvent e) { }
+//
+//            @Override
+//            public void mouseClicked(MouseEvent e) {}
+//        });
+//
+//        playContentsJList.addListSelectionListener(new ListSelectionListener() {  
+//            @Override
+//            public void valueChanged(ListSelectionEvent arg0) {
+//                if(changingSelectedPlaylistByHand) {
+//                    chooseFromPlaylist();
+//                }
+//            }
+//        });
     }
 
     /**
