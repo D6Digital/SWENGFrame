@@ -214,11 +214,11 @@ public class GUI extends JFrame implements WindowStateListener, ComponentListene
 		
 		mainMenuPanel = new MainMenuPanel(slideList.getWidth(), slideList.getHeight());
 		mainMenuPanel.setBounds(0,0, slideList.getWidth(), slideList.getHeight());
-		JButton button = mainMenuPanel.getButton();
+		JButton buttonFromMainMenu = mainMenuPanel.getButton();
 		bookMainPanelSetUp();
 		layers.setVisible(false);
 		add(mainMenuPanel);
-		button.addActionListener(
+		buttonFromMainMenu.addActionListener(
 				new ActionListener() {
 
 					@Override
@@ -733,6 +733,18 @@ public void bookMainPanelSetUp(){
 		contents.setBackground(Color.GRAY);
 		contents.repaint();
 		contents.setVisible(false);
+		
+		JButton mainMenuButton = contentsPanel.getMainMenuButton();
+		mainMenuButton.addActionListener(
+				new ActionListener() {
+
+					@Override
+					public void actionPerformed(ActionEvent arg0) {
+						System.out.println("Main Menu Pressed");
+						layers.setVisible(false);
+						mainMenuPanel.setVisible(true);
+					}
+				});
 		
 		final JList contentsList = contentsPanel.getContentsList();
 		

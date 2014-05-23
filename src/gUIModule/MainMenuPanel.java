@@ -16,6 +16,7 @@ public class MainMenuPanel extends JPanel{
 	
 	JButton button = new JButton("Start");
 	JLabel background;
+	JLabel logoLabel;
 	JLayeredPane layers = new JLayeredPane();
 	public MainMenuPanel(int width, int height) {
 		
@@ -37,6 +38,17 @@ public class MainMenuPanel extends JPanel{
 			e2.printStackTrace();
 		}
 		
+		BufferedImage logoImage;
+		try{
+			logoImage = ImageIO.read(new File("resources/buttons/sideLogo.png"));
+			Image scaledBackground = logoImage.getScaledInstance(150,height-(int)(height*0.1),java.awt.Image.SCALE_SMOOTH);
+			logoLabel = new JLabel(new ImageIcon(scaledBackground));
+			logoLabel.setBounds(0, (int)(height*0.1), 150,(height-(int)(height*0.1)));
+		}catch(IOException e2){
+			e2.printStackTrace();
+		}
+		
+		layers.add(logoLabel,2);
 		layers.add(background,1);
 		layers.add(button,0);
 		add(layers);
