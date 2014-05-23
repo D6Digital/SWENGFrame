@@ -1232,8 +1232,8 @@ public void setupSlidePlayer(String filename){
 public void windowStateChanged(WindowEvent e) {
 	System.err.println("RESIZED");
 	if(slidePanel!=null){
-	scaleFactorX = (double)getSize().width/(double)720;
-	scaleFactorY = (double)getSize().height/(double)540;
+	scaleFactorX = (double)(getSize().width-insets.left-insets.right)/(double)720;
+	scaleFactorY = (double)(getSize().height-insets.top-insets.bottom)/(double)540;
     slidePanel.setScalingFactors(scaleFactorX, scaleFactorY);
     slidePanel.setBounds(0, 0, (int) (slideList.getWidth()*scaleFactorX), (int) (slideList.getHeight()*scaleFactorY));
     System.out.println("width: " + (int) (slideList.getWidth()*scaleFactorX) + "  Height: " + (int) (slideList.getHeight()*scaleFactorY));
@@ -1275,8 +1275,8 @@ public void componentMoved(ComponentEvent e) {
 public void componentResized(ComponentEvent e) {
 	//System.err.println("RESIZED");
 	if(slidePanel!=null){
-	scaleFactorX = (double)getSize().width/(double)720;
-	scaleFactorY = (double)getSize().height/(double)540;
+	scaleFactorX = (double)(getSize().width-insets.left-insets.right)/(double)720;
+	scaleFactorY = (double)(getSize().height-insets.top-insets.bottom)/(double)540;
     slidePanel.setScalingFactors(scaleFactorX, scaleFactorY);
     slidePanel.setBounds(0, 0, (int) (slideList.getWidth()*scaleFactorX), (int) (slideList.getHeight()*scaleFactorY));
     //System.out.println("width: " + (int) (slideList.getWidth()*scaleFactorX) + "  Height: " + (int) (slideList.getHeight()*scaleFactorY));
@@ -1286,16 +1286,16 @@ public void componentResized(ComponentEvent e) {
     //slidePanel.refreshSlide(slideList.get(slidePanel.currentSlide.getSlideID()));
     
     layers.setBounds(0,0,(int) (slideList.getWidth()*scaleFactorX), (int) (slideList.getHeight()*scaleFactorY)+insets.top+insets.bottom);
-    previousSlideButton.setBounds(10,(int) (slideList.getHeight()*scaleFactorY)-60,150,50);
+    previousSlideButton.setBounds(10,(int) (slideList.getHeight()*scaleFactorY)-50,150,50);
     previousSlideButton.repaint();
-    nextSlideButton.setBounds((int) (slideList.getWidth()*scaleFactorX)-170,(int) (slideList.getHeight()*scaleFactorY)-60,150,50);
+    nextSlideButton.setBounds((int) (slideList.getWidth()*scaleFactorX)-170,(int) (slideList.getHeight()*scaleFactorY)-50,150,50);
     nextSlideButton.repaint();
     utilities.setBounds((int) (slideList.getWidth()*scaleFactorX)-utilitiesWidth, 0, utilitiesWidth, (int) (slideList.getHeight()*scaleFactorY));
     topPanel.setBounds(((int) (slideList.getWidth()*scaleFactorX)/2)-150, 0, 300, 200);
-    utilitiesTab.setBounds((int) (slideList.getWidth()*scaleFactorX)-25,((int) (slideList.getHeight()*scaleFactorY)/2)-60,15,120);
+    utilitiesTab.setBounds((int) (slideList.getWidth()*scaleFactorX)-15,((int) (slideList.getHeight()*scaleFactorY)/2)-60,15,120);
     contentsTab.setBounds(0,((int) (slideList.getHeight()*scaleFactorY)/2)-60,15,120);
-    nextTab.setBounds((int) (slideList.getWidth()*scaleFactorX)-120,((int) (slideList.getHeight()*scaleFactorY))-25,90,20);
-    previousTab.setBounds(0,((int) (slideList.getHeight()*scaleFactorY))-25,100,20);
+    nextTab.setBounds((int) (slideList.getWidth()*scaleFactorX)-120,((int) (slideList.getHeight()*scaleFactorY))-20,90,20);
+    previousTab.setBounds(0,((int) (slideList.getHeight()*scaleFactorY))-20,100,20);
     contents.setBounds(0, 0, contentsWidth, (int) (slideList.getHeight()*scaleFactorY));
     slideWidth = (int) (slideList.getWidth()*scaleFactorX)-30;
     slideHeight = (int) (slideList.getHeight()*scaleFactorY)-60;
