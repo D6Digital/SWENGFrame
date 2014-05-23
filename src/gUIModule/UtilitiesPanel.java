@@ -40,7 +40,7 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
 	//JPanel UtilitiesPanel;
 	JPanel multiPanel= new JPanel();
 	CalculatorPanel calculatorPanel = new CalculatorPanel(360, 520); //= new CalculatorPanel();
-	DicePanel dicePanel = new DicePanel();
+	DicePanel dicePanel = new DicePanel(300, 520);
 	JPanel standAloneMusicPlayerPanel = new JPanel();
 	StandAloneMusicPlayer standAloneMusicPlayer = new StandAloneMusicPlayer(); //= new StandAloneMusicPlayer();
 	JLabel background; 
