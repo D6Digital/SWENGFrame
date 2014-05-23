@@ -21,9 +21,11 @@ import presentation.Slide;
 
 public class MainMenuPanel extends JPanel{
 	
-	JButton button = new JButton("Start");
+	JButton openBookButton = new JButton("Open Book");
+	JButton openShopButton = new JButton("Open Shop");
 	JLabel background;
 	JLabel logoLabel;
+	JLabel imageLabel;
 	JLayeredPane layers = new JLayeredPane();
 	JTextField description = new JTextField();
 	DefaultListModel systemListModel = new DefaultListModel<String>();
@@ -42,7 +44,8 @@ public class MainMenuPanel extends JPanel{
 		System.out.println("height="+height + "width="+width);
 		
 		//start button
-		button.setBounds(width-100, height-40, 100, 40);
+		openBookButton.setBounds(width-110, 300, 100, 40);
+		openShopButton.setBounds(width-110, 360, 100, 40);
 		
 		//background
 		BufferedImage backgroundImage;
@@ -76,16 +79,28 @@ public class MainMenuPanel extends JPanel{
 		systemLabel.setBounds(160, 140, 120, 50);
 		JLabel bookLabel = new JLabel("Choose A Book:");
 		bookLabel.setBounds(300, 140, 120, 50);
+		BufferedImage bookImage;
+		try{
+			bookImage = ImageIO.read(new File("resources/buttons/eclipsephase.jpg"));
+			Image scaledBackground = bookImage.getScaledInstance(150,300,java.awt.Image.SCALE_SMOOTH);
+			imageLabel = new JLabel(new ImageIcon(scaledBackground));
+			imageLabel.setBounds(440, 200, 150, 300);
+		}catch(IOException e2){
+			e2.printStackTrace();
+		}
+		
 		
 		//scrollpanes
 		setUpScrollPanes();
 		
 		//adding	
+		add(imageLabel);
 		add(bookScroll);
 		add(systemScroll);
 		add(bookLabel);
 		add(systemLabel);
-		add(button);
+		add(openShopButton);
+		add(openBookButton);
 		add(description);
 		add(logoLabel);
 		add(background);
@@ -131,7 +146,7 @@ public class MainMenuPanel extends JPanel{
 	}
 
 	public JButton getButton(){
-		return button;
+		return openBookButton;
 	}
 	
 }
