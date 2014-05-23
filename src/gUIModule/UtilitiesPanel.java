@@ -49,7 +49,7 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
 	JButton backButton = new JButton("Back");
 
 
-    private int utilitiesWidth = 200;
+    private int utilitiesWidth=300;
     private int heightOfSlide;
 	//	GUI diceRoller;
 //	GUI calculatorGUI;
@@ -224,7 +224,7 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
             calculatorPanel.setVisible(false);
             standAloneMusicPlayerPanel.setVisible(false); 
             multiPanel.setVisible(false);
-            setWidth(200);
+            setWidth(300);
 	    default: break;
 	    }
 	    multiPanel.repaint();
