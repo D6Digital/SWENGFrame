@@ -1146,7 +1146,9 @@ public void setupSlidePlayer(String filename){
             @Override
             public void mouseClicked(MouseEvent e) {
                 if(e.getClickCount() == 2) {            
-                    slidePanel.refreshSlide(collection.get(contentsList.getSelectedIndex()).get(0));  
+                    slidePanel.refreshSlide(collection.get(contentsList.getSelectedIndex()).get(0));
+                    ContentsPanel contentsPanel = (ContentsPanel) e.getSource();
+                    contentsPanel.repaint();
                     if(screenSizeMaximised) {
                         setMaxSize();
                     }

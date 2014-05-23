@@ -240,15 +240,15 @@ public class SlidePanel extends JPanel{
 	       }
 		count ++;
 		setCount(count);
-		getParent().repaint();
+		getParent().getParent().repaint();
 		}
        };
        theTimer = new Timer(delay, taskPerformer);
        theTimer.setInitialDelay(50);
        theTimer.start();
        
-       
        this.setVisible(true);
+       
 	}
 	
 	
