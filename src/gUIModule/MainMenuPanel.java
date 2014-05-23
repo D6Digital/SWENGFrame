@@ -1,9 +1,14 @@
 package gUIModule;
 
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
@@ -142,11 +147,32 @@ public class MainMenuPanel extends JPanel{
 				bookScroll.setViewportView(bookList);
 				bookScroll.setBounds(300, 200, 100, 300);
 				
+				openShopButton.addActionListener(
+						new ActionListener() {
+
+							@Override
+							public void actionPerformed(ActionEvent arg0) {
+								try{
+
+									String command = "C:\\Program Files\\Internet Explorer\\IEXPLORE.EXE https://www.amazon.co.uk//" ;
+
+									Process link = Runtime.getRuntime().exec(command); 
+									}
+									catch(Exception ex){
+									System.out.println("cannot execute command. " +ex); 
+									}
+									
+
+
+							}
+						});
 		
 	}
 
 	public JButton getButton(){
 		return openBookButton;
 	}
+	
+	
 	
 }
