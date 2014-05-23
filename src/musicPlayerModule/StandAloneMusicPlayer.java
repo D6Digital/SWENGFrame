@@ -414,7 +414,7 @@ public class StandAloneMusicPlayer {
     }
 
 
-    public JPanel getFullControlPanel() {
+    public JPanel getFullControlPanel(int widthOfPanel, int heightOfSlide) {
         
         fullPanel.setLayout(null);
         fullPanel.setBounds(0,0,200,400);

@@ -2,6 +2,7 @@ package gUIModule;
 
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.Dimension;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -39,16 +40,17 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
 
 	//JPanel UtilitiesPanel;
 	JPanel multiPanel= new JPanel();
-	CalculatorPanel calculatorPanel = new CalculatorPanel(360, 520); //= new CalculatorPanel();
-	DicePanel dicePanel = new DicePanel(300, 520);
-	JPanel standAloneMusicPlayerPanel = new JPanel();
-	StandAloneMusicPlayer standAloneMusicPlayer = new StandAloneMusicPlayer(); //= new StandAloneMusicPlayer();
+	CalculatorPanel calculatorPanel; //= new CalculatorPanel();
+	DicePanel dicePanel;
+	JPanel standAloneMusicPlayerPanel;
+	StandAloneMusicPlayer standAloneMusicPlayer; //= new StandAloneMusicPlayer();
 	JLabel background; 
 	ArrayList<JButton> buttonList = new ArrayList<>();
 	JButton backButton = new JButton("Back");
 
 
     private int utilitiesWidth = 200;
+    private int heightOfSlide;
 	//	GUI diceRoller;
 //	GUI calculatorGUI;
 //	GUI audioPlayer;
@@ -63,9 +65,15 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
 		super();
 		setLayout(null);
 		
-		standAloneMusicPlayerPanel = standAloneMusicPlayer.getFullControlPanel();
+		heightOfSlide = slideHeight;
 		
-		backButton.setBounds(0, 520, 360, 20);
+		calculatorPanel = new CalculatorPanel(360, slideHeight - 20);
+		dicePanel = new DicePanel(300, slideHeight - 20);
+		standAloneMusicPlayer = new StandAloneMusicPlayer();
+		
+		standAloneMusicPlayerPanel = standAloneMusicPlayer.getFullControlPanel(360, slideHeight - 20);
+		
+		backButton.setBounds(0, slideHeight - 20, utilitiesWidth, 20);
 		backButton.setActionCommand("back");
 		
 		
@@ -81,7 +89,7 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
 			e2.printStackTrace();
 		}
 		multiPanel.setLayout(null);
-        multiPanel.setBounds(0,0,utilitiesWidth,700);
+        multiPanel.setBounds(0,0,utilitiesWidth,slideHeight);
         multiPanel.setBackground(Color.BLACK);
 		this.add(multiPanel);
 		//Adds JButtons for diceRoller and calculator
@@ -225,7 +233,11 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
     private void setWidth(int width) {
         this.utilitiesWidth = width;
         multiPanel.setBounds(0,0,utilitiesWidth,700);
-        backButton.setBounds(0, 520, width, 20);
+        backButton.setBounds(
+                0, 
+                heightOfSlide-20, 
+                width,
+                20);
         
     }
     
