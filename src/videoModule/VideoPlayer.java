@@ -2,6 +2,7 @@ package videoModule;
 
 /**
  * @author Josh Drake
+ * @author samPick
  */
 import uk.co.caprica.vlcj.player.MediaPlayerFactory;
 import uk.co.caprica.vlcj.player.embedded.EmbeddedMediaPlayer;
@@ -11,6 +12,7 @@ import uk.co.caprica.vlcj.player.embedded.videosurface.CanvasVideoSurface;
 
 import java.awt.Canvas;
 import java.awt.Color;
+import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 import javax.swing.ImageIcon;
@@ -37,28 +39,37 @@ public class VideoPlayer extends JPanel{
 	 JPanel vidControlPanel;
 	 JPanel vidpanel;
 	 JPanel masterPanel;
-	 JPanel overlayPanel;
+	 public JPanel overlayPanel;
 	 JSlider bar;
 	 ImageIcon img;
-	 PlayerControlsPanel ControlPanel;
+	 public PlayerControlsPanel ControlPanel;
 	 JLabel pausedLabel;
-	
+	 int xcoord;
+	 int ycoord;
+	 int start;
+	 int end;
+	 String file;
+	 int width;
+	 int height;
 
-	public VideoPlayer(Video video) {
+
+	private Canvas canvas;
+	 
+
+	public VideoPlayer(Video video, MouseAdapter videoListener) {
 		
 	
 		NativeLibrary.addSearchPath(
                 RuntimeUtil.getLibVlcLibraryName(), "resources/lib/vlc-2.1.3"
             );
 		
-	    int xcoord = video.getX_coord();
-	    final int ycoord = video.getY_coord();
-	    int start = video.getStart();
-	    int end = video.getStart() + video.getDuration();
-	    int layer = video.getLayer();
-	    String file = video.getFile();
-	    int width = video.getWidth();
-	    final int height = video.getHeight();
+	    xcoord = video.getX_coord();
+	    ycoord = video.getY_coord();
+	    start = video.getStart();
+	    end = video.getStart() + video.getDuration();
+	    file = video.getFile();
+	    width = video.getWidth();
+	    height = video.getHeight();
 
 		this.setLayout(null);
 		this.setBounds(video.getX_coord(), video.getY_coord(), video.getWidth(), video.getHeight());
@@ -67,7 +78,6 @@ public class VideoPlayer extends JPanel{
 		System.out.println("ycoord = " + ycoord);
 		System.out.println("start = " + start);
 		System.out.println("end = " + end);
-		System.out.println("layer = " + layer);
 		System.out.println("file = " + file);
 		System.out.println("Width = " + width);
 		System.out.println("Height = " + height);
@@ -88,7 +98,7 @@ public class VideoPlayer extends JPanel{
 	    //pausedLabel.setOpaque(true);
 	    //pausedLabel.setBounds(width/2, height/2, 50, 50);
 	    //overlayPanel.add(pausedLabel);
-	    Canvas canvas = new Canvas();
+	    canvas = new Canvas();
 	    canvas.setBackground(Color.BLACK);
 		
 		//frame.setLayout(new BorderLayout());
@@ -145,9 +155,10 @@ public class VideoPlayer extends JPanel{
 		 	    }	    	
 	    	});
 	    
-	    canvas.addMouseMotionListener(new java.awt.event.MouseMotionAdapter(){
+	    /*canvas.addMouseMotionListener(new java.awt.event.MouseMotionAdapter(){
 	    	@Override
 	    	public void mouseMoved(MouseEvent e1){
+	    		VideoPlayer videoPlayer = (VideoPlayer) e1.getSource();
 	    		int xCoordinate = e1.getX();
 	    		int yCoordinate = e1.getY();
 	    		
@@ -157,20 +168,20 @@ public class VideoPlayer extends JPanel{
 	    		//System.out.println((height)- 80);
 	    		//System.out.println("---------END listener------------");
 	    		
-	    		if(!mediaPlayer.isPlaying())
+	    		if(!videoPlayer.isPlaying())
 	    		{
-	    			ControlPanel.setVisible(true);
+	    			videoPlayer.ControlPanel.setVisible(true);
 	    		}
 	    		else
 	    		{
 	    			if (yCoordinate > ((height)- 80)){
 		    			//if(!ControlPanel.isVisible()) {
-		    			    ControlPanel.setVisible(true);
+		    			    videoPlayer.ControlPanel.setVisible(true);
 		    			//}
 		    		}
 	    			else
 	    			{
-	    			ControlPanel.setVisible(false);
+	    			videoPlayer.ControlPanel.setVisible(false);
 	    			}
 	    		}
 	    		
@@ -181,8 +192,10 @@ public class VideoPlayer extends JPanel{
                     //}
 	    		//}
 	    	}
-	    });
+	    });*/
 	    
+	    
+	    canvas.addMouseMotionListener(videoListener);
 
 	    
 	    ControlPanel.addMouseListener(new java.awt.event.MouseAdapter() {   
@@ -218,6 +231,21 @@ public class VideoPlayer extends JPanel{
 	
 	public void stopMedia(){
 		mediaPlayer.stop();
+	}
+	
+	public Boolean isPlaying(){
+		return mediaPlayer.isPlaying();
+	}
+
+	public void resizeVideo(double scalingFactorX, double scalingFactorY) {
+		
+		this.setBounds((int) (xcoord*scalingFactorX), (int) (ycoord*scalingFactorY), (int) (width*scalingFactorX), (int) (height*scalingFactorY));
+		ControlPanel.setBounds(0, (int) (height*scalingFactorY)-80, (int) (width*scalingFactorX), 80);
+		vidpanel.setBounds(0, 0, (int) (width*scalingFactorX), (int) (height*scalingFactorY));
+		canvas.setBounds(0, 0, (int) (width*scalingFactorX), (int) (height*scalingFactorY));
+		overlayPanel.setBounds(0, 0, (int) (width*scalingFactorX), (int) (height*scalingFactorY));
+		this.repaint();
+		
 	}
 	
 	/**

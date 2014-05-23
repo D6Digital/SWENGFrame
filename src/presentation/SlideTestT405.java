@@ -51,7 +51,7 @@ public class SlideTestT405 {
     private Image image = new Image(x_coord, y_coord, start, duration, layer, file, width, height, branch);
     private Text textObject; 
     private Video video = new Video(x_coord, y_coord, start, duration, layer, file, width, height);
-    private Sound sound = new Sound(start, duration, file, loop);   
+    private Sound sound = new Sound(start, duration, file, loop,0);   
     private Shapes shapes; 
     
     @Before

@@ -2,6 +2,7 @@ package gUIModule;
 
 import java.awt.Component;
 import java.awt.Container;
+import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -57,60 +58,85 @@ public class CalculatorPanel extends JPanel implements ActionListener{
 	int selectedModIndex = -1;
 	int totalMod = 0;
 	
+	int panelWidth = 385;
+	int panelHeight = 540;
+	int modHeight;
+int modPlusButtonPlusDisplay;
+    int modPlusButtonHeight;
+	
 	/**
 	 * Create a simple JFrame and then populate it with specified JPanel type
 	 * @return 
 	 */
-	public CalculatorPanel() {
+	public CalculatorPanel(int widthOfPanel, int heightOfPanel) {
 		super();
+		panelWidth = widthOfPanel;
+		panelHeight = heightOfPanel;
 		setLayout(null);
+        setBounds(0,0,panelWidth,panelHeight);
+
 		
 		//adds JComboBox for selecting the modifier to be included in the total
 		modSelection = new JComboBox();
 		for (int j = 0; j < modNames.length; j++){
 			modSelection.addItem(modNames[j]);
 		};
-		modSelection.setBounds(10, 10, 365, 30);
+		modSelection.setLayout(null);
+		modSelection.setBounds(0, 0, panelWidth, (int) (panelHeight*0.05));
+		modHeight = (int) (panelHeight*0.05);
 		modSelection.setActionCommand("modSelected");
 		modSelection.addActionListener(this);
 		add(modSelection);
 		
 		//adds JButton to trigger the inclution of the modifier
 	    includeMod = new JButton("Include");
-	    includeMod.setVerticalTextPosition(AbstractButton.CENTER);
-	    includeMod.setHorizontalTextPosition(AbstractButton.CENTER);
-	    includeMod.setAlignmentX(Component.CENTER_ALIGNMENT);
-	    includeMod.setBounds(10, 45, 100, 30);
+	    includeMod.setLayout(null);
+	    //includeMod.setVerticalTextPosition(AbstractButton.CENTER);
+	    //includeMod.setHorizontalTextPosition(AbstractButton.CENTER);
+	   // includeMod.setAlignmentX(Component.CENTER_ALIGNMENT);
+	    includeMod.setBounds(0, modHeight + (int) (panelHeight*0.05), panelWidth/2, (int)(panelHeight*0.05));
 	    includeMod.setActionCommand("include");
 	    includeMod.addActionListener(this);
 	    includeMod.setToolTipText("include selected modifier to total");
 		add(includeMod);
 		
+		
 		//adds JButton to trigger the inclution of the modifier
 	    clearMods = new JButton("Clear");
-	    clearMods.setVerticalTextPosition(AbstractButton.CENTER);
-	    clearMods.setHorizontalTextPosition(AbstractButton.CENTER);
-	    clearMods.setAlignmentX(Component.CENTER_ALIGNMENT);
-	    clearMods.setBounds(115, 45, 100, 30);
+	    clearMods.setLayout(null);
+	    //clearMods.setVerticalTextPosition(AbstractButton.CENTER);
+	   // clearMods.setHorizontalTextPosition(AbstractButton.CENTER);
+	    //clearMods.setAlignmentX(Component.CENTER_ALIGNMENT);
+	    clearMods.setBounds(panelWidth/2, modHeight + (int) (panelHeight*0.05), panelWidth/2, (int)(panelHeight*0.05));
 	    clearMods.setActionCommand("clear");
 	    clearMods.addActionListener(this);
 	    clearMods.setToolTipText("clear all modifiers");
 		add(clearMods);
 		
+		modPlusButtonHeight = modHeight + (int) (panelHeight*0.05) + (int)(panelHeight*0.05);
+		
 		//adds JTextArea for display of currently included modifiers
 		displayIncludedMods = new JTextArea();
+		displayIncludedMods.setLayout(null);
 		displayIncludedMods.setEditable(false);
-		displayIncludedMods.setBounds(10, 80, 365, 430);
+		displayIncludedMods.setBounds(0, modPlusButtonHeight, panelWidth, (int)(panelHeight*0.7));
 		add(displayIncludedMods);
 		displayIncludedMods.setEnabled(false);
 		
+		modPlusButtonPlusDisplay = modPlusButtonHeight +  (int)(panelHeight*0.7);
+		
 		//adds JTextArea for display of total roll modifier
 		displayTotalMod = new JTextArea();
+		displayTotalMod.setLayout(null);
         displayTotalMod.setEditable(false);
-		displayTotalMod.setBounds(10, 520, 365, 30);
+		displayTotalMod.setBounds(0, modPlusButtonPlusDisplay + (int) (panelHeight*0.05), panelWidth, (int)(panelHeight*0.1));
 		add(displayTotalMod);
 		displayTotalMod.setEnabled(false);
+	
+
+	   //   repaint();
 	}
+	
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {

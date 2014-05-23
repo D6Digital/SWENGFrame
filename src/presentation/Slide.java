@@ -21,6 +21,7 @@ public class Slide {
     private String slideName;
     private Integer duration = null;
     private Boolean isItLastSlide = false;
+    private String descriptor = "";
     
     public Slide(ArrayList<SlideObject> objectList, ArrayList<Image> imageList, ArrayList<Text> textList,
             ArrayList<Video> videoList, ArrayList<Sound> soundList, ArrayList<Shapes> shapeList,
@@ -269,7 +270,7 @@ public class Slide {
         this.slideID = slideID;
     }
     
-    public Object getSlideName() {
+    public String getSlideName() {
        return slideName;  
     }
 	
@@ -292,5 +293,12 @@ public class Slide {
     public Boolean getLastSlide() {
         return isItLastSlide;
     }
-    
+
+    public String getDescriptor() {
+        return descriptor;
+    }
+
+    public void setDescriptor(String descriptor) {
+        this.descriptor =  descriptor;
+    }
 }

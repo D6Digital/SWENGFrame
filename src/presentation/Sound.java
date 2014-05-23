@@ -10,8 +10,11 @@ public class Sound {
 
 	private Boolean loop;
     private Integer start;
-    private Integer duration;
+    private Integer duration = -1000;
     private String file;
+	private Integer objectStartTime = 0;
+
+	
 
 	/**
 	 * @param x_coord
@@ -22,11 +25,12 @@ public class Sound {
 	 * @param file
 	 * @param loop
 	 */
-	public Sound(Integer start, Integer duration, String file, boolean loop) {
+	public Sound(Integer start, Integer duration, String file, boolean loop, Integer objectStartTime) {
 		this.start = start;
 		this.duration = duration;
 		this.file = file;
 		this.loop = loop;
+		this.objectStartTime = objectStartTime;
 	}
 	
 	public Sound() {
@@ -62,5 +66,13 @@ public class Sound {
 	
 	public void setLoop(boolean loop){
 		this.loop = loop;
+	}
+	
+	public Integer getObjectStartTime() {
+		return objectStartTime;
+	}
+
+	public void setObjectStartTime(Integer objectStartTime) {
+		this.objectStartTime = objectStartTime;
 	}
 }

@@ -5,14 +5,15 @@ import graphicsModule.GraphicsPainter;
 import imageModule.ImagePainter;
 
 
-import java.awt.Color;
 
+
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Cursor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
-
 import java.awt.Dimension;
-
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
@@ -29,18 +30,16 @@ import javax.swing.text.StyledDocument;
 import javax.swing.text.html.HTML;
 
 
-import Graphics.graphicsObject;
 
+
+import Graphics.graphicsObject;
 import Images.ImagePanel;
 import Images.TImage;
-
 import musicPlayerModule.EmbeddedAudioPlayer;
+import musicPlayerModule.LockedPlaylistValueAccess;
 import presentation.Image;
-
 import presentation.Point;
-
 import presentation.Presentation;
-
 import presentation.Shapes;
 import presentation.Slide;
 import presentation.Sound;
@@ -61,7 +60,7 @@ import videoModule.VideoPlayer;
  * @author Andrew Walter
  *
  */
-public class SlidePanel extends JPanel implements MouseListener{
+public class SlidePanel extends JPanel{
 
 	/**
 	 * 
@@ -74,7 +73,9 @@ public class SlidePanel extends JPanel implements MouseListener{
 	Presentation presentation;
 	Timer theTimer;
 	
-	MouseAdapter textBranchListener;
+	private MouseAdapter textBranchListener;
+	private MouseAdapter branchListener;
+	ArrayList<slideMediaObject> mediaObjects;
 	
 	EmbeddedAudioPlayer audioPlayer;
 	VideoPlayer videoPlayer;
@@ -82,9 +83,29 @@ public class SlidePanel extends JPanel implements MouseListener{
 	private String vlcLibraryPath = "resources/lib/vlc-2.1.3";
 	
 	JLayeredPane layeredPane;
+
+    private boolean playlistLocked = true;
+
+	private MouseAdapter videoListener;
+
+	private double scalingFactorX = 1;
+
+	private double scalingFactorY = 1;
+
+	private Integer count;
+	
+
 	
 	
 	
+	
+	
+
+
+	
+
+
+
 	/**
 	 * Create a panel ready to have all the necessary slide media added
 	 */
@@ -92,15 +113,14 @@ public class SlidePanel extends JPanel implements MouseListener{
 		super();
 		
 		
+		mediaObjects = new ArrayList<slideMediaObject>();
 		
-		
-		
-		audioPlayer = new EmbeddedAudioPlayer(vlcLibraryPath );
+		audioPlayer = new EmbeddedAudioPlayer(vlcLibraryPath);
 		// set layout manager to null so media components can be added to their specific co-ordinates
 		setLayout(null);
 		
-		setupTextListener();
-		
+		//setupTextListener();
+		//setupBranchListener();
 		// By default the panel is invisible until the player chooses to display it
 		setVisibility(false);
 		
@@ -139,7 +159,7 @@ public class SlidePanel extends JPanel implements MouseListener{
 	    
 	    layeredPane = new JLayeredPane();
 	    //layeredPane.setPreferredSize(new Dimension(presentation.getWidth(),presentation.getHeight()));
-	    layeredPane.setBounds(0, 0, presentation.getWidth(), presentation.getHeight());
+	    layeredPane.setBounds(0, 0, (int) (presentation.getWidth()*scalingFactorX), (int) (presentation.getHeight()*scalingFactorY));
 	    layeredPane.setLayout(null);
 	    add(layeredPane);
 
@@ -160,11 +180,15 @@ public class SlidePanel extends JPanel implements MouseListener{
        }*/
 	    
        
-       int delay = 1000; // 1000ms or 1 second timer
+       int delay = 100; // 1000ms or 1 second timer
+       setCount(0);
        ActionListener taskPerformer= new ActionListener() {
 		int count = 0;
 		@Override
 		public void actionPerformed(ActionEvent e) {
+		    if(audioPlayer.isPlaying() && !LockedPlaylistValueAccess.lockedPlaylist) {
+		        audioPlayer.stopMedia();
+		    }
 			for(Image image: currentSlide.getImageList()) {
 				if(image.getStart() == count)
 				{
@@ -191,21 +215,36 @@ public class SlidePanel extends JPanel implements MouseListener{
 				}
 	       }
 	       for(Sound sound : currentSlide.getSoundList()) {
-	    	   if(sound.getStart() == count+1 || (sound.getStart() == 0 && count == 0))
+	    	   if(sound.getObjectStartTime() == count+1 || (sound.getStart() == 0 && count == 0))
 	    	   {
-	    	   audioPlayer.prepareMedia(sound.getFile(), sound.getStart());
+	    		   audioPlayer.prepareMedia(sound.getFile(), sound.getStart());
 	    	   }
-	    	   if(sound.getStart() == count)
+	    	   if(sound.getObjectStartTime() == count)
 	    	   {
-	   		   audioPlayer.playMedia();
+	    	       if(LockedPlaylistValueAccess.lockedPlaylist) {
+	    		   audioPlayer.playMedia();
+	    	       }
+	    	   }
+	    	   if(sound.getDuration()+sound.getObjectStartTime() == count && count != 0)
+	    	   {
+	    	       if(LockedPlaylistValueAccess.lockedPlaylist) {
+	    		   audioPlayer.stopMedia();
+	    	       }
 	    	   }
 	       }
+	       for(slideMediaObject object: mediaObjects){
+	    	   if(object.getFinishTime() == count && count != 0){
+	    		   layeredPane.remove(object);
+	    	   }
+	    	   
+	       }
 		count ++;
-		
+		setCount(count);
+		getParent().repaint();
 		}
        };
        theTimer = new Timer(delay, taskPerformer);
-       theTimer.setInitialDelay(2);
+       theTimer.setInitialDelay(50);
        theTimer.start();
        
        
@@ -219,14 +258,17 @@ public class SlidePanel extends JPanel implements MouseListener{
 	 * After Clearing the panel setupSlide method above should be called to show a new slide
 	 */
 	public void clearSlide(){
-	
+		mediaObjects.clear();
 		this.removeAll();
+		setCount(0);
 	
 	
 	}
 	
 	public void refreshSlide(Slide newSlide){
 		this.theTimer.stop();
+        clearSlide();
+        this.setupSlide(newSlide);
 		if(audioPlayer != null)
 		{
 			this.audioPlayer.stopMedia();
@@ -235,13 +277,20 @@ public class SlidePanel extends JPanel implements MouseListener{
 		{
 			this.videoPlayer.stopMedia();
 		}
-		this.removeAll();
-		this.setupSlide(newSlide);
-		this.repaint();
+
+		//this.repaint();
 		
 	}
 	
-	
+	public Integer getCount() {
+		return count;
+	}
+
+
+
+	public void setCount(Integer count) {
+		this.count = count;
+	}
 	
 	
 	/**
@@ -270,7 +319,7 @@ public class SlidePanel extends JPanel implements MouseListener{
 	 * 
 	 * For example a particular JButton which has a reference to the next slide
 	 */
-	public void mouseClicked(MouseEvent e) {
+	/*public void mouseClicked(MouseEvent e) {
 		
 		//Returns the object that triggered the action listener and casts it to
 		//a slideObject
@@ -284,7 +333,7 @@ public class SlidePanel extends JPanel implements MouseListener{
 			}
 		}
 		
-	}
+	}*/
 	
 
 	
@@ -314,8 +363,8 @@ public class SlidePanel extends JPanel implements MouseListener{
 			//System.out.printf("Point Shape: %d%n", shape.getPointList().size());
 			for(int i=0; i<(shape.getNumberOfPoints()); i++){
 				
-				pointX = shape.getPoint(i).getX();
-				pointY = shape.getPoint(i).getY();
+				pointX = (int) (shape.getPoint(i).getX()*scalingFactorX);
+				pointY = (int) (shape.getPoint(i).getY()*scalingFactorY);
 				//System.out.printf("Reading Point %d, x %d, y %d%n", i, pointX, pointY);
 				if (i==0){
 					highX = pointX;
@@ -332,22 +381,22 @@ public class SlidePanel extends JPanel implements MouseListener{
 			}
 			for(int i=0; i<(shape.getNumberOfPoints()); i++){
 				
-				pointX = shape.getPoint(i).getX() - lowX;
-				pointY = shape.getPoint(i).getY() - lowY;
+				pointX = (int) ((shape.getPoint(i).getX()*scalingFactorX) - lowX);
+				pointY = (int) ((shape.getPoint(i).getY()*scalingFactorY) - lowY);
 				//System.out.printf("Setting Point %d, x %d, y %d%n", i, pointX, pointY);
 				graphic.setPoint (i+1, pointX, pointY);
 			}
 		}
 		else{
 			//System.out.printf("Regular %d Side Shape%n", shape.getNumberOfPoints());
-			graphic.setWidth(shape.getWidth());
-			graphic.setHeight(shape.getHeight());
-			graphic.setPoint(1, shape.getWidth()/2, shape.getHeight()/2);
+			graphic.setWidth((int) (shape.getWidth()*scalingFactorX));
+			graphic.setHeight((int) (shape.getHeight()*scalingFactorY));
+			graphic.setPoint(1, (int) (shape.getWidth()*scalingFactorX/(double)2), (int) (shape.getHeight()*scalingFactorY/(double)2));
 			graphic.setIsRegularShape(true);
-			lowX = shape.getPoint(0).getX() - (shape.getWidth()/2);
-			lowY = shape.getPoint(0).getX() - (shape.getHeight()/2);
-			highX = lowX + shape.getWidth();
-			highY = lowY + shape.getHeight();
+			lowX = (int) (shape.getPoint(0).getX()*scalingFactorX - (shape.getWidth()*scalingFactorY/(double)2));
+			lowY = (int) (shape.getPoint(0).getX()*scalingFactorX - (shape.getHeight()*scalingFactorY/(double)2));
+			highX = (int) (lowX + shape.getWidth()*scalingFactorX);
+			highY = (int) (lowY + shape.getHeight()*scalingFactorY);
 		}
 				
 		//System.out.printf("Fill Colour %s, Line Colour %s%n", shape.getFillColor(), shape.getLineColor());
@@ -360,8 +409,9 @@ public class SlidePanel extends JPanel implements MouseListener{
 		//System.out.printf("Shape lowX %d, Shape lowY %d%n", lowX, lowY);
 		//System.out.printf("Shape Width %d, Shape Height %d%n", boundWidth, boundHeight);
 				
-		slideMediaObject shapeObject = new slideMediaObject(shape.getBranch());
-        shapeObject.addMouseListener(this);
+		slideMediaObject shapeObject = new slideMediaObject(shape.getBranch(),shape.getDuration(),shape.getStart());
+        shapeObject.addMouseListener(branchListener);
+        shapeObject.addMouseMotionListener(branchListener);
         
         graphic.setBounds(0, 0, boundWidth+1, boundHeight+1);
 		shapeObject.add(graphic);
@@ -371,9 +421,9 @@ public class SlidePanel extends JPanel implements MouseListener{
         // The x and y of a shape needs to be derived from the leftmost x and highest y co-ordinate in the point array 
         shapeObject.setBounds(lowX, lowY, boundWidth +1, boundHeight +1);
        
-        
+        mediaObjects.add(shapeObject);
         layeredPane.add(shapeObject,shape.getLayer());
-        this.repaint();
+        //this.repaint();
         
         //System.out.printf("Added Media Object%n");
 	}
@@ -386,24 +436,26 @@ public class SlidePanel extends JPanel implements MouseListener{
 		// Eventually Use the bought-in module to improve this method
 		
 		TImage im = new TImage(image.getFile(),0,0);
-		im.setWidth(image.getWidth());
-		im.setHeight(image.getHeight());
+		im.setWidth((int) (image.getWidth()*scalingFactorX));
+		im.setHeight((int) (image.getHeight()*scalingFactorY));
 				
 		ImagePanel imagePanel = new ImagePanel(im);
 		imagePanel.setOpaque(false);
-		imagePanel.setBounds(0,0, image.getWidth(), image.getHeight());
+		imagePanel.setBounds(0,0, (int) (image.getWidth()*scalingFactorX), (int) (image.getHeight()*scalingFactorY));
 		
-		slideMediaObject imageObject = new slideMediaObject(image.getBranch());
-		imageObject.addMouseListener(this);
+		slideMediaObject imageObject = new slideMediaObject(image.getBranch(),image.getDuration(),image.getStart());
+		imageObject.addMouseListener(branchListener);
+		imageObject.addMouseMotionListener(branchListener);
 		
 		imageObject.add(imagePanel);
 
-		imageObject.setBounds(image.getX_coord(),image.getY_coord(), image.getWidth(), image.getHeight());
+		imageObject.setBounds((int) (image.getX_coord()*scalingFactorX), (int) (image.getY_coord()*scalingFactorY), (int) (image.getWidth()*scalingFactorX), (int) (image.getHeight()*scalingFactorY));
 		imageObject.setVisible(true);
 		
 		
+		mediaObjects.add(imageObject);
 		layeredPane.add(imageObject,image.getLayer());
-		this.repaint();
+		//this.repaint();
 	}
 	
 	
@@ -414,12 +466,31 @@ public class SlidePanel extends JPanel implements MouseListener{
 	 */
 	private void addVideo(Video video){
 		
+		if(scalingFactorX!= 1 || scalingFactorY != 1)
+		{
+			Video scaledVideo = new Video();
+			scaledVideo.setHeight((int) (video.getHeight()*scalingFactorX));
+			scaledVideo.setWidth((int) (video.getWidth()*scalingFactorY));
+			scaledVideo.setFile(video.getFile());
+			scaledVideo.setStart(video.getStart());
+			scaledVideo.setLooping(video.isLooping());
+			scaledVideo.setPlaytime(video.getPlaytime());
+			scaledVideo.setDuration(video.getDuration());
+			scaledVideo.setX_coord((int) (video.getX_coord()*scalingFactorX));
+			scaledVideo.setY_coord((int) (video.getY_coord()*scalingFactorX));
+			
+			videoPlayer = new VideoPlayer(scaledVideo,videoListener);
+		}
+		else
+		{
+			videoPlayer = new VideoPlayer(video,videoListener);
+		}
 		// TODO Replace with the embedded video player when available
 		// Start paused by default
-		videoPlayer = new VideoPlayer(video);
+		
         //this.add(videoPlayer);
         layeredPane.add(videoPlayer,video.getLayer());
-        this.repaint();
+       // this.repaint();
 	}
 	
 	
@@ -428,12 +499,14 @@ public class SlidePanel extends JPanel implements MouseListener{
 	 * added to the slidePanel, then the sounds are played from the timers method
 	 */
 	private void addSound(){
-		
+	    
+	    if(LockedPlaylistValueAccess.lockedPlaylist) {
+            System.out.println(LockedPlaylistValueAccess.lockedPlaylist + " are we locked off?");
 		
 		// Start paused by default
 		JPanel audioPanel = audioPlayer.getPanel();
 		this.add(audioPanel);
-		
+	    }
 		//JButton soundButton = VideoPainter.ProduceButton(sound.getFile());
         
 		//soundButton.setLocation(sound.getX_coord(), sound.getY_coord());
@@ -445,14 +518,25 @@ public class SlidePanel extends JPanel implements MouseListener{
 	 * as the functionality will be inside a timers method
 	 */
 	public void playSounds(){
-		ArrayList<Sound> soundList = currentSlide.getSoundList();
-		if(!soundList.isEmpty())
-		{
-		Sound sound = soundList.get(0);
-		audioPlayer.prepareMedia(sound.getFile(), sound.getStart());
-		audioPlayer.playMedia();
-		}
+	    if(LockedPlaylistValueAccess.lockedPlaylist) {
+	        System.out.println(LockedPlaylistValueAccess.lockedPlaylist + " are we locked off?");
+    		ArrayList<Sound> soundList = currentSlide.getSoundList();
+    		if(!soundList.isEmpty())
+    		{
+    		Sound sound = soundList.get(0);
+    		audioPlayer.prepareMedia(sound.getFile(), sound.getStart());
+    		audioPlayer.playMedia();
+    		}
+	    }
 	}
+	
+	public void setPlaylistLocked(boolean trueFalse) {
+	    this.playlistLocked = trueFalse;
+	}
+
+    public boolean getPlaylistLocked() {
+        return playlistLocked;
+    }
 	
 	
 	/**
@@ -460,47 +544,135 @@ public class SlidePanel extends JPanel implements MouseListener{
 	 * @param text
 	 */
 	private void addText(Text text){
+		double textSizeScale;
+		if(scalingFactorX > scalingFactorY)
+		{
+			textSizeScale = scalingFactorY;
+		}
+		else
+		{
+			textSizeScale = scalingFactorX;
+		}
 		
-		JPanel textPanel = new Scribe(text,textBranchListener);
-		textPanel.setBounds(text.getX_coord(), text.getY_coord(), text.getXend()-text.getX_coord(), text.getYend()-text.getY_coord());
+		JPanel textPanel = new Scribe(text,textBranchListener,textSizeScale);
+		textPanel.setBounds(0,0, (int) (text.getXend()*scalingFactorX)-(int) (text.getX_coord()*scalingFactorX), (int) (text.getYend()*scalingFactorY)-(int) (text.getY_coord()*scalingFactorY));
 		
+		
+		slideMediaObject textObject = new slideMediaObject(-1,text.getDuration(),text.getStart());
+		textObject.add(textPanel);
+		textObject.setBounds((int) (text.getX_coord()*scalingFactorX), (int) (text.getY_coord()*scalingFactorY), (int) (text.getXend()*scalingFactorX)-(int) (text.getX_coord()*scalingFactorX), (int) (text.getYend()*scalingFactorY)-(int) (text.getY_coord()*scalingFactorY));
 		//this.add(textPanel);
-		layeredPane.add(textPanel, text.getLayer());
-		this.repaint();
+		layeredPane.add(textObject, text.getLayer());
 		
+		mediaObjects.add(textObject);
+		//this.repaint();
+		//getParent().repaint();
+		
+	}
+	
+	/**
+	 * 
+	 * @return the current X scaling factor
+	 */
+	public double getScalingFactorX() {
+		return scalingFactorX;
+	}
+	
+	/**
+	 * 
+	 * @return the current Y scaling factor
+	 */
+	public double getScalingFactorY() {
+		return scalingFactorY;
 	}
 
 
-
-	@Override
-	public void mouseEntered(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
+	/**
+	 * set the scaling factor which increases the size of the objects drawn on the panel
+	 * @param scalingFactor
+	 */
+	public void setScalingFactors(double scaleFactorX, double scaleFactorY) {
+		this.scalingFactorX = scaleFactorX;
+		this.scalingFactorY = scaleFactorY;
+	}
+	
+	/**
+	 * resize the slide panel to match the scaling factors provided.
+	 * This is achieved by looping through all objects added to the slidepanel and
+	 * changing there sizes or redrawing them altogether
+	 */
+	public void resizeSlide(){
+		theTimer.stop();
+		layeredPane.setBounds(0,0,this.getSize().width,this.getSize().height);
+		for(slideMediaObject object: mediaObjects){
+	    	   if(object.getStartTime() <=  count){
+	    		   layeredPane.remove(object);
+	    		   
+	    	   }
+	    	   
+	       }
+		mediaObjects.clear();
+		for(Image image: currentSlide.getImageList()) {
+			if(image.getStart() <= count)
+			{
+				if(image.getDuration()>0)
+				{
+					if((image.getStart() + image.getDuration()) > count){
+						addImage(image);
+					}
+				}
+				else
+				{
+					addImage(image);
+				}
+				
+			}
+	   }
+       for(Shapes shape: currentSlide.getShapeList()) {
+    	   if(shape.getStart() <= count)
+			{
+    		   if(shape.getDuration()>0)
+				{
+					if((shape.getStart() + shape.getDuration()) > count){
+						addShape(shape);
+					}
+				}
+				else
+				{
+					addShape(shape);
+				}
+			}
+       }
+       for(Text text : currentSlide.getTextList()) {
+    	   if(text.getStart() <= count)
+			{
+    		   if(text.getDuration()>0)
+				{
+					if((text.getStart() + text.getDuration()) > count){
+						addText(text);
+					}
+				}
+				else
+				{
+					addText(text);
+				}
+			}
+       }
+       for(Video video: currentSlide.getVideoList()) {
+    	   if(video.getPlaytime() <= count)
+			{
+    		   for(Component component: layeredPane.getComponents())
+				if(component instanceof VideoPlayer){
+					VideoPlayer videoPlayer = (VideoPlayer) component;
+					videoPlayer.resizeVideo(scalingFactorX,scalingFactorY);
+				}
+			}
+       }
+       this.getParent().getParent().repaint();
+       theTimer.start();
+       
 	}
 
-
-
-	@Override
-	public void mouseExited(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-
-	@Override
-	public void mousePressed(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-
-	@Override
-	public void mouseReleased(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
 
 	/**
 	 * Create a mouse listener to branch from sections of text
@@ -550,6 +722,79 @@ public class SlidePanel extends JPanel implements MouseListener{
 		};
 		
 	}
+	
+	private void setupBranchListener() {
+		branchListener = new MouseAdapter() {
+			
+			@Override
+			public void mouseClicked(MouseEvent e){
+						
+						//Returns the object that triggered the action listener and casts it to
+						//a slideObject
+						slideMediaObject eventSource = (slideMediaObject) e.getSource();
+						if(eventSource != null){
+							//Get the branch value assigned to the object of type slideObject
+							Integer branch = eventSource.getBranch();
+							if (branch != null && branch != -1){
+								refreshSlide(presentation.getSlideList().get(branch));
+								//branch to slide specified by the object
+							}
+						}
+						
+					}
+			@Override
+			public void mouseMoved(MouseEvent e) {
+				Cursor handCursor = Cursor.getPredefinedCursor(Cursor.HAND_CURSOR);
+				Cursor defaultCursor = Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR);
+				
+				JTextPane textPane = (JTextPane) e.getSource();
+				java.awt.Point pt = new java.awt.Point(e.getX(), e.getY());
+				int pos = textPane.viewToModel(pt);
+				
+				if (pos >= 0)
+				{
+					StyledDocument doc = textPane.getStyledDocument();
+					
+					if (doc instanceof StyledDocument){
+						StyledDocument hdoc = (StyledDocument) doc;
+						Element el = hdoc.getCharacterElement(pos);
+						AttributeSet a = el.getAttributes();
+						String href = (String) a.getAttribute(HTML.Attribute.HREF);
+						Integer branch = (Integer) a.getAttribute(HTML.Attribute.LINK);
+						if (href != null || (branch != null && branch !=-1)){
+							if(getCursor() != handCursor){
+								textPane.setCursor(handCursor);
+							}
+						}
+						else{
+							textPane.setCursor(defaultCursor);
+						}
+						
+		             }           
+				}
+			}
+				
+			
+		};
+	}
+	
+	/**
+	 * Set the listeners to be used by slidepanel objects to predefined listeners allowing
+	 * compatibility with the hierarchy of classes
+	 * @param textListener
+	 * @param objectListener
+	 * @param videoListener 
+	 */
+	public void setupListeners(MouseAdapter textListener, MouseAdapter objectListener, MouseAdapter videoListener){
+		this.branchListener = objectListener;
+		this.textBranchListener = textListener;
+		this.videoListener = videoListener;
+		
+	}
+
+
+
+	
 
 	
 	

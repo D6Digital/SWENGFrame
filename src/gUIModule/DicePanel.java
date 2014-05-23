@@ -49,20 +49,32 @@ public class DicePanel extends JPanel implements ActionListener{
 	String secondSelectedDiceType = "d0";
 	int secondSelectedDiceQuantity = 0;
 	
+	int panelWidth;
+	int panelHeight;
+	
 	/**
 	 * Create a simple JFrame and then populate it with specified JPanel type
 	 * @return 
 	 */
-	public DicePanel() {
+	public DicePanel(int widthOfPanel, int heightOfPanel) {
 		super();
+		
+		panelWidth = widthOfPanel;
+		panelHeight = heightOfPanel;
+		
 		setLayout(null);
+		setBounds(0,0,panelWidth, panelHeight);
 		
 		//adds a JComboBox for selecting the type of dice to be rolled
 		diceType = new JComboBox();
 		for (int i = 0; i < diceTypes.length; i++){
 			diceType.addItem(diceTypes[i]);
 		};
-		diceType.setBounds(10, 15, 55, 30);
+		diceType.setBounds(
+		        (int) (panelWidth*0.025),
+		        (int) (panelWidth*0.025),
+		        (int) (panelWidth*0.15),
+		        (int) (panelHeight*0.05));
 		diceType.setActionCommand("diceTypeSelected");
 		diceType.addActionListener(this);
 		add(diceType);
@@ -72,14 +84,22 @@ public class DicePanel extends JPanel implements ActionListener{
 		for (int i = 0; i < 100; i++){
 			diceQuantity.addItem(i+1);
 		};
-		diceQuantity.setBounds(10, 55, 55, 30);
+		diceQuantity.setBounds(
+		        (int) (panelWidth*0.025), 
+		        (int) (panelWidth*0.025) + (int) (panelHeight*0.05) + (int) (panelWidth*0.03),
+		        (int) (panelWidth*0.15),
+		        (int) (panelHeight*0.05));
 		diceQuantity.setActionCommand("diceQuantitySelected");
 		diceQuantity.addActionListener(this);
 		add(diceQuantity);
 		
 		//adds a radioButton for enabling dual dice type rolling
-		multiDice = new JRadioButton("Enable MultiDice");
-		multiDice.setBounds(65, 45, 120, 15);
+		multiDice = new JRadioButton("<html>Enable MultiDice</html>");
+		multiDice.setBounds(              
+		        (int) (panelWidth*0.025) + (int) (panelWidth*0.13) + (int) (panelWidth*0.02), 
+                (int) (panelWidth*0.025) + (int) (panelWidth*0.02), 
+                (int) (panelWidth*0.3),
+                (int) (panelHeight*0.1));
 		multiDice.setActionCommand("multiDiceClicked");
 		multiDice.addActionListener(this);
 		multiDice.setSelected(false);
@@ -91,7 +111,11 @@ public class DicePanel extends JPanel implements ActionListener{
 		for (int i = 0; i < diceTypes.length; i++){
 			secondDiceType.addItem(diceTypes[i]);
 		};
-		secondDiceType.setBounds(195, 15, 55, 30);
+		secondDiceType.setBounds(
+		        (int) (panelWidth*0.025) + (int) (panelWidth*0.13) + (int) (panelWidth*0.3) + (int) (panelWidth*0.025), 
+                (int) (panelWidth*0.025),
+                (int) (panelWidth*0.15),
+                (int) (panelHeight*0.05));
 		secondDiceType.setActionCommand("secondDiceTypeSelected");
 		secondDiceType.addActionListener(this);
 		add(secondDiceType);
@@ -103,7 +127,11 @@ public class DicePanel extends JPanel implements ActionListener{
 		for (int i = 0; i < 100; i++){
 			secondDiceQuantity.addItem(i+1);
 		};
-		secondDiceQuantity.setBounds(195, 55, 55, 30);
+		secondDiceQuantity.setBounds(
+                (int) (panelWidth*0.025) + (int) (panelWidth*0.13) + (int) (panelWidth*0.3) + (int) (panelWidth*0.025), 
+                (int) (panelWidth*0.025) + (int) (panelHeight*0.05) + (int) (panelWidth*0.03),
+                (int) (panelWidth*0.15),
+                (int) (panelHeight*0.05));
 		secondDiceQuantity.setActionCommand("secondDiceQuantitySelected");
 		secondDiceQuantity.addActionListener(this);
 		add(secondDiceQuantity);
@@ -114,7 +142,11 @@ public class DicePanel extends JPanel implements ActionListener{
 		rollButton.setVerticalTextPosition(AbstractButton.CENTER);
 		rollButton.setHorizontalTextPosition(AbstractButton.CENTER);
 		rollButton.setAlignmentX(Component.CENTER_ALIGNMENT);
-		rollButton.setBounds(255, 25, 100, 50);
+		rollButton.setBounds(
+                (int) (panelWidth*0.025) + (int) (2*panelWidth*0.13) + (int) (panelWidth*0.3) + (int) (2*panelWidth*0.025), 
+                (int) (panelWidth*0.025) + (int) (panelHeight*0.04),
+                (int) (panelWidth*0.3),
+                (int) (panelHeight*0.05));
 		rollButton.setActionCommand("roll");
 		rollButton.addActionListener(this);
 		rollButton.setToolTipText("rolls dice based on the parameters given");
@@ -122,24 +154,37 @@ public class DicePanel extends JPanel implements ActionListener{
 		
 		//adds a JTextArea for display of results of a single type of dice rolling
 		firstResultOutput = new JTextArea();
-		firstResultOutput.setBounds(10, 100, 180, 450);
+		firstResultOutput.setBounds(
+                (int) (panelWidth*0.025), 
+                (int) (panelWidth*0.025) + (int) (panelHeight*0.1) + (int) (panelHeight*0.03) +  (int) (panelHeight*0.03),
+                (int) (panelWidth*0.45),
+                (int) (panelHeight*0.75));
 		add(firstResultOutput);
 		firstResultOutput.setEnabled(false);
 		
 		//adds a JTextArea for display of results of rolling an addition dice type
 		//if multiDice is enabled
 		secondResultOutput = new JTextArea();
-		secondResultOutput.setBounds(200, 100, 180, 450);
+		secondResultOutput.setBounds(
+                (int) (panelWidth*0.025) + (int) (panelWidth*0.45) +  (int) (panelWidth*0.025), 
+                (int) (panelWidth*0.025) + (int) (panelHeight*0.1) + (int) (panelHeight*0.03) +  (int) (panelHeight*0.03),
+                (int) (panelWidth*0.45),
+                (int) (panelHeight*0.75));
 		add(secondResultOutput);
 		secondResultOutput.setEnabled(false);
 		
 		//adds JTextArea for display of total of all dice types rolled
 		displayTotalResult = new JTextArea();
-		displayTotalResult.setBounds(10, 560, 370, 30);
+		displayTotalResult.setBounds(
+                (int) (panelWidth*0.025), 
+                (int) (panelHeight*0.94),
+                (int) (panelWidth*0.925),
+                (int) (panelHeight*0.035));
 		add(displayTotalResult);
 		displayTotalResult.setEnabled(false);
 	}
 	
+	// worthlesschange
 	/**
 	 * actionListener, stores the user selected values for dice type and quantity
 	 * calls rollDice() when the calculation is needed

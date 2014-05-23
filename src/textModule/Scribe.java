@@ -41,28 +41,31 @@ import presentation.TextContent.ScriptTypeDef;
  * @author samPick
  *
  */
-public class Scribe extends JPanel implements MouseListener, MouseMotionListener{
+public class Scribe extends JPanel{
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
+	private MouseAdapter textHandListener;
+	private MouseAdapter textbBranchListener;
 	private Font font;
 	private Text textObject;
 	public JTextPane textPane;
+	private double scaleFactor = 1;
 
 	/**
 	 * produces a JPanel containing text from the text object
 	 * @param text
+	 * @param textSizeScale 
 	 */
 	
 	
 	
-	public Scribe(Text text, MouseAdapter listener) {
+	public Scribe(Text text, MouseAdapter listener, double textSizeScale) {
 		
 		textObject = text;
-		
+		this.scaleFactor = textSizeScale;
 		
 		this.setOpaque(false);
 		
@@ -85,18 +88,18 @@ public class Scribe extends JPanel implements MouseListener, MouseMotionListener
 		}
 
 		setLayout(new BorderLayout());
+		setupHandListener();
+		setupBranchListener();
 		
 		// Create the JTextPane
 		textPane = createTextPane();
 		textPane.setEditable(false);
 		//textPane.addMouseListener(this);
-		textPane.addMouseMotionListener(this);
+		textPane.addMouseMotionListener(listener);
 		textPane.addMouseListener(listener);
 		textPane.setMaximumSize(new Dimension(text.getXend()-text.getX_coord(),text.getYend()-text.getY_coord()));
 		
 		add(textPane);
-		
-		System.out.println(textPane.getMaximumSize());
 		
 	}
 	
@@ -111,12 +114,12 @@ public Scribe(Text text) {
 		if(font.getFamily().equals("Dialog")){
 		// create a font object for a user defined font
 			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
-			for (String name : ge.getAvailableFontFamilyNames()) {
+			/*for (String name : ge.getAvailableFontFamilyNames()) {
 				System.out.println(name);
-			}
+			}*/
 			try {
 			    font = Font.createFont(Font.TRUETYPE_FONT, new File(textObject.getFile()));
-			    font = font.deriveFont(Font.PLAIN,textObject.getSize());
+			    font = font.deriveFont(Font.PLAIN,(float) (textObject.getSize()*scaleFactor));
 	
 				ge.registerFont(font);
 			} catch (FontFormatException | IOException e1) {
@@ -131,8 +134,8 @@ public Scribe(Text text) {
 		textPane = createTextPane();
 		textPane.setEditable(false);
 		//textPane.addMouseListener(this);
-		textPane.addMouseMotionListener(this);
-		textPane.addMouseListener(this);
+		textPane.addMouseMotionListener(textHandListener);
+		textPane.addMouseListener(textbBranchListener);
 		
 		add(textPane);
 		
@@ -149,7 +152,7 @@ public Scribe(Text text) {
 		addStylesToDocument(doc);
 		
 		Style newStyle = doc.addStyle("newStyle", doc.getStyle("defaultStyle"));
-		System.out.println(textObject.getText().size());
+		//System.out.println(textObject.getText().size());
 		for (TextContent text : textObject.getText()) {
 			
 			newStyle = doc.getStyle("defaultStyle");
@@ -157,6 +160,8 @@ public Scribe(Text text) {
 			StyleConstants.setBold(newStyle, text.isBold());
 			StyleConstants.setItalic(newStyle, text.isItalic());
 			StyleConstants.setUnderline(newStyle, text.isUnderlined());
+			StyleConstants.setLineSpacing(newStyle, 0);
+			doc.setParagraphAttributes(0, text.getTextString().length(), newStyle,true);
 			
 			if(text.getScriptType() == ScriptTypeDef.superScript){
 				StyleConstants.setSuperscript(newStyle, true);
@@ -180,9 +185,13 @@ public Scribe(Text text) {
 				}
 			}
 			
-			if(text.getBranch() != null)
+			if(text.getBranch() != null && text.getBranch() != -1)
 			{
 				newStyle.addAttribute(HTML.Attribute.LINK, text.getBranch());
+			}
+			else
+			{
+				newStyle.addAttribute(HTML.Attribute.LINK, -1);
 			}
 			
 			try{
@@ -205,7 +214,7 @@ public Scribe(Text text) {
 		
 		Style defaultStyle = doc.addStyle("defaultStyle", def);
 		StyleConstants.setFontFamily(defaultStyle,font.getFamily());
-		StyleConstants.setFontSize(defaultStyle, textObject.getSize());
+		StyleConstants.setFontSize(defaultStyle, (int) (textObject.getSize()*scaleFactor));
 		StyleConstants.setForeground(defaultStyle,textObject.getColourObject());
 		
 	}
@@ -254,8 +263,11 @@ public Scribe(Text text) {
 	
 
 
-	@Override
-	public void mouseClicked(MouseEvent e) {
+	private void setupBranchListener() {
+		textbBranchListener = new MouseAdapter() {
+			
+			@Override
+			public void mouseClicked(MouseEvent e){
 		
 		java.awt.Desktop desktop = java.awt.Desktop.getDesktop();
 		JTextPane textPane = (JTextPane) e.getSource();
@@ -284,87 +296,55 @@ public Scribe(Text text) {
                 }
 				Integer branch = (Integer) a.getAttribute(HTML.Attribute.LINK);
 				
-				if (branch != null){
+				if (branch != null && branch != -1){
 					
 				}
 			}
 		}
 		
 		
-	}
-
-	@Override
-	public void mouseEntered(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mouseExited(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mousePressed(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mouseReleased(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mouseDragged(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mouseMoved(MouseEvent e) {
-		Cursor handCursor = Cursor.getPredefinedCursor(Cursor.HAND_CURSOR);
-		Cursor defaultCursor = Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR);
-		
-		JTextPane textPane = (JTextPane) e.getSource();
-		Point pt = new Point(e.getX(), e.getY());
-		int pos = textPane.viewToModel(pt);
-		
-		if (pos >= 0)
-		{
-			StyledDocument doc = textPane.getStyledDocument();
-			
-			if (doc instanceof StyledDocument){
-				StyledDocument hdoc = (StyledDocument) doc;
-				Element el = hdoc.getCharacterElement(pos);
-				AttributeSet a = el.getAttributes();
-				String href = (String) a.getAttribute(HTML.Attribute.HREF);
-				
-				if (href != null){
-					if(getCursor() != handCursor){
-						textPane.setCursor(handCursor);
-					}
-				}
-				else{
-					textPane.setCursor(defaultCursor);
-				}
-				
-				Integer branch = (Integer) a.getAttribute(HTML.Attribute.LINK);
-				
-				if (branch != null){
-					if(getCursor() != handCursor){
-						textPane.setCursor(handCursor);
-					}
-				}
-				else{
-					textPane.setCursor(defaultCursor);
-				}
-             }           
 		}
+	};
 	}
-		
+
+	private void setupHandListener() {
+		textbBranchListener = new MouseAdapter() {
+
+			@Override
+			public void mouseMoved(MouseEvent e) {
+				Cursor handCursor = Cursor.getPredefinedCursor(Cursor.HAND_CURSOR);
+				Cursor defaultCursor = Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR);
+				
+				JTextPane textPane = (JTextPane) e.getSource();
+				Point pt = new Point(e.getX(), e.getY());
+				int pos = textPane.viewToModel(pt);
+				
+				if (pos >= 0)
+				{
+					StyledDocument doc = textPane.getStyledDocument();
+					
+					if (doc instanceof StyledDocument){
+						StyledDocument hdoc = (StyledDocument) doc;
+						Element el = hdoc.getCharacterElement(pos);
+						AttributeSet a = el.getAttributes();
+						String href = (String) a.getAttribute(HTML.Attribute.HREF);
+						Integer branch = (Integer) a.getAttribute(HTML.Attribute.LINK);
+						if (href != null || (branch != null && branch !=-1)){
+							if(getCursor() != handCursor){
+								textPane.setCursor(handCursor);
+							}
+						}
+						else{
+							textPane.setCursor(defaultCursor);
+						}
+						
+		             }           
+				}
+			}
+			
+		};
+	}
+				
 }
 	
 

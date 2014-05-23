@@ -20,14 +20,27 @@ public class slideMediaObject extends JPanel implements MouseListener{
 	
 	
 	private Integer branch;
+	private Integer startTime;
+	private Integer finishTime;
 	/**
 	 * @param branch
 	 */
-	public slideMediaObject(int branch) {
+	public slideMediaObject(Integer branch,Integer duration,Integer startTime) {
 		super();
 		this.setOpaque(false);
 		this.setLayout(null);
 		this.branch = branch;
+		if(duration == -1 || duration == 0)
+		{
+			this.finishTime = -1;
+		}
+		else
+		{
+			this.finishTime = duration + startTime;
+		}
+		this.startTime = startTime;
+		
+		
 	}
 	
 	/**
@@ -71,6 +84,30 @@ public class slideMediaObject extends JPanel implements MouseListener{
 	public void mouseReleased(MouseEvent arg0) {
 		// TODO Auto-generated method stub
 		
+	}
+	
+	public void setFinishTime(Integer finishTime) {
+		// TODO Auto-generated method stub
+		this.finishTime = finishTime;
+	};
+
+	public Integer getFinishTime() {
+		// TODO Auto-generated method stub
+		return finishTime;
+	}
+
+	/**
+	 * @return the startTime
+	 */
+	public Integer getStartTime() {
+		return startTime;
+	}
+
+	/**
+	 * @param startTime the startTime to set
+	 */
+	public void setStartTime(Integer startTime) {
+		this.startTime = startTime;
 	};
 
 }
