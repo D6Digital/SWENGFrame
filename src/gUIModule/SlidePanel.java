@@ -93,16 +93,6 @@ public class SlidePanel extends JPanel{
 	private double scalingFactorY = 1;
 
 	private Integer count;
-	
-
-	
-	
-	
-	
-	
-
-
-	
 
 
 
@@ -127,17 +117,10 @@ public class SlidePanel extends JPanel{
 		// TODO ensure this panel is ready to be displayed when necessary
 	}
 	
-	
-
 	public void loadPresentation(Presentation presentation) {
 		this.presentation = presentation;
-		this.setBackground(presentation.getBackgroundColourObject());
-		
-
-	    
+		this.setBackground(presentation.getBackgroundColourObject());   
 	}
-	
-	
 	
 	/**
 	 * Using the information in Slide, add the media components to the slide panel 
@@ -240,15 +223,15 @@ public class SlidePanel extends JPanel{
 	       }
 		count ++;
 		setCount(count);
-		getParent().repaint();
+		getParent().getParent().repaint();
 		}
        };
        theTimer = new Timer(delay, taskPerformer);
        theTimer.setInitialDelay(50);
        theTimer.start();
        
-       
        this.setVisible(true);
+       
 	}
 	
 	
@@ -259,7 +242,6 @@ public class SlidePanel extends JPanel{
 	 */
 	public void clearSlide(){
 		mediaObjects.clear();
-		
 		this.removeAll();
 		setCount(0);
 	
@@ -335,8 +317,6 @@ public class SlidePanel extends JPanel{
 		}
 		
 	}*/
-	
-
 	
 	/**
 	 * 
@@ -539,7 +519,6 @@ public class SlidePanel extends JPanel{
         return playlistLocked;
     }
 	
-	
 	/**
 	 * 
 	 * @param text
@@ -603,13 +582,16 @@ public class SlidePanel extends JPanel{
 	 * changing there sizes or redrawing them altogether
 	 */
 	public void resizeSlide(){
+		theTimer.stop();
 		layeredPane.setBounds(0,0,this.getSize().width,this.getSize().height);
 		for(slideMediaObject object: mediaObjects){
 	    	   if(object.getStartTime() <=  count){
 	    		   layeredPane.remove(object);
+	    		   
 	    	   }
 	    	   
 	       }
+		mediaObjects.clear();
 		for(Image image: currentSlide.getImageList()) {
 			if(image.getStart() <= count)
 			{
@@ -626,16 +608,6 @@ public class SlidePanel extends JPanel{
 				
 			}
 	   }
-       for(Video video: currentSlide.getVideoList()) {
-    	   if(video.getPlaytime() <= count)
-			{
-    		   for(Component component: layeredPane.getComponents())
-				if(component instanceof VideoPlayer){
-					VideoPlayer videoPlayer = (VideoPlayer) component;
-					videoPlayer.resizeVideo(scalingFactorX,scalingFactorY);
-				}
-			}
-       }
        for(Shapes shape: currentSlide.getShapeList()) {
     	   if(shape.getStart() <= count)
 			{
@@ -666,6 +638,19 @@ public class SlidePanel extends JPanel{
 				}
 			}
        }
+       for(Video video: currentSlide.getVideoList()) {
+    	   if(video.getPlaytime() <= count)
+			{
+    		   for(Component component: layeredPane.getComponents())
+				if(component instanceof VideoPlayer){
+					VideoPlayer videoPlayer = (VideoPlayer) component;
+					videoPlayer.resizeVideo(scalingFactorX,scalingFactorY);
+				}
+			}
+       }
+       this.getParent().getParent().repaint();
+       theTimer.start();
+       
 	}
 
 

@@ -161,6 +161,9 @@ public class ContentsPanel extends JPanel implements ActionListener{
 	    this.contentsList = contentsList;
 	}
 	
+	public JButton getMainMenuButton(){
+		return mainMenuButton;
+	}
 	/**
 	 * Check the which button is released and then change slidePanel
 	 * to display the chosen slide from the contents list
