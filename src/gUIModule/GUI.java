@@ -215,9 +215,10 @@ public class GUI extends JFrame implements WindowStateListener, ComponentListene
 		mainMenuPanel = new MainMenuPanel(slideList.getWidth(), slideList.getHeight());
 		mainMenuPanel.setBounds(0,0, slideList.getWidth(), slideList.getHeight());
 		JButton buttonFromMainMenu = mainMenuPanel.getButton();
-		bookMainPanelSetUp();
 		layers.setVisible(false);
 		add(mainMenuPanel);
+		revalidate();
+		repaint();
 		buttonFromMainMenu.addActionListener(
 				new ActionListener() {
 
@@ -225,6 +226,11 @@ public class GUI extends JFrame implements WindowStateListener, ComponentListene
 					public void actionPerformed(ActionEvent arg0) {
 						layers.setVisible(true);
 						mainMenuPanel.setVisible(false);
+						String chosenBook = mainMenuPanel.getChosenBook();
+						XMLParser parser = new XMLParser(chosenBook);	
+						slideList = parser.getSlides();
+			            System.out.println("book = "+chosenBook);
+						bookMainPanelSetUp();
 					}
 				});
 		

@@ -50,38 +50,34 @@ public class BookXMLParser extends DefaultHandler{
 
 	public BookList readBookXML(String inputFile) {
 		//Check to see if xml is valid
-		URL schemaFile;
+		File schemaFile;
 		Schema schema;
 		Source xmlFile = new StreamSource(new File(inputFile));
 		SchemaFactory schemaFactory = SchemaFactory
 		    .newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
+		schemaFile = new File("bin/schema.xsd");
+		schemaFile = new File("bin/schema.xsd");
 		try {
-			schemaFile = new URL("http://www-users.york.ac.uk/~rjm529/booklist.xsd");
-			try {
-				schema = schemaFactory.newSchema(schemaFile);
-			} catch (SAXException e1) {
-				// TODO Auto-generated catch block
-				schema = null;
-				e1.printStackTrace();
-			}
-			//generate validator
-			Validator validator = schema.newValidator();
-			try {
-				// run validator on the desired xml file
-			  validator.validate(xmlFile);
-			  System.out.println(xmlFile.getSystemId() + " is valid");
-			  System.out.println("Is Valid");
-			} catch (SAXException e) {
-				//say isn't valid and report where the error is
-			  System.out.println(xmlFile.getSystemId() + " is NOT valid");
-			  System.out.println("Reason: " + e.getLocalizedMessage());
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		} catch (MalformedURLException e1) {
+			schema = schemaFactory.newSchema(schemaFile);
+		} catch (SAXException e1) {
 			// TODO Auto-generated catch block
+			schema = null;
 			e1.printStackTrace();
+		}
+		//generate validator
+		Validator validator = schema.newValidator();
+		try {
+			// run validator on the desired xml file
+		  validator.validate(xmlFile);
+		  System.out.println(xmlFile.getSystemId() + " is valid");
+		  System.out.println("Is Valid");
+		} catch (SAXException e) {
+			//say isn't valid and report where the error is
+		  System.out.println(xmlFile.getSystemId() + " is NOT valid");
+		  System.out.println("Reason: " + e.getLocalizedMessage());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		//parse the xml file
 		try {

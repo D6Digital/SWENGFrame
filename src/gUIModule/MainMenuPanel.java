@@ -3,6 +3,8 @@ package gUIModule;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -22,7 +24,15 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 
+import bookModule.Book;
+import bookModule.BookList;
+import bookModule.BookXMLParser;
+
+import presentation.Presentation;
 import presentation.Slide;
+import presentation.XMLParser;
+import systemModule.SystemCollection;
+import systemModule.SystemXMLParser;
 
 public class MainMenuPanel extends JPanel{
 	
@@ -39,6 +49,9 @@ public class MainMenuPanel extends JPanel{
 	DefaultListModel bookListModel = new DefaultListModel<String>();
 	JList bookList = new JList(bookListModel);
 	JScrollPane bookScroll = new JScrollPane();
+	private BookList listOfBooks;
+	private SystemCollection listOfSystems;
+	private String chosenBook;
 
 	
 	public MainMenuPanel(int width, int height) {
@@ -117,32 +130,33 @@ public class MainMenuPanel extends JPanel{
 
 				systemListModel.clear();
 				systemList.removeAll();
-
 				
+				
+//				SystemXMLParser systemParser = new SystemXMLParser("bin/systemlist.xml");
+//				listOfSystems = systemParser.;
+//				
+//				
 //				//Cycle through all slides in the contents list and creates a JButton for each 
-//				for (Slide currentSlide : contentsSlideList) {
-//					listModel.addElement(currentSlide.getSlideID() + ". " + currentSlide.getDescriptor());
+//				for (System currentSlide : listOfSystems.) {
+//					systemListModel.addElement(currentSlide.getSlideID() + ". " + currentSlide.getDescriptor());
 //				}
-				systemListModel.add(0, new String("hi there"));
-				systemListModel.add(1, new String("bye there"));
-				systemListModel.add(2, new String("hello there"));
-				systemListModel.add(3, new String("goodbye there"));
+
 				
 				systemScroll.setViewportView(systemList);
 				systemScroll.setBounds(160, 200, 100, 300);
 				
 				bookListModel.clear();
 				bookList.removeAll();
+				
+				BookXMLParser bookParser = new BookXMLParser("bin/booklist.xml");	
+				listOfBooks = bookParser.readBookXML("bin/booklist.xml");
+				
 
 				
-//				//Cycle through all slides in the contents list and creates a JButton for each 
-//				for (Slide currentSlide : contentsSlideList) {
-//					listModel.addElement(currentSlide.getSlideID() + ". " + currentSlide.getDescriptor());
-//				}
-				bookListModel.add(0, new String("hi there"));
-				bookListModel.add(1, new String("bye there"));
-				bookListModel.add(2, new String("hello there"));
-				bookListModel.add(3, new String("goodbye there"));
+				//Cycle through all slides in the contents list and creates a JButton for each 
+				for (Book currentBook : listOfBooks.getList()) {
+					bookListModel.addElement(currentBook.getTitle());
+				}
 				
 				bookScroll.setViewportView(bookList);
 				bookScroll.setBounds(300, 200, 100, 300);
@@ -167,12 +181,38 @@ public class MainMenuPanel extends JPanel{
 							}
 						});
 		
+				 bookList.addMouseListener(new MouseListener() {
+			         
+
+					@Override
+			         public void mouseReleased(MouseEvent e) {}
+			         
+			         @Override
+			         public void mousePressed(MouseEvent e) {}
+			         
+			         @Override
+			         public void mouseExited(MouseEvent e) { }
+			         
+			         @Override
+			         public void mouseEntered(MouseEvent e) {}
+			         
+			         @Override
+			         public void mouseClicked(MouseEvent e) {
+			             chosenBook = listOfBooks.getBook(bookList.getSelectedIndex()).getFileName();
+
+			             
+			         }
+			     });
+				
 	}
 
 	public JButton getButton(){
 		return openBookButton;
 	}
 	
+	public String getChosenBook(){
+		return chosenBook;
+	}
 	
 	
 }
