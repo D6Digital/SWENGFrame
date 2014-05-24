@@ -164,5 +164,7 @@ public class SystemXMLParser extends DefaultHandler{
 	public void characters(char ch[], int start, int length) throws SAXException {
 		
 	}
-	
+	public SystemCollection getSystem(){
+		return collection;
+	}
 }
