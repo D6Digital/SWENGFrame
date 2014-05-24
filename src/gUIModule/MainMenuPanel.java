@@ -31,6 +31,7 @@ import bookModule.BookXMLParser;
 import presentation.Presentation;
 import presentation.Slide;
 import presentation.XMLParser;
+import systemModule.GameSystem;
 import systemModule.SystemCollection;
 import systemModule.SystemXMLParser;
 
@@ -40,7 +41,7 @@ public class MainMenuPanel extends JPanel{
 	JButton openShopButton = new JButton("Open Shop");
 	JLabel background;
 	JLabel logoLabel;
-	JLabel imageLabel;
+	JLabel imageLabel = new JLabel();
 	JLayeredPane layers = new JLayeredPane();
 	JTextField description = new JTextField();
 	DefaultListModel systemListModel = new DefaultListModel<String>();
@@ -52,6 +53,7 @@ public class MainMenuPanel extends JPanel{
 	private BookList listOfBooks;
 	private SystemCollection listOfSystems;
 	private String chosenBook;
+	private String systemDescription;
 
 	
 	public MainMenuPanel(int width, int height) {
@@ -60,6 +62,9 @@ public class MainMenuPanel extends JPanel{
 		layers.setLayout(null);
 		layers.setBounds(0, 0, width, height);
 		System.out.println("height="+height + "width="+width);
+		
+		SystemXMLParser systemParser = new SystemXMLParser("bin/systemlist.xml");
+		listOfSystems = systemParser.getSystem();
 		
 		//start button
 		openBookButton.setBounds(width-110, 300, 100, 40);
@@ -87,9 +92,19 @@ public class MainMenuPanel extends JPanel{
 			e2.printStackTrace();
 		}
 		
+		 
+//    	BufferedImage bookImage;
+// 		try{
+// 			bookImage = ImageIO.read(new File("resources/buttons/eclipsephase.jpg"));
+// 			Image scaledBackground = bookImage.getScaledInstance(150,300,java.awt.Image.SCALE_SMOOTH);
+// 			imageLabel = new JLabel(new ImageIcon(scaledBackground));
+// 			imageLabel.setBounds(440, 200, 150, 300);
+// 		}catch(IOException e2){
+// 			e2.printStackTrace();
+// 		}
+ 		
 		//Descriptions
 		description.setBounds(160, 0, width-250, 100);
-		description.setText("This is a description!!!!!!!!");
 		description.setEditable(false);
 		
 		//Labels
@@ -97,15 +112,7 @@ public class MainMenuPanel extends JPanel{
 		systemLabel.setBounds(160, 140, 120, 50);
 		JLabel bookLabel = new JLabel("Choose A Book:");
 		bookLabel.setBounds(300, 140, 120, 50);
-		BufferedImage bookImage;
-		try{
-			bookImage = ImageIO.read(new File("resources/buttons/eclipsephase.jpg"));
-			Image scaledBackground = bookImage.getScaledInstance(150,300,java.awt.Image.SCALE_SMOOTH);
-			imageLabel = new JLabel(new ImageIcon(scaledBackground));
-			imageLabel.setBounds(440, 200, 150, 300);
-		}catch(IOException e2){
-			e2.printStackTrace();
-		}
+		
 		
 		
 		//scrollpanes
@@ -131,15 +138,13 @@ public class MainMenuPanel extends JPanel{
 				systemListModel.clear();
 				systemList.removeAll();
 				
+				 for (GameSystem currentSystem : listOfSystems.getList()) {
+						systemListModel.addElement(currentSystem.getName());
+					}
+							
 				
-//				SystemXMLParser systemParser = new SystemXMLParser("bin/systemlist.xml");
-//				listOfSystems = systemParser.;
-//				
-//				
-//				//Cycle through all slides in the contents list and creates a JButton for each 
-//				for (System currentSlide : listOfSystems.) {
-//					systemListModel.addElement(currentSlide.getSlideID() + ". " + currentSlide.getDescriptor());
-//				}
+				//Cycle through all slides in the contents list and creates a JButton for each 
+				
 
 				
 				systemScroll.setViewportView(systemList);
@@ -147,16 +152,11 @@ public class MainMenuPanel extends JPanel{
 				
 				bookListModel.clear();
 				bookList.removeAll();
-				
-				BookXMLParser bookParser = new BookXMLParser("bin/booklist.xml");	
-				listOfBooks = bookParser.readBookXML("bin/booklist.xml");
+
 				
 
 				
 				//Cycle through all slides in the contents list and creates a JButton for each 
-				for (Book currentBook : listOfBooks.getList()) {
-					bookListModel.addElement(currentBook.getTitle());
-				}
 				
 				bookScroll.setViewportView(bookList);
 				bookScroll.setBounds(300, 200, 100, 300);
@@ -199,10 +199,55 @@ public class MainMenuPanel extends JPanel{
 			         @Override
 			         public void mouseClicked(MouseEvent e) {
 			             chosenBook = listOfBooks.getBook(bookList.getSelectedIndex()).getFileName();
-
-			             
 			         }
 			     });
+				 
+				 systemList.addMouseListener(new MouseListener() {
+			         
+
+						private String chosenSystem;
+
+						@Override
+				         public void mouseReleased(MouseEvent e) {}
+				         
+				         @Override
+				         public void mousePressed(MouseEvent e) {}
+				         
+				         @Override
+				         public void mouseExited(MouseEvent e) { }
+				         
+				         @Override
+				         public void mouseEntered(MouseEvent e) {}
+				         
+				         @Override
+				         public void mouseClicked(MouseEvent e) {
+				        	chosenSystem = listOfSystems.get(systemList.getSelectedIndex()).getFilename();
+				    		BookXMLParser bookParser = new BookXMLParser(chosenSystem);	
+				    		listOfBooks = bookParser.readBookXML(chosenSystem);
+				        	bookListModel.clear();
+							bookList.removeAll();
+				        	 for (Book currentBook : listOfBooks.getList()) {
+									bookListModel.addElement(currentBook.getTitle());
+								}
+								
+				        	 bookList.repaint();
+				        	 systemDescription = listOfSystems.get(systemList.getSelectedIndex()).getDescription();
+				        	 description.setText(null);
+				        	 description.setText(systemDescription);
+				        	 
+				        	BufferedImage bookImage;
+				     		try{
+				     			bookImage = ImageIO.read(new File(listOfSystems.get(systemList.getSelectedIndex()).getLogoFileName()));
+				     			Image scaledBackground = bookImage.getScaledInstance(150,300,java.awt.Image.SCALE_SMOOTH);
+				     			imageLabel.setIcon((new ImageIcon(scaledBackground)));
+				     			imageLabel.setBounds(440, 200, 150, 300);
+				     		}catch(IOException e2){
+				     			e2.printStackTrace();
+				     		}
+				     		imageLabel.repaint();
+				         }
+				        
+				     });
 				
 	}
 

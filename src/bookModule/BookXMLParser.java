@@ -56,7 +56,6 @@ public class BookXMLParser extends DefaultHandler{
 		SchemaFactory schemaFactory = SchemaFactory
 		    .newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
 		schemaFile = new File("bin/schema.xsd");
-		schemaFile = new File("bin/schema.xsd");
 		try {
 			schema = schemaFactory.newSchema(schemaFile);
 		} catch (SAXException e1) {

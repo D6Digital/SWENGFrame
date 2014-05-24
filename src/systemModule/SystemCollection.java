@@ -5,12 +5,14 @@ package systemModule;
 
 import java.util.ArrayList;
 
+import bookModule.Book;
+
 /**
  * @author Robert Mills
  *
  */
 public class SystemCollection {
-	ArrayList<GameSystem> systems = new ArrayList<GameSystem>(0);
+	static ArrayList<GameSystem> systems = new ArrayList<GameSystem>(0);
 	public SystemCollection() {
 
 	}
@@ -36,6 +38,11 @@ public class SystemCollection {
 	 */
 	public int size() {
 		return systems.size();
+	}
+	
+	public static ArrayList<GameSystem> getList() {
+		// TODO Auto-generated method stub
+		return systems;
 	}
 	
 }
