@@ -108,6 +108,7 @@ public class MainMenuPanel extends JPanel{
 		//Descriptions
 		description.setBounds(160, 0, width-250, 100);
 		description.setEditable(false);
+		description.setText("Welcome to the Grimoire interactive rulebook! Please choose a system and then a book. We hope you enjoy your journey!");
 		
 		//Labels
 		JLabel systemLabel = new JLabel("Choose A System:");

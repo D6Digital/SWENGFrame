@@ -41,9 +41,11 @@ public class ContentsPanel extends JPanel implements ActionListener{
 	private ArrayList<Slide> contentsSlideList;
 	SlidePanel slidePanel1;
 	SlidePanel slidePanel2;
-	JButton mainMenuButton = new JButton("Main Menu");
+	JButton mainMenuButton = new JButton();
+	JButton changeListButton = new JButton();
 	JLabel systemLabel = new JLabel();
 	JLabel bookLabel = new JLabel();
+	JLabel pageLabel = new JLabel();
 	JLabel title = new JLabel();
 	DefaultListModel listModel = new DefaultListModel<String>();
 	JList contentsList = new JList(listModel);
@@ -61,15 +63,20 @@ public class ContentsPanel extends JPanel implements ActionListener{
 		contentsSlideList = contentSlideList;
 		//slidePanel1 = slide1;
 		//slidePanel2 = slide2;
-		mainMenuButton.setBounds((width/2)-55, (int)(slideHeight*0.16), 110, 40);
+		mainMenuButton.setBounds((width/2)-55, (int)(slideHeight*0.1), 110, 40);
 		mainMenuButton.setBorderPainted(false); 
 		mainMenuButton.setContentAreaFilled(false); 
 		mainMenuButton.setFocusPainted(false); 
 		mainMenuButton.setOpaque(false);
+		
+		changeListButton.setBounds((width/2)-55, (int)(slideHeight*0.2), 110, 40);
+		
 		systemLabel.setBounds((width/2)-65,(int)(slideHeight*0.3),130,40);
-		bookLabel.setBounds((width/2)-65,(int)(slideHeight*0.4),130,40);
+		bookLabel.setBounds((width/2)-65,(int)(slideHeight*0.35),130,40);
+		pageLabel.setBounds((width/2)-65,(int)(slideHeight*0.44),130,40);
 		systemLabel.setText("System: "+currentSystem);
 		bookLabel.setText("Book: "+currentBook);
+		pageLabel.setText("Choose a page:");
 		
 		BufferedImage titleImage;
 		try{
@@ -82,7 +89,9 @@ public class ContentsPanel extends JPanel implements ActionListener{
 			
 		}
 		
+		this.add(changeListButton);
 		this.add(mainMenuButton);
+		this.add(pageLabel);
 		this.add(systemLabel);
 		this.add(bookLabel);
 		
@@ -109,6 +118,55 @@ public class ContentsPanel extends JPanel implements ActionListener{
 			
 		}
 		// TODO add a title JLabel and ensure the panel is ready
+		
+		
+		mainMenuButton.addMouseListener(new MouseListener() {
+			
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mouseExited(MouseEvent e) {
+				BufferedImage mainMenuButtonImage;
+				try{
+					mainMenuButtonImage = ImageIO.read(new File("resources/buttons/MainMenuButton.png"));
+					Image scaledButton = mainMenuButtonImage.getScaledInstance(110,40,java.awt.Image.SCALE_SMOOTH);
+					mainMenuButton.setIcon(new ImageIcon(scaledButton));
+				}catch (IOException ex){
+					
+				}
+				mainMenuButton.repaint();
+			}
+			
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				System.out.println("Entered main menu button");
+				BufferedImage mainMenuButtonImage;
+				try{
+					mainMenuButtonImage = ImageIO.read(new File("resources/buttons/MainMenuButtonHover.png"));
+					Image scaledButton = mainMenuButtonImage.getScaledInstance(110,40,java.awt.Image.SCALE_SMOOTH);
+					mainMenuButton.setIcon(new ImageIcon(scaledButton));
+				}catch (IOException ex){
+					
+				}
+				mainMenuButton.repaint();
+			}
+			
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
 	}
 	
 	

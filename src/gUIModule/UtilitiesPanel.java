@@ -6,6 +6,8 @@ import java.awt.Dimension;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -48,6 +50,9 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
 	ArrayList<JButton> buttonList = new ArrayList<>();
 	JButton backButton = new JButton("Back");
 	JLabel title;
+	JButton diceButton = new JButton();
+	JButton calculatorButton = new JButton();
+	JButton audioButton = new JButton();
 
 
 
@@ -107,11 +112,11 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
 		this.add(multiPanel);
 		
 		//Adds JButtons for diceRoller and calculator
-		buttonList.add(addButtons("diceRollerLaunch", "Opens the dice roller application", (utilitiesWidth/2)-50, (slideHeight/4)-50, "DiceButton.png"));
+		buttonList.add(addButtons(diceButton,"diceRollerLaunch", "Opens the dice roller application", (utilitiesWidth/2)-50, (slideHeight/4)-50, "DiceButton.png"));
 		
-		buttonList.add(addButtons("calculatorLaunch", "Opens the modifier calculator application", (utilitiesWidth/2)-50, (slideHeight/2)-50, "CalculatorButton.png"));
+		buttonList.add(addButtons(calculatorButton,"calculatorLaunch", "Opens the modifier calculator application", (utilitiesWidth/2)-50, (slideHeight/2)-50, "CalculatorButton.png"));
 		
-		buttonList.add(addButtons("audioPlayerLaunch", "Opens the audio player application", (utilitiesWidth/2)-50, (3*slideHeight/4)-50, "AudioButton.png"));
+		buttonList.add(addButtons(audioButton,"audioPlayerLaunch", "Opens the audio player application", (utilitiesWidth/2)-50, (3*slideHeight/4)-50, "AudioButton.png"));
 
 	    
 		//calculatorPanel.setBounds(0,0,utilitiesWidth,700);
@@ -124,8 +129,155 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
 		multiPanel.setOpaque(false);
 		this.setBounds(slideWidth-utilitiesWidth, 0, utilitiesWidth, slideHeight);
 
+		diceButton.addMouseListener(new MouseListener() {
+			
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mouseExited(MouseEvent e) {
+				BufferedImage buttonImage;
+				System.out.println("Dice button entered");
+				try{
+					buttonImage = ImageIO.read(new File("resources/buttons/DiceButton.png"));
+					Image scaledButton = buttonImage.getScaledInstance(100,100,java.awt.Image.SCALE_SMOOTH);
+					diceButton.setIcon(new ImageIcon(scaledButton));
+				}catch (IOException ex){
+					
+				}
+				diceButton.repaint();
+				
+			}
+			
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				BufferedImage buttonImage;
+				System.out.println("Dice button entered");
+				try{
+					buttonImage = ImageIO.read(new File("resources/buttons/DiceButtonHover.png"));
+					Image scaledButton = buttonImage.getScaledInstance(100,100,java.awt.Image.SCALE_SMOOTH);
+					diceButton.setIcon(new ImageIcon(scaledButton));
+				}catch (IOException ex){
+					
+				}
+				diceButton.repaint();
+			}
+			
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
 		
+		calculatorButton.addMouseListener(new MouseListener() {
+			
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mouseExited(MouseEvent e) {
+				BufferedImage buttonImage;
+				System.out.println("Dice button entered");
+				try{
+					buttonImage = ImageIO.read(new File("resources/buttons/CalculatorButton.png"));
+					Image scaledButton = buttonImage.getScaledInstance(100,100,java.awt.Image.SCALE_SMOOTH);
+					calculatorButton.setIcon(new ImageIcon(scaledButton));
+				}catch (IOException ex){
+					
+				}
+				calculatorButton.repaint();
+				
+			}
+			
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				BufferedImage buttonImage;
+				System.out.println("Dice button entered");
+				try{
+					buttonImage = ImageIO.read(new File("resources/buttons/CalculatorButtonHover.png"));
+					Image scaledButton = buttonImage.getScaledInstance(100,100,java.awt.Image.SCALE_SMOOTH);
+					calculatorButton.setIcon(new ImageIcon(scaledButton));
+				}catch (IOException ex){
+					
+				}
+				calculatorButton.repaint();
+			}
+			
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
 		
+		audioButton.addMouseListener(new MouseListener() {
+			
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mouseExited(MouseEvent e) {
+				BufferedImage buttonImage;
+				System.out.println("Dice button entered");
+				try{
+					buttonImage = ImageIO.read(new File("resources/buttons/AudioButton.png"));
+					Image scaledButton = buttonImage.getScaledInstance(100,100,java.awt.Image.SCALE_SMOOTH);
+					audioButton.setIcon(new ImageIcon(scaledButton));
+				}catch (IOException ex){
+					
+				}
+				audioButton.repaint();
+				
+			}
+			
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				BufferedImage buttonImage;
+				System.out.println("Dice button entered");
+				try{
+					buttonImage = ImageIO.read(new File("resources/buttons/AudioButtonHover.png"));
+					Image scaledButton = buttonImage.getScaledInstance(100,100,java.awt.Image.SCALE_SMOOTH);
+					audioButton.setIcon(new ImageIcon(scaledButton));
+				}catch (IOException ex){
+					
+				}
+				audioButton.repaint();
+			}
+			
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
 	}
 	
 	
@@ -134,10 +286,9 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
 	 * Method for creating JButtons with specified paramiters
 	 * @return 
 	 */
-	public JButton addButtons(String actionCommand, String toolTip,
+	public JButton addButtons(JButton button, String actionCommand, String toolTip,
 						   int x_coord, int y_coord, String image) {
 		
-		JButton button = new JButton();
 		button.setVerticalTextPosition(AbstractButton.CENTER);
 		button.setHorizontalTextPosition(AbstractButton.CENTER);
 		button.setAlignmentX(Component.CENTER_ALIGNMENT);

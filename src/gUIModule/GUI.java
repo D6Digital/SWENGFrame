@@ -582,11 +582,11 @@ public void bookMainPanelSetUp(){
 
 		//set up tabs
 		//utilities tab
-		utilitiesTab.setBounds(slideList.getWidth()-15,(slideList.getHeight()/2)-60,15,120);
+		utilitiesTab.setBounds(slideList.getWidth()-15,(slideList.getHeight()/2)-55,15,110);
 		BufferedImage utilitiesTabImage;
 		try{
 			utilitiesTabImage = ImageIO.read(new File("resources/buttons/utilitiesTab.png"));
-			Image scaledUTab = utilitiesTabImage.getScaledInstance(15, 100, java.awt.Image.SCALE_SMOOTH);
+			Image scaledUTab = utilitiesTabImage.getScaledInstance(15, 110, java.awt.Image.SCALE_SMOOTH);
 			JLabel uTabLabel = new JLabel(new ImageIcon(scaledUTab));
 			uTabLabel.setBounds(0, 0, 15, 120);
 			uTabLabel.setOpaque(false);
