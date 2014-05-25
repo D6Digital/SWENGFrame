@@ -90,7 +90,7 @@ public class GUI extends JFrame implements WindowStateListener, ComponentListene
 	JButton nextSlideButton = new JButton();
 	JButton previousSlideButton = new JButton();
 	int borderSize = 20;
-	static int utilitiesWidth = 300;
+	static int utilitiesWidth = 150;
 	static int contentsWidth = 200;
 	UtilitiesPanel utilities;
 	
@@ -99,7 +99,6 @@ public class GUI extends JFrame implements WindowStateListener, ComponentListene
 	JLayeredPane layers = new JLayeredPane();
 	boolean utilitiesShowing = false;
 	boolean contentsShowing = false;
-	boolean topPanelShowing = false;
 	boolean nextButtonShowing = false;
 	boolean previousButtonShowing = false;
 	boolean tabBool = true;
@@ -115,7 +114,6 @@ public class GUI extends JFrame implements WindowStateListener, ComponentListene
 	private double scaleFactorY = 1;
 	private double scaleFactorX = 1;
 	
-	JPanel topPanel = new JPanel();
 	JButton maximiseRestoreButton = new JButton();
 	
 	JPanel utilitiesTab = new JPanel();
@@ -288,7 +286,6 @@ public class GUI extends JFrame implements WindowStateListener, ComponentListene
         nextSlideButton.setBounds((int) (slideList.getWidth()*scaleFactorX)-170,(int) (slideList.getHeight()*scaleFactorY)-60,150,50);
         nextSlideButton.repaint();
         utilities.setBounds((int) (slideList.getWidth()*scaleFactorX)-utilitiesWidth, 0, utilitiesWidth, (int) (slideList.getHeight()*scaleFactorY));
-        topPanel.setBounds(((int) (slideList.getWidth()*scaleFactorX)/2)-150, 0, 300, 200);
         utilitiesTab.setBounds((int) (slideList.getWidth()*scaleFactorX)-25,((int) (slideList.getHeight()*scaleFactorY)/2)-60,15,120);
         contentsTab.setBounds(0,((int) (slideList.getHeight()*scaleFactorY)/2)-60,15,120);
         nextTab.setBounds((int) (slideList.getWidth()*scaleFactorX)-120,((int) (slideList.getHeight()*scaleFactorY))-25,90,20);
@@ -313,7 +310,6 @@ public class GUI extends JFrame implements WindowStateListener, ComponentListene
         previousSlideButton.setBounds(10,slideList.getHeight()-60,150,50);
         nextSlideButton.setBounds(slideList.getWidth()-160,slideList.getHeight()-60,150,50);
         utilities.setBounds(slideList.getWidth()-utilitiesWidth, 0, utilitiesWidth, slideList.getHeight());
-        topPanel.setBounds((slideList.getWidth()/2)-150, 0, 300, 200);
         utilitiesTab.setBounds(slideList.getWidth()-15,(slideList.getHeight()/2)-60,15,120);
         contentsTab.setBounds(0,(slideList.getHeight()/2)-60,15,120);
         nextTab.setBounds(slideList.getWidth()-90,(slideList.getHeight())-20,90,20);
@@ -721,6 +717,7 @@ public void bookMainPanelSetUp(){
                 }
 		        
 		    });
+		    
 		}
 		
 		
@@ -728,7 +725,7 @@ public void bookMainPanelSetUp(){
 
 		// TODO: CHANGES MADE HERE BY JOSHUA LANT, NO ACTUAL TODO, JUST REFERENCE POINT
 		//set up contents
-		ContentsPanel contentsPanel = new ContentsPanel(slideList.getSlideList());
+		ContentsPanel contentsPanel = new ContentsPanel(slideList.getSlideList(), contentsWidth, slideList.getWidth(),slideList.getHeight(), mainMenuPanel.getCurrentSystem(), mainMenuPanel.getCurrentBook());
 		contentsPanel.setBounds(30, 30, contentsWidth, slideList.getHeight());
 		
 		contentsPanel.setPreferredSize(new Dimension(contentsWidth, slideList.getHeight()));
@@ -780,53 +777,17 @@ public void bookMainPanelSetUp(){
 	            }
 	        });
 
-		//Drop down
-	    maximiseRestoreButton.setText("MAXIMISE");
-	    maximiseRestoreButton.setBounds(0, 0, 100, 50);
-	    
-	    maximiseRestoreButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if(maximiseRestoreButton.getText().equals("MAXIMISE")){
-                    setMaxSize();
-                    maximiseRestoreButton.setText("RESTORE");
-                    screenSizeMaximised = true;
-                }
-                else if(maximiseRestoreButton.getText().equals("RESTORE")){
-                    setRestoredSize();
-                    maximiseRestoreButton.setText("MAXIMISE");
-                    screenSizeMaximised = false;
-                }
-            }
-        });
-
-		topPanel.setBounds((slideList.getWidth()/2)-150, 0, 300, 200);
-		topPanel.setVisible(false);
-		topPanel.setLayout(null);
-		topPanel.setOpaque(false);
-		topPanel.add(maximiseRestoreButton);
-		BufferedImage titleImage;
-		try{
-			titleImage = ImageIO.read(new File("resources/buttons/Logo.png"));
-			Image scaledTitle = titleImage.getScaledInstance(300,200,java.awt.Image.SCALE_SMOOTH);
-			JLabel titleLabel = new JLabel(new ImageIcon(scaledTitle));
-			titleLabel.setBounds(0, 0, 300, 200);
-			topPanel.add(titleLabel);
-		}catch(IOException e2){
-			e2.printStackTrace();
-		}
 
 		//Adding to layered pane
 		layers.add(utilities,0);
 		layers.add(contents,1);
-		layers.add(topPanel,2);
-		layers.add(nextSlideButton,3);
-		layers.add(previousSlideButton,4);
-		layers.add(utilitiesTab,5);
-		layers.add(contentsTab,6);
-		layers.add(nextTab,7);
-		layers.add(previousTab,8);
-		layers.add(slidePanel,9);
+		layers.add(nextSlideButton,2);
+		layers.add(previousSlideButton,3);
+		layers.add(utilitiesTab,4);
+		layers.add(contentsTab,5);
+		layers.add(nextTab,6);
+		layers.add(previousTab,7);
+		layers.add(slidePanel,8);
 		
 		//set up slide
 		
@@ -919,7 +880,7 @@ private void borderListenerProcess(MouseEvent e1,Boolean isObject,Boolean isText
 	
 	//System.out.println("x="+xCoordinate+"y="+yCoordinate);
 	
-	if (xCoordinate>(slideWidth-borderSize)){
+	if (xCoordinate>(slideWidth+30-borderSize)){
 		utilities.setVisible(true);
 		utilitiesShowing=true;
 		utilitiesTab.setVisible(false);
@@ -928,24 +889,10 @@ private void borderListenerProcess(MouseEvent e1,Boolean isObject,Boolean isText
 		previousTab.setVisible(false);
 		nextSlideButton.setVisible(false);
 	}
-	if (xCoordinate<(slideWidth-utilitiesWidth)){
+	if (xCoordinate<(slideWidth+30-utilitiesWidth)){
 		if(utilitiesShowing==true){
 			utilities.setVisible(false);
 			utilitiesShowing=false;
-		}
-	}
-	if(yCoordinate<borderSize){
-		topPanel.setVisible(true);
-		topPanelShowing = true;
-		utilitiesTab.setVisible(false);
-		contentsTab.setVisible(false);
-		nextTab.setVisible(false);
-		previousTab.setVisible(false);
-	}
-	if(yCoordinate>100){
-		if(topPanelShowing==true){
-			topPanel.setVisible(false);
-			topPanelShowing=false;
 		}
 	}
 	if(xCoordinate<borderSize){
@@ -964,7 +911,7 @@ private void borderListenerProcess(MouseEvent e1,Boolean isObject,Boolean isText
 			contentsShowing=false;
 		}
 	}
-	if((xCoordinate>slideWidth/2)&(yCoordinate>(slideHeight-borderSize))){
+	if((xCoordinate>(slideWidth+30)/2)&(yCoordinate>(slideHeight+60-borderSize))){
 		if(utilitiesShowing==false){
 			nextSlideButton.setVisible(true);
 			nextButtonShowing=true;
@@ -974,13 +921,13 @@ private void borderListenerProcess(MouseEvent e1,Boolean isObject,Boolean isText
 			previousTab.setVisible(false);
 		}
 	}
-	if((xCoordinate<slideWidth/2)|(yCoordinate<(slideHeight-100))){
+	if((xCoordinate<(slideWidth+30)/2)|(yCoordinate<(slideHeight+60-50))){
 		if(nextButtonShowing==true){
 			nextSlideButton.setVisible(false);
 			nextButtonShowing=false;
 		}
 	}
-	if((xCoordinate<slideWidth/2)&(yCoordinate>(slideHeight-borderSize))){
+	if((xCoordinate<(slideWidth+30)/2)&(yCoordinate>(slideHeight+60-borderSize))){
 		if(contentsShowing==false){
 			previousSlideButton.setVisible(true);
 			previousButtonShowing=true;
@@ -990,13 +937,13 @@ private void borderListenerProcess(MouseEvent e1,Boolean isObject,Boolean isText
 			previousTab.setVisible(false);
 		}
 	}
-	if((xCoordinate>slideWidth/2)|(yCoordinate<(slideHeight-100))){
+	if((xCoordinate>(slideWidth+30)/2)|(yCoordinate<(slideHeight+60-50))){
 		if(previousButtonShowing==true){
 			previousSlideButton.setVisible(false);
 			previousButtonShowing=false;
 		}
 	}
-	if((xCoordinate>50)&(xCoordinate<(slideWidth-50))&(yCoordinate>50)&(yCoordinate<(slideHeight-50))){
+	if((xCoordinate>50)&(xCoordinate<(slideWidth+30-50))&(yCoordinate>50)&(yCoordinate<(slideHeight+60-50))){
 		utilitiesTab.setVisible(true);
 		contentsTab.setVisible(true);
 		if(nextSlideButton.isVisible()==false){
@@ -1017,7 +964,7 @@ private void borderListenerProcess(MouseEvent e1,Boolean isObject,Boolean isText
 
 
 
-public void setupSlidePlayer(String filename){
+/*public void setupSlidePlayer(String filename){
 	XMLParser parser = new XMLParser(filename);	
 	slideList = parser.getSlides();
 	collection = parser.getCollection();
@@ -1145,7 +1092,7 @@ public void setupSlidePlayer(String filename){
 
 	// TODO: CHANGES MADE HERE BY JOSHUA LANT, NO ACTUAL TODO, JUST REFERENCE POINT
 	//set up contents
-	ContentsPanel contentsPanel = new ContentsPanel(slideList.getSlideList());
+	ContentsPanel contentsPanel = new ContentsPanel(slideList.getSlideList(), contentsWidth, slideList.getWidth(),slideList.getHeight());
 	contentsPanel.setBounds(30, 30, contentsWidth, slideList.getHeight());
 	
 	contentsPanel.setPreferredSize(new Dimension(contentsWidth, slideList.getHeight()));
@@ -1174,53 +1121,17 @@ public void setupSlidePlayer(String filename){
             }
         });
 
-	//Drop down
-    maximiseRestoreButton.setText("MAXIMISE");
-    maximiseRestoreButton.setBounds(0, 0, 100, 50);
-    
-    maximiseRestoreButton.addActionListener(new ActionListener() {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            if(maximiseRestoreButton.getText().equals("MAXIMISE")){
-                setMaxSize();
-                maximiseRestoreButton.setText("RESTORE");
-                screenSizeMaximised = true;
-            }
-            else if(maximiseRestoreButton.getText().equals("RESTORE")){
-                setRestoredSize();
-                maximiseRestoreButton.setText("MAXIMISE");
-                screenSizeMaximised = false;
-            }
-        }
-    });
-
-	topPanel.setBounds((slideList.getWidth()/2)-150, 0, 300, 200);
-	topPanel.setVisible(false);
-	topPanel.setLayout(null);
-	topPanel.setOpaque(false);
-	topPanel.add(maximiseRestoreButton);
-	BufferedImage titleImage;
-	try{
-		titleImage = ImageIO.read(new File("resources/buttons/Logo.png"));
-		Image scaledTitle = titleImage.getScaledInstance(300,200,java.awt.Image.SCALE_SMOOTH);
-		JLabel titleLabel = new JLabel(new ImageIcon(scaledTitle));
-		titleLabel.setBounds(0, 0, 300, 200);
-		topPanel.add(titleLabel);
-	}catch(IOException e2){
-		e2.printStackTrace();
-	}
-
+	
 	//Adding to layered pane
 	layers.add(utilities,0);
 	layers.add(contents,1);
-	layers.add(topPanel,2);
-	layers.add(nextSlideButton,3);
-	layers.add(previousSlideButton,4);
-	layers.add(utilitiesTab,5);
-	layers.add(contentsTab,6);
-	layers.add(nextTab,7);
-	layers.add(previousTab,8);
-	layers.add(slidePanel,9);
+	layers.add(nextSlideButton,2);
+	layers.add(previousSlideButton,3);
+	layers.add(utilitiesTab,4);
+	layers.add(contentsTab,5);
+	layers.add(nextTab,6);
+	layers.add(previousTab,7);
+	layers.add(slidePanel,8);
 	
 	System.out.println(availableScreenSize);
 	scaleFactorX = (double)(availableScreenSize.width)/(double)slideList.getWidth();
@@ -1246,7 +1157,7 @@ public void setupSlidePlayer(String filename){
 	
 	//bigSlideList = reScale(bigSlideList,scaleFactorX,scaleFactorY);
 }
-
+*/
 @Override
 public void windowStateChanged(WindowEvent e) {
 	System.err.println("RESIZED");
@@ -1267,7 +1178,6 @@ public void windowStateChanged(WindowEvent e) {
     nextSlideButton.setBounds((int) (slideList.getWidth()*scaleFactorX)-170,(int) (slideList.getHeight()*scaleFactorY)-60,150,50);
     nextSlideButton.repaint();
     utilities.setBounds((int) (slideList.getWidth()*scaleFactorX)-utilitiesWidth, 0, utilitiesWidth, (int) (slideList.getHeight()*scaleFactorY));
-    topPanel.setBounds(((int) (slideList.getWidth()*scaleFactorX)/2)-150, 0, 300, 200);
     utilitiesTab.setBounds((int) (slideList.getWidth()*scaleFactorX)-25,((int) (slideList.getHeight()*scaleFactorY)/2)-60,15,120);
     contentsTab.setBounds(0,((int) (slideList.getHeight()*scaleFactorY)/2)-60,15,120);
     nextTab.setBounds((int) (slideList.getWidth()*scaleFactorX)-120,((int) (slideList.getHeight()*scaleFactorY))-25,90,20);
@@ -1310,7 +1220,6 @@ public void componentResized(ComponentEvent e) {
     nextSlideButton.setBounds((int) (slideList.getWidth()*scaleFactorX)-170,(int) (slideList.getHeight()*scaleFactorY)-50,150,50);
     nextSlideButton.repaint();
     utilities.setBounds((int) (slideList.getWidth()*scaleFactorX)-utilitiesWidth, 0, utilitiesWidth, (int) (slideList.getHeight()*scaleFactorY));
-    topPanel.setBounds(((int) (slideList.getWidth()*scaleFactorX)/2)-150, 0, 300, 200);
     utilitiesTab.setBounds((int) (slideList.getWidth()*scaleFactorX)-15,((int) (slideList.getHeight()*scaleFactorY)/2)-60,15,120);
     contentsTab.setBounds(0,((int) (slideList.getHeight()*scaleFactorY)/2)-60,15,120);
     nextTab.setBounds((int) (slideList.getWidth()*scaleFactorX)-120,((int) (slideList.getHeight()*scaleFactorY))-20,90,20);

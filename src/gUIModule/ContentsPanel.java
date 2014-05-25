@@ -44,6 +44,7 @@ public class ContentsPanel extends JPanel implements ActionListener{
 	JButton mainMenuButton = new JButton("Main Menu");
 	JLabel systemLabel = new JLabel();
 	JLabel bookLabel = new JLabel();
+	JLabel title = new JLabel();
 	DefaultListModel listModel = new DefaultListModel<String>();
 	JList contentsList = new JList(listModel);
 	JLabel background;
@@ -54,31 +55,47 @@ public class ContentsPanel extends JPanel implements ActionListener{
 	 * @param slide1
 	 * @param slide2
 	 */
-	public ContentsPanel(ArrayList<Slide> contentSlideList) {
+	public ContentsPanel(ArrayList<Slide> contentSlideList, int width, int slideWidth, int slideHeight, String currentSystem, String currentBook) {
 		super();
 		this.setLayout(null);
 		contentsSlideList = contentSlideList;
 		//slidePanel1 = slide1;
 		//slidePanel2 = slide2;
-		mainMenuButton.setBounds(25, 50, 140, 50);
-		systemLabel.setBounds(10,120,130,40);
-		bookLabel.setBounds(10,190,130,40);
-		systemLabel.setText("System:");
-		bookLabel.setText("Book:");
+		mainMenuButton.setBounds((width/2)-55, (int)(slideHeight*0.16), 110, 40);
+		mainMenuButton.setBorderPainted(false); 
+		mainMenuButton.setContentAreaFilled(false); 
+		mainMenuButton.setFocusPainted(false); 
+		mainMenuButton.setOpaque(false);
+		systemLabel.setBounds((width/2)-65,(int)(slideHeight*0.3),130,40);
+		bookLabel.setBounds((width/2)-65,(int)(slideHeight*0.4),130,40);
+		systemLabel.setText("System: "+currentSystem);
+		bookLabel.setText("Book: "+currentBook);
+		
+		BufferedImage titleImage;
+		try{
+			titleImage = ImageIO.read(new File("resources/buttons/ContentsLabel.png"));
+			Image scaledButton = titleImage.getScaledInstance(80,30,java.awt.Image.SCALE_SMOOTH);
+			title.setIcon(new ImageIcon(scaledButton));
+			title.setBounds((width/2)-40, 10, 80,30);
+			this.add(title);
+		}catch (IOException ex){
+			
+		}
+		
 		this.add(mainMenuButton);
 		this.add(systemLabel);
 		this.add(bookLabel);
 		
 		JScrollPane contents = createScrollPane(contentsSlideList);
-		contents.setBounds(0,260,220,200);
+		contents.setBounds(10,(int)(slideHeight*0.5),width-20,(int)(slideHeight*0.5)-10);
 		this.add(contents);
 		
 		BufferedImage backgroundImage;
 		try{
-			backgroundImage = ImageIO.read(new File("resources/buttons/Background.png"));
-			Image scaledBackground = backgroundImage.getScaledInstance( GUI.contentsWidth, 260,java.awt.Image.SCALE_SMOOTH);
+			backgroundImage = ImageIO.read(new File("resources/buttons/ContentsBackground.png"));
+			Image scaledBackground = backgroundImage.getScaledInstance( width, slideHeight,java.awt.Image.SCALE_SMOOTH);
 			background = new JLabel(new ImageIcon(scaledBackground));
-			background.setBounds(0, 0, GUI.contentsWidth, 260);
+			background.setBounds(0, 0, GUI.contentsWidth, slideHeight);
 			this.add(background);
 		}catch(IOException e2){
 			e2.printStackTrace();
@@ -86,7 +103,7 @@ public class ContentsPanel extends JPanel implements ActionListener{
 		BufferedImage mainMenuButtonImage;
 		try{
 			mainMenuButtonImage = ImageIO.read(new File("resources/buttons/MainMenuButton.png"));
-			Image scaledButton = mainMenuButtonImage.getScaledInstance(130,50,java.awt.Image.SCALE_SMOOTH);
+			Image scaledButton = mainMenuButtonImage.getScaledInstance(110,40,java.awt.Image.SCALE_SMOOTH);
 			mainMenuButton.setIcon(new ImageIcon(scaledButton));
 		}catch (IOException ex){
 			

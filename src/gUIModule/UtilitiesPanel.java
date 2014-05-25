@@ -47,9 +47,11 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
 	JLabel background; 
 	ArrayList<JButton> buttonList = new ArrayList<>();
 	JButton backButton = new JButton("Back");
+	JLabel title;
 
 
-    private int utilitiesWidth=300;
+
+    private int utilitiesWidth=150;
     private int heightOfSlide;
 	//	GUI diceRoller;
 //	GUI calculatorGUI;
@@ -81,23 +83,35 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
 		//Set up background image
 		BufferedImage backgroundImage;
 		try{
-			backgroundImage = ImageIO.read(new File("resources/buttons/Background.png"));
-			Image scaledBackground = backgroundImage.getScaledInstance(utilitiesWidth,250,java.awt.Image.SCALE_SMOOTH);
+			backgroundImage = ImageIO.read(new File("resources/buttons/UtilitiesBackground.png"));
+			Image scaledBackground = backgroundImage.getScaledInstance(utilitiesWidth,slideHeight,java.awt.Image.SCALE_SMOOTH);
 			background = new JLabel(new ImageIcon(scaledBackground));
-			background.setBounds(0, 0, utilitiesWidth, 250);
+			background.setBounds(0, 0, utilitiesWidth, slideHeight);
 		}catch(IOException e2){
 			e2.printStackTrace();
 		}
+		//setup title
+		BufferedImage titleImage;
+		try{
+			titleImage = ImageIO.read(new File("resources/buttons/UtilitiesLabel.png"));
+			Image scaledTitle = titleImage.getScaledInstance(80,30,java.awt.Image.SCALE_SMOOTH);
+			title = new JLabel(new ImageIcon(scaledTitle));
+			title.setBounds((utilitiesWidth/2)-40, 10, 80, 30);
+		}catch(IOException e2){
+			e2.printStackTrace();
+		}
+		
 		multiPanel.setLayout(null);
         multiPanel.setBounds(0,0,utilitiesWidth,slideHeight);
         multiPanel.setBackground(Color.BLACK);
 		this.add(multiPanel);
+		
 		//Adds JButtons for diceRoller and calculator
-		buttonList.add(addButtons("diceRollerLaunch", "Opens the dice roller application", 17, 25, "DiceButton.png"));
+		buttonList.add(addButtons("diceRollerLaunch", "Opens the dice roller application", (utilitiesWidth/2)-50, (slideHeight/4)-50, "DiceButton.png"));
 		
-		buttonList.add(addButtons("calculatorLaunch", "Opens the modifier calculator application", 140, 80, "CalculatorButton.png"));
+		buttonList.add(addButtons("calculatorLaunch", "Opens the modifier calculator application", (utilitiesWidth/2)-50, (slideHeight/2)-50, "CalculatorButton.png"));
 		
-		buttonList.add(addButtons("audioPlayerLaunch", "Opens the audio player application", 17, 140, "AudioButton.png"));
+		buttonList.add(addButtons("audioPlayerLaunch", "Opens the audio player application", (utilitiesWidth/2)-50, (3*slideHeight/4)-50, "AudioButton.png"));
 
 	    
 		//calculatorPanel.setBounds(0,0,utilitiesWidth,700);
@@ -109,6 +123,8 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
 		setPanelVisible("none");
 		multiPanel.setOpaque(false);
 		this.setBounds(slideWidth-utilitiesWidth, 0, utilitiesWidth, slideHeight);
+
+		
 		
 	}
 	
@@ -142,6 +158,7 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
 			
 		}
 		add(button);
+		this.add(title);
 		this.add(background);
 		return button;
 	}
@@ -224,7 +241,7 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
             calculatorPanel.setVisible(false);
             standAloneMusicPlayerPanel.setVisible(false); 
             multiPanel.setVisible(false);
-            setWidth(300);
+            setWidth(150);
 	    default: break;
 	    }
 	    multiPanel.repaint();

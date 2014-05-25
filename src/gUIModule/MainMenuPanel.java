@@ -54,6 +54,8 @@ public class MainMenuPanel extends JPanel{
 	private SystemCollection listOfSystems;
 	private String chosenBook;
 	private String systemDescription;
+	private String currentSystemName;
+	private String currentBookName;
 
 	
 	public MainMenuPanel(int width, int height) {
@@ -199,6 +201,7 @@ public class MainMenuPanel extends JPanel{
 			         @Override
 			         public void mouseClicked(MouseEvent e) {
 			             chosenBook = listOfBooks.getBook(bookList.getSelectedIndex()).getFileName();
+			             currentBookName = listOfBooks.getBook(bookList.getSelectedIndex()).getTitle();
 			         }
 			     });
 				 
@@ -222,6 +225,7 @@ public class MainMenuPanel extends JPanel{
 				         @Override
 				         public void mouseClicked(MouseEvent e) {
 				        	chosenSystem = listOfSystems.get(systemList.getSelectedIndex()).getFilename();
+				        	currentSystemName = listOfSystems.get(systemList.getSelectedIndex()).getName();
 				    		BookXMLParser bookParser = new BookXMLParser(chosenSystem);	
 				    		listOfBooks = bookParser.readBookXML(chosenSystem);
 				        	bookListModel.clear();
@@ -257,6 +261,14 @@ public class MainMenuPanel extends JPanel{
 	
 	public String getChosenBook(){
 		return chosenBook;
+	}
+
+	public String getCurrentSystem() {
+		return currentSystemName;
+	}
+
+	public String getCurrentBook() {
+		return currentBookName;
 	}
 	
 	
