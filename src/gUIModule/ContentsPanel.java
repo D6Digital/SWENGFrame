@@ -1,6 +1,7 @@
 package gUIModule;
 
 import java.awt.Component;
+import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -63,20 +64,19 @@ public class ContentsPanel extends JPanel implements ActionListener{
 		contentsSlideList = contentSlideList;
 		//slidePanel1 = slide1;
 		//slidePanel2 = slide2;
-		mainMenuButton.setBounds((width/2)-55, (int)(slideHeight*0.1), 110, 40);
-		mainMenuButton.setBorderPainted(false); 
-		mainMenuButton.setContentAreaFilled(false); 
-		mainMenuButton.setFocusPainted(false); 
-		mainMenuButton.setOpaque(false);
+		mainMenuButton.setBounds((width/2)-55, (int)(slideHeight*0.1), 110, 50);
 		
-		changeListButton.setBounds((width/2)-55, (int)(slideHeight*0.2), 110, 40);
+		changeListButton.setBounds((width/2)-55, (int)(slideHeight*0.21), 110, 50);
 		
-		systemLabel.setBounds((width/2)-65,(int)(slideHeight*0.3),130,40);
-		bookLabel.setBounds((width/2)-65,(int)(slideHeight*0.35),130,40);
-		pageLabel.setBounds((width/2)-65,(int)(slideHeight*0.44),130,40);
+		systemLabel.setBounds((width/2)-70,(int)(slideHeight*0.34),140,40);
+		bookLabel.setBounds((width/2)-70,(int)(slideHeight*0.39),140,40);
+		pageLabel.setBounds((width/2)-70,(int)(slideHeight*0.44),140,40);
 		systemLabel.setText("System: "+currentSystem);
 		bookLabel.setText("Book: "+currentBook);
 		pageLabel.setText("Choose a page:");
+		systemLabel.setFont(new Font("Papyrus", Font.PLAIN, 12));
+		bookLabel.setFont(new Font("Papyrus", Font.PLAIN, 12));
+		pageLabel.setFont(new Font("Papyrus", Font.PLAIN, 12));
 		
 		BufferedImage titleImage;
 		try{
@@ -112,61 +112,24 @@ public class ContentsPanel extends JPanel implements ActionListener{
 		BufferedImage mainMenuButtonImage;
 		try{
 			mainMenuButtonImage = ImageIO.read(new File("resources/buttons/MainMenuButton.png"));
-			Image scaledButton = mainMenuButtonImage.getScaledInstance(110,40,java.awt.Image.SCALE_SMOOTH);
+			Image scaledButton = mainMenuButtonImage.getScaledInstance(110,50,java.awt.Image.SCALE_SMOOTH);
 			mainMenuButton.setIcon(new ImageIcon(scaledButton));
+		}catch (IOException ex){
+			
+		}
+		
+		BufferedImage chooseButtonImage;
+		try{
+			chooseButtonImage = ImageIO.read(new File("resources/buttons/ChangeBookButton.png"));
+			Image scaledButton = chooseButtonImage.getScaledInstance(110,50,java.awt.Image.SCALE_SMOOTH);
+			changeListButton.setIcon(new ImageIcon(scaledButton));
 		}catch (IOException ex){
 			
 		}
 		// TODO add a title JLabel and ensure the panel is ready
 		
 		
-		mainMenuButton.addMouseListener(new MouseListener() {
-			
-			@Override
-			public void mouseReleased(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void mousePressed(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void mouseExited(MouseEvent e) {
-				BufferedImage mainMenuButtonImage;
-				try{
-					mainMenuButtonImage = ImageIO.read(new File("resources/buttons/MainMenuButton.png"));
-					Image scaledButton = mainMenuButtonImage.getScaledInstance(110,40,java.awt.Image.SCALE_SMOOTH);
-					mainMenuButton.setIcon(new ImageIcon(scaledButton));
-				}catch (IOException ex){
-					
-				}
-				mainMenuButton.repaint();
-			}
-			
-			@Override
-			public void mouseEntered(MouseEvent e) {
-				System.out.println("Entered main menu button");
-				BufferedImage mainMenuButtonImage;
-				try{
-					mainMenuButtonImage = ImageIO.read(new File("resources/buttons/MainMenuButtonHover.png"));
-					Image scaledButton = mainMenuButtonImage.getScaledInstance(110,40,java.awt.Image.SCALE_SMOOTH);
-					mainMenuButton.setIcon(new ImageIcon(scaledButton));
-				}catch (IOException ex){
-					
-				}
-				mainMenuButton.repaint();
-			}
-			
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-		});
+		
 	}
 	
 	
@@ -182,7 +145,7 @@ public class ContentsPanel extends JPanel implements ActionListener{
 	 */
 	private JScrollPane createScrollPane(ArrayList<Slide> contentsSlideList) {
 		JScrollPane contents = new JScrollPane();
-		
+		contentsList.setFont(new Font("Papyrus", Font.PLAIN, 12));
 		listModel.clear();
 		contentsList.removeAll();
 

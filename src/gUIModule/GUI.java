@@ -205,8 +205,8 @@ public class GUI extends JFrame implements WindowStateListener, ComponentListene
 		//set up jframe
 		insets = this.getInsets();
 		setTitle("Grimoire");
-		setSize(slideList.getWidth()+insets.left+insets.right,
-				slideList.getHeight()+insets.top+insets.bottom);
+		setSize(slideList.getWidth()+insets.left+insets.right+15,
+				slideList.getHeight()+insets.top+insets.bottom+40);
 		setVisible(true);	
 		setLayout(null);
 		

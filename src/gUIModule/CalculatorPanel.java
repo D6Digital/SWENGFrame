@@ -73,7 +73,7 @@ int modPlusButtonPlusDisplay;
 		panelWidth = widthOfPanel;
 		panelHeight = heightOfPanel;
 		setLayout(null);
-        setBounds(0,0,panelWidth,panelHeight);
+        setBounds(5,0,panelWidth-10,panelHeight);
 
 		
 		//adds JComboBox for selecting the modifier to be included in the total
@@ -82,7 +82,7 @@ int modPlusButtonPlusDisplay;
 			modSelection.addItem(modNames[j]);
 		};
 		modSelection.setLayout(null);
-		modSelection.setBounds(0, 0, panelWidth, (int) (panelHeight*0.05));
+		modSelection.setBounds(5, 5, panelWidth-25, (int) (panelHeight*0.05)-5);
 		modHeight = (int) (panelHeight*0.05);
 		modSelection.setActionCommand("modSelected");
 		modSelection.addActionListener(this);
@@ -94,7 +94,7 @@ int modPlusButtonPlusDisplay;
 	    //includeMod.setVerticalTextPosition(AbstractButton.CENTER);
 	    //includeMod.setHorizontalTextPosition(AbstractButton.CENTER);
 	   // includeMod.setAlignmentX(Component.CENTER_ALIGNMENT);
-	    includeMod.setBounds(0, modHeight + (int) (panelHeight*0.05), panelWidth/2, (int)(panelHeight*0.05));
+	    includeMod.setBounds(5, modHeight + (int) (panelHeight*0.025), ((panelWidth-25)/2)-10, (int)(panelHeight*0.05));
 	    includeMod.setActionCommand("include");
 	    includeMod.addActionListener(this);
 	    includeMod.setToolTipText("include selected modifier to total");
@@ -107,19 +107,19 @@ int modPlusButtonPlusDisplay;
 	    //clearMods.setVerticalTextPosition(AbstractButton.CENTER);
 	   // clearMods.setHorizontalTextPosition(AbstractButton.CENTER);
 	    //clearMods.setAlignmentX(Component.CENTER_ALIGNMENT);
-	    clearMods.setBounds(panelWidth/2, modHeight + (int) (panelHeight*0.05), panelWidth/2, (int)(panelHeight*0.05));
+	    clearMods.setBounds((panelWidth/2)+5, modHeight + (int) (panelHeight*0.025), ((panelWidth-25)/2)-10, (int)(panelHeight*0.05));
 	    clearMods.setActionCommand("clear");
 	    clearMods.addActionListener(this);
 	    clearMods.setToolTipText("clear all modifiers");
 		add(clearMods);
 		
-		modPlusButtonHeight = modHeight + (int) (panelHeight*0.05) + (int)(panelHeight*0.05);
+		modPlusButtonHeight = modHeight + (int) (panelHeight*0.025) + (int)(panelHeight*0.05);
 		
 		//adds JTextArea for display of currently included modifiers
 		displayIncludedMods = new JTextArea();
 		displayIncludedMods.setLayout(null);
 		displayIncludedMods.setEditable(false);
-		displayIncludedMods.setBounds(0, modPlusButtonHeight, panelWidth, (int)(panelHeight*0.7));
+		displayIncludedMods.setBounds(5, modPlusButtonHeight + (int) (panelHeight*0.025), panelWidth-25, (int)(panelHeight*0.7));
 		add(displayIncludedMods);
 		displayIncludedMods.setEnabled(false);
 		
@@ -129,7 +129,7 @@ int modPlusButtonPlusDisplay;
 		displayTotalMod = new JTextArea();
 		displayTotalMod.setLayout(null);
         displayTotalMod.setEditable(false);
-		displayTotalMod.setBounds(0, modPlusButtonPlusDisplay + (int) (panelHeight*0.05), panelWidth, (int)(panelHeight*0.1));
+		displayTotalMod.setBounds(5, modPlusButtonPlusDisplay + (int) (panelHeight*0.05), panelWidth-25, (int)(panelHeight*0.1));
 		add(displayTotalMod);
 		displayTotalMod.setEnabled(false);
 	

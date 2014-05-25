@@ -428,7 +428,7 @@ public class StandAloneMusicPlayer {
     public JPanel getFullControlPanel(int widthOfPanel, int heightOfSlide) {
 
         fullPanel.setLayout(null);
-        fullPanel.setBounds(0,0,widthOfPanel,heightOfSlide);
+        fullPanel.setBounds(3,0,widthOfPanel,heightOfSlide);
         fullPanel.add(getLockPlaylistButton(widthOfPanel, heightOfSlide));
         fullPanel.add(getPlayButton(widthOfPanel, heightOfSlide));
         fullPanel.add(getPauseButton(widthOfPanel, heightOfSlide));

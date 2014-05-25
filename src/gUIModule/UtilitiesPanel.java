@@ -58,6 +58,7 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
 
     private int utilitiesWidth=150;
     private int heightOfSlide;
+
 	//	GUI diceRoller;
 //	GUI calculatorGUI;
 //	GUI audioPlayer;
@@ -80,7 +81,7 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
 		
 		standAloneMusicPlayerPanel = standAloneMusicPlayer.getFullControlPanel(360, slideHeight - 20);
 		
-		backButton.setBounds(0, slideHeight - 20, utilitiesWidth, 20);
+		backButton.setBounds(5, slideHeight - 20, utilitiesWidth-25, 20);
 		backButton.setActionCommand("back");
 		
 		
@@ -146,7 +147,6 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
 			@Override
 			public void mouseExited(MouseEvent e) {
 				BufferedImage buttonImage;
-				System.out.println("Dice button entered");
 				try{
 					buttonImage = ImageIO.read(new File("resources/buttons/DiceButton.png"));
 					Image scaledButton = buttonImage.getScaledInstance(100,100,java.awt.Image.SCALE_SMOOTH);
@@ -161,7 +161,6 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				BufferedImage buttonImage;
-				System.out.println("Dice button entered");
 				try{
 					buttonImage = ImageIO.read(new File("resources/buttons/DiceButtonHover.png"));
 					Image scaledButton = buttonImage.getScaledInstance(100,100,java.awt.Image.SCALE_SMOOTH);
@@ -196,7 +195,6 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
 			@Override
 			public void mouseExited(MouseEvent e) {
 				BufferedImage buttonImage;
-				System.out.println("Dice button entered");
 				try{
 					buttonImage = ImageIO.read(new File("resources/buttons/CalculatorButton.png"));
 					Image scaledButton = buttonImage.getScaledInstance(100,100,java.awt.Image.SCALE_SMOOTH);
@@ -211,7 +209,6 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				BufferedImage buttonImage;
-				System.out.println("Dice button entered");
 				try{
 					buttonImage = ImageIO.read(new File("resources/buttons/CalculatorButtonHover.png"));
 					Image scaledButton = buttonImage.getScaledInstance(100,100,java.awt.Image.SCALE_SMOOTH);
@@ -246,7 +243,6 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
 			@Override
 			public void mouseExited(MouseEvent e) {
 				BufferedImage buttonImage;
-				System.out.println("Dice button entered");
 				try{
 					buttonImage = ImageIO.read(new File("resources/buttons/AudioButton.png"));
 					Image scaledButton = buttonImage.getScaledInstance(100,100,java.awt.Image.SCALE_SMOOTH);
@@ -261,7 +257,6 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				BufferedImage buttonImage;
-				System.out.println("Dice button entered");
 				try{
 					buttonImage = ImageIO.read(new File("resources/buttons/AudioButtonHover.png"));
 					Image scaledButton = buttonImage.getScaledInstance(100,100,java.awt.Image.SCALE_SMOOTH);
@@ -400,9 +395,9 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
 
     private void setWidth(int width) {
         this.utilitiesWidth = width;
-        multiPanel.setBounds(0,0,utilitiesWidth,700);
+        multiPanel.setBounds(0,0,utilitiesWidth,heightOfSlide);
         backButton.setBounds(
-                0, 
+                3, 
                 heightOfSlide-20, 
                 width,
                 20);

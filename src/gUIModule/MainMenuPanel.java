@@ -1,5 +1,7 @@
 package gUIModule;
 
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -14,6 +16,7 @@ import java.net.URLConnection;
 import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
+import javax.swing.BorderFactory;
 import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -22,6 +25,7 @@ import javax.swing.JLayeredPane;
 import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 import bookModule.Book;
@@ -37,13 +41,14 @@ import systemModule.SystemXMLParser;
 
 public class MainMenuPanel extends JPanel{
 	
-	JButton openBookButton = new JButton("Open Book");
-	JButton openShopButton = new JButton("Open Shop");
+	JButton openBookButton = new JButton();
+	JButton openShopButton = new JButton();
 	JLabel background;
 	JLabel logoLabel;
 	JLabel imageLabel = new JLabel();
 	JLayeredPane layers = new JLayeredPane();
-	JTextField description = new JTextField();
+	JTextArea description = new JTextArea();
+	JLabel descriptionTitle = new JLabel();
 	DefaultListModel systemListModel = new DefaultListModel<String>();
 	JList systemList = new JList(systemListModel);
 	JScrollPane systemScroll = new JScrollPane();
@@ -69,8 +74,8 @@ public class MainMenuPanel extends JPanel{
 		listOfSystems = systemParser.getSystem();
 		
 		//start button
-		openBookButton.setBounds(width-110, 300, 100, 40);
-		openShopButton.setBounds(width-110, 360, 100, 40);
+		openBookButton.setBounds(width-120, 250, 110, 50);
+		openShopButton.setBounds(width-120, 370, 110, 50);
 		
 		//background
 		BufferedImage backgroundImage;
@@ -86,14 +91,31 @@ public class MainMenuPanel extends JPanel{
 		//logo
 		BufferedImage logoImage;
 		try{
-			logoImage = ImageIO.read(new File("resources/buttons/sideLogo.png"));
-			Image scaledBackground = logoImage.getScaledInstance(150,height-(int)(height*0.1),java.awt.Image.SCALE_SMOOTH);
+			logoImage = ImageIO.read(new File("resources/buttons/LogoWithBackground.png"));
+			Image scaledBackground = logoImage.getScaledInstance(100,height,java.awt.Image.SCALE_SMOOTH);
 			logoLabel = new JLabel(new ImageIcon(scaledBackground));
-			logoLabel.setBounds(0, (int)(height*0.1), 150,(height-(int)(height*0.1)));
+			logoLabel.setBounds(0, 0, 100,height);
 		}catch(IOException e2){
 			e2.printStackTrace();
 		}
 		
+		BufferedImage bookButtonImage;
+		try{
+			bookButtonImage = ImageIO.read(new File("resources/buttons/OpenBookButton.png"));
+			Image scaledButton = bookButtonImage.getScaledInstance(110,50,java.awt.Image.SCALE_SMOOTH);
+			openBookButton.setIcon(new ImageIcon(scaledButton));
+		}catch (IOException ex){
+			
+		}
+		
+		BufferedImage shopButtonImage;
+		try{
+			shopButtonImage = ImageIO.read(new File("resources/buttons/OpenShopButton.png"));
+			Image scaledButton = shopButtonImage.getScaledInstance(110,50,java.awt.Image.SCALE_SMOOTH);
+			openShopButton.setIcon(new ImageIcon(scaledButton));
+		}catch (IOException ex){
+			
+		}
 		 
 //    	BufferedImage bookImage;
 // 		try{
@@ -106,20 +128,31 @@ public class MainMenuPanel extends JPanel{
 // 		}
  		
 		//Descriptions
-		description.setBounds(160, 0, width-250, 100);
+		descriptionTitle.setBounds(130, 10, width-250, 30);
+		descriptionTitle.setText("System Description:");
+		descriptionTitle.setFont(new Font("Papyrus", Font.BOLD, 18));
 		description.setEditable(false);
-		description.setText("Welcome to the Grimoire interactive rulebook! Please choose a system and then a book. We hope you enjoy your journey!");
+		description.setBounds(130, 40, width-250, 100);
+		description.setFont(new Font("Papyrus", Font.PLAIN, 14));
+		description.setText("Welcome to the Grimoire interactive rulebook! Please choose a system and "+ "\n"+ "then a book. We hope you enjoy your journey!"+ "\n"+ ""+ "\n"+ "Much Love, D6 Digital");
+		description.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
 		
 		//Labels
-		JLabel systemLabel = new JLabel("Choose A System:");
-		systemLabel.setBounds(160, 140, 120, 50);
-		JLabel bookLabel = new JLabel("Choose A Book:");
-		bookLabel.setBounds(300, 140, 120, 50);
-		
-		
+		JLabel systemLabel = new JLabel("Choose A "+ "\n"+ "System:");
+		systemLabel.setFont(new Font("Papyrus", Font.BOLD, 16));
+		systemLabel.setBounds(110, 140, 180, 50);
+		JLabel bookLabel = new JLabel("Choose A"+ "\n"+ " Book:");
+		bookLabel.setFont(new Font("Papyrus", Font.BOLD, 16));
+		bookLabel.setBounds(280, 140, 170, 50);
 		
 		//scrollpanes
 		setUpScrollPanes();
+		
+		imageLabel.setBounds(440, 200, 150, 300);
+		imageLabel.setBackground(Color.LIGHT_GRAY);
+		imageLabel.setOpaque(true);
+		imageLabel.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
+
 		
 		//adding	
 		add(imageLabel);
@@ -129,6 +162,7 @@ public class MainMenuPanel extends JPanel{
 		add(systemLabel);
 		add(openShopButton);
 		add(openBookButton);
+		add(descriptionTitle);
 		add(description);
 		add(logoLabel);
 		add(background);
@@ -151,7 +185,9 @@ public class MainMenuPanel extends JPanel{
 
 				
 				systemScroll.setViewportView(systemList);
-				systemScroll.setBounds(160, 200, 100, 300);
+				systemScroll.setBounds(130, 200, 120, 300);
+				systemList.setFont(new Font("Papyrus", Font.PLAIN, 14));
+				systemScroll.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
 				
 				bookListModel.clear();
 				bookList.removeAll();
@@ -162,7 +198,10 @@ public class MainMenuPanel extends JPanel{
 				//Cycle through all slides in the contents list and creates a JButton for each 
 				
 				bookScroll.setViewportView(bookList);
-				bookScroll.setBounds(300, 200, 100, 300);
+				bookScroll.setBounds(290, 200, 120, 300);
+				bookList.setFont(new Font("Papyrus", Font.PLAIN, 14));
+				bookScroll.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
+
 				
 				openShopButton.addActionListener(
 						new ActionListener() {
@@ -245,7 +284,6 @@ public class MainMenuPanel extends JPanel{
 				     			bookImage = ImageIO.read(new File(listOfSystems.get(systemList.getSelectedIndex()).getLogoFileName()));
 				     			Image scaledBackground = bookImage.getScaledInstance(150,300,java.awt.Image.SCALE_SMOOTH);
 				     			imageLabel.setIcon((new ImageIcon(scaledBackground)));
-				     			imageLabel.setBounds(440, 200, 150, 300);
 				     		}catch(IOException e2){
 				     			e2.printStackTrace();
 				     		}
