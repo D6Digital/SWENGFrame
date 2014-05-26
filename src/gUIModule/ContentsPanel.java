@@ -270,6 +270,11 @@ public class ContentsPanel extends JPanel implements ActionListener{
 	}
 
 
-	public void setScrollList(Presentation slideList) {
+	public void setSlideList(Presentation slideList) {
 		this.contentsSlideList=slideList.getSlideList();	
+	}
+
+
+	public void setScrollList(Presentation slideList) {
+		this.contentsSlideList=slideList.getSlideList();
 	}}
