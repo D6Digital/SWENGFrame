@@ -62,7 +62,7 @@ public class ContentsPanel extends JPanel implements ActionListener{
 	 * @param slide1
 	 * @param slide2
 	 */
-	public ContentsPanel(ArrayList<Slide> contentSlideList, final ArrayList<Book> contentBookList, int width, int slideWidth, int slideHeight, String currentSystem, String currentBook) {
+	public ContentsPanel(ArrayList<Slide> contentSlideList, final ArrayList<Presentation> contentChapterList, int width, int slideWidth, int slideHeight, String currentSystem, String currentBook) {
 		super();
 		this.setLayout(null);
 		contentsSlideList = contentSlideList;
@@ -115,9 +115,9 @@ public class ContentsPanel extends JPanel implements ActionListener{
 				
 				listModel.clear();
 				contentsList.removeAll();
-				for (Book currentBook : contentBookList) {
-					listModel.addElement(currentBook.getId() + ". " + currentBook.getTitle());
-					pageLabel.setText("Choose a book:");
+				for (Presentation currentPresentation : contentChapterList) {
+					listModel.addElement(currentPresentation.getTitle());
+					pageLabel.setText("Choose a chapter:");
 				}
 				contents.setViewportView(contentsList);
 				}		
@@ -262,4 +262,14 @@ public class ContentsPanel extends JPanel implements ActionListener{
 
 	public boolean getPageListShowing() {
 		return pageListShowing;
+	}
+
+
+	public JButton getChangeButton() {
+		return changeListButton;
+	}
+
+
+	public void setScrollList(Presentation slideList) {
+		this.contentsSlideList=slideList.getSlideList();	
 	}}

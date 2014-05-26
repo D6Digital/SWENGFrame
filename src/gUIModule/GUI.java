@@ -134,6 +134,8 @@ public class GUI extends JFrame implements WindowStateListener, ComponentListene
 	private MouseAdapter videoListener;
 
 	private Collection collection;
+
+	private int chapterID=0;
 	
 	/**
 	 * Create a simple JFrame and then populate it with specified JPanel type
@@ -198,7 +200,8 @@ public class GUI extends JFrame implements WindowStateListener, ComponentListene
 		availableScreenSize = new Dimension(screenSize.width,screenSize.height-taskBarSize);
 		
 		XMLParser parser = new XMLParser("github resources/dynamDom.xml");	
-		slideList = parser.getSlides();
+		collection = parser.getCollection();
+		slideList = collection.get(chapterID);
 		//XMLParser parser2 = new XMLParser("github resources/dynamDom.xml");
 		//bigSlideList = parser2.getSlides();
 		System.out.println("HOOOOOO");
@@ -730,7 +733,7 @@ public void bookMainPanelSetUp(){
 		// TODO: CHANGES MADE HERE BY JOSHUA LANT, NO ACTUAL TODO, JUST REFERENCE POINT
 		//set up contents
 		ArrayList<Book> bookList = mainMenuPanel.getBookList();
-		contentsPanel = new ContentsPanel(slideList.getSlideList(),bookList, contentsWidth, slideList.getWidth(),slideList.getHeight(), mainMenuPanel.getCurrentSystem(), mainMenuPanel.getCurrentBook());
+		contentsPanel = new ContentsPanel(slideList.getSlideList(),collection.getPresentationList(), contentsWidth, slideList.getWidth(),slideList.getHeight(), mainMenuPanel.getCurrentSystem(), mainMenuPanel.getCurrentBook());
 		contentsPanel.setBounds(30, 30, contentsWidth, slideList.getHeight());
 		
 		contentsPanel.setPreferredSize(new Dimension(contentsWidth, slideList.getHeight()));
@@ -781,11 +784,21 @@ public void bookMainPanelSetUp(){
 	                    contentsList.clearSelection();  
 	                }
 	            	}else{
-	            		//BookXMLParser bookParser = new BookXMLParser(chosenSystem);	
-			    		//listOfBooks = bookParser.readBookXML(chosenSystem);
+	            		 slideList = collection.get(contentsList.getSelectedIndex());
+	            		 slidePanel.refreshSlide(slideList.getSlideList().get(0));
+	            		 
 	            	}
 	            }
 	        });
+	     JButton changeButton = contentsPanel.getChangeButton();
+	     changeButton.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				contentsPanel.setScrollList(slideList);
+				
+			}
+		});
 
 
 		//Adding to layered pane
