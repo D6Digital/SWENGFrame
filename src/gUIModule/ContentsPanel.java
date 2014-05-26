@@ -101,7 +101,7 @@ public class ContentsPanel extends JPanel implements ActionListener{
 		
 		this.add(background);
 		setUpButtonImage(mainMenuButton,"MainMenuButton.png");
-		setUpButtonImage(changeListButton,"ChangeBookButton.png");
+		setUpButtonImage(changeListButton,"ChooseChapterButton.png");
 		// TODO add a title JLabel and ensure the panel is ready
 		
 		
@@ -122,7 +122,7 @@ public class ContentsPanel extends JPanel implements ActionListener{
 				contents.setViewportView(contentsList);
 				}		
 				else{
-					setUpButtonImage(changeListButton,"ChangeBookButton.png");
+					setUpButtonImage(changeListButton,"ChooseChapterButton.png");
 					pageListShowing=true;
 					
 					listModel.clear();
