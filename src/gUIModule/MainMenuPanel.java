@@ -61,7 +61,7 @@ public class MainMenuPanel extends JPanel{
 	private String systemDescription;
 	private String currentSystemName;
 	private String currentBookName;
-
+	private ArrayList<Book> bookListForContents;
 	
 	public MainMenuPanel(int width, int height) {
 		
@@ -250,6 +250,7 @@ public class MainMenuPanel extends JPanel{
 
 						private String chosenSystem;
 
+
 						@Override
 				         public void mouseReleased(MouseEvent e) {}
 				         
@@ -270,7 +271,8 @@ public class MainMenuPanel extends JPanel{
 				    		listOfBooks = bookParser.readBookXML(chosenSystem);
 				        	bookListModel.clear();
 							bookList.removeAll();
-				        	 for (Book currentBook : listOfBooks.getList()) {
+							bookListForContents = listOfBooks.getList();
+				        	 for (Book currentBook : bookListForContents) {
 									bookListModel.addElement(currentBook.getTitle());
 								}
 								
@@ -308,6 +310,10 @@ public class MainMenuPanel extends JPanel{
 
 	public String getCurrentBook() {
 		return currentBookName;
+	}
+
+	public ArrayList<Book> getBookList() {
+		return bookListForContents;
 	}
 	
 	

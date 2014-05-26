@@ -44,6 +44,9 @@ import javax.swing.text.Element;
 import javax.swing.text.StyledDocument;
 import javax.swing.text.html.HTML;
 
+import bookModule.Book;
+import bookModule.BookXMLParser;
+
 import musicPlayerModule.StandAloneMusicPlayer;
 import presentation.Collection;
 import presentation.Point;
@@ -95,6 +98,7 @@ public class GUI extends JFrame implements WindowStateListener, ComponentListene
 	UtilitiesPanel utilities;
 	
 	//ContentsPanel contents = new ContentsPanel(null, null, null);
+	ContentsPanel contentsPanel;
 	JPanel contents = new JPanel();
 	JLayeredPane layers = new JLayeredPane();
 	boolean utilitiesShowing = false;
@@ -725,7 +729,8 @@ public void bookMainPanelSetUp(){
 
 		// TODO: CHANGES MADE HERE BY JOSHUA LANT, NO ACTUAL TODO, JUST REFERENCE POINT
 		//set up contents
-		ContentsPanel contentsPanel = new ContentsPanel(slideList.getSlideList(), contentsWidth, slideList.getWidth(),slideList.getHeight(), mainMenuPanel.getCurrentSystem(), mainMenuPanel.getCurrentBook());
+		ArrayList<Book> bookList = mainMenuPanel.getBookList();
+		contentsPanel = new ContentsPanel(slideList.getSlideList(),bookList, contentsWidth, slideList.getWidth(),slideList.getHeight(), mainMenuPanel.getCurrentSystem(), mainMenuPanel.getCurrentBook());
 		contentsPanel.setBounds(30, 30, contentsWidth, slideList.getHeight());
 		
 		contentsPanel.setPreferredSize(new Dimension(contentsWidth, slideList.getHeight()));
@@ -767,6 +772,7 @@ public void bookMainPanelSetUp(){
 	            
 	            @Override
 	            public void mouseClicked(MouseEvent e) {
+	            	if(contentsPanel.getPageListShowing()==true){
 	                if(e.getClickCount() == 2) {            
 	                    slidePanel.refreshSlide(slideList.getSlideList().get(contentsList.getSelectedIndex()));  
 	                    if(screenSizeMaximised) {
@@ -774,6 +780,10 @@ public void bookMainPanelSetUp(){
 	                    }
 	                    contentsList.clearSelection();  
 	                }
+	            	}else{
+	            		//BookXMLParser bookParser = new BookXMLParser(chosenSystem);	
+			    		//listOfBooks = bookParser.readBookXML(chosenSystem);
+	            	}
 	            }
 	        });
 
