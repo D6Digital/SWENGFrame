@@ -2,7 +2,7 @@
 <booklist version="1.0" xmlns="http://www-users.york.ac.uk/~rjm529/booklist.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www-users.york.ac.uk/~rjm529/booklist.xsd booklist.xsd ">
   <book id="001">
     <title>GM Main Book</title>
-    <filename>src\EclipsePhase.xml</filename>
+    <filename>github resources\EclipsePhase.xml</filename>
     <icon>src\XMLBits\god.png</icon>
   </book>
   <book id="002">

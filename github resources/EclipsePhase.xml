@@ -1,0 +1,287 @@
+<?xml version="1.0"?><!--sample xml file created using XML DOM object.--><collection xmlns="http://www-users.york.ac.uk/~rjm529/schema.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<slideshow xmlns="">
+	<documentinfo><author>D6 Digital</author><version>2.1</version><title>This is the first chapter </title><comment>example comment for chapter 1</comment><width>720</width><height>540</height></documentinfo>
+	<defaults><backgroundcolour>#BFBFBF</backgroundcolour><font>Neo Sans Intel</font><fontsize>18</fontsize><fontcolour>#000000</fontcolour><linecolour>#404040</linecolour><fillcolour>#404040</fillcolour></defaults>
+	
+	<slide id="0" duration="60" descriptor="Contents Page" lastSlide="false" backgroundcolour="#BFBFBF"><text xstart="254" ystart="434" xend="518" yend="479" layer="10" starttime="0" font="Calibri" fontcolour="#FFFFFF" fontsize="24"><textbody branch="12" italic="true" bold="true" underlined="false"><textstring>Sample Adventure</textstring>
+	</textbody>
+	</text>
+	<text xstart="254" ystart="287" xend="518" yend="332" layer="8" starttime="0" font="Calibri" fontcolour="#FFFFFF" fontsize="24"><textbody branch="10" italic="true" bold="true" underlined="false"><textstring>Character Creation</textstring>
+	</textbody>
+	</text>
+	<image urlname="Src/XMLBits/CH3.png" xstart="12" ystart="389" width="700" height="136" layer="7" starttime="0"/>
+	<image urlname="Src/XMLBits/CH5.png" xstart="12" ystart="242" width="700" height="136" layer="6" starttime="0"/>
+	<text xstart="254" ystart="140" xend="518" yend="185" layer="4" starttime="0" font="Calibri" fontcolour="#FFFFFF" fontsize="24"><textbody branch="2" italic="true" bold="true" underlined="false"><textstring>GM Reference Tables</textstring>
+	</textbody>
+	</text>
+	<text xstart="12" ystart="27" xend="274" yend="72" layer="2" starttime="0" font="Calibri" fontcolour="#790909" fontsize="24"><textbody italic="false" bold="true" underlined="false"><textstring>Table of Contents</textstring>
+	</textbody>
+	</text>
+	<image urlname="Src/XMLBits/CH12.png" xstart="12" ystart="99" width="700" height="136" layer="1" starttime="0"/>
+	</slide>
+	
+	<slide id="1" duration="60" descriptor="NEW CHAPTER&#xA;" lastSlide="false" backgroundcolour="#BFBFBF"><image urlname="This is the second chapter " xstart="128" ystart="117" width="454" height="289" layer="1" starttime="0"/>
+	</slide>
+	
+	<slide id="2" duration="60" descriptor="GM’s Reference Tables" lastSlide="false" backgroundcolour="#BFBFBF"><image urlname="Src/XMLBits/ANARCH.png&#xA;" xstart="383" ystart="0" width="337" height="540" layer="15" starttime="0"/>
+	<text xstart="344" ystart="287" xend="451" yend="332" layer="13" starttime="0" font="Calibri" fontcolour="#790909" fontsize="24"><textbody branch="6" italic="false" bold="true" underlined="false"><textstring>Traits</textstring>
+	</textbody>
+	</text>
+	<text xstart="137" ystart="153" xend="428" yend="198" layer="11" starttime="0" font="Calibri" fontcolour="#790909" fontsize="24"><textbody branch="4" italic="false" bold="true" underlined="false"><textstring>Backgrounds and Factions</textstring>
+	</textbody>
+	</text>
+	<text xstart="213" ystart="429" xend="474" yend="474" layer="9" starttime="0" font="Calibri" fontcolour="#790909" fontsize="24"><textbody branch="8" italic="false" bold="true" underlined="false"><textstring>Mesh and Hacking</textstring>
+	</textbody>
+	</text>
+	<text xstart="207" ystart="354" xend="468" yend="399" layer="7" starttime="0" font="Calibri" fontcolour="#790909" fontsize="24"><textbody branch="7" italic="false" bold="true" underlined="false"><textstring>Combat and Action</textstring>
+	</textbody>
+	</text>
+	<text xstart="315" ystart="224" xend="422" yend="269" layer="5" starttime="0" font="Calibri" fontcolour="#790909" fontsize="24"><textbody branch="5" italic="false" bold="true" underlined="false"><textstring>Skill List</textstring>
+	</textbody>
+	</text>
+	<text xstart="207" ystart="83" xend="468" yend="128" layer="3" starttime="0" font="Calibri" fontcolour="#790909" fontsize="24"><textbody branch="3" italic="false" bold="true" underlined="false"><textstring>Character Creation</textstring>
+	</textbody>
+	</text>
+	<text xstart="15" ystart="21" xend="276" yend="66" layer="1" starttime="0" font="Calibri" fontcolour="#790909" fontsize="24"><textbody italic="false" bold="true" underlined="false"><textstring>GM’s Reference</textstring>
+	</textbody>
+	</text>
+	</slide>
+	
+	<slide id="3" duration="60" descriptor="GM’s Reference – Character Creation" lastSlide="false" backgroundcolour="#BFBFBF"><text xstart="421" ystart="300" xend="609" yend="349" layer="11" starttime="0" font="Calibri" fontcolour="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>GEAR COSTS</textstring>
+	</textbody>
+	</text>
+	<text xstart="331" ystart="356" xend="700" yend="472" layer="9" starttime="0" font="Calibri" fontcolour="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>Trivial = 1-99 credits, 50 credits average \nLow = 100 – 499 credits, 250 credits average \nModerate = 500 – 1,499 credits, 1,000 credits average \nHigh = 1,500 – 9,999 credits, 5,000 credits average \nExpensive = 10,000+ credits, 20,000 credits average </textstring>
+	</textbody>
+	</text>
+	<text xstart="411" ystart="62" xend="621" yend="105" layer="7" starttime="0" font="Calibri" fontcolour="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>CUSTOMISATION POINTS</textstring>
+	</textbody>
+	</text>
+	<text xstart="399" ystart="116" xend="626" yend="286" layer="5" starttime="0" font="Calibri" fontcolour="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>15 CP = 1 Moxie \n10 CP = 1 aptitude point \n5 CP = 1 psi sleight \n5 CP = 1 specialisation \n1 CP = 1 skill point (up to 60) \n2 CP = 1 skill point (61 - 80) \n1 CP = 1,000 \n1 CP = 10 Rep </textstring>
+	</textbody>
+	</text>
+	<text xstart="15" ystart="79" xend="320" yend="531" layer="3" starttime="0" font="Calibri" fontcolour="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>1) Define Character Concept \n2) Choose Background \n3) Choose Faction \n4 ) Spend Free Points \n   a) 105 aptitude points \n   b) 1 Moxie \n   c) 5,000 credits \n   d) 50 Rep \n   e) Native tongue \n5) Spend Customisation Points \n   a) 1,000 CP to spend \n   b) Active skill minimum: 400 CP \n   c) Knowledge skill minimum: 300 CP \n   d) Choose starting Morph \n   e) Choose Traits \n6) Purchase Gear \n7) Choose Motivation \n8) Calculate Remaining Stats \n9) Detail the Character</textstring>
+	</textbody>
+	</text>
+	<text xstart="15" ystart="21" xend="343" yend="66" layer="1" starttime="0" font="Calibri" fontcolour="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>CHARACTER CREATION SUMMARY</textstring>
+	</textbody>
+	</text>
+	</slide>
+	
+	<slide id="4" duration="60" descriptor="GM’s Reference – Backgrounds &amp; Factions&#xA;" lastSlide="false" backgroundcolour="#BFBFBF"><text xstart="463" ystart="25" xend="639" yend="64" layer="29" starttime="0" font="Calibri" fontcolour="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>FACTIONS</textstring>
+	</textbody>
+	</text>
+	<text xstart="0" ystart="72" xend="422" yend="540" layer="4" starttime="0" font="Calibri" fontcolour="#000000" fontsize="10"><textbody italic="false" bold="true" underlined="false"><textstring>Drifter:</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>+10 Navigation skill, +20 Pilot Spacecraft skill, +10\n Networking: {Field} skill of your  choice \n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Fall Evacuee:</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>+10 Pilot Groundcraft skill, +10  Networking: {Field}skill of your\n choice, +1 Moxie, only 2,500 Starting Credit (can still buy credit\n with CP)\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Hyperelite:</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>+10 Protocol skill, +10,000 Credit, +20 Networking: Hypercorps\n skill, may not start with pod, uplift or synthetic morphs\n </textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Infolife:</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>+30 Interfacing skill, Computer skills (Infosec, Interfacing,\n Programming, Research) cost half as much CP, Real World\n Naiveté trait, Social Stigma (AGI) trait, may not purchase Psi\n trait, Social skills cost twice as much CP\n </textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Isolate:</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>+20 to two skills of your choice, -10 starting Rep\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Lost:</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>+20 to two Knowledge skills of your choice, Psi trait (Level 1),\n Mental Disorder (choose two, this includes the one from Psi) trait,\n Social Stigma (Lost) trait, must start with Futura morph\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Lunar Colonist:</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>+10 Pilot: Groundcraft skill, +10 to one Technical, Academic:\n {Field}, or Profession: {Field} skill of your choice, +20 Networking:\n Hypercorps skill\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Martian:</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>+10 Pilot: Groundcraft skill, +10 to one Technical, Academic:\n {Field}, or Profession: {Field} skill of your choice, +20 Networking:\n Hypercorps skill\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Original Space Colonist:</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>+10 Pilot: Spacecraft or Freefall skill, +10 to a Technical,\n Academic: {Field}, or Profession: {Field} skill of your choice,\n +20 to a Networking: {Field} skill of your choice\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Re-Instantiated:</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>+10 Pilot: Groundcraft skill, +10 to a Networking: {Field} skill of\n your choice, +2 Moxie, Edited Memories trait, 0 Starting Credit\n (can still buy credit with CP)\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Scumborn:</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>+10 Persuasion or Deception skill, +10 Scrounging skill, +20 Networking:\n Autonomists skill\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Uplift:</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>+10 Fray skill, +10 Perception skill, +20 to two Knowledge skills of\n your choice, must choose an uplift morph to start\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="68" ystart="25" xend="244" yend="64" layer="2" starttime="0" font="Calibri" fontcolour="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>BACKGROUNDS</textstring>
+	</textbody>
+	</text>
+	<text xstart="354" ystart="71" xend="717" yend="539" layer="1" starttime="0" font="Calibri" fontcolour="#000000" fontsize="10"><textbody italic="false" bold="true" underlined="false"><textstring>Anarchist:</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>+10 to a skill of your choice, +30 Networking: Autonomists skill\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Argonaut:</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>+10 to two Technical, Academic: {Field}, or Profession: {Field} skills;\n +20 Networking: Scientists\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Barsoomain:</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>+10 Freerunning, +10 to one skill of your choice, +20 Networking:\n Autonomists skill\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Brinker:</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>+10 Pilot: Spacecraft skill, +10 to a skill of your choice, +20 to a\n Networking: {Field} skill of your choice\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Criminal:</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>+10 Intimidation skill, +30 Networking: Criminal skill\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Extropian:</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>+10 Persuasion skill, +20 Networking: Autonomists skill,\n +10 Networking: Hypercorps skill\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Hypercorp:</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>+10 Protocol skill, +20 Networking: Hypercorps skill, +10 to any\n Networking: {Field} skill\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Jovian:</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>+10 to two weapon skills of your choice, +10 Fray, +20 Networking:\n Hypercorps skill, must start with a Flat or Splicer morph, may not\n start with any nanoware or advanced nanotech\n </textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Lunar:</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>+10 to one Language: {Field} of your choice, +20 Networking: Hypercorps\n skill, +10 Networking: Ecologists skill\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Mercurial:</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>+10 to any two skills of your choice, +20 to a Networking: {Field} skill\n of your choice\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Scum:</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>+10 Freefall skill, +10 to a skill of your choice, +20 Networking:\n Autonomists skill\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Socialite:</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>+10 Persuasion skill, +10 Protocol skill, +20 Networking: Media skill,\n May not start with flat, pod, uplift or synthetic morphs\n </textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Titanian:</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>+10 to two Technical or Academic skills of your choice, +20 Networking:\n Autonomists skill\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Ultimate:</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>+10 to two skills of your choice, +20 to a Networking: {Field} skill of\n your choice, may not start with Flat, Splicer, uplift of pod morphs\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Venusian:</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>+10 Pilot: Aircraft, +10 to one skill of your choice, +20 Networking:\n Hypercorps skill\n</textstring>
+	</textbody>
+	</text>
+	</slide>
+	
+	<slide id="5" duration="60" descriptor="GM’s Reference – Skill List" lastSlide="false" backgroundcolour="#BFBFBF"><text xstart="595" ystart="111" xend="706" yend="451" layer="18" starttime="0" font="Calibri" fontcolour="#000000" fontsize="10"><textbody italic="false" bold="true" underlined="false"><textstring>Category\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring> Knowledge\n Active, Social\n Knowledge\n Active, Combat\n Active, Combat\n Active, Physical\n Active, Combat\n Active, Mental, Psi\n Active, Social\n Active, Technical\n Active, Physical\n Active, Combat\n Active, Combat\n Active, Physical\n Active, Combat\n Active, Physical\n Active, Physical\n Active, Combat\n Active, Technical\n Active, Social\n Active, Physical\n Active, Technical\n Knowledge\n Active, Technical\n Active, Social\n </textstring>
+	</textbody>
+	</text>
+	<text xstart="500" ystart="111" xend="611" yend="451" layer="15" starttime="0" font="Calibri" fontcolour="#000000" fontsize="10"><textbody italic="false" bold="true" underlined="false"><textstring>Linked Aptitude\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>INT\nSAV\nCOO\nINT\nCOG\nINT\nSAV\nCOO\nINT\nSAV\nREF\nCOG\nCOG\n (no def)\nSAV\nWIL (no def)\nINT\nCOG\nINT\nCOO\nINT (no def)\nCOO\nSOM\nCOO\nSOM\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="374" ystart="111" xend="522" yend="451" layer="12" starttime="0" font="Calibri" fontcolour="#000000" fontsize="10"><textbody italic="false" bold="true" underlined="false"><textstring>Skill\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Investigation\nKinesics\nKinetic Weapons\nLanguage: {Field}\nMedicine: {Field}\nNavigation\nNetworking: {Field}\nPalming\nPerception\nPersuasion\nPilot: {Field}\nProfession: {Field}\nProgramming\nProtocol\nPsi Assault\nPsychosurgery\nResearch\nScrounging\nSeeker Weapons\nSense\nSpray Weapons\nSwimming\nThrowing Weapons\nUnarmed Combat\n  </textstring>
+	</textbody>
+	</text>
+	<text xstart="252" ystart="111" xend="363" yend="451" layer="9" starttime="0" font="Calibri" fontcolour="#000000" fontsize="10"><textbody italic="false" bold="true" underlined="false"><textstring>Category\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring> Knowledge\n Active, Social\n Knowledge\n Active, Combat\n Active, Combat\n Active, Physical\n Active, Combat\n Active, Mental, Psi\n Active, Social\n Active, Technical\n Active, Physical\n Active, Combat\n Active, Combat\n Active, Physical\n Active, Combat\n Active, Physical\n Active, Physical\n Active, Combat\n Active, Technical\n Active, Social\n Active, Physical\n Active, Technical\n Knowledge\n Active, Technical\n Active, Social\n </textstring>
+	</textbody>
+	</text>
+	<text xstart="157" ystart="111" xend="268" yend="451" layer="6" starttime="0" font="Calibri" fontcolour="#000000" fontsize="10"><textbody italic="false" bold="true" underlined="false"><textstring>Linked Aptitude\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>COG\nSAV\nINT\nCOO\nSOM\nSOM\nSOM\nWIL (no def)\nSAV\nCOG (no def)\nINT\nSOM\nCOO\nSOM\nREF\nREF\nSOM\nINT\nCOG\nSAV\nCOO\nCOG (no def)\nCOG\nCOG\nSAV\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="31" ystart="111" xend="179" yend="451" layer="3" starttime="0" font="Calibri" fontcolour="#000000" fontsize="10"><textbody italic="false" bold="true" underlined="false"><textstring>Skill\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Academics: {Field}\nAnimal Handling\nArt: {Field}\nBeam Weapons\nBlades\nClimbing\nClubs\nControl\nDeception\nDemolitions\nDisguise\nExotic Melee Weapon: {Field}\nExotic Ranged Weapon: {Field}\nFlight\nFray\nFree Fall\nFreerunning\nGunnery\n Hardware: {Field}\nImpersonation\nInfiltration\nInfosec\nInterest: {Field}\nInterfacing\nIntimidation\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="303" ystart="66" xend="435" yend="111" layer="1" starttime="0" font="Calibri" fontcolour="#790909" fontsize="24"><textbody italic="false" bold="true" underlined="false"><textstring>Skill List</textstring>
+	</textbody>
+	</text>
+	</slide>
+	
+	<slide id="6" duration="60" descriptor="GM’s Reference – Traits" lastSlide="false" backgroundcolour="#BFBFBF"><text xstart="542" ystart="28" xend="717" yend="536" layer="12" starttime="0" font="Calibri" fontcolour="#000000" fontsize="10"><textbody italic="false" bold="true" underlined="false"><textstring>CP Costs\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>5 (Minor), 10 (Moderate) or 20 (Major)\n10\n30\n5 or 20\n10 (Level 1), 20 (Level 2) or 30 (Level 3)\n20\n10\n10\n20\n10 (Level 1) or 20 (Level 2)\n 10 or 20\n10\n10\n10\n5 (Level 1) or 15 (Level 2)\n10\n10\n20\n10\n5\n5 (Level 1), 10 (Level 2) or 20 (Level 3)\n10 (Level 1), 20 (Level 2) or 30 (Level 3)\n10\n10\n10\n10\n10\n10\n10 (Uncommon) or 20 (Common)\n10\n10\n10\n10 (Level 1), 20 (Level 2) or 30 (Level 3)\n10\n10 (Level 1) or 20 (Level 2)\n10\n10 (Level 1) or 20 (Level 2)\n10\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="366" ystart="28" xend="543" yend="536" layer="9" starttime="0" font="Calibri" fontcolour="#000000" fontsize="10"><textbody italic="false" bold="true" underlined="false"><textstring>Negative Traits\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Addicition (Ego or Morph Trait)\nAged (Morph Trait)\nBad Luck\nBlacklisted\nBlack Mark\nCombat Paralysis\nEdited Memories\nEnemy\nFeeble\nFrail (Morph Trait)\nGenetic Defect (Morph Trait)\nIdentity Crisis\nIlliterate\nImmortality Blues\nImplant Rejection (Morph Trait)\nIncompetent\nLemon (Morph Trait)\nLow Pain Tolerance (Ego or Morph Trait)\nMental Disorder\nMild Allergy (Morph Trait)\nModified Behavior\nMorphing Disorder\nNeural Damage\nNo Cortical Stack (Morph Trait)\nOblivious\nOn the Run\nPsi Vulnerability (Ego or Morph Trait)\nReal World Naiveté\nSevere Allergy\nSlow Learner\nSocial Stigma (Ego or Morph Trait)\nTimid\nUnattractive (Morph Trait)\n Uncanny Valley (Morph Trait)\n Unfit (Morph Trait)\nVR Vertigo\nWeak Immune System (Morph Trait)\nZero-G Nausea (Morph Trait)\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="191" ystart="28" xend="366" yend="536" layer="6" starttime="0" font="Calibri" fontcolour="#000000" fontsize="10"><textbody italic="false" bold="true" underlined="false"><textstring>CP Costs\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>10 (Level 1) or 20 (Level 2)\n30\n10\n5\n10\n10\n10\n5\n10\n20\n10\n10\n10\n10\n10 (Level 1) or 20 (Level 2)\n10\n10 (Level 1) or 20 (Level 2)\n10\n10\n10 (Level 1) or 20 (Level 2)\n30\n20 (Level 1) or 25 (Level 2)\n10\n10 (Level 1 or 20 (Level 2)\n10\n10\n15\n10\n10 (Level 1) or 20 (Level 2)\n10 (Level 1), 20 (Level 2) or 30 (Level 3)\n5\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="3" ystart="28" xend="191" yend="536" layer="3" starttime="0" font="Calibri" fontcolour="#000000" fontsize="10"><textbody italic="false" bold="true" underlined="false"><textstring>Positive Traits\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Adaptability\nAllies\nAmbidextrous\nAnimal Empathy\nBrave\nCommon Sense\nDanger Sense\nDirection Sense\n Eidetic Memory (Ego or Morph Trait)\nExceptional Aptitude\nExpert\nFast Learner\nFirst Impression\nHyper Linguist\nImproved Immune System (Morph Trait)\n Innocuous (Morph Trait)\nLimber (Morph Trait)\n Math Wiz\nNatural Immunity (Morph Trait)\nPain Tolerance (Ego or Morph Trait)\nPatron\nPsi\nPsi Chameleon (Ego or Morph Trait)\nPsi Defense (Ego or Morph Trait)\nRapid Healer (Morph Trait)\nRight at Home\nSecond Skin\nSituational Awareness\nStriking Looks (Morph Trait)\nTough (Morph Trait)\nZoosemiotics\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="303" ystart="0" xend="435" yend="43" layer="1" starttime="0" font="Calibri" fontcolour="#790909" fontsize="24"><textbody italic="false" bold="true" underlined="false"><textstring>Traits</textstring>
+	</textbody>
+	</text>
+	</slide>
+	
+	<slide id="7" duration="60" descriptor="GM’s Reference – Combat &amp; Action&#xA;" lastSlide="false" backgroundcolour="#BFBFBF"><image urlname="Src/XMLBits/SCATTER.png" xstart="320" ystart="287" width="292" height="234" layer="11" starttime="0"/>
+	<text xstart="360" ystart="244" xend="570" yend="287" layer="9" starttime="0" font="Calibri" fontcolour="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>SCATTER DIAGRAM</textstring>
+	</textbody>
+	</text>
+	<text xstart="332" ystart="60" xend="542" yend="103" layer="7" starttime="0" font="Calibri" fontcolour="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>ACTION TURN</textstring>
+	</textbody>
+	</text>
+	<text xstart="332" ystart="106" xend="559" yend="233" layer="5" starttime="0" font="Calibri" fontcolour="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>Step 1: Roll Initiative ((INT + REF) ÷ 5) + 1d10\nStep 2: Begin First Action Phase (Speed 1)\nStep 3: Declare and Resolve Actions\nStep 4: Rotate and Repeat (Speed 2-4)</textstring>
+	</textbody>
+	</text>
+	<text xstart="15" ystart="56" xend="320" yend="508" layer="3" starttime="0" font="Calibri" fontcolour="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>- Combat is handled as an Opposed Test.\n- Attacker rolls attack skill +/- modifiers.\n- Melee: Defender rolls Fray or melee skill +/- modifiers.\n- Ranged: Defender rolls (Fray ÷ 2, round down) +/- modifiers.\n- If attacker succeeds and rolls higher than the defender, the attack hits.\n- Critical hits are armour-defeating (armour does not apply).\n- Armour is reduced by the attack’s Armour Penetration value (AP).\n-The weapon’s damage is reduced by the targets modified Armour rating (unless the attack is armour-defeating).\n-If the damage exceeds the target’s Wound Threshold, a wound is also scored. (If the damage exceeds the Wound Threshold by multiple factors, multiple wounds are inflicted).</textstring>
+	</textbody>
+	</text>
+	<text xstart="15" ystart="21" xend="343" yend="66" layer="1" starttime="0" font="Calibri" fontcolour="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>COMBAT SUMMARY</textstring>
+	</textbody>
+	</text>
+	</slide>
+	
+	<slide id="8" duration="60" descriptor="GM’s Reference – Mesh &amp; Hacking&#xA;" lastSlide="false" backgroundcolour="#BFBFBF"><text xstart="15" ystart="21" xend="276" yend="66" layer="1" starttime="0" font="Calibri" fontcolour="#790909" fontsize="24"><textbody italic="false" bold="true" underlined="false"><textstring>Mesh and Hacking</textstring>
+	</textbody>
+	</text>
+	</slide>
+	
+	<slide id="9" duration="60" descriptor="NEW CHAPTER&#xA;" lastSlide="false" backgroundcolour="#BFBFBF"><image urlname="This is the third chapter " xstart="128" ystart="117" width="454" height="289" layer="1" starttime="0"/>
+	</slide>
+	
+	<slide id="10" duration="60" descriptor="" lastSlide="false" backgroundcolour="#BFBFBF"><text xstart="14" ystart="27" xend="275" yend="72" layer="1" starttime="0" font="Calibri" fontcolour="#790909" fontsize="24"><textbody italic="false" bold="true" underlined="false"><textstring>Character Creation</textstring>
+	</textbody>
+	</text>
+	</slide>
+	
+	<slide id="11" duration="60" descriptor="NEW CHAPTER&#xA;" lastSlide="false" backgroundcolour="#BFBFBF"><image urlname="This is the fourth chapter " xstart="128" ystart="117" width="454" height="289" layer="1" starttime="0"/>
+	</slide>
+	
+	<slide id="12" duration="60" descriptor="" lastSlide="true" backgroundcolour="#BFBFBF"><text xstart="14" ystart="27" xend="275" yend="72" layer="1" starttime="0" font="Calibri" fontcolour="#790909" fontsize="24"><textbody italic="false" bold="true" underlined="false"><textstring>Sample Adventure</textstring>
+	</textbody>
+	</text>
+	</slide>
+	
+</slideshow></collection>

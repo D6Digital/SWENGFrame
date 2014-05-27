@@ -2,8 +2,8 @@
 <systemlist xmlns="http://www-users.york.ac.uk/~rjm529/systemlist.xsd"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www-users.york.ac.uk/~rjm529/systemlist.xsd systemlist.xsd ">
-	<system description="Post apocolyplytic stuff" logofilename="src/XMLBits/char1jovian_spy.jpg"
+	<system description="The Roleplaying Game of Transhuman Conspiracy and Horror" logofilename="src/XMLBits/char1jovian_spy.jpg"
 		name="Eclipse Phase" xmlfilename="src/booklist.xml" />
 	<system logofilename="src/XMLBits/samson.png" name="Dungeons and Dragons"
-		description="Funky dungeons with lots of funky dragons" xmlfilename="src/BasicExample.xml" ></system>
+		description="The Original Fantasy Adventure Game" xmlfilename="src/BasicExample.xml" ></system>
 </systemlist>
