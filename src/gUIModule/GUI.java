@@ -17,6 +17,9 @@ import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentListener;
 import java.awt.event.ContainerEvent;
 import java.awt.event.ContainerListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -68,13 +71,13 @@ import gUIModule.CalculatorPanel;
  * @author Andrew Walter
  *
  */
-public class GUI extends JFrame implements WindowStateListener, ComponentListener{
+public class GUI extends JFrame implements WindowStateListener, ComponentListener, KeyListener{
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
+	JFrame frame = new JFrame();
 	Container selectionPane;
 	Container menuPane;
 	Container bookPane;
@@ -136,6 +139,7 @@ public class GUI extends JFrame implements WindowStateListener, ComponentListene
 	private Collection collection;
 
 	private int chapterID=0;
+	private boolean mainMenuShowing=true;
 	
 	/**
 	 * Create a simple JFrame and then populate it with specified JPanel type
@@ -216,12 +220,15 @@ public class GUI extends JFrame implements WindowStateListener, ComponentListene
 				slideList.getHeight()+insets.top+insets.bottom+40);
 		setVisible(true);	
 		setLayout(null);
+		frame=this;
+		frame.addKeyListener(this);
 		
 		mainMenuPanel = new MainMenuPanel(slideList.getWidth(), slideList.getHeight());
 		mainMenuPanel.setBounds(0,0, slideList.getWidth(), slideList.getHeight());
 		JButton buttonFromMainMenu = mainMenuPanel.getButton();
 		layers.setVisible(false);
 		add(mainMenuPanel);
+		mainMenuShowing=true;
 		revalidate();
 		repaint();
 		buttonFromMainMenu.addActionListener(
@@ -229,6 +236,8 @@ public class GUI extends JFrame implements WindowStateListener, ComponentListene
 
 					@Override
 					public void actionPerformed(ActionEvent arg0) {
+						mainMenuShowing=false;
+						frame.requestFocusInWindow();
 						layers.setVisible(true);
 						mainMenuPanel.setVisible(false);
 						String chosenBook = mainMenuPanel.getChosenBook();
@@ -250,7 +259,7 @@ public class GUI extends JFrame implements WindowStateListener, ComponentListene
 
 					@Override
 					public void actionPerformed(ActionEvent arg0) {
-
+						frame.requestFocusInWindow();
 						showPreviousSlide();
 					}
 				});
@@ -697,6 +706,7 @@ public void bookMainPanelSetUp(){
             
             @Override
             public void actionPerformed(ActionEvent e) {
+            	frame.requestFocusInWindow();
                 utilities.setUtilityVisible(backButton);
                 utilitiesWidth = utilities.getWidth();
                 utilities.setBounds(slideList.getWidth()-utilitiesWidth, 0, utilitiesWidth, slideList.getHeight());
@@ -713,7 +723,7 @@ public void bookMainPanelSetUp(){
 
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    
+                	frame.requestFocusInWindow();
                     utilities.setUtilityVisible(button);
                     utilitiesWidth = utilities.getWidth();
                     utilities.setBounds(slideList.getWidth()-utilitiesWidth, 0, utilitiesWidth, slideList.getHeight());
@@ -775,6 +785,7 @@ public void bookMainPanelSetUp(){
 	            
 	            @Override
 	            public void mouseClicked(MouseEvent e) {
+	            	frame.requestFocusInWindow();
 	            	if(contentsPanel.getPageListShowing()==true){
 	                if(e.getClickCount() == 2) {            
 	                    slidePanel.refreshSlide(slideList.getSlideList().get(contentsList.getSelectedIndex()));  
@@ -795,6 +806,7 @@ public void bookMainPanelSetUp(){
 			
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
+				frame.requestFocusInWindow();
 				contentsPanel.setScrollList(slideList);
 			}
 		});
@@ -842,12 +854,13 @@ public void bookMainPanelSetUp(){
 
 				@Override
 				public void actionPerformed(ActionEvent arg0) {
-
+					frame.requestFocusInWindow();
 					showNextSlide();
 
 				}
 			});
-	}
+}
+	
 private void borderListenerProcess(MouseEvent e1,Boolean isObject,Boolean isText, Boolean isVideo){
 	
 	int xCoordinate = e1.getX();
@@ -1182,6 +1195,7 @@ private void borderListenerProcess(MouseEvent e1,Boolean isObject,Boolean isText
 */
 @Override
 public void windowStateChanged(WindowEvent e) {
+	frame.requestFocusInWindow();
 	System.err.println("RESIZED");
 	if(slidePanel!=null){
 	scaleFactorX = (double)(getSize().width-insets.left-insets.right)/(double)720;
@@ -1255,6 +1269,35 @@ public void componentResized(ComponentEvent e) {
 
 @Override
 public void componentShown(ComponentEvent e) {
+	// TODO Auto-generated method stub
+	
+}
+
+@Override
+public void keyPressed(KeyEvent e) {
+	if(e.getKeyCode()== KeyEvent.VK_LEFT){
+		System.out.println("Left Button Pressed");
+		if(mainMenuShowing==false){
+		showPreviousSlide();
+		}
+	}
+	if(e.getKeyCode()== KeyEvent.VK_RIGHT){
+		System.out.println("Right Button Pressed");	
+		if(mainMenuShowing==false){
+		showNextSlide();
+		}
+	}
+	
+}
+
+@Override
+public void keyReleased(KeyEvent e) {
+	// TODO Auto-generated method stub
+	
+}
+
+@Override
+public void keyTyped(KeyEvent e) {
 	// TODO Auto-generated method stub
 	
 }
