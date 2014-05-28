@@ -401,7 +401,19 @@ The bounding box should if possible have extra space below the text bodies to al
 	</text>
 	</slide>
 	
-	<slide id="5" duration="60" descriptor="Fun Dragon!" lastSlide="true" backgroundcolour="#558ED5"><shape fillcolour="#FFFF00" linecolour="#385D8A" layer="50" duration="10" starttime="5" totalpoints="6" width="212" height="56"><point num="0" x="574" y="268"/>
+	<slide id="5" duration="60" descriptor="Fun Dragon!" lastSlide="true" backgroundcolour="#558ED5"><shape fillcolour="#17375E" linecolour="#FFFFFF" layer="51" starttime="0" totalpoints="11" width="192" height="97"><point num="0" x="515" y="375"/>
+	<point num="1" x="456" y="438"/>
+	<point num="2" x="584" y="472"/>
+	<point num="3" x="648" y="413"/>
+	<point num="4" x="591" y="413"/>
+	<point num="5" x="582" y="418"/>
+	<point num="6" x="584" y="416"/>
+	<point num="7" x="581" y="419"/>
+	<point num="8" x="536" y="440"/>
+	<point num="9" x="552" y="378"/>
+	<point num="10" x="515" y="380"/>
+	</shape>
+	<shape fillcolour="#FFFF00" linecolour="#385D8A" layer="50" duration="10" starttime="5" totalpoints="6" width="212" height="56"><point num="0" x="574" y="268"/>
 	<point num="1" x="548" y="259"/>
 	<point num="2" x="483" y="296"/>
 	<point num="3" x="576" y="328"/>

@@ -58,6 +58,7 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
 
     private int utilitiesWidth=150;
     private int heightOfSlide;
+    private int xOffset = 0;
 
 	//	GUI diceRoller;
 //	GUI calculatorGUI;
@@ -74,6 +75,7 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
 		setLayout(null);
 		
 		heightOfSlide = slideHeight;
+		xOffset = slideWidth-utilitiesWidth;
 		
 		calculatorPanel = new CalculatorPanel(360, slideHeight - 20);
 		dicePanel = new DicePanel(300, slideHeight - 20);
@@ -361,24 +363,33 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
 	private void setPanelVisible(String panel) {
 	    switch(panel) {
 	    case "dicePanel":
+	    	dicePanel.setSize(dicePanel.getWidth() , this.heightOfSlide - 20);
             dicePanel.setVisible(true);
             calculatorPanel.setVisible(false);
             standAloneMusicPlayerPanel.setVisible(false);
+            this.xOffset = this.xOffset  + (this.getWidth() - dicePanel.getWidth());
             setWidth(dicePanel.getWidth());
+            this.setBounds(this.xOffset - (300 - utilitiesWidth), 0, 300, this.heightOfSlide);
             multiPanel.setVisible(true);
 	    break;    
 	    case "calculatorPanel":
+	    	calculatorPanel.setSize(calculatorPanel.getWidth() , this.heightOfSlide - 20);
             dicePanel.setVisible(false);
             calculatorPanel.setVisible(true);
             standAloneMusicPlayerPanel.setVisible(false);
+            this.xOffset = this.xOffset  + (this.getWidth() - calculatorPanel.getWidth());
             setWidth(calculatorPanel.getWidth());
+            this.setBounds(this.xOffset - (350 - utilitiesWidth), 0, 350, this.heightOfSlide);
             multiPanel.setVisible(true);
 	    break;
 	    case "standAloneMusicPlayerPanel":
+	    	standAloneMusicPlayerPanel.setSize(standAloneMusicPlayerPanel.getWidth() , this.heightOfSlide - 20);
             dicePanel.setVisible(false);
             calculatorPanel.setVisible(false);
             standAloneMusicPlayerPanel.setVisible(true);  
+            this.xOffset = this.xOffset  + (this.getWidth() - standAloneMusicPlayerPanel.getWidth());
             setWidth(standAloneMusicPlayerPanel.getWidth());
+            this.setBounds(this.xOffset - (360 - utilitiesWidth), 0, 360, this.heightOfSlide);
             System.out.println(standAloneMusicPlayerPanel.getWidth());
             multiPanel.setVisible(true);
 	    break;
@@ -395,7 +406,8 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
 
     private void setWidth(int width) {
         this.utilitiesWidth = width;
-        multiPanel.setBounds(0,0,utilitiesWidth,heightOfSlide);
+        this.setBounds(this.xOffset, 0, utilitiesWidth, this.heightOfSlide);
+        multiPanel.setBounds(0,0,utilitiesWidth,this.heightOfSlide);
         backButton.setBounds(
                 3, 
                 heightOfSlide-20, 
@@ -413,5 +425,12 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
     public JButton getBackButton() {
         return backButton;
     }
+
+
+
+	public void setDimensions(int utilitiesOffset, int slideHeight) {
+		this.heightOfSlide = slideHeight;
+		this.xOffset = utilitiesOffset;
+	}
 	
 }

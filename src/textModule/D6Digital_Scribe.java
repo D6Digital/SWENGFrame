@@ -8,6 +8,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.FontFormatException;
 import java.awt.GraphicsEnvironment;
+import java.awt.event.MouseAdapter;
 import java.io.File;
 import java.io.IOException;
 
@@ -19,6 +20,7 @@ import javax.swing.text.Style;
 import javax.swing.text.StyleConstants;
 import javax.swing.text.StyleContext;
 import javax.swing.text.StyledDocument;
+import javax.swing.text.html.HTML;
 
 
 
@@ -89,6 +91,63 @@ public class D6Digital_Scribe extends JPanel{
 	}
 	
 	/**
+	 * produces a JPanel containing text from the Text object which is not editable
+	 * and is transparent by default. 
+	 * 
+	 * when resized so that lines of text are longer than
+	 * the width the text will wrap onto the next line. 
+	 * 
+	 * Text at the bottom will be invisible 
+	 * if the height of the panel is too small to contain the text.
+	 * 
+	 * The listener for the text pane can be specified outside of this class by 
+	 * passing in a mouse adapter. Branches on text bodies are set to -1 on the
+	 * HTML.attributes.LINK variable if there is no branch. If there is a branch
+	 * number the LINK variable can give you back the branch number.
+	 * @param text
+	 * @param listener 
+	 */
+	public D6Digital_Scribe(Text text, MouseAdapter listener) {
+		
+		this.setOpaque(false);
+		
+		textObject = text;
+		
+		
+		
+		
+		font = new Font(textObject.getFont(), Font.PLAIN, 12);
+		if(font.getFamily().equals("Dialog")){
+		// create a font object for a user defined font
+			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+			for (String name : ge.getAvailableFontFamilyNames()) {
+				System.out.println(name);
+			}
+			try {
+			    font = Font.createFont(Font.TRUETYPE_FONT, new File(textObject.getFont()));
+			    font = font.deriveFont(Font.PLAIN,textObject.getFontSize());
+	
+				ge.registerFont(font);
+			} catch (FontFormatException | IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		}
+
+		setLayout(new BorderLayout());
+		
+		// Create the JTextPane
+		JTextPane textPane = createTextPane();
+		textPane.setEditable(false);
+		
+		textPane.addMouseMotionListener(listener);
+		textPane.addMouseListener(listener);
+		
+		add(textPane);
+		
+	}
+	
+	/**
 	 * Uses the text contents to add sections of similarly formatted text
 	 * @return The text pane
 	 */
@@ -108,7 +167,14 @@ public class D6Digital_Scribe extends JPanel{
 			StyleConstants.setItalic(newStyle, text.getItalic());
 			StyleConstants.setUnderline(newStyle, text.getUnderlined());
 			
-			
+			if(text.getBranch() != -1)
+			{
+				newStyle.addAttribute(HTML.Attribute.LINK, text.getBranch());
+			}
+			else
+			{
+				newStyle.addAttribute(HTML.Attribute.LINK, -1);
+			}
 			
 			try{
 				doc.insertString(doc.getLength(), text.getText(), newStyle);
