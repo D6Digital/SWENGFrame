@@ -1271,7 +1271,7 @@
 	</text>
 	</slide>
 	
-	<slide id="41" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="394" ystart="474" xend="712" yend="519" layer="25" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="42" italic="false" bold="true" underlined="false"><textstring>On to SPEND CUSTOMISATION POINTS</textstring>
+	<slide id="41" duration="60" descriptor="Spend Free Points" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="394" ystart="474" xend="712" yend="519" layer="25" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="42" italic="false" bold="true" underlined="false"><textstring>On to SPEND CUSTOMISATION POINTS</textstring>
 	</textbody>
 	</text>
 	<text xstart="349" ystart="405" xend="677" yend="479" layer="23" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>Your character isn’t a complete newbie. You get 50 rep points to divide between the reputation networks of your choice.</textstring>
@@ -1312,7 +1312,7 @@
 	</text>
 	</slide>
 	
-	<slide id="42" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="405" ystart="77" xend="688" yend="395" layer="7" starttime="0" font="Calibri" fontcolor="#790909" fontsize="20"><textbody branch="43" italic="true" bold="false" underlined="false"><textstring>15 CP = 1 Moxie point\n</textstring>
+	<slide id="42" duration="60" descriptor="Spend Customisation Points" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="405" ystart="77" xend="688" yend="395" layer="7" starttime="0" font="Calibri" fontcolor="#790909" fontsize="20"><textbody branch="43" italic="true" bold="false" underlined="false"><textstring>15 CP = 1 Moxie point\n</textstring>
 	</textbody>
 	<textbody branch="43" italic="true" bold="false" underlined="false"><textstring>10 CP = 1 aptitude point\n</textstring>
 	</textbody>
@@ -1344,7 +1344,7 @@
 	</text>
 	</slide>
 	
-	<slide id="43" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="14" ystart="474" xend="354" yend="519" layer="23" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="42" italic="false" bold="true" underlined="false"><textstring>Back to SPEND CUSTOMISATION POINTS</textstring>
+	<slide id="43" duration="60" descriptor="Moxie, Aptitudes, Rep, Psi and Credits" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="14" ystart="474" xend="354" yend="519" layer="23" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="42" italic="false" bold="true" underlined="false"><textstring>Back to SPEND CUSTOMISATION POINTS</textstring>
 	</textbody>
 	</text>
 	<text xstart="513" ystart="474" xend="711" yend="519" layer="21" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>On to PURCHASE GEAR</textstring>
@@ -1382,7 +1382,7 @@
 	</text>
 	</slide>
 	
-	<slide id="44" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="14" ystart="474" xend="354" yend="519" layer="11" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="42" italic="false" bold="true" underlined="false"><textstring>Back to SPEND CUSTOMISATION POINTS</textstring>
+	<slide id="44" duration="60" descriptor="Skills and Specialisations" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="14" ystart="474" xend="354" yend="519" layer="11" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="42" italic="false" bold="true" underlined="false"><textstring>Back to SPEND CUSTOMISATION POINTS</textstring>
 	</textbody>
 	</text>
 	<text xstart="14" ystart="326" xend="342" yend="463" layer="9" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>Specialisations may also be purchased at the cost of 5 CP per specialisation. You may purchase specialisations for both Active and Knowledge skills. Only one specialisation may be purchased per skill and they may only be bought for skills with a rating of 30+</textstring>
@@ -1402,7 +1402,7 @@
 	</text>
 	</slide>
 	
-	<slide id="45" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="460" ystart="412" xend="619" yend="457" layer="17" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="48" italic="false" bold="true" underlined="false"><textstring>NEGATIVE TRAITS</textstring>
+	<slide id="45" duration="60" descriptor="Traits and Morphs" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="460" ystart="412" xend="619" yend="457" layer="17" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="48" italic="false" bold="true" underlined="false"><textstring>NEGATIVE TRAITS</textstring>
 	</textbody>
 	</text>
 	<text xstart="462" ystart="361" xend="615" yend="406" layer="15" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="47" italic="false" bold="true" underlined="false"><textstring>POSITIVE TRAITS</textstring>
@@ -1431,12 +1431,12 @@
 	</text>
 	</slide>
 	
-	<slide id="46" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="14" ystart="474" xend="354" yend="519" layer="13" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="45" italic="false" bold="true" underlined="false"><textstring>Back to MORPHS AND TRAITS</textstring>
+	<slide id="46" duration="60" descriptor="Morphs" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="14" ystart="474" xend="354" yend="519" layer="13" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="45" italic="false" bold="true" underlined="false"><textstring>Back to MORPHS AND TRAITS</textstring>
 	</textbody>
 	</text>
 	<text xstart="405" ystart="123" xend="688" yend="361" layer="6" starttime="0" font="Calibri" fontcolor="#790909" fontsize="20"><textbody branch="47" italic="true" bold="false" underlined="false"><textstring>BIOMORPHS\n\n</textstring>
 	</textbody>
-	<textbody branch="48" italic="true" bold="false" underlined="false"><textstring>PODS\n\n</textstring>
+	<textbody branch="65" italic="true" bold="false" underlined="false"><textstring>PODS\n\n</textstring>
 	</textbody>
 	<textbody branch="49" italic="true" bold="false" underlined="false"><textstring>SYNTHETIC MORPHS\n\n</textstring>
 	</textbody>
@@ -1445,7 +1445,7 @@
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Flexible Aptitude Bonuses: </textstring>
 	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>Some morphs have aptitude bonuses that may be applied to an aptitude of the player’s choice. This reflects that not all morphs are created equal. When assigning these universal aptitude bonuses, each boost must be applied to a separate aptitude; you may not elevate an aptitude that is already raised by that morph. Once an individual morph’s aptitude bonuses have been assigned, they are permanent for that morph (i.e., if another character resleeves into that morph, the bonuses remain the same). </textstring>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Some morphs have aptitude bonuses that may be applied to an aptitude of the player’s choice. This reflects that not all morphs are created equal. When assigning these universal aptitude bonuses, each boost must be applied to a separate aptitude; you may not elevate an aptitude that is already raised by that morph. Once an individual morph’s aptitude bonuses have been assigned, they are permanent for that morph\n(i.e., if another character resleeves into that morph, the bonuses remain the same). </textstring>
 	</textbody>
 	</text>
 	<text xstart="513" ystart="474" xend="711" yend="519" layer="3" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>On to PURCHASE GEAR</textstring>
@@ -1456,20 +1456,20 @@
 	</text>
 	</slide>
 	
-	<slide id="47" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><image urlname="Src/XMLBits/MERCUR.png" xstart="366" ystart="111" width="346" height="340" layer="28" starttime="0"/>
-	<text xstart="173" ystart="111" xend="354" yend="429" layer="20" starttime="0" font="Calibri" fontcolor="#790909" fontsize="20"><textbody branch="53" italic="true" bold="false" underlined="false"><textstring>HIBERNOIDS\n</textstring>
+	<slide id="47" duration="60" descriptor="Biomorphs" lastSlide="false" backgroundcolor="#BFBFBF"><image urlname="Src/XMLBits/MERCUR.png" xstart="366" ystart="111" width="346" height="340" layer="28" starttime="0"/>
+	<text xstart="173" ystart="111" xend="354" yend="429" layer="20" starttime="0" font="Calibri" fontcolor="#790909" fontsize="20"><textbody branch="58" italic="true" bold="false" underlined="false"><textstring>HIBERNOIDS\n</textstring>
 	</textbody>
-	<textbody branch="53" italic="true" bold="false" underlined="false"><textstring>NEOTENICS\n</textstring>
+	<textbody branch="59" italic="true" bold="false" underlined="false"><textstring>NEOTENICS\n</textstring>
 	</textbody>
-	<textbody branch="54" italic="true" bold="false" underlined="false"><textstring>REMADE\n</textstring>
+	<textbody branch="60" italic="true" bold="false" underlined="false"><textstring>REMADE\n</textstring>
 	</textbody>
-	<textbody branch="54" italic="true" bold="false" underlined="false"><textstring>RUSTERS\n</textstring>
+	<textbody branch="61" italic="true" bold="false" underlined="false"><textstring>RUSTERS\n</textstring>
 	</textbody>
-	<textbody branch="55" italic="true" bold="false" underlined="false"><textstring>NEO-AVIANS\n</textstring>
+	<textbody branch="62" italic="true" bold="false" underlined="false"><textstring>NEO-AVIANS\n</textstring>
 	</textbody>
-	<textbody branch="55" italic="true" bold="false" underlined="false"><textstring>NEO-HOMINIDS\n</textstring>
+	<textbody branch="63" italic="true" bold="false" underlined="false"><textstring>NEO-HOMINIDS\n</textstring>
 	</textbody>
-	<textbody branch="56" italic="true" bold="false" underlined="false"><textstring>OCTOMORPHS\n</textstring>
+	<textbody branch="64" italic="true" bold="false" underlined="false"><textstring>OCTOMORPHS\n</textstring>
 	</textbody>
 	</text>
 	<text xstart="14" ystart="474" xend="184" yend="519" layer="18" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="46" italic="false" bold="true" underlined="false"><textstring>Back to MORPHS</textstring>
@@ -1477,23 +1477,23 @@
 	</text>
 	<text xstart="14" ystart="111" xend="161" yend="429" layer="7" starttime="0" font="Calibri" fontcolor="#790909" fontsize="20"><textbody branch="48" italic="true" bold="false" underlined="false"><textstring>FLAT\n</textstring>
 	</textbody>
-	<textbody branch="48" italic="true" bold="false" underlined="false"><textstring>SPLICERS\n</textstring>
+	<textbody branch="49" italic="true" bold="false" underlined="false"><textstring>SPLICERS\n</textstring>
 	</textbody>
-	<textbody branch="49" italic="true" bold="false" underlined="false"><textstring>EXALTS\n</textstring>
+	<textbody branch="50" italic="true" bold="false" underlined="false"><textstring>EXALTS\n</textstring>
 	</textbody>
-	<textbody branch="49" italic="true" bold="false" underlined="false"><textstring>MENTON\n</textstring>
+	<textbody branch="51" italic="true" bold="false" underlined="false"><textstring>MENTON\n</textstring>
 	</textbody>
-	<textbody branch="50" italic="true" bold="false" underlined="false"><textstring>OLYMPIANS\n</textstring>
+	<textbody branch="52" italic="true" bold="false" underlined="false"><textstring>OLYMPIANS\n</textstring>
 	</textbody>
-	<textbody branch="50" italic="true" bold="false" underlined="false"><textstring>SYLPHS\n</textstring>
+	<textbody branch="53" italic="true" bold="false" underlined="false"><textstring>SYLPHS\n</textstring>
 	</textbody>
-	<textbody branch="51" italic="true" bold="false" underlined="false"><textstring>BOUNCERS\n</textstring>
+	<textbody branch="54" italic="true" bold="false" underlined="false"><textstring>BOUNCERS\n</textstring>
 	</textbody>
-	<textbody branch="51" italic="true" bold="false" underlined="false"><textstring>FURIES\n</textstring>
+	<textbody branch="55" italic="true" bold="false" underlined="false"><textstring>FURIES\n</textstring>
 	</textbody>
-	<textbody branch="52" italic="true" bold="false" underlined="false"><textstring>FUTURAS\n</textstring>
+	<textbody branch="56" italic="true" bold="false" underlined="false"><textstring>FUTURAS\n</textstring>
 	</textbody>
-	<textbody branch="52" italic="true" bold="false" underlined="false"><textstring>GHOSTS\n</textstring>
+	<textbody branch="57" italic="true" bold="false" underlined="false"><textstring>GHOSTS\n</textstring>
 	</textbody>
 	</text>
 	<text xstart="14" ystart="43" xend="698" yend="100" layer="5" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>Biomorphs are fully biological sleeves (usually equipped with implants), birthed naturally or in an exowomb, and grown to adulthood either naturally or at a slightly accelerated rate.</textstring>
@@ -1507,44 +1507,10 @@
 	</text>
 	</slide>
 	
-	<slide id="48" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="360" ystart="48" xend="717" yend="463" layer="25" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>Splicers are genefixed humans. Their genome has been cleansed of hereditary diseases and optimised for looks and health, but has not otherwise been substantially upgraded. Splicers make up the majority of transhumanity.\n</textstring>
-	</textbody>
-	<textbody italic="false" bold="true" underlined="false"><textstring>Implants: </textstring>
-	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>Basic Biomods, Basic Mesh Inserts, Cortical Stack\n</textstring>
-	</textbody>
-	<textbody italic="false" bold="true" underlined="false"><textstring>Aptitude Maximum: </textstring>
-	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>25\n</textstring>
-	</textbody>
-	<textbody italic="false" bold="true" underlined="false"><textstring>Durability: </textstring>
-	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>30\n</textstring>
-	</textbody>
-	<textbody italic="false" bold="true" underlined="false"><textstring>Wound Threshold: </textstring>
-	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>6\n</textstring>
-	</textbody>
-	<textbody italic="false" bold="true" underlined="false"><textstring>Advantages: </textstring>
-	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>+5 to one aptitude of the player’s choice\n</textstring>
-	</textbody>
-	<textbody italic="false" bold="true" underlined="false"><textstring>CP Cost: </textstring>
-	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>10\n</textstring>
-	</textbody>
-	<textbody italic="false" bold="true" underlined="false"><textstring>Credit Cost: </textstring>
-	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>High\n</textstring>
+	<slide id="48" duration="60" descriptor="Flats" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="14" ystart="474" xend="201" yend="519" layer="7" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="47" italic="false" bold="true" underlined="false"><textstring>Back to BIOMORPHS</textstring>
 	</textbody>
 	</text>
-	<text xstart="360" ystart="15" xend="717" yend="60" layer="23" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>SPLICERS</textstring>
-	</textbody>
-	</text>
-	<text xstart="14" ystart="474" xend="201" yend="519" layer="7" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="47" italic="false" bold="true" underlined="false"><textstring>Back to BIOMORPHS</textstring>
-	</textbody>
-	</text>
-	<text xstart="3" ystart="48" xend="360" yend="463" layer="5" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>Flats are baseline unmodified humans, born with all of the natural defects, hereditary diseases and other genetic mutations that evolution so lovingly applies. Flats are increasingly rare – most died off with the rest of humanity during the Fall. Most new children are splicers – screened and genefixed at the least – except in habitats where flats are treated as second class citizens and indentured labour.\n</textstring>
+	<text xstart="3" ystart="48" xend="712" yend="463" layer="5" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>Flats are baseline unmodified humans, born with all of the natural defects, hereditary diseases and other genetic mutations that evolution so lovingly applies. Flats are increasingly rare – most died off with the rest of humanity during the Fall. Most new children are splicers – screened and genefixed at the least – except in habitats where flats are treated as second class citizens and indentured labour.\n\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Implants: </textstring>
 	</textbody>
@@ -1583,42 +1549,52 @@
 	</text>
 	</slide>
 	
-	<slide id="49" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="360" ystart="48" xend="717" yend="463" layer="25" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>Mentons are genetically modified to increase cognitive abilities, particularly learning ability, creativity, attentiveness and memory. Rumours exist of super-enhanced mentons with more extreme intelligence mods, but brain-hacking is notoriously difficult and many attempts to redesign mental faculties result in impaired functioning, instability or insanity.</textstring>
+	<slide id="49" duration="60" descriptor="Splicers" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="3" ystart="48" xend="711" yend="463" layer="7" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>Splicers are genefixed humans. Their genome has been cleansed of hereditary diseases and optimised for looks and health, but has not otherwise been substantially upgraded. Splicers make up the majority of transhumanity.\n\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Implants: </textstring>
 	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>Basic Biomods, Basic Mesh Inserts, Cortical Stack, Eidetic Memory, Hyper Linguist, Math Boost\n</textstring>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Basic Biomods, Basic Mesh Inserts, Cortical Stack\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Aptitude Maximum: </textstring>
 	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>30\n</textstring>
+	<textbody italic="true" bold="false" underlined="false"><textstring>25\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Durability: </textstring>
 	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>35\n</textstring>
+	<textbody italic="true" bold="false" underlined="false"><textstring>30\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Wound Threshold: </textstring>
 	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>7\n</textstring>
+	<textbody italic="true" bold="false" underlined="false"><textstring>6\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Advantages: </textstring>
 	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>+5 to one aptitude of the player’s choice\n</textstring>
+	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>CP Cost: </textstring>
 	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>40\n</textstring>
+	<textbody italic="true" bold="false" underlined="false"><textstring>10\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Credit Cost: </textstring>
 	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>Expensive\n</textstring>
+	<textbody italic="true" bold="false" underlined="false"><textstring>High\n</textstring>
 	</textbody>
 	</text>
-	<text xstart="360" ystart="15" xend="717" yend="60" layer="23" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>MENTONS</textstring>
+	<text xstart="3" ystart="15" xend="360" yend="60" layer="5" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>SPLICERS</textstring>
 	</textbody>
 	</text>
-	<text xstart="14" ystart="474" xend="201" yend="519" layer="7" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="47" italic="false" bold="true" underlined="false"><textstring>Back to BIOMORPHS</textstring>
+	<text xstart="14" ystart="474" xend="201" yend="519" layer="3" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="47" italic="false" bold="true" underlined="false"><textstring>Back to BIOMORPHS</textstring>
 	</textbody>
 	</text>
-	<text xstart="3" ystart="48" xend="360" yend="463" layer="5" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>Exalts morphs are genetically enhanced humans, designed to emphasize specific traits. Their genetic code has been tweaked to make them healthier, smarter and more attractive. Their metabolism is modified to predispose them towards staying fit and athletic for the duration of an extended lifespan\n</textstring>
+	<text xstart="513" ystart="474" xend="711" yend="519" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>On to PURCHASE GEAR</textstring>
+	</textbody>
+	</text>
+	</slide>
+	
+	<slide id="50" duration="60" descriptor="Exalts" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="14" ystart="474" xend="201" yend="519" layer="7" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="47" italic="false" bold="true" underlined="false"><textstring>Back to BIOMORPHS</textstring>
+	</textbody>
+	</text>
+	<text xstart="3" ystart="48" xend="712" yend="463" layer="5" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>Exalts morphs are genetically enhanced humans, designed to emphasize specific traits. Their genetic code has been tweaked to make them healthier, smarter and more attractive. Their metabolism is modified to predispose them towards staying fit and athletic for the duration of an extended lifespan\n\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Implants: </textstring>
 	</textbody>
@@ -1657,11 +1633,11 @@
 	</text>
 	</slide>
 	
-	<slide id="50" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="360" ystart="48" xend="717" yend="463" layer="25" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>Sylph morphs are tailor-made for media icons, elite socialites, XP stars, models and narcissists. Sylth gene sequences are specifically designed for distinctive good looks. Ethereal and elfin features are common, with slim and lithe bodies. Their metabolism has also been sanitised to eliminate unpleasant body odours and their pheromones adjusted to universal appeal.\n</textstring>
+	<slide id="51" duration="60" descriptor="Mentons" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="3" ystart="48" xend="711" yend="463" layer="7" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>Mentons are genetically modified to increase cognitive abilities, particularly learning ability, creativity, attentiveness and memory. Rumours exist of super-enhanced mentons with more extreme intelligence mods, but brain-hacking is notoriously difficult and many attempts to redesign mental faculties result in impaired functioning, instability or insanity.\n\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Implants: </textstring>
 	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>Basic Biomods, Basic Mesh Inserts, Clean Metabolism, Cortical Stack, Enhanced Pheromones\n</textstring>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Basic Biomods, Basic Mesh Inserts, Cortical Stack, Eidetic Memory, Hyper Linguist, Math Boost\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Aptitude Maximum: </textstring>
 	</textbody>
@@ -1677,7 +1653,7 @@
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Advantages: </textstring>
 	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>Striking Looks (Level 1) trait, +5 COO, +10 SAV, +5 to one other aptitude of the player’s choice\n</textstring>
+	<textbody italic="true" bold="false" underlined="false"><textstring>+10 COG, +5 INT, +5 WIL, +5 to one aptitude of the player’s choice\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>CP Cost: </textstring>
 	</textbody>
@@ -1688,13 +1664,21 @@
 	<textbody italic="true" bold="false" underlined="false"><textstring>Expensive\n</textstring>
 	</textbody>
 	</text>
-	<text xstart="360" ystart="15" xend="717" yend="60" layer="23" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>SYLPHS</textstring>
+	<text xstart="3" ystart="15" xend="360" yend="60" layer="5" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>MENTONS</textstring>
 	</textbody>
 	</text>
-	<text xstart="14" ystart="474" xend="201" yend="519" layer="7" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="47" italic="false" bold="true" underlined="false"><textstring>Back to BIOMORPHS</textstring>
+	<text xstart="14" ystart="474" xend="201" yend="519" layer="3" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="47" italic="false" bold="true" underlined="false"><textstring>Back to BIOMORPHS</textstring>
 	</textbody>
 	</text>
-	<text xstart="3" ystart="48" xend="360" yend="463" layer="5" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>Olympians are human upgrades with improved athletic capabilities like endurance, eye-hand coordination and cardiovascular functions. Olympians are common among athletes, dancers, freerunners and soldiers.\n</textstring>
+	<text xstart="513" ystart="474" xend="711" yend="519" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>On to PURCHASE GEAR</textstring>
+	</textbody>
+	</text>
+	</slide>
+	
+	<slide id="52" duration="60" descriptor="Olympians" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="14" ystart="474" xend="201" yend="519" layer="7" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="47" italic="false" bold="true" underlined="false"><textstring>Back to BIOMORPHS</textstring>
+	</textbody>
+	</text>
+	<text xstart="3" ystart="48" xend="712" yend="463" layer="5" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>Olympians are human upgrades with improved athletic capabilities like endurance, eye-hand coordination and cardiovascular functions. Olympians are common among athletes, dancers, freerunners and soldiers.\n\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Implants: </textstring>
 	</textbody>
@@ -1733,48 +1717,52 @@
 	</text>
 	</slide>
 	
-	<slide id="51" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="360" ystart="48" xend="717" yend="463" layer="25" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>Furies are combat morphs. These transgenic human upgrades feature genetics tailored for endurance, strength and reflexes, as well as behavioural modifications for aggressiveness and cunning. To offset tendencies for unruliness and macho behaviour patterns, furies feature gene sequences promoting pack mentalities and cooperation and they tend to be biologically female.\n</textstring>
+	<slide id="53" duration="60" descriptor="Sylphs" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="3" ystart="48" xend="711" yend="463" layer="7" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>Sylph morphs are tailor-made for media icons, elite socialites, XP stars, models and narcissists. Sylth gene sequences are specifically designed for distinctive good looks. Ethereal and elfin features are common, with slim and lithe bodies. Their metabolism has also been sanitised to eliminate unpleasant body odours and their pheromones adjusted to universal appeal.\n\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Implants: </textstring>
 	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>Basic Biomods, Basic Mesh Inserts, Bioweave Armour (Light), Cortical Stack, Enhanced Vision, Neurachem (Level 1), Enhanced Vision\n</textstring>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Basic Biomods, Basic Mesh Inserts, Clean Metabolism, Cortical Stack, Enhanced Pheromones\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Aptitude Maximum: </textstring>
 	</textbody>
 	<textbody italic="true" bold="false" underlined="false"><textstring>30\n</textstring>
 	</textbody>
-	<textbody italic="false" bold="true" underlined="false"><textstring>Speed Modifier: </textstring>
-	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>+1 (neurachem)\n</textstring>
-	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Durability: </textstring>
 	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>50\n</textstring>
+	<textbody italic="true" bold="false" underlined="false"><textstring>35\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Wound Threshold: </textstring>
 	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>10\n</textstring>
+	<textbody italic="true" bold="false" underlined="false"><textstring>7\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Advantages: </textstring>
 	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>+5 COO, +5 REF, +10 SOM, +5 WIL, +5 to one other aptitude of the player’s choice</textstring>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Striking Looks (Level 1) trait, +5 COO, +10 SAV, +5 to one other aptitude of the player’s choice\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>CP Cost: </textstring>
 	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>75\n</textstring>
+	<textbody italic="true" bold="false" underlined="false"><textstring>40\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Credit Cost: </textstring>
 	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>Expensive (minimum 40,000)\n</textstring>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Expensive\n</textstring>
 	</textbody>
 	</text>
-	<text xstart="360" ystart="15" xend="717" yend="60" layer="23" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>FURIES</textstring>
+	<text xstart="3" ystart="15" xend="360" yend="60" layer="5" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>SYLPHS</textstring>
 	</textbody>
 	</text>
-	<text xstart="14" ystart="474" xend="201" yend="519" layer="7" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="47" italic="false" bold="true" underlined="false"><textstring>Back to BIOMORPHS</textstring>
+	<text xstart="14" ystart="474" xend="201" yend="519" layer="3" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="47" italic="false" bold="true" underlined="false"><textstring>Back to BIOMORPHS</textstring>
 	</textbody>
 	</text>
-	<text xstart="3" ystart="48" xend="360" yend="463" layer="5" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>Bouncers are humans genetically adapted for zero-g and microgravity environments. Their legs are more limber and their feet can grasp as well as their hands.\n</textstring>
+	<text xstart="513" ystart="474" xend="711" yend="519" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>On to PURCHASE GEAR</textstring>
+	</textbody>
+	</text>
+	</slide>
+	
+	<slide id="54" duration="60" descriptor="Bouncers" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="14" ystart="474" xend="201" yend="519" layer="7" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="47" italic="false" bold="true" underlined="false"><textstring>Back to BIOMORPHS</textstring>
+	</textbody>
+	</text>
+	<text xstart="3" ystart="48" xend="712" yend="463" layer="5" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>Bouncers are humans genetically adapted for zero-g and microgravity environments. Their legs are more limber and their feet can grasp as well as their hands.\n\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Implants: </textstring>
 	</textbody>
@@ -1813,72 +1801,84 @@
 	</text>
 	</slide>
 	
-	<slide id="52" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="360" ystart="48" xend="717" yend="463" layer="25" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>Splicers are genefixed humans. Their genome has been cleansed of hereditary diseases and optimised for looks and health, but has not otherwise been substantially upgraded. Splicers make up the majority of transhumanity.\n</textstring>
+	<slide id="55" duration="60" descriptor="Furies" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="3" ystart="48" xend="711" yend="463" layer="7" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>Furies are combat morphs. These transgenic human upgrades feature genetics tailored for endurance, strength and reflexes, as well as behavioural modifications for aggressiveness and cunning. To offset tendencies for unruliness and macho behaviour patterns, furies feature gene sequences promoting pack mentalities and cooperation and they tend to be biologically female.\n\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Implants: </textstring>
 	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>Basic Biomods, Basic Mesh Inserts, Cortical Stack\n</textstring>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Basic Biomods, Basic Mesh Inserts, Bioweave Armour (Light), Cortical Stack, Enhanced Vision, Neurachem (Level 1), Enhanced Vision\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Aptitude Maximum: </textstring>
 	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>25\n</textstring>
+	<textbody italic="true" bold="false" underlined="false"><textstring>30\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Speed Modifier: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>+1 (neurachem)\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Durability: </textstring>
 	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>30\n</textstring>
+	<textbody italic="true" bold="false" underlined="false"><textstring>50\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Wound Threshold: </textstring>
-	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>6\n</textstring>
-	</textbody>
-	<textbody italic="false" bold="true" underlined="false"><textstring>Advantages: </textstring>
-	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>+5 to one aptitude of your choice\n</textstring>
-	</textbody>
-	<textbody italic="false" bold="true" underlined="false"><textstring>CP Cost: </textstring>
 	</textbody>
 	<textbody italic="true" bold="false" underlined="false"><textstring>10\n</textstring>
 	</textbody>
-	<textbody italic="false" bold="true" underlined="false"><textstring>Credit Cost: </textstring>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Advantages: </textstring>
 	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>High\n</textstring>
-	</textbody>
-	</text>
-	<text xstart="360" ystart="15" xend="717" yend="60" layer="23" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>GHOSTS</textstring>
-	</textbody>
-	</text>
-	<text xstart="14" ystart="474" xend="201" yend="519" layer="7" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="47" italic="false" bold="true" underlined="false"><textstring>Back to BIOMORPHS</textstring>
-	</textbody>
-	</text>
-	<text xstart="3" ystart="48" xend="360" yend="463" layer="5" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>Flats are baseline unmodified humans, born with all of the natural defects, hereditary diseases and other genetic mutations that evolution so lovingly applies. Flats are increasingly rare – most died off with the rest of humanity during the Fall. Most new children are splicers – screened and genefixed at the least – except in habitats where flats are treated as second class citizens and indentured labour.\n</textstring>
-	</textbody>
-	<textbody italic="false" bold="true" underlined="false"><textstring>Implants: </textstring>
-	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>None\n</textstring>
-	</textbody>
-	<textbody italic="false" bold="true" underlined="false"><textstring>Aptitude Maximum: </textstring>
-	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>20\n</textstring>
-	</textbody>
-	<textbody italic="false" bold="true" underlined="false"><textstring>Durability: </textstring>
-	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>30\n</textstring>
-	</textbody>
-	<textbody italic="false" bold="true" underlined="false"><textstring>Wound Threshold: </textstring>
-	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>6\n</textstring>
-	</textbody>
-	<textbody italic="false" bold="true" underlined="false"><textstring>Disadvantages: </textstring>
-	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>None (Genetic Defects trait common)\n</textstring>
+	<textbody italic="true" bold="false" underlined="false"><textstring>+5 COO, +5 REF, +10 SOM, +5 WIL, +5 to one other aptitude of the player’s choice\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>CP Cost: </textstring>
 	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>0\n</textstring>
+	<textbody italic="true" bold="false" underlined="false"><textstring>75\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Credit Cost: </textstring>
 	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>High\n</textstring>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Expensive (minimum 40,000)\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="3" ystart="15" xend="360" yend="60" layer="5" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>FURIES</textstring>
+	</textbody>
+	</text>
+	<text xstart="14" ystart="474" xend="201" yend="519" layer="3" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="47" italic="false" bold="true" underlined="false"><textstring>Back to BIOMORPHS</textstring>
+	</textbody>
+	</text>
+	<text xstart="513" ystart="474" xend="711" yend="519" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>On to PURCHASE GEAR</textstring>
+	</textbody>
+	</text>
+	</slide>
+	
+	<slide id="56" duration="60" descriptor="Futuras" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="14" ystart="474" xend="201" yend="519" layer="7" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="47" italic="false" bold="true" underlined="false"><textstring>Back to BIOMORPHS</textstring>
+	</textbody>
+	</text>
+	<text xstart="3" ystart="48" xend="712" yend="463" layer="5" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>An exalt variant, futura morphs were specially crafted for the “Lost generation”. Tailor-made for accelerated growth and adjusted for confidence, self-reliance and adaptability, futuras were intended to help transhumanity regain its foothold. These programs proved disastrous and the line was discontinued, but some models remain, viewed by some with distaste and others as collectibles or exotic oddities.\n\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Implants: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Basic Biomods, Basic Mesh Inserts, Cortical Stack, Eidetic Memory, Emotional Dampers\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Aptitude Maximum: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>30\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Durability: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>35\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Wound Threshold: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>7\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Advantages: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>+5 COG, +5 SAV, +10 WIL, +5 to one other aptitude of the player’s choice\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>CP Cost: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>40\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Credit Cost: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Expensive (exceptionally rare; 50,000+)\n</textstring>
 	</textbody>
 	</text>
 	<text xstart="3" ystart="15" xend="355" yend="60" layer="3" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>FUTURAS</textstring>
@@ -1889,11 +1889,56 @@
 	</text>
 	</slide>
 	
-	<slide id="53" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="360" ystart="48" xend="717" yend="463" layer="25" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>Splicers are genefixed humans. Their genome has been cleansed of hereditary diseases and optimised for looks and health, but has not otherwise been substantially upgraded. Splicers make up the majority of transhumanity.\n</textstring>
+	<slide id="57" duration="60" descriptor="Ghosts" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="3" ystart="48" xend="711" yend="463" layer="7" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>Ghosts are partially designed for combat applications, but their primary focus is stealth and infiltration. Their genetic profile encourages speed, agility and reflexes and their mids are modified for patience and problem solving\n\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Implants: </textstring>
 	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>Basic Biomods, Basic Mesh Inserts, Cortical Stack\n</textstring>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Basic Biomods, Basic Mesh Inserts, Chameleon Skin, Cortical Stack, Adrenal Boost, Enhanced Vision, Grip Pads\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Aptitude Maximum: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>30\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Durability: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>45\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Wound Threshold: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>9\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Advantages: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>+10 COO, +5 REF, +5 SOM, +5 WIL, +5 to one aptitude of the player’s choice\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>CP Cost: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>70\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Credit Cost: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Expensive (minimum 40,000)\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="3" ystart="15" xend="360" yend="60" layer="5" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>GHOSTS</textstring>
+	</textbody>
+	</text>
+	<text xstart="14" ystart="474" xend="201" yend="519" layer="3" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="47" italic="false" bold="true" underlined="false"><textstring>Back to BIOMORPHS</textstring>
+	</textbody>
+	</text>
+	<text xstart="513" ystart="474" xend="711" yend="519" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>On to PURCHASE GEAR</textstring>
+	</textbody>
+	</text>
+	</slide>
+	
+	<slide id="58" duration="60" descriptor="Hibernoids" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="14" ystart="474" xend="201" yend="519" layer="7" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="47" italic="false" bold="true" underlined="false"><textstring>Back to BIOMORPHS</textstring>
+	</textbody>
+	</text>
+	<text xstart="3" ystart="48" xend="712" yend="463" layer="5" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>Hibernoids are transgenic-modified humans with heavily altered sleep patterns and metabolic processes. Hibernoids have a decreased need for sleep, requiring only 1-2 hours a day on average. They also have the ability to trigger a form of voluntary hibernation, effectively stopping their metabolism and need for oxygen. Hibernoids make excellent long-duration space travellers and habtechs, but these morphs are also favored by personal aids and hypercapitalists with no-stop lifestyles.\n\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Implants: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Basic Biomods, Basic Mesh Inserts, Circadian Regulation, Cortical Stack, Hibernation\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Aptitude Maximum: </textstring>
 	</textbody>
@@ -1901,60 +1946,23 @@
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Durability: </textstring>
 	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>30\n</textstring>
+	<textbody italic="true" bold="false" underlined="false"><textstring>35\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Wound Threshold: </textstring>
 	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>6\n</textstring>
+	<textbody italic="true" bold="false" underlined="false"><textstring>7\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Advantages: </textstring>
 	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>+5 to one aptitude of your choice\n</textstring>
+	<textbody italic="true" bold="false" underlined="false"><textstring>+5 INT, +5 to one aptitude of the player’s choice\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>CP Cost: </textstring>
 	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>10\n</textstring>
+	<textbody italic="true" bold="false" underlined="false"><textstring>25\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Credit Cost: </textstring>
 	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>High\n</textstring>
-	</textbody>
-	</text>
-	<text xstart="360" ystart="15" xend="717" yend="60" layer="23" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>NEOTENICS</textstring>
-	</textbody>
-	</text>
-	<text xstart="14" ystart="474" xend="201" yend="519" layer="7" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="47" italic="false" bold="true" underlined="false"><textstring>Back to BIOMORPHS</textstring>
-	</textbody>
-	</text>
-	<text xstart="3" ystart="48" xend="360" yend="463" layer="5" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>Flats are baseline unmodified humans, born with all of the natural defects, hereditary diseases and other genetic mutations that evolution so lovingly applies. Flats are increasingly rare – most died off with the rest of humanity during the Fall. Most new children are splicers – screened and genefixed at the least – except in habitats where flats are treated as second class citizens and indentured labour.\n</textstring>
-	</textbody>
-	<textbody italic="false" bold="true" underlined="false"><textstring>Implants: </textstring>
-	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>None\n</textstring>
-	</textbody>
-	<textbody italic="false" bold="true" underlined="false"><textstring>Aptitude Maximum: </textstring>
-	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>20\n</textstring>
-	</textbody>
-	<textbody italic="false" bold="true" underlined="false"><textstring>Durability: </textstring>
-	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>30\n</textstring>
-	</textbody>
-	<textbody italic="false" bold="true" underlined="false"><textstring>Wound Threshold: </textstring>
-	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>6\n</textstring>
-	</textbody>
-	<textbody italic="false" bold="true" underlined="false"><textstring>Disadvantages: </textstring>
-	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>None (Genetic Defects trait common)\n</textstring>
-	</textbody>
-	<textbody italic="false" bold="true" underlined="false"><textstring>CP Cost: </textstring>
-	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>0\n</textstring>
-	</textbody>
-	<textbody italic="false" bold="true" underlined="false"><textstring>Credit Cost: </textstring>
-	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>High\n</textstring>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Expensive\n</textstring>
 	</textbody>
 	</text>
 	<text xstart="3" ystart="15" xend="355" yend="60" layer="3" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>HIBERNOIDS</textstring>
@@ -1965,7 +1973,7 @@
 	</text>
 	</slide>
 	
-	<slide id="54" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="360" ystart="48" xend="717" yend="463" layer="25" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>Splicers are genefixed humans. Their genome has been cleansed of hereditary diseases and optimised for looks and health, but has not otherwise been substantially upgraded. Splicers make up the majority of transhumanity.\n</textstring>
+	<slide id="59" duration="60" descriptor="Neotenics" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="3" ystart="48" xend="711" yend="463" layer="7" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>Neotenics are transhumans modified to retain a childlike form. They are smaller, more agile, inquisitive and less resource-depleting, making them ideal for habitat living and spacecraft. Some people find neotenic sleeves distasteful, especially when employed in certain media and sex work capacities.\n\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Implants: </textstring>
 	</textbody>
@@ -1973,7 +1981,7 @@
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Aptitude Maximum: </textstring>
 	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>25\n</textstring>
+	<textbody italic="true" bold="false" underlined="false"><textstring>20 (SOM), 30 (all else)\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Durability: </textstring>
 	</textbody>
@@ -1985,55 +1993,25 @@
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Advantages: </textstring>
 	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>+5 to one aptitude of your choice\n</textstring>
+	<textbody italic="true" bold="false" underlined="false"><textstring>+5 COO, +5 INT, +5 REF, +5 to one aptitude of the player’s choice; neotenics count as a small target.\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Disadvantage: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Social Stigma (Neotenic) trait\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>CP Cost: </textstring>
 	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>10\n</textstring>
+	<textbody italic="true" bold="false" underlined="false"><textstring>25\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Credit Cost: </textstring>
 	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>High\n</textstring>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Expensive\n</textstring>
 	</textbody>
 	</text>
-	<text xstart="360" ystart="15" xend="717" yend="60" layer="23" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>RUSTERS</textstring>
+	<text xstart="3" ystart="15" xend="360" yend="60" layer="5" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>NEOTENICS</textstring>
 	</textbody>
 	</text>
-	<text xstart="14" ystart="474" xend="201" yend="519" layer="7" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="47" italic="false" bold="true" underlined="false"><textstring>Back to BIOMORPHS</textstring>
-	</textbody>
-	</text>
-	<text xstart="3" ystart="48" xend="360" yend="463" layer="5" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>Flats are baseline unmodified humans, born with all of the natural defects, hereditary diseases and other genetic mutations that evolution so lovingly applies. Flats are increasingly rare – most died off with the rest of humanity during the Fall. Most new children are splicers – screened and genefixed at the least – except in habitats where flats are treated as second class citizens and indentured labour.\n</textstring>
-	</textbody>
-	<textbody italic="false" bold="true" underlined="false"><textstring>Implants: </textstring>
-	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>None\n</textstring>
-	</textbody>
-	<textbody italic="false" bold="true" underlined="false"><textstring>Aptitude Maximum: </textstring>
-	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>20\n</textstring>
-	</textbody>
-	<textbody italic="false" bold="true" underlined="false"><textstring>Durability: </textstring>
-	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>30\n</textstring>
-	</textbody>
-	<textbody italic="false" bold="true" underlined="false"><textstring>Wound Threshold: </textstring>
-	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>6\n</textstring>
-	</textbody>
-	<textbody italic="false" bold="true" underlined="false"><textstring>Disadvantages: </textstring>
-	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>None (Genetic Defects trait common)\n</textstring>
-	</textbody>
-	<textbody italic="false" bold="true" underlined="false"><textstring>CP Cost: </textstring>
-	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>0\n</textstring>
-	</textbody>
-	<textbody italic="false" bold="true" underlined="false"><textstring>Credit Cost: </textstring>
-	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>High\n</textstring>
-	</textbody>
-	</text>
-	<text xstart="3" ystart="15" xend="355" yend="60" layer="3" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>REMADE</textstring>
+	<text xstart="14" ystart="474" xend="201" yend="519" layer="3" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="47" italic="false" bold="true" underlined="false"><textstring>Back to BIOMORPHS</textstring>
 	</textbody>
 	</text>
 	<text xstart="513" ystart="474" xend="711" yend="519" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>On to PURCHASE GEAR</textstring>
@@ -2041,11 +2019,57 @@
 	</text>
 	</slide>
 	
-	<slide id="55" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="360" ystart="48" xend="717" yend="463" layer="25" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>Splicers are genefixed humans. Their genome has been cleansed of hereditary diseases and optimised for looks and health, but has not otherwise been substantially upgraded. Splicers make up the majority of transhumanity.\n</textstring>
+	<slide id="60" duration="60" descriptor="Remade" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="14" ystart="480" xend="201" yend="525" layer="7" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="47" italic="false" bold="true" underlined="false"><textstring>Back to BIOMORPHS</textstring>
+	</textbody>
+	</text>
+	<text xstart="3" ystart="48" xend="717" yend="463" layer="5" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>The remade are completely redesigned humans: humans 2.0. Their cardiovascular systems are stronger, the digestive tract has been sanitised and restructured to eliminate flaws and they have otherwise been optimised for good health, smarts and longevity with numerous transgenic mods. The remade are popular with the ultimates faction. They look close to human, but are different in very noticeable wand sometimes eerie ways: taller, lack of hair, slightly larger craniums, wider eyes, smaller noses, smaller teeth and elongated digits\n\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Implants: </textstring>
 	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>Basic Biomods, Basic Mesh Inserts, Cortical Stack\n</textstring>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Basic Biomods, Basic Mesh Inserts, Circadian Regulation, Clean Metabolism, Cortical Stack, Eidetic Memory, Enhanced Respiration, Temperature Tolerance, Toxin Filters\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Aptitude Maximum: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>40\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Durability: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>40\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Wound Threshold: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>8\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Advantages: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>+10 COG, +5 SAV, +10 SOM, +5 to two other aptitudes of the player’s choice\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Disadvantages: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Uncanny Valley trait\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>CP Cost: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>60\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Credit Cost: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Expensive (minimum 40,000+)\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="3" ystart="15" xend="355" yend="60" layer="3" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>REMADE</textstring>
+	</textbody>
+	</text>
+	<text xstart="513" ystart="480" xend="711" yend="525" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>On to PURCHASE GEAR</textstring>
+	</textbody>
+	</text>
+	</slide>
+	
+	<slide id="61" duration="60" descriptor="Rusters" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="3" ystart="48" xend="711" yend="463" layer="7" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>Adapted for survival with minimum gear in the not-yet-terraformed Martian environment, these transgenic morphs feature insulated skin for more effective thermoregulation and respiratory system improvements to require less oxygen and filter carbon dioxide, among other mods\n\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Implants: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Basic Biomods, Basic Mesh Inserts, Cortical Stack, Enhanced Respiration, Temperature Tolerance\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Aptitude Maximum: </textstring>
 	</textbody>
@@ -2053,60 +2077,68 @@
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Durability: </textstring>
 	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>30\n</textstring>
+	<textbody italic="true" bold="false" underlined="false"><textstring>35\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Wound Threshold: </textstring>
 	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>6\n</textstring>
+	<textbody italic="true" bold="false" underlined="false"><textstring>7\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Advantages: </textstring>
 	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>+5 to one aptitude of your choice\n</textstring>
+	<textbody italic="true" bold="false" underlined="false"><textstring>+5 SOM, +5 to one aptitude of the player’s choice\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>CP Cost: </textstring>
 	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>10\n</textstring>
+	<textbody italic="true" bold="false" underlined="false"><textstring>25\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Credit Cost: </textstring>
 	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>High\n</textstring>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Expensive\n</textstring>
 	</textbody>
 	</text>
-	<text xstart="360" ystart="15" xend="717" yend="60" layer="23" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>NEO-HOMINIS</textstring>
+	<text xstart="3" ystart="15" xend="360" yend="60" layer="5" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>RUSTERS</textstring>
 	</textbody>
 	</text>
-	<text xstart="14" ystart="474" xend="201" yend="519" layer="7" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="47" italic="false" bold="true" underlined="false"><textstring>Back to BIOMORPHS</textstring>
+	<text xstart="20" ystart="480" xend="207" yend="525" layer="3" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="47" italic="false" bold="true" underlined="false"><textstring>Back to BIOMORPHS</textstring>
 	</textbody>
 	</text>
-	<text xstart="3" ystart="48" xend="360" yend="463" layer="5" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>Flats are baseline unmodified humans, born with all of the natural defects, hereditary diseases and other genetic mutations that evolution so lovingly applies. Flats are increasingly rare – most died off with the rest of humanity during the Fall. Most new children are splicers – screened and genefixed at the least – except in habitats where flats are treated as second class citizens and indentured labour.\n</textstring>
+	<text xstart="507" ystart="480" xend="705" yend="525" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>On to PURCHASE GEAR</textstring>
+	</textbody>
+	</text>
+	</slide>
+	
+	<slide id="62" duration="60" descriptor="Neo-avians" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="14" ystart="474" xend="201" yend="519" layer="7" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="47" italic="false" bold="true" underlined="false"><textstring>Back to BIOMORPHS</textstring>
+	</textbody>
+	</text>
+	<text xstart="3" ystart="48" xend="706" yend="463" layer="5" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>Neo-avians include ravens, crows and grey parrots uplifted to human-level intelligence. Their physical sizes are much larger than their non-uplifted cousins (to the size of a human child), with larger heads for their increased brain size. Numerous transgenic modifications have been made to their wings, allowing them to retain limited flight capabilities at 1 g, but giving them a more bat-like physiology so they can bend and fold better and adding primitive digits for basic tool manipulation. Their toes are also more articulated and now accompanied with an opposable thumb. Neo-avians have adapted well to microgravity environments and are favoured for their small size and reduced resource use.\n\n </textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Implants: </textstring>
 	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>None\n</textstring>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Basic Biomods, Basic Mesh Inserts, Cortical Stack\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Aptitude Maximum: </textstring>
 	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>20\n</textstring>
+	<textbody italic="true" bold="false" underlined="false"><textstring>25 (20 SOM)\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Durability: </textstring>
 	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>30\n</textstring>
+	<textbody italic="true" bold="false" underlined="false"><textstring>20\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Wound Threshold: </textstring>
 	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>6\n</textstring>
+	<textbody italic="true" bold="false" underlined="false"><textstring>4\n</textstring>
 	</textbody>
-	<textbody italic="false" bold="true" underlined="false"><textstring>Disadvantages: </textstring>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Advantages: </textstring>
 	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>None (Genetic Defects trait common)\n</textstring>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Beak/claw attack (1d10 DV, use Unarmed Combat skill), Flight, +5 INT, +5 to one other aptitude of the player’s choice\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>CP Cost: </textstring>
 	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>0\n</textstring>
+	<textbody italic="true" bold="false" underlined="false"><textstring>25\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Credit Cost: </textstring>
 	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>High\n</textstring>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Expensive\n</textstring>
 	</textbody>
 	</text>
 	<text xstart="3" ystart="15" xend="355" yend="60" layer="3" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>NEO-AVIANS</textstring>
@@ -2117,18 +2149,15 @@
 	</text>
 	</slide>
 	
-	<slide id="56" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="14" ystart="474" xend="201" yend="519" layer="7" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="47" italic="false" bold="true" underlined="false"><textstring>Back to BIOMORPHS</textstring>
-	</textbody>
-	</text>
-	<text xstart="3" ystart="48" xend="360" yend="463" layer="5" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>Flats are baseline unmodified humans, born with all of the natural defects, hereditary diseases and other genetic mutations that evolution so lovingly applies. Flats are increasingly rare – most died off with the rest of humanity during the Fall. Most new children are splicers – screened and genefixed at the least – except in habitats where flats are treated as second class citizens and indentured labour.\n</textstring>
+	<slide id="63" duration="60" descriptor="Neo-hominids" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="9" ystart="48" xend="712" yend="463" layer="7" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>Neo-hominids are uplifted chimpanzees, gorillas and orang-utans. All feature enhanced intelligence and bipedal frames.\n\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Implants: </textstring>
 	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>None\n</textstring>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Basic Biomods, Basic Mesh Inserts, Cortical Stack, Prehensile Feet\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Aptitude Maximum: </textstring>
 	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>20\n</textstring>
+	<textbody italic="true" bold="false" underlined="false"><textstring>25\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Durability: </textstring>
 	</textbody>
@@ -2138,17 +2167,62 @@
 	</textbody>
 	<textbody italic="true" bold="false" underlined="false"><textstring>6\n</textstring>
 	</textbody>
-	<textbody italic="false" bold="true" underlined="false"><textstring>Disadvantages: </textstring>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Advantages: </textstring>
 	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>None (Genetic Defects trait common)\n</textstring>
+	<textbody italic="true" bold="false" underlined="false"><textstring>+5 COO, +5 INT, +5 SOM, +5 to one aptitude of the player’s choice, +10 Climbing skill\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>CP Cost: </textstring>
 	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>0\n</textstring>
+	<textbody italic="true" bold="false" underlined="false"><textstring>25\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Credit Cost: </textstring>
 	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>High\n</textstring>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Expensive\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="9" ystart="15" xend="366" yend="60" layer="5" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>NEO-HOMINIDS</textstring>
+	</textbody>
+	</text>
+	<text xstart="14" ystart="474" xend="201" yend="519" layer="3" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="47" italic="false" bold="true" underlined="false"><textstring>Back to BIOMORPHS</textstring>
+	</textbody>
+	</text>
+	<text xstart="513" ystart="474" xend="711" yend="519" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>On to PURCHASE GEAR</textstring>
+	</textbody>
+	</text>
+	</slide>
+	
+	<slide id="64" duration="60" descriptor="Octomorphs" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="14" ystart="474" xend="201" yend="519" layer="7" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="47" italic="false" bold="true" underlined="false"><textstring>Back to BIOMORPHS</textstring>
+	</textbody>
+	</text>
+	<text xstart="3" ystart="48" xend="712" yend="463" layer="5" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>These uplifted octopi sleeves have proven quite useful in zero-gravity environments. They retain eight arms, their chameleon ability to change their skin colour, ink sacs and a sharp beak. They also have increased brain mass and longevity, can breath both air and water and lack a skeletal structure so they can squeeze through tight spaces. Octomorphs typically crawl along in zero gravity using their arm uckers and expelling air for propulsion and can even walk on two of their arms in low gravity. Their eyes have been enhanced with colour vision, provide a 360-degree field of vision and rotationally adjust to keep the slit-shaped pupil aligned with “up”. A transgenic vocal system allows them to speak.\n\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Implants: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Basic Biomods, Basic Mesh Inserts, Cortical Stack, Chameleon Skin\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Aptitude Maximum: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>30\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Durability: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>30\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Wound Threshold: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>6\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Advantages: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>8 Arms, Beak attack (1d10 DV, use Unarmed Combat skill), Ink attack (blinding, use Exotic Ranged: Ink Attack skill), Limber (Level 2) trait, 360-degree vision, +30 Swimming skill, +10 Climbing skill, +5 COO, +5 INT, +5 to one other aptitude of the player’s choice\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>CP Cost: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>50\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Credit Cost: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Expensive (minimum 30,000+\n</textstring>
 	</textbody>
 	</text>
 	<text xstart="3" ystart="15" xend="355" yend="60" layer="3" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>OCTOMORPHS</textstring>
@@ -2159,7 +2233,163 @@
 	</text>
 	</slide>
 	
-	<slide id="57" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="405" ystart="77" xend="688" yend="395" layer="6" starttime="0" font="Calibri" fontcolor="#790909" fontsize="20"><textbody branch="43" italic="true" bold="false" underlined="false"><textstring>15 CP = 1 Moxie point\n</textstring>
+	<slide id="65" duration="60" descriptor="Pods" lastSlide="false" backgroundcolor="#BFBFBF"><image urlname="Src/XMLBits/SOCIAL.png" xstart="453" ystart="9" width="225" height="501" layer="13" starttime="0"/>
+	<text xstart="14" ystart="474" xend="184" yend="519" layer="11" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="46" italic="false" bold="true" underlined="false"><textstring>Back to MORPHS</textstring>
+	</textbody>
+	</text>
+	<text xstart="105" ystart="310" xend="275" yend="447" layer="7" starttime="0" font="Calibri" fontcolor="#790909" fontsize="20"><textbody branch="66" italic="true" bold="false" underlined="false"><textstring>PLEASURE POD\n</textstring>
+	</textbody>
+	<textbody branch="67" italic="true" bold="false" underlined="false"><textstring>WORKER PODS\n</textstring>
+	</textbody>
+	<textbody branch="68" italic="true" bold="false" underlined="false"><textstring>NOVACRAB\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="14" ystart="43" xend="434" yend="315" layer="5" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>Pods (from “pod people” are vat-grown, biological bodies with extremely undeveloped brains that are augmented with an implanted computer and cybernetics system. Though typically run by an AI, pods are socially unfavored in some stations, used as slave labour in others and even illegal in some areas. Because pods underwent accelerated growth in their creation and were mostly as separate parts and then assembled, their biological design includes some shortcuts and limitations, offset with implants and regular maintenance. They lack reproductive capabilities. In many habitats, their legal status is a hotly contested issue. Unless otherwise noted, pods are also considered biomorphs for all rules purposes.   </textstring>
+	</textbody>
+	</text>
+	<text xstart="513" ystart="474" xend="711" yend="519" layer="3" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>On to PURCHASE GEAR</textstring>
+	</textbody>
+	</text>
+	<text xstart="15" ystart="9" xend="343" yend="54" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>PODS</textstring>
+	</textbody>
+	</text>
+	</slide>
+	
+	<slide id="66" duration="60" descriptor="Pleasure Pods" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="14" ystart="474" xend="201" yend="519" layer="7" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="65" italic="false" bold="true" underlined="false"><textstring>Back to PODS</textstring>
+	</textbody>
+	</text>
+	<text xstart="3" ystart="48" xend="712" yend="463" layer="5" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>Pleasure pods are exactly what they seem – faux humans designed purely for intimate entertainment purposes. Pleasure pods have extra nerve clusters, fine motor control over certain muscle groups, enhanced pheromones, sanitised metabolisms and the genetics for purring. Naturally they are crafted for good looks and charisma and enhanced in other areas as well. Pleasure pods are capable of switching their sex at will to male, female, hermaphrodite, neuter or other intersex variations.\n\n </textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Implants: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Basic Biomods, Basic Mesh Inserts, Clean Metabolism, Cortical Stack, Cyberbrain, Enhancer Pheromones, Mnemonic Augmentation, Puppet Sock, Sex Switch\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Aptitude Maximum: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>30\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Durability: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>30\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Wound Threshold: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>6\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Advantages: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>+5 INT, +5 SAV, +5 to one aptitude of the player’s choice\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Disadvantages: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Social Stigma (Pleasure Pod) trait\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>CP Cost: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>20\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Credit Cost: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>High\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="3" ystart="15" xend="355" yend="60" layer="3" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>PLEASURE PODS</textstring>
+	</textbody>
+	</text>
+	<text xstart="513" ystart="474" xend="711" yend="519" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>On to PURCHASE GEAR</textstring>
+	</textbody>
+	</text>
+	</slide>
+	
+	<slide id="67" duration="60" descriptor="Worker Pods" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="14" ystart="474" xend="201" yend="519" layer="23" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="65" italic="false" bold="true" underlined="false"><textstring>Back to PODS</textstring>
+	</textbody>
+	</text>
+	<text xstart="3" ystart="48" xend="711" yend="463" layer="5" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>Part exalt human, part machine, these basic pods are virtually indistinguishable from humans. Worker pods are often used in menial labour jobs where interaction with humans is necessary.\n\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Implants: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Basic Biomods, Basic Mesh Inserts, Cortical Stack, Cyberbrain, Mnemonic Augmentation\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Aptitude Maximum: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>30\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Durability: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>35\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Wound Threshold: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>7\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Advantages: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>+10 SOM, +5 to one aptitude of the player’s choice\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Disadvantages: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Social Stigma (Pod) trait\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>CP Cost: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>20\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Credit Cost: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>High\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="3" ystart="15" xend="360" yend="60" layer="3" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>WORKER PODS</textstring>
+	</textbody>
+	</text>
+	<text xstart="513" ystart="474" xend="711" yend="519" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>On to PURCHASE GEAR</textstring>
+	</textbody>
+	</text>
+	</slide>
+	
+	<slide id="68" duration="60" descriptor="Novacrabs" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="14" ystart="474" xend="201" yend="519" layer="21" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="65" italic="false" bold="true" underlined="false"><textstring>Back to PODS</textstring>
+	</textbody>
+	</text>
+	<text xstart="3" ystart="48" xend="712" yend="463" layer="5" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>Novacrabs are a pod design bioengineered from coconut crab and spider crab stock and grown to a larger (human) size. Novacrabs are ideal for hazardous work environments as well as vacworkers, police or bodyguard duties, given their then 2-meter long legs, massive claws and chitinous armour. They climb and handle microgravity well and can withstand a wide range of atmospheric pressure (and sudden pressure changes) from vacuum to deep sea. Novacrabs feature compound eyes (with human-equivalent image resolution), gills, dexterous manipulatory digits on their fifth set of limbs and transgenic vocal cords\n\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Implants: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Basic Biomods, Basic Mesh Inserts, Carapace Armour, Cortical Stack, Cyberbrain, Enhanced Respiration, Gills, Mnemonic Augmentation, Oxygen Reserve, Puppet Sock, Temperature Tolerance, Vacuum Sealing\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Aptitude Maximum: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>30\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Durability: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>40\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Wound Threshold: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>8\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Advantages: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>10 legs, Carapace Armour (11/11), Claw Attack (2d10 DV), +10 SOM, +5 to two other aptitudes of the player’s choice\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>CP Cost: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>60\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Credit Cost: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Expensive (minimum 30,000+)\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="3" ystart="15" xend="355" yend="60" layer="3" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>NOVACRAB</textstring>
+	</textbody>
+	</text>
+	<text xstart="513" ystart="474" xend="711" yend="519" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>On to PURCHASE GEAR</textstring>
+	</textbody>
+	</text>
+	</slide>
+	
+	<slide id="69" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="405" ystart="77" xend="688" yend="395" layer="6" starttime="0" font="Calibri" fontcolor="#790909" fontsize="20"><textbody branch="43" italic="true" bold="false" underlined="false"><textstring>15 CP = 1 Moxie point\n</textstring>
 	</textbody>
 	<textbody branch="43" italic="true" bold="false" underlined="false"><textstring>10 CP = 1 aptitude point\n</textstring>
 	</textbody>
@@ -2189,7 +2419,7 @@
 	</text>
 	</slide>
 	
-	<slide id="58" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="405" ystart="77" xend="688" yend="395" layer="6" starttime="0" font="Calibri" fontcolor="#790909" fontsize="20"><textbody branch="43" italic="true" bold="false" underlined="false"><textstring>15 CP = 1 Moxie point\n</textstring>
+	<slide id="70" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="405" ystart="77" xend="688" yend="395" layer="6" starttime="0" font="Calibri" fontcolor="#790909" fontsize="20"><textbody branch="43" italic="true" bold="false" underlined="false"><textstring>15 CP = 1 Moxie point\n</textstring>
 	</textbody>
 	<textbody branch="43" italic="true" bold="false" underlined="false"><textstring>10 CP = 1 aptitude point\n</textstring>
 	</textbody>
@@ -2219,10 +2449,10 @@
 	</text>
 	</slide>
 	
-	<slide id="59" duration="60" descriptor="NEW CHAPTER&#xA;" lastSlide="false" backgroundcolor="#BFBFBF"><image urlname="This is the fourth chapter " xstart="128" ystart="117" width="454" height="289" layer="1" starttime="0"/>
+	<slide id="71" duration="60" descriptor="NEW CHAPTER&#xA;" lastSlide="false" backgroundcolor="#BFBFBF"><image urlname="This is the fourth chapter " xstart="128" ystart="117" width="454" height="289" layer="1" starttime="0"/>
 	</slide>
 	
-	<slide id="60" duration="60" descriptor="" lastSlide="true" backgroundcolor="#BFBFBF"><text xstart="14" ystart="27" xend="275" yend="72" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="24"><textbody italic="false" bold="true" underlined="false"><textstring>Sample Adventure</textstring>
+	<slide id="72" duration="60" descriptor="" lastSlide="true" backgroundcolor="#BFBFBF"><text xstart="14" ystart="27" xend="275" yend="72" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="24"><textbody italic="false" bold="true" underlined="false"><textstring>Sample Adventure</textstring>
 	</textbody>
 	</text>
 	</slide>
