@@ -45,6 +45,8 @@ public class MainMenuPanel extends JPanel{
 	JButton openShopButton = new JButton();
 	JLabel background;
 	JLabel logoLabel;
+	JLabel systemLabel;
+	JLabel bookLabel;
 	JLabel imageLabel = new JLabel();
 	JLayeredPane layers = new JLayeredPane();
 	JTextArea description = new JTextArea();
@@ -138,10 +140,10 @@ public class MainMenuPanel extends JPanel{
 		description.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
 		
 		//Labels
-		JLabel systemLabel = new JLabel("Choose A "+ "\n"+ "System:");
+		systemLabel = new JLabel("Choose A "+ "\n"+ "System:");
 		systemLabel.setFont(new Font("Papyrus", Font.BOLD, 16));
 		systemLabel.setBounds(110, 140, 180, 50);
-		JLabel bookLabel = new JLabel("Choose A"+ "\n"+ " Book:");
+		bookLabel = new JLabel("Choose A"+ "\n"+ " Book:");
 		bookLabel.setFont(new Font("Papyrus", Font.BOLD, 16));
 		bookLabel.setBounds(280, 140, 170, 50);
 		
@@ -294,6 +296,95 @@ public class MainMenuPanel extends JPanel{
 				        
 				     });
 				
+	}
+	
+	/**
+	 * 
+	 */
+	public void resizeMainMenu(double scaleFactorX, double scaleFactorY){
+		layers.setBounds(0, 0, (int)(scaleFactorX * (double)getWidth()), (int)(scaleFactorY * (double)getHeight()));
+		systemScroll.setBounds((int)(scaleFactorX * (double) 130), (int)(scaleFactorY * (double)200), (int)(scaleFactorX * (double)120), (int)(scaleFactorY * (double)300));
+		bookScroll.setBounds((int)(scaleFactorX * (double)290), (int)(scaleFactorY * (double)200), (int)(scaleFactorX * (double)120), (int)(scaleFactorY * (double)300));
+		description.setBounds((int)(scaleFactorX * (double)130), (int)(scaleFactorY * (double)40), getWidth() -(int)(scaleFactorX * (double)250), (int)(scaleFactorY * (double)100));
+		descriptionTitle.setBounds((int)(scaleFactorX * (double)130),(int)(scaleFactorY * (double) 10), getWidth()-(int)(scaleFactorX * (double)250), (int)(scaleFactorY * (double)30));
+		
+		
+		
+		imageLabel.setBounds((int)(scaleFactorX * (double)440), (int)(scaleFactorY * (double)200), (int)(scaleFactorX * (double)150), (int)(scaleFactorY * (double)300));
+		if(listOfBooks!=null){
+			BufferedImage bookImage;
+	 		try{
+	 			bookImage = ImageIO.read(new File(listOfSystems.get(systemList.getSelectedIndex()).getLogoFileName()));
+	 			Image scaledBackground = bookImage.getScaledInstance((int)(scaleFactorX * (double)150),(int)(scaleFactorY * (double)300),java.awt.Image.SCALE_SMOOTH);
+	 			imageLabel.setIcon((new ImageIcon(scaledBackground)));
+	 		}catch(IOException e2){
+	 			e2.printStackTrace();
+	 		}
+	 		imageLabel.repaint();
+		}
+		
+		
+		systemLabel.setBounds((int)(scaleFactorX * (double)110), (int)(scaleFactorY * (double)140), (int)(scaleFactorX * (double)180), (int)(scaleFactorY * (double)50));
+		bookLabel.setBounds((int)(scaleFactorX * (double)280 ), (int)(scaleFactorY * (double)140), (int)(scaleFactorX * (double)170 ), (int)(scaleFactorY * (double)50));
+		openBookButton.setBounds(getWidth()-(int)(scaleFactorX * (double)120), (int)(scaleFactorY * (double)250), (int)(scaleFactorX * (double)110), (int)(scaleFactorY * (double)50));
+		openShopButton.setBounds(getWidth()-(int)(scaleFactorX * (double)120), (int)(scaleFactorY * (double)370), (int)(scaleFactorX * (double)110), (int)(scaleFactorY * (double)50));
+	
+		
+		this.remove(openBookButton);
+		BufferedImage bookButtonImage;
+		try{
+			bookButtonImage = ImageIO.read(new File("resources/buttons/OpenBookButton.png"));
+			Image scaledButton = bookButtonImage.getScaledInstance((int)(scaleFactorX * (double)110),(int)(scaleFactorY * (double)50),java.awt.Image.SCALE_SMOOTH);
+			openBookButton.setIcon(new ImageIcon(scaledButton));
+		}catch (IOException ex){
+			
+		}
+		this.add(openBookButton);
+		
+		
+		this.remove(openShopButton);
+		BufferedImage shopButtonImage;
+		try{
+			shopButtonImage = ImageIO.read(new File("resources/buttons/OpenShopButton.png"));
+			Image scaledButton = shopButtonImage.getScaledInstance((int)(scaleFactorX * (double)110),(int)(scaleFactorY * (double)50),java.awt.Image.SCALE_SMOOTH);
+			openShopButton.setIcon(new ImageIcon(scaledButton));
+		}catch (IOException ex){
+			
+		}
+		this.add(openShopButton);
+		
+		//logo
+				this.remove(logoLabel);
+				BufferedImage logoImage;
+				try{
+					logoImage = ImageIO.read(new File("resources/buttons/LogoWithBackground.png"));
+					Image scaledBackground = logoImage.getScaledInstance(100,getHeight(),java.awt.Image.SCALE_SMOOTH);
+					logoLabel = new JLabel(new ImageIcon(scaledBackground));
+					logoLabel.setBounds(0, 0, 100,getHeight());
+				}catch(IOException e2){
+					e2.printStackTrace();
+				}
+				this.add(logoLabel);
+		
+		//background
+		BufferedImage backgroundImage;
+		this.remove(background);
+		try{
+			backgroundImage = ImageIO.read(new File("resources/buttons/Background.png"));
+			Image scaledBackground = backgroundImage.getScaledInstance(getWidth(),getHeight(),java.awt.Image.SCALE_SMOOTH);
+			background = new JLabel(new ImageIcon(scaledBackground));
+			background.setBounds(0, 0, getWidth(), getHeight());
+		}catch(IOException e2){
+			e2.printStackTrace();
+		}
+		this.add(background);
+		
+		System.out.println("Resized Main Menu");
+		
+		this.repaint();
+		
+	
+	
 	}
 
 	public JButton getButton(){

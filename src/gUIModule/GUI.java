@@ -198,10 +198,6 @@ public class GUI extends JFrame implements WindowStateListener, ComponentListene
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 
 		//height of the task bar
-		Insets scnMax = Toolkit.getDefaultToolkit().getScreenInsets(getGraphicsConfiguration());
-		int taskBarSize = scnMax.bottom;
-
-		availableScreenSize = new Dimension(screenSize.width,screenSize.height-taskBarSize);
 		
 		XMLParser parser = new XMLParser("github resources/dynamDom.xml");	
 		collection = parser.getCollection();
@@ -214,11 +210,14 @@ public class GUI extends JFrame implements WindowStateListener, ComponentListene
 		slideHeight = slideList.getHeight();
 
 		//set up jframe
+		setSize(slideList.getWidth()+8+8,
+				slideList.getHeight()+30+8);
+		setVisible(true);	
 		insets = this.getInsets();
 		setTitle("Grimoire");
-		setSize(slideList.getWidth()+insets.left+insets.right+15,
-				slideList.getHeight()+insets.top+insets.bottom+40);
-		setVisible(true);	
+		setSize(slideList.getWidth()+insets.left+insets.right,
+				slideList.getHeight()+insets.top+insets.bottom);
+		
 		setLayout(null);
 		frame=this;
 		frame.addKeyListener(this);
@@ -338,59 +337,9 @@ public class GUI extends JFrame implements WindowStateListener, ComponentListene
             this.setExtendedState(Frame.NORMAL);
         }
 	}
+
 	
-//	@Override
-//	public void windowStateChanged(WindowEvent e) {
-//		if(e.getNewState() == Frame.MAXIMIZED_BOTH)
-//		{
-//			System.err.println("MAXIMIZED");
-//			slidePanel.loadPresentation(bigSlideList);
-//			slidePanel.refreshSlide(bigSlideList.get(slidePanel.currentSlide.getSlideID()));
-//			slidePanel.setBounds(0, 0, bigSlideList.getWidth(), bigSlideList.getHeight());
-//			layers.setBounds(0,0,bigSlideList.getWidth(), bigSlideList.getHeight()+insets.top+insets.bottom);
-//			previousSlideButton.setBounds(10,bigSlideList.getHeight()-120,150,50);
-//			previousSlideButton.repaint();
-//			nextSlideButton.setBounds(bigSlideList.getWidth()-190,bigSlideList.getHeight()-120,150,50);
-//			nextSlideButton.repaint();
-//			utilities.setBounds(bigSlideList.getWidth()-utilitiesWidth, 0, utilitiesWidth, bigSlideList.getHeight());
-//			topPanel.setBounds((bigSlideList.getWidth()/2)-150, 0, 300, 200);
-//			utilitiesTab.setBounds(bigSlideList.getWidth()-45,(bigSlideList.getHeight()/2)-120,15,120);
-//			contentsTab.setBounds(0,(bigSlideList.getHeight()/2)-120,15,120);
-//			nextTab.setBounds(bigSlideList.getWidth()-120,(bigSlideList.getHeight())-80,90,20);
-//			previousTab.setBounds(0,(bigSlideList.getHeight())-80,100,20);
-//			contents.setBounds(0, 0, contentsWidth, bigSlideList.getHeight());
-//			slideWidth = bigSlideList.getWidth()-30;
-//			slideHeight = bigSlideList.getHeight()-60;
-//			fullScreen=true;
-//		}
-//		else
-//		{
-//			if(e.getNewState() == Frame.NORMAL)
-//			{
-//				System.err.println("NORMAL");
-//				slidePanel.loadPresentation(slideList);
-//				slidePanel.refreshSlide(slideList.get(slidePanel.currentSlide.getSlideID()));
-//				slidePanel.setBounds(0, 0, slideList.getWidth(), slideList.getHeight());
-//				layers.setBounds(0,0,slideList.getWidth(), slideList.getHeight()+insets.top+insets.bottom);
-//				previousSlideButton.setBounds(10,slideList.getHeight()-60,150,50);
-//				nextSlideButton.setBounds(slideList.getWidth()-160,slideList.getHeight()-60,150,50);
-//				utilities.setBounds(slideList.getWidth()-utilitiesWidth, 0, utilitiesWidth, slideList.getHeight());
-//				topPanel.setBounds((slideList.getWidth()/2)-150, 0, 300, 200);
-//				utilitiesTab.setBounds(slideList.getWidth()-15,(slideList.getHeight()/2)-60,15,120);
-//				contentsTab.setBounds(0,(slideList.getHeight()/2)-60,15,120);
-//				nextTab.setBounds(slideList.getWidth()-90,(slideList.getHeight())-20,90,20);
-//				previousTab.setBounds(0,(slideList.getHeight())-20,100,20);
-//				contents.setBounds(0, 0, contentsWidth, slideList.getHeight());
-//				slideWidth = slideList.getWidth();
-//				slideHeight = slideList.getHeight();
-//				fullScreen=false;
-//				
-//			}
-//		}
-//		
-//	}
-	
-public Presentation reScale(Presentation slideList, double scaleFactorX, double scaleFactorY) {
+/*public Presentation reScale(Presentation slideList, double scaleFactorX, double scaleFactorY) {
 		
 		
 		for(Slide slide: slideList.getSlideList()){
@@ -429,7 +378,7 @@ public Presentation reScale(Presentation slideList, double scaleFactorX, double 
 		
 		// TODO Auto-generated method stub
 		return slideList;
-	}
+	}*/
 
 private void setupTextListener() {
 	textBranchListener = new MouseAdapter() {
@@ -580,14 +529,19 @@ private void setupVideoListener() {
 
 public void bookMainPanelSetUp(){
 	
-		//get slides
+		int width = getSize().width-(insets.left+insets.right);
+		int height = getSize().height-(insets.top-insets.bottom);
+		scaleFactorX = (double)(getSize().width-(insets.left+insets.right))/(double)720;
+		scaleFactorY = (double)(getSize().height-(insets.top-insets.bottom))/(double)540;
 
+		this.setSize(new Dimension(getWidth(),
+				getHeight()));
 		
 		bookPane = getContentPane();
-		bookPane.setBounds(0, 0, slideList.getWidth(), slideList.getHeight());
+		bookPane.setBounds(0, 0, width, height);
 
 		layers.setLayout(null);
-		layers.setBounds(0,0,slideList.getWidth(), slideList.getHeight()+insets.top+insets.bottom);
+		layers.setBounds(0,0,width, height);
 		
 		//set up listeners for objects on the slide panel
 		setupObjectListener();
@@ -598,7 +552,7 @@ public void bookMainPanelSetUp(){
 
 		//set up tabs
 		//utilities tab
-		utilitiesTab.setBounds(slideList.getWidth()-15,(slideList.getHeight()/2)-55,15,110);
+		utilitiesTab.setBounds(width-15,(height/2)-55,15,110);
 		BufferedImage utilitiesTabImage;
 		try{
 			utilitiesTabImage = ImageIO.read(new File("resources/buttons/utilitiesTab.png"));
@@ -614,7 +568,7 @@ public void bookMainPanelSetUp(){
 		utilitiesTab.setVisible(false);
 		
 		//contents tab
-		contentsTab.setBounds(0,(slideList.getHeight()/2)-60,15,120);
+		contentsTab.setBounds(0,(height/2)-60,15,120);
 		BufferedImage contentsTabImage;
 		try{
 			contentsTabImage = ImageIO.read(new File("resources/buttons/contentsTab.png"));
@@ -630,7 +584,7 @@ public void bookMainPanelSetUp(){
 		contentsTab.setVisible(false);
 		
 		//next tab
-		nextTab.setBounds(slideList.getWidth()-90,(slideList.getHeight())-20,90,20);
+		nextTab.setBounds(width-90,(height)-20,90,20);
 		BufferedImage nextTabImage;
 		try{
 			nextTabImage = ImageIO.read(new File("resources/buttons/nextTab.png"));
@@ -646,7 +600,7 @@ public void bookMainPanelSetUp(){
 		nextTab.setVisible(false);
 		
 		//previous tab
-		previousTab.setBounds(0,(slideList.getHeight())-20,100,20);
+		previousTab.setBounds(0,(height)-20,100,20);
 		BufferedImage previousTabImage;
 		try{
 			previousTabImage = ImageIO.read(new File("resources/buttons/previousTab.png"));
@@ -672,7 +626,7 @@ public void bookMainPanelSetUp(){
 		}catch (IOException ex){
 			
 		}
-		previousSlideButton.setBounds(10,slideList.getHeight()-60,150,50);
+		previousSlideButton.setBounds(10,height-60,150,50);
 		previousSlideButton.setVisible(false);
 		
 		//next button
@@ -684,7 +638,7 @@ public void bookMainPanelSetUp(){
 		}catch (IOException ex){
 			
 		}
-		nextSlideButton.setBounds(slideList.getWidth()-160,slideList.getHeight()-60,150,50);
+		nextSlideButton.setBounds(width-160,height-60,150,50);
 		nextSlideButton.setVisible(false);
 		
 		
@@ -692,10 +646,10 @@ public void bookMainPanelSetUp(){
 		
 		//set up utilities
 		
-        utilities = new UtilitiesPanel(utilitiesWidth, slideList.getWidth(), slideList.getHeight());
+        utilities = new UtilitiesPanel(utilitiesWidth, width, height);
         utilitiesWidth = utilities.getWidth();
-		utilities.setLocation(slideList.getWidth()-utilitiesWidth, 0);
-		utilities.setBounds(slideList.getWidth()-utilitiesWidth, 0, utilitiesWidth, slideList.getHeight());
+		utilities.setLocation(width-utilitiesWidth, 0);
+		utilities.setBounds(width-utilitiesWidth, 0, utilitiesWidth, height);
 		utilities.setBackground(Color.GRAY);
 		utilities.setVisible(false);
 		
@@ -746,9 +700,9 @@ public void bookMainPanelSetUp(){
 		//set up contents
 		ArrayList<Book> bookList = mainMenuPanel.getBookList();
 		contentsPanel = new ContentsPanel(slideList.getSlideList(),collection.getPresentationList(), contentsWidth, slideList.getWidth(),slideList.getHeight(), mainMenuPanel.getCurrentSystem(), mainMenuPanel.getCurrentBook());
-		contentsPanel.setBounds(0, 0, contentsWidth, slideList.getHeight());
+		contentsPanel.setBounds(0, 0, contentsWidth, height);
 		
-		contentsPanel.setPreferredSize(new Dimension(contentsWidth, slideList.getHeight()));
+		contentsPanel.setPreferredSize(new Dimension(contentsWidth, height));
 		//contents.add(contentsPanel);
 		contentsPanel.repaint();
         contentsPanel.setVisible(false);
@@ -763,6 +717,11 @@ public void bookMainPanelSetUp(){
 
 					@Override
 					public void actionPerformed(ActionEvent arg0) {
+						mainMenuShowing = true;
+						scaleFactorX = (double)(getSize().width-insets.left-insets.right)/(double)720;
+						scaleFactorY = (double)(getSize().height-insets.top-insets.bottom)/(double)540;
+						mainMenuPanel.setBounds(0, 0, getSize().width-insets.left-insets.right, getSize().height-insets.top-insets.bottom);
+						mainMenuPanel.resizeMainMenu(scaleFactorX, scaleFactorY);
 						System.out.println("Main Menu Pressed");
 						layers.setVisible(false);
 						mainMenuPanel.setVisible(true);
@@ -831,24 +790,17 @@ public void bookMainPanelSetUp(){
 		slidePanel.setupListeners(textBranchListener, objectBranchListener,videoListener);
 		slidePanel.setupSlide(slideList.get(0));
 		currentVisibleSlideID = 0;
-		slidePanel.setBounds(0, 0, slideList.getWidth(), slideList.getHeight());	
+	    slidePanel.setScalingFactors(scaleFactorX, scaleFactorY);
+	    slidePanel.setBounds(0, 0, width, height);	
 		
 
 		bookPane.add(layers);
 		bookPane.setVisible(true);
+		this.repaint();
 		this.setVisible(true);
-		insets = this.getInsets();
-		this.setPreferredSize(new Dimension(slideList.getWidth()+insets.left+insets.right,
-				slideList.getHeight() +insets.top+insets.bottom));
-		this.pack();
-
-		System.out.println(availableScreenSize);
-		scaleFactorX = (double)(availableScreenSize.width)/(double)slideList.getWidth();
-		scaleFactorY = (double)(availableScreenSize.height-insets.top)/(double)slideList.getHeight();
-		System.out.println("scale X: " + scaleFactorX + "scale Y: " + scaleFactorY);
+		this.setSize(new Dimension(width+insets.left+insets.right,
+				height+ insets.top+insets.bottom));
 		
-		
-		//bigSlideList = reScale(bigSlideList,scaleFactorX,scaleFactorY);
 
 
 	nextSlideButton.addActionListener(
@@ -1006,7 +958,7 @@ private void borderListenerProcess(MouseEvent e1,Boolean isObject,Boolean isText
 public void windowStateChanged(WindowEvent e) {
 	frame.requestFocusInWindow();
 	System.err.println("RESIZED");
-	if(slidePanel!=null){
+	if(slidePanel!=null && !mainMenuShowing){
 	scaleFactorX = (double)(getSize().width-insets.left-insets.right)/(double)720;
 	scaleFactorY = (double)(getSize().height-insets.top-insets.bottom)/(double)540;
     slidePanel.setScalingFactors(scaleFactorX, scaleFactorY);
@@ -1032,6 +984,12 @@ public void windowStateChanged(WindowEvent e) {
     slideWidth = (int) (slideList.getWidth()*scaleFactorX)-30;
     slideHeight = (int) (slideList.getHeight()*scaleFactorY)-60;
 	}
+	if(mainMenuShowing){
+		scaleFactorX = (double)(getSize().width-insets.left-insets.right)/(double)720;
+		scaleFactorY = (double)(getSize().height-insets.top-insets.bottom)/(double)540;
+		mainMenuPanel.setBounds(0, 0, getSize().width-insets.left-insets.right, getSize().height-insets.top-insets.bottom);
+		mainMenuPanel.resizeMainMenu(scaleFactorX, scaleFactorY);
+	}
 }
 
 @Override
@@ -1049,7 +1007,7 @@ public void componentMoved(ComponentEvent e) {
 @Override
 public void componentResized(ComponentEvent e) {
 	//System.err.println("RESIZED");
-	if(slidePanel!=null){
+	if(slidePanel!=null && !mainMenuShowing){
 	scaleFactorX = (double)(getSize().width-insets.left-insets.right)/(double)720;
 	scaleFactorY = (double)(getSize().height-insets.top-insets.bottom)/(double)540;
     slidePanel.setScalingFactors(scaleFactorX, scaleFactorY);
@@ -1073,6 +1031,13 @@ public void componentResized(ComponentEvent e) {
     contentsPanel.setBounds(0, 0, contentsWidth, (int) (slideList.getHeight()*scaleFactorY));
     slideWidth = (int) (slideList.getWidth()*scaleFactorX)-30;
     slideHeight = (int) (slideList.getHeight()*scaleFactorY)-60;
+	}
+	if(mainMenuShowing){
+		scaleFactorX = (double)(getSize().width-insets.left-insets.right)/(double)720;
+		scaleFactorY = (double)(getSize().height-insets.top-insets.bottom)/(double)540;
+		mainMenuPanel.setBounds(0, 0, getSize().width-insets.left-insets.right, getSize().height-insets.top-insets.bottom);
+		mainMenuPanel.resizeMainMenu(scaleFactorX, scaleFactorY);
+		
 	}
 	
 }
