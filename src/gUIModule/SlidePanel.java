@@ -466,8 +466,7 @@ public class SlidePanel extends JPanel{
 		{
 			videoPlayer = new VideoPlayer(video,videoListener);
 		}
-		// TODO Replace with the embedded video player when available
-		// Start paused by default
+		
 		
         //this.add(videoPlayer);
         layeredPane.add(videoPlayer,video.getLayer());
