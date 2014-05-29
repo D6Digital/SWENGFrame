@@ -33,7 +33,8 @@ public class ContentsPanelTest {
 	@Test
 	public void test() {
 		
-		ContentsPanel contentsPanel = new ContentsPanel(slideList);
+		ContentsPanel contentsPanel = new ContentsPanel(slideList, null, 300, 500, 500, "SYSTEM", "BOOK");
+		
 		
 		frame.setSize(400, 400);
 		frame.add(contentsPanel);

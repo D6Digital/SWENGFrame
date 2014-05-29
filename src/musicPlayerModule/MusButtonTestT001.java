@@ -2,6 +2,10 @@ package musicPlayerModule;
 
 import static org.junit.Assert.*;
 
+import java.awt.List;
+import java.awt.Window;
+import java.util.ArrayList;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -11,6 +15,8 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+
+
 
 /**
  * T001- A test to check that the music player interface is returned correctly.
@@ -150,6 +156,15 @@ public class MusButtonTestT001 {
         x1 = musicPlayer.mediaPlayer.getPosition();
         boolean areEqual = x1 == 0.0;
         assertEquals("The stop button does not set the position of the media back to zero, it was: " + x1, true, areEqual);
+        
+        // Step 7. Check when the audio begins the volume is at 100%
+        assertEquals("The volume of the slider does not default to 100%",         
+                volumeSlider.getValue(), 100);
+        Thread.sleep(SLEEPMS);
+        
+        // Step 8. Pressing the open playlist button displays the playlist frame. When closed the audio remains playing.
+        openPlaylistButton.doClick();
+        
         
         
     }

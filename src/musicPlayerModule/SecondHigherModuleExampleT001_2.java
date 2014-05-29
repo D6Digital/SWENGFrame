@@ -18,7 +18,7 @@ import com.sun.jna.Native;
 import com.sun.jna.NativeLibrary;
 
 
-public class SecondHigherModuleExample {
+public class SecondHigherModuleExampleT001_2 {
     static JFrame mainFrame = new JFrame();
     static JPanel mainPanel = new JPanel();
     static JLabel label = new JLabel();

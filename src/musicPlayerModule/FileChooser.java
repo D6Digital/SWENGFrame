@@ -3,6 +3,9 @@ package musicPlayerModule;
 import java.io.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.awt.image.BufferedImage;
+
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.filechooser.*;
     
@@ -47,6 +50,8 @@ public class FileChooser extends JPanel implements ActionListener {
         JFileChooser fc;
         int panelWidth;
         int panelHeight;
+        int buttonWidth = 100;
+        int buttonHeight = 50;
         
            public FileChooser(String initialisedFilePath) {
                 super.setLayout(null);
@@ -77,9 +82,12 @@ public class FileChooser extends JPanel implements ActionListener {
                 //Create the open button.  We use the image from the JLF
                 //Graphics Repository (but we extracted it from the jar).
                 ImageIcon buttonIcon = new ImageIcon("resources/buttons/openList.png");
-                openButton = new JButton("Choose a playlist directory", buttonIcon);
+                JButton button = new JButton();
+                openButton = setUpButtonImage(button, "resources/buttons/openList.png", buttonWidth, buttonHeight);
+                
+                //openButton = new JButton("Choose a playlist directory", buttonIcon);
                 openButton.addActionListener(this);
-                openButton.setBounds(0, 200, 30, 30);
+                //openButton.setBounds(0, 200, 30, 30);
 
                 //For layout purposes, put the buttons in a separate panel
                 //JPanel buttonPanel = new JPanel(); //use FlowLayout
@@ -97,7 +105,27 @@ public class FileChooser extends JPanel implements ActionListener {
                System.out.println("here " + openButton.getBounds());
                return openButton;
            }
+           
+           public int getButtonWidth() {
+               return buttonWidth;
+           }
         
+           public int getButtonHeight() {
+               return buttonHeight;
+           }
+           
+           public JButton setUpButtonImage(JButton button, String image, int width, int height){
+               BufferedImage choosePageButtonImage;
+               try{
+                   choosePageButtonImage = ImageIO.read(new File(image));
+                   Image scaledButton = choosePageButtonImage.getScaledInstance(width,height,java.awt.Image.SCALE_SMOOTH);
+                   button.setIcon(new ImageIcon(scaledButton));
+               }catch (IOException ex){
+                   
+               }
+               return button;
+           }
+           
 
 //      public FileChooser(String initialisedFilePath, int widthOfPanel, int heightOfPanel) {
 //          super.setLayout(null);

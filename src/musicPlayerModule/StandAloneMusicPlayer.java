@@ -8,6 +8,7 @@ import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.Image;
 import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -15,6 +16,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -23,6 +25,8 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.imageio.ImageIO;
 import javax.swing.ButtonGroup;
 import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
@@ -98,7 +102,7 @@ public class StandAloneMusicPlayer {
     protected boolean changingTimeByHand;
     protected boolean changingSelectedPlaylistByHand;
     
-    boolean initialLockedValue = false;
+    boolean initialLockedValue = true;
     
     //private boolean playlistLocked = true;
     
@@ -109,10 +113,13 @@ public class StandAloneMusicPlayer {
     String previousImage = "resources/buttons/rewind.png";
     String lockImage = "resources/buttons/lockText.png";
     String unlockImage = "resources/buttons/unlockText.png";
+    String choosePlaylistImage = "/resources/buttons/openList";
     int heightOfLockIcon;
     int widthOfPlayButton;
     int heightOfPlayButton;
     int playlistIconHeight;
+    
+    private boolean areWeUnlocked;
 
     /**
      * Constructor for StandAloneMusicPlayer() class.
@@ -193,6 +200,7 @@ public class StandAloneMusicPlayer {
             }
         }
     };
+
 
 
     public void killThread() {
@@ -440,17 +448,20 @@ public class StandAloneMusicPlayer {
         fullPanel.add(getTimeLabel(widthOfPanel, heightOfSlide));
         fullPanel.add(getScrollSlider(widthOfPanel, heightOfSlide));
 
-        JButton button = fileChooser.getButton();
+       JButton button = fileChooser.getButton();
+      //  JButton button = fileChooser.setUpButtonImage(choosePlaylistImage, 150, 40);
 //        button.setBounds(
 //                (int) (widthOfPanel*0.3),
 //                (int) (heightOfSlide*0.025*10) + heightOfLockIcon + heightOfPlayButton*3  +  (int) (heightOfSlide*0.1),
 //                (int) (widthOfPanel*0.4),
 //                (int) (heightOfSlide*0.1));
+        
+        
         button.setBounds(
-                (int) (widthOfPanel/2) - (int) button.getIcon().getIconWidth()/2,
+                (int) (widthOfPanel/2) - (int) fileChooser.getButtonWidth()/2,
                 (int) (heightOfSlide*0.025*14) + heightOfLockIcon + heightOfPlayButton,
-                button.getIcon().getIconWidth(),
-                button.getIcon().getIconHeight());
+                fileChooser.getButtonWidth(),
+                fileChooser.getButtonHeight());
         playlistIconHeight = button.getIcon().getIconHeight();
 
         fullPanel.add(getScrollPaneAsPanel(widthOfPanel, heightOfSlide));
@@ -464,7 +475,7 @@ public class StandAloneMusicPlayer {
         JLabel label = new JLabel("Volume");
         label.setLayout(null);
         label.setBounds(
-                (int) (widthOfPanel*0.385),
+                (int) (widthOfPanel*0.385) + 20,
                 (int) (heightOfSlide*0.025*5) + heightOfLockIcon + heightOfPlayButton,
                 (int) (widthOfPanel*0.3),
                 (int) (heightOfSlide*0.075));
@@ -473,19 +484,27 @@ public class StandAloneMusicPlayer {
     }
 
     private JButton getLockPlaylistButton(int widthOfPanel, int heightOfSlide) {
-        ImageIcon unlock = new ImageIcon(unlockImage);
-        JButton button = new JButton(unlock);
+        areWeUnlocked = false;
+        JButton button = new JButton();
+        setUpButtonImage(button, unlockImage, 100, 50);
         button.setBorderPainted(false); 
         button.setContentAreaFilled(false); 
         button.setFocusPainted(false); 
         button.setOpaque(false);
+        
+//        button.setBounds(
+//                (int) (widthOfPanel/2) - (int) fileChooser.getButtonWidth()/2,
+//                (int) (heightOfSlide*0.025*14) + heightOfLockIcon + heightOfPlayButton,
+//                fileChooser.getButtonWidth(),
+//                fileChooser.getButtonHeight());
+        
         button.setBounds(
-                (int) (widthOfPanel*0.025),
+                (int) (widthOfPanel/2) - (int) button.getIcon().getIconWidth()/2,
                 (int) (heightOfSlide*0.025),
-                unlock.getIconWidth(),
-                unlock.getIconHeight());
+                100,
+                50);
         setupListenerAndAction(button, "lockplaylist");
-        heightOfLockIcon = unlock.getIconHeight();
+        heightOfLockIcon = 50;
         return button;      
     }
 
@@ -498,7 +517,7 @@ public class StandAloneMusicPlayer {
 //                (int) (heightOfSlide*0.1)
 //               );
         timeLabel.setBounds(
-                (int) (widthOfPanel*0.4),
+                (int) (widthOfPanel*0.4) + 18,
                 (int) (heightOfSlide*0.025*10) + heightOfLockIcon + heightOfPlayButton,
                 (int) (widthOfPanel*0.2),
                 (int) (heightOfSlide*0.1));
@@ -531,7 +550,7 @@ public class StandAloneMusicPlayer {
         button.setFocusPainted(false); 
         button.setOpaque(false);
         button.setBounds(
-                (int) (widthOfPanel*0.048) + widthOfPlayButton*2,
+                (int) (widthOfPanel*0.048) + widthOfPlayButton*2 + 25,
                 (int) (heightOfSlide*0.038) + heightOfLockIcon,
                 stop.getIconWidth(),
                 stop.getIconHeight());
@@ -553,7 +572,7 @@ public class StandAloneMusicPlayer {
         button.setFocusPainted(false); 
         button.setOpaque(false);
         button.setBounds(
-                (int) (widthOfPanel*0.025*2) + widthOfPlayButton,
+                (int) (widthOfPanel*0.025*2) + widthOfPlayButton + 25,
                 (int) (heightOfSlide*0.025*2) + heightOfLockIcon,
                 pause.getIconWidth(),
                 pause.getIconHeight());
@@ -575,7 +594,7 @@ public class StandAloneMusicPlayer {
         button.setFocusPainted(false); 
         button.setOpaque(false);
         button.setBounds(
-                (int) (widthOfPanel*0.025),
+                (int) (widthOfPanel*0.025) + 25,
                 (int) (heightOfSlide*0.025*2) + heightOfLockIcon,
                 play.getIconWidth(),
                 play.getIconHeight());
@@ -606,7 +625,7 @@ public class StandAloneMusicPlayer {
 //                next.getIconHeight()
 //               );
         button.setBounds(
-                (int) (widthOfPanel*0.025)  + (int) (next.getIconWidth()*4.5),
+                (int) (widthOfPanel*0.025)  + (int) (next.getIconWidth()*4.5) + 25,
                 (int) (heightOfSlide*0.025*2) + heightOfLockIcon,
                 next.getIconWidth(),
                 next.getIconHeight());
@@ -638,7 +657,7 @@ public class StandAloneMusicPlayer {
 //                previous.getIconHeight()
 //               );
         button.setBounds(
-                (int) (widthOfPanel*0.025)  + (int) (previous.getIconWidth()*3.5),
+                (int) (widthOfPanel*0.025)  + (int) (previous.getIconWidth()*3.5) + 25,
                 (int) (heightOfSlide*0.025*2) + heightOfLockIcon,
                 previous.getIconWidth(),
                 previous.getIconHeight());
@@ -785,13 +804,13 @@ public class StandAloneMusicPlayer {
     /**TODO implement
      */
     private void lockedAndPreventingPlayerUse(JButton button, boolean trueOrFalse) {
-        if(button.getText().equals("Unlock Playlist")) {
-            button.setText("Lock Playlist");
-            System.out.println("here1?");
+        if(!areWeUnlocked) {
+            setUpButtonImage(button, lockImage, 100, 50);
+            areWeUnlocked = true;
         }
-        else if(button.getText().equals("Lock Playlist")) {
-            button.setText("Unlock Playlist");
-            System.out.println("here2?");
+        else if(areWeUnlocked) {
+            setUpButtonImage(button, unlockImage, 100, 50);
+            areWeUnlocked = false;
         }
         mediaPlayer.stop();
         LockedPlaylistValueAccess.lockedPlaylist = trueOrFalse;
@@ -1034,6 +1053,17 @@ public class StandAloneMusicPlayer {
         contentPane.add(mediaPlayerComponent, BorderLayout.EAST);
 
         return mediaPlayer;
+    }
+    
+    private void setUpButtonImage(JButton button, String image, int width, int height){
+        BufferedImage choosePageButtonImage;
+        try{
+            choosePageButtonImage = ImageIO.read(new File(image));
+            Image scaledButton = choosePageButtonImage.getScaledInstance(width,height,java.awt.Image.SCALE_SMOOTH);
+            button.setIcon(new ImageIcon(scaledButton));
+        }catch (IOException ex){
+            
+        }
     }
 
 }
