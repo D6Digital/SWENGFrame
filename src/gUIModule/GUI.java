@@ -159,9 +159,6 @@ public class GUI extends JFrame implements WindowStateListener, ComponentListene
 			int nextSlideID	 = slidePanel.currentSlide.getSlideID() + 1;
 			Slide nextSlide = slideList.get(nextSlideID);
 			slidePanel.refreshSlide(nextSlide);
-			if(screenSizeMaximised) {
-			    setMaxSize();
-			}
 			previousSlideButton.setBorderPainted(true);
 			System.out.println("Next slide = " + nextSlide.getLastSlide());
 			if(slidePanel.currentSlide.getLastSlide()==true){
@@ -185,9 +182,6 @@ public class GUI extends JFrame implements WindowStateListener, ComponentListene
 			int previousSlideID = slidePanel.currentSlide.getSlideID() - 1;
 			Slide previousSlide = slideList.get(previousSlideID);
 			slidePanel.refreshSlide(previousSlide);
-	        if(screenSizeMaximised) {
-	            setMaxSize();
-	        }
 		}	
 		return null;
 	}
@@ -264,13 +258,15 @@ public class GUI extends JFrame implements WindowStateListener, ComponentListene
 					}
 				});
 
-		layers.addMouseMotionListener(new java.awt.event.MouseMotionAdapter(){
+		layers.addMouseMotionListener(new java.awt.event.MouseAdapter(){
 			@Override
 			public void mouseMoved(MouseEvent e1){
 				borderListenerProcess(e1,false,false,false);
 				
 			}
 		});
+		
+		
 		
 		int delay = 100; // 100ms before allowing the resizing
 		ActionListener taskPerformer = new ActionListener() {
@@ -302,7 +298,8 @@ public class GUI extends JFrame implements WindowStateListener, ComponentListene
 		}
 	}
 
-	private void setMaxSize() {
+
+	/*private void setMaxSize() {
         System.err.println("MAXIMIZED");
         slidePanel.setScalingFactors(scaleFactorX, scaleFactorY);
         slidePanel.setBounds(0, 0, (int) (slideList.getWidth()*scaleFactorX), (int) (slideList.getHeight()*scaleFactorY));
@@ -353,7 +350,7 @@ public class GUI extends JFrame implements WindowStateListener, ComponentListene
         if(screenSizeMaximised ) {
             this.setExtendedState(Frame.NORMAL);
         }
-	}
+	}*/
 
 	
 /*public Presentation reScale(Presentation slideList, double scaleFactorX, double scaleFactorY) {
@@ -766,10 +763,7 @@ public void bookMainPanelSetUp(){
 	            	frame.requestFocusInWindow();
 	            	if(contentsPanel.getPageListShowing()==true){
 	                if(e.getClickCount() == 2) {            
-	                    slidePanel.refreshSlide(slideList.getSlideList().get(contentsList.getSelectedIndex()));  
-	                    if(screenSizeMaximised) {
-	                        setMaxSize();
-	                    }
+	                    slidePanel.refreshSlide(slideList.getSlideList().get(contentsList.getSelectedIndex()));
 	                    contentsList.clearSelection();  
 	                }
 	            	}else{
@@ -883,10 +877,12 @@ private void borderListenerProcess(MouseEvent e1,Boolean isObject,Boolean isText
 	
 	if(!stopListening){
 	
+	slideWidth = this.getWidth()-insets.left-insets.right;
+	slideHeight = this.getHeight()-insets.top-insets.bottom;
+	System.out.println("x="+xCoordinate+"y="+yCoordinate);
+	System.out.println("width="+slideWidth+"height="+slideHeight);
 	
-	//System.out.println("x="+xCoordinate+"y="+yCoordinate);
-	
-	if (xCoordinate>(slideWidth+30-borderSize)){
+	if (xCoordinate>(slideWidth-borderSize)){
 		utilities.setVisible(true);
 		utilitiesShowing=true;
 		utilitiesTab.setVisible(false);
@@ -895,7 +891,7 @@ private void borderListenerProcess(MouseEvent e1,Boolean isObject,Boolean isText
 		previousTab.setVisible(false);
 		nextSlideButton.setVisible(false);
 	}
-	if (xCoordinate<(slideWidth+30-utilitiesWidth)){
+	if (xCoordinate<(slideWidth-utilitiesWidth)){
 		if(utilitiesShowing==true){
 			utilities.setVisible(false);
 			utilitiesShowing=false;
@@ -917,7 +913,7 @@ private void borderListenerProcess(MouseEvent e1,Boolean isObject,Boolean isText
 			contentsShowing=false;
 		}
 	}
-	if((xCoordinate>(slideWidth+30)/2)&(yCoordinate>(slideHeight+60-borderSize))){
+	if((xCoordinate>(slideWidth)/2)&(yCoordinate>(slideHeight-borderSize))){
 		if(utilitiesShowing==false){
 			nextSlideButton.setVisible(true);
 			nextButtonShowing=true;
@@ -927,13 +923,13 @@ private void borderListenerProcess(MouseEvent e1,Boolean isObject,Boolean isText
 			previousTab.setVisible(false);
 		}
 	}
-	if((xCoordinate<(slideWidth+30)/2)|(yCoordinate<(slideHeight+60-50))){
+	if((xCoordinate<(slideWidth)/2)|(yCoordinate<(slideHeight-50))){
 		if(nextButtonShowing==true){
 			nextSlideButton.setVisible(false);
 			nextButtonShowing=false;
 		}
 	}
-	if((xCoordinate<(slideWidth+30)/2)&(yCoordinate>(slideHeight+60-borderSize))){
+	if((xCoordinate<(slideWidth)/2)&(yCoordinate>(slideHeight-borderSize))){
 		if(contentsShowing==false){
 			previousSlideButton.setVisible(true);
 			previousButtonShowing=true;
@@ -943,13 +939,13 @@ private void borderListenerProcess(MouseEvent e1,Boolean isObject,Boolean isText
 			previousTab.setVisible(false);
 		}
 	}
-	if((xCoordinate>(slideWidth+30)/2)|(yCoordinate<(slideHeight+60-50))){
+	if((xCoordinate>(slideWidth)/2)|(yCoordinate<(slideHeight-50))){
 		if(previousButtonShowing==true){
 			previousSlideButton.setVisible(false);
 			previousButtonShowing=false;
 		}
 	}
-	if((xCoordinate>50)&(xCoordinate<(slideWidth+30-50))&(yCoordinate>50)&(yCoordinate<(slideHeight+60-50))){
+	if((xCoordinate>50)&(xCoordinate<(slideWidth-50))&(yCoordinate>50)&(yCoordinate<(slideHeight-50))){
 		utilitiesTab.setVisible(true);
 		contentsTab.setVisible(true);
 		if(nextSlideButton.isVisible()==false){
@@ -965,7 +961,10 @@ private void borderListenerProcess(MouseEvent e1,Boolean isObject,Boolean isText
 		tabBool = false;
 		}
 	}
+	
+	
 	}
+	
 }
 
 private void resizeMainMenu() {
@@ -995,10 +994,10 @@ private void resizeMainPanel() {
     nextSlideButton.repaint();
     utilities.setBounds(newWidth-utilitiesWidth, 0, utilitiesWidth, newHeight);
     utilities.setDimensions( newWidth-utilitiesWidth , newHeight);
-    utilitiesTab.setBounds(newWidth-25,(newHeight/2)-60,15,120);
+    utilitiesTab.setBounds(newWidth-15,(newHeight/2)-60,15,120);
     contentsTab.setBounds(0,(newHeight/2)-60,15,120);
-    nextTab.setBounds(newWidth-120,(newHeight)-25,90,20);
-    previousTab.setBounds(0,(newHeight)-25,100,20);
+    nextTab.setBounds(newWidth-120,(newHeight)-20,90,20);
+    previousTab.setBounds(0,(newHeight)-20,100,20);
     contentsPanel.setBounds(0, 0, contentsWidth, newHeight);
     
 }
