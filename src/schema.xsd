@@ -69,7 +69,7 @@
 
 	<xs:complexType name="dEfaults">
 		<xs:sequence>
-			<xs:element name="backgroundcolour" type="xs:string"
+			<xs:element name="backgroundcolor" type="xs:string"
 				maxOccurs="1" minOccurs="1">
 			</xs:element>
 			<xs:element name="font" type="xs:string" maxOccurs="1"
@@ -78,13 +78,13 @@
 			<xs:element name="fontsize" type="xs:string" maxOccurs="1"
 				minOccurs="1">
 			</xs:element>
-			<xs:element name="fontcolour" type="xs:string" maxOccurs="1"
+			<xs:element name="fontcolor" type="xs:string" maxOccurs="1"
 				minOccurs="1">
 			</xs:element>
-			<xs:element name="linecolour" type="xs:string" maxOccurs="1"
+			<xs:element name="linecolor" type="xs:string" maxOccurs="1"
 				minOccurs="1">
 			</xs:element>
-			<xs:element name="fillcolour" type="xs:string" maxOccurs="1"
+			<xs:element name="fillcolor" type="xs:string" maxOccurs="1"
 				minOccurs="1">
 			</xs:element>
 		</xs:sequence>
@@ -97,7 +97,7 @@
 		</xs:sequence>
 		<xs:attribute name="font" type="xs:string" use="optional"></xs:attribute>
 		<xs:attribute name="fontsize" type="xs:int" use="optional"></xs:attribute>
-		<xs:attribute name="fontcolour" type="xs:string" use="optional"></xs:attribute>
+		<xs:attribute name="fontcolor" type="xs:string" use="optional"></xs:attribute>
 		<xs:attribute name="starttime" type="xs:int" use="optional"></xs:attribute>
 		<xs:attribute name="duration" type="xs:int" use="optional"></xs:attribute>
 		<xs:attribute name="layer" type="xs:int"></xs:attribute>
@@ -125,11 +125,11 @@
 		<xs:attribute name="totalpoints" type="xs:int" use="required"></xs:attribute>
 		<xs:attribute name="width" type="xs:int" use="required"></xs:attribute>
 		<xs:attribute name="height" type="xs:int" use="required"></xs:attribute>
-		<xs:attribute name="fillcolour" type="xs:string" use="optional"></xs:attribute>
+		<xs:attribute name="fillcolor" type="xs:string" use="optional"></xs:attribute>
 		<xs:attribute name="starttime" type="xs:int" use="optional"></xs:attribute>
 		<xs:attribute name="duration" type="xs:int" use="optional"></xs:attribute>
 		<xs:attribute name="layer" type="xs:int" use="optional"></xs:attribute>
-		<xs:attribute name="linecolour" type="xs:string" use="optional"></xs:attribute>
+		<xs:attribute name="linecolor" type="xs:string" use="optional"></xs:attribute>
 		<xs:attribute name="branch" type="xs:int" use="optional"></xs:attribute>
 	</xs:complexType>
 

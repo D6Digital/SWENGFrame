@@ -194,7 +194,7 @@ public class XMLParser extends DefaultHandler{
 		else if (elementName.equals("defaults")) {
 			currentElement = ProcessingElement.DEFAULTS;
 		}
-		else if (elementName.equals("backgroundcolour")) {
+		else if (elementName.equals("backgroundcolor")) {
 			if (currentElement == ProcessingElement.DEFAULTS) {
 				currentElement = ProcessingElement.BACKGROUNDCOLOUR;
 			}
@@ -209,17 +209,17 @@ public class XMLParser extends DefaultHandler{
 				currentElement = ProcessingElement.FONTSIZE;
 			}
 		}
-		else if (elementName.equals("fontcolour")) {
+		else if (elementName.equals("fontcolor")) {
 			if (currentElement == ProcessingElement.DEFAULTS) {
 				currentElement = ProcessingElement.FONTCOLOUR;
 			}
 		}
-		else if (elementName.equals("linecolour")) {
+		else if (elementName.equals("linecolor")) {
 			if (currentElement == ProcessingElement.DEFAULTS) {
 				currentElement = ProcessingElement.LINECOLOUR;
 			}
 		}
-		else if (elementName.equals("fillcolour")) {
+		else if (elementName.equals("fillcolor")) {
 			if (currentElement == ProcessingElement.DEFAULTS) {
 				currentElement = ProcessingElement.FILLCOLOUR;
 			}
@@ -270,7 +270,7 @@ public class XMLParser extends DefaultHandler{
 			else {
 				newText.setSize(Integer.parseInt(attrVal));
 			}
-			attrVal = attrs.getValue("fontcolour");
+			attrVal = attrs.getValue("fontcolor");
 			if(attrVal == null){
 				newText.setColour(presentation.getFontColour());
 			}
@@ -326,7 +326,7 @@ public class XMLParser extends DefaultHandler{
 			newShape.setWidth(Integer.parseInt(attrVal));
 			attrVal = attrs.getValue("height");
 			newShape.setHeight(Integer.parseInt(attrVal));
-			attrVal = attrs.getValue("fillcolour");
+			attrVal = attrs.getValue("fillcolor");
 			if(attrVal == null){
 				newShape.setFillColor(presentation.getFillColour());
 			}
@@ -354,7 +354,7 @@ public class XMLParser extends DefaultHandler{
 			else {
 				newShape.setLayer(Integer.parseInt(attrVal));
 			}
-			attrVal = attrs.getValue("linecolour");
+			attrVal = attrs.getValue("linecolor");
 			if(attrVal == null){
 				newShape.setLineColor(presentation.getLineColour());
 			}
@@ -637,7 +637,7 @@ public class XMLParser extends DefaultHandler{
 		else if (elementName.equals("defaults")) {
 			currentElement = ProcessingElement.NONE;
 		}
-		else if (elementName.equals("backgroundcolour")) {
+		else if (elementName.equals("backgroundcolor")) {
 			if (currentElement == ProcessingElement.BACKGROUNDCOLOUR) {
 				currentElement = ProcessingElement.DEFAULTS;
 			}
@@ -652,17 +652,17 @@ public class XMLParser extends DefaultHandler{
 				currentElement = ProcessingElement.DEFAULTS;
 			}
 		}
-		else if (elementName.equals("fontcolour")) {
+		else if (elementName.equals("fontcolor")) {
 			if (currentElement == ProcessingElement.FONTCOLOUR) {
 				currentElement = ProcessingElement.DEFAULTS;
 			}
 		}
-		else if (elementName.equals("linecolour")) {
+		else if (elementName.equals("linecolor")) {
 			if (currentElement == ProcessingElement.LINECOLOUR) {
 				currentElement = ProcessingElement.DEFAULTS;
 			}
 		}
-		else if (elementName.equals("fillcolour")) {
+		else if (elementName.equals("fillcolor")) {
 			if (currentElement == ProcessingElement.FILLCOLOUR) {
 				currentElement = ProcessingElement.DEFAULTS;
 			}
