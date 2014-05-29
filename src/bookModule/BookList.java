@@ -60,6 +60,11 @@ public class BookList {
 		// TODO Auto-generated method stub
 		return books;
 	}
+
+	public void clearList() {
+		books.clear();
+		
+	}
 	
 	
 

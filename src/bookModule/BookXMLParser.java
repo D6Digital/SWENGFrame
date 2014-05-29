@@ -112,6 +112,11 @@ public class BookXMLParser extends DefaultHandler{
 		if (elementName.equals("booklist")) {
 			if (bookList == null) {
 				bookList = new BookList(attrs.getValue(0));
+				bookList.clearList();
+			}
+			else
+			{
+				bookList.clearList();
 			}
 		}
 		//handle book element start

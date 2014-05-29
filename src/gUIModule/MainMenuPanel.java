@@ -261,8 +261,10 @@ public class MainMenuPanel extends JPanel{
 				         
 				         @Override
 				         public void mouseClicked(MouseEvent e) {
+				        	 bookListModel.clear();
+							bookList.removeAll();
 				        	chosenSystem = listOfSystems.get(systemList.getSelectedIndex()).getFilename();
-				        	currentSystemName = listOfSystems.get(systemList.getSelectedIndex()).getName();
+				        	currentSystemName = listOfSystems.get(systemList.getSelectedIndex()).getName();		        	
 				    		BookXMLParser bookParser = new BookXMLParser(chosenSystem);	
 				    		listOfBooks = bookParser.readBookXML(chosenSystem);
 				        	bookListModel.clear();
