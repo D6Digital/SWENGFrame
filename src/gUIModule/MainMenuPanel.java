@@ -64,6 +64,8 @@ public class MainMenuPanel extends JPanel{
 	private String currentSystemName;
 	private String currentBookName;
 	private ArrayList<Book> bookListForContents;
+	double scaleFactorX = 1;
+	double scaleFactorY = 1;
 	
 	public MainMenuPanel(int width, int height) {
 		
@@ -76,8 +78,8 @@ public class MainMenuPanel extends JPanel{
 		listOfSystems = systemParser.getSystem();
 		
 		//start button
-		openBookButton.setBounds(width-120, 250, 110, 50);
-		openShopButton.setBounds(width-120, 370, 110, 50);
+		openBookButton.setBounds(width-170, 434, 150, 66);
+		openShopButton.setBounds(width-170, 57, 150, 66);
 		
 		//background
 		BufferedImage backgroundImage;
@@ -94,9 +96,9 @@ public class MainMenuPanel extends JPanel{
 		BufferedImage logoImage;
 		try{
 			logoImage = ImageIO.read(new File("resources/buttons/LogoWithBackground.png"));
-			Image scaledBackground = logoImage.getScaledInstance(100,height,java.awt.Image.SCALE_SMOOTH);
+			Image scaledBackground = logoImage.getScaledInstance((int)(width*0.1),height,java.awt.Image.SCALE_SMOOTH);
 			logoLabel = new JLabel(new ImageIcon(scaledBackground));
-			logoLabel.setBounds(0, 0, 100,height);
+			logoLabel.setBounds((int)(width*0.01), 0, (int)(width*0.1),height);
 		}catch(IOException e2){
 			e2.printStackTrace();
 		}
@@ -104,7 +106,7 @@ public class MainMenuPanel extends JPanel{
 		BufferedImage bookButtonImage;
 		try{
 			bookButtonImage = ImageIO.read(new File("resources/buttons/OpenBookButton.png"));
-			Image scaledButton = bookButtonImage.getScaledInstance(110,50,java.awt.Image.SCALE_SMOOTH);
+			Image scaledButton = bookButtonImage.getScaledInstance(150,66,java.awt.Image.SCALE_SMOOTH);
 			openBookButton.setIcon(new ImageIcon(scaledButton));
 		}catch (IOException ex){
 			
@@ -113,44 +115,34 @@ public class MainMenuPanel extends JPanel{
 		BufferedImage shopButtonImage;
 		try{
 			shopButtonImage = ImageIO.read(new File("resources/buttons/OpenShopButton.png"));
-			Image scaledButton = shopButtonImage.getScaledInstance(110,50,java.awt.Image.SCALE_SMOOTH);
+			Image scaledButton = shopButtonImage.getScaledInstance(150,66,java.awt.Image.SCALE_SMOOTH);
 			openShopButton.setIcon(new ImageIcon(scaledButton));
 		}catch (IOException ex){
 			
 		}
 		 
-//    	BufferedImage bookImage;
-// 		try{
-// 			bookImage = ImageIO.read(new File("resources/buttons/eclipsephase.jpg"));
-// 			Image scaledBackground = bookImage.getScaledInstance(150,300,java.awt.Image.SCALE_SMOOTH);
-// 			imageLabel = new JLabel(new ImageIcon(scaledBackground));
-// 			imageLabel.setBounds(440, 200, 150, 300);
-// 		}catch(IOException e2){
-// 			e2.printStackTrace();
-// 		}
- 		
 		//Descriptions
-		descriptionTitle.setBounds(130, 10, width-250, 30);
+		descriptionTitle.setBounds(110, 10, width-350, 30);
 		descriptionTitle.setText("System Description:");
 		descriptionTitle.setFont(new Font("Papyrus", Font.BOLD, 18));
 		description.setEditable(false);
-		description.setBounds(130, 40, width-250, 100);
+		description.setBounds(110, 40, width-300, 100);
 		description.setFont(new Font("Papyrus", Font.PLAIN, 14));
-		description.setText("Welcome to the Grimoire interactive rulebook! Please choose a system and "+ "\n"+ "then a book. We hope you enjoy your journey!"+ "\n"+ ""+ "\n"+ "Much Love, D6 Digital");
+		description.setText("Welcome to the Grimoire interactive rulebook! Please choose a "+ "\n"+ "system and then a book. We hope you enjoy your journey!"+ "\n"+ ""+ "\n"+ "Much Love, D6 Digital");
 		description.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
 		
 		//Labels
 		systemLabel = new JLabel("Choose A "+ "\n"+ "System:");
 		systemLabel.setFont(new Font("Papyrus", Font.BOLD, 16));
-		systemLabel.setBounds(110, 140, 180, 50);
+		systemLabel.setBounds(110, 150, 180, 50);
 		bookLabel = new JLabel("Choose A"+ "\n"+ " Book:");
 		bookLabel.setFont(new Font("Papyrus", Font.BOLD, 16));
-		bookLabel.setBounds(280, 140, 170, 50);
+		bookLabel.setBounds(330, 150, 170, 50);
 		
 		//scrollpanes
 		setUpScrollPanes();
 		
-		imageLabel.setBounds(440, 200, 150, 300);
+		imageLabel.setBounds(width-170, 200, 150, 214);
 		imageLabel.setBackground(Color.LIGHT_GRAY);
 		imageLabel.setOpaque(true);
 		imageLabel.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
@@ -187,12 +179,14 @@ public class MainMenuPanel extends JPanel{
 
 				
 				systemScroll.setViewportView(systemList);
-				systemScroll.setBounds(130, 200, 120, 300);
+				systemScroll.setBounds(110, 200, 200, 300);
 				systemList.setFont(new Font("Papyrus", Font.PLAIN, 14));
 				systemScroll.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
 				
 				bookListModel.clear();
 				bookList.removeAll();
+				
+			
 
 				
 
@@ -200,7 +194,7 @@ public class MainMenuPanel extends JPanel{
 				//Cycle through all slides in the contents list and creates a JButton for each 
 				
 				bookScroll.setViewportView(bookList);
-				bookScroll.setBounds(290, 200, 120, 300);
+				bookScroll.setBounds(330, 200, 200, 300);
 				bookList.setFont(new Font("Papyrus", Font.PLAIN, 14));
 				bookScroll.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
 
@@ -286,7 +280,7 @@ public class MainMenuPanel extends JPanel{
 				        	BufferedImage bookImage;
 				     		try{
 				     			bookImage = ImageIO.read(new File(listOfSystems.get(systemList.getSelectedIndex()).getLogoFileName()));
-				     			Image scaledBackground = bookImage.getScaledInstance(150,300,java.awt.Image.SCALE_SMOOTH);
+				     			Image scaledBackground = bookImage.getScaledInstance((int)(scaleFactorX * (double)150),(int)(scaleFactorY * (double)214),java.awt.Image.SCALE_SMOOTH);
 				     			imageLabel.setIcon((new ImageIcon(scaledBackground)));
 				     		}catch(IOException e2){
 				     			e2.printStackTrace();
@@ -302,20 +296,21 @@ public class MainMenuPanel extends JPanel{
 	 * 
 	 */
 	public void resizeMainMenu(double scaleFactorX, double scaleFactorY){
+		this.scaleFactorX=scaleFactorX;
+		this.scaleFactorY=scaleFactorY;
 		layers.setBounds(0, 0, (int)(scaleFactorX * (double)getWidth()), (int)(scaleFactorY * (double)getHeight()));
-		systemScroll.setBounds((int)(scaleFactorX * (double) 130), (int)(scaleFactorY * (double)200), (int)(scaleFactorX * (double)120), (int)(scaleFactorY * (double)300));
-		bookScroll.setBounds((int)(scaleFactorX * (double)290), (int)(scaleFactorY * (double)200), (int)(scaleFactorX * (double)120), (int)(scaleFactorY * (double)300));
-		description.setBounds((int)(scaleFactorX * (double)130), (int)(scaleFactorY * (double)40), getWidth() -(int)(scaleFactorX * (double)250), (int)(scaleFactorY * (double)100));
-		descriptionTitle.setBounds((int)(scaleFactorX * (double)130),(int)(scaleFactorY * (double) 10), getWidth()-(int)(scaleFactorX * (double)250), (int)(scaleFactorY * (double)30));
+		systemScroll.setBounds((int)(scaleFactorX * (double) 110), (int)(scaleFactorY * (double)200), (int)(scaleFactorX * (double)200), (int)(scaleFactorY * (double)300));
+		bookScroll.setBounds((int)(scaleFactorX * (double)330), (int)(scaleFactorY * (double)200), (int)(scaleFactorX * (double)200), (int)(scaleFactorY * (double)300));
+		description.setBounds((int)(scaleFactorX * (double)110), (int)(scaleFactorY * (double)40), getWidth() -(int)(scaleFactorX * (double)300), (int)(scaleFactorY * (double)100));
+		descriptionTitle.setBounds((int)(scaleFactorX * (double)110),(int)(scaleFactorY * (double) 10), getWidth()-(int)(scaleFactorX * (double)350), (int)(scaleFactorY * (double)30));
 		
 		
-		
-		imageLabel.setBounds((int)(scaleFactorX * (double)440), (int)(scaleFactorY * (double)200), (int)(scaleFactorX * (double)150), (int)(scaleFactorY * (double)300));
+		imageLabel.setBounds((int)(scaleFactorX * (double)550), (int)(scaleFactorY * (double)200), (int)(scaleFactorX * (double)150), (int)(scaleFactorY * (double)214));
 		if(listOfBooks!=null){
 			BufferedImage bookImage;
 	 		try{
 	 			bookImage = ImageIO.read(new File(listOfSystems.get(systemList.getSelectedIndex()).getLogoFileName()));
-	 			Image scaledBackground = bookImage.getScaledInstance((int)(scaleFactorX * (double)150),(int)(scaleFactorY * (double)300),java.awt.Image.SCALE_SMOOTH);
+	 			Image scaledBackground = bookImage.getScaledInstance((int)(scaleFactorX * (double)150),(int)(scaleFactorY * (double)214),java.awt.Image.SCALE_SMOOTH);
 	 			imageLabel.setIcon((new ImageIcon(scaledBackground)));
 	 		}catch(IOException e2){
 	 			e2.printStackTrace();
@@ -324,17 +319,17 @@ public class MainMenuPanel extends JPanel{
 		}
 		
 		
-		systemLabel.setBounds((int)(scaleFactorX * (double)110), (int)(scaleFactorY * (double)140), (int)(scaleFactorX * (double)180), (int)(scaleFactorY * (double)50));
-		bookLabel.setBounds((int)(scaleFactorX * (double)280 ), (int)(scaleFactorY * (double)140), (int)(scaleFactorX * (double)170 ), (int)(scaleFactorY * (double)50));
-		openBookButton.setBounds(getWidth()-(int)(scaleFactorX * (double)120), (int)(scaleFactorY * (double)250), (int)(scaleFactorX * (double)110), (int)(scaleFactorY * (double)50));
-		openShopButton.setBounds(getWidth()-(int)(scaleFactorX * (double)120), (int)(scaleFactorY * (double)370), (int)(scaleFactorX * (double)110), (int)(scaleFactorY * (double)50));
-	
+		systemLabel.setBounds((int)(scaleFactorX * (double)110), (int)(scaleFactorY * (double)150), (int)(scaleFactorX * (double)180), (int)(scaleFactorY * (double)50));
+		bookLabel.setBounds((int)(scaleFactorX * (double)330 ), (int)(scaleFactorY * (double)150), (int)(scaleFactorX * (double)170 ), (int)(scaleFactorY * (double)50));
+		openBookButton.setBounds(getWidth()-(int)(scaleFactorX * (double)170), (int)(scaleFactorY * (double)434), (int)(scaleFactorX * (double)150), (int)(scaleFactorY * (double)66));
+		openShopButton.setBounds(getWidth()-(int)(scaleFactorX * (double)170), (int)(scaleFactorY * (double)57), (int)(scaleFactorX * (double)150), (int)(scaleFactorY * (double)66));
+		
 		
 		this.remove(openBookButton);
 		BufferedImage bookButtonImage;
 		try{
 			bookButtonImage = ImageIO.read(new File("resources/buttons/OpenBookButton.png"));
-			Image scaledButton = bookButtonImage.getScaledInstance((int)(scaleFactorX * (double)110),(int)(scaleFactorY * (double)50),java.awt.Image.SCALE_SMOOTH);
+			Image scaledButton = bookButtonImage.getScaledInstance((int)(scaleFactorX * (double)150),(int)(scaleFactorY * (double)66),java.awt.Image.SCALE_SMOOTH);
 			openBookButton.setIcon(new ImageIcon(scaledButton));
 		}catch (IOException ex){
 			
@@ -346,7 +341,7 @@ public class MainMenuPanel extends JPanel{
 		BufferedImage shopButtonImage;
 		try{
 			shopButtonImage = ImageIO.read(new File("resources/buttons/OpenShopButton.png"));
-			Image scaledButton = shopButtonImage.getScaledInstance((int)(scaleFactorX * (double)110),(int)(scaleFactorY * (double)50),java.awt.Image.SCALE_SMOOTH);
+			Image scaledButton = shopButtonImage.getScaledInstance((int)(scaleFactorX * (double)150),(int)(scaleFactorY * (double)66),java.awt.Image.SCALE_SMOOTH);
 			openShopButton.setIcon(new ImageIcon(scaledButton));
 		}catch (IOException ex){
 			
@@ -358,9 +353,9 @@ public class MainMenuPanel extends JPanel{
 				BufferedImage logoImage;
 				try{
 					logoImage = ImageIO.read(new File("resources/buttons/LogoWithBackground.png"));
-					Image scaledBackground = logoImage.getScaledInstance(100,getHeight(),java.awt.Image.SCALE_SMOOTH);
+					Image scaledBackground = logoImage.getScaledInstance((int)(getWidth()*0.1),getHeight(),java.awt.Image.SCALE_SMOOTH);
 					logoLabel = new JLabel(new ImageIcon(scaledBackground));
-					logoLabel.setBounds(0, 0, 100,getHeight());
+					logoLabel.setBounds((int)(getWidth()*0.01), 0, (int)(getWidth()*0.1),getHeight());
 				}catch(IOException e2){
 					e2.printStackTrace();
 				}
