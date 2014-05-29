@@ -3,9 +3,12 @@ package videoModule;
 import static org.junit.Assert.*;
 
 import java.awt.BorderLayout;
+import java.awt.Canvas;
 import java.awt.Dimension;
 import java.awt.Robot;
 import java.awt.event.InputEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -35,6 +38,9 @@ public class VideoPlayerTestT601 {
     String notAFile = "this/path/is/bullshit.mpg";
     int width = 300;
     int height = 302;
+    
+
+    
 
     @Before
     public void setUp() throws Exception {
