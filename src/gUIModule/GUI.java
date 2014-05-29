@@ -124,7 +124,7 @@ public class GUI extends JFrame implements WindowStateListener, ComponentListene
 	JButton maximiseRestoreButton = new JButton();
 	
 	JPanel utilitiesTab = new JPanel();
-	JPanel contentsTab = new JPanel();
+	JPanel contentsTab;
 	JPanel nextTab = new JPanel();
 	JPanel previousTab = new JPanel();
 	MainMenuPanel mainMenuPanel;
@@ -201,24 +201,24 @@ public class GUI extends JFrame implements WindowStateListener, ComponentListene
 		//bigSlideList = parser2.getSlides();
 		System.out.println("HOOOOOO");
 		setLayout(null);
-		slideWidth = slideList.getWidth();
-		slideHeight = slideList.getHeight();
+		slideWidth = 720;
+		slideHeight = 540;
 
-		//set up jframe
-		setSize(slideList.getWidth()+8+8,
-				slideList.getHeight()+30+8);
+		//set up jframe and initialise to a default size then use specific frame insets once visible
+		setSize(720+8+8,
+				540+30+8);
 		setVisible(true);	
 		insets = this.getInsets();
 		setTitle("Grimoire");
-		setSize(slideList.getWidth()+insets.left+insets.right,
-				slideList.getHeight()+insets.top+insets.bottom);
+		setSize(720+insets.left+insets.right,
+				540+insets.top+insets.bottom);
 		
 		setLayout(null);
 		frame=this;
 		frame.addKeyListener(this);
 		
-		mainMenuPanel = new MainMenuPanel(slideList.getWidth(), slideList.getHeight());
-		mainMenuPanel.setBounds(0,0, slideList.getWidth(), slideList.getHeight());
+		mainMenuPanel = new MainMenuPanel(720, 540);
+		mainMenuPanel.setBounds(0,0, 720, 540);
 		JButton buttonFromMainMenu = mainMenuPanel.getButton();
 		layers.setVisible(false);
 		add(mainMenuPanel);
@@ -235,7 +235,8 @@ public class GUI extends JFrame implements WindowStateListener, ComponentListene
 						layers.setVisible(true);
 						String chosenBook = mainMenuPanel.getChosenBook();
 						XMLParser parser = new XMLParser(chosenBook);	
-						slideList = parser.getSlides();
+						collection = parser.getCollection();
+						slideList = collection.get(0);
 			            System.out.println("book = "+chosenBook);
 			            mainMenuPanel.setVisible(false);
 						bookMainPanelSetUp();
@@ -299,58 +300,7 @@ public class GUI extends JFrame implements WindowStateListener, ComponentListene
 	}
 
 
-	/*private void setMaxSize() {
-        System.err.println("MAXIMIZED");
-        slidePanel.setScalingFactors(scaleFactorX, scaleFactorY);
-        slidePanel.setBounds(0, 0, (int) (slideList.getWidth()*scaleFactorX), (int) (slideList.getHeight()*scaleFactorY));
-        System.out.println("width: " + (int) (slideList.getWidth()*scaleFactorX) + "  Height: " + (int) (slideList.getHeight()*scaleFactorY));
-        slidePanel.resizeSlide();
-        slidePanel.repaint();
-        //slidePanel.loadPresentation(slideList);
-        //slidePanel.refreshSlide(slideList.get(slidePanel.currentSlide.getSlideID()));
-        
-        layers.setBounds(0,0,(int) (slideList.getWidth()*scaleFactorX), (int) (slideList.getHeight()*scaleFactorY)+insets.top+insets.bottom);
-        previousSlideButton.setBounds(10,(int) (slideList.getHeight()*scaleFactorY)-60,150,50);
-        previousSlideButton.repaint();
-        nextSlideButton.setBounds((int) (slideList.getWidth()*scaleFactorX)-170,(int) (slideList.getHeight()*scaleFactorY)-60,150,50);
-        nextSlideButton.repaint();
-        utilities.setBounds((int) (slideList.getWidth()*scaleFactorX)-utilitiesWidth, 0, utilitiesWidth, (int) (slideList.getHeight()*scaleFactorY));
-        utilitiesTab.setBounds((int) (slideList.getWidth()*scaleFactorX)-25,((int) (slideList.getHeight()*scaleFactorY)/2)-60,15,120);
-        contentsTab.setBounds(0,((int) (slideList.getHeight()*scaleFactorY)/2)-60,15,120);
-        nextTab.setBounds((int) (slideList.getWidth()*scaleFactorX)-120,((int) (slideList.getHeight()*scaleFactorY))-25,90,20);
-        previousTab.setBounds(0,((int) (slideList.getHeight()*scaleFactorY))-25,100,20);
-        contentsPanel.setBounds(0, 0, contentsWidth, (int) (slideList.getHeight()*scaleFactorY));
-        slideWidth = (int) (slideList.getWidth()*scaleFactorX)-30;
-        slideHeight = (int) (slideList.getHeight()*scaleFactorY)-60;
-        fullScreen=true;
-        if(!screenSizeMaximised ) {
-            this.setExtendedState(Frame.MAXIMIZED_BOTH);
-        }
-	}
 	
-	private void setRestoredSize() {
-        System.err.println("NORMAL");
-        slidePanel.setScalingFactors(1, 1);
-        slidePanel.resizeSlide();
-        //slidePanel.loadPresentation(slideList);
-        //slidePanel.refreshSlide(slideList.get(slidePanel.currentSlide.getSlideID()));
-        slidePanel.setBounds(0, 0, slideList.getWidth(), slideList.getHeight());
-        layers.setBounds(0,0,slideList.getWidth(), slideList.getHeight()+insets.top+insets.bottom);
-        previousSlideButton.setBounds(10,slideList.getHeight()-60,150,50);
-        nextSlideButton.setBounds(slideList.getWidth()-160,slideList.getHeight()-60,150,50);
-        utilities.setBounds(slideList.getWidth()-utilitiesWidth, 0, utilitiesWidth, slideList.getHeight());
-        utilitiesTab.setBounds(slideList.getWidth()-15,(slideList.getHeight()/2)-60,15,120);
-        contentsTab.setBounds(0,(slideList.getHeight()/2)-60,15,120);
-        nextTab.setBounds(slideList.getWidth()-90,(slideList.getHeight())-20,90,20);
-        previousTab.setBounds(0,(slideList.getHeight())-20,100,20);
-        contentsPanel.setBounds(0, 0, contentsWidth, slideList.getHeight());
-        slideWidth = slideList.getWidth();
-        slideHeight = slideList.getHeight();
-        fullScreen=false;
-        if(screenSizeMaximised ) {
-            this.setExtendedState(Frame.NORMAL);
-        }
-	}*/
 
 	
 /*public Presentation reScale(Presentation slideList, double scaleFactorX, double scaleFactorY) {
@@ -582,20 +532,24 @@ public void bookMainPanelSetUp(){
 		utilitiesTab.setVisible(false);
 		
 		//contents tab
-		contentsTab.setBounds(0,(height/2)-60,15,120);
-		BufferedImage contentsTabImage;
-		try{
-			contentsTabImage = ImageIO.read(new File("resources/buttons/contentsTab.png"));
-			Image scaledCTab = contentsTabImage.getScaledInstance(15, 100, java.awt.Image.SCALE_SMOOTH);
-			JLabel cTabLabel = new JLabel(new ImageIcon(scaledCTab));
-			cTabLabel.setBounds(0, 0, 15, 120);
-			cTabLabel.setOpaque(false);
-			contentsTab.add(cTabLabel);
-		}catch (IOException ex){
-			
+		if(contentsTab == null)
+		{
+			contentsTab = new JPanel();
+			contentsTab.setBounds(0,(height/2)-60,15,120);
+			BufferedImage contentsTabImage;
+			try{
+				contentsTabImage = ImageIO.read(new File("resources/buttons/contentsTab.png"));
+				Image scaledCTab = contentsTabImage.getScaledInstance(15, 100, java.awt.Image.SCALE_SMOOTH);
+				JLabel cTabLabel = new JLabel(new ImageIcon(scaledCTab));
+				cTabLabel.setBounds(0, 0, 15, 120);
+				cTabLabel.setOpaque(false);
+				contentsTab.add(cTabLabel);
+			}catch (IOException ex){
+				
+			}
+			contentsTab.setOpaque(false);
+			contentsTab.setVisible(false);
 		}
-		contentsTab.setOpaque(false);
-		contentsTab.setVisible(false);
 		
 		//next tab
 		nextTab.setBounds(width-90,(height)-20,90,20);
@@ -675,10 +629,10 @@ public void bookMainPanelSetUp(){
             @Override
             public void actionPerformed(ActionEvent e) {
             	frame.requestFocusInWindow();
-            	utilities.setDimensions( (int) (slideList.getWidth()*scaleFactorX)-150 , (int) (slideList.getHeight()*scaleFactorY));
+            	utilities.setDimensions( (int) (720*scaleFactorX)-150 , (int) (540*scaleFactorY));
                 utilities.setUtilityVisible(backButton);
                 utilitiesWidth = utilities.getWidth();
-                //utilities.setBounds(slideList.getWidth()-utilitiesWidth, 0, utilitiesWidth, slideList.getHeight());
+                //utilities.setBounds(720-utilitiesWidth, 0, utilitiesWidth, 540);
                 //utilitiesWidth = 500;
                 System.out.println(utilities.getWidth());
                 utilities.validate();
@@ -693,10 +647,10 @@ public void bookMainPanelSetUp(){
                 @Override
                 public void actionPerformed(ActionEvent e) {
                 	frame.requestFocusInWindow();
-                	utilities.setDimensions( (int) (slideList.getWidth()*scaleFactorX)-150 , (int) (slideList.getHeight()*scaleFactorY));
+                	utilities.setDimensions( (int) (720*scaleFactorX)-150 , (int) (540*scaleFactorY));
                     utilities.setUtilityVisible(button);
                     utilitiesWidth = utilities.getWidth();
-                    //utilities.setBounds(slideList.getWidth()-utilitiesWidth, 0, utilitiesWidth, slideList.getHeight());
+                    //utilities.setBounds(720-utilitiesWidth, 0, utilitiesWidth, 540);
                     //utilitiesWidth = 500;
                     System.out.println(utilities.getWidth());
                     utilities.validate();
@@ -712,15 +666,15 @@ public void bookMainPanelSetUp(){
 
 		// TODO: CHANGES MADE HERE BY JOSHUA LANT, NO ACTUAL TODO, JUST REFERENCE POINT
 		//set up contents
-		ArrayList<Book> bookList = mainMenuPanel.getBookList();
-		contentsPanel = new ContentsPanel(slideList.getSlideList(),collection.getPresentationList(), contentsWidth, slideList.getWidth(),slideList.getHeight(), mainMenuPanel.getCurrentSystem(), mainMenuPanel.getCurrentBook());
+		//ArrayList<Book> bookList = mainMenuPanel.getBookList();
+		contentsPanel = new ContentsPanel(slideList.getSlideList(),collection.getPresentationList(), contentsWidth, slideWidth,540, mainMenuPanel.getCurrentSystem(), mainMenuPanel.getCurrentBook());
 		contentsPanel.setBounds(0, 0, contentsWidth, height);
 		
 		contentsPanel.setPreferredSize(new Dimension(contentsWidth, height));
 		//contents.add(contentsPanel);
 		contentsPanel.repaint();
         contentsPanel.setVisible(false);
-		//contents.setBounds(0, 0, contentsWidth, slideList.getHeight());
+		//contents.setBounds(0, 0, contentsWidth, 540);
 		//contents.setBackground(Color.GRAY);
 		//contents.repaint();
 		//contents.setVisible(false);
@@ -782,6 +736,7 @@ public void bookMainPanelSetUp(){
 				contentsPanel.setScrollList(slideList);
 			}
 		});
+		
 
 
 		//Adding to layered pane
@@ -879,8 +834,8 @@ private void borderListenerProcess(MouseEvent e1,Boolean isObject,Boolean isText
 	
 	slideWidth = this.getWidth()-insets.left-insets.right;
 	slideHeight = this.getHeight()-insets.top-insets.bottom;
-	System.out.println("x="+xCoordinate+"y="+yCoordinate);
-	System.out.println("width="+slideWidth+"height="+slideHeight);
+	//System.out.println("x="+xCoordinate+"y="+yCoordinate);
+	//System.out.println("width="+slideWidth+"height="+slideHeight);
 	
 	if (xCoordinate>(slideWidth-borderSize)){
 		utilities.setVisible(true);
