@@ -54,8 +54,8 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
 	JButton diceButton = new JButton();
 	JButton calculatorButton = new JButton();
 	JButton audioButton = new JButton();
-
-
+	BufferedImage backgroundImage;
+	Image scaledBackground;
 
     private int utilitiesWidth=150;
     private int heightOfSlide;
@@ -96,10 +96,9 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
 		
 		multiPanel.add(backButton);
 		//Set up background image
-		BufferedImage backgroundImage;
 		try{
 			backgroundImage = ImageIO.read(new File("resources/buttons/UtilitiesBackground.png"));
-			Image scaledBackground = backgroundImage.getScaledInstance(utilitiesWidth,slideHeight,java.awt.Image.SCALE_SMOOTH);
+			scaledBackground = backgroundImage.getScaledInstance(utilitiesWidth,slideHeight,java.awt.Image.SCALE_SMOOTH);
 			background = new JLabel(new ImageIcon(scaledBackground));
 			background.setBounds(0, 0, utilitiesWidth, slideHeight);
 		}catch(IOException e2){
@@ -439,6 +438,14 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
 	public void setDimensions(int utilitiesOffset, int slideHeight) {
 		this.heightOfSlide = slideHeight;
 		this.xOffset = utilitiesOffset;
+		scaledBackground = backgroundImage.getScaledInstance(utilitiesWidth,slideHeight,java.awt.Image.SCALE_SMOOTH);
+		background.setIcon(new ImageIcon(scaledBackground));
+		background.setBounds(0, 0, utilitiesWidth, slideHeight);
+		diceButton.setBounds((utilitiesWidth/2)-50, (slideHeight/4)-50, 100, 100);
+		calculatorButton.setBounds((utilitiesWidth/2)-50, (slideHeight/2)-50, 100, 100);
+		audioButton.setBounds((utilitiesWidth/2)-50, (3*slideHeight/4)-50, 100, 100);
+		
+
 	}
 	
 }
