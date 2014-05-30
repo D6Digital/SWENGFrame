@@ -5,6 +5,7 @@ import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
+import java.awt.event.MouseAdapter;
 import java.sql.Array;
 import java.util.Random;
 
@@ -52,12 +53,17 @@ public class DicePanel extends JPanel implements ActionListener{
 	int panelWidth;
 	int panelHeight;
 	
+	private MouseAdapter genericMouseMotionListener;
+	
 	/**
 	 * Create a simple JFrame and then populate it with specified JPanel type
+	 * @param genericListener 
 	 * @return 
 	 */
-	public DicePanel(int widthOfPanel, int heightOfPanel) {
+	public DicePanel(int widthOfPanel, int heightOfPanel, MouseAdapter genericListener) {
 		super();
+		
+		this.genericMouseMotionListener = genericListener;
 		
 		panelWidth = widthOfPanel;
 		panelHeight = heightOfPanel;
@@ -77,6 +83,7 @@ public class DicePanel extends JPanel implements ActionListener{
 		        (int) (panelHeight*0.05));
 		diceType.setActionCommand("diceTypeSelected");
 		diceType.addActionListener(this);
+		diceType.addMouseMotionListener(genericListener);
 		add(diceType);
 		
 		//adds a JComboBox for selecting the type of dice to be rolled
@@ -91,6 +98,7 @@ public class DicePanel extends JPanel implements ActionListener{
 		        (int) (panelHeight*0.05));
 		diceQuantity.setActionCommand("diceQuantitySelected");
 		diceQuantity.addActionListener(this);
+		diceQuantity.addMouseMotionListener(genericListener);
 		add(diceQuantity);
 		
 		//adds a radioButton for enabling dual dice type rolling
@@ -102,6 +110,7 @@ public class DicePanel extends JPanel implements ActionListener{
                 (int) (panelHeight*0.1));
 		multiDice.setActionCommand("multiDiceClicked");
 		multiDice.addActionListener(this);
+		multiDice.addMouseMotionListener(genericListener);
 		multiDice.setSelected(false);
 		add(multiDice);
 		
@@ -118,6 +127,7 @@ public class DicePanel extends JPanel implements ActionListener{
                 (int) (panelHeight*0.05));
 		secondDiceType.setActionCommand("secondDiceTypeSelected");
 		secondDiceType.addActionListener(this);
+		secondDiceType.addMouseMotionListener(genericListener);
 		add(secondDiceType);
 		secondDiceType.setEnabled(false);
 		
@@ -134,6 +144,7 @@ public class DicePanel extends JPanel implements ActionListener{
                 (int) (panelHeight*0.05));
 		secondDiceQuantity.setActionCommand("secondDiceQuantitySelected");
 		secondDiceQuantity.addActionListener(this);
+		secondDiceQuantity.addMouseMotionListener(genericListener);
 		add(secondDiceQuantity);
 		secondDiceQuantity.setEnabled(false);
 		
@@ -149,6 +160,7 @@ public class DicePanel extends JPanel implements ActionListener{
                 (int) (panelHeight*0.05));
 		rollButton.setActionCommand("roll");
 		rollButton.addActionListener(this);
+		rollButton.addMouseMotionListener(genericListener);
 		rollButton.setToolTipText("rolls dice based on the parameters given");
 		add(rollButton);
 		
@@ -160,6 +172,7 @@ public class DicePanel extends JPanel implements ActionListener{
                 (int) (panelWidth*0.45),
                 (int) (panelHeight*0.75));
 		add(firstResultOutput);
+		firstResultOutput.addMouseMotionListener(genericListener);
 		firstResultOutput.setEnabled(false);
 		
 		//adds a JTextArea for display of results of rolling an addition dice type
@@ -171,6 +184,7 @@ public class DicePanel extends JPanel implements ActionListener{
                 (int) (panelWidth*0.45),
                 (int) (panelHeight*0.75));
 		add(secondResultOutput);
+		secondResultOutput.addMouseMotionListener(genericListener);
 		secondResultOutput.setEnabled(false);
 		
 		//adds JTextArea for display of total of all dice types rolled
@@ -181,6 +195,7 @@ public class DicePanel extends JPanel implements ActionListener{
                 (int) (panelWidth*0.925),
                 (int) (panelHeight*0.035));
 		add(displayTotalResult);
+		displayTotalResult.addMouseMotionListener(genericListener);
 		displayTotalResult.setEnabled(false);
 	}
 	

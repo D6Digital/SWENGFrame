@@ -116,6 +116,7 @@ public class MainMenuPanel extends JPanel{
 			
 		}
 		
+		openShopButton.addMouseMotionListener(genericMouseMotionListener);
 		BufferedImage shopButtonImage;
 		try{
 			shopButtonImage = ImageIO.read(new File("resources/buttons/OpenShopButton.png"));

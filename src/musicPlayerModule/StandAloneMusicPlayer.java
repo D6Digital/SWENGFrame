@@ -12,8 +12,10 @@ import java.awt.Image;
 import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.image.BufferedImage;
@@ -120,6 +122,8 @@ public class StandAloneMusicPlayer {
     int playlistIconHeight;
     
     private boolean areWeUnlocked;
+    
+    private MouseMotionListener genericMouseMotionListener;
 
     /**
      * Constructor for StandAloneMusicPlayer() class.
@@ -169,11 +173,14 @@ public class StandAloneMusicPlayer {
      * Constructor for StandAloneMusicPlayer() class. To be used when the VLCJ library has already
      * been loaded earlier in the program and there is no default path to load into the player.
      */
-    public StandAloneMusicPlayer() {
+    public StandAloneMusicPlayer(MouseAdapter genericListener) {
         LockedPlaylistValueAccess.lockedPlaylist = initialLockedValue;
         //vlcLibraryPath = vlcLibraryPathConstructor;
         currentFilePath = "";
         newFilePath = currentFilePath;
+        
+        this.genericMouseMotionListener = genericListener;
+        fileChooser.getButton().addMouseMotionListener(genericListener);
 
         NativeLibrary.addSearchPath(RuntimeUtil.getLibVlcLibraryName(),vlcLibraryPath);
         Native.loadLibrary(RuntimeUtil.getLibVlcLibraryName(), LibVlc.class);
@@ -200,6 +207,7 @@ public class StandAloneMusicPlayer {
             }
         }
     };
+	
 
 
 
@@ -350,6 +358,7 @@ public class StandAloneMusicPlayer {
      * @return Return the button which was passed in.
      */
     private JButton setupListenerAndAction(final JButton buttonName, final String playerMethodCaseName) {
+    	buttonName.addMouseMotionListener(genericMouseMotionListener);
         buttonName.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e)
             {
@@ -376,6 +385,7 @@ public class StandAloneMusicPlayer {
      * should be LOWERCASE entirely.
      */
     private void setupListenerAndAction(final JSlider sliderName, final String playerMethodCaseName) {
+    	sliderName.addMouseMotionListener(genericMouseMotionListener);
         sliderName.addMouseListener(new MouseListener() {
 
             @Override
@@ -898,6 +908,7 @@ public class StandAloneMusicPlayer {
         panel.add(scrollPane);
         
         // Add listener which plays a piece of media whenever the user chooses it in the JList.
+        playContentsJList.addMouseMotionListener(genericMouseMotionListener);
         playContentsJList.addMouseListener(new MouseListener() {
 
             @Override
