@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<booklist version="1.0" xmlns="http://www-users.york.ac.uk/~rjm529/booklist.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www-users.york.ac.uk/~rjm529/booklist.xsd booklist.xsd ">
+  <book id="001">
+    <title>The greatest and best book in the world</title>
+    <filename>src\EclipsePhase.xml</filename>
+    <icon>src\XMLBits\god.png</icon>
+  </book>
+  <book id="002">
+    <title>Dictionary</title>
+    <filename>github resources\dynamDom.xml</filename>
+    <icon>src\XMLBits\char1jovian_spy.jpg</icon>
+  </book>
+</booklist>

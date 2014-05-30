@@ -5,5 +5,5 @@
 	<system description="The Roleplaying Game of Transhuman Conspiracy and Horror" logofilename="src/XMLBits/char1jovian_spy.jpg"
 		name="Eclipse Phase" xmlfilename="src/booklist.xml" />
 	<system logofilename="src/XMLBits/samson.png" name="Dungeons and Dragons"
-		description="The Original Fantasy Adventure Game" xmlfilename="src/FantasyBookList.xml" ></system>
+		description="The Original Fantasy Adventure Game" xmlfilename="src/BasicExample.xml" ></system>
 </systemlist>
