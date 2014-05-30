@@ -163,7 +163,7 @@ public class SlidePanel extends JPanel{
        }*/
 	    
        
-       int delay = 100; // 1000ms or 1 second timer
+       int delay = 1000; // 1000ms or 1 second timer
        setCount(0);
        ActionListener taskPerformer= new ActionListener() {
 		int count = 0;
@@ -198,13 +198,15 @@ public class SlidePanel extends JPanel{
 				}
 	       }
 	       for(Sound sound : currentSlide.getSoundList()) {
-	    	   if(sound.getObjectStartTime() == count+1 || (sound.getStart() == 0 && count == 0))
+	    	   if(sound.getObjectStartTime() == count+1 || (sound.getObjectStartTime() == 0 && count == 0))
 	    	   {
-	    		   audioPlayer.prepareMedia(sound.getFile(), sound.getStart());
+	    		   audioPlayer.prepareMediaWithDuration(sound.getFile(), sound.getStart(), sound.getDuration(), sound.getLoop());
 	    	   }
 	    	   if(sound.getObjectStartTime() == count)
 	    	   {
 	    	       if(LockedPlaylistValueAccess.lockedPlaylist) {
+	    	       System.out.println("file: " + sound.getFile());
+	    	       System.out.println("start: " + sound.getStart() + "duration: " + sound.getDuration());
 	    		   audioPlayer.playMedia();
 	    	       }
 	    	   }
