@@ -94,6 +94,10 @@ public class SlidePanel extends JPanel{
 
 	private Integer count;
 
+	protected Timer quickRepaintTimer;
+	
+	ActionListener repaintTask;
+
 
 
 	/**
@@ -144,7 +148,7 @@ public class SlidePanel extends JPanel{
 	    //layeredPane.setPreferredSize(new Dimension(presentation.getWidth(),presentation.getHeight()));
 	    layeredPane.setBounds(0, 0, (int) (presentation.getWidth()*scalingFactorX), (int) (presentation.getHeight()*scalingFactorY));
 	    layeredPane.setLayout(null);
-	    add(layeredPane);
+	    
 
 	    addSound();
         
@@ -161,8 +165,21 @@ public class SlidePanel extends JPanel{
        for(Text text : textList) {
             addText(text);
        }*/
+	    repaintTask= new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) { 
+				//System.out.println( getParent().getParent().getParent().getParent().getParent());
+				//if( getParent().getParent().getParent().getParent().getParent() instanceof GUI){
+					//GUI mainFrame = (GUI) getParent().getParent().getParent().getParent().getParent();
+					//mainFrame.repaint();
+				getParent().getParent().getParent().getParent().getParent().repaint();
+					
+				//}
+				quickRepaintTimer.stop();
+			}
+	    };
+	    this.setVisible(true);
 	    
-       
        int delay = 1000; // 1000ms or 1 second timer
        setCount(0);
        ActionListener taskPerformer= new ActionListener() {
@@ -225,14 +242,25 @@ public class SlidePanel extends JPanel{
 	       }
 		count ++;
 		setCount(count);
-		getParent().getParent().repaint();
+		
+		if(count == 1){
+			quickRepaintTimer = new Timer(1,repaintTask);
+			quickRepaintTimer.start();
 		}
+		
+		getParent().getParent().getParent().validate();
+		getParent().getParent().getParent().repaint();
+		
+		
+		}
+		
        };
        theTimer = new Timer(delay, taskPerformer);
        theTimer.setInitialDelay(50);
        theTimer.start();
        
-       this.setVisible(true);
+       add(layeredPane);
+       
        
 	}
 	
@@ -392,7 +420,7 @@ public class SlidePanel extends JPanel{
 		//System.out.printf("Shape lowX %d, Shape lowY %d%n", lowX, lowY);
 		//System.out.printf("Shape Width %d, Shape Height %d%n", boundWidth, boundHeight);
 				
-		slideMediaObject shapeObject = new slideMediaObject(shape.getBranch(),shape.getDuration(),shape.getStart());
+		slideMediaObject shapeObject = new slideMediaObject(shape.getBranch(),shape.getDuration(),shape.getStart(),shape.getChapterBranch());
         shapeObject.addMouseListener(branchListener);
         shapeObject.addMouseMotionListener(branchListener);
         
@@ -426,7 +454,7 @@ public class SlidePanel extends JPanel{
 		imagePanel.setOpaque(false);
 		imagePanel.setBounds(0,0, (int) (image.getWidth()*scalingFactorX), (int) (image.getHeight()*scalingFactorY));
 		
-		slideMediaObject imageObject = new slideMediaObject(image.getBranch(),image.getDuration(),image.getStart());
+		slideMediaObject imageObject = new slideMediaObject(image.getBranch(),image.getDuration(),image.getStart(),image.getChapterBranch());
 		imageObject.addMouseListener(branchListener);
 		imageObject.addMouseMotionListener(branchListener);
 		
@@ -539,7 +567,7 @@ public class SlidePanel extends JPanel{
 		textPanel.setBounds(0,0, (int) (text.getXend()*scalingFactorX)-(int) (text.getX_coord()*scalingFactorX), (int) (text.getYend()*scalingFactorY)-(int) (text.getY_coord()*scalingFactorY));
 		
 		
-		slideMediaObject textObject = new slideMediaObject(-1,text.getDuration(),text.getStart());
+		slideMediaObject textObject = new slideMediaObject(-1,text.getDuration(),text.getStart(),-1);
 		textObject.add(textPanel);
 		textObject.setText(true);
 		textObject.setBounds((int) (text.getX_coord()*scalingFactorX), (int) (text.getY_coord()*scalingFactorY), (int) (text.getXend()*scalingFactorX)-(int) (text.getX_coord()*scalingFactorX), (int) (text.getYend()*scalingFactorY)-(int) (text.getY_coord()*scalingFactorY));

@@ -13,6 +13,7 @@ public class Image extends SlideObject {
 	
 	private int width;
 	private int height;
+	private Integer chapterBranch;
 
 	
 	/**
@@ -67,6 +68,15 @@ public class Image extends SlideObject {
 	 */
 	public void setHeight(int height){
 		this.height = height;
+	}
+
+	public void setChapterBranch(int chapterBranch) {
+		this.chapterBranch = chapterBranch;
+		
+	}
+
+	public Integer getChapterBranch() {
+		return chapterBranch;
 	}
 	
 }

@@ -42,6 +42,7 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
 	
 
 	//JPanel UtilitiesPanel;
+	
 	JPanel multiPanel= new JPanel();
 	CalculatorPanel calculatorPanel; //= new CalculatorPanel();
 	DicePanel dicePanel;
@@ -78,7 +79,7 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
 	    
 		super();
 		setLayout(null);
-		
+		this.setOpaque(true);
 		this.genericMouseMotionListener = genericListener;
 		
 		heightOfSlide = slideHeight;

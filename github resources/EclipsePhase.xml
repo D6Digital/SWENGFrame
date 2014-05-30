@@ -3,43 +3,43 @@
 	<documentinfo><author>D6 Digital</author><version>2.1</version><title>Eclipse Phase Menu</title><comment>example comment for chapter 1</comment><width>720</width><height>540</height></documentinfo>
 	<defaults><backgroundcolor>#BFBFBF</backgroundcolor><font>Neo Sans Intel</font><fontsize>18</fontsize><fontcolor>#000000</fontcolor><linecolor>#404040</linecolor><fillcolor>#404040</fillcolor></defaults>
 	
-	<slide id="0" duration="60" descriptor="Contents Page" lastSlide="true" backgroundcolor="#BFBFBF"><text xstart="254" ystart="434" xend="518" yend="479" layer="10" starttime="0" font="Calibri" fontcolor="#FFFFFF" fontsize="24"><textbody branch="12" italic="true" bold="true" underlined="false"><textstring>Sample Adventure</textstring>
+	<slide id="0" duration="60" descriptor="Contents Page" lastSlide="true" backgroundcolor="#BFBFBF"><text xstart="254" ystart="434" xend="518" yend="479" layer="10" starttime="0" font="Calibri" fontcolor="#FFFFFF" fontsize="24"><textbody chapterbranch="3" branch="0" italic="true" bold="true" underlined="false"><textstring>Sample Adventure</textstring>
 	</textbody>
 	</text>
-	<text xstart="254" ystart="287" xend="518" yend="332" layer="8" starttime="0" font="Calibri" fontcolor="#FFFFFF" fontsize="24"><textbody branch="10" italic="true" bold="true" underlined="false"><textstring>Character Creation</textstring>
+	<text xstart="254" ystart="287" xend="518" yend="332" layer="8" starttime="0" font="Calibri" fontcolor="#FFFFFF" fontsize="24"><textbody chapterbranch="2" branch="0" italic="true" bold="true" underlined="false"><textstring>Character Creation</textstring>
 	</textbody>
 	</text>
-	<image urlname="Src/XMLBits/CH3.png" xstart="12" ystart="389" width="700" height="136" layer="7" starttime="0"/>
-	<image urlname="Src/XMLBits/CH5.png" xstart="12" ystart="242" width="700" height="136" layer="6" starttime="0"/>
-	<text xstart="254" ystart="145" xend="518" yend="190" layer="4" starttime="0" font="Calibri" fontcolor="#FFFFFF" fontsize="24"><textbody branch="2" italic="true" bold="true" underlined="false"><textstring>GM Reference Tables</textstring>
+	<image urlname="Src/XMLBits/CH3.png" xstart="12" ystart="389" width="700" height="136" layer="7" starttime="0" chapterbranch="3" branch="0"/>
+	<image urlname="Src/XMLBits/CH5.png" xstart="12" ystart="242" width="700" height="136" layer="6" starttime="0" chapterbranch="2" branch="0"/>
+	<text xstart="254" ystart="145" xend="518" yend="190" layer="4" starttime="0" font="Calibri" fontcolor="#FFFFFF" fontsize="24"><textbody chapterbranch="1" branch="0" italic="true" bold="true" underlined="false"><textstring>GM Reference Tables</textstring>
 	</textbody>
 	</text>
 	<text xstart="12" ystart="27" xend="274" yend="72" layer="2" starttime="0" font="Calibri" fontcolor="#790909" fontsize="24"><textbody italic="false" bold="true" underlined="false"><textstring>Table of Contents</textstring>
 	</textbody>
 	</text>
-	<image urlname="Src/XMLBits/CH12.png" xstart="12" ystart="99" width="700" height="136" layer="1" starttime="0"/>
+	<image urlname="Src/XMLBits/CH12.png" xstart="12" ystart="99" width="700" height="136" layer="1" starttime="0" chapterbranch="1" branch="0"/>
 	</slide>
 	</slideshow><slideshow xmlns="">
 	<documentinfo><author>D6 Digital</author><version>2.1</version><title>GM’s Reference</title><comment>example comment for chapter 1</comment><width>720</width><height>540</height></documentinfo>
 	<defaults><backgroundcolor>#BFBFBF</backgroundcolor><font>Neo Sans Intel</font><fontsize>18</fontsize><fontcolor>#000000</fontcolor><linecolor>#404040</linecolor><fillcolor>#404040</fillcolor></defaults>
 	
 	<slide id="0" duration="60" descriptor="GM’s Reference Tables" lastSlide="false" backgroundcolor="#BFBFBF"><image urlname="src/XMLBits/ANARCH.png" xstart="383" ystart="0" width="337" height="540" layer="15" starttime="0"/>
-	<text xstart="344" ystart="287" xend="451" yend="332" layer="13" starttime="0" font="Calibri" fontcolor="#790909" fontsize="24"><textbody branch="4" italic="false" bold="true" underlined="false"><textstring>Traits</textstring>
+	<text xstart="137" ystart="287" xend="450" yend="332" layer="13" starttime="0" font="Calibri" fontcolor="#790909" fontsize="24"><textbody branch="4" italic="false" bold="true" underlined="false"><textstring>Traits</textstring>
 	</textbody>
 	</text>
 	<text xstart="137" ystart="153" xend="428" yend="198" layer="11" starttime="0" font="Calibri" fontcolor="#790909" fontsize="24"><textbody branch="2" italic="false" bold="true" underlined="false"><textstring>Backgrounds and Factions</textstring>
 	</textbody>
 	</text>
-	<text xstart="213" ystart="429" xend="474" yend="474" layer="9" starttime="0" font="Calibri" fontcolor="#790909" fontsize="24"><textbody branch="6" italic="false" bold="true" underlined="false"><textstring>Mesh and Hacking</textstring>
+	<text xstart="137" ystart="429" xend="473" yend="474" layer="9" starttime="0" font="Calibri" fontcolor="#790909" fontsize="24"><textbody branch="6" italic="false" bold="true" underlined="false"><textstring>Mesh and Hacking</textstring>
 	</textbody>
 	</text>
-	<text xstart="207" ystart="354" xend="468" yend="399" layer="7" starttime="0" font="Calibri" fontcolor="#790909" fontsize="24"><textbody branch="5" italic="false" bold="true" underlined="false"><textstring>Combat and Action</textstring>
+	<text xstart="137" ystart="354" xend="467" yend="399" layer="7" starttime="0" font="Calibri" fontcolor="#790909" fontsize="24"><textbody branch="5" italic="false" bold="true" underlined="false"><textstring>Combat and Action</textstring>
 	</textbody>
 	</text>
-	<text xstart="315" ystart="224" xend="422" yend="269" layer="5" starttime="0" font="Calibri" fontcolor="#790909" fontsize="24"><textbody branch="3" italic="false" bold="true" underlined="false"><textstring>Skill List</textstring>
+	<text xstart="137" ystart="224" xend="422" yend="269" layer="5" starttime="0" font="Calibri" fontcolor="#790909" fontsize="24"><textbody branch="3" italic="false" bold="true" underlined="false"><textstring>Skill List</textstring>
 	</textbody>
 	</text>
-	<text xstart="207" ystart="83" xend="468" yend="128" layer="3" starttime="0" font="Calibri" fontcolor="#790909" fontsize="24"><textbody branch="1" italic="false" bold="true" underlined="false"><textstring>Character Creation</textstring>
+	<text xstart="137" ystart="83" xend="467" yend="128" layer="3" starttime="0" font="Calibri" fontcolor="#790909" fontsize="24"><textbody branch="1" italic="false" bold="true" underlined="false"><textstring>Character Creation</textstring>
 	</textbody>
 	</text>
 	<text xstart="15" ystart="21" xend="276" yend="66" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="24"><textbody italic="false" bold="true" underlined="false"><textstring>GM’s Reference</textstring>

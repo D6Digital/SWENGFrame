@@ -20,6 +20,7 @@ public class slideMediaObject extends JPanel implements MouseListener{
 	
 	
 	private Integer branch;
+	private Integer chapterBranch;
 	private Integer startTime;
 	private Integer finishTime;
 
@@ -30,11 +31,12 @@ public class slideMediaObject extends JPanel implements MouseListener{
 	/**
 	 * @param branch
 	 */
-	public slideMediaObject(Integer branch,Integer duration,Integer startTime) {
+	public slideMediaObject(Integer branch,Integer duration,Integer startTime, Integer chapterBranch) {
 		super();
 		this.setOpaque(false);
 		this.setLayout(null);
 		this.branch = branch;
+		this.chapterBranch = chapterBranch;
 		if(duration == -1 || duration == 0)
 		{
 			this.finishTime = -1;
@@ -126,6 +128,20 @@ public class slideMediaObject extends JPanel implements MouseListener{
 	public boolean isText() {
 		// TODO Auto-generated method stub
 		return isText;
+	}
+
+	/**
+	 * @return the chapterBranch
+	 */
+	public Integer getChapterBranch() {
+		return chapterBranch;
+	}
+
+	/**
+	 * @param chapterBranch the chapterBranch to set
+	 */
+	public void setChapterBranch(Integer chapterBranch) {
+		this.chapterBranch = chapterBranch;
 	};
 
 }

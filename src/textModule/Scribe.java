@@ -91,8 +91,12 @@ public class Scribe extends JPanel{
 		setupHandListener();
 		setupBranchListener();
 		
+		
+		
 		// Create the JTextPane
 		textPane = createTextPane();
+		textPane.setVisible(false);
+		textPane.setBackground(new Color(255,255,255,0));
 		textPane.setEditable(false);
 		//textPane.addMouseListener(this);
 		textPane.addMouseMotionListener(listener);
@@ -100,6 +104,7 @@ public class Scribe extends JPanel{
 		textPane.setMaximumSize(new Dimension(text.getXend()-text.getX_coord(),text.getYend()-text.getY_coord()));
 		
 		add(textPane);
+		textPane.setVisible(true);
 		
 	}
 	
@@ -133,6 +138,8 @@ public Scribe(Text text) {
 		// Create the JTextPane
 		textPane = createTextPane();
 		textPane.setEditable(false);
+		
+		textPane.setBackground(new Color(255,255,255,0));
 		//textPane.addMouseListener(this);
 		textPane.addMouseMotionListener(textHandListener);
 		textPane.addMouseListener(textbBranchListener);
@@ -148,6 +155,7 @@ public Scribe(Text text) {
 	private JTextPane createTextPane() {
 		
 		TransparentTextPane textPane = new TransparentTextPane();
+		
 		StyledDocument doc = textPane.getStyledDocument();
 		addStylesToDocument(doc);
 		
@@ -192,6 +200,15 @@ public Scribe(Text text) {
 			else
 			{
 				newStyle.addAttribute(HTML.Attribute.LINK, -1);
+			}
+			
+			if(text.getChapterBranch() != null && text.getChapterBranch() != -1)
+			{
+				newStyle.addAttribute(HTML.Attribute.TARGET, text.getChapterBranch());
+			}
+			else
+			{
+				newStyle.addAttribute(HTML.Attribute.TARGET, -1);
 			}
 			
 			try{

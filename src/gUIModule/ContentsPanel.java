@@ -42,6 +42,7 @@ public class ContentsPanel extends JPanel implements ActionListener{
 	private static final long serialVersionUID = 1L;
 
 	private ArrayList<Slide> contentsSlideList;
+	private ArrayList<Presentation> contentsChapterList;
 	SlidePanel slidePanel1;
 	SlidePanel slidePanel2;
 	JButton mainMenuButton = new JButton();
@@ -64,13 +65,14 @@ public class ContentsPanel extends JPanel implements ActionListener{
 	 * @param slide1
 	 * @param slide2
 	 */
-	public ContentsPanel(ArrayList<Slide> contentSlideList, final ArrayList<Presentation> contentChapterList, int width, int slideWidth, int slideHeight, String currentSystem, String currentBook) {
+	public ContentsPanel(ArrayList<Slide> contentSlideList, ArrayList<Presentation> contentChapterList, int width, int slideWidth, int slideHeight, String currentSystem, String currentBook) {
 		super();
 		this.setLayout(null);
 		this.slideHeight=slideHeight;
 		this.slideWidth=width;
 				
-		contentsSlideList = contentSlideList;
+		this.contentsSlideList = contentSlideList;
+		this.contentsChapterList = contentChapterList;
 		//slidePanel1 = slide1;
 		//slidePanel2 = slide2;
 		mainMenuButton.setBounds((width/2)-55, (int)(slideHeight*0.1), 110, 50);
@@ -120,7 +122,7 @@ public class ContentsPanel extends JPanel implements ActionListener{
 				
 				listModel.clear();
 				contentsList.removeAll();
-				for (Presentation currentPresentation : contentChapterList) {
+				for (Presentation currentPresentation : contentsChapterList) {
 					listModel.addElement(currentPresentation.getTitle());
 					pageLabel.setText("Choose a chapter:");
 				}
@@ -143,6 +145,23 @@ public class ContentsPanel extends JPanel implements ActionListener{
 			}
 		});
 		
+	}
+	
+	public void refreshContents(ArrayList<Slide> contentsSlideList) {
+	
+		
+			setUpButtonImage(changeListButton,"ChooseChapterButton.png");
+			pageListShowing=true;
+			
+			listModel.clear();
+			contentsList.removeAll();
+			
+			for (Slide currentSlide : contentsSlideList) {
+				listModel.addElement(currentSlide.getSlideID() + ". " + currentSlide.getDescriptor());
+				pageLabel.setText("Choose a page:");
+			}
+			contents.setViewportView(contentsList);
+			
 	}
 	
 	

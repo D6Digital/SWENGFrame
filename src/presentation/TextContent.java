@@ -10,6 +10,7 @@ public class TextContent {
 	private Integer branch = null;
 	private String textString = null;
 	private ScriptTypeDef scriptType = ScriptTypeDef.normal;
+	private Integer chapterBranch = null;
 
 
 	public TextContent(ScriptTypeDef scriptType, Boolean bold, Boolean italic,
@@ -118,5 +119,16 @@ public class TextContent {
 	public void setBranch(int branch) {
 		this.branch = branch;
 	}
+
+
+	public void setChapterBranch(int chapterBranch) {
+		this.chapterBranch = chapterBranch;
+		
+	}
+
+	public Integer getChapterBranch() {
+		return chapterBranch;
+	}
+	
 
 }

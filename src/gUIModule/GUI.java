@@ -438,9 +438,20 @@ private void setupTextListener() {
 								
 			                }
 							Integer branch = (Integer) a.getAttribute(HTML.Attribute.LINK);
-							
-							if (branch != null && branch != -1){
+							Integer chapterBranch = (Integer) a.getAttribute(HTML.Attribute.TARGET);;
+							if (chapterBranch != null && chapterBranch != -1){
+								// change chapter and branch
+								slideList = collection.get(chapterBranch);
+			            		slidePanel.loadPresentation(slideList);
+			            		slidePanel.refreshSlide(slideList.getSlideList().get(branch));
+			            		contentsPanel.refreshContents(slideList.getSlideList());
+							}
+							else
+							{
+								if (branch != null && branch != -1){
 								slidePanel.refreshSlide(slideList.get(branch));
+								//branch to slide specified by the object
+								}
 							}
 						}
 					}
@@ -502,9 +513,21 @@ private void setupObjectListener() {
 						if(eventSource.getParent().getMousePosition()!=null){
 							//Get the branch value assigned to the object of type slideObject
 							Integer branch = eventSource.getBranch();
-							if (branch != null && branch != -1){
+							Integer chapterBranch = eventSource.getChapterBranch();
+							if (chapterBranch != null && chapterBranch != -1){
+								// change chapter and branch
+								slideList = collection.get(chapterBranch);
+			            		slidePanel.loadPresentation(slideList);
+			            		slidePanel.refreshSlide(slideList.getSlideList().get(branch));
+			            		contentsPanel.refreshContents(slideList.getSlideList());
+			            		
+							}
+							else
+							{
+								if (branch != null && branch != -1){
 								slidePanel.refreshSlide(slideList.get(branch));
 								//branch to slide specified by the object
+								}
 							}
 						}
 					}
@@ -813,6 +836,7 @@ public void bookMainPanelSetUp(){
 	                }
 	            	}else{
 	            		 slideList = collection.get(contentsList.getSelectedIndex());
+	            		 slidePanel.loadPresentation(slideList);
 	            		 slidePanel.refreshSlide(slideList.getSlideList().get(0));
 	            		 
 	            	}
@@ -1116,6 +1140,18 @@ public void keyReleased(KeyEvent e) {
 public void keyTyped(KeyEvent e) {
 	// TODO Auto-generated method stub
 	
+}
+
+public void refreshContents() {
+	
+	contentsPanel.setVisible(true);
+	contentsPanel.repaint();
+	contentsShowing=true;
+	utilitiesTab.setVisible(false);
+	contentsTab.setVisible(false);
+	nextTab.setVisible(false);
+	previousTab.setVisible(false);
+	previousSlideButton.setVisible(false);
 }
 
 

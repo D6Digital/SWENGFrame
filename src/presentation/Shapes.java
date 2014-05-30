@@ -21,6 +21,7 @@ public class Shapes {
 	private ArrayList<Point> pointList = new ArrayList<Point>(0);
     private String file;
     private int branch;
+	private Integer chapterBranch = null;
 	/**
 	 * @param x_coord
 	 * @param y_coord
@@ -260,6 +261,15 @@ public class Shapes {
     public void setBranch(Integer branch){
         this.branch = branch;
     }
+
+	public void setChapterBranch(int chapterBranch) {
+		this.chapterBranch = chapterBranch;
+		
+	}
+
+	public Integer getChapterBranch() {
+		return chapterBranch;
+	}
     
     
 }

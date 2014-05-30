@@ -368,6 +368,13 @@ public class XMLParser extends DefaultHandler{
 			else {
 				newShape.setBranch(Integer.parseInt(attrVal));
 			}
+			attrVal = attrs.getValue("chapterbranch");
+			if(attrVal == null){
+				newShape.setChapterBranch(-1);
+			}
+			else {
+				newShape.setChapterBranch(Integer.parseInt(attrVal));
+			}
 			
 		}
 		// Image
@@ -427,6 +434,13 @@ public class XMLParser extends DefaultHandler{
 			}
 			else {
 				newImage.setBranch(Integer.parseInt(attrVal));
+			}
+			attrVal = attrs.getValue("chapterbranch");
+			if(attrVal == null){
+				newImage.setChapterBranch(-1);
+			}
+			else {
+				newImage.setChapterBranch(Integer.parseInt(attrVal));
 			}
 			
 			if(newImage.getFile().contains("Dice")){
@@ -568,6 +582,11 @@ public class XMLParser extends DefaultHandler{
 			if(attrVal != null){
 				newTextContent.setBranch(Integer.parseInt(attrVal));
 			}
+			attrVal = attrs.getValue("chapterbranch");
+			if(attrVal != null){
+				newTextContent.setChapterBranch(Integer.parseInt(attrVal));
+			}
+			
 			
 		}
 		//Text String
