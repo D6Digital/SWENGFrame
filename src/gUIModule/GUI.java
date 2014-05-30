@@ -583,7 +583,6 @@ public void bookMainPanelSetUp(){
 			JLabel uTabLabel = new JLabel(new ImageIcon(scaledUTab));
 			uTabLabel.setBounds(0, 0, 15, 120);
 			uTabLabel.setOpaque(false);
-			utilitiesTab.removeAll();
 			utilitiesTab.add(uTabLabel);
 		}catch (IOException ex){
 			
@@ -603,7 +602,6 @@ public void bookMainPanelSetUp(){
 				JLabel cTabLabel = new JLabel(new ImageIcon(scaledCTab));
 				cTabLabel.setBounds(0, 0, 15, 120);
 				cTabLabel.setOpaque(false);
-				contentsTab.removeAll();
 				contentsTab.add(cTabLabel);
 			}catch (IOException ex){
 				
@@ -621,7 +619,6 @@ public void bookMainPanelSetUp(){
 			JLabel nTabLabel = new JLabel(new ImageIcon(scaledNTab));
 			nTabLabel.setBounds(0, 0, 80, 15);
 			nTabLabel.setOpaque(false);
-			nextTab.removeAll();
 			nextTab.add(nTabLabel);
 		}catch (IOException ex){
 			
@@ -638,7 +635,6 @@ public void bookMainPanelSetUp(){
 			JLabel pTabLabel = new JLabel(new ImageIcon(scaledPTab));
 			pTabLabel.setBounds(0, 0, 90, 15);
 			pTabLabel.setOpaque(false);
-			previousTab.removeAll();
 			previousTab.add(pTabLabel);
 		}catch (IOException ex){
 			
@@ -674,7 +670,6 @@ public void bookMainPanelSetUp(){
 		
 		
 		slidePanel = new SlidePanel();
-		
 		
 		//set up utilities
 		

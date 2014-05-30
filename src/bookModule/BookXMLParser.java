@@ -25,7 +25,7 @@ import org.xml.sax.helpers.DefaultHandler;
 
 import presentation.Image;
 enum ProcessingElement{
-	NONE, BOOK, TITLE, FILENAME, ICON 
+		NONE, TITLE, FILENAME, ICON 
 		}
 
 /**
@@ -112,18 +112,11 @@ public class BookXMLParser extends DefaultHandler{
 		if (elementName.equals("booklist")) {
 			if (bookList == null) {
 				bookList = new BookList(attrs.getValue(0));
-				bookList.clearList();
-			}
-			else
-			{
-				bookList.clearList();
 			}
 		}
 		//handle book element start
 		else if (elementName.equals("book")) {
 			currentBook = new Book(attrs.getValue(0));
-			currentElement = ProcessingElement.BOOK;
-			bookList.addBook(currentBook);
 		}
 		//handle title element start
 		else if (elementName.equals("title")) {
@@ -172,7 +165,7 @@ public class BookXMLParser extends DefaultHandler{
 			elementName = qName;
 		}
 		if (elementName.equals("book")) {
-			currentElement = ProcessingElement.NONE;
+			bookList.addBook(currentBook);
 		} else if(elementName.equals("title")){
 			currentElement = ProcessingElement.NONE;
 		} else if (elementName.equals("filename")) {

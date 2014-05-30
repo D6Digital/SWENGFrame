@@ -1,27 +1,24 @@
-<?xml version="1.0"?><!--sample xml file created using XML DOM object.-->
-
-
-<collection>
-<slideshow>
+<?xml version="1.0"?><!--sample xml file created using XML DOM object.--><collection xmlns="http://www-users.york.ac.uk/~rjm529/schema.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<slideshow xmlns="">
 	<documentinfo><author>D6 Digital</author><version>2.1</version><title>This is the first chapter </title><comment>example comment for chapter 1</comment><width>720</width><height>540</height></documentinfo>
 	<defaults><backgroundcolor>#FFFFFF</backgroundcolor><font>Papyrus</font><fontsize>18</fontsize><fontcolor>#FFFFFF</fontcolor><linecolor>#5C4776</linecolor><fillcolor>#8064A2</fillcolor></defaults>
 	
-	<slide id="0" duration="60" descriptor="Overview of making slides in powerpoint" lastSlide="false" backgroundcolor="#FFFFFF"><text xstart="383" ystart="316" xend="587" yend="362" layer="15" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="true" underlined="true"><textstring>Sound</textstring>
+	<slide id="0" duration="60" descriptor="Overview of making slides in powerpoint" lastSlide="false" backgroundcolor="#FFFFFF"><text xstart="383" ystart="316" xend="587" yend="362" layer="14" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="true" underlined="true"><textstring>Sound</textstring>
 	</textbody>
 	</text>
-	<text xstart="381" ystart="247" xend="585" yend="293" layer="13" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="true" underlined="true"><textstring>Image</textstring>
+	<text xstart="381" ystart="247" xend="585" yend="293" layer="12" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="true" underlined="true"><textstring>Image</textstring>
 	</textbody>
 	</text>
-	<text xstart="373" ystart="182" xend="577" yend="228" layer="11" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="true" underlined="true"><textstring>Shape</textstring>
+	<text xstart="373" ystart="182" xend="577" yend="228" layer="10" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="true" underlined="true"><textstring>Shape</textstring>
 	</textbody>
 	</text>
-	<text xstart="371" ystart="120" xend="575" yend="166" layer="9" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="true" underlined="true"><textstring>Video</textstring>
+	<text xstart="371" ystart="120" xend="575" yend="166" layer="8" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="true" underlined="true"><textstring>Video</textstring>
 	</textbody>
 	</text>
-	<text xstart="372" ystart="60" xend="576" yend="106" layer="7" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="true" underlined="true"><textstring>Text</textstring>
+	<text xstart="372" ystart="60" xend="576" yend="106" layer="6" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="true" underlined="true"><textstring>Text</textstring>
 	</textbody>
 	</text>
-	<shape fillcolor="#4F81BD" linecolor="#385D8A" layer="6" starttime="0" branch="7" totalpoints="8" width="56" height="55"><point num="0" x="344" y="307"/>
+	<shape fillcolor="#4F81BD" linecolor="#385D8A" layer="5" starttime="0" branch="7" totalpoints="8" width="56" height="55"><point num="0" x="344" y="307"/>
 	<point num="1" x="323" y="319"/>
 	<point num="2" x="317" y="339"/>
 	<point num="3" x="332" y="361"/>
@@ -30,7 +27,7 @@
 	<point num="6" x="364" y="318"/>
 	<point num="7" x="344" y="307"/>
 	</shape>
-	<shape fillcolor="#4F81BD" linecolor="#385D8A" layer="5" starttime="0" branch="4" totalpoints="7" width="59" height="40"><point num="0" x="328" y="247"/>
+	<shape fillcolor="#4F81BD" linecolor="#385D8A" layer="4" starttime="0" branch="4" totalpoints="7" width="59" height="40"><point num="0" x="328" y="247"/>
 	<point num="1" x="361" y="247"/>
 	<point num="2" x="374" y="267"/>
 	<point num="3" x="360" y="287"/>
@@ -38,25 +35,24 @@
 	<point num="5" x="315" y="266"/>
 	<point num="6" x="328" y="247"/>
 	</shape>
-	<shape fillcolor="#4F81BD" linecolor="#385D8A" layer="4" starttime="0" branch="3" totalpoints="6" width="54" height="52"><point num="0" x="315" y="206"/>
+	<shape fillcolor="#4F81BD" linecolor="#385D8A" layer="3" starttime="0" branch="3" totalpoints="6" width="54" height="52"><point num="0" x="315" y="206"/>
 	<point num="1" x="341" y="179"/>
 	<point num="2" x="369" y="204"/>
 	<point num="3" x="355" y="231"/>
 	<point num="4" x="328" y="230"/>
 	<point num="5" x="315" y="206"/>
 	</shape>
-	<shape fillcolor="#4F81BD" linecolor="#385D8A" layer="3" starttime="0" branch="1" totalpoints="4" width="47" height="40"><point num="0" x="338" y="60"/>
+	<shape fillcolor="#4F81BD" linecolor="#385D8A" layer="2" starttime="0" branch="1" totalpoints="4" width="47" height="40"><point num="0" x="338" y="60"/>
 	<point num="1" x="315" y="100"/>
 	<point num="2" x="362" y="99"/>
 	<point num="3" x="338" y="60"/>
 	</shape>
-	<shape fillcolor="#4F81BD" linecolor="#385D8A" layer="2" starttime="0" branch="2" totalpoints="5" width="42" height="39"><point num="0" x="321" y="128"/>
+	<shape fillcolor="#4F81BD" linecolor="#385D8A" layer="1" starttime="0" branch="2" totalpoints="5" width="42" height="39"><point num="0" x="321" y="128"/>
 	<point num="1" x="362" y="129"/>
 	<point num="2" x="361" y="167"/>
 	<point num="3" x="320" y="164"/>
 	<point num="4" x="321" y="128"/>
 	</shape>
-	<audio urlname="C:\\Users\\Public\\Music\\Sample Music\\Kalimba.mp3" starttime="0" loop="false"/>
 	</slide>
 	
 	<slide id="1" duration="60" descriptor="" lastSlide="false" backgroundcolor="#FFFFFF"><shape fillcolor="#FFFF00" linecolor="#385D8A" layer="16" starttime="0" branch="0" totalpoints="4" width="47" height="40"><point num="0" x="530" y="109"/>
@@ -90,40 +86,40 @@
 	</text>
 	</slide>
 	
-	<slide id="2" duration="60" descriptor="" lastSlide="false" backgroundcolor="#FFFFFF"><text xstart="597" ystart="385" xend="682" yend="433" layer="26" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="false" bold="true" underlined="false"><textstring>+10 Sec</textstring>
+	<slide id="2" duration="60" descriptor="" lastSlide="false" backgroundcolor="#FFFFFF"><text xstart="597" ystart="385" xend="682" yend="433" layer="26" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="false" bold="true" underlined="false"><textstring>+70 Sec</textstring>
 	</textbody>
 	</text>
-	<text xstart="597" ystart="266" xend="682" yend="314" layer="24" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="false" bold="true" underlined="false"><textstring>+7 Sec</textstring>
+	<text xstart="597" ystart="266" xend="682" yend="314" layer="24" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="false" bold="true" underlined="false"><textstring>+65 Sec</textstring>
 	</textbody>
 	</text>
-	<text xstart="597" ystart="158" xend="682" yend="206" layer="22" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="false" bold="true" underlined="false"><textstring>+6 Sec</textstring>
+	<text xstart="597" ystart="158" xend="682" yend="206" layer="22" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="false" bold="true" underlined="false"><textstring>+60 Sec</textstring>
 	</textbody>
 	</text>
-	<text xstart="597" ystart="41" xend="682" yend="89" layer="20" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="false" bold="true" underlined="false"><textstring>+5 Sec</textstring>
+	<text xstart="597" ystart="41" xend="682" yend="89" layer="20" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="false" bold="true" underlined="false"><textstring>+50 Sec</textstring>
 	</textbody>
 	</text>
-	<video urlname="resources/video/video/monstersinc_high.mpg" xstart="369" ystart="371" width="218" height="113" layer="19" starttime="10" duration="0" loop="false"/>
-	<video urlname="resources/video/video/monstersinc_high.mpg" xstart="369" ystart="257" width="218" height="113" layer="18" starttime="7" duration="0" loop="false"/>
-	<video urlname="resources/video/video/monstersinc_high.mpg" xstart="369" ystart="143" width="218" height="113" layer="17" starttime="6" duration="0" loop="false"/>
-	<video urlname="resources/video/video/monstersinc_high.mpg" xstart="369" ystart="29" width="218" height="113" layer="16" starttime="5" duration="0" loop="false"/>
+	<video urlname="resources/video/video/monstersinc_high.mpg" xstart="369" ystart="371" width="218" height="113" layer="19" starttime="59" duration="0" loop="false"/>
+	<video urlname="resources/video/video/monstersinc_high.mpg" xstart="369" ystart="257" width="218" height="113" layer="18" starttime="59" duration="0" loop="false"/>
+	<video urlname="resources/video/video/monstersinc_high.mpg" xstart="369" ystart="143" width="218" height="113" layer="17" starttime="59" duration="0" loop="false"/>
+	<video urlname="resources/video/video/monstersinc_high.mpg" xstart="369" ystart="29" width="218" height="113" layer="16" starttime="50" duration="0" loop="false"/>
 	<shape fillcolor="#000000" linecolor="#FF0000" layer="15" starttime="0" totalpoints="2" width="0" height="472"><point num="0" x="368" y="25"/>
 	<point num="1" x="368" y="497"/>
 	</shape>
-	<text xstart="255" ystart="385" xend="351" yend="428" layer="13" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="false" bold="true" underlined="false"><textstring>+4 Sec</textstring>
+	<text xstart="255" ystart="385" xend="351" yend="428" layer="13" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="false" bold="true" underlined="false"><textstring>+40 Sec</textstring>
 	</textbody>
 	</text>
-	<text xstart="255" ystart="266" xend="351" yend="309" layer="11" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="false" bold="true" underlined="false"><textstring>+3 Sec</textstring>
+	<text xstart="255" ystart="266" xend="351" yend="309" layer="11" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="false" bold="true" underlined="false"><textstring>+30 Sec</textstring>
 	</textbody>
 	</text>
-	<text xstart="255" ystart="158" xend="351" yend="201" layer="9" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="false" bold="true" underlined="false"><textstring>+2 Sec</textstring>
+	<text xstart="255" ystart="158" xend="351" yend="201" layer="9" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="false" bold="true" underlined="false"><textstring>+20 Sec</textstring>
 	</textbody>
 	</text>
-	<text xstart="255" ystart="41" xend="360" yend="82" layer="7" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="false" bold="true" underlined="false"><textstring>Immediate</textstring>
+	<text xstart="255" ystart="41" xend="360" yend="82" layer="7" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="false" bold="true" underlined="false"><textstring>start</textstring>
 	</textbody>
 	</text>
-	<video urlname="resources/video/video/monstersinc_high.mpg" xstart="23" ystart="368" width="218" height="113" layer="6" starttime="4" duration="0" loop="false"/>
-	<video urlname="resources/video/video/monstersinc_high.mpg" xstart="23" ystart="255" width="218" height="113" layer="5" starttime="3" duration="0" loop="false"/>
-	<video urlname="resources/video/video/monstersinc_high.mpg" xstart="23" ystart="141" width="218" height="113" layer="4" starttime="2" duration="0" loop="false"/>
+	<video urlname="resources/video/video/monstersinc_high.mpg" xstart="23" ystart="368" width="218" height="113" layer="6" starttime="40" duration="0" loop="false"/>
+	<video urlname="resources/video/video/monstersinc_high.mpg" xstart="23" ystart="255" width="218" height="113" layer="5" starttime="30" duration="0" loop="false"/>
+	<video urlname="resources/video/video/monstersinc_high.mpg" xstart="23" ystart="141" width="218" height="113" layer="4" starttime="20" duration="0" loop="false"/>
 	<video urlname="resources/video/video/monstersinc_high.mpg" xstart="23" ystart="27" width="218" height="113" layer="3" starttime="0" duration="0" loop="false"/>
 	<shape fillcolor="#FFFF00" linecolor="#385D8A" layer="2" starttime="0" branch="2" totalpoints="5" width="42" height="39"><point num="0" x="296" y="458"/>
 	<point num="1" x="337" y="459"/>
@@ -228,7 +224,8 @@
 	</shape>
 	</slide>
 	
-	<slide id="7" duration="60" descriptor="" lastSlide="false" backgroundcolor="#FFFFFF"><shape fillcolor="#FFFF00" linecolor="#385D8A" layer="5" starttime="0" branch="0" totalpoints="8" width="56" height="55"><point num="0" x="455" y="208"/>
+	<slide id="7" duration="60" descriptor="" lastSlide="false" backgroundcolor="#FFFFFF"><audio urlname="resources/video/video/07-underground_resistance-detonate.mp3" playtime="11" starttime="12" duration="10" loop="false"/>
+	<shape fillcolor="#FFFF00" linecolor="#385D8A" layer="4" starttime="0" branch="0" totalpoints="8" width="56" height="55"><point num="0" x="455" y="208"/>
 	<point num="1" x="434" y="220"/>
 	<point num="2" x="428" y="240"/>
 	<point num="3" x="443" y="262"/>
@@ -237,9 +234,8 @@
 	<point num="6" x="476" y="219"/>
 	<point num="7" x="455" y="208"/>
 	</shape>
-	<audio urlname="C:\\Users\\Public\\Music\\Sample Music\\Kalimba.mp3" starttime="0" loop="false"/>
-	<audio urlname="C:\\Users\\Public\\Music\\Sample Music\\Kalimba.mp3" starttime="0" loop="false"/>
-	<text xstart="139" ystart="77" xend="384" yend="214" layer="1" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="true" underlined="true"><textstring>YOU SHOULD HEAR THE COUNT IMMEDIATELY, THEN KALIMBA BEGINNNING WHEN THE COUJNT REACHES 10. </textstring>
+	<audio urlname="C:\\Users\\Public\\Music\\Sample Music\\Kalimba.mp3" playtime="0" starttime="0" duration="0" loop="false"/>
+	<text xstart="139" ystart="77" xend="384" yend="214" layer="1" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="true" underlined="true"><textstring>YOU SHOULD HEAR THE COUNT IMMEDIATELY, THEN KALIMBA BEGINNNING WHEN THE COUNT REACHES 10. </textstring>
 	</textbody>
 	</text>
 	</slide>
@@ -454,8 +450,7 @@ The bounding box should if possible have extra space below the text bodies to al
 	</text>
 	</slide>
 	
-	<slide id="11" duration="60" descriptor="How to add music and video" lastSlide="false" backgroundcolor="#FFFFFF"><video urlname="resources/video/video/monstersinc_high.mpg" xstart="372" ystart="213" width="348" height="175" layer="10" starttime="0" duration="0" loop="false"/>
-	<audio urlname="C:\\Users\\Public\\Music\\Sample Music\\Kalimba.mp3" starttime="0" loop="false"/>
+	<slide id="11" duration="60" descriptor="How to add music and video" lastSlide="false" backgroundcolor="#FFFFFF"><video urlname="resources/video/video/monstersinc_high.mpg" xstart="372" ystart="213" width="348" height="175" layer="9" starttime="0" duration="0" loop="false"/>
 	<text xstart="5" ystart="187" xend="370" yend="327" layer="7" duration="0" starttime="0" font="Aharoni" fontcolor="#FFFFFF" fontsize="20"><textbody italic="false" bold="false" underlined="false"><textstring>The Video is similar but uses a chart in the title set in the Alt text section of the Format chart area menu. To change this right-click and select format chart area.</textstring>
 	</textbody>
 	</text>
@@ -896,4 +891,6 @@ The bounding box should if possible have extra space below the text bodies to al
 	<point num="30" x="553" y="335"/>
 	</shape>
 	<image urlname="resources/images/Lighthouse.jpg" xstart="0" ystart="0" width="720" height="540" layer="1" duration="0" starttime="0"/>
-	</slide></slideshow></collection>
+	</slide>
+	
+</slideshow></collection>

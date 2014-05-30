@@ -512,6 +512,21 @@ public class XMLParser extends DefaultHandler{
 			else {
 				newSound.setStart(Integer.parseInt(attrVal));
 			}
+			attrVal = attrs.getValue("playtime");
+            if(attrVal == null){
+                newSound.setObjectStartTime(0);
+            }
+            else {
+                newSound.setObjectStartTime(Integer.parseInt(attrVal));
+            }
+            attrVal = attrs.getValue("duration");
+            if(attrVal == null){
+                newSound.setDuration(-10000);
+            }
+            else {
+                newSound.setDuration(Integer.parseInt(attrVal));
+            }
+			
 			attrVal = attrs.getValue("loop");
 			if(attrVal == null){
 				newSound.setLoop(false);
