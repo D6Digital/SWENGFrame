@@ -199,9 +199,11 @@ public class GUI extends JFrame implements WindowStateListener, ComponentListene
 
 		//height of the task bar
 		
-		XMLParser parser = new XMLParser("github resources/dynamDom.xml");	
-		collection = parser.getCollection();
-		slideList = collection.get(chapterID);
+//		XMLParser parser = new XMLParser("github resources/dynamDom.xml");	
+//		collection = parser.getCollection();
+//		slideList = collection.get(chapterID);
+		
+		
 		//set up cursor
 		 Toolkit toolkit = Toolkit.getDefaultToolkit();
 		 Image image = toolkit.getImage("resources/buttons/blankCursor.png");
