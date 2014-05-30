@@ -113,6 +113,9 @@ public class BookXMLParser extends DefaultHandler{
 			if (bookList == null) {
 				bookList = new BookList(attrs.getValue(0));
 			}
+			else{
+				bookList.clearBooks();
+			}
 		}
 		//handle book element start
 		else if (elementName.equals("book")) {
@@ -184,8 +187,8 @@ public class BookXMLParser extends DefaultHandler{
 	
 	/* Test method. To be deleted after testing */
 	private void writeBookinfo() {
-		System.out.println("BookList version: " + BookList.getVersion());
-		ArrayList<Book> books = BookList.getList();
+		System.out.println("BookList version: " + bookList.getVersion());
+		ArrayList<Book> books = bookList.getList();
 		
 		for(Book currentBook : books){
 		System.out.println("Title: " + currentBook.getTitle());

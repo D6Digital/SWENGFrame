@@ -13,12 +13,13 @@ import java.util.List;
  */
 public class BookList {
 	
-	private static String version;
-	private static ArrayList<Book> books;
+	private String version;
+	private ArrayList<Book> books;
 
 	public BookList(String version) {
-		BookList.version = version;
+		this.version = version;
 		books = new ArrayList<Book>();
+		books.clear();
 	}
 
 	/**
@@ -38,14 +39,14 @@ public class BookList {
 	/**
 	 * @return version
 	 */
-	public static String getVersion() {
+	public String getVersion() {
 		return version;
 	}	
 	
 	/**
 	 * @return title list of books available
 	 */
-	public ArrayList getTitles(){
+	public ArrayList<String> getTitles(){
 		ArrayList<String> titleList = new ArrayList<String>(0);
 		int size = books.size();
 		for (int i = 0; i < size ; i++){
@@ -56,9 +57,13 @@ public class BookList {
 		
 	}
 
-	public static ArrayList<Book> getList() {
+	public ArrayList<Book> getList() {
 		// TODO Auto-generated method stub
 		return books;
+	}
+	
+	public void clearBooks() {
+		books.clear();
 	}
 	
 	

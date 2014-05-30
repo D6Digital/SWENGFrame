@@ -78,9 +78,9 @@ public class StandAloneMusicPlayer {
     JFrame playlistFrame = new JFrame("playlistFrame");
     JPanel playPanel = new JPanel();
     JList playContentsJList = new JList(listModel);
-    static JLabel timeLabel = new JLabel();
-    static JSlider timeSlider = new JSlider();
-    static JPanel fullPanel = new JPanel();
+    JLabel timeLabel = new JLabel();
+    JSlider timeSlider = new JSlider();
+    JPanel fullPanel = new JPanel();
 
     private String currentTime = "";
     private String newTime = "";
