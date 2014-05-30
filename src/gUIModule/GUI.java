@@ -217,6 +217,8 @@ public class GUI extends JFrame implements ComponentListener, KeyListener{
 		swordCursor = toolkit.createCustomCursor(image , point, "img");
 		image = toolkit.getImage("resources/buttons/branchSwordCursor.png");
 		branchSwordCursor = toolkit.createCustomCursor(image , point, "img");
+		
+		this.setCursor(swordCursor);
 		  
 		setupGenericMouseMotionListener();
 
@@ -557,7 +559,7 @@ private void setupVideoListener() {
 	    			videoPlayer.ControlPanel.setVisible(false);
 	    			}
 	    		}
-	    		
+	    		layers.setCursor(swordCursor);
 	    		borderListenerProcess(e1,false,false,true);
 	    		mouseMovedOnSlide();
 	    	}
@@ -682,6 +684,7 @@ public void bookMainPanelSetUp(){
 		}
 		previousSlideButton.setBounds(10,height-60,150,50);
 		previousSlideButton.setVisible(false);
+		previousSlideButton.addMouseMotionListener(genericListener);
 		
 		//next button
 		BufferedImage nextSlideImage;
@@ -694,6 +697,7 @@ public void bookMainPanelSetUp(){
 		}
 		nextSlideButton.setBounds(width-160,height-60,150,50);
 		nextSlideButton.setVisible(false);
+		nextSlideButton.addMouseMotionListener(genericListener);
 		
 		
 		slidePanel = new SlidePanel();

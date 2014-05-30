@@ -84,9 +84,9 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
 		heightOfSlide = slideHeight;
 		xOffset = slideWidth-utilitiesWidth;
 		
-		calculatorPanel = new CalculatorPanel(360, slideHeight - 20);
-		dicePanel = new DicePanel(300, slideHeight - 20);
-		standAloneMusicPlayer = new StandAloneMusicPlayer();
+		calculatorPanel = new CalculatorPanel(360, slideHeight - 20,genericListener);
+		dicePanel = new DicePanel(300, slideHeight - 20,genericListener);
+		standAloneMusicPlayer = new StandAloneMusicPlayer(genericListener);
 		
 		standAloneMusicPlayerPanel = standAloneMusicPlayer.getFullControlPanel(360, slideHeight - 20);
 		

@@ -5,6 +5,7 @@ import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
 
 import javax.swing.AbstractButton;
 import javax.swing.JButton;
@@ -63,13 +64,19 @@ public class CalculatorPanel extends JPanel implements ActionListener{
 	int modHeight;
 int modPlusButtonPlusDisplay;
     int modPlusButtonHeight;
+    
+    private MouseAdapter genericMouseMotionListener;
 	
 	/**
 	 * Create a simple JFrame and then populate it with specified JPanel type
+	 * @param genericListener 
 	 * @return 
 	 */
-	public CalculatorPanel(int widthOfPanel, int heightOfPanel) {
+	public CalculatorPanel(int widthOfPanel, int heightOfPanel, MouseAdapter genericListener) {
 		super();
+		
+		this.genericMouseMotionListener = genericListener;
+		
 		panelWidth = widthOfPanel;
 		panelHeight = heightOfPanel;
 		setLayout(null);
@@ -86,6 +93,7 @@ int modPlusButtonPlusDisplay;
 		modHeight = (int) (panelHeight*0.05);
 		modSelection.setActionCommand("modSelected");
 		modSelection.addActionListener(this);
+		modSelection.addMouseMotionListener(genericListener);
 		add(modSelection);
 		
 		//adds JButton to trigger the inclution of the modifier
@@ -97,6 +105,7 @@ int modPlusButtonPlusDisplay;
 	    includeMod.setBounds(5, modHeight + (int) (panelHeight*0.025), ((panelWidth-25)/2)-10, (int)(panelHeight*0.05));
 	    includeMod.setActionCommand("include");
 	    includeMod.addActionListener(this);
+	    includeMod.addMouseMotionListener(genericListener);
 	    includeMod.setToolTipText("include selected modifier to total");
 		add(includeMod);
 		
@@ -110,6 +119,7 @@ int modPlusButtonPlusDisplay;
 	    clearMods.setBounds((panelWidth/2)+5, modHeight + (int) (panelHeight*0.025), ((panelWidth-25)/2)-10, (int)(panelHeight*0.05));
 	    clearMods.setActionCommand("clear");
 	    clearMods.addActionListener(this);
+	    clearMods.addMouseMotionListener(genericListener);
 	    clearMods.setToolTipText("clear all modifiers");
 		add(clearMods);
 		
@@ -122,6 +132,7 @@ int modPlusButtonPlusDisplay;
 		displayIncludedMods.setBounds(5, modPlusButtonHeight + (int) (panelHeight*0.025), panelWidth-25, (int)(panelHeight*0.7));
 		add(displayIncludedMods);
 		displayIncludedMods.setEnabled(false);
+		displayIncludedMods.addMouseMotionListener(genericListener);
 		
 		modPlusButtonPlusDisplay = modPlusButtonHeight +  (int)(panelHeight*0.7);
 		
@@ -132,6 +143,7 @@ int modPlusButtonPlusDisplay;
 		displayTotalMod.setBounds(5, modPlusButtonPlusDisplay + (int) (panelHeight*0.05), panelWidth-25, (int)(panelHeight*0.1));
 		add(displayTotalMod);
 		displayTotalMod.setEnabled(false);
+		displayTotalMod.addMouseMotionListener(genericListener);
 	
 
 	   //   repaint();
