@@ -1438,7 +1438,9 @@
 	</textbody>
 	<textbody branch="65" italic="true" bold="false" underlined="false"><textstring>PODS\n\n</textstring>
 	</textbody>
-	<textbody branch="49" italic="true" bold="false" underlined="false"><textstring>SYNTHETIC MORPHS\n\n</textstring>
+	<textbody branch="69" italic="true" bold="false" underlined="false"><textstring>SYNTHETIC MORPHS\n\n</textstring>
+	</textbody>
+	<textbody branch="79" italic="true" bold="false" underlined="false"><textstring>INFOMORPHS\n\n</textstring>
 	</textbody>
 	</text>
 	<text xstart="15" ystart="55" xend="371" yend="429" layer="5" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>Each morph has an associated CP cost. It also supplies the character's Durability and Wound Threshold stats and may modify Initiative, speed and certain aptitudes and learning skill. A credit cost is also listed, but this refers to the cost of buying such a morph in gameplay.\n</textstring>
@@ -2389,7 +2391,503 @@
 	</text>
 	</slide>
 	
-	<slide id="69" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="405" ystart="77" xend="688" yend="395" layer="6" starttime="0" font="Calibri" fontcolor="#790909" fontsize="20"><textbody branch="43" italic="true" bold="false" underlined="false"><textstring>15 CP = 1 Moxie point\n</textstring>
+	<slide id="69" duration="60" descriptor="Biomorphs" lastSlide="false" backgroundcolor="#BFBFBF"><image urlname="Src/XMLBits/EXTROP.png" xstart="425" ystart="41" width="266" height="439" layer="20" starttime="0"/>
+	<text xstart="14" ystart="474" xend="184" yend="519" layer="17" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="46" italic="false" bold="true" underlined="false"><textstring>Back to MORPHS</textstring>
+	</textbody>
+	</text>
+	<text xstart="326" ystart="43" xend="502" yend="292" layer="8" starttime="0" font="Calibri" fontcolor="#790909" fontsize="20"><textbody branch="71" italic="true" bold="false" underlined="false"><textstring>CASE\n</textstring>
+	</textbody>
+	<textbody branch="72" italic="true" bold="false" underlined="false"><textstring>SYNTH\n</textstring>
+	</textbody>
+	<textbody branch="73" italic="true" bold="false" underlined="false"><textstring>ARACHNOIDS\n</textstring>
+	</textbody>
+	<textbody branch="74" italic="true" bold="false" underlined="false"><textstring>DRAGONFLY\n</textstring>
+	</textbody>
+	<textbody branch="75" italic="true" bold="false" underlined="false"><textstring>FLEXBOTS\n</textstring>
+	</textbody>
+	<textbody branch="76" italic="true" bold="false" underlined="false"><textstring>REAPER\n</textstring>
+	</textbody>
+	<textbody branch="77" italic="true" bold="false" underlined="false"><textstring>SLIITHEROIDS\n</textstring>
+	</textbody>
+	<textbody branch="78" italic="true" bold="false" underlined="false"><textstring>SWARMANOID\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="14" ystart="43" xend="315" yend="372" layer="6" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>Synthetic morphs are completely artificial/robotic. They are usually operated by AI or via remote control, but the lack of available biomorphs after the Fall meant that many infugees resorted to resleeving in robotic shells, which were also cheaper, quicker to manufacture and more widely available. Nevertheless, synthmorphs are viewed with disdain in many habitats, an option that only the poor and desperate accept to be sleeved in. Synthetic morphs are not without their advantages, however, and so are commonly used for menial labour, heavy labour, habitat construction and security services.\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="513" ystart="474" xend="711" yend="519" layer="4" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>On to PURCHASE GEAR</textstring>
+	</textbody>
+	</text>
+	<text xstart="15" ystart="9" xend="343" yend="54" layer="2" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>SYNTHETIC  MORPHS</textstring>
+	</textbody>
+	</text>
+	<text xstart="48" ystart="386" xend="277" yend="437" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="20"><textbody branch="70" italic="true" bold="false" underlined="false"><textstring>Synthmorph Advantages</textstring>
+	</textbody>
+	</text>
+	</slide>
+	
+	<slide id="70" duration="60" descriptor="Biomorphs" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="14" ystart="43" xend="706" yend="474" layer="7" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>All synthmorphs have the following advantages:\n\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Lack of Biological Functions: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Synthmorphs need not be bothered with trivialities like breathing, eating, defecating, aging, sleeping or any similar minor but crucial aspects of biological life.\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Pain Filter: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Synthmorphs can filter out their pain receptors so that they are unhampered by wounds or physical damage. This allows them to ignore the -10 modifier from 1 wound, but they suffer -30 on any tactile-based Perception Tests and will not even notice they have been damaged unless they succeed in a (modified) Perception Test.\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Immunity to Shock Weapons: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Synthmorphs have no nervous system to disrupt and their optical electronics are carefully shielded from interference. Shock attacks may temporarily disrupt their wireless radio communications, however, for the duration of the attack.\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Environmental Durability: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Synthmorphs are built to withstand a wide range of environments, from dusty Mars to the oceans of Europa to the vacuum of space. They are unaffected by any but the most extreme temperatures and atmospheric pressures. Treat as temperature tolerance and vacuum sealing.\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Toughness: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Synthetic shells are made to last – a fact reflected in their higher Durability and built in Armour ratings. Their composition also makes their physical strikes more damaging: apply a +2 DV modifier on unarmed attacks for human-sized shells and larger\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="14" ystart="474" xend="184" yend="519" layer="5" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="46" italic="false" bold="true" underlined="false"><textstring>Back to MORPHS</textstring>
+	</textbody>
+	</text>
+	<text xstart="513" ystart="474" xend="711" yend="519" layer="3" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>On to PURCHASE GEAR</textstring>
+	</textbody>
+	</text>
+	<text xstart="15" ystart="9" xend="343" yend="54" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>SYNTHETIC  MORPH ADVANTAGES</textstring>
+	</textbody>
+	</text>
+	</slide>
+	
+	<slide id="71" duration="60" descriptor="Flats" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="14" ystart="474" xend="201" yend="519" layer="7" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="47" italic="false" bold="true" underlined="false"><textstring>Back to BIOMORPHS</textstring>
+	</textbody>
+	</text>
+	<text xstart="3" ystart="48" xend="712" yend="463" layer="5" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>Cases are extremely cheap, mass-produced robotic shells intended to provide an affordable remorphing option for the millions of infugees created by the Fall. Though many varieties of case shells exist, they are uniformly regarded as shoddy and inferior. Most case morphs are vaguely anthropomorphic, with a thin framework body standing just shorter than an average human. They suffer from frequent malfunctions.\n\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Enhancements: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Access Jacks, Basic Mesh Inserts, Cortical Stack, Cyberbrain, Mnemonic Augmentation\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Mobility System (Movement Rate): </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Walker (4/6)\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Aptitude Maximum: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>20\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Durability: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>20\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Wound Threshold: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>4\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Advantages: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Armour (4/4)\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Disadvantages: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>-5 to one chosen aptitude, Lemon trait, Social Stigma (Clanking Masses) trait\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>CP Cost: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>5\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Credit Cost: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Moderate\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="3" ystart="15" xend="355" yend="60" layer="3" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>CASE</textstring>
+	</textbody>
+	</text>
+	<text xstart="513" ystart="474" xend="711" yend="519" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>On to PURCHASE GEAR</textstring>
+	</textbody>
+	</text>
+	</slide>
+	
+	<slide id="72" duration="60" descriptor="Splicers" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="3" ystart="48" xend="711" yend="463" layer="7" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>Synths are anthropomorphic robotic shells (androids and gynoids). They are typically used for menial labour jobs where pods are not as good of an option. Cheaper than many other morphs, they are commonly used for people who need a body quickly and cheaply or simply on a transient basis. Though they look humanoid, synths are easily recognisable as non-biological unless they have the synthetic mask option.\n\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Enhancements: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Access Jacks, Basic Mesh Inserts, Cortical Stack, Cyberbrain, Mnemonic Augmentation\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Mobility System (Movement Rate): </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Walker (4/20)\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Aptitude Maximum: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>30\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Durability: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>40\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Wound Threshold: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>8\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Advantages: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>+5 SOM, +5 to one other aptitude of the player’s choice, Armour (6/6)\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Disadvantages: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Social Stigma (Clanking Masses) trait, Uncanny Valley trait\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>CP Cost: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>30\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Credit Cost: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>High\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="3" ystart="15" xend="360" yend="60" layer="5" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>SYNTH</textstring>
+	</textbody>
+	</text>
+	<text xstart="14" ystart="474" xend="201" yend="519" layer="3" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="47" italic="false" bold="true" underlined="false"><textstring>Back to BIOMORPHS</textstring>
+	</textbody>
+	</text>
+	<text xstart="513" ystart="474" xend="711" yend="519" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>On to PURCHASE GEAR</textstring>
+	</textbody>
+	</text>
+	</slide>
+	
+	<slide id="73" duration="60" descriptor="Exalts" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="14" ystart="474" xend="201" yend="519" layer="6" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="47" italic="false" bold="true" underlined="false"><textstring>Back to BIOMORPHS</textstring>
+	</textbody>
+	</text>
+	<text xstart="3" ystart="48" xend="712" yend="463" layer="5" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>Arachnoid robotic shells are 1-meter in length, segmented into two parts, with a smaller head like a spider or termite. They feature four pairs of 1.5-meter long retractable arms/legs, capable of rotating around the axis of the body, with built-in pneumatic systems for propelling the bot with small leaps. The manipulator claws on each arm/leg can be switched out with extendable mini-wheels for high-speed skating movement. A smaller pair of manipulator arms near the head allows for closer handling and tool use. In zero-g environments, arachnoids can retract their arms/legs and manoeuvre with vectored air thrusters. \n\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Enhancements: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Access Jacks, Basic Mesh Inserts, Cortical Stack, Cyberbrain, Enhanced Vision, Extra Limbs (10 Arms/Legs), Lidar, Mnemonic Augmentation, Pneumatic Limbs, Radar\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Mobility System (Movement Rate): </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Walker (4/24), Thrust Vector (8/40) Wheeled (8/40)\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Aptitude Maximum: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>30\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Durability: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>40\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Wound Threshold: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>8\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Advantages: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>+5 COO, +10 SOM, Armour (8/8)\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>CP Cost: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>45\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Credit Cost: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Expensive (minimum 40,000+)\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="3" ystart="15" xend="355" yend="60" layer="3" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>ARACHNOIDS</textstring>
+	</textbody>
+	</text>
+	<text xstart="513" ystart="474" xend="711" yend="519" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>On to PURCHASE GEAR</textstring>
+	</textbody>
+	</text>
+	</slide>
+	
+	<slide id="74" duration="60" descriptor="Mentons" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="3" ystart="48" xend="711" yend="463" layer="7" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>The dragonfly robotic morph takes the shape of a meter-long flexible shell with multiple wings and manipulator arms. Capable of near-silent turbofan-aided flight in Earth gravity, dragonfly bots fare even better in microgravity.\n\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Enhancements: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Access Jacks, Basic Mesh Inserts, Cortical Stack, Cyberbrain, Mnemonic Augmentation\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Mobility System (Movement Rate): </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Winged (8/32)\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Aptitude Maximum: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>30 (20 SOM)\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Durability: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>25\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Wound Threshold: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>5\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Advantages: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Flight, +5 REF, Armour (2/2), dragonflies count as a small target\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>CP Cost: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>20\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Credit Cost: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>High\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="3" ystart="15" xend="360" yend="60" layer="5" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>DRAGONFLY</textstring>
+	</textbody>
+	</text>
+	<text xstart="14" ystart="474" xend="201" yend="519" layer="3" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="47" italic="false" bold="true" underlined="false"><textstring>Back to BIOMORPHS</textstring>
+	</textbody>
+	</text>
+	<text xstart="513" ystart="474" xend="711" yend="519" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>On to PURCHASE GEAR</textstring>
+	</textbody>
+	</text>
+	</slide>
+	
+	<slide id="75" duration="60" descriptor="Olympians" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="14" ystart="474" xend="201" yend="519" layer="6" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="47" italic="false" bold="true" underlined="false"><textstring>Back to BIOMORPHS</textstring>
+	</textbody>
+	</text>
+	<text xstart="3" ystart="48" xend="712" yend="463" layer="5" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>Designed for multipurpose functions, flexbots can transform their shells to suit a range of situations and tasks. Their core frame consists of a half-dozen interlocking and shape-adjusting modules capable of auto-transforming into a variety of shapes: multi-legged walker, tentacle, hovercraft and many others. Each module features its own sensor units and “bush bot” fractal-branching digits (capable of breaking into smaller digits, down to the micrometer scale, allowing for ultra-fine manipulation. The flexbot control computer is also distributed between modules. Individual flexbots are only the size of a large dog, but multiple flexbots can join together for larger mass operations, even taking on heavy-duty taks such as demolition, excavation, manufacturing, robotics assembly and so on.\n\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Enhancements: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Access Jacks, Basic Mesh Inserts, Cortical Stack, Cyberbrain, Fractal Digits, Mnemonic Augmentation, Modular Design, Nanoscopic Vision, Shape Adjusting\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Mobility System (Movement Rate): </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Walker (4/16), Hover (8/40)\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Aptitude Maximum: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>30\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Durability: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>25\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Wound Threshold: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>5\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Advantages: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Armour (4/4), individual flexbots count as a small target\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>CP Cost: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>20\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Credit Cost: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Expensive (minimum 30,000+)\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="3" ystart="15" xend="355" yend="60" layer="3" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>FLEXBOTS</textstring>
+	</textbody>
+	</text>
+	<text xstart="513" ystart="474" xend="711" yend="519" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>On to PURCHASE GEAR</textstring>
+	</textbody>
+	</text>
+	</slide>
+	
+	<slide id="76" duration="60" descriptor="Sylphs" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="3" ystart="48" xend="711" yend="474" layer="7" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>The reaper is a common combat bot, used in place of biomorph soldiers and typically operated via teleoperation or by autonomous AI. The reaper’s core form is an armoured disc, so that it can turn and present a thin profile to an enemy. It uses vector-thrust nozzles to manoeuvre in microgravity and also takes advantage of an ionic drive for fast movement over distance. Four legs/manipulating arms and four weapon pods are folded inside its frame. The reaper’s shell is made of smart materials, allowing these limbs and weapon mounts to extrude in any direction desired and even to change shape and length. In gravity environments, the reaper walks or hops on two or four of these limbs. Reapers are infamous due to numerous war XPs and bringing on into most habitats will undoubtedly raise eyebrows if not get you arrested.\n\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Enhancements: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>360-Degree Vision, Access Jacks, Anti-Glare, Basic Mesh Inserts, Cortical Stack, Cyberbrain, Cyber Claws, Extra Limbs (4), Magnetic System, Mnemonic Augmentation, Pneumatic Limbs, Puppet Sock, Radar, Reflex Booster, Shape Adjusting, Structural Enhancement, T-Ray Emitter, Weapon Mount (Articulated, 4) \n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Mobility System (Movement Rate): </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Walker (4/20), Hopper (4/20), Ionic (12/40), Vectored Thrust (4/20)\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Aptitude Maximum: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>40\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Speed Modifier: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>+1 (Reflex Booster)\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Durability: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>50 (60 with Structural Enhancement)\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Wound Threshold: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>10 (12 with Structural Enhancement)\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Advantages: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>4 Limbs, +5 COO, +10 REF (+20 with Reflex Booster), +10 SOM, Armour (16/16)\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>CP Cost: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>100\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Credit Cost: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Expensive (minimum 50,000+)\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="3" ystart="15" xend="360" yend="60" layer="5" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>REAPER</textstring>
+	</textbody>
+	</text>
+	<text xstart="14" ystart="474" xend="201" yend="519" layer="3" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="47" italic="false" bold="true" underlined="false"><textstring>Back to BIOMORPHS</textstring>
+	</textbody>
+	</text>
+	<text xstart="513" ystart="474" xend="711" yend="519" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>On to PURCHASE GEAR</textstring>
+	</textbody>
+	</text>
+	</slide>
+	
+	<slide id="77" duration="60" descriptor="Bouncers" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="14" ystart="474" xend="201" yend="519" layer="6" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="47" italic="false" bold="true" underlined="false"><textstring>Back to BIOMORPHS</textstring>
+	</textbody>
+	</text>
+	<text xstart="3" ystart="48" xend="712" yend="463" layer="5" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>Cases are extremely cheap, mass-produced robotic shells intended to provide an affordable remorphing option for the millions of infugees created by the Fall. Though many varieties of case shells exist, they are uniformly regarded as shoddy and inferior. Most case morphs are vaguely anthropomorphic, with a thin framework body standing just shorter than an average human. They suffer from frequent malfunctions.\n\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Enhancements: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Access Jacks, Basic Mesh Inserts, Cortical Stack, Cyberbrain, Mnemonic Augmentation\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Mobility System (Movement Rate): </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Walker (4/6)\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Aptitude Maximum: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>20\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Durability: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>20\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Wound Threshold: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>4\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Advantages: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Armour (4/4)\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Disadvantages: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>-5 to one chosen aptitude, Lemon trait, Social Stigma (Clanking Masses) trait\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>CP Cost: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>5\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Credit Cost: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Moderate\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="3" ystart="15" xend="355" yend="60" layer="3" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>SLITHEROIDS</textstring>
+	</textbody>
+	</text>
+	<text xstart="513" ystart="474" xend="711" yend="519" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>On to PURCHASE GEAR</textstring>
+	</textbody>
+	</text>
+	</slide>
+	
+	<slide id="78" duration="60" descriptor="Furies" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="3" ystart="48" xend="711" yend="463" layer="7" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>Cases are extremely cheap, mass-produced robotic shells intended to provide an affordable remorphing option for the millions of infugees created by the Fall. Though many varieties of case shells exist, they are uniformly regarded as shoddy and inferior. Most case morphs are vaguely anthropomorphic, with a thin framework body standing just shorter than an average human. They suffer from frequent malfunctions.\n\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Enhancements: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Access Jacks, Basic Mesh Inserts, Cortical Stack, Cyberbrain, Mnemonic Augmentation\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Mobility System (Movement Rate): </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Walker (4/6)\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Aptitude Maximum: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>20\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Durability: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>20\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Wound Threshold: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>4\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Advantages: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Armour (4/4)\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Disadvantages: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>-5 to one chosen aptitude, Lemon trait, Social Stigma (Clanking Masses) trait\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>CP Cost: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>5\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Credit Cost: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Moderate\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="3" ystart="15" xend="360" yend="60" layer="5" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>SWARMANOID</textstring>
+	</textbody>
+	</text>
+	<text xstart="14" ystart="474" xend="201" yend="519" layer="3" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="47" italic="false" bold="true" underlined="false"><textstring>Back to BIOMORPHS</textstring>
+	</textbody>
+	</text>
+	<text xstart="513" ystart="474" xend="711" yend="519" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>On to PURCHASE GEAR</textstring>
+	</textbody>
+	</text>
+	</slide>
+	
+	<slide id="79" duration="60" descriptor="Futuras" lastSlide="false" backgroundcolor="#BFBFBF"><image urlname="Src/XMLBits/INFOM.png" xstart="320" ystart="66" width="391" height="431" layer="21" starttime="0"/>
+	<text xstart="14" ystart="474" xend="184" yend="519" layer="6" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="46" italic="false" bold="true" underlined="false"><textstring>Back to MORPHS</textstring>
+	</textbody>
+	</text>
+	<text xstart="8" ystart="43" xend="333" yend="451" layer="5" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>Infomorphs are digital-only forms – they lack physical body. Infomorphs are sometimes carried by the other characters instead of (or in addition to) a muse in a ghostrider module.\n\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Enhancements: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Mnemonic Augmentation\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Aptitude Maximum: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>40\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Speed Modifier: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>+2\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Disadvantages: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>No physical form\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>CP Cost: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>0\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Credit Cost: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>0\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="513" ystart="474" xend="711" yend="519" layer="3" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>On to PURCHASE GEAR</textstring>
+	</textbody>
+	</text>
+	<text xstart="15" ystart="9" xend="343" yend="54" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>INFOMORPHS</textstring>
+	</textbody>
+	</text>
+	</slide>
+	
+	<slide id="80" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="405" ystart="77" xend="688" yend="395" layer="6" starttime="0" font="Calibri" fontcolor="#790909" fontsize="20"><textbody branch="43" italic="true" bold="false" underlined="false"><textstring>15 CP = 1 Moxie point\n</textstring>
 	</textbody>
 	<textbody branch="43" italic="true" bold="false" underlined="false"><textstring>10 CP = 1 aptitude point\n</textstring>
 	</textbody>
@@ -2419,7 +2917,7 @@
 	</text>
 	</slide>
 	
-	<slide id="70" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="405" ystart="77" xend="688" yend="395" layer="6" starttime="0" font="Calibri" fontcolor="#790909" fontsize="20"><textbody branch="43" italic="true" bold="false" underlined="false"><textstring>15 CP = 1 Moxie point\n</textstring>
+	<slide id="81" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="405" ystart="77" xend="688" yend="395" layer="6" starttime="0" font="Calibri" fontcolor="#790909" fontsize="20"><textbody branch="43" italic="true" bold="false" underlined="false"><textstring>15 CP = 1 Moxie point\n</textstring>
 	</textbody>
 	<textbody branch="43" italic="true" bold="false" underlined="false"><textstring>10 CP = 1 aptitude point\n</textstring>
 	</textbody>
@@ -2449,10 +2947,10 @@
 	</text>
 	</slide>
 	
-	<slide id="71" duration="60" descriptor="NEW CHAPTER&#xA;" lastSlide="false" backgroundcolor="#BFBFBF"><image urlname="This is the fourth chapter " xstart="128" ystart="117" width="454" height="289" layer="1" starttime="0"/>
+	<slide id="82" duration="60" descriptor="NEW CHAPTER&#xA;" lastSlide="false" backgroundcolor="#BFBFBF"><image urlname="This is the fourth chapter " xstart="128" ystart="117" width="454" height="289" layer="1" starttime="0"/>
 	</slide>
 	
-	<slide id="72" duration="60" descriptor="" lastSlide="true" backgroundcolor="#BFBFBF"><text xstart="14" ystart="27" xend="275" yend="72" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="24"><textbody italic="false" bold="true" underlined="false"><textstring>Sample Adventure</textstring>
+	<slide id="83" duration="60" descriptor="" lastSlide="true" backgroundcolor="#BFBFBF"><text xstart="14" ystart="27" xend="275" yend="72" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="24"><textbody italic="false" bold="true" underlined="false"><textstring>Sample Adventure</textstring>
 	</textbody>
 	</text>
 	</slide>
