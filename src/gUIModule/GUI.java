@@ -174,6 +174,7 @@ public class GUI extends JFrame implements WindowStateListener, ComponentListene
 		return null;
 	}
 
+	
 	public Slide showPreviousSlide() {
 		if(slidePanel.currentSlide.getSlideID() > 0){
 
