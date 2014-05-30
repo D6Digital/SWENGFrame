@@ -56,6 +56,8 @@ public class ContentsPanel extends JPanel implements ActionListener{
 	boolean pageListShowing=true;
 	BufferedImage chooseButtonImage;
 	JScrollPane contents = new JScrollPane();
+	int slideHeight;
+	int slideWidth;
 	
 	/**
 	 * Creates the entire Contents panel to meet the UI design specification
@@ -65,7 +67,8 @@ public class ContentsPanel extends JPanel implements ActionListener{
 	public ContentsPanel(ArrayList<Slide> contentSlideList, final ArrayList<Presentation> contentChapterList, int width, int slideWidth, int slideHeight, String currentSystem, String currentBook) {
 		super();
 		this.setLayout(null);
-		
+		this.slideHeight=slideHeight;
+		this.slideWidth=width;
 				
 		contentsSlideList = contentSlideList;
 		//slidePanel1 = slide1;
@@ -279,4 +282,11 @@ public class ContentsPanel extends JPanel implements ActionListener{
 
 	public void setScrollList(Presentation slideList) {
 		this.contentsSlideList=slideList.getSlideList();
-	}}
+	}
+public void setDimensions(int slideHeight) {
+	this.slideHeight = slideHeight;
+	setUpLabelImage(background, "ContentsBackground.png",slideWidth,slideHeight);
+	background.setBounds(0, 0, slideWidth, slideHeight);
+	contents.setBounds(10,280,slideWidth-20,slideHeight-290);
+}
+}
