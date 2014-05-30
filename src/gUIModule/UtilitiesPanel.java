@@ -82,7 +82,7 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
 		standAloneMusicPlayer = new StandAloneMusicPlayer();
 		
 		standAloneMusicPlayerPanel = standAloneMusicPlayer.getFullControlPanel(360, slideHeight - 20);
-
+ 
 		
 		//set up back button 
 		backButton.setBounds(5, slideHeight - 20, utilitiesWidth-25, 20);
