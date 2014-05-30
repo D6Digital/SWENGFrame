@@ -1402,10 +1402,10 @@
 	</text>
 	</slide>
 	
-	<slide id="45" duration="60" descriptor="Traits and Morphs" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="460" ystart="412" xend="619" yend="457" layer="17" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="48" italic="false" bold="true" underlined="false"><textstring>NEGATIVE TRAITS</textstring>
+	<slide id="45" duration="60" descriptor="Traits and Morphs" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="460" ystart="412" xend="619" yend="457" layer="17" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="91" italic="false" bold="true" underlined="false"><textstring>NEGATIVE TRAITS</textstring>
 	</textbody>
 	</text>
-	<text xstart="462" ystart="361" xend="615" yend="406" layer="15" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="47" italic="false" bold="true" underlined="false"><textstring>POSITIVE TRAITS</textstring>
+	<text xstart="462" ystart="361" xend="615" yend="406" layer="15" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="80" italic="false" bold="true" underlined="false"><textstring>POSITIVE TRAITS</textstring>
 	</textbody>
 	</text>
 	<text xstart="133" ystart="298" xend="235" yend="343" layer="13" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="46" italic="false" bold="true" underlined="false"><textstring>MORPHS</textstring>
@@ -2449,7 +2449,7 @@
 	<textbody italic="true" bold="false" underlined="false"><textstring>Synthetic shells are made to last – a fact reflected in their higher Durability and built in Armour ratings. Their composition also makes their physical strikes more damaging: apply a +2 DV modifier on unarmed attacks for human-sized shells and larger\n</textstring>
 	</textbody>
 	</text>
-	<text xstart="14" ystart="474" xend="184" yend="519" layer="5" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="46" italic="false" bold="true" underlined="false"><textstring>Back to MORPHS</textstring>
+	<text xstart="14" ystart="474" xend="258" yend="519" layer="5" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="69" italic="false" bold="true" underlined="false"><textstring>Back to SYNTHETIC MORPHS</textstring>
 	</textbody>
 	</text>
 	<text xstart="513" ystart="474" xend="711" yend="519" layer="3" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>On to PURCHASE GEAR</textstring>
@@ -2460,7 +2460,7 @@
 	</text>
 	</slide>
 	
-	<slide id="71" duration="60" descriptor="Flats" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="14" ystart="474" xend="201" yend="519" layer="7" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="47" italic="false" bold="true" underlined="false"><textstring>Back to BIOMORPHS</textstring>
+	<slide id="71" duration="60" descriptor="Flats" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="14" ystart="474" xend="258" yend="519" layer="25" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="69" italic="false" bold="true" underlined="false"><textstring>Back to SYNTHETIC MORPHS</textstring>
 	</textbody>
 	</text>
 	<text xstart="3" ystart="48" xend="712" yend="463" layer="5" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>Cases are extremely cheap, mass-produced robotic shells intended to provide an affordable remorphing option for the millions of infugees created by the Fall. Though many varieties of case shells exist, they are uniformly regarded as shoddy and inferior. Most case morphs are vaguely anthropomorphic, with a thin framework body standing just shorter than an average human. They suffer from frequent malfunctions.\n\n</textstring>
@@ -2510,7 +2510,10 @@
 	</text>
 	</slide>
 	
-	<slide id="72" duration="60" descriptor="Splicers" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="3" ystart="48" xend="711" yend="463" layer="7" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>Synths are anthropomorphic robotic shells (androids and gynoids). They are typically used for menial labour jobs where pods are not as good of an option. Cheaper than many other morphs, they are commonly used for people who need a body quickly and cheaply or simply on a transient basis. Though they look humanoid, synths are easily recognisable as non-biological unless they have the synthetic mask option.\n\n</textstring>
+	<slide id="72" duration="60" descriptor="Splicers" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="14" ystart="474" xend="258" yend="519" layer="25" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="69" italic="false" bold="true" underlined="false"><textstring>Back to SYNTHETIC MORPHS</textstring>
+	</textbody>
+	</text>
+	<text xstart="3" ystart="48" xend="711" yend="463" layer="5" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>Synths are anthropomorphic robotic shells (androids and gynoids). They are typically used for menial labour jobs where pods are not as good of an option. Cheaper than many other morphs, they are commonly used for people who need a body quickly and cheaply or simply on a transient basis. Though they look humanoid, synths are easily recognisable as non-biological unless they have the synthetic mask option.\n\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Enhancements: </textstring>
 	</textbody>
@@ -2549,10 +2552,7 @@
 	<textbody italic="true" bold="false" underlined="false"><textstring>High\n</textstring>
 	</textbody>
 	</text>
-	<text xstart="3" ystart="15" xend="360" yend="60" layer="5" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>SYNTH</textstring>
-	</textbody>
-	</text>
-	<text xstart="14" ystart="474" xend="201" yend="519" layer="3" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="47" italic="false" bold="true" underlined="false"><textstring>Back to BIOMORPHS</textstring>
+	<text xstart="3" ystart="15" xend="360" yend="60" layer="3" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>SYNTH</textstring>
 	</textbody>
 	</text>
 	<text xstart="513" ystart="474" xend="711" yend="519" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>On to PURCHASE GEAR</textstring>
@@ -2560,7 +2560,7 @@
 	</text>
 	</slide>
 	
-	<slide id="73" duration="60" descriptor="Exalts" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="14" ystart="474" xend="201" yend="519" layer="6" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="47" italic="false" bold="true" underlined="false"><textstring>Back to BIOMORPHS</textstring>
+	<slide id="73" duration="60" descriptor="Exalts" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="14" ystart="474" xend="258" yend="519" layer="23" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="69" italic="false" bold="true" underlined="false"><textstring>Back to SYNTHETIC MORPHS</textstring>
 	</textbody>
 	</text>
 	<text xstart="3" ystart="48" xend="712" yend="463" layer="5" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>Arachnoid robotic shells are 1-meter in length, segmented into two parts, with a smaller head like a spider or termite. They feature four pairs of 1.5-meter long retractable arms/legs, capable of rotating around the axis of the body, with built-in pneumatic systems for propelling the bot with small leaps. The manipulator claws on each arm/leg can be switched out with extendable mini-wheels for high-speed skating movement. A smaller pair of manipulator arms near the head allows for closer handling and tool use. In zero-g environments, arachnoids can retract their arms/legs and manoeuvre with vectored air thrusters. \n\n</textstring>
@@ -2606,7 +2606,10 @@
 	</text>
 	</slide>
 	
-	<slide id="74" duration="60" descriptor="Mentons" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="3" ystart="48" xend="711" yend="463" layer="7" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>The dragonfly robotic morph takes the shape of a meter-long flexible shell with multiple wings and manipulator arms. Capable of near-silent turbofan-aided flight in Earth gravity, dragonfly bots fare even better in microgravity.\n\n</textstring>
+	<slide id="74" duration="60" descriptor="Mentons" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="14" ystart="474" xend="258" yend="519" layer="23" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="69" italic="false" bold="true" underlined="false"><textstring>Back to SYNTHETIC MORPHS</textstring>
+	</textbody>
+	</text>
+	<text xstart="3" ystart="48" xend="711" yend="463" layer="5" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>The dragonfly robotic morph takes the shape of a meter-long flexible shell with multiple wings and manipulator arms. Capable of near-silent turbofan-aided flight in Earth gravity, dragonfly bots fare even better in microgravity.\n\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Enhancements: </textstring>
 	</textbody>
@@ -2641,10 +2644,7 @@
 	<textbody italic="true" bold="false" underlined="false"><textstring>High\n</textstring>
 	</textbody>
 	</text>
-	<text xstart="3" ystart="15" xend="360" yend="60" layer="5" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>DRAGONFLY</textstring>
-	</textbody>
-	</text>
-	<text xstart="14" ystart="474" xend="201" yend="519" layer="3" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="47" italic="false" bold="true" underlined="false"><textstring>Back to BIOMORPHS</textstring>
+	<text xstart="3" ystart="15" xend="360" yend="60" layer="3" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>DRAGONFLY</textstring>
 	</textbody>
 	</text>
 	<text xstart="513" ystart="474" xend="711" yend="519" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>On to PURCHASE GEAR</textstring>
@@ -2652,7 +2652,7 @@
 	</text>
 	</slide>
 	
-	<slide id="75" duration="60" descriptor="Olympians" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="14" ystart="474" xend="201" yend="519" layer="6" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="47" italic="false" bold="true" underlined="false"><textstring>Back to BIOMORPHS</textstring>
+	<slide id="75" duration="60" descriptor="Olympians" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="14" ystart="474" xend="258" yend="519" layer="23" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="69" italic="false" bold="true" underlined="false"><textstring>Back to SYNTHETIC MORPHS</textstring>
 	</textbody>
 	</text>
 	<text xstart="3" ystart="48" xend="712" yend="463" layer="5" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>Designed for multipurpose functions, flexbots can transform their shells to suit a range of situations and tasks. Their core frame consists of a half-dozen interlocking and shape-adjusting modules capable of auto-transforming into a variety of shapes: multi-legged walker, tentacle, hovercraft and many others. Each module features its own sensor units and “bush bot” fractal-branching digits (capable of breaking into smaller digits, down to the micrometer scale, allowing for ultra-fine manipulation. The flexbot control computer is also distributed between modules. Individual flexbots are only the size of a large dog, but multiple flexbots can join together for larger mass operations, even taking on heavy-duty taks such as demolition, excavation, manufacturing, robotics assembly and so on.\n\n</textstring>
@@ -2698,7 +2698,10 @@
 	</text>
 	</slide>
 	
-	<slide id="76" duration="60" descriptor="Sylphs" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="3" ystart="48" xend="711" yend="474" layer="7" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>The reaper is a common combat bot, used in place of biomorph soldiers and typically operated via teleoperation or by autonomous AI. The reaper’s core form is an armoured disc, so that it can turn and present a thin profile to an enemy. It uses vector-thrust nozzles to manoeuvre in microgravity and also takes advantage of an ionic drive for fast movement over distance. Four legs/manipulating arms and four weapon pods are folded inside its frame. The reaper’s shell is made of smart materials, allowing these limbs and weapon mounts to extrude in any direction desired and even to change shape and length. In gravity environments, the reaper walks or hops on two or four of these limbs. Reapers are infamous due to numerous war XPs and bringing on into most habitats will undoubtedly raise eyebrows if not get you arrested.\n\n</textstring>
+	<slide id="76" duration="60" descriptor="Sylphs" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="14" ystart="474" xend="258" yend="519" layer="25" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="69" italic="false" bold="true" underlined="false"><textstring>Back to SYNTHETIC MORPHS</textstring>
+	</textbody>
+	</text>
+	<text xstart="3" ystart="48" xend="711" yend="474" layer="5" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>The reaper is a common combat bot, used in place of biomorph soldiers and typically operated via teleoperation or by autonomous AI. The reaper’s core form is an armoured disc, so that it can turn and present a thin profile to an enemy. It uses vector-thrust nozzles to manoeuvre in microgravity and also takes advantage of an ionic drive for fast movement over distance. Four legs/manipulating arms and four weapon pods are folded inside its frame. The reaper’s shell is made of smart materials, allowing these limbs and weapon mounts to extrude in any direction desired and even to change shape and length. In gravity environments, the reaper walks or hops on two or four of these limbs. Reapers are infamous due to numerous war XPs and bringing on into most habitats will undoubtedly raise eyebrows if not get you arrested.\n\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Enhancements: </textstring>
 	</textbody>
@@ -2737,10 +2740,7 @@
 	<textbody italic="true" bold="false" underlined="false"><textstring>Expensive (minimum 50,000+)\n</textstring>
 	</textbody>
 	</text>
-	<text xstart="3" ystart="15" xend="360" yend="60" layer="5" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>REAPER</textstring>
-	</textbody>
-	</text>
-	<text xstart="14" ystart="474" xend="201" yend="519" layer="3" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="47" italic="false" bold="true" underlined="false"><textstring>Back to BIOMORPHS</textstring>
+	<text xstart="3" ystart="15" xend="360" yend="60" layer="3" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>REAPER</textstring>
 	</textbody>
 	</text>
 	<text xstart="513" ystart="474" xend="711" yend="519" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>On to PURCHASE GEAR</textstring>
@@ -2748,46 +2748,42 @@
 	</text>
 	</slide>
 	
-	<slide id="77" duration="60" descriptor="Bouncers" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="14" ystart="474" xend="201" yend="519" layer="6" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="47" italic="false" bold="true" underlined="false"><textstring>Back to BIOMORPHS</textstring>
+	<slide id="77" duration="60" descriptor="Bouncers" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="14" ystart="474" xend="258" yend="519" layer="23" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="69" italic="false" bold="true" underlined="false"><textstring>Back to SYNTHETIC MORPHS</textstring>
 	</textbody>
 	</text>
-	<text xstart="3" ystart="48" xend="712" yend="463" layer="5" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>Cases are extremely cheap, mass-produced robotic shells intended to provide an affordable remorphing option for the millions of infugees created by the Fall. Though many varieties of case shells exist, they are uniformly regarded as shoddy and inferior. Most case morphs are vaguely anthropomorphic, with a thin framework body standing just shorter than an average human. They suffer from frequent malfunctions.\n\n</textstring>
+	<text xstart="3" ystart="48" xend="712" yend="463" layer="5" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>Slitheroid bots are synthetic shells taking the form of a 2-meter long segmented metallic snake, with two retractable arms for tool use. Snake bots can coil, twist and roll their bodies into a ball or hoop, moving either by slithering, burrowing, rolling or pulling themselves along by their arms. The a sensor suit and control computer are housed in the head\n\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Enhancements: </textstring>
 	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>Access Jacks, Basic Mesh Inserts, Cortical Stack, Cyberbrain, Mnemonic Augmentation\n</textstring>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Access Jacks, Basic Mesh Inserts, Cortical Stack, Cyberbrain, Enhanced Vision, Mnemonic Augmentation\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Mobility System (Movement Rate): </textstring>
 	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>Walker (4/6)\n</textstring>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Snake (4/16; 8/32 rolling)\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Aptitude Maximum: </textstring>
 	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>20\n</textstring>
+	<textbody italic="true" bold="false" underlined="false"><textstring>30\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Durability: </textstring>
 	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>20\n</textstring>
+	<textbody italic="true" bold="false" underlined="false"><textstring>45\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Wound Threshold: </textstring>
 	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>4\n</textstring>
+	<textbody italic="true" bold="false" underlined="false"><textstring>9\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Advantages: </textstring>
 	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>Armour (4/4)\n</textstring>
-	</textbody>
-	<textbody italic="false" bold="true" underlined="false"><textstring>Disadvantages: </textstring>
-	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>-5 to one chosen aptitude, Lemon trait, Social Stigma (Clanking Masses) trait\n</textstring>
+	<textbody italic="true" bold="false" underlined="false"><textstring>+5 COO, +5 SOM, +5 to one other aptitude of the player’s choice, Armour (8/8)\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>CP Cost: </textstring>
 	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>5\n</textstring>
+	<textbody italic="true" bold="false" underlined="false"><textstring>40\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Credit Cost: </textstring>
 	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>Moderate\n</textstring>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Expensive\n</textstring>
 	</textbody>
 	</text>
 	<text xstart="3" ystart="15" xend="355" yend="60" layer="3" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>SLITHEROIDS</textstring>
@@ -2798,49 +2794,49 @@
 	</text>
 	</slide>
 	
-	<slide id="78" duration="60" descriptor="Furies" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="3" ystart="48" xend="711" yend="463" layer="7" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>Cases are extremely cheap, mass-produced robotic shells intended to provide an affordable remorphing option for the millions of infugees created by the Fall. Though many varieties of case shells exist, they are uniformly regarded as shoddy and inferior. Most case morphs are vaguely anthropomorphic, with a thin framework body standing just shorter than an average human. They suffer from frequent malfunctions.\n\n</textstring>
+	<slide id="78" duration="60" descriptor="Furies" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="14" ystart="474" xend="258" yend="519" layer="25" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="69" italic="false" bold="true" underlined="false"><textstring>Back to SYNTHETIC MORPHS</textstring>
+	</textbody>
+	</text>
+	<text xstart="3" ystart="48" xend="711" yend="463" layer="5" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>The swarmanoid is not a single shell per se, but rather a swarm of hundreds of insect-sized robotic micro-drones. Each individual “bug” is capable of crawling, rolling, hopping meters or using nanocopter fan blades for airlift. The controlling computer, cortical stack and sensor systems are distributed throughout the swarm. Through the swarm can “meld” together into a roughly child-sized shape, the swarm is incapable of tackling physical tasks like grabbing, lifting or holding as a unit. Individual bugs are quite capable of interfacing with electronics.\n\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Enhancements: </textstring>
 	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>Access Jacks, Basic Mesh Inserts, Cortical Stack, Cyberbrain, Mnemonic Augmentation\n</textstring>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Access Jacks, Basic Mesh Inserts, Cortical Stack, Cyberbrain, Mnemonic Augmentation, Swarm Composition\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Mobility System (Movement Rate): </textstring>
 	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>Walker (4/6)\n</textstring>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Walker (2/8), Hopper (4/20), Rotor (4/32)\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Aptitude Maximum: </textstring>
 	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>20\n</textstring>
+	<textbody italic="true" bold="false" underlined="false"><textstring>30\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Durability: </textstring>
 	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>20\n</textstring>
+	<textbody italic="true" bold="false" underlined="false"><textstring>30\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Wound Threshold: </textstring>
 	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>4\n</textstring>
+	<textbody italic="true" bold="false" underlined="false"><textstring>6\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Advantages: </textstring>
 	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>Armour (4/4)\n</textstring>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Swarm Composition\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Disadvantages: </textstring>
 	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>-5 to one chosen aptitude, Lemon trait, Social Stigma (Clanking Masses) trait\n</textstring>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Swarm Composition\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>CP Cost: </textstring>
 	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>5\n</textstring>
+	<textbody italic="true" bold="false" underlined="false"><textstring>25\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Credit Cost: </textstring>
 	</textbody>
-	<textbody italic="true" bold="false" underlined="false"><textstring>Moderate\n</textstring>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Expensive\n</textstring>
 	</textbody>
 	</text>
-	<text xstart="3" ystart="15" xend="360" yend="60" layer="5" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>SWARMANOID</textstring>
-	</textbody>
-	</text>
-	<text xstart="14" ystart="474" xend="201" yend="519" layer="3" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="47" italic="false" bold="true" underlined="false"><textstring>Back to BIOMORPHS</textstring>
+	<text xstart="3" ystart="15" xend="360" yend="60" layer="3" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>SWARMANOID</textstring>
 	</textbody>
 	</text>
 	<text xstart="513" ystart="474" xend="711" yend="519" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>On to PURCHASE GEAR</textstring>
@@ -2887,28 +2883,76 @@
 	</text>
 	</slide>
 	
-	<slide id="80" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="405" ystart="77" xend="688" yend="395" layer="6" starttime="0" font="Calibri" fontcolor="#790909" fontsize="20"><textbody branch="43" italic="true" bold="false" underlined="false"><textstring>15 CP = 1 Moxie point\n</textstring>
+	<slide id="80" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="269" ystart="94" xend="542" yend="440" layer="24" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="86" italic="true" bold="false" underlined="false"><textstring>LIMBER\n</textstring>
 	</textbody>
-	<textbody branch="43" italic="true" bold="false" underlined="false"><textstring>10 CP = 1 aptitude point\n</textstring>
+	<textbody branch="86" italic="true" bold="false" underlined="false"><textstring>MATH WIZ\n</textstring>
 	</textbody>
-	<textbody branch="43" italic="true" bold="false" underlined="false"><textstring>5 CP = 1 Psi sleight\n</textstring>
+	<textbody branch="86" italic="true" bold="false" underlined="false"><textstring>NATURAL IMMUNITY\n</textstring>
 	</textbody>
-	<textbody branch="44" italic="true" bold="false" underlined="false"><textstring>5 CP = 1 specialisation\n</textstring>
+	<textbody branch="87" italic="true" bold="false" underlined="false"><textstring>PAIN TOLERANCE\n</textstring>
 	</textbody>
-	<textbody branch="44" italic="true" bold="false" underlined="false"><textstring>1 CP = 1 skill point (up to 60)\n</textstring>
+	<textbody branch="87" italic="true" bold="false" underlined="false"><textstring>PATRON\n</textstring>
 	</textbody>
-	<textbody branch="44" italic="true" bold="false" underlined="false"><textstring>2 CP = 1 skill point (61-80)\n</textstring>
+	<textbody branch="88" italic="true" bold="false" underlined="false"><textstring>PSI\n</textstring>
 	</textbody>
-	<textbody branch="43" italic="true" bold="false" underlined="false"><textstring>1 CP = 1,000 credit\n</textstring>
+	<textbody branch="88" italic="true" bold="false" underlined="false"><textstring>PSI CHAMELEON\n</textstring>
 	</textbody>
-	<textbody branch="43" italic="true" bold="false" underlined="false"><textstring>1 CP = 10 Rep\n</textstring>
+	<textbody branch="88" italic="true" bold="false" underlined="false"><textstring>PSI DEFENSE\n</textstring>
 	</textbody>
-	<textbody branch="45" italic="true" bold="false" underlined="false"><textstring>Trait costs vary\n</textstring>
+	<textbody branch="88" italic="true" bold="false" underlined="false"><textstring>RAPID HEALER\n</textstring>
 	</textbody>
-	<textbody branch="45" italic="true" bold="false" underlined="false"><textstring>Morph costs vary\n</textstring>
+	<textbody branch="89" italic="true" bold="false" underlined="false"><textstring>RIGHT AT HOME\n</textstring>
+	</textbody>
+	<textbody branch="89" italic="true" bold="false" underlined="false"><textstring>SECOND SKIN\n</textstring>
+	</textbody>
+	<textbody branch="89" italic="true" bold="false" underlined="false"><textstring>SITUATIONAL AWARENESS\n</textstring>
+	</textbody>
+	<textbody branch="90" italic="true" bold="false" underlined="false"><textstring>STRIKING LOOKS\n</textstring>
+	</textbody>
+	<textbody branch="90" italic="true" bold="false" underlined="false"><textstring>TOUGH\n</textstring>
+	</textbody>
+	<textbody branch="90" italic="true" bold="false" underlined="false"><textstring>ZOOSEMIOTICS\n</textstring>
 	</textbody>
 	</text>
-	<text xstart="15" ystart="43" xend="371" yend="531" layer="5" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"/>
+	<text xstart="14" ystart="474" xend="354" yend="519" layer="18" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="45" italic="false" bold="true" underlined="false"><textstring>Back to MORPHS AND TRAITS</textstring>
+	</textbody>
+	</text>
+	<text xstart="14" ystart="94" xend="280" yend="440" layer="6" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="81" italic="true" bold="false" underlined="false"><textstring>ADAPTABILITY\n</textstring>
+	</textbody>
+	<textbody branch="81" italic="true" bold="false" underlined="false"><textstring>ALLIES\n</textstring>
+	</textbody>
+	<textbody branch="82" italic="true" bold="false" underlined="false"><textstring>AMBIDEXTROUS\n</textstring>
+	</textbody>
+	<textbody branch="82" italic="true" bold="false" underlined="false"><textstring>ANIMAL EMPATHY\n</textstring>
+	</textbody>
+	<textbody branch="82" italic="true" bold="false" underlined="false"><textstring>BRAVE\n</textstring>
+	</textbody>
+	<textbody branch="83" italic="true" bold="false" underlined="false"><textstring>COMMON SENSE\n</textstring>
+	</textbody>
+	<textbody branch="83" italic="true" bold="false" underlined="false"><textstring>DANGER SENSE\n</textstring>
+	</textbody>
+	<textbody branch="83" italic="true" bold="false" underlined="false"><textstring>DIRECTION SENSE\n</textstring>
+	</textbody>
+	<textbody branch="83" italic="true" bold="false" underlined="false"><textstring>EIDETIC MEMORY\n</textstring>
+	</textbody>
+	<textbody branch="84" italic="true" bold="false" underlined="false"><textstring>EXCEPTIONAL APTITUDE\n</textstring>
+	</textbody>
+	<textbody branch="84" italic="true" bold="false" underlined="false"><textstring>EXPERT\n</textstring>
+	</textbody>
+	<textbody branch="84" italic="true" bold="false" underlined="false"><textstring>FAST LEARNER\n</textstring>
+	</textbody>
+	<textbody branch="84" italic="true" bold="false" underlined="false"><textstring>FIRST IMPRESSION\n</textstring>
+	</textbody>
+	<textbody branch="85" italic="true" bold="false" underlined="false"><textstring>HYPER LINGUIST\n</textstring>
+	</textbody>
+	<textbody branch="85" italic="true" bold="false" underlined="false"><textstring>IMPROVED IMMUNE SYSTEM\n</textstring>
+	</textbody>
+	<textbody branch="85" italic="true" bold="false" underlined="false"><textstring>INNOCUOUS\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="15" ystart="43" xend="371" yend="98" layer="5" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>Positive traits provide bonuses to the character in certain situations.\n</textstring>
+	</textbody>
+	</text>
 	<text xstart="513" ystart="474" xend="711" yend="519" layer="3" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>On to PURCHASE GEAR</textstring>
 	</textbody>
 	</text>
@@ -2917,28 +2961,484 @@
 	</text>
 	</slide>
 	
-	<slide id="81" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="405" ystart="77" xend="688" yend="395" layer="6" starttime="0" font="Calibri" fontcolor="#790909" fontsize="20"><textbody branch="43" italic="true" bold="false" underlined="false"><textstring>15 CP = 1 Moxie point\n</textstring>
-	</textbody>
-	<textbody branch="43" italic="true" bold="false" underlined="false"><textstring>10 CP = 1 aptitude point\n</textstring>
-	</textbody>
-	<textbody branch="43" italic="true" bold="false" underlined="false"><textstring>5 CP = 1 Psi sleight\n</textstring>
-	</textbody>
-	<textbody branch="44" italic="true" bold="false" underlined="false"><textstring>5 CP = 1 specialisation\n</textstring>
-	</textbody>
-	<textbody branch="44" italic="true" bold="false" underlined="false"><textstring>1 CP = 1 skill point (up to 60)\n</textstring>
-	</textbody>
-	<textbody branch="44" italic="true" bold="false" underlined="false"><textstring>2 CP = 1 skill point (61-80)\n</textstring>
-	</textbody>
-	<textbody branch="43" italic="true" bold="false" underlined="false"><textstring>1 CP = 1,000 credit\n</textstring>
-	</textbody>
-	<textbody branch="43" italic="true" bold="false" underlined="false"><textstring>1 CP = 10 Rep\n</textstring>
-	</textbody>
-	<textbody branch="45" italic="true" bold="false" underlined="false"><textstring>Trait costs vary\n</textstring>
-	</textbody>
-	<textbody branch="45" italic="true" bold="false" underlined="false"><textstring>Morph costs vary\n</textstring>
+	<slide id="81" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="14" ystart="474" xend="354" yend="519" layer="15" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="80" italic="false" bold="true" underlined="false"><textstring>Back to POSITIVE TRAITS</textstring>
 	</textbody>
 	</text>
-	<text xstart="15" ystart="43" xend="371" yend="531" layer="5" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"/>
+	<text xstart="513" ystart="474" xend="711" yend="519" layer="13" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>On to PURCHASE GEAR</textstring>
+	</textbody>
+	</text>
+	<text xstart="371" ystart="43" xend="706" yend="395" layer="9" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>30 CP\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Cost: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>The character is part of or has a relationship with some influential group that they can occasionally call on for support. For example, this could be their old gatecrashing crew, former research lab co-workers, a criminal cartel they are part of or an elite social clique. The gamemaster and player should work out what the character’s relationship is with this group and why the character can call on them for aid. Gamemaster’s should take care that these allies are not abused, such as calling on them more than once per game session. The character’s ties to this group are also a two-way street – they will be expected to perform duties for the group on occasions as well (a potential plot seed for scenarios).\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="371" ystart="9" xend="706" yend="54" layer="7" starttime="0" font="Calibri" fontcolor="#790909" fontsize="16"><textbody italic="false" bold="true" underlined="false"><textstring>ALLIES</textstring>
+	</textbody>
+	</text>
+	<text xstart="14" ystart="43" xend="349" yend="180" layer="3" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>10 (Level 1) or 20 (Level 2) CP\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Cost: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Resleeving is a breeze for this character. They adjust to new morphs much more quickly than most other people. Apply a +10 modifier per level for Integration Tests and Alienation Tests.\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="14" ystart="9" xend="349" yend="54" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="16"><textbody italic="false" bold="true" underlined="false"><textstring>ADAPTABILITY</textstring>
+	</textbody>
+	</text>
+	</slide>
+	
+	<slide id="82" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="14" ystart="241" xend="349" yend="400" layer="19" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>5 CP\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Cost: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>The character has an instinctive feel for handling and working with non-sapient animals of all kinds. Apply a +10 modifier to Animal Handling skill tests or whenever the character makes a test to influence or interact with an animal.\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="14" ystart="208" xend="349" yend="253" layer="17" starttime="0" font="Calibri" fontcolor="#790909" fontsize="16"><textbody italic="false" bold="true" underlined="false"><textstring>ANIMAL EMPATHY</textstring>
+	</textbody>
+	</text>
+	<text xstart="14" ystart="474" xend="354" yend="519" layer="15" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="80" italic="false" bold="true" underlined="false"><textstring>Back to POSITIVE TRAITS</textstring>
+	</textbody>
+	</text>
+	<text xstart="513" ystart="474" xend="711" yend="519" layer="13" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>On to PURCHASE GEAR</textstring>
+	</textbody>
+	</text>
+	<text xstart="371" ystart="43" xend="706" yend="242" layer="9" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>10 CP\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Cost: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>This character does not scare easily and will face threats, intimidation and certain bodily harm without flinching. As a side effect, the character is not always the best at gauging risks, especially when it comes to factoring in danger to others. The character receives a +10 modifier on all tests to resist fear or intimidation.</textstring>
+	</textbody>
+	</text>
+	<text xstart="371" ystart="9" xend="706" yend="54" layer="7" starttime="0" font="Calibri" fontcolor="#790909" fontsize="16"><textbody italic="false" bold="true" underlined="false"><textstring>BRAVE</textstring>
+	</textbody>
+	</text>
+	<text xstart="14" ystart="43" xend="349" yend="219" layer="3" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>10 CP\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Cost: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>The character can use and manipulate objects equally well with both hands (they do not suffer the off-hand modifier). If the character has other prehensile limbs (feet, tail, tentacles etc), this trait may be applied to a limb other than the hand. This trait may be taken multiple times for multiple limbs.\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="14" ystart="9" xend="349" yend="54" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="16"><textbody italic="false" bold="true" underlined="false"><textstring>AMBIDEXTROUS</textstring>
+	</textbody>
+	</text>
+	</slide>
+	
+	<slide id="83" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="371" ystart="218" xend="706" yend="362" layer="25" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>10 CP\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Cost: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Much like a computer, the character has perfect memory recall. They can remember anything they have sensed, often even from a single glance. This works the same as the Eidetic Memory implant.</textstring>
+	</textbody>
+	</text>
+	<text xstart="371" ystart="185" xend="706" yend="230" layer="23" starttime="0" font="Calibri" fontcolor="#790909" fontsize="16"><textbody italic="false" bold="true" underlined="false"><textstring>EIDETIC MEMORY (Ego or Morph trait) </textstring>
+	</textbody>
+	</text>
+	<text xstart="371" ystart="43" xend="706" yend="197" layer="19" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>5 CP\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Cost: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Somehow the character always knows which way is up, north etc, even when blinded. The character receives a +10 modifier for figuring out complex directions, reading maps and remembering or retracing a path they have taken.</textstring>
+	</textbody>
+	</text>
+	<text xstart="371" ystart="9" xend="706" yend="54" layer="17" starttime="0" font="Calibri" fontcolor="#790909" fontsize="16"><textbody italic="false" bold="true" underlined="false"><textstring>DIRECTION SENSE</textstring>
+	</textbody>
+	</text>
+	<text xstart="14" ystart="337" xend="349" yend="434" layer="13" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>10 CP\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Cost: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>The character has an intuitive sixth sense that warns them of imminent threats. They receive a +10 modifier on Surprise Tests. </textstring>
+	</textbody>
+	</text>
+	<text xstart="14" ystart="304" xend="349" yend="349" layer="11" starttime="0" font="Calibri" fontcolor="#790909" fontsize="16"><textbody italic="false" bold="true" underlined="false"><textstring>DANGER SENSE</textstring>
+	</textbody>
+	</text>
+	<text xstart="14" ystart="474" xend="354" yend="519" layer="9" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="80" italic="false" bold="true" underlined="false"><textstring>Back to POSITIVE TRAITS</textstring>
+	</textbody>
+	</text>
+	<text xstart="513" ystart="474" xend="711" yend="519" layer="7" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>On to PURCHASE GEAR</textstring>
+	</textbody>
+	</text>
+	<text xstart="14" ystart="43" xend="349" yend="316" layer="3" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>10 CP\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Cost: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>The character has an innate sense of judgment that cuts through other distractions and factors that might clod a decision. Once per game session, the player may ask the gamemaster what choice they should make or what course of action they should take and the gamemaster should give them solid advice based on what the character knows. Alternatively, if the character is about to make a disastrous decision, the gamemaster can use the character’s free hint and warn the player they are making a mistake</textstring>
+	</textbody>
+	</text>
+	<text xstart="14" ystart="9" xend="349" yend="54" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="16"><textbody italic="false" bold="true" underlined="false"><textstring>COMMON SENSE</textstring>
+	</textbody>
+	</text>
+	</slide>
+	
+	<slide id="84" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="371" ystart="145" xend="706" yend="362" layer="25" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>10 CP\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Cost: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>The character has a way of charming or otherwise making a good impression the first time they interact with someone. This innate social lubricant allows them to more readily deal with new contacts and slip right into new social environments. Apply a +10 modifier on social skill tests when the character is interacting with another character for the first time only.</textstring>
+	</textbody>
+	</text>
+	<text xstart="371" ystart="111" xend="706" yend="156" layer="23" starttime="0" font="Calibri" fontcolor="#790909" fontsize="16"><textbody italic="false" bold="true" underlined="false"><textstring>FIRST IMPRESSION</textstring>
+	</textbody>
+	</text>
+	<text xstart="371" ystart="43" xend="706" yend="123" layer="19" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>10 CP\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Cost: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>The character improves skills and learns new ones in half the time it normally takes.</textstring>
+	</textbody>
+	</text>
+	<text xstart="371" ystart="9" xend="706" yend="54" layer="17" starttime="0" font="Calibri" fontcolor="#790909" fontsize="16"><textbody italic="false" bold="true" underlined="false"><textstring>FAST LEARNER</textstring>
+	</textbody>
+	</text>
+	<text xstart="14" ystart="275" xend="349" yend="429" layer="13" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>10 CP\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Cost: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>The character is a legend in the use of one particular skill. The character may raise one learned skill over 80, to a maximum of 90, during character creation. This trait does not actually increase the skill, it just raises the maximum. This trait may only be taken once.</textstring>
+	</textbody>
+	</text>
+	<text xstart="14" ystart="242" xend="349" yend="287" layer="11" starttime="0" font="Calibri" fontcolor="#790909" fontsize="16"><textbody italic="false" bold="true" underlined="false"><textstring>EXPERT</textstring>
+	</textbody>
+	</text>
+	<text xstart="14" ystart="474" xend="354" yend="519" layer="9" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="80" italic="false" bold="true" underlined="false"><textstring>Back to POSITIVE TRAITS</textstring>
+	</textbody>
+	</text>
+	<text xstart="513" ystart="474" xend="711" yend="519" layer="7" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>On to PURCHASE GEAR</textstring>
+	</textbody>
+	</text>
+	<text xstart="14" ystart="43" xend="349" yend="253" layer="3" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>20 CP\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Cost: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>As an ego trait, the character may raise the maximum for a particular chosen aptitude to 40 rather than 30. As a morph trait, it raises the morph aptitude maximum for a particular chosen aptitude by 10 (30 for Flats, 35 for Splicers etc). Note that this trait just raises the maximum, it does not give the character 10 more aptitude points. This trait may only be taken by a morph or ego once.</textstring>
+	</textbody>
+	</text>
+	<text xstart="14" ystart="9" xend="349" yend="54" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="16"><textbody italic="false" bold="true" underlined="false"><textstring>EXCEPTIONAL APTITUDE (Ego or Morph trait)</textstring>
+	</textbody>
+	</text>
+	</slide>
+	
+	<slide id="85" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="371" ystart="43" xend="706" yend="298" layer="19" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>10 CP\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Cost: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>In an age when exotic appearances and good looks are commonplace, the morph’s look is surprisingly bland and undistinguished, in that cookie cutter sort of way. The character’s physical looks are so mundane that others have had a hard time picking them out of a crowd, describing their physical details. Apply a -10 modifier to all tests made to spot, describe or remember the character. This modifier does not apply to psi or mesh searches. </textstring>
+	</textbody>
+	</text>
+	<text xstart="371" ystart="9" xend="706" yend="54" layer="17" starttime="0" font="Calibri" fontcolor="#790909" fontsize="16"><textbody italic="false" bold="true" underlined="false"><textstring>INNOCUOUS (Morph trait)</textstring>
+	</textbody>
+	</text>
+	<text xstart="14" ystart="298" xend="349" yend="474" layer="13" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="false" bold="true" underlined="false"><textstring>Cost: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>10 (Level 1) or 20 (Level 2) CP\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>The morphs’s immune system is robust and more resistant to diseases, drugs and toxins – even more than basic biomods. At level 1, apply a +10 modifier whenever making a test to resist infection or the effect of a toxin or drug. At level 2, increase this to +20. This trait is only available to biomorphs.</textstring>
+	</textbody>
+	</text>
+	<text xstart="14" ystart="264" xend="349" yend="309" layer="11" starttime="0" font="Calibri" fontcolor="#790909" fontsize="16"><textbody italic="false" bold="true" underlined="false"><textstring>IMPROVED IMMUNE SYSTEM (Morph trait)</textstring>
+	</textbody>
+	</text>
+	<text xstart="14" ystart="474" xend="354" yend="519" layer="9" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="80" italic="false" bold="true" underlined="false"><textstring>Back to POSITIVE TRAITS</textstring>
+	</textbody>
+	</text>
+	<text xstart="513" ystart="474" xend="711" yend="519" layer="7" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>On to PURCHASE GEAR</textstring>
+	</textbody>
+	</text>
+	<text xstart="14" ystart="43" xend="349" yend="276" layer="3" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>10 CP\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Cost: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>The character has an intuitive understanding of linguistic structures that facilitates learning new languages easily. The character requires one-third the normal amount of time and experience to learn any language. The character can also learn any human language in one day simply be constant immersive exposure to it. Additionally, the character receives a +10 modifier when attempting to interpret languages that they don’t know.</textstring>
+	</textbody>
+	</text>
+	<text xstart="14" ystart="9" xend="349" yend="54" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="16"><textbody italic="false" bold="true" underlined="false"><textstring>HYPER LINGUIST</textstring>
+	</textbody>
+	</text>
+	</slide>
+	
+	<slide id="86" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="366" ystart="281" xend="701" yend="457" layer="19" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="false" bold="true" underlined="false"><textstring>Cost: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>10 CP\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>The morph has a natural immunity to a specific drug, disease or toxin. When afflicted with that specific chemical, poison or pathogen, the character remains unaffected. This immunity may not be applied to nanodrugs/toxins. This trait is only available to biomorphs.</textstring>
+	</textbody>
+	</text>
+	<text xstart="366" ystart="247" xend="701" yend="292" layer="17" starttime="0" font="Calibri" fontcolor="#790909" fontsize="16"><textbody italic="false" bold="true" underlined="false"><textstring>NATURAL IMMUNITY (Morph trait)</textstring>
+	</textbody>
+	</text>
+	<text xstart="366" ystart="43" xend="701" yend="259" layer="13" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>10 CP\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Cost: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>The character can perform any feat of calculation, including the most complex and advanced mathematics, instantly and with great precision, with the same ease an unmodified human can add 2 + 3. The character can calculate odds, find correlations in numerical data and perform similar tasks with great ease. Apply a +30 modifier on tests involving mathematical calculations. </textstring>
+	</textbody>
+	</text>
+	<text xstart="366" ystart="9" xend="701" yend="54" layer="11" starttime="0" font="Calibri" fontcolor="#790909" fontsize="16"><textbody italic="false" bold="true" underlined="false"><textstring>MATH WIZ</textstring>
+	</textbody>
+	</text>
+	<text xstart="14" ystart="474" xend="354" yend="519" layer="9" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="80" italic="false" bold="true" underlined="false"><textstring>Back to POSITIVE TRAITS</textstring>
+	</textbody>
+	</text>
+	<text xstart="513" ystart="474" xend="711" yend="519" layer="7" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>On to PURCHASE GEAR</textstring>
+	</textbody>
+	</text>
+	<text xstart="14" ystart="43" xend="349" yend="276" layer="3" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>10 (Level 1) or 20 (Level 2) CP\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Cost: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>The morph is especially flexible and supple, capable of graceful contortions and interesting positions. At level 1, the character can smoke with their toes, do the splits and squeeze into small, cramped spaces. At level 2, they are double-jointed escape artists. Each level provides a +10 modifier to escaping from bonds, fitting into narrow confines and other acts relying on contortion or flexibility. This trait is only available to biomorphs.</textstring>
+	</textbody>
+	</text>
+	<text xstart="14" ystart="9" xend="349" yend="54" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="16"><textbody italic="false" bold="true" underlined="false"><textstring>LIMBER (Morph trait)</textstring>
+	</textbody>
+	</text>
+	</slide>
+	
+	<slide id="87" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="369" ystart="9" xend="704" yend="417" layer="17" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>The player and the gamemaster should work together to define exactly who this NPC is and what their relationship with the player character is. Specifically, the question of why this patron is supporting the character should be answered (familial obligation? Childhood buddies? The character saved their life once?). Gamemasters should be careful that this trait does not get abused. The patron should be an occasional help (probably no more than once per game session at most) but is not always at the character’s beck-and-call. If the character asks for too much, too often, they should find the patron’s support drying up. Additionally, the character may need to take action to maintain the relationship, such as undertaking a mission on the patron’s behalf. In fact, the character may only have their patronage because they are on-call or of use to the NPC in some way.</textstring>
+	</textbody>
+	</text>
+	<text xstart="14" ystart="244" xend="349" yend="457" layer="13" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>30 CP\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Cost: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>The character has an influential person in their life who can be relied on for occasional support. This could be a wealthy hyperelite family member, a high-ranking triad boss or an anarchist networker with an unbeatable reputation. When called upon, this patron can pull strings on the character's behalf, supply resources, introduce them to people they need to know and bail them out of trouble. </textstring>
+	</textbody>
+	</text>
+	<text xstart="14" ystart="211" xend="349" yend="256" layer="11" starttime="0" font="Calibri" fontcolor="#790909" fontsize="16"><textbody italic="false" bold="true" underlined="false"><textstring>PATRON</textstring>
+	</textbody>
+	</text>
+	<text xstart="14" ystart="474" xend="354" yend="519" layer="9" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="80" italic="false" bold="true" underlined="false"><textstring>Back to POSITIVE TRAITS</textstring>
+	</textbody>
+	</text>
+	<text xstart="513" ystart="474" xend="711" yend="519" layer="7" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>On to PURCHASE GEAR</textstring>
+	</textbody>
+	</text>
+	<text xstart="14" ystart="43" xend="349" yend="219" layer="3" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>10 (Level 1) or 20 (Level 2) CP\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Cost: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>The character has a high threshold for pain tolerance and is better at ignoring the effects of pain on their abilities and concentration. Level 1 allows them to ignore the -10 modifier from 1 wound. Level 2 allows then to ignore the -10 modifier from 2 wounds. This trait is only available to biomorphs.</textstring>
+	</textbody>
+	</text>
+	<text xstart="14" ystart="9" xend="349" yend="54" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="16"><textbody italic="false" bold="true" underlined="false"><textstring>PAIN TOLERANCE (Ego or Morph trait)</textstring>
+	</textbody>
+	</text>
+	</slide>
+	
+	<slide id="88" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="371" ystart="315" xend="706" yend="412" layer="25" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="false" bold="true" underlined="false"><textstring>Cost: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>10 CP\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>The morph recovers from damage more quickly. Reduce the timeframes for healing by half. This trait is only available to biomorphs.</textstring>
+	</textbody>
+	</text>
+	<text xstart="371" ystart="281" xend="706" yend="326" layer="23" starttime="0" font="Calibri" fontcolor="#790909" fontsize="16"><textbody italic="false" bold="true" underlined="false"><textstring>RAPID HEALER(Morph trait)</textstring>
+	</textbody>
+	</text>
+	<text xstart="371" ystart="179" xend="706" yend="299" layer="19" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>10 (Level 1) or 20 (Level 2) CP\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Cost: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>The character’s mind is inherently resistant to mental attacks. At Level 1, apply a +10 modifier to all defence tests made against psi attacks. At level 2, apply a +20.</textstring>
+	</textbody>
+	</text>
+	<text xstart="371" ystart="145" xend="706" yend="190" layer="17" starttime="0" font="Calibri" fontcolor="#790909" fontsize="16"><textbody italic="false" bold="true" underlined="false"><textstring>PSI DEFENSE (Ego or Morph trait)</textstring>
+	</textbody>
+	</text>
+	<text xstart="371" ystart="43" xend="706" yend="163" layer="13" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>10 CP\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Cost: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>The character’s mental state is naturally resistance to psi sensing. Apply a -10 modifier to any attempts to locate or detect the character via psi sleights.</textstring>
+	</textbody>
+	</text>
+	<text xstart="371" ystart="9" xend="706" yend="54" layer="11" starttime="0" font="Calibri" fontcolor="#790909" fontsize="16"><textbody italic="false" bold="true" underlined="false"><textstring>PSI CHAMELEON (Ego or Morph trait)</textstring>
+	</textbody>
+	</text>
+	<text xstart="14" ystart="474" xend="354" yend="519" layer="9" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="80" italic="false" bold="true" underlined="false"><textstring>Back to POSITIVE TRAITS</textstring>
+	</textbody>
+	</text>
+	<text xstart="513" ystart="474" xend="711" yend="519" layer="7" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>On to PURCHASE GEAR</textstring>
+	</textbody>
+	</text>
+	<text xstart="14" ystart="43" xend="349" yend="333" layer="3" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>20 (Level 1) or 25 (Level 2) CP\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Cost: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>The character has been infected with the Watts-Macleod strain of the exsurgent virus, which altered their brain structure and opened the potential for their mind to enhance their cognitive abilities and read and manipulate the biological minds of others. At level 1, the character may purchase and learn psi-chi sleights. At level 2, the character may purchase and learn psi-chi and psi-gamma sleights.\nThough this trait is not very expensive, gamemasters should not allow it to be abused. There are a number of negative side effects to Watts-Macleod infection.</textstring>
+	</textbody>
+	</text>
+	<text xstart="14" ystart="9" xend="349" yend="54" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="16"><textbody italic="false" bold="true" underlined="false"><textstring>PSI</textstring>
+	</textbody>
+	</text>
+	</slide>
+	
+	<slide id="89" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="371" ystart="43" xend="706" yend="231" layer="19" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>10 CP\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Cost: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>The character is very good at maintaining continuous partial awareness of the goings-on in their immediate environment. In game terms, they do not suffer the Distracted modifier on Perception Tests to notice things even when their attention is focused else where or when making Quick Perception Tests during combat.</textstring>
+	</textbody>
+	</text>
+	<text xstart="371" ystart="9" xend="706" yend="54" layer="17" starttime="0" font="Calibri" fontcolor="#790909" fontsize="16"><textbody italic="false" bold="true" underlined="false"><textstring>SITUATIONAL AWARNESS</textstring>
+	</textbody>
+	</text>
+	<text xstart="14" ystart="241" xend="349" yend="400" layer="13" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>15 CP\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Cost: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>If your character background or faction enforces a restriction on our starting morph (for example, uplifts must start with a n uplift morph), this trait allows you to ignore that restriction and purchase a starting morph of your choice.</textstring>
+	</textbody>
+	</text>
+	<text xstart="14" ystart="208" xend="349" yend="253" layer="11" starttime="0" font="Calibri" fontcolor="#790909" fontsize="16"><textbody italic="false" bold="true" underlined="false"><textstring>SECOND SKIN</textstring>
+	</textbody>
+	</text>
+	<text xstart="14" ystart="474" xend="354" yend="519" layer="9" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="80" italic="false" bold="true" underlined="false"><textstring>Back to POSITIVE TRAITS</textstring>
+	</textbody>
+	</text>
+	<text xstart="513" ystart="474" xend="711" yend="519" layer="7" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>On to PURCHASE GEAR</textstring>
+	</textbody>
+	</text>
+	<text xstart="14" ystart="43" xend="349" yend="219" layer="3" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>10 CP\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Cost: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>The character chooses one type of morph (splicer, neo-hominid, case etc). The character always feels right at home in morphs of this type. When resleeving into this type of morph, the character automatically adjusts to the new body, no Integration or Alienation Test needed, suffering no penalties and no mental stress.</textstring>
+	</textbody>
+	</text>
+	<text xstart="14" ystart="9" xend="349" yend="54" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="16"><textbody italic="false" bold="true" underlined="false"><textstring>RIGHT AT HOME</textstring>
+	</textbody>
+	</text>
+	</slide>
+	
+	<slide id="90" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="371" ystart="235" xend="706" yend="355" layer="19" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>5 CP\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Cost: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>A character with this trait and the Psi trait does not suffer a modifier when using psi sleights on non-sapient or partly sapient animal species.</textstring>
+	</textbody>
+	</text>
+	<text xstart="371" ystart="202" xend="706" yend="247" layer="17" starttime="0" font="Calibri" fontcolor="#790909" fontsize="16"><textbody italic="false" bold="true" underlined="false"><textstring>ZOOSEMIOTICS</textstring>
+	</textbody>
+	</text>
+	<text xstart="371" ystart="43" xend="706" yend="214" layer="13" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>10 (Level 1), 20 (Level 2) or 30 (Level 3) CP\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Cost: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>This morph is more resilient than others of its type and can take more physical abuse. Increase their Durability by +5 per level (+5 at level 1, +10 at level 2 and +15 at level 3). This also increases Wound Threshold by +1, +2 and +3 respectively. </textstring>
+	</textbody>
+	</text>
+	<text xstart="371" ystart="9" xend="706" yend="54" layer="11" starttime="0" font="Calibri" fontcolor="#790909" fontsize="16"><textbody italic="false" bold="true" underlined="false"><textstring>TOUGH (Morph trait)</textstring>
+	</textbody>
+	</text>
+	<text xstart="14" ystart="474" xend="354" yend="519" layer="9" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="80" italic="false" bold="true" underlined="false"><textstring>Back to POSITIVE TRAITS</textstring>
+	</textbody>
+	</text>
+	<text xstart="513" ystart="474" xend="711" yend="519" layer="7" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>On to PURCHASE GEAR</textstring>
+	</textbody>
+	</text>
+	<text xstart="14" ystart="43" xend="349" yend="452" layer="3" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>10 (Level 1) or 20 (Level 2) CP\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Cost: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>In an age where biosculpting is easy, good looks are both cheap and common place. This morph, however, possesses a physical look that can only be described as striking and unusual, but also somehow alluring and fascinating – even the gorgeous and chiselled glitterati take notice. On social skill test where the character’s beauty may affect the outcome, they receive a +10 (for level 1) or +20 (for level 2) modifier. This modifier is ineffective against xenomorphs or those with the infolife or uplift backgrounds. This trait is only available to biomorphs.\nThis modifier may be purchased for uplift morphs, but at half the cost and it is only effective against characters with the specific uplift background.\nThe one drawback to this trait is that the character is more easily noticed and remembered.  </textstring>
+	</textbody>
+	</text>
+	<text xstart="14" ystart="9" xend="349" yend="54" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="16"><textbody italic="false" bold="true" underlined="false"><textstring>STRIKING LOOKS (Morph trait)</textstring>
+	</textbody>
+	</text>
+	</slide>
+	
+	<slide id="91" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="461" ystart="94" xend="711" yend="474" layer="43" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="true" bold="false" underlined="false"><textstring>UNATTRACTIVE\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>UNCANNY VALLEY\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>UNFIT\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>VR VERTIGO\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>WEAK IMMUNE SYSTEM\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>ZERO-G NAUSEA\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="14" ystart="474" xend="354" yend="519" layer="40" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="45" italic="false" bold="true" underlined="false"><textstring>Back to MORPHS AND TRAITS</textstring>
+	</textbody>
+	</text>
+	<text xstart="252" ystart="94" xend="525" yend="474" layer="22" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="true" bold="false" underlined="false"><textstring>LEMON\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>LOW PAIN TOLERANCE\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>MENTAL DISORDER\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>MILD ALLERGY\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>MODIFIED BEHAVIOR\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>MORPHING DISORDER\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>NEURAL DAMAGE\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>NO CORTICAL STACK\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>OBLIVIOUS\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>ON THE RUN\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>PSI VULNERABILITY\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>REAL WORLD NAIVETE\n </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>SEVERE ALLERGY\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>SLOW LEARNER\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>SOCIAL STIGMA\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>TIMID\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="14" ystart="94" xend="280" yend="474" layer="6" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="true" bold="false" underlined="false"><textstring>ADDICTION\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>AGED\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>BAD LUCK\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>BLACKLISTED\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>BLACK MARK\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>COMBAT PARALYSIS\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>EDITED MEMORIES\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>ENEMY\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>FEEBLE\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>FRAIL\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>GENETIC DEFECT\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>IDENTITY CRISIS\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>ILLITERATE\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>IMMORTALITY BLUES\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>IMPLANT REJECTION\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>INCOMPETENT\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="15" ystart="43" xend="380" yend="98" layer="5" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>Negative traits generally hinder the character and apply negative modifiers in certain circumstances.\n</textstring>
+	</textbody>
+	</text>
 	<text xstart="513" ystart="474" xend="711" yend="519" layer="3" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>On to PURCHASE GEAR</textstring>
 	</textbody>
 	</text>
@@ -2947,10 +3447,31 @@
 	</text>
 	</slide>
 	
-	<slide id="82" duration="60" descriptor="NEW CHAPTER&#xA;" lastSlide="false" backgroundcolor="#BFBFBF"><image urlname="This is the fourth chapter " xstart="128" ystart="117" width="454" height="289" layer="1" starttime="0"/>
+	<slide id="92" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="14" ystart="474" xend="354" yend="519" layer="11" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="91" italic="false" bold="true" underlined="false"><textstring>Back to NEGATIVE TRAITS</textstring>
+	</textbody>
+	</text>
+	<text xstart="513" ystart="474" xend="711" yend="519" layer="9" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>On to PURCHASE GEAR</textstring>
+	</textbody>
+	</text>
+	<text xstart="371" ystart="9" xend="706" yend="361" layer="7" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>The character is part of or has a relationship with some influential group that they can occasionally call on for support. For example, this could be their old gatecrashing crew, former research lab co-workers, a criminal cartel they are part of or an elite social clique. The gamemaster and player should work out what the character’s relationship is with this group and why the character can call on them for aid. Gamemaster’s should take care that these allies are not abused, such as calling on them more than once per game session. The character’s ties to this group are also a two-way street – they will be expected to perform duties for the group on occasions as well (a potential plot seed for scenarios).\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="14" ystart="43" xend="349" yend="197" layer="3" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>5 CP (Minor), 10 CP (Moderate) or 20 CP (Major)\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Cost: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Resleeving is a breeze for this character. They adjust to new morphs much more quickly than most other people. Apply a +10 modifier per level for Integration Tests and Alienation Tests.\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="14" ystart="9" xend="349" yend="54" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="16"><textbody italic="false" bold="true" underlined="false"><textstring>ADDICTION (Ego or Morph trait)</textstring>
+	</textbody>
+	</text>
 	</slide>
 	
-	<slide id="83" duration="60" descriptor="" lastSlide="true" backgroundcolor="#BFBFBF"><text xstart="14" ystart="27" xend="275" yend="72" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="24"><textbody italic="false" bold="true" underlined="false"><textstring>Sample Adventure</textstring>
+	<slide id="93" duration="60" descriptor="NEW CHAPTER&#xA;" lastSlide="false" backgroundcolor="#BFBFBF"><image urlname="This is the fourth chapter " xstart="128" ystart="117" width="454" height="289" layer="1" starttime="0"/>
+	</slide>
+	
+	<slide id="94" duration="60" descriptor="" lastSlide="true" backgroundcolor="#BFBFBF"><text xstart="14" ystart="27" xend="275" yend="72" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="24"><textbody italic="false" bold="true" underlined="false"><textstring>Sample Adventure</textstring>
 	</textbody>
 	</text>
 	</slide>
