@@ -5,6 +5,7 @@ import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
@@ -66,13 +67,16 @@ public class MainMenuPanel extends JPanel{
 	private ArrayList<Book> bookListForContents;
 	double scaleFactorX = 1;
 	double scaleFactorY = 1;
+	private MouseAdapter genericMouseMotionListener;
 	
-	public MainMenuPanel(int width, int height) {
+	public MainMenuPanel(int width, int height, MouseAdapter genericListener) {
 		
 		setLayout(null);
 		layers.setLayout(null);
 		layers.setBounds(0, 0, width, height);
 		System.out.println("height="+height + "width="+width);
+		
+		this.genericMouseMotionListener = genericListener;
 		
 		SystemXMLParser systemParser = new SystemXMLParser("bin/systemlist.xml");
 		listOfSystems = systemParser.getSystem();
@@ -218,7 +222,7 @@ public class MainMenuPanel extends JPanel{
 
 							}
 						});
-		
+				 bookList.addMouseMotionListener(genericMouseMotionListener);
 				 bookList.addMouseListener(new MouseListener() {
 			         
 
@@ -241,6 +245,7 @@ public class MainMenuPanel extends JPanel{
 			         }
 			     });
 				 
+				 systemList.addMouseMotionListener(genericMouseMotionListener);
 				 systemList.addMouseListener(new MouseListener() {
 			         
 
@@ -261,10 +266,8 @@ public class MainMenuPanel extends JPanel{
 				         
 				         @Override
 				         public void mouseClicked(MouseEvent e) {
-				        	 bookListModel.clear();
-							bookList.removeAll();
 				        	chosenSystem = listOfSystems.get(systemList.getSelectedIndex()).getFilename();
-				        	currentSystemName = listOfSystems.get(systemList.getSelectedIndex()).getName();		        	
+				        	currentSystemName = listOfSystems.get(systemList.getSelectedIndex()).getName();
 				    		BookXMLParser bookParser = new BookXMLParser(chosenSystem);	
 				    		listOfBooks = bookParser.readBookXML(chosenSystem);
 				        	bookListModel.clear();

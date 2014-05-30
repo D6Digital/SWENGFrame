@@ -163,7 +163,7 @@ public class SlidePanel extends JPanel{
        }*/
 	    
        
-       int delay = 100; // 1000ms or 1 second timer
+       int delay = 1000; // 1000ms or 1 second timer
        setCount(0);
        ActionListener taskPerformer= new ActionListener() {
 		int count = 0;
@@ -198,13 +198,15 @@ public class SlidePanel extends JPanel{
 				}
 	       }
 	       for(Sound sound : currentSlide.getSoundList()) {
-	    	   if(sound.getObjectStartTime() == count+1 || (sound.getStart() == 0 && count == 0))
+	    	   if(sound.getObjectStartTime() == count+1 || (sound.getObjectStartTime() == 0 && count == 0))
 	    	   {
-	    		   audioPlayer.prepareMedia(sound.getFile(), sound.getStart());
+	    		   audioPlayer.prepareMediaWithDuration(sound.getFile(), sound.getStart(), sound.getDuration(), sound.getLoop());
 	    	   }
 	    	   if(sound.getObjectStartTime() == count)
 	    	   {
 	    	       if(LockedPlaylistValueAccess.lockedPlaylist) {
+	    	       System.out.println("file: " + sound.getFile());
+	    	       System.out.println("start: " + sound.getStart() + "duration: " + sound.getDuration());
 	    		   audioPlayer.playMedia();
 	    	       }
 	    	   }
@@ -539,11 +541,13 @@ public class SlidePanel extends JPanel{
 		
 		slideMediaObject textObject = new slideMediaObject(-1,text.getDuration(),text.getStart());
 		textObject.add(textPanel);
+		textObject.setText(true);
 		textObject.setBounds((int) (text.getX_coord()*scalingFactorX), (int) (text.getY_coord()*scalingFactorY), (int) (text.getXend()*scalingFactorX)-(int) (text.getX_coord()*scalingFactorX), (int) (text.getYend()*scalingFactorY)-(int) (text.getY_coord()*scalingFactorY));
 		//this.add(textPanel);
 		layeredPane.add(textObject, text.getLayer());
 		
 		mediaObjects.add(textObject);
+		
 		//this.repaint();
 		//getParent().repaint();
 		
@@ -768,6 +772,20 @@ public class SlidePanel extends JPanel{
 		this.branchListener = objectListener;
 		this.textBranchListener = textListener;
 		this.videoListener = videoListener;
+		
+	}
+
+	public void setTextCursorsBlank() {
+		for(slideMediaObject object: mediaObjects){
+	    	   if(object.getStartTime() <=  count){
+	    		   if(object.isText()){
+	    			   JPanel textPanel = (JPanel)object.getComponent(0);
+	    			   textPanel.getComponent(0).setCursor(GUI.blankCursor);
+	    		   }
+	    		   
+	    	   }
+	    	   
+	       }
 		
 	}
 

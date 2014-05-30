@@ -25,7 +25,7 @@ import org.xml.sax.helpers.DefaultHandler;
 
 import presentation.Image;
 enum ProcessingElement{
-	NONE, BOOK, TITLE, FILENAME, ICON 
+		NONE, TITLE, FILENAME, ICON 
 		}
 
 /**
@@ -112,18 +112,14 @@ public class BookXMLParser extends DefaultHandler{
 		if (elementName.equals("booklist")) {
 			if (bookList == null) {
 				bookList = new BookList(attrs.getValue(0));
-				bookList.clearList();
 			}
-			else
-			{
-				bookList.clearList();
+			else{
+				bookList.clearBooks();
 			}
 		}
 		//handle book element start
 		else if (elementName.equals("book")) {
 			currentBook = new Book(attrs.getValue(0));
-			currentElement = ProcessingElement.BOOK;
-			bookList.addBook(currentBook);
 		}
 		//handle title element start
 		else if (elementName.equals("title")) {
@@ -172,7 +168,7 @@ public class BookXMLParser extends DefaultHandler{
 			elementName = qName;
 		}
 		if (elementName.equals("book")) {
-			currentElement = ProcessingElement.NONE;
+			bookList.addBook(currentBook);
 		} else if(elementName.equals("title")){
 			currentElement = ProcessingElement.NONE;
 		} else if (elementName.equals("filename")) {
@@ -191,8 +187,8 @@ public class BookXMLParser extends DefaultHandler{
 	
 	/* Test method. To be deleted after testing */
 	private void writeBookinfo() {
-		System.out.println("BookList version: " + BookList.getVersion());
-		ArrayList<Book> books = BookList.getList();
+		System.out.println("BookList version: " + bookList.getVersion());
+		ArrayList<Book> books = bookList.getList();
 		
 		for(Book currentBook : books){
 		System.out.println("Title: " + currentBook.getTitle());

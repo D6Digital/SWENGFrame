@@ -72,7 +72,7 @@ import gUIModule.CalculatorPanel;
  * @author Andrew Walter
  *
  */
-public class GUI extends JFrame implements WindowStateListener, ComponentListener, KeyListener{
+public class GUI extends JFrame implements ComponentListener, KeyListener{
 
 	/**
 	 * 
@@ -142,10 +142,11 @@ public class GUI extends JFrame implements WindowStateListener, ComponentListene
 	private int chapterID=0;
 	private boolean mainMenuShowing=true;
 	private Timer resizingTimer;
-	Cursor blankCursor;
+	static Cursor blankCursor;
 	Cursor swordCursor;
 	Cursor branchSwordCursor;
 	protected Timer cursorTimer;
+	private MouseAdapter genericListener;
 	
 	/**
 	 * Create a simple JFrame and then populate it with specified JPanel type
@@ -174,6 +175,7 @@ public class GUI extends JFrame implements WindowStateListener, ComponentListene
 		return null;
 	}
 
+	
 	public Slide showPreviousSlide() {
 		if(slidePanel.currentSlide.getSlideID() > 0){
 
@@ -199,22 +201,24 @@ public class GUI extends JFrame implements WindowStateListener, ComponentListene
 
 		//height of the task bar
 		
-		XMLParser parser = new XMLParser("github resources/dynamDom.xml");	
-		collection = parser.getCollection();
-		slideList = collection.get(chapterID);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		
 		//set up cursor
-		 Toolkit toolkit = Toolkit.getDefaultToolkit();
-		 Image image = toolkit.getImage("resources/buttons/blankCursor.png");
-		 java.awt.Point point = new java.awt.Point(frame.getX(), frame.getY());
-		 blankCursor = toolkit.createCustomCursor(image , point, "img");
-		 frame.setCursor(blankCursor);
-		 layers.setCursor (swordCursor);
+		Toolkit toolkit = Toolkit.getDefaultToolkit();
+		Image image = toolkit.getImage("resources/buttons/blankCursor.png");
+		java.awt.Point point = new java.awt.Point(frame.getX(), frame.getY());
+		blankCursor = toolkit.createCustomCursor(image , point, "img");
+		frame.setCursor(blankCursor);
+		layers.setCursor (swordCursor);
 		 
 
-		  image = toolkit.getImage("resources/buttons/swordCursor.png");
-		  swordCursor = toolkit.createCustomCursor(image , point, "img");
-		  image = toolkit.getImage("resources/buttons/branchSwordCursor.png");
-		  branchSwordCursor = toolkit.createCustomCursor(image , point, "img");
+		image = toolkit.getImage("resources/buttons/swordCursor.png");
+		swordCursor = toolkit.createCustomCursor(image , point, "img");
+		image = toolkit.getImage("resources/buttons/branchSwordCursor.png");
+		branchSwordCursor = toolkit.createCustomCursor(image , point, "img");
+		  
+		setupGenericMouseMotionListener();
 
 		setLayout(null);
 		slideWidth = 720;
@@ -233,7 +237,7 @@ public class GUI extends JFrame implements WindowStateListener, ComponentListene
 		frame=this;
 		frame.addKeyListener(this);
 		
-		mainMenuPanel = new MainMenuPanel(720, 540);
+		mainMenuPanel = new MainMenuPanel(720, 540, genericListener);
 		mainMenuPanel.setBounds(0,0, 720, 540);
 		JButton buttonFromMainMenu = mainMenuPanel.getButton();
 		layers.setVisible(false);
@@ -241,6 +245,7 @@ public class GUI extends JFrame implements WindowStateListener, ComponentListene
 		mainMenuShowing=true;
 		revalidate();
 		repaint();
+		buttonFromMainMenu.addMouseMotionListener(genericListener);
 		buttonFromMainMenu.addActionListener(
 				new ActionListener() {
 
@@ -261,7 +266,6 @@ public class GUI extends JFrame implements WindowStateListener, ComponentListene
 		
 		
 
-		addWindowStateListener(this);
 		addComponentListener(this);
 
 		
@@ -285,14 +289,16 @@ public class GUI extends JFrame implements WindowStateListener, ComponentListene
 				  java.awt.Point point = new java.awt.Point(frame.getX(), frame.getY());
 				  layers.setCursor (blankCursor);
 				  mainMenuPanel.setCursor(blankCursor);
+				 
 			}};
 		cursorTimer = new Timer(3000,taskPerformer);
-		cursorTimer.setInitialDelay(3000);
+		cursorTimer.setInitialDelay(500);
 		cursorTimer.setRepeats(false);
 
 		layers.addMouseMotionListener(new java.awt.event.MouseAdapter(){
 			@Override
 			public void mouseMoved(MouseEvent e1){
+				layers.setCursor(swordCursor);
 				borderListenerProcess(e1,false,false,false);
 				mouseMovedOnSlide();
 				
@@ -313,7 +319,7 @@ public class GUI extends JFrame implements WindowStateListener, ComponentListene
 		});
 		
 		
-		int delay = 100; // 100ms before allowing the resizing
+		int delay = 3000; // 100ms before allowing the resizing
 		taskPerformer = new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -332,7 +338,6 @@ public class GUI extends JFrame implements WindowStateListener, ComponentListene
 	}
 	
 	private void mouseMovedOnSlide() {
-		layers.setCursor(swordCursor);
 		if(cursorTimer.isRunning()){
 			cursorTimer.stop();
 		}
@@ -465,11 +470,11 @@ private void setupTextListener() {
 						Integer branch = (Integer) a.getAttribute(HTML.Attribute.LINK);
 						if (href != null || (branch != null && branch !=-1)){
 							if(getCursor() != branchSwordCursor){
-								textPane.setCursor(branchSwordCursor);
+								layers.setCursor(branchSwordCursor);
 							}
 						}
 						else{
-							textPane.setCursor(swordCursor);
+							layers.setCursor(swordCursor);
 						}
 						
 		             }           
@@ -507,7 +512,20 @@ private void setupObjectListener() {
 		public void mouseMoved(MouseEvent e) {
 			borderListenerProcess(e,true,false,false);
 			mouseMovedOnSlide();
-			layers.setCursor(branchSwordCursor);
+			slideMediaObject eventSource = (slideMediaObject) e.getSource();
+			if(eventSource != null){
+				if(eventSource.getParent().getMousePosition()!=null){
+					//Get the branch value assigned to the object of type slideObject
+					Integer branch = eventSource.getBranch();
+					if (branch != null && branch != -1){
+						layers.setCursor(branchSwordCursor);
+					}
+					else
+					{
+						layers.setCursor(swordCursor);
+					}
+				}
+			}
 		}
 			
 		
@@ -545,6 +563,17 @@ private void setupVideoListener() {
 	    	}
 	    	
 	    
+	};
+}
+
+private void setupGenericMouseMotionListener() {
+	genericListener = new MouseAdapter(){
+		@Override
+		public void mouseMoved(MouseEvent e1){
+			mainMenuPanel.setCursor(swordCursor);
+			layers.setCursor(swordCursor);
+			mouseMovedOnSlide();
+		}
 	};
 }
 
@@ -671,7 +700,7 @@ public void bookMainPanelSetUp(){
 		
 		//set up utilities
 		
-        utilities = new UtilitiesPanel(utilitiesWidth, width, height);
+        utilities = new UtilitiesPanel(utilitiesWidth, width, height,genericListener);
         utilitiesWidth = utilities.getWidth();
 		utilities.setLocation(width-utilitiesWidth, 0);
 		utilities.setBounds(width-utilitiesWidth, 0, utilitiesWidth, height);
@@ -737,6 +766,7 @@ public void bookMainPanelSetUp(){
 		//contents.setVisible(false);
 		
 		JButton mainMenuButton = contentsPanel.getMainMenuButton();
+		mainMenuButton.addMouseMotionListener(genericListener);
 		mainMenuButton.addActionListener(
 				new ActionListener() {
 
@@ -754,7 +784,7 @@ public void bookMainPanelSetUp(){
 				});
 		
 		final JList contentsList = contentsPanel.getContentsList();
-		
+		contentsPanel.getContentsList().addMouseMotionListener(genericListener);
 	     contentsPanel.getContentsList().addMouseListener(new MouseListener() {
 	            
 	            @Override
@@ -785,6 +815,7 @@ public void bookMainPanelSetUp(){
 	            }
 	        });
 	     JButton changeButton = contentsPanel.getChangeButton();
+	     changeButton.addMouseMotionListener(genericListener);
 	     changeButton.addActionListener(new ActionListener() {
 			
 			@Override
@@ -888,6 +919,7 @@ private void borderListenerProcess(MouseEvent e1,Boolean isObject,Boolean isText
 	}
 	
 	if(!stopListening){
+	
 	
 	slideWidth = this.getWidth()-insets.left-insets.right;
 	slideHeight = this.getHeight()-insets.top-insets.bottom;
@@ -1015,17 +1047,7 @@ private void resizeMainPanel() {
 }
 
 
-@Override
-public void windowStateChanged(WindowEvent e) {
-	/*frame.requestFocusInWindow();
-	System.err.println("RESIZED");
-	if(slidePanel!=null && !mainMenuShowing){
-		resizeMainPanel();
-	}
-	if(mainMenuShowing){
-		resizeMainMenu();
-	}*/
-}
+
 
 @Override
 public void componentResized(ComponentEvent e) {

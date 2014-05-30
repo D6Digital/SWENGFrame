@@ -6,13 +6,13 @@ import java.awt.Dimension;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.prefs.BackingStoreException;
 
 import javax.imageio.ImageIO;
 import javax.swing.AbstractButton;
@@ -49,16 +49,20 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
 	StandAloneMusicPlayer standAloneMusicPlayer; //= new StandAloneMusicPlayer();
 	JLabel background; 
 	ArrayList<JButton> buttonList = new ArrayList<>();
-	JButton backButton = new JButton();
+	JButton backButton = new JButton("Back");
 	JLabel title;
 	JButton diceButton = new JButton();
 	JButton calculatorButton = new JButton();
 	JButton audioButton = new JButton();
-    BufferedImage backButtonImage;
-	
+
+
+
     private int utilitiesWidth=150;
     private int heightOfSlide;
     private int xOffset = 0;
+    
+    
+    private MouseAdapter genericMouseMotionListener;
 
 	//	GUI diceRoller;
 //	GUI calculatorGUI;
@@ -66,13 +70,16 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
 	
 	/**
 	 * Create a simple panel and add the JButtons for the utilities
+	 * @param genericListener 
 	 */
-	public UtilitiesPanel(int utilitiesWidth, int slideWidth, int slideHeight) {
+	public UtilitiesPanel(int utilitiesWidth, int slideWidth, int slideHeight, MouseAdapter genericListener) {
 		//Calls JPanel to create the UtilitiesPanel object.
 		//Sets the layout to BoxLayout
 	    
 		super();
 		setLayout(null);
+		
+		this.genericMouseMotionListener = genericListener;
 		
 		heightOfSlide = slideHeight;
 		xOffset = slideWidth-utilitiesWidth;
@@ -82,20 +89,10 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
 		standAloneMusicPlayer = new StandAloneMusicPlayer();
 		
 		standAloneMusicPlayerPanel = standAloneMusicPlayer.getFullControlPanel(360, slideHeight - 20);
- 
 		
-		//set up back button 
 		backButton.setBounds(5, slideHeight - 20, utilitiesWidth-25, 20);
-		backButton.setToolTipText("Back");
 		backButton.setActionCommand("back");
-		BufferedImage backButtonImage;
-		try{
-			backButtonImage = ImageIO.read(new File("resources/buttons/Back Button.png"));
-			Image scaledBackImage = backButtonImage.getScaledInstance(utilitiesWidth-25, 20,java.awt.Image.SCALE_SMOOTH);
-			backButton.setIcon(new ImageIcon(scaledBackImage));
-		}catch(IOException e2){
-			e2.printStackTrace();
-		}
+		
 		
 		multiPanel.add(backButton);
 		//Set up background image
@@ -142,6 +139,7 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
 		multiPanel.setOpaque(false);
 		this.setBounds(slideWidth-utilitiesWidth, 0, utilitiesWidth, slideHeight);
 
+		diceButton.addMouseMotionListener(genericMouseMotionListener);
 		diceButton.addMouseListener(new MouseListener() {
 			
 			@Override
@@ -189,7 +187,7 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
 				
 			}
 		});
-		
+		calculatorButton.addMouseMotionListener(genericMouseMotionListener);
 		calculatorButton.addMouseListener(new MouseListener() {
 			
 			@Override
@@ -237,7 +235,7 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
 				
 			}
 		});
-		
+		audioButton.addMouseMotionListener(genericMouseMotionListener);
 		audioButton.addMouseListener(new MouseListener() {
 			
 			@Override
@@ -380,14 +378,6 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
             this.xOffset = this.xOffset  + (this.getWidth() - dicePanel.getWidth());
             setWidth(dicePanel.getWidth());
             this.setBounds(this.xOffset - (300 - utilitiesWidth), 0, 300, this.heightOfSlide);
-            backButton.setBounds(5, getHeight() - 20, utilitiesWidth-5, 20);
-    		try{
-    			backButtonImage = ImageIO.read(new File("resources/buttons/Back Button.png"));
-    			Image scaledBackImage = backButtonImage.getScaledInstance(utilitiesWidth-5, 20,java.awt.Image.SCALE_SMOOTH);
-    			backButton.setIcon(new ImageIcon(scaledBackImage));
-    		}catch(IOException e2){
-    			e2.printStackTrace();
-    		}
             multiPanel.setVisible(true);
 	    break;    
 	    case "calculatorPanel":
@@ -398,14 +388,6 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
             this.xOffset = this.xOffset  + (this.getWidth() - calculatorPanel.getWidth());
             setWidth(calculatorPanel.getWidth());
             this.setBounds(this.xOffset - (350 - utilitiesWidth), 0, 350, this.heightOfSlide);
-            backButton.setBounds(5, getHeight() - 20, utilitiesWidth-5, 20);
-    		try{
-    			backButtonImage = ImageIO.read(new File("resources/buttons/Back Button.png"));
-    			Image scaledBackImage = backButtonImage.getScaledInstance(utilitiesWidth-5, 20,java.awt.Image.SCALE_SMOOTH);
-    			backButton.setIcon(new ImageIcon(scaledBackImage));
-    		}catch(IOException e2){
-    			e2.printStackTrace();
-    		}
             multiPanel.setVisible(true);
 	    break;
 	    case "standAloneMusicPlayerPanel":
@@ -417,14 +399,6 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
             setWidth(standAloneMusicPlayerPanel.getWidth());
             this.setBounds(this.xOffset - (360 - utilitiesWidth), 0, 360, this.heightOfSlide);
             System.out.println(standAloneMusicPlayerPanel.getWidth());
-            backButton.setBounds(5, getHeight() - 20, utilitiesWidth-5, 20);
-    		try{
-    			backButtonImage = ImageIO.read(new File("resources/buttons/Back Button.png"));
-    			Image scaledBackImage = backButtonImage.getScaledInstance(utilitiesWidth-5, 20,java.awt.Image.SCALE_SMOOTH);
-    			backButton.setIcon(new ImageIcon(scaledBackImage));
-    		}catch(IOException e2){
-    			e2.printStackTrace();
-    		}
             multiPanel.setVisible(true);
 	    break;
 	    case "none":

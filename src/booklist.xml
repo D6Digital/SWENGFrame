@@ -10,4 +10,9 @@
     <filename>github resources\dynamDom2.xml</filename>
     <icon>src\XMLBits\char1jovian_spy.jpg</icon>
   </book>
+  <book id="003">
+  	<title>GUI TEST</title>
+  	<filename>github resources\GUITEST.xml</filename>
+  	<icon>src\XMLBits\char1jovian_spy.jpg</icon>
+  </book>
 </booklist>
