@@ -65,6 +65,8 @@ public class ContentsPanel extends JPanel implements ActionListener{
 	public ContentsPanel(ArrayList<Slide> contentSlideList, final ArrayList<Presentation> contentChapterList, int width, int slideWidth, int slideHeight, String currentSystem, String currentBook) {
 		super();
 		this.setLayout(null);
+		
+				
 		contentsSlideList = contentSlideList;
 		//slidePanel1 = slide1;
 		//slidePanel2 = slide2;
@@ -104,7 +106,7 @@ public class ContentsPanel extends JPanel implements ActionListener{
 		setUpButtonImage(changeListButton,"ChooseChapterButton.png");
 		// TODO add a title JLabel and ensure the panel is ready
 		
-		
+		//changeListButton.addMouseMotionListener(l)
 		changeListButton.addActionListener(new ActionListener() {
 			
 			@Override

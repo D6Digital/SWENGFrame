@@ -6,6 +6,7 @@ import java.awt.Dimension;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
@@ -59,6 +60,9 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
     private int utilitiesWidth=150;
     private int heightOfSlide;
     private int xOffset = 0;
+    
+    
+    private MouseAdapter genericMouseMotionListener;
 
 	//	GUI diceRoller;
 //	GUI calculatorGUI;
@@ -66,13 +70,16 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
 	
 	/**
 	 * Create a simple panel and add the JButtons for the utilities
+	 * @param genericListener 
 	 */
-	public UtilitiesPanel(int utilitiesWidth, int slideWidth, int slideHeight) {
+	public UtilitiesPanel(int utilitiesWidth, int slideWidth, int slideHeight, MouseAdapter genericListener) {
 		//Calls JPanel to create the UtilitiesPanel object.
 		//Sets the layout to BoxLayout
 	    
 		super();
 		setLayout(null);
+		
+		this.genericMouseMotionListener = genericListener;
 		
 		heightOfSlide = slideHeight;
 		xOffset = slideWidth-utilitiesWidth;
@@ -132,6 +139,7 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
 		multiPanel.setOpaque(false);
 		this.setBounds(slideWidth-utilitiesWidth, 0, utilitiesWidth, slideHeight);
 
+		diceButton.addMouseMotionListener(genericMouseMotionListener);
 		diceButton.addMouseListener(new MouseListener() {
 			
 			@Override
@@ -179,7 +187,7 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
 				
 			}
 		});
-		
+		calculatorButton.addMouseMotionListener(genericMouseMotionListener);
 		calculatorButton.addMouseListener(new MouseListener() {
 			
 			@Override
@@ -227,7 +235,7 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
 				
 			}
 		});
-		
+		audioButton.addMouseMotionListener(genericMouseMotionListener);
 		audioButton.addMouseListener(new MouseListener() {
 			
 			@Override

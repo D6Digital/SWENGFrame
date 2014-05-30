@@ -22,6 +22,11 @@ public class slideMediaObject extends JPanel implements MouseListener{
 	private Integer branch;
 	private Integer startTime;
 	private Integer finishTime;
+
+
+	private boolean isText;
+	
+
 	/**
 	 * @param branch
 	 */
@@ -108,6 +113,19 @@ public class slideMediaObject extends JPanel implements MouseListener{
 	 */
 	public void setStartTime(Integer startTime) {
 		this.startTime = startTime;
+	}
+	
+	/**
+	 * set to verify this object contains text 
+	 * @param isText
+	 */
+	public void setText(boolean isText) {
+		this.isText = isText;
+	}
+
+	public boolean isText() {
+		// TODO Auto-generated method stub
+		return isText;
 	};
 
 }

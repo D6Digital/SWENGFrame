@@ -541,11 +541,13 @@ public class SlidePanel extends JPanel{
 		
 		slideMediaObject textObject = new slideMediaObject(-1,text.getDuration(),text.getStart());
 		textObject.add(textPanel);
+		textObject.setText(true);
 		textObject.setBounds((int) (text.getX_coord()*scalingFactorX), (int) (text.getY_coord()*scalingFactorY), (int) (text.getXend()*scalingFactorX)-(int) (text.getX_coord()*scalingFactorX), (int) (text.getYend()*scalingFactorY)-(int) (text.getY_coord()*scalingFactorY));
 		//this.add(textPanel);
 		layeredPane.add(textObject, text.getLayer());
 		
 		mediaObjects.add(textObject);
+		
 		//this.repaint();
 		//getParent().repaint();
 		
@@ -770,6 +772,20 @@ public class SlidePanel extends JPanel{
 		this.branchListener = objectListener;
 		this.textBranchListener = textListener;
 		this.videoListener = videoListener;
+		
+	}
+
+	public void setTextCursorsBlank() {
+		for(slideMediaObject object: mediaObjects){
+	    	   if(object.getStartTime() <=  count){
+	    		   if(object.isText()){
+	    			   JPanel textPanel = (JPanel)object.getComponent(0);
+	    			   textPanel.getComponent(0).setCursor(GUI.blankCursor);
+	    		   }
+	    		   
+	    	   }
+	    	   
+	       }
 		
 	}
 
