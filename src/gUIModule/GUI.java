@@ -1042,6 +1042,7 @@ private void resizeMainPanel() {
     nextSlideButton.repaint();
     utilities.setBounds(newWidth-utilitiesWidth, 0, utilitiesWidth, newHeight);
     utilities.setDimensions( newWidth-utilitiesWidth , newHeight);
+    contentsPanel.setDimensions(newHeight);
     utilitiesTab.setBounds(newWidth-15,(newHeight/2)-60,15,120);
     contentsTab.setBounds(0,(newHeight/2)-60,15,120);
     nextTab.setBounds(newWidth-120,(newHeight)-20,90,20);
