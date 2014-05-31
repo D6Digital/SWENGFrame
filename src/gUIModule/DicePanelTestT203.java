@@ -18,7 +18,7 @@ public class DicePanelTestT203 {
         frame = new JFrame("Dice Test");
         frame.setSize(400, 600);
         frame.setVisible(true);
-        dicePanel = new DicePanel(400, 600);
+        dicePanel = new DicePanel(400, 600, null);
         
     }
 

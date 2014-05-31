@@ -3,6 +3,7 @@ package musicPlayerModule;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
 import java.io.IOException;
 
 import javax.swing.JButton;
@@ -40,7 +41,8 @@ public class SecondHigherModuleExampleT001_2 {
         NativeLibrary.addSearchPath(RuntimeUtil.getLibVlcLibraryName(),vlcLibraryPath);
         Native.loadLibrary(RuntimeUtil.getLibVlcLibraryName(), LibVlc.class);
         
-        musicPlayer = new StandAloneMusicPlayer();
+        MouseAdapter adapter = null;
+        musicPlayer = new StandAloneMusicPlayer(adapter);
         mainFrame.setLayout(null);
         mainPanel.setLayout(null);
         

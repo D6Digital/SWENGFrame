@@ -77,7 +77,7 @@ public class FileChooserTest {
     
     String initialisedFilePath = "M:\\Year 2\\Engineering for Hearing and Voice\\Lab 1- Week 3\\Audio Samples";
     JFrame frame = new JFrame("CUNT");
-    FileChooser2 chooser = new FileChooser2();
+    FileChooser chooser = new FileChooser(currentFilePath);
     boolean x = true;
     JPanel panel = new JPanel();
 

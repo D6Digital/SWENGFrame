@@ -15,7 +15,7 @@ public class CalculatorPanelTestT201 {
     
     @Before
     public void setUp() throws Exception {
-        calculatorPanel = new CalculatorPanel(300, 500);
+        calculatorPanel = new CalculatorPanel(300, 500, null);
         frame = new JFrame("Calc Test");
         frame.setLayout(null);
         frame.setSize(400, 800);
