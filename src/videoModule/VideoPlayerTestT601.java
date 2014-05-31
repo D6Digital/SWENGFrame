@@ -68,10 +68,10 @@ public class VideoPlayerTestT601 {
         Thread.sleep(SLEEPMS);
         
         //COMMENT OUT TO RUN TEST...
-        Boolean x = true;
-        do {
-        }
-        while(x);
+//        Boolean x = true;
+//        do {
+//        }
+//        while(x);
 
         // Step 2. Ensure that when you supply a correct video path it will load the video correctly.
         robot.mouseMove(video.getWidth()/2, video.getHeight()-10);
