@@ -91,7 +91,7 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
 		
 		standAloneMusicPlayerPanel = standAloneMusicPlayer.getFullControlPanel(360, slideHeight - 20);
 		
-		backButton.setBounds(5, slideHeight - 20, utilitiesWidth-25, 20);
+		backButton.setBounds(10, (int) (slideHeight*0.975), (int) (utilitiesWidth*0.925),  (int) (slideHeight*0.025));
 		backButton.setActionCommand("back");
 		
 		
@@ -371,7 +371,7 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
 	private void setPanelVisible(String panel) {
 	    switch(panel) {
 	    case "dicePanel":
-	    	dicePanel.setSize(dicePanel.getWidth() , this.heightOfSlide - 20);
+	    	dicePanel.setSize(dicePanel.getWidth() , this.heightOfSlide);
             dicePanel.setVisible(true);
             calculatorPanel.setVisible(false);
             standAloneMusicPlayerPanel.setVisible(false);
@@ -381,7 +381,7 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
             multiPanel.setVisible(true);
 	    break;    
 	    case "calculatorPanel":
-	    	calculatorPanel.setSize(calculatorPanel.getWidth() , this.heightOfSlide - 20);
+	    	calculatorPanel.setSize(calculatorPanel.getWidth() , this.heightOfSlide);
             dicePanel.setVisible(false);
             calculatorPanel.setVisible(true);
             standAloneMusicPlayerPanel.setVisible(false);
@@ -391,7 +391,7 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
             multiPanel.setVisible(true);
 	    break;
 	    case "standAloneMusicPlayerPanel":
-	    	standAloneMusicPlayerPanel.setSize(standAloneMusicPlayerPanel.getWidth() , this.heightOfSlide - 20);
+	    	standAloneMusicPlayerPanel.setSize(standAloneMusicPlayerPanel.getWidth() , this.heightOfSlide);
             dicePanel.setVisible(false);
             calculatorPanel.setVisible(false);
             standAloneMusicPlayerPanel.setVisible(true);  
@@ -416,11 +416,7 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
         this.utilitiesWidth = width;
         this.setBounds(this.xOffset, 0, utilitiesWidth, this.heightOfSlide);
         multiPanel.setBounds(0,0,utilitiesWidth,this.heightOfSlide);
-        backButton.setBounds(
-                3, 
-                heightOfSlide-20, 
-                width,
-                20);
+        backButton.setBounds(10, (int) (heightOfSlide*0.975), (int) (utilitiesWidth*0.925),  (int) (heightOfSlide*0.025));
         
     }
     
@@ -428,7 +424,7 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
         return utilitiesWidth;
     }
 
-
+ 
 
     public JButton getBackButton() {
         return backButton;
@@ -445,8 +441,9 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
 		diceButton.setBounds((utilitiesWidth/2)-50, (slideHeight/4)-50, 100, 100);
 		calculatorButton.setBounds((utilitiesWidth/2)-50, (slideHeight/2)-50, 100, 100);
 		audioButton.setBounds((utilitiesWidth/2)-50, (3*slideHeight/4)-50, 100, 100);
+		multiPanel.setBounds(0,0,utilitiesWidth,slideHeight);
+		backButton.setBounds(10, (int) (slideHeight*0.975), (int) (utilitiesWidth*0.925),  (int) (slideHeight*0.025));
 		
-
 	}
 	
 }

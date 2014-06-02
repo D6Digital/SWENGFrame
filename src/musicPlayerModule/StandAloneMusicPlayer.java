@@ -72,7 +72,7 @@ import uk.co.caprica.vlcj.medialist.MediaList;
  * Methods provided return buttons and sliders to interface with music player. Player works in its own thread
  * enabling the user to perform other tasks simultaneously with music play.
  */
-public class StandAloneMusicPlayer {
+public class StandAloneMusicPlayer { 
     String vlcLibraryPath;
     DefaultListModel listModel = new DefaultListModel<String>();
     JFrame mainFrame = new JFrame("mainFrame");
@@ -99,7 +99,9 @@ public class StandAloneMusicPlayer {
     String newFilePath;
     FileChooser fileChooser = new FileChooser(newFilePath);
     Boolean isPaused = false;
+    int widthOfPanel;
     protected boolean threadKilled = false;
+    JPanel scrollPanel;
 
     protected boolean changingTimeByHand;
     protected boolean changingSelectedPlaylistByHand;
@@ -444,7 +446,7 @@ public class StandAloneMusicPlayer {
 
 
     public JPanel getFullControlPanel(int widthOfPanel, int heightOfSlide) {
-
+    	this.widthOfPanel=widthOfPanel;
         fullPanel.setLayout(null);
         fullPanel.setBounds(3,0,widthOfPanel,heightOfSlide);
         fullPanel.add(getLockPlaylistButton(widthOfPanel, heightOfSlide));
@@ -886,14 +888,14 @@ public class StandAloneMusicPlayer {
     }
     
     public JPanel getScrollPaneAsPanel(int widthOfPanel, int heightOfSlide) {
-        JPanel panel = new JPanel();
-        panel.setLayout(null);
-        panel.setBounds(               
-        (int) (widthOfPanel*0.025),
-        (int) (heightOfSlide*0.025*10) + heightOfLockIcon + heightOfPlayButton*3  +  (int) (heightOfSlide*0.2),
-        (int) (widthOfPanel*0.95),
-        (int) (heightOfSlide*0.5));
-        panel.setBounds(
+        scrollPanel = new JPanel();
+        scrollPanel.setLayout(null);
+//        panel.setBounds(               
+//        (int) (widthOfPanel*0.025),
+//        (int) (heightOfSlide*0.025*10) + heightOfLockIcon + heightOfPlayButton*3  +  (int) (heightOfSlide*0.2),
+//        (int) (widthOfPanel*0.95),
+//        (int) (heightOfSlide*0.5));
+        scrollPanel.setBounds(
                 (int) (widthOfPanel*0.025),
                 (int) (heightOfSlide*0.025*14) + heightOfLockIcon + heightOfPlayButton + playlistIconHeight,
                 (int) (widthOfPanel*0.95),
@@ -905,7 +907,8 @@ public class StandAloneMusicPlayer {
         scrollPane.setBounds(0, 0, (int) (widthOfPanel*0.95),
                 (int) (heightOfSlide*0.2));
         
-        panel.add(scrollPane);
+        scrollPanel.add(scrollPane);
+        
         
         // Add listener which plays a piece of media whenever the user chooses it in the JList.
         playContentsJList.addMouseMotionListener(genericMouseMotionListener);
@@ -940,7 +943,7 @@ public class StandAloneMusicPlayer {
             }
         });
         
-        return panel;
+        return scrollPanel;
         
     }
 
@@ -1075,6 +1078,18 @@ public class StandAloneMusicPlayer {
         }catch (IOException ex){
             
         }
+    }
+    
+    public void setDimension(int heightOfSlide){
+    	fullPanel.setBounds(3,0,widthOfPanel,heightOfSlide);
+    	scrollPanel.setBounds(
+                (int) (widthOfPanel*0.025),
+                //(int) (heightOfSlide*0.025*14) + heightOfLockIcon + heightOfPlayButton + playlistIconHeight,
+                350,
+                (int) (widthOfPanel*0.95-10),
+                (int) (heightOfSlide-350-(heightOfSlide*0.025)));
+    	 scrollPane.setBounds(0, 0, (int) (widthOfPanel*0.95-10),
+    			 (int) (heightOfSlide-360-(heightOfSlide*0.025)));
     }
 
 }

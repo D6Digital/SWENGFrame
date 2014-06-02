@@ -147,6 +147,8 @@ public class GUI extends JFrame implements ComponentListener, KeyListener{
 	Cursor branchSwordCursor;
 	protected Timer cursorTimer;
 	private MouseAdapter genericListener;
+	int newWidth;
+	int newHeight;
 	
 	/**
 	 * Create a simple JFrame and then populate it with specified JPanel type
@@ -294,7 +296,7 @@ public class GUI extends JFrame implements ComponentListener, KeyListener{
 				 
 			}};
 		cursorTimer = new Timer(3000,taskPerformer);
-		cursorTimer.setInitialDelay(500);
+		cursorTimer.setInitialDelay(3000);
 		cursorTimer.setRepeats(false);
 
 		layers.addMouseMotionListener(new java.awt.event.MouseAdapter(){
@@ -748,6 +750,7 @@ public void bookMainPanelSetUp(){
                 //utilities.setBounds(720-utilitiesWidth, 0, utilitiesWidth, 540);
                 //utilitiesWidth = 500;
                 System.out.println(utilities.getWidth());
+                utilities.setDimensions(newWidth-utilitiesWidth , newHeight);
                 utilities.validate();
                 utilities.repaint();
                 
@@ -1052,8 +1055,8 @@ private void resizeMainPanel() {
 	
 	scaleFactorX = (double)(getSize().width-insets.left-insets.right)/(double)720;
 	scaleFactorY = (double)(getSize().height-insets.top-insets.bottom)/(double)540;
-	int newWidth = (int) (slideList.getWidth()*scaleFactorX);
-	int newHeight = (int) (slideList.getHeight()*scaleFactorY);
+	newWidth = (int) (slideList.getWidth()*scaleFactorX);
+	newHeight = (int) (slideList.getHeight()*scaleFactorY);
     slidePanel.setScalingFactors(scaleFactorX, scaleFactorY);
     slidePanel.setBounds(0, 0, newWidth, newHeight);
     slidePanel.resizeSlide();
@@ -1072,6 +1075,9 @@ private void resizeMainPanel() {
     nextTab.setBounds(newWidth-120,(newHeight)-20,90,20);
     previousTab.setBounds(0,(newHeight)-20,100,20);
     contentsPanel.setBounds(0, 0, contentsWidth, newHeight);
+    utilities.dicePanel.setDimensions(newHeight);
+    utilities.calculatorPanel.setDimensions(newHeight);
+    utilities.standAloneMusicPlayer.setDimension(newHeight);
     
 }
 
@@ -1111,7 +1117,7 @@ public void componentMoved(ComponentEvent e) {
 public void componentShown(ComponentEvent e) {
 	// TODO Auto-generated method stub
 	
-}
+} 
 
 @Override
 public void keyPressed(KeyEvent e) {

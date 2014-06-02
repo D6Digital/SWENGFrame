@@ -26,7 +26,7 @@ public class DicePanel extends JPanel implements ActionListener{
 
 	/**
 	 * 
-	 */
+	 */ 
 	private static final long serialVersionUID = 1L;
 	
 	Container contentPane;
@@ -427,4 +427,24 @@ public class DicePanel extends JPanel implements ActionListener{
 		displayTotalResult.setEnabled(true);
 		displayTotalResult.setText("Total Dice Rolls = " + sumOfRolls);
 	}
+
+	public void setDimensions(int height){
+		setBounds(3,0,panelWidth, height);
+		displayTotalResult.setBounds(
+                (int) (panelWidth*0.025), 
+                (int) (height*0.94),
+                (int) (panelWidth*0.925),
+                (int) (height*0.05)-(int)(height*0.025));
+		firstResultOutput.setBounds(
+                (int) (panelWidth*0.025), 
+                (int) (panelWidth*0.025) + (int) (height*0.1) + (int) (height*0.03) +  (int) (height*0.03),
+                (int) (panelWidth*0.45),
+                (int) (height*0.75));
+		secondResultOutput.setBounds(
+                (int) (panelWidth*0.025) + (int) (panelWidth*0.45) +  (int) (panelWidth*0.025), 
+                (int) (panelWidth*0.025) + (int) (height*0.1) + (int) (height*0.03) +  (int) (height*0.03),
+                (int) (panelWidth*0.45),
+                (int) (height*0.75));
+	}
+
 }

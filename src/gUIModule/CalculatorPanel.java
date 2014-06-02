@@ -19,7 +19,7 @@ import javax.swing.JTextArea;
  *
  */
 public class CalculatorPanel extends JPanel implements ActionListener{
-
+ 
 	/**
 	 * 
 	 */
@@ -59,10 +59,10 @@ public class CalculatorPanel extends JPanel implements ActionListener{
 	int selectedModIndex = -1;
 	int totalMod = 0;
 	
-	int panelWidth = 385;
-	int panelHeight = 540;
+	int panelWidth;
+	int panelHeight;
 	int modHeight;
-int modPlusButtonPlusDisplay;
+	int modPlusButtonPlusDisplay;
     int modPlusButtonHeight;
     
     private MouseAdapter genericMouseMotionListener;
@@ -89,7 +89,7 @@ int modPlusButtonPlusDisplay;
 			modSelection.addItem(modNames[j]);
 		};
 		modSelection.setLayout(null);
-		modSelection.setBounds(5, 5, panelWidth-25, (int) (panelHeight*0.05)-5);
+		modSelection.setBounds(5, 5, (int) (panelWidth*0.9), (int) (panelHeight*0.05)-5);
 		modHeight = (int) (panelHeight*0.05);
 		modSelection.setActionCommand("modSelected");
 		modSelection.addActionListener(this);
@@ -102,7 +102,7 @@ int modPlusButtonPlusDisplay;
 	    //includeMod.setVerticalTextPosition(AbstractButton.CENTER);
 	    //includeMod.setHorizontalTextPosition(AbstractButton.CENTER);
 	   // includeMod.setAlignmentX(Component.CENTER_ALIGNMENT);
-	    includeMod.setBounds(5, modHeight + (int) (panelHeight*0.025), ((panelWidth-25)/2)-10, (int)(panelHeight*0.05));
+	    includeMod.setBounds(5, modHeight + (int) (panelHeight*0.025), (((int) (panelWidth*0.9))/2)-10, (int)(panelHeight*0.05));
 	    includeMod.setActionCommand("include");
 	    includeMod.addActionListener(this);
 	    includeMod.addMouseMotionListener(genericListener);
@@ -116,7 +116,7 @@ int modPlusButtonPlusDisplay;
 	    //clearMods.setVerticalTextPosition(AbstractButton.CENTER);
 	   // clearMods.setHorizontalTextPosition(AbstractButton.CENTER);
 	    //clearMods.setAlignmentX(Component.CENTER_ALIGNMENT);
-	    clearMods.setBounds((panelWidth/2)+5, modHeight + (int) (panelHeight*0.025), ((panelWidth-25)/2)-10, (int)(panelHeight*0.05));
+	    clearMods.setBounds(((int) (panelWidth*0.9)/2)+5, modHeight + (int) (panelHeight*0.025), (((int) (panelWidth*0.9))/2), (int)(panelHeight*0.05));
 	    clearMods.setActionCommand("clear");
 	    clearMods.addActionListener(this);
 	    clearMods.addMouseMotionListener(genericListener);
@@ -129,7 +129,7 @@ int modPlusButtonPlusDisplay;
 		displayIncludedMods = new JTextArea();
 		displayIncludedMods.setLayout(null);
 		displayIncludedMods.setEditable(false);
-		displayIncludedMods.setBounds(5, modPlusButtonHeight + (int) (panelHeight*0.025), panelWidth-25, (int)(panelHeight*0.7));
+		displayIncludedMods.setBounds(5, modPlusButtonHeight + (int) (panelHeight*0.025), (int) (panelWidth*0.9), (int)(panelHeight*0.7));
 		add(displayIncludedMods);
 		displayIncludedMods.setEnabled(false);
 		displayIncludedMods.addMouseMotionListener(genericListener);
@@ -140,7 +140,7 @@ int modPlusButtonPlusDisplay;
 		displayTotalMod = new JTextArea();
 		displayTotalMod.setLayout(null);
         displayTotalMod.setEditable(false);
-		displayTotalMod.setBounds(5, modPlusButtonPlusDisplay + (int) (panelHeight*0.05), panelWidth-25, (int)(panelHeight*0.1));
+		displayTotalMod.setBounds((int) (panelWidth*0.025), modPlusButtonPlusDisplay + (int) (panelHeight*0.05), (int) (panelWidth*0.9), (int)(panelHeight*0.1));
 		add(displayTotalMod);
 		displayTotalMod.setEnabled(false);
 		displayTotalMod.addMouseMotionListener(genericListener);
@@ -182,5 +182,13 @@ int modPlusButtonPlusDisplay;
 	   
 	    displayTotalMod.setEnabled(true);
 	    displayTotalMod.setText("Total Modifier = " + totalMod);
+	}
+
+	public void setDimensions(int panelHeight){
+		modPlusButtonHeight = modHeight + (int) (panelHeight*0.025) + (int)(panelHeight*0.05);
+		modPlusButtonPlusDisplay = modPlusButtonHeight +  (int)(panelHeight*0.7);
+		setBounds(5,0,panelWidth-10,panelHeight);
+		displayIncludedMods.setBounds(5, modPlusButtonHeight + (int) (panelHeight*0.025), (int) (panelWidth*0.9), (int)(panelHeight*0.7));
+		displayTotalMod.setBounds(5, modPlusButtonPlusDisplay + (int) (panelHeight*0.05), (int) (panelWidth*0.9), (int)(panelHeight*0.1));
 	}
 }
