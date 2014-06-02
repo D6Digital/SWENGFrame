@@ -16,11 +16,6 @@
   	<icon>src\XMLBits\char1jovian_spy.jpg</icon>
   </book>
   <book id="004">
-  	<title>LOAD TEST</title>
-  	<filename>github resources\LOADTEST1.xml</filename>
-  	<icon>src\XMLBits\char1jovian_spy.jpg</icon>
-  </book>
-  <book id="005">
   	<title>LOAD PAGE TEST</title>
   	<filename>github resources\LOADTESTPAGE.xml</filename>
   	<icon>src\XMLBits\char1jovian_spy.jpg</icon>
