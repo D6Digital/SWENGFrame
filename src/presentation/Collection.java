@@ -14,14 +14,16 @@ public class Collection {
 
 	/**
 	 * @param arg0
-	 * @return
+	 * @return a succesful addition
 	 * @see java.util.ArrayList#add(java.lang.Object)
+	 * Add a presentation to the collection
 	 */
 	public boolean add(Presentation arg0) {
 		return presentations.add(arg0);
 	}
 
 	/**
+	 * Returns an individual presentation
 	 * @param arg0
 	 * @return
 	 * @see java.util.ArrayList#get(int)
@@ -31,13 +33,16 @@ public class Collection {
 	}
 
 	/**
-	 * @return
+	 * @return the number of presentations
 	 * @see java.util.ArrayList#size()
 	 */
 	public int size() {
 		return presentations.size();
 	}
 	
+	/**
+	 * @return all presentations
+	 */
 	public ArrayList<Presentation> getPresentationList() {
 		return presentations;
 	}

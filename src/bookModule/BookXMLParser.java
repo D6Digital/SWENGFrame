@@ -31,6 +31,7 @@ enum ProcessingElement{
 /**
  * @author Sam Lambert
  * @author Robert Mills
+ * Parses the book xml file
  */
 public class BookXMLParser extends DefaultHandler{
 	
@@ -48,6 +49,12 @@ public class BookXMLParser extends DefaultHandler{
 
 	
 
+	/**
+	 * @param inputFile the file to be parsed
+	 * @return the array of books
+	 * Checks the correctness of the xml file 
+	 * then parses it
+	 */
 	public BookList readBookXML(String inputFile) {
 		//Check to see if xml is valid
 		File schemaFile;
@@ -95,10 +102,18 @@ public class BookXMLParser extends DefaultHandler{
 		return bookList;	
 	}
 
+	/** 
+	 * For testing purposes
+	 * @see org.xml.sax.helpers.DefaultHandler#startDocument()
+	 */
 	public void startDocument() throws SAXException {
 		System.out.println("Starting to process document.");
 	}
 	
+	/**
+	 * Called when a start element is encountered
+	 * @see org.xml.sax.helpers.DefaultHandler#startElement(java.lang.String, java.lang.String, java.lang.String, org.xml.sax.Attributes)
+	 */
 	public void startElement(String uri, String localName, String qName,
 			Attributes attrs) throws SAXException {
 		String elementName = localName;
@@ -135,6 +150,10 @@ public class BookXMLParser extends DefaultHandler{
 		}	
 	}
 	// handle contents of elements
+	/**
+	 * Called when characters are encountered in the body of an element
+	 * @see org.xml.sax.helpers.DefaultHandler#characters(char[], int, int)
+	 */
 	public void characters(char ch[], int start, int length)
 			throws SAXException {
 
@@ -160,6 +179,10 @@ public class BookXMLParser extends DefaultHandler{
 		}
 	}
 	
+	/**
+	 * Called an end element is encountered
+	 * @see org.xml.sax.helpers.DefaultHandler#endElement(java.lang.String, java.lang.String, java.lang.String)
+	 */
 	public void endElement(String uri, String localName, String qName)
 			throws SAXException {
 		// sort out element name if (no) namespace in use
@@ -181,11 +204,18 @@ public class BookXMLParser extends DefaultHandler{
 				+ ") ...");
 	}
 	
+	/**
+	 * For Testing purposes
+	 * @see org.xml.sax.helpers.DefaultHandler#endDocument()
+	 */
 	public void endDocument() throws SAXException {
 		System.out.println("Finished processing document.");
 	}
 	
-	/* Test method. To be deleted after testing */
+	
+	/**
+	 * For testing, prints out the books
+	 */
 	private void writeBookinfo() {
 		System.out.println("BookList version: " + bookList.getVersion());
 		ArrayList<Book> books = bookList.getList();
