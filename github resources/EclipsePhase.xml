@@ -4028,7 +4028,237 @@
 	<documentinfo><author>D6 Digital</author><version>2.1</version><title>Sample Adventure</title><comment>example comment for chapter 1</comment><width>720</width><height>540</height></documentinfo>
 	<defaults><backgroundcolor>#BFBFBF</backgroundcolor><font>Neo Sans Intel</font><fontsize>18</fontsize><fontcolor>#000000</fontcolor><linecolor>#404040</linecolor><fillcolor>#404040</fillcolor></defaults>
 	
-	<slide id="0" duration="60" descriptor="" lastSlide="true" backgroundcolor="#BFBFBF"><text xstart="14" ystart="27" xend="275" yend="72" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="24"><textbody italic="false" bold="true" underlined="false"><textstring>Sample Adventure</textstring>
+	<slide id="0" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="553" ystart="106" xend="644" yend="151" layer="6" starttime="0" font="Calibri" fontcolor="#790909" fontsize="24"><textbody branch="1" italic="false" bold="true" underlined="false"><textstring>START</textstring>
+	</textbody>
+	</text>
+	<image urlname="Src/XMLBits/CHAINRE.png" xstart="0" ystart="198" width="720" height="342" layer="5" starttime="0"/>
+	<text xstart="15" ystart="79" xend="479" yend="198" layer="3" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>David Williams, a Martian scientist, has gone missing in Olympus and it is up to a group of local sentinels to find him. Following David's trail will lead the sentinels from a skyscraper, through a red light district, and finally to a hidden biowarfare lab where a dangerous pathogen has been unleashed.\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="14" ystart="27" xend="405" yend="72" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="24"><textbody italic="false" bold="true" underlined="false"><textstring>Sample Adventure – Chain Reaction</textstring>
+	</textbody>
+	</text>
+	</slide>
+	
+	<slide id="1" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="150" ystart="66" xend="479" yend="525" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="20"><textbody italic="true" bold="false" underlined="false"><textstring>History\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Events\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Mission Hook: Thousand Heavens\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Stage 1: Initial Investigation\n</textstring>
+	</textbody>
+	<textbody branch="-69" italic="true" bold="false" underlined="false"><textstring>5. Spend Customisation Points\n\n</textstring>
+	</textbody>
+	<textbody branch="-5" italic="true" bold="false" underlined="false"><textstring>6. Purchase Gear\n\n</textstring>
+	</textbody>
+	<textbody branch="-4" italic="true" bold="false" underlined="false"><textstring>7. Choose Motivations\n\n</textstring>
+	</textbody>
+	<textbody branch="-3" italic="true" bold="false" underlined="false"><textstring>8. Calculate Remaining Stats\n\n</textstring>
+	</textbody>
+	<textbody branch="-2" italic="true" bold="false" underlined="false"><textstring>9. Detail the Character\n\n</textstring>
+	</textbody>
+	</text>
+	</slide>
+	
+	<slide id="2" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="377" ystart="21" xend="706" yend="441" layer="20" starttime="0" font="Calibri" fontcolor="#790909" fontsize="11"><textbody italic="false" bold="false" underlined="false"><textstring>Chain Reaction is a marvel of pathogen engineering created by some of the top scientist on Mars in a time accelerated simulspace while they were drugged with the experimental, mind-expanding Hyper-Drive. It consists of three distinct viruses: CRA, CRB, and CRC, contained inside a bacteria. The bacteria is designed to enter a biomorph and replicate rapidly, triggering an immune response which then destroys some of the bacteria, releasing the viruses.\nOnce released into the host the first virus, CRA, invades the victims cells, causing them produce a potent organic explosive. The second virus, CRB, causes nanoflechettes to grow underneath the victim's skin. These nanoflechettes provide safe harbor for the remaining bacteria. Finally the third virus, CRC, invades the victims brain and alters it so that, when a victim infected with CRC is in close proximity to multiple biomorphs, it will release a hormone to trigger the organic explosives created by CRA.\nOnce triggered the explosives will go off within one to ten minutes, killing the morph, and distributing infectious body fluids and nanoflechettes throughout the area.\nChain Reaction is spread by ingestion, injection, or direct fluid contact. Once exposed a character must make a DUR Test or become infected. Medichines give a +20 bonus to the test and identify the pathogen as a common MSRA infection. After infection, it takes about a week for the victim to become armed, though they may detonate prematurely if exposed to high heat, large electrical currents, or high-velocity impacts. After the victim is armed, the explosion caused by Chain Reaction automatically kills the victim and inflicts 4d10+DUR kinetic damage with 0 AP in an area. The explosion also spreads the pathogen: any biomorph or non-alien pod injured by the explosion and not killed outright has a chance of becoming infected. Infected pods will not self detonate.</textstring>
+	</textbody>
+	</text>
+	<text xstart="129" ystart="491" xend="246" yend="536" layer="18" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="3" italic="false" bold="true" underlined="false"><textstring>CONTINUE</textstring>
+	</textbody>
+	</text>
+	<text xstart="8" ystart="100" xend="348" yend="499" layer="5" starttime="0" font="Calibri" fontcolor="#000000" fontsize="11"><textbody italic="false" bold="true" underlined="false"><textstring>Rishabha - </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Zaizan Bosshard and the Shui Fong triad begin construction of a secret drug factory in the Fuxingmen section of Olympus. When completed the factory will allow the triad to cheaply produce large quantities of the banned nootropic, Drive, and allow them to compete with the drugs smuggled down the space elevator by their rival triad, The Big Circle Gang.\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>September - </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>The Shui Fong establishes several front businesses for warehousing and distributing the Drive once production starts. One of those business is Mike's Custom Morphs, located in Janks-Yao.\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Mithuna - </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>The Drive factory becomes fully operational and the Shui Fong begins stockpiling the drug, intending to use it to deliver a knock-out punch to The Big Circle Gang.\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Karka - </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Unknown to the triad, Zaizan builds a hidden bioweapon research facility on the lower level of Mike's Custom Morphs. Zaizan then hires mercenaries to forknap several scientists and forces them to work in the lab, ensuring their compliance with psychosurgical conditioning. To speed up research he also drugs them with Hyper-Drive, an experimental cognitive enhancer.\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>November - </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>The Shui Fong begins flooding the market with Drive, drastically lowering its price (to trivial) and doing massive damage to The Big Circle Gang's bottom line.\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Simha 13 - </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>The Chain Reaction pathogen (see the sidebar), is completed in the bioweapon lab and Zaizan has random doses of the drugs being distributed through Mike's Custom Morphs tainted with it.\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Simha 15 - </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Ju Lin, alias 'Julia Juggs', betrays the Shui Fong to the Smoke Lions, a gang affiliated with The Big Circle Gang, but incorrectly identifies Mike's Custom Morphs as the drug factory.\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="15" ystart="55" xend="343" yend="134" layer="3" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="false" bold="false" underlined="false"><textstring>This section includes a brief timeline of events leading up to activation of the sentinels:</textstring>
+	</textbody>
+	</text>
+	<text xstart="15" ystart="21" xend="343" yend="66" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>HISTORY</textstring>
+	</textbody>
+	</text>
+	</slide>
+	
+	<slide id="3" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="378" ystart="196" xend="706" yend="474" layer="29" starttime="0" font="Calibri" fontcolor="#790909" fontsize="11"><textbody italic="false" bold="true" underlined="false"><textstring>DEAD SCIENTISTS\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="false" underlined="false"><textstring>The following five scientists have died recently:\n Dr. Kazuki Murase – a virologist studying bacteriophages for Ecologene. He died in a car crash.\nDr. Ryoo Hee Sok – a virologist at the University of Mars whose work focuses on determining how viruses can alter neural functioning. She was crushed when a flying car fell on her.\nDr. Momolu Mensah – a biosculpter working on viruses for Ecologene at a remote habitat. Killed along with several others in a methane explosion caused by a life support system failure.\nDr. Gwendolyn James – an MIT nanotechnologist working on medichine pathogen detection systems. She was killed when a breach in a nearby lab released a disassembler swarm.\nDr. Angelo Arnoldi – a neurologist working on smart monkeys brains. He fell down an elevator shaft. Onto a box of bullets.\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="371" ystart="9" xend="711" yend="217" layer="20" starttime="0" font="Calibri" fontcolor="#000000" fontsize="11"><textbody italic="false" bold="true" underlined="false"><textstring>Simha 19 – 19:59 - </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Synthmorph labors pick up the crate containing David at the Doll House and transport it through HLS to a Comex semi-automated supply truck. Comex then ships the crate to Mike's.\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Simha 19 – 21:00 - </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>David arrives at Mike's. The Smoke Lions place him in a simulspace immersion tank/healing vat and begin a running an automated psychosurgery program on him in order to force him to find a cure for Chain Reaction.\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Simha 20 – 12:15 - </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>David's psychosurgery is complete and he beings working on a cure.\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Simha 20 – 14:00 - </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Firewall receives a report of a missing scientist. As several other scientists have recently died under mysterious circumstances, Firewall decides to activate a group of sentinels in the Olympus region to investigate.\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="490" ystart="474" xend="607" yend="519" layer="4" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="4" italic="false" bold="true" underlined="false"><textstring>CONTINUE</textstring>
+	</textbody>
+	</text>
+	<text xstart="8" ystart="9" xend="348" yend="531" layer="1" starttime="0" font="Calibri" fontcolor="#000000" fontsize="11"><textbody italic="false" bold="true" underlined="false"><textstring>Simha 16 – 24:30 - </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>The Smoke Lions storm the building and, after a lengthy gun battle, emerge victorious. Then the self-destruct mechanism goes off.\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Simha 17 – 00:30 - </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Reinforcements from the Shui Fong arrive and find everyone dead. They retrieve everything they can, including bodies, and then clear out. However, unknown to the triad, the self-destruction was not wholly successful: several faulty detonators allowed a large portion of the lower level to survive, along with eight of the Smoke Lions.\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Simha 17 – 02:00 - </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>The Smoke Lions discover a man trapped in the blast chamber. Then they discover Chain Reaction when they let him out. Four of the Smoke Lions Survive the explosion, though two are infected with Chain Reaction.\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Simha 17-19 - </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>The Shui Fong hunts down and kills all the Smoke Lions that did not participate in the raid, wiping out the gang.\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Simha 19 – 04:30  - </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>The four surviving Smoke Lions manage to tunnel out of Mike's lower level. By this time they have managed to work out the details of the pathogen. Fearing that they may be infected and not trusting anybody, they decide to stay in the lab and search for a cure: however none of them are biologists so they need to find one. They contact Julia and demand that she kidnap a scientist for them. Julia refuses until they threaten to tell the Shui Fong about her betrayal.\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Simha 19 – 14:34  - </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>David Williams a University of Chicago graduate student, arrives at his apartment in the Knox Building. As he is running low on Drive he decides to visit his dealer, Julia, at The Thousand Candles brothel in the red light district of HLS. As usual, he wears a disguise and uses a fake ID (Victor Telscopery, a fictitious resident of the Knox Building) for the trip. He also hacks the Knox Building's surveillance spimes so that it looks like he never left his apartment.\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Simha 19 – 17:17  - </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>David leaves the Knox Building by the front entrance, blending in with the afternoon rush. He then rides the public transportation system to HLS and walks the rest of the way to The Thousand Candles.\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Simha 19 – 18:37  - </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>While David is distracted, Julia injects him with a sedative. Once he is out, she puts a prisoner mask on him, wraps him in an invisibility cloak, and carries him to where she receives her drug shipments: an adjoining businesses called the Doll House. There she places David in a biomorph trans-port crate scheduled to be shipped back to Mike's Custom Morphs.\n</textstring>
+	</textbody>
+	</text>
+	</slide>
+	
+	<slide id="4" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="366" ystart="21" xend="706" yend="276" layer="16" starttime="0" font="Calibri" fontcolor="#000000" fontsize="11"><textbody italic="false" bold="true" underlined="false"><textstring>Simha 20 - 23:00 - </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>The Lions debate on what to do with the cure and ultimately decide to make sure it works before doing anything else. They start producing doses of the vaccine using the remains of the lab. With their limited resources, they will only be able to produce one dose every hour and it takes four doses to cure an existing infection.\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Simha 20 - 23:30 - </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Eli Leaton, a VR drafter for a local engineering firm sleeved in a ruster morph, takes a break from work to clear his head. Wandering through Central to get some fresh air, he is confronted by several OIA officers on suspicion of public intoxication. The officers, perhaps agitated by their mnemonic augmentations all simultaneously malfunctioning, proceed to savagely beat him. After receiving a particularly vicious kick from one of the officers, Eli explodes, killing that officer and wounding four others. An edited version of the event is released to the media, and interviews with the heroic OIA officer who died attempting to stop a suicide bomber are widely aired.\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Simha 20 - 24:30 - </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Chimera attacks the lab, killing David. Depending on when the characters reach the lab, this event may happen earlier.\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="486" ystart="485" xend="603" yend="530" layer="8" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="5" italic="false" bold="true" underlined="false"><textstring>CONTINUE</textstring>
+	</textbody>
+	</text>
+	<text xstart="8" ystart="100" xend="348" yend="463" layer="5" starttime="0" font="Calibri" fontcolor="#000000" fontsize="11"><textbody italic="false" bold="true" underlined="false"><textstring>Simha 20 - 15:00 - </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>The characters receive a message from the Thousand Heavens MARG informing them of a new quest. Information steganographically encoded into the message indicates that it is a request for a meeting from a Firewall proxy.\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Simha 20 - 17:30 - </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Comex sends Zaizan a copy of the invoice for David's delivery and Zaizan realizes that the lab was not totally destroyed. He hires an ultimate mercenary, Chimera, to finish the job. Chimera is currently in another city and will take some time to arrive.\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Simha 20 - 22:00 - </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Jason Healy, an indentured worker sleeved in a pod morph, goes on a rampage at a biomorph only bar. He guns down twelve people with a shredder before being tackled by several patrons. A few moments after being tackled he explodes like a bomb, killing the people subduing him. Overall there are 15 dead and 12 injured.\nThe shooting is widely reported in the media with some outlets trying to spin it as terrorist attack by the Barsoomian Movement: Jason was one of the people forced to evacuate the city by the OIA during the Fall. He died when the cheap life support system supplied by the hypercorp failed and he was forced to work off a second indenture, something he was very angry about it.\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Simha 20 - 23:00 - </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>After 132 hours of subjective research time David completes a simple, orally administered vaccine for Chain Reaction. High doses of the vaccine will also cure existing infections, provided it has been less than a week since infection. Under the influence of Hyper-Drive, David also conceives of a highly contagious airborne virus that will confer immunity to Chain Reaction and begins work on it.\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="15" ystart="55" xend="343" yend="134" layer="3" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="false" bold="false" underlined="false"><textstring>This section briefly lists the events that will occur during the adventure:</textstring>
+	</textbody>
+	</text>
+	<text xstart="15" ystart="21" xend="343" yend="66" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>EVENTS</textstring>
+	</textbody>
+	</text>
+	</slide>
+	
+	<slide id="5" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="486" ystart="485" xend="603" yend="530" layer="9" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="6" italic="false" bold="true" underlined="false"><textstring>CONTINUE</textstring>
+	</textbody>
+	</text>
+	<text xstart="371" ystart="179" xend="699" yend="474" layer="7" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>The person speaking is a Firewall router codenamed Proxy 21. She is using a MARG feature that allows quests to be tailored to specific groups of players (usually those in a particular heaven or hell) to speak only to the characters, the other game players present will receive a different quests. The characters may ask her questions securely over the mesh. When the they are done talking to her the virtual beam of light fades, causing the hill, the tree, and the man to disappear.\nThe gifts are electronically transmitted to the characters and are fake ego IDs which identify the characters as students at the University of Chicago's satellite campus in the Knox Building. The IDs all currently have r-rep 10, c-rep 5, 50 credits, and 50 crypto cred.</textstring>
+	</textbody>
+	</text>
+	<text xstart="372" ystart="9" xend="700" yend="173" layer="5" starttime="0" font="Calibri" fontcolor="#790909" fontsize="10"><textbody italic="false" bold="false" underlined="false"><textstring>When you approach the upside down man, his head turns to face you and his eyes open, revealing two voids full of stars. He speaks and his voice is that of a woman:\n"Seekers of Enlightenment, you who would change destiny and turn aside fate, heed my words: a man known as David Williams is missing from his place in the Heaven, he entered his residence yesterday afternoon, never left, but is no longer there.\nDavid is a virologist and we fear that his disappearance is connected to the recent deaths of five other scientists, working in similar fields. Your task is to find out what happened to him. Obviously, this task is time sensitive and you should make haste. To speed your journey I have prepared gifts for you; with these you can climb the Spire of Heaven to where David dwells. Good Luck.“\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="15" ystart="55" xend="343" yend="526" layer="3" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>The characters all receive invitations to participate in a new quest in the massively-multiplayer augmented reality game, Thousand Heavens. Thousand Heavens is a game in which the players are placed in one of a number of heavens or hells and must help the saints or demons that reside there to advance. Steganographically hidden in the invitation is a brief, encrypted message from Firewall indicating that the sentinels should go to the quest briefing, which is at 16:00 in front of the Knox Building.\nThe Knox Building is a 150 story skyscraper in Central notable for holding the University of Chicago's Olympus satellite campus. In front of the building is a small domed plaza in the perpetual shadow of the surrounding skyscrapers. A small crowd of Thousand Heavens players have gathered in the plaza, waiting for the quest to start. To those using the Thousand Heavens AR overlays, everything appears normal until 16:00, when a shaft of light shines down from above, revealing a small hill in the center of the plaza. On that hill is a fig tree and hanging upside-down from the tree by a rope tied around one foot is a naked man. His eyes are closed.</textstring>
+	</textbody>
+	</text>
+	<text xstart="15" ystart="21" xend="343" yend="66" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>Mission Hook: Thousand Heavens</textstring>
+	</textbody>
+	</text>
+	</slide>
+	
+	<slide id="6" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="486" ystart="485" xend="603" yend="530" layer="7" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="7" italic="false" bold="true" underlined="false"><textstring>CONTINUE</textstring>
+	</textbody>
+	</text>
+	<text xstart="371" ystart="21" xend="699" yend="475" layer="6" starttime="0" font="Calibri" fontcolor="#000000" fontsize="12"><textbody italic="false" bold="true" underlined="false"><textstring>Checking the Surveillance Spimes\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>There are no surveillance spimes in David's apartment though there are surveillance spimes in the halls of the Knox Building and especially at the security checkpoints at the ground floor entrances.\nAfter the initial Research Test to download information from the spimes, a second test with a ten minute timeframe will reveal that David was last recorded entering his apartment at 14:34 yesterday. There is no record of him leaving.\nAfter David entered his apartment, the only other people to enter were members of a Knox Building Security team who arrived at 14:00 Simha 20, searched for 5 minutes, and then left.\nOnce the characters know about the wig, the goggles, or the boots (and have correctly adjusted gait analysis software) the characters can retry the second Research Test (with a +10 if they know about both the goggles and the wig) to spot David leaving the building. Alternately, if they know David's destination, they can attempt to track everyone going to HLS from the Knox Building. This requires the standard pair of Research Tests with the second test having a one hour timeframe.\nOn a successful test the characters find David leaving the Knox Building and learn his current appearance along with the name of his fake ID (Victor Telscopery). If they do not already know his destination, they can then track him to HLS with two Research Tests, the second test having a five minute timeframe.</textstring>
+	</textbody>
+	</text>
+	<text xstart="15" ystart="55" xend="343" yend="191" layer="4" starttime="0" font="Calibri" fontcolor="#000000" fontsize="12"><textbody italic="true" bold="false" underlined="false"><textstring>The characters now have to try and find David. Some of the ways they may wish to start their investigation are checking the mesh, checking the surveillance spimes, and talking to his friends and colleagues.\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Checking the Mesh\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Following the initial Research Test to accumulate relevant Data, a second Research Test with a 1 minute timeframe will turn up the following information:\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="15" ystart="21" xend="343" yend="66" layer="2" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>Stage 1: Initial Investigation</textstring>
+	</textbody>
+	</text>
+	<text xstart="14" ystart="179" xend="342" yend="531" layer="1" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>- David is a virology graduate student at the University of Chicago. His thesis is on the use of bacteriophages to genetically modify previously deployed biosculpted bacteria colonies.\n- He lives and works at the university’s campus in the Knox Building.\n- He maintains a modest lifelog containing only the highlights. The log has not been updated since well before he went missing.\n- A list of David's friends and colleagues. David is fairly active socially and has many friends who are worried about him because he missed class, work, and labs today, which is very unlike him.\n- A map of David's apartment in the graduate student housing section of the campus.\n- David does not own a vehicle, when off campus he uses public transportation or walks.\n- David has no surveillance spimes in his apartment and no roommates, though he does have a servitor robot to take care of his apartment and cook for him.</textstring>
+	</textbody>
+	</text>
+	</slide>
+	
+	<slide id="7" duration="60" descriptor="" lastSlide="true" backgroundcolor="#BFBFBF"><text xstart="486" ystart="485" xend="603" yend="530" layer="9" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="8" italic="false" bold="true" underlined="false"><textstring>CONTINUE</textstring>
+	</textbody>
+	</text>
+	<text xstart="378" ystart="208" xend="706" yend="497" layer="6" starttime="0" font="Calibri" fontcolor="#790909" fontsize="11"><textbody italic="false" bold="true" underlined="false"><textstring>GETTING A CLUE\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="false" underlined="false"><textstring>Here are some suggestions for dealing with common problems that can occur during the investigative portion of the adventure:\n- If the players have absolutely no idea what to do let the characters make an idea roll to come up with a broad course of action such as checking David's social profile or visiting his apartment.\n- If the players are unable to put the clues they already have together let the characters make an Investigation Test.\n- If the players have forgotten a clue they have already found, give the characters a roll to remember it.\n- If the characters skills are to low to find a vital clue they can use taking the time, complementary skills, and teamwork  to increase their positive modifiers and moxie to cancel any negative modifiers. Additionally, the character's muses have their own skills which may be used to make the required tests.\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="372" ystart="15" xend="700" yend="196" layer="4" starttime="0" font="Calibri" fontcolor="#000000" fontsize="12"><textbody italic="true" bold="false" underlined="false"><textstring>If Marie is suspicious, she will thoroughly question the characters before talking about David. The characters may lie to Marie, however she knows David well and has her muse constantly checking the veracity of anything she hears. If the characters tell her something she knows to be false or can be easily verified online, no matter how good of liars the characters are, she will become convinced that they are somehow involved in David's disappearance and contact security. She will then attempt to keep the characters talking until security can respond. At this point a Kinesics Test will reveal that she is stalling for time.</textstring>
+	</textbody>
+	</text>
+	<text xstart="15" ystart="15" xend="343" yend="440" layer="1" starttime="0" font="Calibri" fontcolor="#000000" fontsize="12"><textbody italic="false" bold="true" underlined="false"><textstring>Interviewing David’s Friends and Colleagues\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>David knows too many people to interview them all in a reasonable timeframe. A successful Investigation Test (relationship mapping software provides a +30 bonus) will reveal his closest friend is a fellow grad student named Marie Danielson. A failed test will lead them to a random friend or associate who knows nothing about David's disappearance, but may be able to point out Marie Danielson as someone who might know more.\nMarie is currently at the university campus in the Knox Building. The characters can contact her either through the mesh or in person (see Entering the Knox Building below), finding her either way is a simple Research or Networking: Scientist Test. Depending on when the characters contact her, she can be in class, at her lab, eating at a cafeteria, or in her apartment.\nMarie is currently under a lot of stress and isn't in the mood to talk to strangers: it will require a successful Persuasion or Protocol Test to convince her to talk to the characters. When they bring up David they will also need to make an opposed Protocol Test (Marie's SAV + WIL + WIL is 45). Failure results in Marie becoming suspicious.\nIf she is not suspicious, Marie will talk about her missing friend David, and a successful Kinesics Test at +10 will reveal that she is hiding something about his disappearance. A successful Persuasion Test with a -30 penalty will then get her to reveal that he was a Drive addict, though he preferred his Drive mixed with Juice (a combination known as Happy Thoughts), and that he got his drugs from somewhere in a section of the city called HLS.\n</textstring>
 	</textbody>
 	</text>
 	</slide>
