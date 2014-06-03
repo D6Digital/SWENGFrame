@@ -18,8 +18,8 @@ import javax.swing.event.ChangeListener;
 
 import presentation.Slide;
 
+import main.Overall;
 import musicPlayerModule.EmbeddedAudioPlayer;
-import src.Overall;
 import uk.co.caprica.vlcj.binding.LibVlc;
 import uk.co.caprica.vlcj.runtime.RuntimeUtil;
 

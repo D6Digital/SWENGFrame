@@ -118,6 +118,8 @@ public class SlidePanel extends JPanel{
 		// By default the panel is invisible until the player chooses to display it
 		setVisibility(false);
 		
+		clearSlide();
+		
 		// TODO ensure this panel is ready to be displayed when necessary
 	}
 	

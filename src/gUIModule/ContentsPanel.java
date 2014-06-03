@@ -68,6 +68,7 @@ public class ContentsPanel extends JPanel implements ActionListener{
 	public ContentsPanel(ArrayList<Slide> contentSlideList, ArrayList<Presentation> contentChapterList, int width, int slideWidth, int slideHeight, String currentSystem, String currentBook) {
 		super();
 		this.setLayout(null);
+		this.setVisible(false);
 		this.slideHeight=slideHeight;
 		this.slideWidth=width;
 				

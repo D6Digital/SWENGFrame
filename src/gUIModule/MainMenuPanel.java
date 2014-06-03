@@ -78,7 +78,7 @@ public class MainMenuPanel extends JPanel{
 		
 		this.genericMouseMotionListener = genericListener;
 		
-		SystemXMLParser systemParser = new SystemXMLParser("bin/systemlist.xml");
+		SystemXMLParser systemParser = new SystemXMLParser("src/systemlist.xml");
 		listOfSystems = systemParser.getSystem();
 		
 		//start button
