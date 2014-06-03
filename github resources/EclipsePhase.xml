@@ -4040,7 +4040,7 @@
 	</text>
 	</slide>
 	
-	<slide id="1" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="150" ystart="66" xend="479" yend="525" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="20"><textbody italic="true" bold="false" underlined="false"><textstring>History\n</textstring>
+	<slide id="1" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="20" ystart="15" xend="349" yend="474" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="20"><textbody italic="true" bold="false" underlined="false"><textstring>History\n</textstring>
 	</textbody>
 	<textbody italic="true" bold="false" underlined="false"><textstring>Events\n</textstring>
 	</textbody>
@@ -4048,15 +4048,19 @@
 	</textbody>
 	<textbody italic="true" bold="false" underlined="false"><textstring>Stage 1: Initial Investigation\n</textstring>
 	</textbody>
-	<textbody branch="-69" italic="true" bold="false" underlined="false"><textstring>5. Spend Customisation Points\n\n</textstring>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Stage 2: David’s Apartment\n</textstring>
 	</textbody>
-	<textbody branch="-5" italic="true" bold="false" underlined="false"><textstring>6. Purchase Gear\n\n</textstring>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Stage 3: HLS\n </textstring>
 	</textbody>
-	<textbody branch="-4" italic="true" bold="false" underlined="false"><textstring>7. Choose Motivations\n\n</textstring>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Stage 4: The Thousand Candles\n</textstring>
 	</textbody>
-	<textbody branch="-3" italic="true" bold="false" underlined="false"><textstring>8. Calculate Remaining Stats\n\n</textstring>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Stage 5: Julia’s Ambush\n</textstring>
 	</textbody>
-	<textbody branch="-2" italic="true" bold="false" underlined="false"><textstring>9. Detail the Character\n\n</textstring>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Stage 6: Mike’s Custom Morphs\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Stage 7:When Ultimates Attack\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Debriefing\n</textstring>
 	</textbody>
 	</text>
 	</slide>
@@ -4240,12 +4244,12 @@
 	<text xstart="15" ystart="21" xend="343" yend="66" layer="2" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>Stage 1: Initial Investigation</textstring>
 	</textbody>
 	</text>
-	<text xstart="14" ystart="179" xend="342" yend="531" layer="1" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>- David is a virology graduate student at the University of Chicago. His thesis is on the use of bacteriophages to genetically modify previously deployed biosculpted bacteria colonies.\n- He lives and works at the university’s campus in the Knox Building.\n- He maintains a modest lifelog containing only the highlights. The log has not been updated since well before he went missing.\n- A list of David's friends and colleagues. David is fairly active socially and has many friends who are worried about him because he missed class, work, and labs today, which is very unlike him.\n- A map of David's apartment in the graduate student housing section of the campus.\n- David does not own a vehicle, when off campus he uses public transportation or walks.\n- David has no surveillance spimes in his apartment and no roommates, though he does have a servitor robot to take care of his apartment and cook for him.</textstring>
+	<text xstart="14" ystart="179" xend="342" yend="531" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="12"><textbody italic="true" bold="false" underlined="false"><textstring>- David is a virology graduate student at the University of Chicago. His thesis is on the use of bacteriophages to genetically modify previously deployed biosculpted bacteria colonies.\n- He lives and works at the university’s campus in the Knox Building.\n- He maintains a modest lifelog containing only the highlights. The log has not been updated since well before he went missing.\n- A list of David's friends and colleagues. David is fairly active socially and has many friends who are worried about him because he missed class, work, and labs today, which is very unlike him.\n- A map of David's apartment in the graduate student housing section of the campus.\n- David does not own a vehicle, when off campus he uses public transportation or walks.\n- David has no surveillance spimes in his apartment and no roommates, though he does have a servitor robot to take care of his apartment and cook for him.</textstring>
 	</textbody>
 	</text>
 	</slide>
 	
-	<slide id="7" duration="60" descriptor="" lastSlide="true" backgroundcolor="#BFBFBF"><text xstart="486" ystart="485" xend="603" yend="530" layer="9" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="8" italic="false" bold="true" underlined="false"><textstring>CONTINUE</textstring>
+	<slide id="7" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="486" ystart="485" xend="603" yend="530" layer="9" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="8" italic="false" bold="true" underlined="false"><textstring>CONTINUE</textstring>
 	</textbody>
 	</text>
 	<text xstart="378" ystart="208" xend="706" yend="497" layer="6" starttime="0" font="Calibri" fontcolor="#790909" fontsize="11"><textbody italic="false" bold="true" underlined="false"><textstring>GETTING A CLUE\n</textstring>
@@ -4259,6 +4263,243 @@
 	<text xstart="15" ystart="15" xend="343" yend="440" layer="1" starttime="0" font="Calibri" fontcolor="#000000" fontsize="12"><textbody italic="false" bold="true" underlined="false"><textstring>Interviewing David’s Friends and Colleagues\n</textstring>
 	</textbody>
 	<textbody italic="true" bold="false" underlined="false"><textstring>David knows too many people to interview them all in a reasonable timeframe. A successful Investigation Test (relationship mapping software provides a +30 bonus) will reveal his closest friend is a fellow grad student named Marie Danielson. A failed test will lead them to a random friend or associate who knows nothing about David's disappearance, but may be able to point out Marie Danielson as someone who might know more.\nMarie is currently at the university campus in the Knox Building. The characters can contact her either through the mesh or in person (see Entering the Knox Building below), finding her either way is a simple Research or Networking: Scientist Test. Depending on when the characters contact her, she can be in class, at her lab, eating at a cafeteria, or in her apartment.\nMarie is currently under a lot of stress and isn't in the mood to talk to strangers: it will require a successful Persuasion or Protocol Test to convince her to talk to the characters. When they bring up David they will also need to make an opposed Protocol Test (Marie's SAV + WIL + WIL is 45). Failure results in Marie becoming suspicious.\nIf she is not suspicious, Marie will talk about her missing friend David, and a successful Kinesics Test at +10 will reveal that she is hiding something about his disappearance. A successful Persuasion Test with a -30 penalty will then get her to reveal that he was a Drive addict, though he preferred his Drive mixed with Juice (a combination known as Happy Thoughts), and that he got his drugs from somewhere in a section of the city called HLS.\n</textstring>
+	</textbody>
+	</text>
+	</slide>
+	
+	<slide id="8" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="462" ystart="395" xend="638" yend="440" layer="12" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="9" italic="false" bold="true" underlined="false"><textstring>APARTMENT MAP</textstring>
+	</textbody>
+	</text>
+	<text xstart="486" ystart="463" xend="603" yend="508" layer="10" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="10" italic="false" bold="true" underlined="false"><textstring>CONTINUE</textstring>
+	</textbody>
+	</text>
+	<text xstart="366" ystart="9" xend="694" yend="278" layer="7" starttime="0" font="Calibri" fontcolor="#000000" fontsize="12"><textbody italic="false" bold="true" underlined="false"><textstring>Apartment Map Key\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>David's small apartment is decorated in a minimalistic style and has a stark white color scheme broken up with splashes of stainless steel and glass. It is spotlessly clean thanks to David's servitor bot. \nThere are no surveillance spimes in the apartment, though there are spimes to detect the air temperature, light levels, humidity, atmospheric composition, pressure, and the like. These spimes are private, though they will public report certain dangerous conditions such as loss of air pressure.\nThere are surveillance spimes outside the apartment's entrance, including video spimes. These spimes are currently actively monitored by a security AI since David has been reported missing. These spimes may be hacked (the security AI is merely monitoring the spimes and does not count as an active defender) but destroying or disabling them will cause the AI to dispatch security officers to the apartment.</textstring>
+	</textbody>
+	</text>
+	<text xstart="15" ystart="55" xend="343" yend="526" layer="3" starttime="0" font="Calibri" fontcolor="#000000" fontsize="12"><textbody italic="true" bold="false" underlined="false"><textstring>The characters may decide to search David's apartment for clues. David lives in university housing section on the 98th floor of the Knox Building.\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Entering the Knox Building\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>For security reasons, access to the Knox Building is restricted to residents of the building, their guests, and people with legitimate business inside. This is enforced by security checkpoints at the entrances. The fake ID's supplied by Proxy 21 list the characters as residents and will let them enter, provided they can pass the security checkpoints.\nThe checkpoints consist of short corridors with security guards stationed nearby. The corridors are covered with spimes that scan everyone passing through them. Spime types include video, t-ray weapon scanners, explosive detecting chem-sniffers, and metal detectors.\nRanged weapons, large blades like swords and axes, and heavy armor are strictly prohibited (except for use by the buildings security forces). Anyone attempting to smuggle in a restricted item must make a hard (-30) Palming Test or be confronted and potentially arrested. For larger weapons, a larger penalty applies with some weapons, such as plasma rifles, almost impossible to sneak in.\nIn addition to the guarded entrances there are also entrances on the roof and in the network of tunnels and subbasements below the building. Gaining access to the building through the roof is not difficult but getting to the roof is tricky as Olympus is both a nofly zone due to the space elevator and subjected to high winds. Accessing the tunnels is easier but a Navigation Test (30 minute timeframe) is required for the characters to find their way up into the building.\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="15" ystart="21" xend="343" yend="66" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>Stage 2: David’s Apartment</textstring>
+	</textbody>
+	</text>
+	</slide>
+	
+	<slide id="9" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="526" ystart="480" xend="604" yend="525" layer="22" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="8" italic="false" bold="true" underlined="false"><textstring>BACK</textstring>
+	</textbody>
+	</text>
+	<text xstart="394" ystart="9" xend="717" yend="488" layer="5" starttime="0" font="Calibri" fontcolor="#790909" fontsize="10"><textbody italic="false" bold="true" underlined="false"><textstring>2) Windows\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="false" underlined="false"><textstring>These floor to ceiling windows are made of one-way smart-glass to preserve the occupants privacy and can be set to any opacity to create the optimum light level in the room. They are currently set to full transparency. Because they protect from the martian atmosphere the windows are very difficult to break (30 armor, 150 DUR, 30 WT).\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>3) Coat Closet\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="false" underlined="false"><textstring>This room holds coats and a couple pairs of shoes. There is an empty shoe box here that serves as a clue.\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>4) Kitchen\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="false" underlined="false"><textstring>This small kitchen has a moderate quality maker built into a wall, a refrigerator, an oven, a sink, and many cabinets. Everything is white and very clean.\nWhen it is not cleaning David's servitor bot resides here. The bot was in the kitchen when David left and did not see him leave. If the servitor bot sees the characters and doesn't recognize them, it will attempt to alert David and, when that fails, it will alert security.\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>5) Living Room\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="false" underlined="false"><textstring>The living room contains white couches and a low glass table with stainless steel legs. The table has a holographic projector built into it with circuit traces visibly running through the glass. The projector is set to only be accessible by David, but it can be hacked using InfoSec. Additionally, there is pill bottle hidden in the right rear table leg.\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>6) Living Room\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="false" underlined="false"><textstring>This room is mostly open with a small white bed designed to fold up into the wall in one corner. The bed currently down and freshly made.\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>7) Living Room\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="false" underlined="false"><textstring>This closet contains a dresser filled with clothes. On the dresser are four mannequin heads, three of which are wearing wigs: a very long blonde, a short black, and a brown wig that matches David's usual hair. The fourth mannequin head is bare.\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>8) Living Room\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="false" underlined="false"><textstring>This is a small room containing a toilet, a cabinet with a sink, a mirror, a tub/shower, and a towel rack. There are adhesives and solvents for use with wigs and a first aid kit in the cabinet.\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>9) Laundry Room\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="false" underlined="false"><textstring>Off of the bathroom is a small room that contains a combination washer/dryer and a hamper.\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="22" ystart="11" xend="354" yend="146" layer="2" starttime="0" font="Calibri" fontcolor="#790909" fontsize="10"><textbody italic="false" bold="true" underlined="false"><textstring>1) Entrance\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="false" underlined="false"><textstring>The door to the apartment acts as an interior airlock door (15 armor, 100 DUR, 25 WT) and is secured with an electronic lock that accepts a wireless code. The door is set to open from the inside without needing the code.\nThe lock will attempt to alert security through a hard-wired connection if it detects tampering. The characters can also hack the lock, it is considered actively defended with an effective InfoSec of 60. If the lock detects an intruder it will attempt to alert both David and security. If the lock is successfully hacked its logs can be checked.</textstring>
+	</textbody>
+	</text>
+	<image urlname="Src\XMLBits\APARTMENT.png" xstart="5" ystart="162" width="380" height="372" layer="1" starttime="0"/>
+	</slide>
+	
+	<slide id="10" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="15" ystart="372" xend="343" yend="519" layer="13" starttime="0" font="Calibri" fontcolor="#000000" fontsize="12"><textbody italic="false" bold="true" underlined="false"><textstring>Analysing the Clues\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>The Door Lock\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>The door lock contains records of when it was opened. It does not have an entry between when David arrived at 14:34 Simha 19 and when security arrived at 14:00 Simha 20. However, anyone examining the records can make an Interfacing Test to notice that they have been altered. An exceptional success also reveals that the records were edited around 17:00 on Simha 19.\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="486" ystart="480" xend="603" yend="525" layer="11" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="11" italic="false" bold="true" underlined="false"><textstring>CONTINUE</textstring>
+	</textbody>
+	</text>
+	<text xstart="372" ystart="4" xend="700" yend="497" layer="6" starttime="0" font="Calibri" fontcolor="#000000" fontsize="12"><textbody italic="false" bold="true" underlined="false"><textstring>The Holographic Projector\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>The projector built into the living room table is set so only David can access it, but can be hacked using InfoSec (it's not actively defended) with a +10 modifier.\nOnce hacked, the projector's memory can be accessed with an Interfacing Test. The projector was last used several days before David disappeared and the last thing it was set to display was an attractive female morph in tight clothing wearing a pair specs built as cyberpunk goggles. These goggles are distinctive enough that they can used to help image recognition software find David leaving the building.\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>The Shoe Box\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Examining the empty shoe box found in the coat closet reveals a manufactures code. A Research Test with a 1 minute timeframe will link that code to a pair of lace up boots. An Investigation Test will then reveal that, because the soles on these boots are so different from what David usually wears, they will prevent gait analysis software from finding him. An Interfacing Test with a 5 minute timeframe can then be made to adjust gait matching software to compensate for the boots, allowing it to find David leaving the building.\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>The Hair\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Checking all the people with shoulder length red hair that are leaving the building may be enough to find David.\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>The Pill Bottle\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>The pill bottle hidden inside the leg of the living room table has no label and is mostly empty: it contains only two small green tablets with black smiley faces on them. These pills are a mix of Drive and Juice, commonly called Happy Thoughts. They are not infected and the characters can identify them in several different ways\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="14" ystart="111" xend="342" yend="377" layer="4" starttime="0" font="Calibri" fontcolor="#790909" fontsize="12"><textbody italic="true" bold="false" underlined="false"><textstring>- Searching for hidden compartments or concealed items: has a -20 modifier and a 30 minute timeframe. Success reveals that there are hidden compartments in the metal legs of the living room table where parts of the hologram projector are located. Checking the right rear table leg reveals a small orange plastic pill bottle that contains two green pills.\n- Searching for anything out of place or missing: has no modifier and a 10 minute timeframe. Success reveals that there is a plain, empty shoe box in the coat closet that has a strong new shoe smell and is too large to match any of the shoes present.\n- Searching for clues as to what was on the fourth mannequin head: has a -20 modifier and a 10 minute timeframe. Success reveals a single shoulder length synthetic red hair trapped in the hinge of the closet door that has escaped the servitor bots vacuuming.\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="14" ystart="9" xend="342" yend="117" layer="1" starttime="0" font="Calibri" fontcolor="#000000" fontsize="12"><textbody italic="false" bold="true" underlined="false"><textstring>Searching the Apartment\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>The characters will probably want to make sure the apartment is clear of intruders and hazards before searching it.\nSearching the apartment after it has been cleared is a Scrounging Test with a modifier and timeframe based on what the characters are looking for:\n</textstring>
+	</textbody>
+	</text>
+	</slide>
+	
+	<slide id="11" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="371" ystart="60" xend="699" yend="361" layer="8" starttime="0" font="Calibri" fontcolor="#790909" fontsize="12"><textbody italic="false" bold="false" underlined="false"><textstring>- A level 2 g-rep favor (30 minute timeframe) will reveal that the best place to get anything to do with Drive is from one of the dealers affiliated with the Shui Fong triad which has been flooding the market recently. The character's source will also reveal that it is usually the dealer who compounds the two drugs and, while many dealers use green pills with smiley faces for Happy Thoughts, the exact composition varies with dealer.\n- If the characters have the exact chemical composition of the pills, a level 3 g-rep favor (one hour timeframe) will track the pills to a seller operating out of The Thousand Candles brothel in HLS. This might alert Julia (her Networking: Criminals skill is 65) that someone is looking for her.\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="372" ystart="9" xend="700" yend="71" layer="5" starttime="0" font="Calibri" fontcolor="#000000" fontsize="12"><textbody italic="false" bold="true" underlined="false"><textstring>Locating the Source of the Pills\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Once they have identified the pills the characters can attempt to determine where they came from:\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="14" ystart="9" xend="342" yend="525" layer="3" starttime="0" font="Calibri" fontcolor="#790909" fontsize="12"><textbody italic="false" bold="false" underlined="false"><textstring>- Using an appropriate knowledge skill (such as Interest: Black Market Drugs, Interest: Drug Dealers, or Interest: Drug Dens).\n- Downloading and then analyzing (a 5 minute Research Test) a catalog of all the registered pill shapes and markings will reveal that these pills were not mass produced by a legitimate pharmaceutical company.\n- Using a mobile lab or chem sniffers (or enhanced sense: smell if the pill is ground up and a small amount inhaled) can identify the pills as a mix of Drive and Juice with a successful Academics: Chemistry Test (5 minute time frame).\n- A Research Test (1 minute) can be used to find an unused lab on one of the research floors where the pills can be identified with a successful Academics: Chemistry Test (5 minute time frame). Treat the lab as an immobile version of a mobile lab, with built in software acting as either Academics: Chemistry 40 or giving a +20 bonus to Academics: Chemistry Tests.\n- A level 2 favour (30 minute timeframe) can be used to find a discrete individual capable of analysing the pills. If this is done on the university campus using r-rep, the networking test receives a +10 bonus due the availability of people with the appropriate training.\n- A level 2 g-rep favour (30 minute timeframe) can be used to identify the pills by their colour, shape, and markings as most likely a mix of Drive and Juice known as Happy Thoughts.\n- A character with medichines can ingest the pills and have the medichines determine what they are with an Interfacing Test.</textstring>
+	</textbody>
+	</text>
+	<text xstart="486" ystart="474" xend="603" yend="519" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="12" italic="false" bold="true" underlined="false"><textstring>CONTINUE</textstring>
+	</textbody>
+	</text>
+	</slide>
+	
+	<slide id="12" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="490" ystart="395" xend="598" yend="440" layer="20" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="13" italic="false" bold="true" underlined="false"><textstring>HLS MAP</textstring>
+	</textbody>
+	</text>
+	<text xstart="486" ystart="457" xend="603" yend="502" layer="18" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="13" italic="false" bold="true" underlined="false"><textstring>CONTINUE</textstring>
+	</textbody>
+	</text>
+	<text xstart="490" ystart="72" xend="700" yend="248" layer="15" starttime="0" font="Calibri" fontcolor="#790909" fontsize="11"><textbody italic="false" bold="true" underlined="false"><textstring>ENCOUNTER\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="false" underlined="false"><textstring>Roll twice more\nBelligerent OIA Officer\nInquisitive OIA Officer\nPickpocket\nSomeone who mistakes a character for a sex-worker\nGawking tourist\nCon artist trying to scam credits\nReligious fanatic\nShady Vendor\nViolence\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="434" ystart="71" xend="491" yend="247" layer="12" starttime="0" font="Calibri" fontcolor="#790909" fontsize="11"><textbody italic="false" bold="true" underlined="false"><textstring>Roll\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="false" underlined="false"><textstring>0\n1\n2\n3\n4\n\n5\n6\n7\n8\n9\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="372" ystart="4" xend="700" yend="72" layer="9" starttime="0" font="Calibri" fontcolor="#790909" fontsize="11"><textbody italic="false" bold="true" underlined="false"><textstring>RANDOM ENCOUNTERS\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="false" underlined="false"><textstring>As the characters travel from one part of HLS to another, they have a chance of having a random encounter: roll 1d10 and consult below:\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="15" ystart="231" xend="343" yend="529" layer="7" starttime="0" font="Calibri" fontcolor="#790909" fontsize="12"><textbody italic="true" bold="false" underlined="false"><textstring>- Vendor pleasure pods: These pods work at the booths and carts located throughout the souk. When interacting with these workers, a successful Protocol Test will reveal that the characters need to purchase something before the workers will talk to them. After that the pods will be willing to help the characters out, provided there isn't a line.\n- Window pleasure pods: These pods stand in the windows of brothels as living advertisements and they often have nothing to do other than pose and watch the people on the street. The characters will have to enter the brothel to talk to them as almost all the brothels block external mesh access and the pods will want to be compensated for their time.\n- OIA Officers: The OIA equips its officers with mnemonic augmentation, though it often 'malfunctions‘ whenever the officer misbehaves. If the characters are willing to risk weapon scans, probing questions, beatings, and arrests, they can ask the officers if they have seen David. Be sure to give the characters a Protocol Test to avoid any slip ups when dealing with the OIA officers.</textstring>
+	</textbody>
+	</text>
+	<text xstart="15" ystart="26" xend="343" yend="247" layer="3" starttime="0" font="Calibri" fontcolor="#000000" fontsize="12"><textbody italic="true" bold="false" underlined="false"><textstring>There are no publicly available video spimes on HLS, so the characters will have to get creative when tracking David. Two of the possible techniques they might employ are talking to people on the street and attempting to find his dealer\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Talking to People on the Street\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>The characters can talk to the people on the street to see if they saw David. Since the HLS is fairly large the characters may have to talk to multiple people to find out where David went. The best people to talk to are those that have mnemonic augmentation or eidetic memory, have a good view of the street, were likely on the street on the day in question, and are willing to talk to the characters. An Investigation Test will reveal this to the characters. Some of the people who meet the criteria are:\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="15" ystart="4" xend="343" yend="49" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>Stage 2: HLS</textstring>
+	</textbody>
+	</text>
+	</slide>
+	
+	<slide id="13" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="394" ystart="11" xend="716" yend="488" layer="7" starttime="0" font="Calibri" fontcolor="#790909" fontsize="11"><textbody italic="false" bold="false" underlined="false"><textstring>HLS is named because it is a souk located on a shortcut between a black (hei se) line train station and a blue (lan se) line station. People figured out that if you got off at one station and hiked to the other you could save about an half an hour in transit time and a couple of credits in transfer fees. Why they didn't connect the two lines when they were building them is one of life's many unanswerable questions. The large amount of foot traffic attracted business and HLS was born. \nMany of the business here are owned by legitimate branches of the triads, but those looking for less than legal entertainment need to check out the places that seem to have no connection to organized crime. The legitimate branches are called 'legitimate' for a reason.\nIn the secret war between the two triads the Big Circle Gang has traditionally held the upper hand in Olympus. That is starting to change as the Shui Fong is dumping a staggering amount of Drive onto the market, collapsing the price and cutting deep into the Big Circle Gangs smuggling profits. Despite the rivalry between the two triads, HLS sees very little violence. Partly this is due to the triads being unwilling to risk their profits with overt actions, but mostly it is due to the large number of OIA Police officers who patrol here. Easily recognized by their black and safety yellow uniforms, the OIA officers make sure that souk remains profitable and safe.\nPeople don't like their vices exposed to the public (well most people don't like their vices exposed), and so there is very little surveillance spime coverage in HLS. This no surveillance policy is enforced by a fleet of stealthed bughunter drones that randomly sweep through the streets. No one knows who actually owns the drones but the smart money is on one or both of the triads, though some suspect Datacide or even Anarchists. As one bughunter can destroy tens of thousands worth of surveillance spimes in a couple of hours, and there are at least fifty of the buggers loose in the district, everyone has pretty much given up replacing the destroyed spimes: it simply isn't economical.</textstring>
+	</textbody>
+	</text>
+	<image urlname="Src\XMLBits\HLS.png" xstart="0" ystart="214" width="394" height="328" layer="6" starttime="0"/>
+	<text xstart="526" ystart="480" xend="604" yend="525" layer="4" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="12" italic="false" bold="true" underlined="false"><textstring>BACK</textstring>
+	</textbody>
+	</text>
+	<text xstart="22" ystart="11" xend="367" yend="174" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="11"><textbody italic="false" bold="true" underlined="false"><textstring>1) HLS: Overview\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="false" underlined="false"><textstring>Located between Janks-Yao and Deshengmen (about 30 minutes from the Knox Building or an hour if using public transportation), HLS is the centre of Vice in Olympus. Here the Shui Fong and the Big Circle Gang battle each other for control of the Olympus Underworld. Physically, HLS is six domes linked together by walkways. Permanent storefronts line the edges of the domes and walkways while more transient enterprises crowd the centres. There is no vehicle access here: the walkways are much too cluttered with shops and foot traffic to get anything through at more than a snails pace. During the day the domes let in some weak sunlight, but at night orange-red streetlights bounce off the red facades of the storefronts and combine with the omnipresent red neon signs to create a diffuse red glow.\n</textstring>
+	</textbody>
+	</text>
+	</slide>
+	
+	<slide id="14" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="486" ystart="457" xend="603" yend="502" layer="10" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="15" italic="false" bold="true" underlined="false"><textstring>CONTINUE</textstring>
+	</textbody>
+	</text>
+	<text xstart="372" ystart="191" xend="700" yend="270" layer="8" starttime="0" font="Calibri" fontcolor="#000000" fontsize="12"><textbody italic="true" bold="false" underlined="false"><textstring>If the characters know the exact composition of the drugs David uses, they can instead spend a level 3 g-rep favour (1 hour timeframe) and be directed directly to The Thousand Candles.</textstring>
+	</textbody>
+	</text>
+	<text xstart="372" ystart="9" xend="700" yend="185" layer="6" starttime="0" font="Calibri" fontcolor="#790909" fontsize="12"><textbody italic="true" bold="false" underlined="false"><textstring>- 5) Vorhaul: A strip club with pretensions, Vorhaul uses lights, hologram projectors, music, and exotic morphs to create an 'artistic' experience. The club’s owner, Steel Adam, also sells drugs, both legal and illegal, to 'enhance' the experience.\n- 6) Wen Tsu Apothecary: Wen Tsu runs this small stand that sells 'Traditional Chinese Medicine'. Of course by 'Traditional Chinese Medicine' Wen Tsu means illegal drugs.\n- 7) John King: John King is one of the rare dedicated street dealers. He has a network of couriers and lookouts that has, so far, allowed him to avoid arrest by the OIA police.\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="14" ystart="185" xend="342" yend="480" layer="4" starttime="0" font="Calibri" fontcolor="#790909" fontsize="12"><textbody italic="true" bold="false" underlined="false"><textstring>- 1) Mechanist: a unique brothel that caters to people looking for the unusual. It consists of sterile, empty or nearly empty white rooms and all of its workers are synthmorphs with partial masking. One of the workers, UNIT 420, sells drugs, which he keeps in hidden compartments in his morph, on the side.\n- 2) The Thousand Candles: a catholic church themed brothel. Among its attractions are naughty catholic school girls and nuns. The dealer here, Julia, is the one who sold to David.\n- 3) Intimate Enhancements: Feeling small? Intimate enhancements offers a wide range of body modification services. The staff are all well endowed splicers in fetish nurse outfits, some of whom will also 'write prescriptions'.\n- 4) Wrasslar: offers nude wrestling in a large fighting pit. The pit can be filled with mud, Slip, jello, etc. to make the matches more exciting. Wrasslar also offers private wrestling sessions or exhibitionists can wrestle in the public ring. Several patrons here deal to other customers, mostly combat drugs (Bring It is especially popular), but some also have other types of drugs.\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="14" ystart="9" xend="342" yend="185" layer="1" starttime="0" font="Calibri" fontcolor="#000000" fontsize="12"><textbody italic="false" bold="true" underlined="false"><textstring>Tracking the Drugs\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>The characters can call in g-rep favors to find out who is dealing what in HLS. Drive is everywhere right now thanks to the Shui Fong, but only certain dealers deal Happy Thoughts.\nUnless the characters keep their networking tests quiet, looking for specific sources of Happy Thoughts in HLS might alert Julia that someone is looking for her (she has a Networking: Criminals skill of 65).\nSearching for all the people dealing in Happy Thoughts in HLS is a level 2 g-rep favor (30 minute timeframe). Success results in seven sources being mentioned:</textstring>
+	</textbody>
+	</text>
+	</slide>
+	
+	<slide id="15" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="434" ystart="451" xend="672" yend="496" layer="20" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="16" italic="false" bold="true" underlined="false"><textstring>THOUSAND CANDLES MAP</textstring>
+	</textbody>
+	</text>
+	<text xstart="486" ystart="485" xend="603" yend="530" layer="18" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="13" italic="false" bold="true" underlined="false"><textstring>CONTINUE</textstring>
+	</textbody>
+	</text>
+	<text xstart="371" ystart="304" xend="699" yend="474" layer="16" starttime="0" font="Calibri" fontcolor="#000000" fontsize="12"><textbody italic="true" bold="false" underlined="false"><textstring>David was in privacy mode and payed in cryptocred so Sammy doesn't know either his real name or his alias. If provided with a description, Sammy can check her memory to find that a person matching David's description did indeed visit yesterday at 18:24. He is a regular and he asked for Julia as usual. Sammy does not have a record of him leaving, but she was busy with customers for most of the afternoon and might have missed him. She can supply the characters with XP of his visit if they ask.</textstring>
+	</textbody>
+	</text>
+	<text xstart="372" ystart="162" xend="700" yend="304" layer="14" starttime="0" font="Calibri" fontcolor="#790909" fontsize="12"><textbody italic="true" bold="false" underlined="false"><textstring>- Deception or Persuasion can be used, but both suffer a -20 penalty since tattling on a customer is potentially bad for business.\n- Protocol can be used to bribe Sammy. This will cost 250 crypto-cred.\n- Intimidation will cause Sammy to have Chen and Nelson throw the characters out unless a critical success is scored. The characters may make a Protocol Test to realize this before attempting intimidation.</textstring>
+	</textbody>
+	</text>
+	<text xstart="372" ystart="4" xend="700" yend="174" layer="7" starttime="0" font="Calibri" fontcolor="#000000" fontsize="12"><textbody italic="false" bold="true" underlined="false"><textstring>Asking Sammy About the Drugs\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>A Protocol Test is required to broach the subject of illegal drugs with Sammy. On a success she will obliquely reply that Julia Juggs is one of their most popular girls and the characters are sure to have a good time with her. Sammy does not know the details of Julia's business.\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Asking Sammy About David\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Sammy does not wish to lose business by divulging information about a client. Getting her to check her memory to see if David visited will require a successful social skills test:\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="15" ystart="26" xend="343" yend="525" layer="3" starttime="0" font="Calibri" fontcolor="#000000" fontsize="12"><textbody italic="true" bold="false" underlined="false"><textstring>The Thousand Candles is a brothel with a catholic church theme. One of the workers here, Ju Lin (who goes by the alias 'Julia Juggs'), also deals illegal drugs supplied by the Shui Fong. The Thousand Candles was David's source of Happy Thoughts and he came here every couple of weeks to resupply.\nSynthmorphs, non-human pods, uplifts, and especially neotenics are not welcome in The Thousand Candles. A Protocol Test will reveal this before the characters enter the establishment.\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Reception\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>When the characters enter the brothel, a Perception Test reveals two worker-pods (Chen and Nelson)dressed as priests lounging inside an interior door to the storage room. If the characters include unwelcome morphs or attempt to cause trouble, Chen and Nelson will come out and politely ask them to leave. If the characters refuse, they will stop being polite and attempt to throw them out, wirelessly alerting the OIA police if they think it is necessary.\nAfter a few moments a pleasure pod going by Sammy Surprise will come out of the living area to greet the characters.\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Talking to Sammy\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Sammy is acting as the receptionist for the brothel. She is dressed in a slightly askew fetish nuns habit and carrying a wooden yardstick. Sammy will welcome the character to The Thousand Candles and ask them if they are here for the afternoon/evening 'service‘ or perhaps they would like to receive 'communion‘ or maybe a 'confessional'. She will straighten her habit while she talks, attempting to bring attention to her body, while her muse will send the characters a file with the brothels services and rates.\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="15" ystart="4" xend="343" yend="49" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>Stage 2: The Thousand Candles</textstring>
+	</textbody>
+	</text>
+	</slide>
+	
+	<slide id="16" duration="60" descriptor="" lastSlide="true" backgroundcolor="#BFBFBF"><image urlname="Src\XMLBits\THOUSANDC.png" xstart="1" ystart="157" width="580" height="374" layer="6" starttime="0"/>
+	<text xstart="600" ystart="480" xend="678" yend="525" layer="4" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="15" italic="false" bold="true" underlined="false"><textstring>BACK</textstring>
+	</textbody>
+	</text>
+	<text xstart="22" ystart="11" xend="706" yend="151" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="11"><textbody italic="false" bold="true" underlined="false"><textstring>1) The Thousand Candles\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="false" underlined="false"><textstring>The Thousand Candles was originally part of a christian church built into the side of a dome that would eventually become part of HLS. During the Fall most of the church's congregation was forcefully relocated to the Amazonis Planitia (now the Titan Quarantine Zone) and the church's priests and staff followed them. As the vice industry began to pick up in HLS, the church was sold and partitioned into three businesses: the storage wing was turned into a morph shop called the Doll House, the kitchen area became Kim's Thai Kitchen, and the rest became The Thousand Candles brothel.\nThe church had no vestibule and the brothel's entrance leads directly into the nave. The brothel still has the church's original furnishings and alter, though the genuine wooden crucifix from Earth has been sold. The church is illuminated by lights hidden behind stained glass windows and by hologram projectors that give the illusion of flame to the thousands of candles that cover every convenient surface.\nTwo small wings branch off from the nave: one is where the workers entertain their clients and the other contains the prostitutes living quarters.\nLike most brothels, The Thousand Candles is shielded from mesh signals so only its internal mesh can be accessed by customers, though the staff can access the external mesh through an encrypted Router.\n</textstring>
 	</textbody>
 	</text>
 	</slide>
