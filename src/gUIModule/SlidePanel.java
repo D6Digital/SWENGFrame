@@ -78,7 +78,7 @@ public class SlidePanel extends JPanel{
 	ArrayList<slideMediaObject> mediaObjects;
 	
 	EmbeddedAudioPlayer audioPlayer;
-	VideoPlayer videoPlayer;
+	
 
 	private String vlcLibraryPath = "resources/lib/vlc-2.1.3";
 	
@@ -274,6 +274,9 @@ public class SlidePanel extends JPanel{
 	 */
 	public void clearSlide(){
 		mediaObjects.clear();
+		if(layeredPane != null){
+			layeredPane.removeAll();
+		}
 		this.removeAll();
 		setCount(0);
 	
@@ -282,16 +285,19 @@ public class SlidePanel extends JPanel{
 	
 	public void refreshSlide(Slide newSlide){
 		this.theTimer.stop();
+		for(Component component: layeredPane.getComponents()){
+			if(component instanceof VideoPlayer){
+				VideoPlayer videoPlayer = (VideoPlayer) component;
+					videoPlayer.stopMedia();
+			}
+		}
         clearSlide();
         this.setupSlide(newSlide);
 		if(audioPlayer != null)
 		{
 			this.audioPlayer.stopMedia();
 		}
-		if(videoPlayer != null)
-		{
-			this.videoPlayer.stopMedia();
-		}
+		
 
 		//this.repaint();
 		
@@ -478,21 +484,11 @@ public class SlidePanel extends JPanel{
 	 * @param video
 	 */
 	private void addVideo(Video video){
-		
+		VideoPlayer videoPlayer;
 		if(scalingFactorX!= 1 || scalingFactorY != 1)
 		{
-			Video scaledVideo = new Video();
-			scaledVideo.setHeight((int) (video.getHeight()*scalingFactorX));
-			scaledVideo.setWidth((int) (video.getWidth()*scalingFactorY));
-			scaledVideo.setFile(video.getFile());
-			scaledVideo.setStart(video.getStart());
-			scaledVideo.setLooping(video.isLooping());
-			scaledVideo.setPlaytime(video.getPlaytime());
-			scaledVideo.setDuration(video.getDuration());
-			scaledVideo.setX_coord((int) (video.getX_coord()*scalingFactorX));
-			scaledVideo.setY_coord((int) (video.getY_coord()*scalingFactorX));
-			
-			videoPlayer = new VideoPlayer(scaledVideo,videoListener);
+			videoPlayer = new VideoPlayer(video,videoListener);
+			videoPlayer.resizeVideo(scalingFactorX, scalingFactorY);
 		}
 		else
 		{
@@ -500,9 +496,7 @@ public class SlidePanel extends JPanel{
 		}
 		
 		
-        //this.add(videoPlayer);
         layeredPane.add(videoPlayer,video.getLayer());
-       // this.repaint();
 	}
 	
 	
@@ -671,16 +665,13 @@ public class SlidePanel extends JPanel{
 				}
 			}
        }
-       for(Video video: currentSlide.getVideoList()) {
-    	   if(video.getPlaytime() <= count)
-			{
-    		   for(Component component: layeredPane.getComponents())
-				if(component instanceof VideoPlayer){
-					VideoPlayer videoPlayer = (VideoPlayer) component;
-					videoPlayer.resizeVideo(scalingFactorX,scalingFactorY);
-				}
+		for(Component component: layeredPane.getComponents()){
+			if(component instanceof VideoPlayer){
+				VideoPlayer videoPlayer = (VideoPlayer) component;
+				videoPlayer.resizeVideo(scalingFactorX,scalingFactorY);
 			}
-       }
+		}
+       
        this.getParent().getParent().repaint();
        theTimer.start();
        

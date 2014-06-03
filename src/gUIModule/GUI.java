@@ -896,7 +896,7 @@ public void bookMainPanelSetUp(){
 	            public void mouseClicked(MouseEvent e) {
 	            	frame.requestFocusInWindow();
 	            	if(contentsPanel.getPageListShowing()==true){
-	                if(e.getClickCount() == 2) {            
+	                if(e.getClickCount() == 1) {            
 	                    slidePanel.refreshSlide(slideList.getSlideList().get(contentsList.getSelectedIndex()));
 	                    contentsList.clearSelection();  
 	                }
