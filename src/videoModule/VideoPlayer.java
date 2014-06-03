@@ -12,6 +12,10 @@ import uk.co.caprica.vlcj.player.embedded.videosurface.CanvasVideoSurface;
 
 import java.awt.Canvas;
 import java.awt.Color;
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -20,6 +24,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JSlider;
+import javax.swing.Timer;
 
 import presentation.Video;
 import uk.co.caprica.vlcj.runtime.RuntimeUtil;
@@ -54,6 +59,9 @@ public class VideoPlayer extends JPanel{
 
 
 	private Canvas canvas;
+
+
+	private Timer controlPanelTimer;
 	 
 
 	public VideoPlayer(Video video, MouseAdapter videoListener) {
@@ -116,6 +124,16 @@ public class VideoPlayer extends JPanel{
 	    ControlPanel.setBackground(Color.black);
 	    ControlPanel.setOpaque(true);
 	    
+	    ActionListener taskPerformer =	new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				ControlPanel.setVisible(false);
+				 
+			}};
+		controlPanelTimer = new Timer(2500,taskPerformer);
+		controlPanelTimer.setInitialDelay(2500);
+		controlPanelTimer.setRepeats(false);
+	    
 	    // disables default VLCJ action listeners
 	    mediaPlayer.setEnableMouseInputHandling(false);
 	    mediaPlayer.setEnableKeyInputHandling(false);
@@ -146,6 +164,7 @@ public class VideoPlayer extends JPanel{
 		 	       mediaPlayer.pause();
 		 	       ControlPanel.setPlayButton();
 		 	       add(overlayPanel);	
+		 	       startTimer();
 		 	       //repaint();
 		    	}
 		    	else{
@@ -201,14 +220,16 @@ public class VideoPlayer extends JPanel{
 	    ControlPanel.addMouseListener(new java.awt.event.MouseAdapter() {   
 	    	@Override
 	    	public void mouseExited(java.awt.event.MouseEvent evt) {        
-	    		ControlPanel.setVisible(false);  
+	    		ControlPanel.setVisible(false); 
+	    		startTimer();
 	    		}
 	    	});
         
         ControlPanel.addMouseListener(new java.awt.event.MouseAdapter() {   
             @Override
             public void mouseEntered(java.awt.event.MouseEvent evt) {        
-                ControlPanel.setVisible(true);  
+                ControlPanel.setVisible(true); 
+                startTimer();
                 }
             });
 	      
@@ -220,6 +241,7 @@ public class VideoPlayer extends JPanel{
 		    	vidpanel.setVisible(true);
 		    	mediaPlayer.play();	
 		    	ControlPanel.setPauseButton();
+		    	startTimer();
 		    	repaint();
 		    	}	    	
 	    	});
@@ -245,6 +267,14 @@ public class VideoPlayer extends JPanel{
 		canvas.setBounds(0, 0, (int) (width*scalingFactorX), (int) (height*scalingFactorY));
 		overlayPanel.setBounds(0, 0, (int) (width*scalingFactorX), (int) (height*scalingFactorY));
 		this.repaint();
+		
+	}
+
+	public void startTimer() {
+		if(controlPanelTimer.isRunning()){
+			controlPanelTimer.stop();
+		}
+		controlPanelTimer.start();
 		
 	}
 	

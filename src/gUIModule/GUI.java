@@ -593,6 +593,7 @@ private void setupVideoListener() {
 	    		//int xCoordinate = e1.getX();
 	    		int yCoordinate = e1.getY();
 	    		
+	    		videoPlayer.startTimer();
 	    		if(!videoPlayer.isPlaying())
 	    		{
 	    			videoPlayer.ControlPanel.setVisible(true);
