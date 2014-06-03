@@ -57,11 +57,17 @@ public class BookList {
 		
 	}
 
+	/**
+	 * @return the array of books
+	 */
 	public ArrayList<Book> getList() {
 		// TODO Auto-generated method stub
 		return books;
 	}
 	
+	/**
+	 * Clears the array of books
+	 */
 	public void clearBooks() {
 		books.clear();
 	}
