@@ -21,9 +21,9 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import main.Overall;
 import musicPlayerModule.StandAloneMusicPlayer;
 
-import src.Overall;
 
 import gUIModule.GUI;
 

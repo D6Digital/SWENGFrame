@@ -9,9 +9,9 @@ import bookModule.*;
 import graphicsModule.*;
 import gUIModule.*;
 import imageModule.*;
+import main.*;
 import musicPlayerModule.*;
 import presentation.*;
-import src.*;
 import textModule.*;
 import videoModule.*;
 

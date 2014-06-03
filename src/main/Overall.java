@@ -1,7 +1,7 @@
 /**
  * 
  */
-package src;
+package main;
 
 import gUIModule.GUI;
 import gUIModule.Player;

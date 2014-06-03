@@ -51,6 +51,7 @@ import javax.swing.text.html.HTML;
 import bookModule.Book;
 import bookModule.BookXMLParser;
 
+import main.Overall;
 import musicPlayerModule.StandAloneMusicPlayer;
 import presentation.Collection;
 import presentation.Point;
@@ -61,7 +62,6 @@ import presentation.Text;
 import presentation.Video;
 import presentation.XMLParser;
 import presentation.slideMediaObject;
-import src.Overall;
 import videoModule.VideoPlayer;
 import gUIModule.UtilitiesPanel;
 import gUIModule.DicePanel;
@@ -443,16 +443,29 @@ private void setupTextListener() {
 							Integer chapterBranch = (Integer) a.getAttribute(HTML.Attribute.TARGET);;
 							if (chapterBranch != null && chapterBranch != -1){
 								// change chapter and branch
-								slideList = collection.get(chapterBranch);
-			            		slidePanel.loadPresentation(slideList);
-			            		slidePanel.refreshSlide(slideList.getSlideList().get(branch));
-			            		contentsPanel.refreshContents(slideList.getSlideList());
+								if (chapterBranch > collection.getPresentationList().size() || chapterBranch < 0)
+								{
+									System.out.println("chapter branch: " + chapterBranch + " is out of range for this book");
+								}
+								else{
+									slideList = collection.get(chapterBranch);
+				            		slidePanel.loadPresentation(slideList);
+				            		slidePanel.refreshSlide(slideList.getSlideList().get(branch));
+				            		contentsPanel.refreshContents(slideList.getSlideList());
+								}
 							}
 							else
 							{
 								if (branch != null && branch != -1){
-								slidePanel.refreshSlide(slideList.get(branch));
-								//branch to slide specified by the object
+									if (branch > slideList.getSlideList().size() || branch < 0)
+									{
+										System.out.println("chapter branch: " + chapterBranch + " is out of range for this book");
+									}
+									else{
+									//branch to slide specified by the object
+									slidePanel.refreshSlide(slideList.get(branch));
+									}
+								
 								}
 							}
 						}
@@ -517,18 +530,30 @@ private void setupObjectListener() {
 							Integer branch = eventSource.getBranch();
 							Integer chapterBranch = eventSource.getChapterBranch();
 							if (chapterBranch != null && chapterBranch != -1){
-								// change chapter and branch
-								slideList = collection.get(chapterBranch);
-			            		slidePanel.loadPresentation(slideList);
-			            		slidePanel.refreshSlide(slideList.getSlideList().get(branch));
-			            		contentsPanel.refreshContents(slideList.getSlideList());
+								if (chapterBranch > collection.getPresentationList().size() || chapterBranch < 0)
+								{
+									System.out.println("chapter branch: " + chapterBranch + " is out of range for this book");
+								}
+								else{
+									// change chapter and branch
+									slideList = collection.get(chapterBranch);
+				            		slidePanel.loadPresentation(slideList);
+				            		slidePanel.refreshSlide(slideList.getSlideList().get(branch));
+				            		contentsPanel.refreshContents(slideList.getSlideList());
+								}
 			            		
 							}
 							else
 							{
 								if (branch != null && branch != -1){
-								slidePanel.refreshSlide(slideList.get(branch));
-								//branch to slide specified by the object
+									if (branch > slideList.getSlideList().size() || branch < 0)
+									{
+										System.out.println("chapter branch: " + chapterBranch + " is out of range for this book");
+									}
+									else{
+									slidePanel.refreshSlide(slideList.get(branch));
+									//branch to slide specified by the object
+									}
 								}
 							}
 						}
@@ -724,11 +749,38 @@ public void bookMainPanelSetUp(){
 		nextSlideButton.setVisible(false);
 		nextSlideButton.addMouseMotionListener(genericListener);
 		
+		Boolean AlreadyExists = true;
+		try{
+			if(slidePanel.getParent() != layers)
+			{
+				AlreadyExists = false;
+			}
+		}
+		catch(NullPointerException e){
+			AlreadyExists = false;
+		}
 		
+		
+		if(AlreadyExists)
+		{
+			layers.remove(slidePanel);
+		}
 		slidePanel = new SlidePanel();
 		
-		//set up utilities
 		
+		AlreadyExists = true;
+		try{
+			utilities.getParent();
+			
+		}
+		catch(NullPointerException e){
+			AlreadyExists = false;
+		}
+		//set up utilities
+		if(AlreadyExists)
+		{
+			layers.remove(utilities);
+		}
         utilities = new UtilitiesPanel(utilitiesWidth, width, height,genericListener);
         utilitiesWidth = utilities.getWidth();
 		utilities.setLocation(width-utilitiesWidth, 0);
@@ -778,8 +830,18 @@ public void bookMainPanelSetUp(){
 		}
 		
 		
-
-
+		AlreadyExists = true;
+		try{
+			contentsPanel.getParent();
+			
+		}
+		catch(NullPointerException e){
+			AlreadyExists = false;
+		}
+		if(AlreadyExists)
+		{
+			layers.remove(contentsPanel);
+		}
 		// TODO: CHANGES MADE HERE BY JOSHUA LANT, NO ACTUAL TODO, JUST REFERENCE POINT
 		//set up contents
 		//ArrayList<Book> bookList = mainMenuPanel.getBookList();
@@ -812,6 +874,7 @@ public void bookMainPanelSetUp(){
 						mainMenuPanel.setVisible(true);
 					}
 				});
+		
 		
 		final JList contentsList = contentsPanel.getContentsList();
 		contentsPanel.getContentsList().addMouseMotionListener(genericListener);
