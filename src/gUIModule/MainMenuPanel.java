@@ -1,6 +1,7 @@
 package gUIModule;
 
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
@@ -16,6 +17,7 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
 
+import javax.imageio.IIOException;
 import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
 import javax.swing.DefaultListModel;
@@ -92,8 +94,9 @@ public class MainMenuPanel extends JPanel{
 			Image scaledBackground = backgroundImage.getScaledInstance(width,height,java.awt.Image.SCALE_SMOOTH);
 			background = new JLabel(new ImageIcon(scaledBackground));
 			background.setBounds(0, 0, width, height);
-		}catch(IOException e2){
-			e2.printStackTrace();
+		}catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		
 		//logo
@@ -154,18 +157,25 @@ public class MainMenuPanel extends JPanel{
 
 		
 		//adding	
-		add(imageLabel);
-		add(bookScroll);
-		add(systemScroll);
-		add(bookLabel);
-		add(systemLabel);
-		add(openShopButton);
-		add(openBookButton);
-		add(descriptionTitle);
-		add(description);
-		add(logoLabel);
-		add(background);
+		checkAndAdd(imageLabel);
+		checkAndAdd(bookScroll);
+		checkAndAdd(systemScroll);
+		checkAndAdd(bookLabel);
+		checkAndAdd(systemLabel);
+		checkAndAdd(openShopButton);
+		checkAndAdd(openBookButton);
+		checkAndAdd(descriptionTitle);
+		checkAndAdd(description);
+		checkAndAdd(logoLabel);
+		checkAndAdd(background);
 		//add(layers);
+	}
+	
+	private void checkAndAdd(Component component){
+		if(component != null)
+		{
+			add(component);
+		}
 	}
 
 	private void setUpScrollPanes() {
@@ -182,7 +192,7 @@ public class MainMenuPanel extends JPanel{
 				//Cycle through all slides in the contents list and creates a JButton for each 
 				
 
-				
+				systemScroll.setBackground(Color.WHITE);
 				systemScroll.setViewportView(systemList);
 				systemScroll.setBounds(110, 200, 200, 300);
 				systemList.setFont(new Font("Papyrus", Font.PLAIN, 14));
@@ -197,7 +207,7 @@ public class MainMenuPanel extends JPanel{
 
 				
 				//Cycle through all slides in the contents list and creates a JButton for each 
-				
+				bookScroll.setBackground(Color.WHITE);
 				bookScroll.setViewportView(bookList);
 				bookScroll.setBounds(330, 200, 200, 300);
 				bookList.setFont(new Font("Papyrus", Font.PLAIN, 14));

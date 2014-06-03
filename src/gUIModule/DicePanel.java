@@ -79,7 +79,7 @@ public class DicePanel extends JPanel implements ActionListener{
 		diceType.setBounds(
 		        (int) (panelWidth*0.025),
 		        (int) (panelWidth*0.025),
-		        (int) (panelWidth*0.15),
+		        (int) (panelWidth*0.2),
 		        (int) (panelHeight*0.05));
 		diceType.setActionCommand("diceTypeSelected");
 		diceType.addActionListener(this);
@@ -94,7 +94,7 @@ public class DicePanel extends JPanel implements ActionListener{
 		diceQuantity.setBounds(
 		        (int) (panelWidth*0.025), 
 		        (int) (panelWidth*0.025) + (int) (panelHeight*0.05) + (int) (panelWidth*0.03),
-		        (int) (panelWidth*0.15),
+		        (int) (panelWidth*0.2),
 		        (int) (panelHeight*0.05));
 		diceQuantity.setActionCommand("diceQuantitySelected");
 		diceQuantity.addActionListener(this);
@@ -104,9 +104,9 @@ public class DicePanel extends JPanel implements ActionListener{
 		//adds a radioButton for enabling dual dice type rolling
 		multiDice = new JRadioButton("<html>Enable MultiDice</html>");
 		multiDice.setBounds(              
-		        (int) (panelWidth*0.025) + (int) (panelWidth*0.13) + (int) (panelWidth*0.02), 
+		        (int) (panelWidth*0.025) + (int) (panelWidth*0.18) + (int) (panelWidth*0.02), 
                 (int) (panelWidth*0.025) + (int) (panelWidth*0.02), 
-                (int) (panelWidth*0.3),
+                (int) (panelWidth*0.25),
                 (int) (panelHeight*0.1));
 		multiDice.setActionCommand("multiDiceClicked");
 		multiDice.addActionListener(this);
@@ -123,7 +123,7 @@ public class DicePanel extends JPanel implements ActionListener{
 		secondDiceType.setBounds(
 		        (int) (panelWidth*0.025) + (int) (panelWidth*0.13) + (int) (panelWidth*0.3) + (int) (panelWidth*0.025), 
                 (int) (panelWidth*0.025),
-                (int) (panelWidth*0.15),
+                (int) (panelWidth*0.2),
                 (int) (panelHeight*0.05));
 		secondDiceType.setActionCommand("secondDiceTypeSelected");
 		secondDiceType.addActionListener(this);
@@ -140,7 +140,7 @@ public class DicePanel extends JPanel implements ActionListener{
 		secondDiceQuantity.setBounds(
                 (int) (panelWidth*0.025) + (int) (panelWidth*0.13) + (int) (panelWidth*0.3) + (int) (panelWidth*0.025), 
                 (int) (panelWidth*0.025) + (int) (panelHeight*0.05) + (int) (panelWidth*0.03),
-                (int) (panelWidth*0.15),
+                (int) (panelWidth*0.2),
                 (int) (panelHeight*0.05));
 		secondDiceQuantity.setActionCommand("secondDiceQuantitySelected");
 		secondDiceQuantity.addActionListener(this);
@@ -154,9 +154,9 @@ public class DicePanel extends JPanel implements ActionListener{
 		rollButton.setHorizontalTextPosition(AbstractButton.CENTER);
 		rollButton.setAlignmentX(Component.CENTER_ALIGNMENT);
 		rollButton.setBounds(
-                (int) (panelWidth*0.025) + (int) (2*panelWidth*0.13) + (int) (panelWidth*0.3) + (int) (2*panelWidth*0.025), 
+                (int) (panelWidth*0.025) + (int) (2*panelWidth*0.18) + (int) (panelWidth*0.3) + (int) (2*panelWidth*0.025), 
                 (int) (panelWidth*0.025) + (int) (panelHeight*0.04),
-                (int) (panelWidth*0.3),
+                (int) (panelWidth*0.25),
                 (int) (panelHeight*0.05));
 		rollButton.setActionCommand("roll");
 		rollButton.addActionListener(this);

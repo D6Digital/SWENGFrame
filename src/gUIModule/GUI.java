@@ -351,6 +351,8 @@ public class GUI extends JFrame implements ComponentListener, KeyListener{
 	public class tabTimer extends TimerTask{
 		
 		public void run(){
+			nextSlideButton.setVisible(false);
+			previousSlideButton.setVisible(false);
 			utilitiesTab.setVisible(false);
 			contentsTab.setVisible(false);
 			nextTab.setVisible(false);
@@ -637,8 +639,7 @@ public void bookMainPanelSetUp(){
 		scaleFactorX = (double)(getSize().width-(insets.left+insets.right))/(double)720;
 		scaleFactorY = (double)(getSize().height-(insets.top-insets.bottom))/(double)540;
 
-		this.setSize(new Dimension(getWidth(),
-				getHeight()));
+		
 		
 		bookPane = getContentPane();
 		bookPane.setBounds(0, 0, width, height);
@@ -947,8 +948,7 @@ public void bookMainPanelSetUp(){
 		bookPane.setVisible(true);
 		this.repaint();
 		this.setVisible(true);
-		this.setSize(new Dimension(width+insets.left+insets.right,
-				height+ insets.top+insets.bottom));
+		resizeMainPanel();
 		
 
 
@@ -1052,7 +1052,7 @@ private void borderListenerProcess(MouseEvent e1,Boolean isObject,Boolean isText
 			contentsShowing=false;
 		}
 	}
-	if((xCoordinate>(slideWidth)/2)&(yCoordinate>(slideHeight-borderSize))){
+	if((xCoordinate>(slideWidth)/2)&(yCoordinate>(slideHeight-(borderSize*3)))){
 		if(utilitiesShowing==false){
 			nextSlideButton.setVisible(true);
 			nextButtonShowing=true;
@@ -1068,7 +1068,7 @@ private void borderListenerProcess(MouseEvent e1,Boolean isObject,Boolean isText
 			nextButtonShowing=false;
 		}
 	}
-	if((xCoordinate<(slideWidth)/2)&(yCoordinate>(slideHeight-borderSize))){
+	if((xCoordinate<(slideWidth)/2)&(yCoordinate>(slideHeight-(borderSize*3)))){
 		if(contentsShowing==false){
 			previousSlideButton.setVisible(true);
 			previousButtonShowing=true;
@@ -1116,6 +1116,7 @@ private void resizeMainMenu() {
 }
 
 private void resizeMainPanel() {
+	
 	
 	scaleFactorX = (double)(getSize().width-insets.left-insets.right)/(double)720;
 	scaleFactorY = (double)(getSize().height-insets.top-insets.bottom)/(double)540;
