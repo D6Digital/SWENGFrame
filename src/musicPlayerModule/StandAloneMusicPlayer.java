@@ -108,6 +108,9 @@ public class StandAloneMusicPlayer {
     
     boolean initialLockedValue = true;
     
+    int fontSize = 20;
+    int buttonOffset = 72;
+    
     //private boolean playlistLocked = true;
     
     String playImage = "resources/buttons/play.png";
@@ -448,6 +451,7 @@ public class StandAloneMusicPlayer {
     public JPanel getFullControlPanel(int widthOfPanel, int heightOfSlide) {
     	this.widthOfPanel=widthOfPanel;
         fullPanel.setLayout(null);
+        fullPanel.setBackground(new Color(15526830));
         fullPanel.setBounds(3,0,widthOfPanel,heightOfSlide);
         fullPanel.add(getLockPlaylistButton(widthOfPanel, heightOfSlide));
         fullPanel.add(getPlayButton(widthOfPanel, heightOfSlide));
@@ -485,9 +489,10 @@ public class StandAloneMusicPlayer {
 
     private JLabel getVolumeLabel(int widthOfPanel, int heightOfSlide) {
         JLabel label = new JLabel("Volume");
+        label.setFont(new Font("Papyrus", Font.BOLD, fontSize));
         label.setLayout(null);
         label.setBounds(
-                (int) (widthOfPanel*0.385) + 20,
+                (int) (widthOfPanel*0.385) + 30,
                 (int) (heightOfSlide*0.025*5) + heightOfLockIcon + heightOfPlayButton,
                 (int) (widthOfPanel*0.3),
                 (int) (heightOfSlide*0.075));
@@ -498,7 +503,7 @@ public class StandAloneMusicPlayer {
     private JButton getLockPlaylistButton(int widthOfPanel, int heightOfSlide) {
         areWeUnlocked = false;
         JButton button = new JButton();
-        setUpButtonImage(button, unlockImage, 100, 50);
+        setUpButtonImage(button, unlockImage, 150, 60);
         button.setBorderPainted(false); 
         button.setContentAreaFilled(false); 
         button.setFocusPainted(false); 
@@ -513,8 +518,8 @@ public class StandAloneMusicPlayer {
         button.setBounds(
                 (int) (widthOfPanel/2) - (int) button.getIcon().getIconWidth()/2,
                 (int) (heightOfSlide*0.025),
-                100,
-                50);
+                button.getIcon().getIconWidth(),
+                button.getIcon().getIconHeight());
         setupListenerAndAction(button, "lockplaylist");
         heightOfLockIcon = 50;
         return button;      
@@ -522,6 +527,7 @@ public class StandAloneMusicPlayer {
 
     private JLabel getTimeLabel(int widthOfPanel, int heightOfSlide) {
         timeLabel.setText(this.getCurrentPosition() + "/" + this.getTrackLength());
+        timeLabel.setFont(new Font("Papyrus", Font.BOLD, fontSize));
 //        timeLabel.setBounds(
 //                (int) (widthOfPanel*0.4),
 //                (int) (heightOfSlide*0.025*7) + heightOfLockIcon + heightOfPlayButton*2  +  (int) (heightOfSlide*0.2),
@@ -562,7 +568,7 @@ public class StandAloneMusicPlayer {
         button.setFocusPainted(false); 
         button.setOpaque(false);
         button.setBounds(
-                (int) (widthOfPanel*0.048) + widthOfPlayButton*2 + 25,
+                (int) (widthOfPanel*0.048) + widthOfPlayButton*2 + buttonOffset*2,
                 (int) (heightOfSlide*0.038) + heightOfLockIcon,
                 stop.getIconWidth(),
                 stop.getIconHeight());
@@ -584,7 +590,7 @@ public class StandAloneMusicPlayer {
         button.setFocusPainted(false); 
         button.setOpaque(false);
         button.setBounds(
-                (int) (widthOfPanel*0.025*2) + widthOfPlayButton + 25,
+                (int) (widthOfPanel*0.025*2) + widthOfPlayButton + buttonOffset,
                 (int) (heightOfSlide*0.025*2) + heightOfLockIcon,
                 pause.getIconWidth(),
                 pause.getIconHeight());
@@ -637,11 +643,10 @@ public class StandAloneMusicPlayer {
 //                next.getIconHeight()
 //               );
         button.setBounds(
-                (int) (widthOfPanel*0.025)  + (int) (next.getIconWidth()*4.5) + 25,
+                (int) (widthOfPanel*0.025)  + (int) (next.getIconWidth()*4.5) + buttonOffset*4,
                 (int) (heightOfSlide*0.025*2) + heightOfLockIcon,
                 next.getIconWidth(),
                 next.getIconHeight());
-        setupListenerAndAction(button, "play");  
         widthOfPlayButton = next.getIconWidth();
         heightOfPlayButton = next.getIconHeight();  
         
@@ -669,16 +674,14 @@ public class StandAloneMusicPlayer {
 //                previous.getIconHeight()
 //               );
         button.setBounds(
-                (int) (widthOfPanel*0.025)  + (int) (previous.getIconWidth()*3.5) + 25,
+                (int) (widthOfPanel*0.025)  + (int) (previous.getIconWidth()*3.5) + buttonOffset*3,
                 (int) (heightOfSlide*0.025*2) + heightOfLockIcon,
                 previous.getIconWidth(),
                 previous.getIconHeight());
-        setupListenerAndAction(button, "play");  
-        setupListenerAndAction(button, "play");  
         widthOfPlayButton = previous.getIconWidth();
         heightOfPlayButton = previous.getIconHeight();  
         
-        setupListenerAndAction(button, "next");      
+        setupListenerAndAction(button, "previous");      
         return button;        
     }
 
@@ -695,7 +698,7 @@ public class StandAloneMusicPlayer {
                 ((int) (heightOfSlide*0.025*2)) + heightOfLockIcon + heightOfPlayButton,
                 (int) (widthOfPanel*0.95),
                 (int) (heightOfSlide*0.1));
-        
+        slider.setOpaque(false);
         slider.setMinimum(0);
         slider.setMaximum(100);
         slider.setValue(100);
@@ -719,6 +722,7 @@ public class StandAloneMusicPlayer {
                 (int) (heightOfSlide*0.025*7) + heightOfLockIcon + heightOfPlayButton,
                 (int) (widthOfPanel*0.95),
                 (int) (heightOfSlide*0.1));
+        timeSlider.setOpaque(false);
         timeSlider.setMinimum(0);
         timeSlider.setMaximum(1000);
         setupListenerAndAction(timeSlider, "time");
@@ -817,11 +821,11 @@ public class StandAloneMusicPlayer {
      */
     private void lockedAndPreventingPlayerUse(JButton button, boolean trueOrFalse) {
         if(!areWeUnlocked) {
-            setUpButtonImage(button, lockImage, 100, 50);
+            setUpButtonImage(button, lockImage, 150, 60);
             areWeUnlocked = true;
         }
         else if(areWeUnlocked) {
-            setUpButtonImage(button, unlockImage, 100, 50);
+            setUpButtonImage(button, unlockImage, 150, 60);
             areWeUnlocked = false;
         }
         mediaPlayer.stop();
@@ -900,6 +904,7 @@ public class StandAloneMusicPlayer {
                 (int) (heightOfSlide*0.025*14) + heightOfLockIcon + heightOfPlayButton + playlistIconHeight,
                 (int) (widthOfPanel*0.95),
                 (int) (heightOfSlide*0.2));
+        scrollPanel.setOpaque(false);
         //playContentsJList.setLayout(null);
         //playContentsJList.setBounds(0, 0, 200, 200);
         //scrollPane.setLayout(null);
@@ -907,10 +912,14 @@ public class StandAloneMusicPlayer {
         scrollPane.setBounds(0, 0, (int) (widthOfPanel*0.95),
                 (int) (heightOfSlide*0.2));
         
+        scrollPane.setFont(new Font("Papyrus", Font.BOLD, fontSize));
+        scrollPane.getVerticalScrollBar().setPreferredSize(new Dimension(40,0));
+        
         scrollPanel.add(scrollPane);
         
         
         // Add listener which plays a piece of media whenever the user chooses it in the JList.
+        playContentsJList.setFont(new Font("Papyrus", Font.BOLD, fontSize));
         playContentsJList.addMouseMotionListener(genericMouseMotionListener);
         playContentsJList.addMouseListener(new MouseListener() {
 

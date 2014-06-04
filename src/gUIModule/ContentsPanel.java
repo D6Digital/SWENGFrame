@@ -1,6 +1,7 @@
 package gUIModule;
 
 import java.awt.Component;
+import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
@@ -22,6 +23,7 @@ import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.plaf.ScrollPaneUI;
 
 import bookModule.Book;
 
@@ -183,6 +185,8 @@ public class ContentsPanel extends JPanel implements ActionListener{
 		contentsList.setFont(new Font("Papyrus", Font.PLAIN, fontSize));
 		listModel.clear();
 		contentsList.removeAll();
+		contents.getVerticalScrollBar().setPreferredSize(new Dimension(40, 0));
+		contents.getHorizontalScrollBar().setPreferredSize(new Dimension(0, 40));
 
 		
 		//Cycle through all slides in the contents list and creates a JButton for each 

@@ -50,8 +50,8 @@ public class FileChooser extends JPanel implements ActionListener {
         JFileChooser fc;
         int panelWidth;
         int panelHeight;
-        int buttonWidth = 100;
-        int buttonHeight = 50;
+        int buttonWidth = 150;
+        int buttonHeight = 60;
         
            public FileChooser(String initialisedFilePath) {
                 super.setLayout(null);
