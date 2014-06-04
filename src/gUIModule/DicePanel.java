@@ -222,6 +222,8 @@ public class DicePanel extends JPanel implements ActionListener{
 		
 		//adds a JTextArea for display of results of a single type of dice rolling
 		firstResultOutput = new JTextArea();
+		firstResultOutput.setLineWrap(true);
+		firstResultOutput.setWrapStyleWord(true);
 		firstResultOutput.setFont(new Font("Papyrus", Font.BOLD, fontSize));
 		firstResultOutput.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
 		firstResultOutput.setBounds(
@@ -236,6 +238,8 @@ public class DicePanel extends JPanel implements ActionListener{
 		//adds a JTextArea for display of results of rolling an addition dice type
 		//if multiDice is enabled
 		secondResultOutput = new JTextArea();
+		secondResultOutput.setLineWrap(true);
+		secondResultOutput.setWrapStyleWord(true);
 		secondResultOutput.setFont(new Font("Papyrus", Font.BOLD, fontSize));
 		secondResultOutput.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
 		secondResultOutput.setBounds(

@@ -137,6 +137,8 @@ public class MainMenuPanel extends JPanel{
 		description.setEditable(false);
 		description.setBounds(110, 40, width-300, 100);
 		description.setFont(new Font("Papyrus", Font.PLAIN, (int) (fontSize*0.9)));
+		description.setLineWrap(true);
+		description.setWrapStyleWord(true);
 		description.setText("Welcome to the Grimoire interactive rulebook! Please choose a "+ "\n"+ "system and then a book. We hope you enjoy your journey!"+ "\n"+ ""+ "\n"+ "Much Love, D6 Digital");
 		description.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
 		
