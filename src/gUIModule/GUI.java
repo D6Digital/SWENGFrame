@@ -259,7 +259,7 @@ public class GUI extends JFrame implements ComponentListener, KeyListener{
 						frame.requestFocusInWindow();
 						layers.setVisible(true);
 						String chosenBook = mainMenuPanel.getChosenBook();
-						XMLParser parser = new XMLParser(chosenBook);	
+						XMLParser parser = new XMLParser(chosenBook);
 						collection = parser.getCollection();
 						slideList = collection.get(0);
 			            System.out.println("book = "+chosenBook);
@@ -444,30 +444,40 @@ private void setupTextListener() {
 							Integer branch = (Integer) a.getAttribute(HTML.Attribute.LINK);
 							Integer chapterBranch = (Integer) a.getAttribute(HTML.Attribute.TARGET);;
 							if (chapterBranch != null && chapterBranch != -1){
-								// change chapter and branch
-								if (chapterBranch > collection.getPresentationList().size() || chapterBranch < 0)
+								if (chapterBranch > (collection.getPresentationList().size()-1) || chapterBranch < 0)
 								{
-									System.out.println("chapter branch: " + chapterBranch + " is out of range for this book");
+									System.out.println("chapter branch: " + (chapterBranch+1) + " is out of range for this book");
 								}
 								else{
-									slideList = collection.get(chapterBranch);
-				            		slidePanel.loadPresentation(slideList);
-				            		slidePanel.refreshSlide(slideList.getSlideList().get(branch));
-				            		contentsPanel.refreshContents(slideList.getSlideList());
+									// change chapter and branch
+									
+									if (branch > (collection.get(chapterBranch).getSlideList().size()-1) || branch < 0)
+									{
+										System.out.println("page branch: " + (branch+1) + " is out of range for this chapter");
+										
+									}
+									else{
+										slideList = collection.get(chapterBranch);
+										slidePanel.loadPresentation(slideList);
+										slidePanel.refreshSlide(slideList.getSlideList().get(branch));
+										contentsPanel.refreshContents(slideList.getSlideList());
+									//branch to slide specified by the object
+									}
+				            		
 								}
+			            		
 							}
 							else
 							{
 								if (branch != null && branch != -1){
-									if (branch > slideList.getSlideList().size() || branch < 0)
+									if (branch > (slideList.getSlideList().size()-1) || branch < 0)
 									{
-										System.out.println("chapter branch: " + chapterBranch + " is out of range for this book");
+										System.out.println("page branch: " + (branch+1) + " is out of range for this chapter");
 									}
 									else{
-									//branch to slide specified by the object
 									slidePanel.refreshSlide(slideList.get(branch));
+									//branch to slide specified by the object
 									}
-								
 								}
 							}
 						}
@@ -532,25 +542,35 @@ private void setupObjectListener() {
 							Integer branch = eventSource.getBranch();
 							Integer chapterBranch = eventSource.getChapterBranch();
 							if (chapterBranch != null && chapterBranch != -1){
-								if (chapterBranch > collection.getPresentationList().size() || chapterBranch < 0)
+								if (chapterBranch > (collection.getPresentationList().size()-1) || chapterBranch < 0)
 								{
-									System.out.println("chapter branch: " + chapterBranch + " is out of range for this book");
+									System.out.println("chapter branch: " + (chapterBranch+1) + " is out of range for this book");
 								}
 								else{
 									// change chapter and branch
-									slideList = collection.get(chapterBranch);
-				            		slidePanel.loadPresentation(slideList);
-				            		slidePanel.refreshSlide(slideList.getSlideList().get(branch));
-				            		contentsPanel.refreshContents(slideList.getSlideList());
+									
+									if (branch > (collection.get(chapterBranch).getSlideList().size()-1) || branch < 0)
+									{
+										System.out.println("page branch: " + (branch+1) + " is out of range for this chapter");
+										
+									}
+									else{
+										slideList = collection.get(chapterBranch);
+										slidePanel.loadPresentation(slideList);
+										slidePanel.refreshSlide(slideList.getSlideList().get(branch));
+										contentsPanel.refreshContents(slideList.getSlideList());
+									//branch to slide specified by the object
+									}
+				            		
 								}
 			            		
 							}
 							else
 							{
 								if (branch != null && branch != -1){
-									if (branch > slideList.getSlideList().size() || branch < 0)
+									if (branch > (slideList.getSlideList().size()-1) || branch < 0)
 									{
-										System.out.println("chapter branch: " + chapterBranch + " is out of range for this book");
+										System.out.println("page branch: " + (branch+1) + " is out of range for this chapter");
 									}
 									else{
 									slidePanel.refreshSlide(slideList.get(branch));

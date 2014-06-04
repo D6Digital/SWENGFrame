@@ -108,6 +108,11 @@ public class XMLParser extends DefaultHandler{
 		return presentation;
 	}
 	public Collection getCollection(){
+		if(collection == null){
+			collection = new Collection();
+			collection.add(presentation);
+			presentation = null;
+		}
 		return collection;
 	}
 
