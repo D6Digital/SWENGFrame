@@ -4209,7 +4209,10 @@
 	</text>
 	</slide>
 	
-	<slide id="5" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="486" ystart="485" xend="603" yend="530" layer="9" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="6" italic="false" bold="true" underlined="false"><textstring>CONTINUE</textstring>
+	<slide id="5" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="469" ystart="451" xend="632" yend="496" layer="11" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>PROXY 21’S STATS</textstring>
+	</textbody>
+	</text>
+	<text xstart="486" ystart="485" xend="603" yend="530" layer="9" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="6" italic="false" bold="true" underlined="false"><textstring>CONTINUE</textstring>
 	</textbody>
 	</text>
 	<text xstart="371" ystart="179" xend="699" yend="474" layer="7" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>The person speaking is a Firewall router codenamed Proxy 21. She is using a MARG feature that allows quests to be tailored to specific groups of players (usually those in a particular heaven or hell) to speak only to the characters, the other game players present will receive a different quests. The characters may ask her questions securely over the mesh. When the they are done talking to her the virtual beam of light fades, causing the hill, the tree, and the man to disappear.\nThe gifts are electronically transmitted to the characters and are fake ego IDs which identify the characters as students at the University of Chicago's satellite campus in the Knox Building. The IDs all currently have r-rep 10, c-rep 5, 50 credits, and 50 crypto cred.</textstring>
@@ -4249,10 +4252,13 @@
 	</text>
 	</slide>
 	
-	<slide id="7" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="486" ystart="485" xend="603" yend="530" layer="9" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="8" italic="false" bold="true" underlined="false"><textstring>CONTINUE</textstring>
+	<slide id="7" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="428" ystart="451" xend="666" yend="496" layer="11" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>MARIE DANIELSON’S STATS</textstring>
 	</textbody>
 	</text>
-	<text xstart="378" ystart="208" xend="706" yend="497" layer="6" starttime="0" font="Calibri" fontcolor="#790909" fontsize="11"><textbody italic="false" bold="true" underlined="false"><textstring>GETTING A CLUE\n</textstring>
+	<text xstart="486" ystart="485" xend="603" yend="530" layer="9" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="8" italic="false" bold="true" underlined="false"><textstring>CONTINUE</textstring>
+	</textbody>
+	</text>
+	<text xstart="378" ystart="208" xend="706" yend="440" layer="6" starttime="0" font="Calibri" fontcolor="#790909" fontsize="11"><textbody italic="false" bold="true" underlined="false"><textstring>GETTING A CLUE\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="false" underlined="false"><textstring>Here are some suggestions for dealing with common problems that can occur during the investigative portion of the adventure:\n- If the players have absolutely no idea what to do let the characters make an idea roll to come up with a broad course of action such as checking David's social profile or visiting his apartment.\n- If the players are unable to put the clues they already have together let the characters make an Investigation Test.\n- If the players have forgotten a clue they have already found, give the characters a roll to remember it.\n- If the characters skills are to low to find a vital clue they can use taking the time, complementary skills, and teamwork  to increase their positive modifiers and moxie to cancel any negative modifiers. Additionally, the character's muses have their own skills which may be used to make the required tests.\n</textstring>
 	</textbody>
@@ -4267,13 +4273,19 @@
 	</text>
 	</slide>
 	
-	<slide id="8" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="462" ystart="395" xend="638" yend="440" layer="12" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="9" italic="false" bold="true" underlined="false"><textstring>APARTMENT MAP</textstring>
+	<slide id="8" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="400" ystart="406" xend="666" yend="451" layer="16" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>DAVID’S SERVITOR BOT’S STATS</textstring>
 	</textbody>
 	</text>
-	<text xstart="486" ystart="463" xend="603" yend="508" layer="10" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="10" italic="false" bold="true" underlined="false"><textstring>CONTINUE</textstring>
+	<text xstart="388" ystart="361" xend="687" yend="406" layer="14" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>KNOX BUILDING SECURITY’S STATS</textstring>
 	</textbody>
 	</text>
-	<text xstart="366" ystart="9" xend="694" yend="278" layer="7" starttime="0" font="Calibri" fontcolor="#000000" fontsize="12"><textbody italic="false" bold="true" underlined="false"><textstring>Apartment Map Key\n</textstring>
+	<text xstart="456" ystart="315" xend="632" yend="360" layer="12" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="9" italic="false" bold="true" underlined="false"><textstring>APARTMENT MAP</textstring>
+	</textbody>
+	</text>
+	<text xstart="486" ystart="451" xend="603" yend="496" layer="10" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="10" italic="false" bold="true" underlined="false"><textstring>CONTINUE</textstring>
+	</textbody>
+	</text>
+	<text xstart="366" ystart="9" xend="694" yend="290" layer="7" starttime="0" font="Calibri" fontcolor="#000000" fontsize="12"><textbody italic="false" bold="true" underlined="false"><textstring>Apartment Map Key\n</textstring>
 	</textbody>
 	<textbody italic="true" bold="false" underlined="false"><textstring>David's small apartment is decorated in a minimalistic style and has a stark white color scheme broken up with splashes of stainless steel and glass. It is spotlessly clean thanks to David's servitor bot. \nThere are no surveillance spimes in the apartment, though there are spimes to detect the air temperature, light levels, humidity, atmospheric composition, pressure, and the like. These spimes are private, though they will public report certain dangerous conditions such as loss of air pressure.\nThere are surveillance spimes outside the apartment's entrance, including video spimes. These spimes are currently actively monitored by a security AI since David has been reported missing. These spimes may be hacked (the security AI is merely monitoring the spimes and does not count as an active defender) but destroying or disabling them will cause the AI to dispatch security officers to the apartment.</textstring>
 	</textbody>
@@ -4387,10 +4399,13 @@
 	</text>
 	</slide>
 	
-	<slide id="12" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="490" ystart="395" xend="598" yend="440" layer="20" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="13" italic="false" bold="true" underlined="false"><textstring>HLS MAP</textstring>
+	<slide id="12" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="434" ystart="412" xend="661" yend="457" layer="22" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>OIA FOOT PATROL OFFICER</textstring>
 	</textbody>
 	</text>
-	<text xstart="486" ystart="457" xend="603" yend="502" layer="18" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="13" italic="false" bold="true" underlined="false"><textstring>CONTINUE</textstring>
+	<text xstart="490" ystart="366" xend="598" yend="411" layer="20" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="13" italic="false" bold="true" underlined="false"><textstring>HLS MAP</textstring>
+	</textbody>
+	</text>
+	<text xstart="486" ystart="457" xend="603" yend="502" layer="18" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="14" italic="false" bold="true" underlined="false"><textstring>CONTINUE</textstring>
 	</textbody>
 	</text>
 	<text xstart="490" ystart="72" xend="700" yend="248" layer="15" starttime="0" font="Calibri" fontcolor="#790909" fontsize="11"><textbody italic="false" bold="true" underlined="false"><textstring>ENCOUNTER\n</textstring>
@@ -4456,10 +4471,16 @@
 	</text>
 	</slide>
 	
-	<slide id="15" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="434" ystart="451" xend="672" yend="496" layer="20" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="16" italic="false" bold="true" underlined="false"><textstring>THOUSAND CANDLES MAP</textstring>
+	<slide id="15" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="230" ystart="485" xend="455" yend="530" layer="24" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>SAMMY SURPRISE’S STATS</textstring>
 	</textbody>
 	</text>
-	<text xstart="486" ystart="485" xend="603" yend="530" layer="18" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="13" italic="false" bold="true" underlined="false"><textstring>CONTINUE</textstring>
+	<text xstart="3" ystart="485" xend="235" yend="530" layer="22" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>CHEN AND NELSON’S STATS</textstring>
+	</textbody>
+	</text>
+	<text xstart="462" ystart="451" xend="700" yend="496" layer="20" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="16" italic="false" bold="true" underlined="false"><textstring>THOUSAND CANDLES MAP</textstring>
+	</textbody>
+	</text>
+	<text xstart="515" ystart="485" xend="632" yend="530" layer="18" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="17" italic="false" bold="true" underlined="false"><textstring>CONTINUE</textstring>
 	</textbody>
 	</text>
 	<text xstart="371" ystart="304" xend="699" yend="474" layer="16" starttime="0" font="Calibri" fontcolor="#000000" fontsize="12"><textbody italic="true" bold="false" underlined="false"><textstring>David was in privacy mode and payed in cryptocred so Sammy doesn't know either his real name or his alias. If provided with a description, Sammy can check her memory to find that a person matching David's description did indeed visit yesterday at 18:24. He is a regular and he asked for Julia as usual. Sammy does not have a record of him leaving, but she was busy with customers for most of the afternoon and might have missed him. She can supply the characters with XP of his visit if they ask.</textstring>
@@ -4477,7 +4498,7 @@
 	<textbody italic="true" bold="false" underlined="false"><textstring>Sammy does not wish to lose business by divulging information about a client. Getting her to check her memory to see if David visited will require a successful social skills test:\n</textstring>
 	</textbody>
 	</text>
-	<text xstart="15" ystart="26" xend="343" yend="525" layer="3" starttime="0" font="Calibri" fontcolor="#000000" fontsize="12"><textbody italic="true" bold="false" underlined="false"><textstring>The Thousand Candles is a brothel with a catholic church theme. One of the workers here, Ju Lin (who goes by the alias 'Julia Juggs'), also deals illegal drugs supplied by the Shui Fong. The Thousand Candles was David's source of Happy Thoughts and he came here every couple of weeks to resupply.\nSynthmorphs, non-human pods, uplifts, and especially neotenics are not welcome in The Thousand Candles. A Protocol Test will reveal this before the characters enter the establishment.\n</textstring>
+	<text xstart="15" ystart="26" xend="343" yend="485" layer="3" starttime="0" font="Calibri" fontcolor="#000000" fontsize="12"><textbody italic="true" bold="false" underlined="false"><textstring>The Thousand Candles is a brothel with a catholic church theme. One of the workers here, Ju Lin (who goes by the alias 'Julia Juggs'), also deals illegal drugs supplied by the Shui Fong. The Thousand Candles was David's source of Happy Thoughts and he came here every couple of weeks to resupply.\nSynthmorphs, non-human pods, uplifts, and especially neotenics are not welcome in The Thousand Candles. A Protocol Test will reveal this before the characters enter the establishment.\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Reception\n</textstring>
 	</textbody>
@@ -4493,13 +4514,270 @@
 	</text>
 	</slide>
 	
-	<slide id="16" duration="60" descriptor="" lastSlide="true" backgroundcolor="#BFBFBF"><image urlname="Src\XMLBits\THOUSANDC.png" xstart="1" ystart="157" width="580" height="374" layer="6" starttime="0"/>
+	<slide id="16" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><image urlname="Src\XMLBits\THOUSANDC.png" xstart="1" ystart="179" width="563" height="352" layer="6" starttime="0"/>
 	<text xstart="600" ystart="480" xend="678" yend="525" layer="4" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="15" italic="false" bold="true" underlined="false"><textstring>BACK</textstring>
 	</textbody>
 	</text>
-	<text xstart="22" ystart="11" xend="706" yend="151" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="11"><textbody italic="false" bold="true" underlined="false"><textstring>1) The Thousand Candles\n</textstring>
+	<text xstart="22" ystart="11" xend="706" yend="174" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="11"><textbody italic="false" bold="true" underlined="false"><textstring>1) The Thousand Candles\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="false" underlined="false"><textstring>The Thousand Candles was originally part of a christian church built into the side of a dome that would eventually become part of HLS. During the Fall most of the church's congregation was forcefully relocated to the Amazonis Planitia (now the Titan Quarantine Zone) and the church's priests and staff followed them. As the vice industry began to pick up in HLS, the church was sold and partitioned into three businesses: the storage wing was turned into a morph shop called the Doll House, the kitchen area became Kim's Thai Kitchen, and the rest became The Thousand Candles brothel.\nThe church had no vestibule and the brothel's entrance leads directly into the nave. The brothel still has the church's original furnishings and alter, though the genuine wooden crucifix from Earth has been sold. The church is illuminated by lights hidden behind stained glass windows and by hologram projectors that give the illusion of flame to the thousands of candles that cover every convenient surface.\nTwo small wings branch off from the nave: one is where the workers entertain their clients and the other contains the prostitutes living quarters.\nLike most brothels, The Thousand Candles is shielded from mesh signals so only its internal mesh can be accessed by customers, though the staff can access the external mesh through an encrypted Router.\n</textstring>
+	</textbody>
+	</text>
+	</slide>
+	
+	<slide id="17" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="456" ystart="400" xend="637" yend="445" layer="18" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>JULIA JUGGS’ STATS</textstring>
+	</textbody>
+	</text>
+	<text xstart="439" ystart="355" xend="660" yend="400" layer="16" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="19" italic="false" bold="true" underlined="false"><textstring>Jump to JULIA’S AMBUSH</textstring>
+	</textbody>
+	</text>
+	<text xstart="486" ystart="446" xend="603" yend="491" layer="14" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="18" italic="false" bold="true" underlined="false"><textstring>CONTINUE</textstring>
+	</textbody>
+	</text>
+	<text xstart="378" ystart="89" xend="706" yend="282" layer="12" starttime="0" font="Calibri" fontcolor="#790909" fontsize="12"><textbody italic="true" bold="false" underlined="false"><textstring>- If Julia was warned: she will assume their interest has to do with David's disappearance and attempt to lure the characters into an ambush she has set up.\n- If Julia was not warned: she will lie and tell the characters that Victor (the name she knows David by) was here, but he left after purchasing an abnormally large amount of Drive from her. She did ask him why he was buying so much and he said that he was in some sort of trouble, though he didn't elaborate, and he needed to stock up because he was going to lie low somewhere in Fuxingmen for a couple of months. Julia will not share an XP of David's visit with the characters, saying she deleted it to ensure her customers privacy.</textstring>
+	</textbody>
+	</text>
+	<text xstart="378" ystart="9" xend="706" yend="94" layer="9" starttime="0" font="Calibri" fontcolor="#000000" fontsize="12"><textbody italic="false" bold="true" underlined="false"><textstring>Asking Julia about David\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>If the characters ask about David by name, she will deny knowing him. If they ask about Victor or provide an image of him, her response will depend on if she knew someone was looking for her:\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="14" ystart="174" xend="342" yend="457" layer="6" starttime="0" font="Calibri" fontcolor="#790909" fontsize="12"><textbody italic="false" bold="true" underlined="false"><textstring>THE STASH\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="false" underlined="false"><textstring>While Julia keeps a small amount of inventory on hand for sales, the majority of her drugs are hidden within a secret, shielded compartment in her footlocker in the prostitute's dormitory. Julia has rigged up a simple trap that will cover the drugs with scrapper gel should anyone attempt to access the compartment without sending a wireless deactivation code. The trap is rather crude and characters gain a +30 bonus on Demolitions Tests to disarm it (timeframe of 1 minute).\nJulia's stash contains mostly Drive and compounds of Drive with other drugs as she expects the price to increase soon. An appropriate knowledge or networking test will reveal the total street price is about 50,000 credits. One percent of these drugs have been tainted with Chain Reaction. If the characters want to sell the drugs they will need to spend favours to unload it, hopefully while keeping quiet to avoid retaliation from the triads.</textstring>
+	</textbody>
+	</text>
+	<text xstart="15" ystart="9" xend="343" yend="179" layer="1" starttime="0" font="Calibri" fontcolor="#000000" fontsize="12"><textbody italic="false" bold="true" underlined="false"><textstring>Talking to Julia\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>A session with Julia costs 100 credits per hour plus 25 credits per additional person. Julia is currently dressed as a catholic schoolgirl and will take the characters back to the 'classroom' to perform her services.\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Asking Julia about the Drugs\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Bringing up illegal drugs with Julia requires a successful Protocol Test. Julia will be happy to sell to the characters. She has a fairly wide selection, but most of her stock is Drive (currently at trivial cost) and compounds of Drive with other drugs.\n</textstring>
+	</textbody>
+	</text>
+	</slide>
+	
+	<slide id="18" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="486" ystart="485" xend="603" yend="530" layer="9" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="19" italic="false" bold="true" underlined="false"><textstring>CONTINUE</textstring>
+	</textbody>
+	</text>
+	<text xstart="366" ystart="9" xend="694" yend="493" layer="6" starttime="0" font="Calibri" fontcolor="#000000" fontsize="12"><textbody italic="false" bold="true" underlined="false"><textstring>Tracking the Crate &amp; Truck\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="false" underlined="false"><textstring>Instead of trying track David by talking to the people in The Thousand Candles, they might try to find someone who spotted him leaving the brothel. This is useless as he was transported from one of the adjoining businesses in a crate.\nHowever, if the characters find out about the adjoining businesses and ask around for packages being sent from them, they might be able to find someone who spotted the crate containing David being taken from the Doll House by synthmorphs; after David disappeared only that crate has been large enough to transport his entire body.\nThey may then be able to track the crate and the synthmorphs out of HLS. Once outside of HLS they can track the synthmorphs using surveillance spimes to where they loaded the crate onto a Comex semiautomated delivery truck.\nOnce they have an ID on the truck the characters can attempt to track it. However, rather than have central warehouses, the advanced logistical software at the heart of Comex is able to have one delivery vehicle exchange packages with another such that all packages are rapidly and efficiently routed to their destinations without undergoing the time and expense of processing them at a central location. Thus the truck that picked up David transferred him to another truck which then delivered him to Mike's Custom Morphs and both trucks also had numerous other stops and transfers. This makes figuring out where David went by tracking the truck difficult (-30 Research Test, 1 hour time frame), though a Comex employee or contractor can do it easily as a level 3 favor.</textstring>
+	</textbody>
+	</text>
+	<text xstart="14" ystart="9" xend="342" yend="94" layer="3" starttime="0" font="Calibri" fontcolor="#000000" fontsize="12"><textbody italic="false" bold="true" underlined="false"><textstring>Getting Julia to Talk\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Julia will not talk about what really happened to David, so if the characters want to find out what she knows they will have to find an alternative way of getting the information out of her. Some options are:\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="14" ystart="89" xend="342" yend="242" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="12"><textbody italic="false" bold="false" underlined="false"><textstring>- Isolating Julia and then intimidating her into giving the characters an XP of what happened,\n- Hacking into Julia's cyberbrain to get the information from her mnemonic augmentation,\n- Killing Julia and performing a psychosurgical interrogation on her stack.</textstring>
+	</textbody>
+	</text>
+	</slide>
+	
+	<slide id="19" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="492" ystart="468" xend="609" yend="513" layer="13" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="20" italic="false" bold="true" underlined="false"><textstring>CONTINUE</textstring>
+	</textbody>
+	</text>
+	<text xstart="377" ystart="361" xend="705" yend="480" layer="10" starttime="0" font="Calibri" fontcolor="#790909" fontsize="12"><textbody italic="false" bold="true" underlined="false"><textstring>Xu Fu Chang’s\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Xu Fu Chang's was a small bar and restaurant in Janks-Yao named after its owner, an ex-gatecrasher sleeved in an xu fu morph. Located on an underground street that connected two populated domes, Xu Fu Chang's went out of business when one of the domes was abandoned due to the shrinking population and sealed off to preserve air and heat.</textstring>
+	</textbody>
+	</text>
+	<text xstart="378" ystart="4" xend="706" yend="367" layer="7" starttime="0" font="Calibri" fontcolor="#790909" fontsize="12"><textbody italic="false" bold="true" underlined="false"><textstring>JULIA'S XP\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Julia's XP is full sensory but does not have any emotional tracks. The XP begins with her in the same classroom she took the characters, lying face-up on one of the desks with her skirt pulled up and her legs spread so that David, who is standing in front of the desk, can have sexual intercourse with her. He is thrusting very hard and fast and when Julia looks at him (she is usually looking up or back) he is visibly angry. He also intermittently rants about how 'they' are all a bunch of frauds and how he will show them all once he gets the last piece of evidence from that 'rat bastard' at Xu Fu Chang's, how they will all pay once this gets out, etc.\nAfter David finishes having intercourse with her, Julia sits up on the desk and watches him put on his coat and a small messenger pack. Then David does something strange: he reaches into his messenger pack like he is taking something out, but doesn't seem to remove anything. He pantomimes unfolding something and then putting on a coat. As he does so he begins to disappear: first his right arm, then his left, then his torso, and finally his head. Once David is fully invisible, his disembodied voice says that he will see himself out, the door to the classroom opens and the XP ends.</textstring>
+	</textbody>
+	</text>
+	<text xstart="15" ystart="26" xend="343" yend="355" layer="3" starttime="0" font="Calibri" fontcolor="#000000" fontsize="12"><textbody italic="true" bold="false" underlined="false"><textstring>Forewarned of the characters coming, Julia will attempt to lure them into an ambush using a fake XP.\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>Julia’s Story\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>When Julia is warned that people are looking for her, she will assume that they are trying to find David and fabricate a story to lure them into an ambush. To sell her story, she will create a fake XP using her Interfacing skill, AR illusion software, and XP from David's previous visits. Characters checking the XP's validity must make an opposed Interfacing Test.\nJulia does not want to seem overeager and will only give her fake XP to the characters if they convince her to do so with a social skill test or by bribing her with at least 400 in crypto-cred. Julia will also obliquely tell the characters that before the XP started, she sold David drugs and, instead of his usual Happy Thoughts, he bought several doses of Alpha, Phlo, and MRDR. She won't offer them an XP of this for obvious reasons.\nIf asked about Xu Fu Chang's, Julia will take a minute to search her memories and then say that it was a nearby bar in Janks-Yao (about 10 minutes away walking) that shut down several months ago. The characters can make a simple Research Test (1 minute) once they have mesh access to confirm this.\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="15" ystart="4" xend="343" yend="49" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>Stage 5: Julia’s Ambush</textstring>
+	</textbody>
+	</text>
+	</slide>
+	
+	<slide id="20" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="122" ystart="429" xend="262" yend="474" layer="19" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>GWIN’S STATS</textstring>
+	</textbody>
+	</text>
+	<text xstart="99" ystart="383" xend="286" yend="428" layer="17" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="21" italic="false" bold="true" underlined="false"><textstring>XU FU CHANG’S MAP</textstring>
+	</textbody>
+	</text>
+	<text xstart="129" ystart="474" xend="246" yend="519" layer="15" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="22" italic="false" bold="true" underlined="false"><textstring>CONTINUE</textstring>
+	</textbody>
+	</text>
+	<text xstart="371" ystart="468" xend="699" yend="530" layer="13" starttime="0" font="Calibri" fontcolor="#000000" fontsize="12"><textbody italic="true" bold="false" underlined="false"><textstring>If Gwin is captured or interrogated he is quite willing to betray Julia, but only knows that she hired him to kill the characters.\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="371" ystart="43" xend="699" yend="466" layer="11" starttime="0" font="Calibri" fontcolor="#790909" fontsize="12"><textbody italic="true" bold="false" underlined="false"><textstring>- When Julia warns him the characters are coming Gwin will take a hit of Kick.\n- When the characters arrive they will walk right past him thanks to the invisibility cloak (he can only be seen with x-ray or radar systems and gets an opposed Infiltration Test to avoid detection).\n- Likewise the characters will walk past the grenade because of its chameleon coating (spotting it requires an x-ray or radar system and a Perception Test at -20, due to its small size).\n- Once all the characters are past, Gwin will apply a piece of anti-cloak to his eyes so he can see.\n- As the characters approach the entrance, he will activate the radio which will play a violent screaming argument, occasionally punctuated by kinetic weapon fire, between David and someone else.\n- The characters hearing the commotion (a Perception Test at -10 due to the door), will cluster around the door attempting to open it.\n- Combat will start. During the surprise phase Gwin will use one quick action to detonate the overload grenade, a second quick action to move to the corner (which counts as -20 cover), and a complex action to fire his shard pistol on full auto.\n- On his subsequent actions Gwin will continue to fire on full auto, but will use his quick actions to aim before firing.\n- Once all the characters are down, he will move in, shoot them to make sure they are dead, and cut out their stacks with his vibroblade.</textstring>
+	</textbody>
+	</text>
+	<text xstart="372" ystart="9" xend="700" yend="71" layer="8" starttime="0" font="Calibri" fontcolor="#000000" fontsize="12"><textbody italic="false" bold="true" underlined="false"><textstring>The Ambush\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>If all goes as Gwin planned, the ambush will unfold as follows:\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="14" ystart="298" xend="342" yend="372" layer="6" starttime="0" font="Calibri" fontcolor="#000000" fontsize="12"><textbody italic="true" bold="false" underlined="false"><textstring>Currently, Gwin is hunkered down behind one corner of the building about 12 meters away from the entrance and wearing a full invisibility cloak.\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="14" ystart="168" xend="342" yend="304" layer="4" starttime="0" font="Calibri" fontcolor="#790909" fontsize="12"><textbody italic="true" bold="false" underlined="false"><textstring>- He placed a sticky, chameleon-coated overload grenade set for wireless detonation on the wall at a strategic spot (so that after it goes off the characters will also have a -10 glare penalty when attacking him),\n- He put a radio and several speakers inside the building and rigged the door so it wouldn't open in order to lure the characters into a cluster in front of the doorway,\n- He planted a microbug to cover the doorway so he can see when to launch his assault.</textstring>
+	</textbody>
+	</text>
+	<text xstart="15" ystart="9" xend="343" yend="173" layer="1" starttime="0" font="Calibri" fontcolor="#000000" fontsize="12"><textbody italic="false" bold="true" underlined="false"><textstring>Xu Fu Chang’s Bar and Grill\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Xu Fu Chang's has been gutted and now consists of a single large room partially divided by some of the remaining interior walls and held up by four support pillars. The spimes inside the building were removed along with everything else. The only entrance is a single heavy interior airlock door (15 armor, 100 DUR, 25 WT) which is not covered by the streets sparse surveillance spimes.\nJulia has hired a combat-drug junky named Gwin to ambush the characters here. Gwin has prepped the area for his ambush. Specifically:\n</textstring>
+	</textbody>
+	</text>
+	</slide>
+	
+	<slide id="21" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="339" ystart="480" xend="417" yend="525" layer="2" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="20" italic="false" bold="true" underlined="false"><textstring>BACK</textstring>
+	</textbody>
+	</text>
+	<image urlname="Src\XMLBits\XUFU.png" xstart="8" ystart="9" width="703" height="465" layer="1" starttime="0"/>
+	</slide>
+	
+	<slide id="22" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="486" ystart="480" xend="603" yend="525" layer="19" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="22" italic="false" bold="true" underlined="false"><textstring>CONTINUE</textstring>
+	</textbody>
+	</text>
+	<text xstart="99" ystart="446" xend="292" yend="491" layer="17" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>SMOKE LION’S STATS</textstring>
+	</textbody>
+	</text>
+	<text xstart="71" ystart="480" xend="337" yend="525" layer="15" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="23" italic="false" bold="true" underlined="false"><textstring>MIKE’S CUSTOM MORPHS MAP</textstring>
+	</textbody>
+	</text>
+	<text xstart="14" ystart="361" xend="342" yend="452" layer="12" starttime="0" font="Calibri" fontcolor="#000000" fontsize="12"><textbody italic="false" bold="true" underlined="false"><textstring>Bombs\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>There are three unexploded bombs in Mike's: one is in the testing room, another is in the transit room, and the third is in Drive storage. These bombs are very stable and will only detonate if triggered by a primer charge.</textstring>
+	</textbody>
+	</text>
+	<text xstart="371" ystart="378" xend="699" yend="486" layer="10" starttime="0" font="Calibri" fontcolor="#000000" fontsize="12"><textbody italic="true" bold="false" underlined="false"><textstring>The Smoke Lions may be criminals, but they aren't monsters: they want to prevent the spread of Chain Reaction and find a cure for those already infected (like themselves). Thus the Smoke Lions can be reasoned with if the characters can convince them that they are not with the Shui Fong, who the Smoke Lions believe are behind the bioweapon.</textstring>
+	</textbody>
+	</text>
+	<text xstart="371" ystart="134" xend="699" yend="383" layer="8" starttime="0" font="Calibri" fontcolor="#790909" fontsize="12"><textbody italic="true" bold="false" underlined="false"><textstring>- If the characters enter through the warehouse door the two Smoke Lions on the ground floor will ambush the characters from behind the crates in the warehouse.\n- If the characters enter through the front door, they will hide past the break room until the characters start climbing down and then they will round the corner and open fire, kneeling or laying down to use the floor as cover.\n- The Smoke Lions on the second floor will set up their ambush around the mouth of the tunnel, using the doorways for cover.\n- The Smoke Lions have figured out enough about the purpose of the facility to know the basics of Chain Reaction and believe that they are likely infected with it. In reality only two of them are infected. The infected lions are not yet fully explosive but still may explode if hit. Anytime one of the infect lions takes a wound from an attack they need to make a maximum MOX x 10 Test or explode like a HE grenade (3d10+10).</textstring>
+	</textbody>
+	</text>
+	<text xstart="372" ystart="9" xend="700" yend="139" layer="5" starttime="0" font="Calibri" fontcolor="#000000" fontsize="12"><textbody italic="false" bold="true" underlined="false"><textstring>Smoke Lions\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Two of the surviving four Smoke Lions are on the street level floor while the other two watch over David and the microbiology lab. All the Lions are monitoring the external surveillance spimes and might see the characters approaching (with teamwork their Perception is 60). If they spot the characters they will set up an ambush, believing them to be members of the Shui Fong:\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="15" ystart="26" xend="343" yend="366" layer="3" starttime="0" font="Calibri" fontcolor="#000000" fontsize="12"><textbody italic="true" bold="false" underlined="false"><textstring>The characters should eventually track David to Mike's Custom Morphs, a front for the Shui Fong triad's drug distribution. Mike's is built into one of the terraced levels of a large dome in Janks-Yao (about 20 minutes by vehicle from RLS or 50 minutes by public transportation). If the characters manage to arrive at Mike's before Simha 21, they will find the building partially intact and have a chance to rescue David. If they arrive later, all they find is rubble as Chimera, the mercenary Zaizan hired, has finished the destruction of the building.\nThe dome that houses Mike's has seven terraced levels with large sections of low rent housing built into and on the terraces. Culturally, everybody strictly minds their own business and nobody sees nothing. This, and the low property values, is what attracted the triad. Because it is located in a populated area, there is significant spime coverage of the exterior of Mike's, though currently there is a hole in the coverage that obscures the warehouse entrance. The Smoke Lions created the hole as part of their attack and the locals haven't gotten around to filling it.\nInside of Mike's there is sparse spime coverage that does not include surveillance spimes, as the triad didn't want a record of their illegal activities.</textstring>
+	</textbody>
+	</text>
+	<text xstart="15" ystart="4" xend="343" yend="49" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>Stage 6: Mike’s Custom Morphs</textstring>
+	</textbody>
+	</text>
+	</slide>
+	
+	<slide id="23" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="247" ystart="480" xend="315" yend="525" layer="25" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="22" italic="false" bold="true" underlined="false"><textstring>BACK</textstring>
+	</textbody>
+	</text>
+	<text xstart="37" ystart="480" xend="207" yend="525" layer="23" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="24" italic="false" bold="true" underlined="false"><textstring>LOWER LEVEL MAP</textstring>
+	</textbody>
+	</text>
+	<image urlname="Src\XMLBits\MIKESLOW.png" xstart="0" ystart="147" width="378" height="330" layer="22" starttime="0"/>
+	<text xstart="378" ystart="9" xend="706" yend="525" layer="5" starttime="0" font="Calibri" fontcolor="#790909" fontsize="10"><textbody italic="false" bold="true" underlined="false"><textstring>2) Warehouse Door\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>This large interior airlock door (15 armor, 100 DUR, 25 WT) leads to the warehouse. It opens vertically by hand and is unlocked: the Smoke Lions permanently disabled the lock when they attacked.\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>3) Warehouse\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>This is a small warehouse area containing several old, empty metal crates that were here when the triad moved in. The three larger crates are 1.2 meters high and provide moderate cover to people standing behind them and major cover to people ducking down behind them. They have 20 armor, 50 DUR, 20 WT.\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>4) Elevator\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>This elevator moved items from the warehouse down to the lower level. It is not operational as the lower portions of both the elevator shaft and the counterweight shaft have collapsed and the cable connecting the elevator to the counterweight has detached, causing the elevator's emergency brakes to engage.\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>5) Stairs\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>These stairs down to the lower level were destroyed in the collapse and are impassable.\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>6) Offices\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>These small, abandoned offices contain old chairs, empty desks, and barren shelves. The floor has partially collapsed beneath them and some of the furnishings have slid down into the collapsed section.\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>7) Break Room\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Part of this room has slid into the collapsed area created by the self-destruction, leaving a large hole in the wall by the door. Secured to the twisted door frame is a knotted rope that hangs down into the collapsed section (the rope gives +30 bonus to Climb Tests).\nThe remaining room contains a couch, a low table, and a pantry with a non-functioning maker and a small refrigerator that is miraculously still running.\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>8) Bathroom\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>This was the employee bathroom. It was destroyed when the floor under it collapsed.\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>9) Collapsed Section\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>This section sunk down to form a large hole when the self-destruct mechanism collapsed the area under it. The sides of the hole are slabs of heavy building material that used to be the floor. The entire area is covered in loose rubble and has the occasional protruding chunk of rebar. Climbing down safely is a simple Climbing or Freerunning Test but climbing up requires a Climb Test. A tunnel has been dug through the side of one of the slabs in order to access the remains of the lower level.\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="20" ystart="9" xend="348" yend="139" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="10"><textbody italic="false" bold="true" underlined="false"><textstring>Street Level Map\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>1) Entrance\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>This door is the main entrance to the building. It is locked and there is a sign on it saying that the business is open for appointments only. \nThe door is an interior airlock door (15 armor, 100 DUR, 25 WT) secured by an e-lock. Both a card and a key-code are needed to open the lock. The lock is not wirelessly enabled and cannot be hacked using InfoSec. It also contains circuits that will disable the lock if physical tampering is detected.</textstring>
+	</textbody>
+	</text>
+	</slide>
+	
+	<slide id="24" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="235" ystart="480" xend="405" yend="525" layer="6" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="23" italic="false" bold="true" underlined="false"><textstring>STREET LEVEL MAP</textstring>
+	</textbody>
+	</text>
+	<text xstart="439" ystart="480" xend="507" yend="525" layer="4" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="22" italic="false" bold="true" underlined="false"><textstring>BACK</textstring>
+	</textbody>
+	</text>
+	<text xstart="94" ystart="480" xend="190" yend="525" layer="2" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="25" italic="false" bold="true" underlined="false"><textstring>MAP KEY</textstring>
+	</textbody>
+	</text>
+	<image urlname="Src\XMLBits\MIKESBASE.png" xstart="14" ystart="9" width="680" height="445" layer="1" starttime="0"/>
+	</slide>
+	
+	<slide id="25" duration="60" descriptor="" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="456" ystart="480" xend="632" yend="525" layer="15" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="26" italic="false" bold="true" underlined="false"><textstring>NEXT PART OF KEY</textstring>
+	</textbody>
+	</text>
+	<text xstart="269" ystart="480" xend="439" yend="525" layer="13" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="23" italic="false" bold="true" underlined="false"><textstring>LOWER LEVEL MAP</textstring>
+	</textbody>
+	</text>
+	<text xstart="378" ystart="9" xend="706" yend="298" layer="5" starttime="0" font="Calibri" fontcolor="#790909" fontsize="10"><textbody italic="false" bold="true" underlined="false"><textstring>4) Testing Room\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>There is a control console located in the northeast portion of this room. Sitting in a chair in front of the control console is a case morph that is missing most of its head. The morph has no stack but an examination of the ruined cyberbrain and a hard (-30) Hardware: Electronics or Hardware: Implants Test (5 minute timeframe) will extract a gamma fork of Dr. Murase which will know some of what was going on in the lab.\nExamining the control console will reveal that it controls everything in the blast chamber on a successful Interface Test. The control console also recorded data on the experiments conducted in the blast chamber, including the one being conducted when the Smoke Lions were killed.\nOn the north wall there is a set of shelves containing various medical and scientific instruments such as auto-injectors and syringes. There is also an unloaded, unlocked (anyone can use it) shard pistol sitting on one of the shelves.\nOn the west wall of the room there is a black box. Examining the box reveals that it is a powerful bomb. A Demolitions Test will further reveal that the bomb was activated but did not explode due to a faulty detonator.\nOn the south wall of the room are two large refrigerated cabinets with transparent fronts through which a large collection of body parts can be seen. Each body part has a small green label with a date and experiment number. All the body parts were infected but the cold has killed the pathogen.\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="20" ystart="9" xend="348" yend="332" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="10"><textbody italic="false" bold="true" underlined="false"><textstring>Lower Level Map\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>This level has partially collapsed. Despite appearances, using explosive weapons such as grenades or seekers will not trigger significant further collapse: only carefully placed demolition charges will finish the job.\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>1) Elevator Shaft\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>The elevator shaft and the counterweight shaft were both collapsed when the self-destruct went off, rendering the elevator inoperative. Without lengthy excavation it will be impossible to get through this way.\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>2) Stairs\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>These stairs up to the street level are now totally collapsed.\n</textstring>
+	</textbody>
+	<textbody italic="false" bold="true" underlined="false"><textstring>3) Blast Chamber\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>This thick-walled room is accessed by a heavy blast door that can only be opened from the outside. Inside the room is covered with blood and body tissue and contains four mangled corpses dressed in the gray and yellow colors of the Smoke Lions. All of the corpses have had their stacks popped. A successful Perception Test will also reveal several body parts that don't belong to any of the Smoke Lion corpses: the remains of the biomorph that exploded in the room.\nIn addition to the dead bodies, there is a set of high end hologram projectors behind protective panels in the ceiling and numerous spimes hardwired into the walls. These spimes can be accessed from the control panel in the testing room.\nThe fluid in this area is still slightly infectious. A biomorph or pod coming into direct contact with it must make a DUR x 2 Test or become infected with Chain Reaction (medichines give a +30 bonus).\n</textstring>
+	</textbody>
+	</text>
+	</slide>
+	
+	<slide id="26" duration="60" descriptor="" lastSlide="true" backgroundcolor="#BFBFBF"><text xstart="456" ystart="480" xend="632" yend="525" layer="9" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="26" italic="false" bold="true" underlined="false"><textstring>NEXT PART OF KEY</textstring>
+	</textbody>
+	</text>
+	<text xstart="269" ystart="480" xend="439" yend="525" layer="7" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="23" italic="false" bold="true" underlined="false"><textstring>LOWER LEVEL MAP</textstring>
+	</textbody>
+	</text>
+	<text xstart="378" ystart="9" xend="706" yend="298" layer="3" starttime="0" font="Calibri" fontcolor="#790909" fontsize="10"><textbody italic="false" bold="true" underlined="false"><textstring>4) Testing Room\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>There is a control console located in the northeast portion of this room. Sitting in a chair in front of the control console is a case morph that is missing most of its head. The morph has no stack but an examination of the ruined cyberbrain and a hard (-30) Hardware: Electronics or Hardware: Implants Test (5 minute timeframe) will extract a gamma fork of Dr. Murase which will know some of what was going on in the lab.\nExamining the control console will reveal that it controls everything in the blast chamber on a successful Interface Test. The control console also recorded data on the experiments conducted in the blast chamber, including the one being conducted when the Smoke Lions were killed.\nOn the north wall there is a set of shelves containing various medical and scientific instruments such as auto-injectors and syringes. There is also an unloaded, unlocked (anyone can use it) shard pistol sitting on one of the shelves.\nOn the west wall of the room there is a black box. Examining the box reveals that it is a powerful bomb. A Demolitions Test will further reveal that the bomb was activated but did not explode due to a faulty detonator.\nOn the south wall of the room are two large refrigerated cabinets with transparent fronts through which a large collection of body parts can be seen. Each body part has a small green label with a date and experiment number. All the body parts were infected but the cold has killed the pathogen.\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="20" ystart="9" xend="348" yend="332" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="10"><textbody italic="false" bold="true" underlined="false"><textstring>5) Microbiology Lab\n</textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>This a small microbiology lab with several intact synthetic shells working in it. The shells do not have cyberbrains or stacks, instead being controlled using puppet socks slaved to the research computer in the computer room. The shells will ignore everything but their work.\nRunning down the center of the room is a work bench with several stainless steel sinks set in it. Sitting on the top shelf of the central work bench are large, clear containers of common chemicals such as DI water, ethanol, and acetone with smaller opaque bottles containing other useful lab chemicals sitting between them. Some glassware and more chemicals are located in the cabinets under the workbenches. A Scrounging Test (5 minute time frame) may be used to find a useful chemical, such as Slip, or the ingredients to make a crude explosive device.\nAlong the north and south walls are two benches with scientific instrumentation useful in microbiology and genetic engineering: centrifuges, microscopes, DNA sequencers, DNA replicators, and the like. The south bench also has a shallow refrigerator holding chemicals that must be kept cold.\n</textstring>
 	</textbody>
 	</text>
 	</slide>
