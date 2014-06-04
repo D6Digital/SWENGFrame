@@ -10,6 +10,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 
 import javax.swing.AbstractButton;
+import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JPanel;
@@ -135,6 +136,7 @@ public class CalculatorPanel extends JPanel implements ActionListener{
 		
 		//adds JTextArea for display of currently included modifiers
 		displayIncludedMods = new JTextArea();
+		displayIncludedMods.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
 		displayIncludedMods.setFont(new Font("Papyrus", Font.BOLD, fontSize ));
 		displayIncludedMods.setLayout(null);
 		displayIncludedMods.setEditable(false);
@@ -147,6 +149,7 @@ public class CalculatorPanel extends JPanel implements ActionListener{
 		
 		//adds JTextArea for display of total roll modifier
 		displayTotalMod = new JTextArea();
+		displayTotalMod.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
 		displayTotalMod.setFont(new Font("Papyrus", Font.BOLD, fontSize ));
 		displayTotalMod.setLayout(null);
         displayTotalMod.setEditable(false);

@@ -12,6 +12,7 @@ import java.sql.Array;
 import java.util.Random;
 
 import javax.swing.AbstractButton;
+import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -177,6 +178,9 @@ public class DicePanel extends JPanel implements ActionListener{
 		
 		//adds a JTextArea for display of results of a single type of dice rolling
 		firstResultOutput = new JTextArea();
+		firstResultOutput.setWrapStyleWord(true);
+		firstResultOutput.setLineWrap(true);
+		firstResultOutput.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
 		firstResultOutput.setFont(new Font("Papyrus", Font.BOLD, fontSize));
 		firstResultOutput.setBounds(
                 (int) (panelWidth*0.025), 
@@ -190,6 +194,9 @@ public class DicePanel extends JPanel implements ActionListener{
 		//adds a JTextArea for display of results of rolling an addition dice type
 		//if multiDice is enabled
 		secondResultOutput = new JTextArea();
+		secondResultOutput.setWrapStyleWord(true);
+		secondResultOutput.setLineWrap(true);
+		secondResultOutput.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
 		secondResultOutput.setFont(new Font("Papyrus", Font.BOLD, fontSize));
 		secondResultOutput.setBounds(
                 (int) (panelWidth*0.025) + (int) (panelWidth*0.45) +  (int) (panelWidth*0.025), 
@@ -202,6 +209,8 @@ public class DicePanel extends JPanel implements ActionListener{
 		
 		//adds JTextArea for display of total of all dice types rolled
 		displayTotalResult = new JTextArea();
+		displayTotalResult.setWrapStyleWord(true);
+		displayTotalResult.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
 		displayTotalResult.setFont(new Font("Papyrus", Font.BOLD, fontSize));
 		displayTotalResult.setBounds(
                 (int) (panelWidth*0.025), 
@@ -348,8 +357,8 @@ public class DicePanel extends JPanel implements ActionListener{
 			firstDiceTypeTotalCriticalFails = firstDiceTypeTotalCriticalFails + 1;
 		}
 		
-		firstResultOutput.append(roll + "\r\n");
-		firstResultOutput.append(" 1st Dice Total = " + firstDiceTypeTotalResult + ".\r\n");
+		firstResultOutput.append(roll + "\r\n\n");
+		firstResultOutput.append(" 1st Dice\n Total = " + firstDiceTypeTotalResult + ".\r\n\n");
 		firstResultOutput.append(" 1s rolled = " + firstDiceTypeTotalCriticalSuccesses + ".\r\n");
 		firstResultOutput.append(" " + upperRange + "s rolled = " + firstDiceTypeTotalCriticalFails + ".\r\n");
 		
@@ -429,8 +438,8 @@ public class DicePanel extends JPanel implements ActionListener{
 				secondDiceTypeTotalCriticalFails = secondDiceTypeTotalCriticalFails + 1;
 			}
 			
-			secondResultOutput.append(roll + "\r\n");
-			secondResultOutput.append(" 2nd Dice Total = " + secondDiceTypeTotalResult + ".\r\n");
+			secondResultOutput.append(roll + "\r\n\n");
+			secondResultOutput.append(" 2nd Dice\n Total = " + secondDiceTypeTotalResult + ".\r\n\n");
 			secondResultOutput.append(" 1s rolled = " + secondDiceTypeTotalCriticalSuccesses + ".\r\n");
 			secondResultOutput.append(" " + upperRange + "s rolled = " + secondDiceTypeTotalCriticalFails + ".\r\n");
 			
