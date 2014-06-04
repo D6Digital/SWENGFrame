@@ -1,5 +1,6 @@
 package gUIModule;
 
+import java.awt.Color;
 import java.awt.Component;
 import java.awt.Container;
 import java.awt.event.ActionEvent;
@@ -10,12 +11,14 @@ import java.sql.Array;
 import java.util.Random;
 
 import javax.swing.AbstractButton;
+import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextArea;
+import javax.swing.border.Border;
 
 /**
  * 
@@ -166,6 +169,7 @@ public class DicePanel extends JPanel implements ActionListener{
 		
 		//adds a JTextArea for display of results of a single type of dice rolling
 		firstResultOutput = new JTextArea();
+		firstResultOutput.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
 		firstResultOutput.setBounds(
                 (int) (panelWidth*0.025), 
                 (int) (panelWidth*0.025) + (int) (panelHeight*0.1) + (int) (panelHeight*0.03) +  (int) (panelHeight*0.03),
@@ -178,6 +182,7 @@ public class DicePanel extends JPanel implements ActionListener{
 		//adds a JTextArea for display of results of rolling an addition dice type
 		//if multiDice is enabled
 		secondResultOutput = new JTextArea();
+		secondResultOutput.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
 		secondResultOutput.setBounds(
                 (int) (panelWidth*0.025) + (int) (panelWidth*0.45) +  (int) (panelWidth*0.025), 
                 (int) (panelWidth*0.025) + (int) (panelHeight*0.1) + (int) (panelHeight*0.03) +  (int) (panelHeight*0.03),
@@ -189,6 +194,7 @@ public class DicePanel extends JPanel implements ActionListener{
 		
 		//adds JTextArea for display of total of all dice types rolled
 		displayTotalResult = new JTextArea();
+		displayTotalResult.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
 		displayTotalResult.setBounds(
                 (int) (panelWidth*0.025), 
                 (int) (panelHeight*0.94),

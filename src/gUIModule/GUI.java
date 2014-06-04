@@ -97,8 +97,9 @@ public class GUI extends JFrame implements ComponentListener, KeyListener{
 	JButton nextSlideButton = new JButton();
 	JButton previousSlideButton = new JButton();
 	int borderSize = 20;
-	static int utilitiesWidth = 150;
-	static int contentsWidth = 200;
+	int utilitiesWidth = 250;
+	int constantUtilitiesWidth = 250;
+	int contentsWidth = 350;
 	UtilitiesPanel utilities;
 	
 	//ContentsPanel contents = new ContentsPanel(null, null, null);
@@ -818,13 +819,13 @@ public void bookMainPanelSetUp(){
             @Override
             public void actionPerformed(ActionEvent e) {
             	frame.requestFocusInWindow();
-            	utilities.setDimensions( (int) (720*scaleFactorX)-150 , (int) (540*scaleFactorY));
+            	utilities.setDimensions( (int) (720*scaleFactorX)-constantUtilitiesWidth , (int) (540*scaleFactorY),constantUtilitiesWidth);
                 utilities.setUtilityVisible(backButton);
                 utilitiesWidth = utilities.getWidth();
                 //utilities.setBounds(720-utilitiesWidth, 0, utilitiesWidth, 540);
                 //utilitiesWidth = 500;
                 System.out.println(utilities.getWidth());
-                utilities.setDimensions(newWidth-utilitiesWidth , newHeight);
+                //utilities.setDimensions(newWidth-utilitiesWidth , newHeight);
                 utilities.validate();
                 utilities.repaint();
                 
@@ -837,7 +838,7 @@ public void bookMainPanelSetUp(){
                 @Override
                 public void actionPerformed(ActionEvent e) {
                 	frame.requestFocusInWindow();
-                	utilities.setDimensions( (int) (720*scaleFactorX)-150 , (int) (540*scaleFactorY));
+                	utilities.setDimensions( (int) (720*scaleFactorX)-utilitiesWidth , (int) (540*scaleFactorY),0);
                     utilities.setUtilityVisible(button);
                     utilitiesWidth = utilities.getWidth();
                     //utilities.setBounds(720-utilitiesWidth, 0, utilitiesWidth, 540);
@@ -1153,7 +1154,7 @@ private void resizeMainPanel() {
     nextSlideButton.setBounds(newWidth-170,newHeight-60,150,50);
     nextSlideButton.repaint();
     utilities.setBounds(newWidth-utilitiesWidth, 0, utilitiesWidth, newHeight);
-    utilities.setDimensions( newWidth-utilitiesWidth , newHeight);
+    utilities.setDimensions( newWidth-utilitiesWidth , newHeight,0);
     contentsPanel.setDimensions(newHeight);
     utilitiesTab.setBounds(newWidth-15,(newHeight/2)-60,15,120);
     contentsTab.setBounds(0,(newHeight/2)-60,15,120);

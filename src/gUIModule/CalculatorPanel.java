@@ -1,5 +1,6 @@
 package gUIModule;
 
+import java.awt.Color;
 import java.awt.Component;
 import java.awt.Container;
 import java.awt.Dimension;
@@ -8,6 +9,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 
 import javax.swing.AbstractButton;
+import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JPanel;
@@ -127,6 +129,7 @@ public class CalculatorPanel extends JPanel implements ActionListener{
 		
 		//adds JTextArea for display of currently included modifiers
 		displayIncludedMods = new JTextArea();
+		displayIncludedMods.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
 		displayIncludedMods.setLayout(null);
 		displayIncludedMods.setEditable(false);
 		displayIncludedMods.setBounds(5, modPlusButtonHeight + (int) (panelHeight*0.025), (int) (panelWidth*0.9), (int)(panelHeight*0.7));
@@ -138,6 +141,7 @@ public class CalculatorPanel extends JPanel implements ActionListener{
 		
 		//adds JTextArea for display of total roll modifier
 		displayTotalMod = new JTextArea();
+		displayTotalMod.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
 		displayTotalMod.setLayout(null);
         displayTotalMod.setEditable(false);
 		displayTotalMod.setBounds((int) (panelWidth*0.025), modPlusButtonPlusDisplay + (int) (panelHeight*0.05), (int) (panelWidth*0.9), (int)(panelHeight*0.1));

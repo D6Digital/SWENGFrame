@@ -58,7 +58,7 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
 	BufferedImage backgroundImage;
 	Image scaledBackground;
 
-    private int utilitiesWidth=150;
+    private int utilitiesWidth=250;
     private int heightOfSlide;
     private int xOffset = 0;
     
@@ -408,7 +408,7 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
             calculatorPanel.setVisible(false);
             standAloneMusicPlayerPanel.setVisible(false); 
             multiPanel.setVisible(false);
-            setWidth(150);
+            setWidth(utilitiesWidth);
 	    default: break;
 	    }
 	    multiPanel.repaint();
@@ -434,9 +434,12 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
 
 
 
-	public void setDimensions(int utilitiesOffset, int slideHeight) {
+	public void setDimensions(int utilitiesOffset, int slideHeight, int constantUtilitiesWidth) {
 		this.heightOfSlide = slideHeight;
 		this.xOffset = utilitiesOffset;
+		if(constantUtilitiesWidth != 0){
+			setWidth(constantUtilitiesWidth);
+		}
 		if(scaledBackground != null){
 			scaledBackground = backgroundImage.getScaledInstance(utilitiesWidth,slideHeight,java.awt.Image.SCALE_SMOOTH);
 			background.setIcon(new ImageIcon(scaledBackground));

@@ -59,6 +59,9 @@ public class ContentsPanel extends JPanel implements ActionListener{
 	JScrollPane contents = new JScrollPane();
 	int slideHeight;
 	int slideWidth;
+	int fontSize = 24;
+	int labelWidth = 300;
+	int buttonWidth = 200;
 	
 	/**
 	 * Creates the entire Contents panel to meet the UI design specification
@@ -76,19 +79,19 @@ public class ContentsPanel extends JPanel implements ActionListener{
 		this.contentsChapterList = contentChapterList;
 		//slidePanel1 = slide1;
 		//slidePanel2 = slide2;
-		mainMenuButton.setBounds((width/2)-55, (int)(slideHeight*0.1), 110, 50);
+		mainMenuButton.setBounds((width/2)-(buttonWidth/2), (int)(slideHeight*0.1), buttonWidth, 50);
 		
-		changeListButton.setBounds((width/2)-55, (int)(slideHeight*0.21), 110, 50);
+		changeListButton.setBounds((width/2)-(buttonWidth/2), (int)(slideHeight*0.21), buttonWidth, 50);
 		
-		systemLabel.setBounds((width/2)-70,(int)(slideHeight*0.34),140,40);
-		bookLabel.setBounds((width/2)-70,(int)(slideHeight*0.39),140,40);
-		pageLabel.setBounds((width/2)-70,(int)(slideHeight*0.44),140,40);
+		systemLabel.setBounds((width/2)-(labelWidth/2),(int)(slideHeight*0.34),labelWidth,40);
+		bookLabel.setBounds((width/2)-(labelWidth/2),(int)(slideHeight*0.39),labelWidth,40);
+		pageLabel.setBounds((width/2)-(labelWidth/2),(int)(slideHeight*0.44),labelWidth,40);
 		systemLabel.setText("System: "+currentSystem);
 		bookLabel.setText("Book: "+currentBook);
 		pageLabel.setText("Choose a page:");
-		systemLabel.setFont(new Font("Papyrus", Font.PLAIN, 12));
-		bookLabel.setFont(new Font("Papyrus", Font.PLAIN, 12));
-		pageLabel.setFont(new Font("Papyrus", Font.PLAIN, 12));
+		systemLabel.setFont(new Font("Papyrus", Font.PLAIN, fontSize));
+		bookLabel.setFont(new Font("Papyrus", Font.PLAIN, fontSize));
+		pageLabel.setFont(new Font("Papyrus", Font.PLAIN, fontSize));
 		
 		title.setBounds((width/2)-40, 10, 80,30);
 		setUpLabelImage(title, "ContentsLabel.png",80,30);
@@ -177,7 +180,7 @@ public class ContentsPanel extends JPanel implements ActionListener{
 	 * @return the contents scroll pane
 	 */
 	private JScrollPane createScrollPane(ArrayList<Slide> contentsSlideList) {
-		contentsList.setFont(new Font("Papyrus", Font.PLAIN, 12));
+		contentsList.setFont(new Font("Papyrus", Font.PLAIN, fontSize));
 		listModel.clear();
 		contentsList.removeAll();
 
@@ -227,7 +230,7 @@ public class ContentsPanel extends JPanel implements ActionListener{
 		BufferedImage choosePageButtonImage;
 		try{
 			choosePageButtonImage = ImageIO.read(new File("resources/buttons/"+image));
-			Image scaledButton = choosePageButtonImage.getScaledInstance(110,50,java.awt.Image.SCALE_SMOOTH);
+			Image scaledButton = choosePageButtonImage.getScaledInstance(buttonWidth,50,java.awt.Image.SCALE_SMOOTH);
 			button.setIcon(new ImageIcon(scaledButton));
 		}catch (IOException ex){
 			

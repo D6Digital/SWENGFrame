@@ -70,6 +70,7 @@ public class MainMenuPanel extends JPanel{
 	double scaleFactorX = 1;
 	double scaleFactorY = 1;
 	private MouseAdapter genericMouseMotionListener;
+	int fontSize = 24;
 	
 	public MainMenuPanel(int width, int height, MouseAdapter genericListener) {
 		
@@ -132,19 +133,19 @@ public class MainMenuPanel extends JPanel{
 		//Descriptions
 		descriptionTitle.setBounds(110, 10, width-350, 30);
 		descriptionTitle.setText("System Description:");
-		descriptionTitle.setFont(new Font("Papyrus", Font.BOLD, 18));
+		descriptionTitle.setFont(new Font("Papyrus", Font.BOLD, (int) (fontSize*1.1)));
 		description.setEditable(false);
 		description.setBounds(110, 40, width-300, 100);
-		description.setFont(new Font("Papyrus", Font.PLAIN, 14));
+		description.setFont(new Font("Papyrus", Font.PLAIN, (int) (fontSize*0.9)));
 		description.setText("Welcome to the Grimoire interactive rulebook! Please choose a "+ "\n"+ "system and then a book. We hope you enjoy your journey!"+ "\n"+ ""+ "\n"+ "Much Love, D6 Digital");
 		description.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
 		
 		//Labels
 		systemLabel = new JLabel("Choose A "+ "\n"+ "System:");
-		systemLabel.setFont(new Font("Papyrus", Font.BOLD, 16));
+		systemLabel.setFont(new Font("Papyrus", Font.BOLD, fontSize));
 		systemLabel.setBounds(110, 150, 180, 50);
 		bookLabel = new JLabel("Choose A"+ "\n"+ " Book:");
-		bookLabel.setFont(new Font("Papyrus", Font.BOLD, 16));
+		bookLabel.setFont(new Font("Papyrus", Font.BOLD, fontSize));
 		bookLabel.setBounds(330, 150, 170, 50);
 		
 		//scrollpanes
@@ -195,7 +196,7 @@ public class MainMenuPanel extends JPanel{
 				systemScroll.setBackground(Color.WHITE);
 				systemScroll.setViewportView(systemList);
 				systemScroll.setBounds(110, 200, 200, 300);
-				systemList.setFont(new Font("Papyrus", Font.PLAIN, 14));
+				systemList.setFont(new Font("Papyrus", Font.PLAIN, (int) (fontSize*0.9)));
 				systemScroll.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
 				
 				bookListModel.clear();
@@ -210,7 +211,7 @@ public class MainMenuPanel extends JPanel{
 				bookScroll.setBackground(Color.WHITE);
 				bookScroll.setViewportView(bookList);
 				bookScroll.setBounds(330, 200, 200, 300);
-				bookList.setFont(new Font("Papyrus", Font.PLAIN, 14));
+				bookList.setFont(new Font("Papyrus", Font.PLAIN, (int) (fontSize*0.9)));
 				bookScroll.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
 
 				
