@@ -1,7 +1,9 @@
 package gUIModule;
 
+import java.awt.Color;
 import java.awt.Component;
 import java.awt.Container;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -54,6 +56,8 @@ public class DicePanel extends JPanel implements ActionListener{
 	int panelHeight;
 	
 	private MouseAdapter genericMouseMotionListener;
+
+	private int fontSize = 12;
 	
 	/**
 	 * Create a simple JFrame and then populate it with specified JPanel type
@@ -64,7 +68,7 @@ public class DicePanel extends JPanel implements ActionListener{
 		super();
 		
 		this.genericMouseMotionListener = genericListener;
-		
+		this.setBackground(new Color(15526830));
 		panelWidth = widthOfPanel;
 		panelHeight = heightOfPanel;
 		
@@ -73,6 +77,7 @@ public class DicePanel extends JPanel implements ActionListener{
 		
 		//adds a JComboBox for selecting the type of dice to be rolled
 		diceType = new JComboBox();
+		diceType.setFont(new Font("Papyrus", Font.BOLD, fontSize));
 		for (int i = 0; i < diceTypes.length; i++){
 			diceType.addItem(diceTypes[i]);
 		};
@@ -88,6 +93,7 @@ public class DicePanel extends JPanel implements ActionListener{
 		
 		//adds a JComboBox for selecting the type of dice to be rolled
 		diceQuantity = new JComboBox();
+		diceQuantity.setFont(new Font("Papyrus", Font.BOLD, fontSize));
 		for (int i = 0; i < 100; i++){
 			diceQuantity.addItem(i+1);
 		};
@@ -103,6 +109,8 @@ public class DicePanel extends JPanel implements ActionListener{
 		
 		//adds a radioButton for enabling dual dice type rolling
 		multiDice = new JRadioButton("<html>Enable MultiDice</html>");
+		multiDice.setFont(new Font("Papyrus", Font.PLAIN, (int) (fontSize*0.9)));
+		multiDice.setOpaque(false);
 		multiDice.setBounds(              
 		        (int) (panelWidth*0.025) + (int) (panelWidth*0.18) + (int) (panelWidth*0.02), 
                 (int) (panelWidth*0.025) + (int) (panelWidth*0.02), 
@@ -117,6 +125,7 @@ public class DicePanel extends JPanel implements ActionListener{
 		//adds a second JComboBox for selecting the type of dice to be rolled
 		//only enabled if the addSecondDice radioButton is checked
 		secondDiceType = new JComboBox();
+		secondDiceType.setFont(new Font("Papyrus", Font.BOLD, fontSize));
 		for (int i = 0; i < diceTypes.length; i++){
 			secondDiceType.addItem(diceTypes[i]);
 		};
@@ -134,6 +143,7 @@ public class DicePanel extends JPanel implements ActionListener{
 		//adds a second JComboBox for selecting the type of dice to be rolled
 		//only enabled if the addSecondDice radioButton is checked
 		secondDiceQuantity = new JComboBox();
+		secondDiceQuantity.setFont(new Font("Papyrus", Font.BOLD, fontSize));
 		for (int i = 0; i < 100; i++){
 			secondDiceQuantity.addItem(i+1);
 		};
@@ -150,6 +160,7 @@ public class DicePanel extends JPanel implements ActionListener{
 		
 		//adds a JButton to trigger algorithum based on selected inputs
 	    rollButton = new JButton("Roll");
+	    rollButton.setFont(new Font("Papyrus", Font.BOLD, fontSize));
 		rollButton.setVerticalTextPosition(AbstractButton.CENTER);
 		rollButton.setHorizontalTextPosition(AbstractButton.CENTER);
 		rollButton.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -166,6 +177,7 @@ public class DicePanel extends JPanel implements ActionListener{
 		
 		//adds a JTextArea for display of results of a single type of dice rolling
 		firstResultOutput = new JTextArea();
+		firstResultOutput.setFont(new Font("Papyrus", Font.BOLD, fontSize));
 		firstResultOutput.setBounds(
                 (int) (panelWidth*0.025), 
                 (int) (panelWidth*0.025) + (int) (panelHeight*0.1) + (int) (panelHeight*0.03) +  (int) (panelHeight*0.03),
@@ -178,6 +190,7 @@ public class DicePanel extends JPanel implements ActionListener{
 		//adds a JTextArea for display of results of rolling an addition dice type
 		//if multiDice is enabled
 		secondResultOutput = new JTextArea();
+		secondResultOutput.setFont(new Font("Papyrus", Font.BOLD, fontSize));
 		secondResultOutput.setBounds(
                 (int) (panelWidth*0.025) + (int) (panelWidth*0.45) +  (int) (panelWidth*0.025), 
                 (int) (panelWidth*0.025) + (int) (panelHeight*0.1) + (int) (panelHeight*0.03) +  (int) (panelHeight*0.03),
@@ -189,6 +202,7 @@ public class DicePanel extends JPanel implements ActionListener{
 		
 		//adds JTextArea for display of total of all dice types rolled
 		displayTotalResult = new JTextArea();
+		displayTotalResult.setFont(new Font("Papyrus", Font.BOLD, fontSize));
 		displayTotalResult.setBounds(
                 (int) (panelWidth*0.025), 
                 (int) (panelHeight*0.94),
@@ -335,7 +349,7 @@ public class DicePanel extends JPanel implements ActionListener{
 		}
 		
 		firstResultOutput.append(roll + "\r\n");
-		firstResultOutput.append(" 1st Dice Type Total = " + firstDiceTypeTotalResult + ".\r\n");
+		firstResultOutput.append(" 1st Dice Total = " + firstDiceTypeTotalResult + ".\r\n");
 		firstResultOutput.append(" 1s rolled = " + firstDiceTypeTotalCriticalSuccesses + ".\r\n");
 		firstResultOutput.append(" " + upperRange + "s rolled = " + firstDiceTypeTotalCriticalFails + ".\r\n");
 		
@@ -416,7 +430,7 @@ public class DicePanel extends JPanel implements ActionListener{
 			}
 			
 			secondResultOutput.append(roll + "\r\n");
-			secondResultOutput.append(" 2nd Dice Type Total = " + secondDiceTypeTotalResult + ".\r\n");
+			secondResultOutput.append(" 2nd Dice Total = " + secondDiceTypeTotalResult + ".\r\n");
 			secondResultOutput.append(" 1s rolled = " + secondDiceTypeTotalCriticalSuccesses + ".\r\n");
 			secondResultOutput.append(" " + upperRange + "s rolled = " + secondDiceTypeTotalCriticalFails + ".\r\n");
 			

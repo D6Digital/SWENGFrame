@@ -126,6 +126,8 @@ public class StandAloneMusicPlayer {
     private boolean areWeUnlocked;
     
     private MouseMotionListener genericMouseMotionListener;
+    
+    private int fontSize = 12;
 
     /**
      * Constructor for StandAloneMusicPlayer() class.
@@ -209,6 +211,7 @@ public class StandAloneMusicPlayer {
             }
         }
     };
+	
 	
 
 
@@ -448,6 +451,7 @@ public class StandAloneMusicPlayer {
     public JPanel getFullControlPanel(int widthOfPanel, int heightOfSlide) {
     	this.widthOfPanel=widthOfPanel;
         fullPanel.setLayout(null);
+        fullPanel.setBackground(new Color(15526830));
         fullPanel.setBounds(3,0,widthOfPanel,heightOfSlide);
         fullPanel.add(getLockPlaylistButton(widthOfPanel, heightOfSlide));
         fullPanel.add(getPlayButton(widthOfPanel, heightOfSlide));
@@ -485,6 +489,7 @@ public class StandAloneMusicPlayer {
 
     private JLabel getVolumeLabel(int widthOfPanel, int heightOfSlide) {
         JLabel label = new JLabel("Volume");
+        label.setFont(new Font("Papyrus", Font.BOLD, fontSize));
         label.setLayout(null);
         label.setBounds(
                 (int) (widthOfPanel*0.385) + 20,
@@ -522,6 +527,7 @@ public class StandAloneMusicPlayer {
 
     private JLabel getTimeLabel(int widthOfPanel, int heightOfSlide) {
         timeLabel.setText(this.getCurrentPosition() + "/" + this.getTrackLength());
+        timeLabel.setFont(new Font("Papyrus", Font.BOLD, fontSize));
 //        timeLabel.setBounds(
 //                (int) (widthOfPanel*0.4),
 //                (int) (heightOfSlide*0.025*7) + heightOfLockIcon + heightOfPlayButton*2  +  (int) (heightOfSlide*0.2),
@@ -690,6 +696,7 @@ public class StandAloneMusicPlayer {
      */
     private JSlider getVolumeSlider(int widthOfPanel, int heightOfSlide) {
         JSlider slider = new JSlider();
+        slider.setOpaque(false);
         slider.setBounds(
                 (int) (widthOfPanel*0.025),
                 ((int) (heightOfSlide*0.025*2)) + heightOfLockIcon + heightOfPlayButton,
@@ -719,6 +726,7 @@ public class StandAloneMusicPlayer {
                 (int) (heightOfSlide*0.025*7) + heightOfLockIcon + heightOfPlayButton,
                 (int) (widthOfPanel*0.95),
                 (int) (heightOfSlide*0.1));
+        timeSlider.setOpaque(false);
         timeSlider.setMinimum(0);
         timeSlider.setMaximum(1000);
         setupListenerAndAction(timeSlider, "time");
@@ -889,6 +897,7 @@ public class StandAloneMusicPlayer {
     
     public JPanel getScrollPaneAsPanel(int widthOfPanel, int heightOfSlide) {
         scrollPanel = new JPanel();
+        scrollPanel.setOpaque(false);
         scrollPanel.setLayout(null);
 //        panel.setBounds(               
 //        (int) (widthOfPanel*0.025),
@@ -908,7 +917,7 @@ public class StandAloneMusicPlayer {
                 (int) (heightOfSlide*0.2));
         
         scrollPanel.add(scrollPane);
-        
+        playContentsJList.setFont(new Font("Papyrus", Font.BOLD, fontSize));
         
         // Add listener which plays a piece of media whenever the user chooses it in the JList.
         playContentsJList.addMouseMotionListener(genericMouseMotionListener);

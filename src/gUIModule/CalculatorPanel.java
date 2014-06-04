@@ -1,8 +1,10 @@
 package gUIModule;
 
+import java.awt.Color;
 import java.awt.Component;
 import java.awt.Container;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
@@ -66,6 +68,8 @@ public class CalculatorPanel extends JPanel implements ActionListener{
     int modPlusButtonHeight;
     
     private MouseAdapter genericMouseMotionListener;
+
+	private int fontSize = 12;
 	
 	/**
 	 * Create a simple JFrame and then populate it with specified JPanel type
@@ -76,6 +80,7 @@ public class CalculatorPanel extends JPanel implements ActionListener{
 		super();
 		
 		this.genericMouseMotionListener = genericListener;
+		this.setBackground(new Color(15526830));
 		
 		panelWidth = widthOfPanel;
 		panelHeight = heightOfPanel;
@@ -85,6 +90,7 @@ public class CalculatorPanel extends JPanel implements ActionListener{
 		
 		//adds JComboBox for selecting the modifier to be included in the total
 		modSelection = new JComboBox();
+		modSelection.setFont(new Font("Papyrus", Font.BOLD, fontSize ));
 		for (int j = 0; j < modNames.length; j++){
 			modSelection.addItem(modNames[j]);
 		};
@@ -98,6 +104,7 @@ public class CalculatorPanel extends JPanel implements ActionListener{
 		
 		//adds JButton to trigger the inclution of the modifier
 	    includeMod = new JButton("Include");
+	    includeMod.setFont(new Font("Papyrus", Font.BOLD, fontSize ));
 	    includeMod.setLayout(null);
 	    //includeMod.setVerticalTextPosition(AbstractButton.CENTER);
 	    //includeMod.setHorizontalTextPosition(AbstractButton.CENTER);
@@ -112,6 +119,7 @@ public class CalculatorPanel extends JPanel implements ActionListener{
 		
 		//adds JButton to trigger the inclution of the modifier
 	    clearMods = new JButton("Clear");
+	    clearMods.setFont(new Font("Papyrus", Font.BOLD, fontSize ));
 	    clearMods.setLayout(null);
 	    //clearMods.setVerticalTextPosition(AbstractButton.CENTER);
 	   // clearMods.setHorizontalTextPosition(AbstractButton.CENTER);
@@ -127,6 +135,7 @@ public class CalculatorPanel extends JPanel implements ActionListener{
 		
 		//adds JTextArea for display of currently included modifiers
 		displayIncludedMods = new JTextArea();
+		displayIncludedMods.setFont(new Font("Papyrus", Font.BOLD, fontSize ));
 		displayIncludedMods.setLayout(null);
 		displayIncludedMods.setEditable(false);
 		displayIncludedMods.setBounds(5, modPlusButtonHeight + (int) (panelHeight*0.025), (int) (panelWidth*0.9), (int)(panelHeight*0.7));
@@ -138,6 +147,7 @@ public class CalculatorPanel extends JPanel implements ActionListener{
 		
 		//adds JTextArea for display of total roll modifier
 		displayTotalMod = new JTextArea();
+		displayTotalMod.setFont(new Font("Papyrus", Font.BOLD, fontSize ));
 		displayTotalMod.setLayout(null);
         displayTotalMod.setEditable(false);
 		displayTotalMod.setBounds((int) (panelWidth*0.025), modPlusButtonPlusDisplay + (int) (panelHeight*0.05), (int) (panelWidth*0.9), (int)(panelHeight*0.1));
