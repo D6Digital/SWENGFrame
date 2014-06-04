@@ -68,6 +68,12 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
     
     private MouseAdapter genericMouseMotionListener;
 
+
+	private BufferedImage backButtonImage;
+
+
+	private Image scaledBackButtonImage;
+
 	//	GUI diceRoller;
 //	GUI calculatorGUI;
 //	GUI audioPlayer;
@@ -94,8 +100,16 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
 		
 		standAloneMusicPlayerPanel = standAloneMusicPlayer.getFullControlPanel(musicWidth, 540 - 20);
 		
+		
 		backButton.setBounds(10, (int) (slideHeight*0.975), (int) (utilitiesWidth*0.925),  (int) (slideHeight*0.025));
 		backButton.setActionCommand("back");
+		try{
+			backButtonImage = ImageIO.read(new File("resources/buttons/Back Button.png"));
+			scaledBackButtonImage = backButtonImage.getScaledInstance((int) (utilitiesWidth*0.925),  (int) (slideHeight*0.025),java.awt.Image.SCALE_SMOOTH);
+			backButton.setIcon(new ImageIcon(scaledBackButtonImage));
+		}catch(IOException e2){
+			e2.printStackTrace();
+		}
 		
 		
 		multiPanel.add(backButton);
