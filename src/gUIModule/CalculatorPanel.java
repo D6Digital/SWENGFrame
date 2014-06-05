@@ -87,7 +87,7 @@ public class CalculatorPanel extends JPanel implements ActionListener{
 		panelWidth = widthOfPanel;
 		panelHeight = heightOfPanel;
 		setLayout(null);
-        setBounds(5,0,panelWidth-10,panelHeight);
+        setBounds(5,0,panelWidth,panelHeight);
 
 		
 		//adds JComboBox for selecting the modifier to be included in the total
@@ -206,7 +206,7 @@ public class CalculatorPanel extends JPanel implements ActionListener{
 	public void setDimensions(int panelHeight){
 		modPlusButtonHeight = modHeight + (int) (panelHeight*0.025) + (int)(panelHeight*0.05);
 		modPlusButtonPlusDisplay = modPlusButtonHeight +  (int)(panelHeight*0.7);
-		setBounds(5,0,panelWidth-10,panelHeight);
+		setBounds(5,0,panelWidth,panelHeight);
 		displayIncludedMods.setBounds(5, modPlusButtonHeight + (int) (panelHeight*0.025), (int) (panelWidth*0.9), (int)(panelHeight*0.7));
 		displayTotalMod.setBounds(5, modPlusButtonPlusDisplay + (int) (panelHeight*0.05), (int) (panelWidth*0.9), (int)(panelHeight*0.1));
 	}

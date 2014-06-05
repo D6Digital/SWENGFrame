@@ -50,7 +50,7 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
 	StandAloneMusicPlayer standAloneMusicPlayer; //= new StandAloneMusicPlayer();
 	JLabel background; 
 	ArrayList<JButton> buttonList = new ArrayList<>();
-	JButton backButton = new JButton("Back");
+	JButton backButton = new JButton();
 	JLabel title;
 	JButton diceButton = new JButton();
 	JButton calculatorButton = new JButton();
