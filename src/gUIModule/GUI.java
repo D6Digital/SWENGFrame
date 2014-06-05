@@ -887,6 +887,8 @@ public void bookMainPanelSetUp(){
 					@Override
 					public void actionPerformed(ActionEvent arg0) {
 						mainMenuShowing = true;
+						slidePanel.stopPlaying();
+						utilities.stopPlaying();
 						scaleFactorX = (double)(getSize().width-insets.left-insets.right)/(double)720;
 						scaleFactorY = (double)(getSize().height-insets.top-insets.bottom)/(double)540;
 						mainMenuPanel.setBounds(0, 0, getSize().width-insets.left-insets.right, getSize().height-insets.top-insets.bottom);

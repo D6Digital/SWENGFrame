@@ -810,6 +810,22 @@ public class SlidePanel extends JPanel{
 		
 	}
 
+	public void stopPlaying() {
+		this.theTimer.stop();
+		for(Component component: layeredPane.getComponents()){
+			if(component instanceof VideoPlayer){
+				VideoPlayer videoPlayer = (VideoPlayer) component;
+					videoPlayer.stopMedia();
+			}
+		}
+        clearSlide();
+		if(audioPlayer != null)
+		{
+			this.audioPlayer.stopMedia();
+		}
+		
+	}
+
 
 
 	

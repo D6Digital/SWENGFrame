@@ -466,5 +466,12 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
 		title.setBounds((utilitiesWidth/2)-40, 10, 80, 30);
 		
 	}
+
+
+
+	public void stopPlaying() {
+		standAloneMusicPlayer.killThread();
+		
+	}
 	
 }
