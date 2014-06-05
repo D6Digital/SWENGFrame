@@ -133,6 +133,7 @@ public class DicePanel extends JPanel implements ActionListener{
 		diceQuantity.setActionCommand("diceQuantitySelected");
 		diceQuantity.addActionListener(this);
 		diceQuantity.addMouseMotionListener(genericListener);
+		diceQuantity.setMaximumRowCount(16);
 		
 		popup = (JPopupMenu) diceQuantity.getUI().getAccessibleChild(diceQuantity, 0);
 		scrollPane = (JScrollPane) popup.getComponent(0);
@@ -195,6 +196,7 @@ public class DicePanel extends JPanel implements ActionListener{
 		secondDiceQuantity.setActionCommand("secondDiceQuantitySelected");
 		secondDiceQuantity.addActionListener(this);
 		secondDiceQuantity.addMouseMotionListener(genericListener);
+		secondDiceQuantity.setMaximumRowCount(16);
 		
 		popup = (JPopupMenu) secondDiceQuantity.getUI().getAccessibleChild(secondDiceQuantity, 0);
 		scrollPane = (JScrollPane) popup.getComponent(0);

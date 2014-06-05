@@ -96,7 +96,7 @@ public class GUI extends JFrame implements ComponentListener, KeyListener{
 
 	JButton nextSlideButton = new JButton();
 	JButton previousSlideButton = new JButton();
-	int borderSize = 20;
+	int borderSize = 80;
 	int utilitiesWidth = 250;
 	int constantUtilitiesWidth = 250;
 	int contentsWidth = 350;
@@ -150,6 +150,7 @@ public class GUI extends JFrame implements ComponentListener, KeyListener{
 	private MouseAdapter genericListener;
 	int newWidth;
 	int newHeight;
+	protected boolean canClick = false;
 	
 	/**
 	 * Create a simple JFrame and then populate it with specified JPanel type
@@ -888,6 +889,8 @@ public void bookMainPanelSetUp(){
 					@Override
 					public void actionPerformed(ActionEvent arg0) {
 						mainMenuShowing = true;
+						slidePanel.stopPlaying();
+						utilities.stopPlaying();
 						scaleFactorX = (double)(getSize().width-insets.left-insets.right)/(double)720;
 						scaleFactorY = (double)(getSize().height-insets.top-insets.bottom)/(double)540;
 						mainMenuPanel.setBounds(0, 0, getSize().width-insets.left-insets.right, getSize().height-insets.top-insets.bottom);
@@ -919,16 +922,18 @@ public void bookMainPanelSetUp(){
 	            public void mouseClicked(MouseEvent e) {
 	            	frame.requestFocusInWindow();
 	            	if(contentsPanel.getPageListShowing()==true){
-	                if(e.getClickCount() == 1) {            
+	                if(e.getClickCount() == 1 && canClick) {            
 	                    slidePanel.refreshSlide(slideList.getSlideList().get(contentsList.getSelectedIndex()));
-	                    contentsList.clearSelection();  
+	                    //contentsList.clearSelection();  
 	                }
 	            	}else{
-	            		 slideList = collection.get(contentsList.getSelectedIndex());
-	            		 slidePanel.loadPresentation(slideList);
-	            		 slidePanel.refreshSlide(slideList.getSlideList().get(0));
-	            		 
+	            		if(canClick){
+	            			slideList = collection.get(contentsList.getSelectedIndex());
+	            			slidePanel.loadPresentation(slideList);
+	            			slidePanel.refreshSlide(slideList.getSlideList().get(0));
+	            		}
 	            	}
+	            	canClick = true;
 	            }
 	        });
 	     JButton changeButton = contentsPanel.getChangeButton();
@@ -1042,7 +1047,7 @@ private void borderListenerProcess(MouseEvent e1,Boolean isObject,Boolean isText
 	//System.out.println("x="+xCoordinate+"y="+yCoordinate);
 	//System.out.println("width="+slideWidth+"height="+slideHeight);
 	
-	if (xCoordinate>(slideWidth-borderSize)){
+	if (xCoordinate>(slideWidth-borderSize)&& (yCoordinate<(slideHeight-100))){
 		utilities.setVisible(true);
 		utilitiesShowing=true;
 		utilitiesTab.setVisible(false);
@@ -1057,7 +1062,8 @@ private void borderListenerProcess(MouseEvent e1,Boolean isObject,Boolean isText
 			utilitiesShowing=false;
 		}
 	}
-	if(xCoordinate<borderSize){
+	if(xCoordinate<borderSize && (yCoordinate<(slideHeight-100))){
+		canClick = false;
 		contentsPanel.setVisible(true);
 		contentsPanel.repaint();
 		contentsShowing=true;
