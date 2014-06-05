@@ -337,14 +337,15 @@ public class DicePanel extends JPanel implements ActionListener{
 			
 			//If statement effects a carage return on the display when the number of
 			//individual values being displayed exceeds the width of the JTextArea
-			if (lineOverflow > 4) {
+			/*if (lineOverflow > 4) {
 				firstResultOutput.append(roll + " + \r\n");
 				lineOverflow = 0;
 			}
 			else {
 				firstResultOutput.append(roll + " + ");
 				lineOverflow = lineOverflow + 1;
-			}
+			}*/
+			firstResultOutput.append(roll + " + ");
 		}
 		
 		//Final dice "rolled" and total result displayed
@@ -357,8 +358,8 @@ public class DicePanel extends JPanel implements ActionListener{
 			firstDiceTypeTotalCriticalFails = firstDiceTypeTotalCriticalFails + 1;
 		}
 		
-		firstResultOutput.append(roll + "\r\n\n");
-		firstResultOutput.append(" 1st Dice\n Total = " + firstDiceTypeTotalResult + ".\r\n\n");
+		firstResultOutput.append(roll + "\r\n");
+		firstResultOutput.append(" 1st Dice \n Total = " + firstDiceTypeTotalResult + ".\r\n");
 		firstResultOutput.append(" 1s rolled = " + firstDiceTypeTotalCriticalSuccesses + ".\r\n");
 		firstResultOutput.append(" " + upperRange + "s rolled = " + firstDiceTypeTotalCriticalFails + ".\r\n");
 		
@@ -438,8 +439,8 @@ public class DicePanel extends JPanel implements ActionListener{
 				secondDiceTypeTotalCriticalFails = secondDiceTypeTotalCriticalFails + 1;
 			}
 			
-			secondResultOutput.append(roll + "\r\n\n");
-			secondResultOutput.append(" 2nd Dice\n Total = " + secondDiceTypeTotalResult + ".\r\n\n");
+			secondResultOutput.append(roll + "\r\n");
+			secondResultOutput.append(" 2nd Dice \n Total = " + secondDiceTypeTotalResult + ".\r\n");
 			secondResultOutput.append(" 1s rolled = " + secondDiceTypeTotalCriticalSuccesses + ".\r\n");
 			secondResultOutput.append(" " + upperRange + "s rolled = " + secondDiceTypeTotalCriticalFails + ".\r\n");
 			
