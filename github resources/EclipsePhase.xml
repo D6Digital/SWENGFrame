@@ -366,388 +366,400 @@
 	</text>
 	</slide>
 	
-	<slide id="3" duration="60" descriptor="Drifter" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="434" ystart="245" xend="644" yend="288" layer="19" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>COMMON MORPHS</textstring>
+	<slide id="3" duration="60" descriptor="Drifter" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="434" ystart="245" xend="644" yend="288" layer="20" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>COMMON MORPHS</textstring>
 	</textbody>
 	</text>
-	<text xstart="434" ystart="290" xend="661" yend="417" layer="17" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>All, especially Bouncers and Hibernoids</textstring>
+	<text xstart="434" ystart="290" xend="661" yend="417" layer="18" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>All, especially Bouncers and Hibernoids</textstring>
 	</textbody>
 	</text>
-	<text xstart="247" ystart="245" xend="428" yend="288" layer="15" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>DISADVANTAGES</textstring>
+	<text xstart="247" ystart="245" xend="428" yend="288" layer="16" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>DISADVANTAGES</textstring>
 	</textbody>
 	</text>
-	<text xstart="247" ystart="290" xend="428" yend="417" layer="13" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>None</textstring>
+	<text xstart="247" ystart="290" xend="428" yend="417" layer="14" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>None</textstring>
 	</textbody>
 	</text>
-	<text xstart="14" ystart="245" xend="176" yend="288" layer="11" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>ADVANTAGES</textstring>
+	<text xstart="14" ystart="245" xend="176" yend="288" layer="12" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>ADVANTAGES</textstring>
 	</textbody>
 	</text>
-	<text xstart="14" ystart="290" xend="241" yend="417" layer="9" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>- +10 Navigation skill\n- +20 Pilot: Spacecraft skill\n- +10 Networking: {Field} skill of your choice</textstring>
+	<text xstart="14" ystart="290" xend="241" yend="417" layer="10" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>- +10 Navigation skill\n- +20 Pilot: Spacecraft skill\n- +10 Networking: {Field} skill of your choice</textstring>
 	</textbody>
 	</text>
-	<text xstart="15" ystart="56" xend="320" yend="228" layer="7" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>You were raised with a social grouping that remained on the move throughout the Sol system. This could have been free traders, pirates, asteroid farmers, scavengers or just migrant workers. You are used to roaming space travel between habitats and stations. </textstring>
+	<text xstart="15" ystart="56" xend="320" yend="228" layer="8" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>You were raised with a social grouping that remained on the move throughout the Sol system. This could have been free traders, pirates, asteroid farmers, scavengers or just migrant workers. You are used to roaming space travel between habitats and stations. </textstring>
 	</textbody>
 	</text>
-	<text xstart="14" ystart="474" xend="228" yend="519" layer="5" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="2" italic="false" bold="true" underlined="false"><textstring>Back to BACKGROUNDS</textstring>
+	<text xstart="14" ystart="474" xend="228" yend="519" layer="6" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="2" italic="false" bold="true" underlined="false"><textstring>Back to BACKGROUNDS</textstring>
 	</textbody>
 	</text>
-	<text xstart="498" ystart="474" xend="712" yend="519" layer="3" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="15" italic="false" bold="true" underlined="false"><textstring>On to CHOOSE FACTION</textstring>
+	<text xstart="498" ystart="474" xend="712" yend="519" layer="4" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="15" italic="false" bold="true" underlined="false"><textstring>On to CHOOSE FACTION</textstring>
 	</textbody>
 	</text>
-	<text xstart="15" ystart="21" xend="343" yend="66" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>DRIFTER</textstring>
+	<text xstart="15" ystart="21" xend="343" yend="66" layer="2" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>DRIFTER</textstring>
 	</textbody>
 	</text>
+	<image urlname="Src\XMLBits\DRIFT.png" xstart="292" ystart="0" width="283" height="540" layer="1" starttime="0"/>
 	</slide>
 	
-	<slide id="4" duration="60" descriptor="Fall Evacuee" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="445" ystart="245" xend="655" yend="288" layer="19" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>COMMON MORPHS</textstring>
+	<slide id="4" duration="60" descriptor="Fall Evacuee" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="445" ystart="245" xend="655" yend="288" layer="20" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>COMMON MORPHS</textstring>
 	</textbody>
 	</text>
-	<text xstart="445" ystart="290" xend="672" yend="417" layer="17" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>Flats, Splicers</textstring>
+	<text xstart="445" ystart="290" xend="672" yend="417" layer="18" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>Flats, Splicers</textstring>
 	</textbody>
 	</text>
-	<text xstart="241" ystart="245" xend="422" yend="288" layer="15" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>DISADVANTAGES</textstring>
+	<text xstart="241" ystart="245" xend="422" yend="288" layer="16" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>DISADVANTAGES</textstring>
 	</textbody>
 	</text>
-	<text xstart="241" ystart="290" xend="434" yend="417" layer="13" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>- Only 2,500 Starting Credit (can still by credit with CP)</textstring>
+	<text xstart="241" ystart="290" xend="434" yend="417" layer="14" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>- Only 2,500 Starting Credit (can still by credit with CP)</textstring>
 	</textbody>
 	</text>
-	<text xstart="14" ystart="245" xend="176" yend="288" layer="11" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>ADVANTAGES</textstring>
+	<text xstart="14" ystart="245" xend="176" yend="288" layer="12" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>ADVANTAGES</textstring>
 	</textbody>
 	</text>
-	<text xstart="14" ystart="290" xend="228" yend="417" layer="9" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>- +10 Pilot: Groundcraft skill\n- +10 Networking: {Field} skill of your choice\n- +1 Moxie</textstring>
+	<text xstart="14" ystart="290" xend="228" yend="417" layer="10" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>- +10 Pilot: Groundcraft skill\n- +10 Networking: {Field} skill of your choice\n- +1 Moxie</textstring>
 	</textbody>
 	</text>
-	<text xstart="15" ystart="56" xend="320" yend="228" layer="7" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>You were born and raised on Earth and evacuated during the horrors of the Fall, leaving your old life (and possibly your friends, family and loved ones) behind you. You were lucky enough to survive with your body intact and continue to make a life for yourself out in the system.</textstring>
+	<text xstart="15" ystart="56" xend="320" yend="228" layer="8" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>You were born and raised on Earth and evacuated during the horrors of the Fall, leaving your old life (and possibly your friends, family and loved ones) behind you. You were lucky enough to survive with your body intact and continue to make a life for yourself out in the system.</textstring>
 	</textbody>
 	</text>
-	<text xstart="14" ystart="474" xend="228" yend="519" layer="5" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="2" italic="false" bold="true" underlined="false"><textstring>Back to BACKGROUNDS</textstring>
+	<text xstart="14" ystart="474" xend="228" yend="519" layer="6" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="2" italic="false" bold="true" underlined="false"><textstring>Back to BACKGROUNDS</textstring>
 	</textbody>
 	</text>
-	<text xstart="498" ystart="474" xend="712" yend="519" layer="3" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="15" italic="false" bold="true" underlined="false"><textstring>On to CHOOSE FACTION</textstring>
+	<text xstart="498" ystart="474" xend="712" yend="519" layer="4" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="15" italic="false" bold="true" underlined="false"><textstring>On to CHOOSE FACTION</textstring>
 	</textbody>
 	</text>
-	<text xstart="15" ystart="21" xend="343" yend="66" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>FALL EVACUEE</textstring>
+	<text xstart="15" ystart="21" xend="343" yend="66" layer="2" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>FALL EVACUEE</textstring>
 	</textbody>
 	</text>
+	<image urlname="Src\XMLBits\FALL.png" xstart="241" ystart="21" width="394" height="519" layer="1" starttime="0"/>
 	</slide>
 	
-	<slide id="5" duration="60" descriptor="Hyperelite" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="434" ystart="245" xend="644" yend="288" layer="19" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>COMMON MORPHS</textstring>
+	<slide id="5" duration="60" descriptor="Hyperelite" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="434" ystart="245" xend="644" yend="288" layer="20" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>COMMON MORPHS</textstring>
 	</textbody>
 	</text>
-	<text xstart="434" ystart="290" xend="661" yend="417" layer="17" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>Exalts, Sylphs</textstring>
+	<text xstart="434" ystart="290" xend="661" yend="417" layer="18" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>Exalts, Sylphs</textstring>
 	</textbody>
 	</text>
-	<text xstart="247" ystart="245" xend="428" yend="288" layer="15" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>DISADVANTAGES</textstring>
+	<text xstart="247" ystart="245" xend="428" yend="288" layer="16" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>DISADVANTAGES</textstring>
 	</textbody>
 	</text>
-	<text xstart="247" ystart="290" xend="428" yend="417" layer="13" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>- May not start with flat, splicer or any pod, uplift or synthetic morphs</textstring>
+	<text xstart="247" ystart="290" xend="428" yend="417" layer="14" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>- May not start with flat, splicer or any pod, uplift or synthetic morphs</textstring>
 	</textbody>
 	</text>
-	<text xstart="14" ystart="245" xend="176" yend="288" layer="11" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>ADVANTAGES</textstring>
+	<text xstart="14" ystart="245" xend="176" yend="288" layer="12" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>ADVANTAGES</textstring>
 	</textbody>
 	</text>
-	<text xstart="14" ystart="290" xend="241" yend="417" layer="9" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>- +10 Protocol skill\n- +10,000 Credit\n- +20 Networking: Hypercorps skill</textstring>
+	<text xstart="14" ystart="290" xend="241" yend="417" layer="10" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>- +10 Protocol skill\n- +10,000 Credit\n- +20 Networking: Hypercorps skill</textstring>
 	</textbody>
 	</text>
-	<text xstart="15" ystart="56" xend="320" yend="228" layer="7" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>You are privileged to have been raised as part of the immortal upper class that rules many inner system habitats and hypercorps. You were pampered with wealth and influence that most people can only dream of.</textstring>
+	<text xstart="15" ystart="56" xend="320" yend="228" layer="8" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>You are privileged to have been raised as part of the immortal upper class that rules many inner system habitats and hypercorps. You were pampered with wealth and influence that most people can only dream of.</textstring>
 	</textbody>
 	</text>
-	<text xstart="14" ystart="474" xend="228" yend="519" layer="5" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="2" italic="false" bold="true" underlined="false"><textstring>Back to BACKGROUNDS</textstring>
+	<text xstart="14" ystart="474" xend="228" yend="519" layer="6" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="2" italic="false" bold="true" underlined="false"><textstring>Back to BACKGROUNDS</textstring>
 	</textbody>
 	</text>
-	<text xstart="498" ystart="474" xend="712" yend="519" layer="3" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="15" italic="false" bold="true" underlined="false"><textstring>On to CHOOSE FACTION</textstring>
+	<text xstart="498" ystart="474" xend="712" yend="519" layer="4" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="15" italic="false" bold="true" underlined="false"><textstring>On to CHOOSE FACTION</textstring>
 	</textbody>
 	</text>
-	<text xstart="15" ystart="21" xend="343" yend="66" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>HYPERELITE</textstring>
+	<text xstart="15" ystart="21" xend="343" yend="66" layer="2" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>HYPERELITE</textstring>
 	</textbody>
 	</text>
+	<image urlname="Src\XMLBits\HYPER.png" xstart="320" ystart="9" width="232" height="531" layer="1" starttime="0"/>
 	</slide>
 	
-	<slide id="6" duration="60" descriptor="Infolife" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="434" ystart="245" xend="644" yend="288" layer="19" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>COMMON MORPHS</textstring>
+	<slide id="6" duration="60" descriptor="Infolife" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="434" ystart="245" xend="644" yend="288" layer="20" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>COMMON MORPHS</textstring>
 	</textbody>
 	</text>
-	<text xstart="434" ystart="290" xend="661" yend="434" layer="17" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>Infomorphs, Synthetic morphs</textstring>
+	<text xstart="434" ystart="290" xend="661" yend="434" layer="18" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>Infomorphs, Synthetic morphs</textstring>
 	</textbody>
 	</text>
-	<text xstart="247" ystart="245" xend="428" yend="288" layer="15" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>DISADVANTAGES</textstring>
+	<text xstart="247" ystart="245" xend="428" yend="288" layer="16" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>DISADVANTAGES</textstring>
 	</textbody>
 	</text>
-	<text xstart="247" ystart="290" xend="428" yend="434" layer="13" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>- Real World Naivete trait\n- Social Stigma (AGI) trait\n- May not purchase Psi trait\n- Social skills bought with Customisation Points are double price </textstring>
+	<text xstart="247" ystart="290" xend="428" yend="434" layer="14" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>- Real World Naivete trait\n- Social Stigma (AGI) trait\n- May not purchase Psi trait\n- Social skills bought with Customisation Points are double price </textstring>
 	</textbody>
 	</text>
-	<text xstart="14" ystart="245" xend="176" yend="288" layer="11" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>ADVANTAGES</textstring>
+	<text xstart="14" ystart="245" xend="176" yend="288" layer="12" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>ADVANTAGES</textstring>
 	</textbody>
 	</text>
-	<text xstart="14" ystart="290" xend="241" yend="434" layer="9" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>- +30 Interfacing skill\n- Computer skills (Infosec, Interfacing, Programming, Research) bought with Customisation Points are half price.</textstring>
+	<text xstart="14" ystart="290" xend="241" yend="434" layer="10" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>- +30 Interfacing skill\n- Computer skills (Infosec, Interfacing, Programming, Research) bought with Customisation Points are half price.</textstring>
 	</textbody>
 	</text>
-	<text xstart="15" ystart="56" xend="320" yend="266" layer="7" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>You entered existence as a digital consciousness – an artificial general intelligence (AGI). Your very existence is illegal in certain habitats (a legacy of those who place the Fall at the feet of rampant AIs). Unlike the seed AIs responsible for their Fall, your capacity for self –improvement is limited, though you do have full autonomy</textstring>
+	<text xstart="15" ystart="56" xend="320" yend="266" layer="8" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>You entered existence as a digital consciousness – an artificial general intelligence (AGI). Your very existence is illegal in certain habitats (a legacy of those who place the Fall at the feet of rampant AIs). Unlike the seed AIs responsible for their Fall, your capacity for self –improvement is limited, though you do have full autonomy</textstring>
 	</textbody>
 	</text>
-	<text xstart="14" ystart="474" xend="228" yend="519" layer="5" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="2" italic="false" bold="true" underlined="false"><textstring>Back to BACKGROUNDS</textstring>
+	<text xstart="14" ystart="474" xend="228" yend="519" layer="6" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="2" italic="false" bold="true" underlined="false"><textstring>Back to BACKGROUNDS</textstring>
 	</textbody>
 	</text>
-	<text xstart="498" ystart="474" xend="712" yend="519" layer="3" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="15" italic="false" bold="true" underlined="false"><textstring>On to CHOOSE FACTION</textstring>
+	<text xstart="498" ystart="474" xend="712" yend="519" layer="4" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="15" italic="false" bold="true" underlined="false"><textstring>On to CHOOSE FACTION</textstring>
 	</textbody>
 	</text>
-	<text xstart="15" ystart="21" xend="343" yend="66" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>INFOLIFE</textstring>
+	<text xstart="15" ystart="21" xend="343" yend="66" layer="2" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>INFOLIFE</textstring>
 	</textbody>
 	</text>
+	<image urlname="Src\XMLBits\INFOM.png" xstart="244" ystart="16" width="471" height="501" layer="1" starttime="0"/>
 	</slide>
 	
-	<slide id="7" duration="60" descriptor="Isolate" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="434" ystart="245" xend="644" yend="288" layer="19" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>COMMON MORPHS</textstring>
+	<slide id="7" duration="60" descriptor="Isolate" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="473" ystart="245" xend="683" yend="288" layer="20" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>COMMON MORPHS</textstring>
 	</textbody>
 	</text>
-	<text xstart="434" ystart="290" xend="661" yend="417" layer="17" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>All</textstring>
+	<text xstart="473" ystart="290" xend="700" yend="417" layer="18" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>All</textstring>
 	</textbody>
 	</text>
-	<text xstart="247" ystart="245" xend="428" yend="288" layer="15" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>DISADVANTAGES</textstring>
+	<text xstart="247" ystart="245" xend="428" yend="288" layer="16" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>DISADVANTAGES</textstring>
 	</textbody>
 	</text>
-	<text xstart="247" ystart="290" xend="428" yend="417" layer="13" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>- -10 starting Rep</textstring>
+	<text xstart="247" ystart="290" xend="428" yend="417" layer="14" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>- -10 starting Rep</textstring>
 	</textbody>
 	</text>
-	<text xstart="14" ystart="245" xend="176" yend="288" layer="11" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>ADVANTAGES</textstring>
+	<text xstart="14" ystart="245" xend="176" yend="288" layer="12" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>ADVANTAGES</textstring>
 	</textbody>
 	</text>
-	<text xstart="14" ystart="290" xend="241" yend="417" layer="9" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>- +20 to two skills of your choice</textstring>
+	<text xstart="14" ystart="290" xend="241" yend="417" layer="10" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>- +20 to two skills of your choice</textstring>
 	</textbody>
 	</text>
-	<text xstart="15" ystart="56" xend="320" yend="228" layer="7" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>You were raised as part of a self-exiled grouping on the fringes of the system. Whether raised as part of religious group, cult, social experiment, anti-tech cell or group that just wanted to be isolated, you spent most if not all of your upbringing isolated from other factions.</textstring>
+	<text xstart="15" ystart="56" xend="320" yend="228" layer="8" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>You were raised as part of a self-exiled grouping on the fringes of the system. Whether raised as part of religious group, cult, social experiment, anti-tech cell or group that just wanted to be isolated, you spent most if not all of your upbringing isolated from other factions.</textstring>
 	</textbody>
 	</text>
-	<text xstart="14" ystart="474" xend="228" yend="519" layer="5" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="2" italic="false" bold="true" underlined="false"><textstring>Back to BACKGROUNDS</textstring>
+	<text xstart="14" ystart="474" xend="228" yend="519" layer="6" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="2" italic="false" bold="true" underlined="false"><textstring>Back to BACKGROUNDS</textstring>
 	</textbody>
 	</text>
-	<text xstart="498" ystart="474" xend="712" yend="519" layer="3" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="15" italic="false" bold="true" underlined="false"><textstring>On to CHOOSE FACTION</textstring>
+	<text xstart="498" ystart="474" xend="712" yend="519" layer="4" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="15" italic="false" bold="true" underlined="false"><textstring>On to CHOOSE FACTION</textstring>
 	</textbody>
 	</text>
-	<text xstart="15" ystart="21" xend="343" yend="66" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>ISOLATE</textstring>
+	<text xstart="15" ystart="21" xend="343" yend="66" layer="2" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>ISOLATE</textstring>
 	</textbody>
 	</text>
+	<image urlname="Src\XMLBits\ISO.png" xstart="292" ystart="9" width="272" height="531" layer="1" starttime="0"/>
 	</slide>
 	
-	<slide id="8" duration="60" descriptor="Lost" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="434" ystart="245" xend="644" yend="288" layer="19" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>COMMON MORPHS</textstring>
+	<slide id="8" duration="60" descriptor="Lost" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="434" ystart="245" xend="644" yend="288" layer="20" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>COMMON MORPHS</textstring>
 	</textbody>
 	</text>
-	<text xstart="434" ystart="290" xend="661" yend="417" layer="17" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>Futura</textstring>
+	<text xstart="434" ystart="290" xend="661" yend="417" layer="18" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>Futura</textstring>
 	</textbody>
 	</text>
-	<text xstart="247" ystart="245" xend="428" yend="288" layer="15" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>DISADVANTAGES</textstring>
+	<text xstart="247" ystart="245" xend="428" yend="288" layer="16" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>DISADVANTAGES</textstring>
 	</textbody>
 	</text>
-	<text xstart="247" ystart="290" xend="428" yend="417" layer="13" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>- Mental Disorder (choose two, this includes the one from Psi) trait\n- Social Stigma (Lost) trait\n- Must start with Futura morph</textstring>
+	<text xstart="247" ystart="290" xend="428" yend="417" layer="14" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>- Mental Disorder (choose two, this includes the one from Psi) trait\n- Social Stigma (Lost) trait\n- Must start with Futura morph</textstring>
 	</textbody>
 	</text>
-	<text xstart="14" ystart="245" xend="176" yend="288" layer="11" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>ADVANTAGES</textstring>
+	<text xstart="14" ystart="245" xend="176" yend="288" layer="12" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>ADVANTAGES</textstring>
 	</textbody>
 	</text>
-	<text xstart="14" ystart="290" xend="241" yend="417" layer="9" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>- +20 to two Knowledge skills of your choice\n- Psi trait (Level 1)</textstring>
+	<text xstart="14" ystart="290" xend="241" yend="417" layer="10" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>- +20 to two Knowledge skills of your choice\n- Psi trait (Level 1)</textstring>
 	</textbody>
 	</text>
-	<text xstart="15" ystart="56" xend="320" yend="266" layer="7" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>You are a legacy of one of the most infamous debacles since the Fall. As a member of the “Lost generation”, you went through an accelerated-growth childhood, somehow surviving where others of your kind died, went insane or were persecuted. Your background is a social stigma, but it does provide you with certain advantages… and burdens.</textstring>
+	<text xstart="15" ystart="56" xend="320" yend="266" layer="8" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>You are a legacy of one of the most infamous debacles since the Fall. As a member of the “Lost generation”, you went through an accelerated-growth childhood, somehow surviving where others of your kind died, went insane or were persecuted. Your background is a social stigma, but it does provide you with certain advantages… and burdens.</textstring>
 	</textbody>
 	</text>
-	<text xstart="14" ystart="474" xend="228" yend="519" layer="5" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="2" italic="false" bold="true" underlined="false"><textstring>Back to BACKGROUNDS</textstring>
+	<text xstart="14" ystart="474" xend="228" yend="519" layer="6" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="2" italic="false" bold="true" underlined="false"><textstring>Back to BACKGROUNDS</textstring>
 	</textbody>
 	</text>
-	<text xstart="498" ystart="474" xend="712" yend="519" layer="3" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="15" italic="false" bold="true" underlined="false"><textstring>On to CHOOSE FACTION</textstring>
+	<text xstart="498" ystart="474" xend="712" yend="519" layer="4" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="15" italic="false" bold="true" underlined="false"><textstring>On to CHOOSE FACTION</textstring>
 	</textbody>
 	</text>
-	<text xstart="15" ystart="21" xend="343" yend="66" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>LOST</textstring>
+	<text xstart="15" ystart="21" xend="343" yend="66" layer="2" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>LOST</textstring>
 	</textbody>
 	</text>
+	<image urlname="Src\XMLBits\LOST.png" xstart="286" ystart="4" width="255" height="531" layer="1" starttime="0"/>
 	</slide>
 	
-	<slide id="9" duration="60" descriptor="Lunar Colonist" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="434" ystart="245" xend="644" yend="288" layer="19" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>COMMON MORPHS</textstring>
+	<slide id="9" duration="60" descriptor="Lunar Colonist" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="434" ystart="245" xend="644" yend="288" layer="20" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>COMMON MORPHS</textstring>
 	</textbody>
 	</text>
-	<text xstart="434" ystart="290" xend="661" yend="417" layer="17" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>Flats, Splicers</textstring>
+	<text xstart="434" ystart="290" xend="661" yend="417" layer="18" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>Flats, Splicers</textstring>
 	</textbody>
 	</text>
-	<text xstart="247" ystart="245" xend="428" yend="288" layer="15" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>DISADVANTAGES</textstring>
+	<text xstart="247" ystart="245" xend="428" yend="288" layer="16" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>DISADVANTAGES</textstring>
 	</textbody>
 	</text>
-	<text xstart="247" ystart="290" xend="428" yend="417" layer="13" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>None</textstring>
+	<text xstart="247" ystart="290" xend="428" yend="417" layer="14" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>None</textstring>
 	</textbody>
 	</text>
-	<text xstart="14" ystart="245" xend="176" yend="288" layer="11" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>ADVANTAGES</textstring>
+	<text xstart="14" ystart="245" xend="176" yend="288" layer="12" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>ADVANTAGES</textstring>
 	</textbody>
 	</text>
-	<text xstart="14" ystart="290" xend="241" yend="417" layer="9" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>- +10 Pilot: Groundcraft skill\n- +10 to one Technical, Academic: {Field} or Profession: {Field} skill of your choice\n- +20 Networking: Hypercorps skill</textstring>
+	<text xstart="14" ystart="290" xend="241" yend="417" layer="10" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>- +10 Pilot: Groundcraft skill\n- +10 to one Technical, Academic: {Field} or Profession: {Field} skill of your choice\n- +20 Networking: Hypercorps skill</textstring>
 	</textbody>
 	</text>
-	<text xstart="15" ystart="56" xend="320" yend="228" layer="7" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>You experienced your childhood in one of the cramped dome cities or underground stations on Luna, Earth’s moon. You had a ringside seat to the Fall of Earth.</textstring>
+	<text xstart="15" ystart="56" xend="320" yend="228" layer="8" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>You experienced your childhood in one of the cramped dome cities or underground stations on Luna, Earth’s moon. You had a ringside seat to the Fall of Earth.</textstring>
 	</textbody>
 	</text>
-	<text xstart="14" ystart="474" xend="228" yend="519" layer="5" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="2" italic="false" bold="true" underlined="false"><textstring>Back to BACKGROUNDS</textstring>
+	<text xstart="14" ystart="474" xend="228" yend="519" layer="6" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="2" italic="false" bold="true" underlined="false"><textstring>Back to BACKGROUNDS</textstring>
 	</textbody>
 	</text>
-	<text xstart="498" ystart="474" xend="712" yend="519" layer="3" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="15" italic="false" bold="true" underlined="false"><textstring>On to CHOOSE FACTION</textstring>
+	<text xstart="498" ystart="474" xend="712" yend="519" layer="4" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="15" italic="false" bold="true" underlined="false"><textstring>On to CHOOSE FACTION</textstring>
 	</textbody>
 	</text>
-	<text xstart="15" ystart="21" xend="343" yend="66" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>LUNAR COLONIST</textstring>
+	<text xstart="15" ystart="21" xend="343" yend="66" layer="2" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>LUNAR COLONIST</textstring>
 	</textbody>
 	</text>
+	<image urlname="Src\XMLBits\LUNAR.png" xstart="292" ystart="5" width="225" height="527" layer="1" starttime="0"/>
 	</slide>
 	
-	<slide id="10" duration="60" descriptor="Martian" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="434" ystart="245" xend="644" yend="288" layer="19" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>COMMON MORPHS</textstring>
+	<slide id="10" duration="60" descriptor="Martian" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="434" ystart="245" xend="644" yend="288" layer="20" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>COMMON MORPHS</textstring>
 	</textbody>
 	</text>
-	<text xstart="434" ystart="290" xend="661" yend="417" layer="17" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>Flats, Splicers and Rusters</textstring>
+	<text xstart="434" ystart="290" xend="661" yend="417" layer="18" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>Flats, Splicers and Rusters</textstring>
 	</textbody>
 	</text>
-	<text xstart="247" ystart="245" xend="428" yend="288" layer="15" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>DISADVANTAGES</textstring>
+	<text xstart="247" ystart="245" xend="428" yend="288" layer="16" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>DISADVANTAGES</textstring>
 	</textbody>
 	</text>
-	<text xstart="247" ystart="290" xend="428" yend="417" layer="13" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>None</textstring>
+	<text xstart="247" ystart="290" xend="428" yend="417" layer="14" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>None</textstring>
 	</textbody>
 	</text>
-	<text xstart="14" ystart="245" xend="176" yend="288" layer="11" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>ADVANTAGES</textstring>
+	<text xstart="14" ystart="245" xend="176" yend="288" layer="12" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>ADVANTAGES</textstring>
 	</textbody>
 	</text>
-	<text xstart="14" ystart="290" xend="241" yend="417" layer="9" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>- +10 Pilot: Groundcraft skill\n- +10 to one Technical, Acdemic: {Field} skill or Profession: {Field} skill of your choice\n- +20 Networking: Hypercorps skill </textstring>
+	<text xstart="14" ystart="290" xend="241" yend="417" layer="10" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>- +10 Pilot: Groundcraft skill\n- +10 to one Technical, Acdemic: {Field} skill or Profession: {Field} skill of your choice\n- +20 Networking: Hypercorps skill </textstring>
 	</textbody>
 	</text>
-	<text xstart="15" ystart="56" xend="320" yend="228" layer="7" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>You were raised in a station on or above Mars, now the most populated planet in the system. Your home town may or may not have survived the Fall.</textstring>
+	<text xstart="15" ystart="56" xend="320" yend="228" layer="8" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>You were raised in a station on or above Mars, now the most populated planet in the system. Your home town may or may not have survived the Fall.</textstring>
 	</textbody>
 	</text>
-	<text xstart="14" ystart="474" xend="228" yend="519" layer="5" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="2" italic="false" bold="true" underlined="false"><textstring>Back to BACKGROUNDS</textstring>
+	<text xstart="14" ystart="474" xend="228" yend="519" layer="6" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="2" italic="false" bold="true" underlined="false"><textstring>Back to BACKGROUNDS</textstring>
 	</textbody>
 	</text>
-	<text xstart="498" ystart="474" xend="712" yend="519" layer="3" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="15" italic="false" bold="true" underlined="false"><textstring>On to CHOOSE FACTION</textstring>
+	<text xstart="498" ystart="474" xend="712" yend="519" layer="4" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="15" italic="false" bold="true" underlined="false"><textstring>On to CHOOSE FACTION</textstring>
 	</textbody>
 	</text>
-	<text xstart="15" ystart="21" xend="343" yend="66" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>MARTIAN</textstring>
+	<text xstart="15" ystart="21" xend="343" yend="66" layer="2" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>MARTIAN</textstring>
 	</textbody>
 	</text>
+	<image urlname="Src\XMLBits\MARTIAN.png" xstart="326" ystart="4" width="221" height="531" layer="1" starttime="0"/>
 	</slide>
 	
-	<slide id="11" duration="60" descriptor="Original Space Colonist" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="439" ystart="273" xend="649" yend="316" layer="19" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>COMMON MORPHS</textstring>
+	<slide id="11" duration="60" descriptor="Original Space Colonist" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="439" ystart="273" xend="649" yend="316" layer="20" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>COMMON MORPHS</textstring>
 	</textbody>
 	</text>
-	<text xstart="439" ystart="318" xend="666" yend="445" layer="17" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>All. Use of exotic morphs is common</textstring>
+	<text xstart="439" ystart="318" xend="666" yend="445" layer="18" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>All. Use of exotic morphs is common</textstring>
 	</textbody>
 	</text>
-	<text xstart="252" ystart="273" xend="433" yend="316" layer="15" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>DISADVANTAGES</textstring>
+	<text xstart="252" ystart="273" xend="433" yend="316" layer="16" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>DISADVANTAGES</textstring>
 	</textbody>
 	</text>
-	<text xstart="252" ystart="318" xend="433" yend="445" layer="13" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>None</textstring>
+	<text xstart="252" ystart="318" xend="433" yend="445" layer="14" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>None</textstring>
 	</textbody>
 	</text>
-	<text xstart="14" ystart="273" xend="176" yend="316" layer="11" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>ADVANTAGES</textstring>
+	<text xstart="14" ystart="273" xend="176" yend="316" layer="12" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>ADVANTAGES</textstring>
 	</textbody>
 	</text>
-	<text xstart="14" ystart="318" xend="241" yend="445" layer="9" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>- +10 Pilot: Spacecraft or Freefall skill\n- +10 to a Technical, Academic: {Field} or Profession: {Field} skill of your choice\n- +20 to a Networking: {Field} skill of your choice</textstring>
+	<text xstart="14" ystart="318" xend="241" yend="445" layer="10" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>- +10 Pilot: Spacecraft or Freefall skill\n- +10 to a Technical, Academic: {Field} or Profession: {Field} skill of your choice\n- +20 to a Networking: {Field} skill of your choice</textstring>
 	</textbody>
 	</text>
-	<text xstart="15" ystart="56" xend="320" yend="303" layer="7" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>You or your parents were part of the first “generations” of colonists/workers sent out from Earth to stake a claim in space, so you are familiar with the cramped confines of spaceflight and life aboard older stations and habitats. As a “Zero-one g” (zero-gravity, first-gen), you were never part of the elite. People from your background typically have some sort of specialized tech training as vacworkers or habtechs</textstring>
+	<text xstart="15" ystart="56" xend="320" yend="303" layer="8" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>You or your parents were part of the first “generations” of colonists/workers sent out from Earth to stake a claim in space, so you are familiar with the cramped confines of spaceflight and life aboard older stations and habitats. As a “Zero-one g” (zero-gravity, first-gen), you were never part of the elite. People from your background typically have some sort of specialized tech training as vacworkers or habtechs</textstring>
 	</textbody>
 	</text>
-	<text xstart="14" ystart="474" xend="228" yend="519" layer="5" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="2" italic="false" bold="true" underlined="false"><textstring>Back to BACKGROUNDS</textstring>
+	<text xstart="14" ystart="474" xend="228" yend="519" layer="6" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="2" italic="false" bold="true" underlined="false"><textstring>Back to BACKGROUNDS</textstring>
 	</textbody>
 	</text>
-	<text xstart="498" ystart="474" xend="712" yend="519" layer="3" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="15" italic="false" bold="true" underlined="false"><textstring>On to CHOOSE FACTION</textstring>
+	<text xstart="498" ystart="474" xend="712" yend="519" layer="4" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="15" italic="false" bold="true" underlined="false"><textstring>On to CHOOSE FACTION</textstring>
 	</textbody>
 	</text>
-	<text xstart="15" ystart="21" xend="343" yend="66" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>ORIGINAL SPACE COLONIST</textstring>
+	<text xstart="15" ystart="21" xend="343" yend="66" layer="2" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>ORIGINAL SPACE COLONIST</textstring>
 	</textbody>
 	</text>
+	<image urlname="Src\XMLBits\OSC.png" xstart="269" ystart="4" width="442" height="340" layer="1" starttime="0"/>
 	</slide>
 	
-	<slide id="12" duration="60" descriptor="Re-Instantiated" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="434" ystart="245" xend="644" yend="288" layer="19" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>COMMON MORPHS</textstring>
+	<slide id="12" duration="60" descriptor="Re-Instantiated" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="434" ystart="245" xend="644" yend="288" layer="20" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>COMMON MORPHS</textstring>
 	</textbody>
 	</text>
-	<text xstart="434" ystart="290" xend="661" yend="417" layer="17" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>Cases, Infomorphs, Synths</textstring>
+	<text xstart="434" ystart="290" xend="661" yend="417" layer="18" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>Cases, Infomorphs, Synths</textstring>
 	</textbody>
 	</text>
-	<text xstart="247" ystart="245" xend="428" yend="288" layer="15" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>DISADVANTAGES</textstring>
+	<text xstart="247" ystart="245" xend="428" yend="288" layer="16" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>DISADVANTAGES</textstring>
 	</textbody>
 	</text>
-	<text xstart="247" ystart="290" xend="428" yend="417" layer="13" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>- Edited Memories trait\n- 0 Starting Credit (can still by Credit with CP)</textstring>
+	<text xstart="247" ystart="290" xend="428" yend="417" layer="14" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>- Edited Memories trait\n- 0 Starting Credit (can still by Credit with CP)</textstring>
 	</textbody>
 	</text>
-	<text xstart="14" ystart="245" xend="176" yend="288" layer="11" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>ADVANTAGES</textstring>
+	<text xstart="14" ystart="245" xend="176" yend="288" layer="12" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>ADVANTAGES</textstring>
 	</textbody>
 	</text>
-	<text xstart="14" ystart="290" xend="241" yend="417" layer="9" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>- +10 Pilot: Groundcraft skill\n- +10 to a Networking: {Field} skill of your choice\n- +2 Moxie</textstring>
+	<text xstart="14" ystart="290" xend="241" yend="417" layer="10" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>- +10 Pilot: Groundcraft skill\n- +10 to a Networking: {Field} skill of your choice\n- +2 Moxie</textstring>
 	</textbody>
 	</text>
-	<text xstart="15" ystart="56" xend="320" yend="267" layer="7" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>You were born and raised on Earth, but you did not survive the Fall. All that you know is that your body died there, but your backup was transmitted offworld and you were one of the lucky few to have been re-instantiated with a new morph. You may have spent years in dead storage, simulspace or as an infomorph slave.</textstring>
+	<text xstart="15" ystart="56" xend="320" yend="267" layer="8" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>You were born and raised on Earth, but you did not survive the Fall. All that you know is that your body died there, but your backup was transmitted offworld and you were one of the lucky few to have been re-instantiated with a new morph. You may have spent years in dead storage, simulspace or as an infomorph slave.</textstring>
 	</textbody>
 	</text>
-	<text xstart="14" ystart="474" xend="228" yend="519" layer="5" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="2" italic="false" bold="true" underlined="false"><textstring>Back to BACKGROUNDS</textstring>
+	<text xstart="14" ystart="474" xend="228" yend="519" layer="6" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="2" italic="false" bold="true" underlined="false"><textstring>Back to BACKGROUNDS</textstring>
 	</textbody>
 	</text>
-	<text xstart="498" ystart="474" xend="712" yend="519" layer="3" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="15" italic="false" bold="true" underlined="false"><textstring>On to CHOOSE FACTION</textstring>
+	<text xstart="498" ystart="474" xend="712" yend="519" layer="4" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="15" italic="false" bold="true" underlined="false"><textstring>On to CHOOSE FACTION</textstring>
 	</textbody>
 	</text>
-	<text xstart="15" ystart="21" xend="343" yend="66" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>RE-INSTANTIATED</textstring>
+	<text xstart="15" ystart="21" xend="343" yend="66" layer="2" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>RE-INSTANTIATED</textstring>
 	</textbody>
 	</text>
+	<image urlname="Src\XMLBits\REIN.png" xstart="310" ystart="9" width="248" height="522" layer="1" starttime="0"/>
 	</slide>
 	
-	<slide id="13" duration="60" descriptor="Scumborn" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="434" ystart="245" xend="644" yend="288" layer="19" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>COMMON MORPHS</textstring>
+	<slide id="13" duration="60" descriptor="Scumborn" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="434" ystart="245" xend="644" yend="288" layer="20" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>COMMON MORPHS</textstring>
 	</textbody>
 	</text>
-	<text xstart="434" ystart="290" xend="661" yend="417" layer="17" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>All, especially Bouncers</textstring>
+	<text xstart="434" ystart="290" xend="661" yend="417" layer="18" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>All, especially Bouncers</textstring>
 	</textbody>
 	</text>
-	<text xstart="247" ystart="245" xend="428" yend="288" layer="15" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>DISADVANTAGES</textstring>
+	<text xstart="247" ystart="245" xend="428" yend="288" layer="16" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>DISADVANTAGES</textstring>
 	</textbody>
 	</text>
-	<text xstart="247" ystart="290" xend="428" yend="417" layer="13" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>None</textstring>
+	<text xstart="247" ystart="290" xend="428" yend="417" layer="14" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>None</textstring>
 	</textbody>
 	</text>
-	<text xstart="14" ystart="245" xend="176" yend="288" layer="11" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>ADVANTAGES</textstring>
+	<text xstart="14" ystart="245" xend="176" yend="288" layer="12" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>ADVANTAGES</textstring>
 	</textbody>
 	</text>
-	<text xstart="14" ystart="290" xend="241" yend="417" layer="9" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>- +10 Persuasion or Deception skill\n- +10 Scrounging skill\n- +20 Networking: Autonomists skill</textstring>
+	<text xstart="14" ystart="290" xend="241" yend="417" layer="10" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>- +10 Persuasion or Deception skill\n- +10 Scrounging skill\n- +20 Networking: Autonomists skill</textstring>
 	</textbody>
 	</text>
-	<text xstart="15" ystart="56" xend="320" yend="228" layer="7" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>You were raised in the nomadic and chaotic lifestyle common to scum barges</textstring>
+	<text xstart="15" ystart="56" xend="320" yend="228" layer="8" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>You were raised in the nomadic and chaotic lifestyle common to scum barges</textstring>
 	</textbody>
 	</text>
-	<text xstart="14" ystart="474" xend="228" yend="519" layer="5" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="2" italic="false" bold="true" underlined="false"><textstring>Back to BACKGROUNDS</textstring>
+	<text xstart="14" ystart="474" xend="228" yend="519" layer="6" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="2" italic="false" bold="true" underlined="false"><textstring>Back to BACKGROUNDS</textstring>
 	</textbody>
 	</text>
-	<text xstart="498" ystart="474" xend="712" yend="519" layer="3" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="15" italic="false" bold="true" underlined="false"><textstring>On to CHOOSE FACTION</textstring>
+	<text xstart="498" ystart="474" xend="712" yend="519" layer="4" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="15" italic="false" bold="true" underlined="false"><textstring>On to CHOOSE FACTION</textstring>
 	</textbody>
 	</text>
-	<text xstart="15" ystart="21" xend="343" yend="66" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>SCUMBORN</textstring>
+	<text xstart="15" ystart="21" xend="343" yend="66" layer="2" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>SCUMBORN</textstring>
 	</textbody>
 	</text>
+	<image urlname="Src\XMLBits\SCUM.png" xstart="264" ystart="8" width="271" height="516" layer="1" starttime="0"/>
 	</slide>
 	
-	<slide id="14" duration="60" descriptor="Uplift" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="434" ystart="245" xend="644" yend="288" layer="19" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>COMMON MORPHS</textstring>
+	<slide id="14" duration="60" descriptor="Uplift" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="434" ystart="245" xend="644" yend="288" layer="20" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>COMMON MORPHS</textstring>
 	</textbody>
 	</text>
-	<text xstart="434" ystart="290" xend="661" yend="417" layer="17" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>Neo-Avian, Neo-Hominid, Octomorph</textstring>
+	<text xstart="434" ystart="290" xend="661" yend="417" layer="18" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>Neo-Avian, Neo-Hominid, Octomorph</textstring>
 	</textbody>
 	</text>
-	<text xstart="247" ystart="245" xend="428" yend="288" layer="15" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>DISADVANTAGES</textstring>
+	<text xstart="247" ystart="245" xend="428" yend="288" layer="16" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>DISADVANTAGES</textstring>
 	</textbody>
 	</text>
-	<text xstart="247" ystart="290" xend="428" yend="417" layer="13" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>- Must choose an uplift morph to start</textstring>
+	<text xstart="247" ystart="290" xend="428" yend="417" layer="14" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>- Must choose an uplift morph to start</textstring>
 	</textbody>
 	</text>
-	<text xstart="14" ystart="245" xend="176" yend="288" layer="11" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>ADVANTAGES</textstring>
+	<text xstart="14" ystart="245" xend="176" yend="288" layer="12" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>ADVANTAGES</textstring>
 	</textbody>
 	</text>
-	<text xstart="14" ystart="290" xend="241" yend="417" layer="9" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>- +10 Fray skill\n- +10 Perception skill\n- +20 to two Knowledge skills of your choice</textstring>
+	<text xstart="14" ystart="290" xend="241" yend="417" layer="10" starttime="0" font="Calibri" fontcolor="#000000" fontsize="14"><textbody italic="true" bold="false" underlined="false"><textstring>- +10 Fray skill\n- +10 Perception skill\n- +20 to two Knowledge skills of your choice</textstring>
 	</textbody>
 	</text>
-	<text xstart="15" ystart="56" xend="320" yend="228" layer="7" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>You are not even human. You were born as an uplifted animal: chimpanzee, gorilla, orang-utan, parrot, raven, crow or octopus.</textstring>
+	<text xstart="15" ystart="56" xend="320" yend="228" layer="8" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody italic="true" bold="false" underlined="false"><textstring>You are not even human. You were born as an uplifted animal: chimpanzee, gorilla, orang-utan, parrot, raven, crow or octopus.</textstring>
 	</textbody>
 	</text>
-	<text xstart="14" ystart="474" xend="228" yend="519" layer="5" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="2" italic="false" bold="true" underlined="false"><textstring>Back to BACKGROUNDS</textstring>
+	<text xstart="14" ystart="474" xend="228" yend="519" layer="6" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="2" italic="false" bold="true" underlined="false"><textstring>Back to BACKGROUNDS</textstring>
 	</textbody>
 	</text>
-	<text xstart="498" ystart="474" xend="712" yend="519" layer="3" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="15" italic="false" bold="true" underlined="false"><textstring>On to CHOOSE FACTION</textstring>
+	<text xstart="498" ystart="474" xend="712" yend="519" layer="4" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="15" italic="false" bold="true" underlined="false"><textstring>On to CHOOSE FACTION</textstring>
 	</textbody>
 	</text>
-	<text xstart="15" ystart="21" xend="343" yend="66" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>UPLIFT</textstring>
+	<text xstart="15" ystart="21" xend="343" yend="66" layer="2" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>UPLIFT</textstring>
 	</textbody>
 	</text>
+	<image urlname="Src\XMLBits\MERCUR.png" xstart="272" ystart="21" width="434" height="437" layer="1" starttime="0"/>
 	</slide>
 	
 	<slide id="15" duration="60" descriptor="Choose Faction" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="417" ystart="60" xend="655" yend="451" layer="7" starttime="0" font="Calibri" fontcolor="#790909" fontsize="20"><textbody branch="16" italic="true" bold="false" underlined="false"><textstring>Anarchist\n</textstring>
@@ -4040,27 +4052,74 @@
 	</text>
 	</slide>
 	
-	<slide id="1" duration="60" descriptor="Content" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="20" ystart="15" xend="349" yend="474" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="20"><textbody branch="2" italic="true" bold="false" underlined="false"><textstring>History\n</textstring>
+	<slide id="1" duration="60" descriptor="Content" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="366" ystart="208" xend="694" yend="253" layer="26" starttime="0" font="Calibri" fontcolor="#790909" fontsize="20"><textbody italic="false" bold="true" underlined="false"><textstring>Stats</textstring>
 	</textbody>
-	<textbody branch="4" italic="true" bold="false" underlined="false"><textstring>Events\n</textstring>
+	</text>
+	<text xstart="366" ystart="242" xend="695" yend="514" layer="24" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody branch="30" italic="false" bold="true" underlined="false"><textstring>Proxy 21\n</textstring>
 	</textbody>
-	<textbody branch="5" italic="true" bold="false" underlined="false"><textstring>Mission Hook: Thousand Heavens\n</textstring>
+	<textbody branch="31" italic="false" bold="true" underlined="false"><textstring>Marie Danielson\n</textstring>
 	</textbody>
-	<textbody branch="6" italic="true" bold="false" underlined="false"><textstring>Stage 1: Initial Investigation\n</textstring>
+	<textbody branch="32" italic="false" bold="true" underlined="false"><textstring>David’s Servitor Bot\n</textstring>
 	</textbody>
-	<textbody branch="8" italic="true" bold="false" underlined="false"><textstring>Stage 2: David’s Apartment\n</textstring>
+	<textbody branch="33" italic="false" bold="true" underlined="false"><textstring>Knox Building Security\n</textstring>
 	</textbody>
-	<textbody branch="12" italic="true" bold="false" underlined="false"><textstring>Stage 3: HLS\n </textstring>
+	<textbody branch="34" italic="false" bold="true" underlined="false"><textstring>OIA Foot Patrol Officer\n</textstring>
 	</textbody>
-	<textbody branch="15" italic="true" bold="false" underlined="false"><textstring>Stage 4: The Thousand Candles\n</textstring>
+	<textbody branch="35" italic="false" bold="true" underlined="false"><textstring>Jian Chen and Ryan Nelson\n</textstring>
 	</textbody>
-	<textbody branch="19" italic="true" bold="false" underlined="false"><textstring>Stage 5: Julia’s Ambush\n</textstring>
+	<textbody branch="36" italic="false" bold="true" underlined="false"><textstring>Sammy Surprise\n</textstring>
 	</textbody>
-	<textbody branch="22" italic="true" bold="false" underlined="false"><textstring>Stage 6: Mike’s Custom Morphs\n</textstring>
+	<textbody branch="37" italic="false" bold="true" underlined="false"><textstring>Julia Juggs\n</textstring>
 	</textbody>
-	<textbody branch="28" italic="true" bold="false" underlined="false"><textstring>Stage 7:When Ultimates Attack\n</textstring>
+	<textbody branch="38" italic="false" bold="true" underlined="false"><textstring>Gwin\n</textstring>
 	</textbody>
-	<textbody branch="28" italic="true" bold="false" underlined="false"><textstring>Debriefing\n</textstring>
+	<textbody branch="39" italic="false" bold="true" underlined="false"><textstring>Smoke Lions\n</textstring>
+	</textbody>
+	<textbody branch="40" italic="false" bold="true" underlined="false"><textstring>David Williams\n</textstring>
+	</textbody>
+	<textbody branch="41" italic="false" bold="true" underlined="false"><textstring>Chimera\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="366" ystart="9" xend="694" yend="54" layer="17" starttime="0" font="Calibri" fontcolor="#790909" fontsize="20"><textbody italic="false" bold="true" underlined="false"><textstring>Maps</textstring>
+	</textbody>
+	</text>
+	<text xstart="366" ystart="43" xend="695" yend="208" layer="15" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody branch="9" italic="false" bold="true" underlined="false"><textstring>David’s Apartment\n</textstring>
+	</textbody>
+	<textbody branch="13" italic="false" bold="true" underlined="false"><textstring>HLS\n</textstring>
+	</textbody>
+	<textbody branch="16" italic="false" bold="true" underlined="false"><textstring>The Thousand Candles\n</textstring>
+	</textbody>
+	<textbody branch="21" italic="false" bold="true" underlined="false"><textstring>Xu Fu Chang’s\n</textstring>
+	</textbody>
+	<textbody branch="23" italic="false" bold="true" underlined="false"><textstring>Mike’s Custom Morphs (street level)\n</textstring>
+	</textbody>
+	<textbody branch="24" italic="false" bold="true" underlined="false"><textstring>Mike’s Custom Morphs (lower level)\n</textstring>
+	</textbody>
+	</text>
+	<text xstart="20" ystart="9" xend="348" yend="54" layer="13" starttime="0" font="Calibri" fontcolor="#790909" fontsize="20"><textbody italic="false" bold="true" underlined="false"><textstring>Adventure Run-through</textstring>
+	</textbody>
+	</text>
+	<text xstart="20" ystart="43" xend="349" yend="514" layer="1" starttime="0" font="Calibri" fontcolor="#000000" fontsize="16"><textbody branch="2" italic="false" bold="true" underlined="false"><textstring>History\n</textstring>
+	</textbody>
+	<textbody branch="4" italic="false" bold="true" underlined="false"><textstring>Events\n</textstring>
+	</textbody>
+	<textbody branch="5" italic="false" bold="true" underlined="false"><textstring>Mission Hook: Thousand Heavens\n</textstring>
+	</textbody>
+	<textbody branch="6" italic="false" bold="true" underlined="false"><textstring>Stage 1: Initial Investigation\n</textstring>
+	</textbody>
+	<textbody branch="8" italic="false" bold="true" underlined="false"><textstring>Stage 2: David’s Apartment\n</textstring>
+	</textbody>
+	<textbody branch="12" italic="false" bold="true" underlined="false"><textstring>Stage 3: HLS\n </textstring>
+	</textbody>
+	<textbody branch="15" italic="false" bold="true" underlined="false"><textstring>Stage 4: The Thousand Candles\n</textstring>
+	</textbody>
+	<textbody branch="19" italic="false" bold="true" underlined="false"><textstring>Stage 5: Julia’s Ambush\n</textstring>
+	</textbody>
+	<textbody branch="22" italic="false" bold="true" underlined="false"><textstring>Stage 6: Mike’s Custom Morphs\n</textstring>
+	</textbody>
+	<textbody branch="28" italic="false" bold="true" underlined="false"><textstring>Stage 7:When Ultimates Attack\n</textstring>
+	</textbody>
+	<textbody branch="28" italic="false" bold="true" underlined="false"><textstring>Debriefing\n</textstring>
 	</textbody>
 	</text>
 	</slide>
@@ -4247,7 +4306,7 @@
 	<text xstart="15" ystart="21" xend="343" yend="66" layer="2" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody italic="false" bold="true" underlined="false"><textstring>Stage 1: Initial Investigation</textstring>
 	</textbody>
 	</text>
-	<text xstart="14" ystart="179" xend="342" yend="531" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="12"><textbody italic="true" bold="false" underlined="false"><textstring>- David is a virology graduate student at the University of Chicago. His thesis is on the use of bacteriophages to genetically modify previously deployed biosculpted bacteria colonies.\n- He lives and works at the university’s campus in the Knox Building.\n- He maintains a modest lifelog containing only the highlights. The log has not been updated since well before he went missing.\n- A list of David's friends and colleagues. David is fairly active socially and has many friends who are worried about him because he missed class, work, and labs today, which is very unlike him.\n- A map of David's apartment in the graduate student housing section of the campus.\n- David does not own a vehicle, when off campus he uses public transportation or walks.\n- David has no surveillance spimes in his apartment and no roommates, though he does have a servitor robot to take care of his apartment and cook for him.</textstring>
+	<text xstart="14" ystart="179" xend="342" yend="474" layer="1" starttime="0" font="Calibri" fontcolor="#790909" fontsize="12"><textbody italic="true" bold="false" underlined="false"><textstring>- David is a virology graduate student at the University of Chicago. His thesis is on the use of bacteriophages to genetically modify previously deployed biosculpted bacteria colonies.\n- He lives and works at the university’s campus in the Knox Building.\n- He maintains a modest lifelog containing only the highlights. The log has not been updated since well before he went missing.\n- A list of David's friends and colleagues. David is fairly active socially and has many friends who are worried about him because he missed class, work, and labs today, which is very unlike him.\n- A map of David's apartment in the graduate student housing section of the campus.\n- David does not own a vehicle, when off campus he uses public transportation or walks.\n- David has no surveillance spimes in his apartment and no roommates, though he does have a servitor robot to take care of his apartment and cook for him.</textstring>
 	</textbody>
 	</text>
 	</slide>
@@ -4346,7 +4405,8 @@
 	<image urlname="Src\XMLBits\APARTMENT.png" xstart="5" ystart="162" width="380" height="372" layer="1" starttime="0"/>
 	</slide>
 	
-	<slide id="10" duration="60" descriptor="Stage 2: David’s Apartment Con’t" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="15" ystart="372" xend="343" yend="519" layer="13" starttime="0" font="Calibri" fontcolor="#000000" fontsize="12"><textbody italic="false" bold="true" underlined="false"><textstring>Analysing the Clues\n</textstring>
+	<slide id="10" duration="60" descriptor="Stage 2: David’s Apartment Con’t" lastSlide="false" backgroundcolor="#BFBFBF"><audio urlname="Src\XMLBits\DAVID.mp3" playtime="0" starttime="0" duration="0" loop="false"/>
+	<text xstart="15" ystart="372" xend="343" yend="519" layer="13" starttime="0" font="Calibri" fontcolor="#000000" fontsize="12"><textbody italic="false" bold="true" underlined="false"><textstring>Analysing the Clues\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>The Door Lock\n</textstring>
 	</textbody>
@@ -4399,7 +4459,8 @@
 	</text>
 	</slide>
 	
-	<slide id="12" duration="60" descriptor="Stage 3: HLS" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="428" ystart="412" xend="660" yend="457" layer="22" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="34" italic="false" bold="true" underlined="false"><textstring>OIA FOOT PATROL OFFICER</textstring>
+	<slide id="12" duration="60" descriptor="Stage 3: HLS" lastSlide="false" backgroundcolor="#BFBFBF"><audio urlname="Src\XMLBits\HLS.mp3" playtime="0" starttime="0" duration="0" loop="false"/>
+	<text xstart="428" ystart="412" xend="660" yend="457" layer="22" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="34" italic="false" bold="true" underlined="false"><textstring>OIA FOOT PATROL OFFICER</textstring>
 	</textbody>
 	</text>
 	<text xstart="490" ystart="366" xend="598" yend="411" layer="20" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="13" italic="false" bold="true" underlined="false"><textstring>HLS MAP</textstring>
@@ -4471,7 +4532,8 @@
 	</text>
 	</slide>
 	
-	<slide id="15" duration="60" descriptor="Stage 4: The Thousand Candles" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="230" ystart="485" xend="455" yend="530" layer="24" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="36" italic="false" bold="true" underlined="false"><textstring>SAMMY SURPRISE’S STATS</textstring>
+	<slide id="15" duration="60" descriptor="Stage 4: The Thousand Candles" lastSlide="false" backgroundcolor="#BFBFBF"><audio urlname="Src\XMLBits\THOUSANDCANDLES.mp3" playtime="0" starttime="0" duration="0" loop="false"/>
+	<text xstart="230" ystart="485" xend="455" yend="530" layer="24" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="36" italic="false" bold="true" underlined="false"><textstring>SAMMY SURPRISE’S STATS</textstring>
 	</textbody>
 	</text>
 	<text xstart="3" ystart="485" xend="235" yend="530" layer="22" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="35" italic="false" bold="true" underlined="false"><textstring>CHEN AND NELSON’S STATS</textstring>
@@ -4601,7 +4663,8 @@
 	</text>
 	</slide>
 	
-	<slide id="20" duration="60" descriptor="Stage 5: Julia’s Ambush Con’t" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="122" ystart="429" xend="262" yend="474" layer="19" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="38" italic="false" bold="true" underlined="false"><textstring>GWIN’S STATS</textstring>
+	<slide id="20" duration="60" descriptor="Stage 5: Julia’s Ambush Con’t" lastSlide="false" backgroundcolor="#BFBFBF"><audio urlname="Src\XMLBits\AMBUSH.mp3" playtime="0" starttime="0" duration="0" loop="false"/>
+	<text xstart="122" ystart="429" xend="262" yend="474" layer="19" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="38" italic="false" bold="true" underlined="false"><textstring>GWIN’S STATS</textstring>
 	</textbody>
 	</text>
 	<text xstart="99" ystart="383" xend="286" yend="428" layer="17" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="21" italic="false" bold="true" underlined="false"><textstring>XU FU CHANG’S MAP</textstring>
@@ -4640,7 +4703,8 @@
 	<image urlname="Src\XMLBits\XUFU.png" xstart="8" ystart="9" width="703" height="465" layer="1" starttime="0"/>
 	</slide>
 	
-	<slide id="22" duration="60" descriptor="Stage 6: Mike’s Custom Morphs" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="486" ystart="480" xend="603" yend="525" layer="19" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="28" italic="false" bold="true" underlined="false"><textstring>CONTINUE</textstring>
+	<slide id="22" duration="60" descriptor="Stage 6: Mike’s Custom Morphs" lastSlide="false" backgroundcolor="#BFBFBF"><audio urlname="Src\XMLBits\MIKES.mp3" playtime="0" starttime="0" duration="0" loop="false"/>
+	<text xstart="486" ystart="480" xend="603" yend="525" layer="19" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="28" italic="false" bold="true" underlined="false"><textstring>CONTINUE</textstring>
 	</textbody>
 	</text>
 	<text xstart="99" ystart="446" xend="292" yend="491" layer="17" starttime="0" font="Calibri" fontcolor="#790909" fontsize="18"><textbody branch="39" italic="false" bold="true" underlined="false"><textstring>SMOKE LION’S STATS</textstring>
@@ -4845,7 +4909,8 @@
 	</text>
 	</slide>
 	
-	<slide id="28" duration="60" descriptor="Stage 7: When Ultimates Attack" lastSlide="false" backgroundcolor="#BFBFBF"><text xstart="377" ystart="26" xend="705" yend="400" layer="13" starttime="0" font="Calibri" fontcolor="#000000" fontsize="12"><textbody italic="false" bold="true" underlined="false"><textstring>Aftermath\n</textstring>
+	<slide id="28" duration="60" descriptor="Stage 7: When Ultimates Attack" lastSlide="false" backgroundcolor="#BFBFBF"><audio urlname="Src\XMLBits\ULTIMATES.mp3" playtime="0" starttime="0" duration="0" loop="false"/>
+	<text xstart="377" ystart="26" xend="705" yend="400" layer="13" starttime="0" font="Calibri" fontcolor="#000000" fontsize="12"><textbody italic="false" bold="true" underlined="false"><textstring>Aftermath\n</textstring>
 	</textbody>
 	<textbody italic="true" bold="false" underlined="false"><textstring>For several days random doses of the Drive passing through Mike's Custom Morphs were tainted with Chain Reaction. Thus the explosions caused by Chain Reaction will continue to increase for the next several days and then taper off. During that time a terrorist group calling themselves 'A Plague of Locus' will convincingly take credit for the attacks, fanning the flames of war between the PC and Locus.\nIf the characters did not find David's vaccine then a second wave of explosions will begin approximately one week after the first and then a third wave will start about a week after that.\nIf the characters did find the cure, they need to determine what to do with it. The easiest solution is to give it to Proxy 21. She will use her connections to convince the OIA that the terrorists are using the explosion to seed a bioweapon (which can be confirmed by simple blood test once it is known what to look for) and give them the details of the vaccine. The OIA will ensure that all the people injured by the explosions receive cure doses of the vaccine, thereby preventing the second and subsequent waves.\n</textstring>
 	</textbody>
@@ -5153,7 +5218,7 @@
 	<textbody italic="true" bold="false" underlined="false"><textstring>These officers first call for backup from the other officers in the area. They will then draw their stun batons (against small numbers of biomorphs) or pistols and order their opponents to surrender. If their opponents do not comply they will attack. Against biomorphs, they will set their smart magazines to use zap rounds and fire in semi-automatic mode. Against synthmorphs they will use AP rounds fired in short bursts for +1d10 damage. When using their firearms these officers use quick actions to aim if possible and try to avoid firing into crowds when using AP ammo.\n</textstring>
 	</textbody>
 	</text>
-	<text xstart="15" ystart="123" xend="343" yend="519" layer="4" starttime="0" font="Calibri" fontcolor="#000000" fontsize="12"><textbody italic="false" bold="true" underlined="false"><textstring>Traits: </textstring>
+	<text xstart="15" ystart="123" xend="343" yend="523" layer="4" starttime="0" font="Calibri" fontcolor="#000000" fontsize="12"><textbody italic="false" bold="true" underlined="false"><textstring>Traits: </textstring>
 	</textbody>
 	<textbody italic="true" bold="false" underlined="false"><textstring>Situational Awareness, Fast Metabolism, Planned Obsolescence\n</textstring>
 	</textbody>
@@ -5405,7 +5470,9 @@
 	<textbody italic="true" bold="false" underlined="false"><textstring>Gwin always uses full auto bursts (already included above) and will try to hit multiple people if firing at medium or greater range. He likes to shoot from cover and will use a quick action to aim if possible, but he won't sacrifice attacks to aim. Gwin will use his moxie to aid his attacks: against targets that can't fray he will flip-flop rolls to get a hit and against targets that can fray he will upgrade successes to critical successes.\n</textstring>
 	</textbody>
 	</text>
-	<text xstart="15" ystart="129" xend="343" yend="518" layer="4" starttime="0" font="Calibri" fontcolor="#000000" fontsize="12"><textbody italic="true" bold="false" underlined="false"><textstring>Addiction (Minor, Combat Drugs), Fast Metabolism, Planned Obsolescence\n</textstring>
+	<text xstart="15" ystart="129" xend="343" yend="518" layer="4" starttime="0" font="Calibri" fontcolor="#000000" fontsize="12"><textbody italic="false" bold="true" underlined="false"><textstring>Traits: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Addiction (Minor, Combat Drugs), Fast Metabolism, Planned Obsolescence\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Active Skills: </textstring>
 	</textbody>
@@ -5477,7 +5544,9 @@
 	<textbody italic="true" bold="false" underlined="false"><textstring>In combat the Smoke Lions will first take cover and then open fire. When shooting they always use at least a quick action to aim and use two short bursts (+10 to hit). They are trying to conserve ammo and won't fire if they can't aim. Two of the Smoke Lions are currently infected with Chain Reaction. If they suffer a wound they must make a MOX x 10 Test or explode. The Lions were only recently exposed to Chain Reaction so, while the explosion will still kill the Lion, it only does 3d10 + 10 damage.</textstring>
 	</textbody>
 	</text>
-	<text xstart="15" ystart="129" xend="343" yend="518" layer="4" starttime="0" font="Calibri" fontcolor="#000000" fontsize="12"><textbody italic="true" bold="false" underlined="false"><textstring>Edited Memories, Planned Obsolescence\n</textstring>
+	<text xstart="15" ystart="129" xend="343" yend="518" layer="4" starttime="0" font="Calibri" fontcolor="#000000" fontsize="12"><textbody italic="false" bold="true" underlined="false"><textstring>Traits: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Edited Memories, Planned Obsolescence\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Active Skills: </textstring>
 	</textbody>
@@ -5529,7 +5598,9 @@
 	<textbody italic="true" bold="false" underlined="false"><textstring>David is a virology graduate student at the University of Chicago. His research focuses on the use of bacteriophages to alter the biosculpted bacteria used in life support systems in situ. David is also a Drive addict, a fact known only to his closest friends due to his countersurveillance efforts.\nAs part of his countersurviellence technique David wore a disguise when he left his apartment: a shoulder length red wig that covered half of his face; a pair of cyberpunk goggles; and a respirator that, while not sealed, still effectively obscured the lower part of his face.\nAfter being kidnapped by Julia and Delivered to the Smoke Lions, David has been subjected to temporary psychosurgical behavior modification and for the near future his only motivation is to find a cure to Chain Reaction. He is still highly intelligent and can be reasoned with if the characters can convince him that helping them will allow him to better find a cure.\nDavid is also currently addicted to Hyper-Drive. If he goes three hours without taking a dose of the drug he will go into convulsions and die. This will happen repeatedly if he is resleeved in a biomorph as Hyper-Drive is mentally addicting.\n</textstring>
 	</textbody>
 	</text>
-	<text xstart="15" ystart="129" xend="343" yend="518" layer="4" starttime="0" font="Calibri" fontcolor="#000000" fontsize="12"><textbody italic="true" bold="false" underlined="false"><textstring>Addiction (Drive, Moderate), Addiction (Hyper-Drive, Terminal), Modified Behavior 3 (Forced to search for Chain Reaction cure)\n</textstring>
+	<text xstart="15" ystart="129" xend="343" yend="518" layer="4" starttime="0" font="Calibri" fontcolor="#000000" fontsize="12"><textbody italic="false" bold="true" underlined="false"><textstring>Traits: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Addiction (Drive, Moderate), Addiction (Hyper-Drive, Terminal), Modified Behavior 3 (Forced to search for Chain Reaction cure)\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Active Skills: </textstring>
 	</textbody>
@@ -5637,7 +5708,9 @@
 	<textbody italic="true" bold="false" underlined="false"><textstring>If the guardian angle drones have actions remaining, Lion will use the extra complex action granted by the multiple personality implant to direct control them (normally a quick action). He uses his quick action to either move to cover, preferably within 10 m of an opponent, or to aim. He then uses his complex action to fire two short bursts (+1d10 damage or hitting two close targets) with his Shredder. He will use called shots to bypass armor against heavily armored opponents. If engaged in melee he will switch off with Serpent. Lion will use up to two of his moxie offensively (flip-flopping results to get a hit or upgrading a success to a critical to prevent fraying and bypass armor) and the other three defensively (flip-flopping results on a Fray Test or upgrading a fray success to a critical success).\n</textstring>
 	</textbody>
 	</text>
-	<text xstart="15" ystart="129" xend="343" yend="518" layer="4" starttime="0" font="Calibri" fontcolor="#000000" fontsize="12"><textbody italic="true" bold="false" underlined="false"><textstring>Brave, Danger Sense, Ambidextrous, Feeble (SAV), Shut In\n</textstring>
+	<text xstart="15" ystart="129" xend="343" yend="518" layer="4" starttime="0" font="Calibri" fontcolor="#000000" fontsize="12"><textbody italic="false" bold="true" underlined="false"><textstring>Traits: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Brave, Danger Sense, Ambidextrous, Feeble (SAV), Shut In\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Active Skills: </textstring>
 	</textbody>
@@ -5677,7 +5750,9 @@
 	<textbody italic="true" bold="false" underlined="false"><textstring>During this mission Serpent will only switch out with Lion if they are infiltrating or engaged in melee. If possible she will first use the extra complex action granted by the multiple personality implant to direct control the guardian angel drones and have them ram her opponents. \nShe will then use her complex action to make an unarmed combat attack. If she is not suffering high negative modifiers and is in melee combat with two or more opponents, she will target multiple opponents with her attacks. If she is up against at least three biomorphs, she will attempt to hit three of them with touch attacks (-10 to each attack) to incapacitate them or give them shock penalties. Otherwise she will target two opponents (-20 to each attack) with normal attacks. If up against opponents in heavy armour she will use called shots to bypass armour. \nSerpent will use up to three of her moxie offensively and reserve the other three for defence.\n</textstring>
 	</textbody>
 	</text>
-	<text xstart="15" ystart="129" xend="343" yend="518" layer="4" starttime="0" font="Calibri" fontcolor="#000000" fontsize="12"><textbody italic="true" bold="false" underlined="false"><textstring>Brave, First Impression\n</textstring>
+	<text xstart="15" ystart="129" xend="343" yend="518" layer="4" starttime="0" font="Calibri" fontcolor="#000000" fontsize="12"><textbody italic="false" bold="true" underlined="false"><textstring>Traits: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Brave, First Impression\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Active Skills: </textstring>
 	</textbody>
@@ -5713,7 +5788,9 @@
 	<textbody italic="true" bold="false" underlined="false"><textstring>Goat handles the sensors and communications. On her turn she uses her complex action to actively stealth their communications signals a quick action to actively defend their network , and a second quick action to make a detailed Perception Test using the feeds from their drones, their quantum radar and radio motion detection systems, and any spimes they have access to. Goat will not use the quantum radar while they are trying to infiltrate unless they are about to open a door or perform some other activity in which they may be ambushed.\nIf necessary Goat can use the puppet sock to take physical actions such as placing and arming explosives.\n</textstring>
 	</textbody>
 	</text>
-	<text xstart="15" ystart="129" xend="343" yend="518" layer="4" starttime="0" font="Calibri" fontcolor="#000000" fontsize="12"><textbody italic="true" bold="false" underlined="false"><textstring>Situational Awareness, Social Butterfly, Information Control\n</textstring>
+	<text xstart="15" ystart="129" xend="343" yend="518" layer="4" starttime="0" font="Calibri" fontcolor="#000000" fontsize="12"><textbody italic="false" bold="true" underlined="false"><textstring>Traits: </textstring>
+	</textbody>
+	<textbody italic="true" bold="false" underlined="false"><textstring>Situational Awareness, Social Butterfly, Information Control\n</textstring>
 	</textbody>
 	<textbody italic="false" bold="true" underlined="false"><textstring>Active Skills: </textstring>
 	</textbody>
