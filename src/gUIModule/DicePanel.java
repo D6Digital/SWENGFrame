@@ -214,7 +214,7 @@ public class DicePanel extends JPanel implements ActionListener{
 		displayTotalResult.setFont(new Font("Papyrus", Font.BOLD, fontSize));
 		displayTotalResult.setBounds(
                 (int) (panelWidth*0.025), 
-                (int) (panelHeight*0.94),
+                (int) (panelHeight*0.92),
                 (int) (panelWidth*0.925),
                 (int) (panelHeight*0.035));
 		add(displayTotalResult);
@@ -457,7 +457,7 @@ public class DicePanel extends JPanel implements ActionListener{
 		setBounds(3,0,panelWidth, height);
 		displayTotalResult.setBounds(
                 (int) (panelWidth*0.025), 
-                (int) (height*0.94),
+                (int) (height*0.92),
                 (int) (panelWidth*0.925),
                 (int) (height*0.05)-(int)(height*0.025));
 		firstResultOutput.setBounds(
