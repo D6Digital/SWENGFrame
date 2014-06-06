@@ -466,14 +466,8 @@ public class DicePanel extends JPanel implements ActionListener{
 				
 				//If statement effects a carage return on the display when the number of
 				//individual values being displayed exceeds the width of the JTextArea
-				if (lineOverflow > 4) {
-					secondResultOutput.append(roll + " + \r\n");
-					lineOverflow = 0;
-				}
-				else {
-					secondResultOutput.append(roll + " + ");
-					lineOverflow = lineOverflow + 1;
-				}
+				
+				secondResultOutput.append(roll + " + ");
 			}
 			
 			//Final dice "rolled" and total result displayed
