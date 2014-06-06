@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <booklist version="1.0" xmlns="http://www-users.york.ac.uk/~rjm529/booklist.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www-users.york.ac.uk/~rjm529/booklist.xsd booklist.xsd ">
   <book id="001">
-    <title>GM Main Book</title>
+    <title>Eclipse Phase Core Rulebook</title>
     <filename>github resources\EclipsePhase.xml</filename>
     <icon>src\XMLBits\god.png</icon>
   </book>
   <book id="002">
-    <title>dynamic Dom</title>
-    <filename>github resources\dynamDom2.xml</filename>
+    <title>Eclipse Phase Transhuman</title>
+    <filename>github resources\Transhuman.xml</filename>
     <icon>src\XMLBits\char1jovian_spy.jpg</icon>
   </book>
   <book id="003">
-  	<title>GUI TEST</title>
-  	<filename>github resources\GUITEST.xml</filename>
-  	<icon>src\XMLBits\char1jovian_spy.jpg</icon>
+    <title>Sunward : The Inner System</title>
+    <filename>github resources\Sunward.xml</filename>
+    <icon>src\XMLBits\char1jovian_spy.jpg</icon>
   </book>
   <book id="004">
-  	<title>LOAD PAGE TEST</title>
-  	<filename>github resources\LOADTESTPAGE.xml</filename>
-  	<icon>src\XMLBits\char1jovian_spy.jpg</icon>
+    <title>Rimward : The Outer System</title>
+    <filename>github resources\Rimward.xml</filename>
+    <icon>src\XMLBits\char1jovian_spy.jpg</icon>
   </book>
 </booklist>

@@ -1,0 +1,44 @@
+<?xml version="1.0"?><!--sample xml file created using XML DOM object.--><collection xmlns="http://www-users.york.ac.uk/~rjm529/schema.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<slideshow xmlns="">
+	<documentinfo><author>D6 Digital</author><version>2.1</version><title>Eclipse Phase Transhuman Contents</title><comment>example comment for chapter 1</comment><width>720</width><height>540</height></documentinfo>
+	<defaults><backgroundcolor>#BFBFBF</backgroundcolor><font>Neo Sans Intel</font><fontsize>18</fontsize><fontcolor>#000000</fontcolor><linecolor>#404040</linecolor><fillcolor>#404040</fillcolor></defaults>
+	
+	<slide id="0" duration="60" descriptor="Example Book First Page" lastSlide="true" backgroundcolor="#BFBFBF"><shape fillcolor="#4A452A" linecolor="#C4BD97" layer="9" starttime="0" totalpoints="3" width="106" height="62"><point num="0" x="224" y="341"/>
+	<point num="1" x="330" y="402"/>
+	<point num="2" x="330" y="403"/>
+	</shape>
+	<shape fillcolor="#948A54" linecolor="#4A452A" layer="8" starttime="0" totalpoints="5" width="61" height="146"><point num="0" x="250" y="214"/>
+	<point num="1" x="213" y="343"/>
+	<point num="2" x="238" y="329"/>
+	<point num="3" x="274" y="197"/>
+	<point num="4" x="250" y="214"/>
+	</shape>
+	<shape fillcolor="#4A452A" linecolor="#C4BD97" layer="7" starttime="0" totalpoints="3" width="106" height="62"><point num="0" x="227" y="336"/>
+	<point num="1" x="333" y="398"/>
+	<point num="2" x="333" y="398"/>
+	</shape>
+	<shape fillcolor="#4A452A" linecolor="#C4BD97" layer="6" starttime="0" totalpoints="3" width="106" height="62"><point num="0" x="230" y="332"/>
+	<point num="1" x="336" y="394"/>
+	<point num="2" x="336" y="394"/>
+	</shape>
+	<shape fillcolor="#4A452A" linecolor="#4A452A" layer="5" starttime="0" totalpoints="3" width="118" height="69"><point num="0" x="213" y="343"/>
+	<point num="1" x="330" y="411"/>
+	<point num="2" x="330" y="412"/>
+	</shape>
+	<shape fillcolor="#948A54" linecolor="#4A452A" layer="4" starttime="0" totalpoints="4" width="142" height="194"><point num="0" x="274" y="198"/>
+	<point num="1" x="381" y="255"/>
+	<point num="2" x="350" y="392"/>
+	<point num="3" x="239" y="330"/>
+	</shape>
+	<text xstart="94" ystart="66" xend="650" yend="128" layer="2" starttime="0" font="Calibri" fontcolor="#000000" fontsize="40"><textbody italic="false" bold="true" underlined="false"><textstring>Example Book 1</textstring>
+	</textbody>
+	</text>
+	<shape fillcolor="#DDD9C3" linecolor="#948A54" layer="1" starttime="0" totalpoints="5" width="125" height="74"><point num="0" x="323" y="406"/>
+	<point num="1" x="339" y="390"/>
+	<point num="2" x="235" y="332"/>
+	<point num="3" x="214" y="342"/>
+	<point num="4" x="323" y="406"/>
+	</shape>
+	</slide>
+	
+</slideshow></collection>
