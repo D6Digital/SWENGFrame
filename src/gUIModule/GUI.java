@@ -149,6 +149,7 @@ public class GUI extends JFrame implements ComponentListener, KeyListener{
 	private MouseAdapter genericListener;
 	int newWidth;
 	int newHeight;
+	private int bookLayout = 1;
 	
 	/**
 	 * Create a simple JFrame and then populate it with specified JPanel type
@@ -204,7 +205,7 @@ public class GUI extends JFrame implements ComponentListener, KeyListener{
 		//height of the task bar
 		
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
+		this.setBackground(Color.black);
 		
 		//set up cursor
 		Toolkit toolkit = Toolkit.getDefaultToolkit();
@@ -256,6 +257,10 @@ public class GUI extends JFrame implements ComponentListener, KeyListener{
 					@Override
 					public void actionPerformed(ActionEvent arg0) {
 						mainMenuShowing=false;
+						//mainMenuPanel.setVisible(false);
+						//mainMenuPanel.setToLoadScreen();
+						//mainMenuPanel.setVisible(true);
+						setVisible(false);
 						frame.requestFocusInWindow();
 						layers.setVisible(true);
 						String chosenBook = mainMenuPanel.getChosenBook();
@@ -263,8 +268,8 @@ public class GUI extends JFrame implements ComponentListener, KeyListener{
 						collection = parser.getCollection();
 						slideList = collection.get(0);
 			            System.out.println("book = "+chosenBook);
-			            mainMenuPanel.setVisible(false);
 						bookMainPanelSetUp();
+						mainMenuPanel.setVisible(false);
 					}
 				});
 		
@@ -672,8 +677,14 @@ public void bookMainPanelSetUp(){
 		setupTextListener();
 		setupVideoListener();
 
-
-
+		if(collection.get(0).getTitle().equals("Sunward : The Inner System")){
+			bookLayout  = 2;
+		}
+		else
+		{
+			bookLayout = 1;
+		}
+		
 		//set up tabs
 		//utilities tab
 		utilitiesTab.setBounds(width-15,(height/2)-55,15,110);
@@ -748,7 +759,13 @@ public void bookMainPanelSetUp(){
 		//previous button
 		BufferedImage previousSlideImage;
 		try{
-			previousSlideImage = ImageIO.read(new File("resources/buttons/Previous.png"));
+			if(collection.get(0).getTitle().equals("Sunward : The Inner System")){
+				previousSlideImage = ImageIO.read(new File("resources/buttons2/Previous.png"));
+			}
+			else
+			{
+				previousSlideImage = ImageIO.read(new File("resources/buttons/Previous.png"));
+			}
 			Image scaledPButton = previousSlideImage.getScaledInstance(150,50,java.awt.Image.SCALE_SMOOTH);
 			previousSlideButton.setIcon(new ImageIcon(scaledPButton));
 		}catch (IOException ex){
@@ -761,7 +778,13 @@ public void bookMainPanelSetUp(){
 		//next button
 		BufferedImage nextSlideImage;
 		try{
-			nextSlideImage = ImageIO.read(new File("resources/buttons/Next.png"));
+			if(collection.get(0).getTitle().equals("Sunward : The Inner System")){
+				nextSlideImage = ImageIO.read(new File("resources/buttons2/Next.png"));
+			}
+			else
+			{
+				nextSlideImage = ImageIO.read(new File("resources/buttons/Next.png"));
+			}
 			Image scaledNButton = nextSlideImage.getScaledInstance(150,50,java.awt.Image.SCALE_SMOOTH);
 			nextSlideButton.setIcon(new ImageIcon(scaledNButton));
 		}catch (IOException ex){
@@ -786,6 +809,7 @@ public void bookMainPanelSetUp(){
 		if(AlreadyExists)
 		{
 			layers.remove(slidePanel);
+			slidePanel = null;
 		}
 		slidePanel = new SlidePanel();
 		
@@ -802,8 +826,9 @@ public void bookMainPanelSetUp(){
 		if(AlreadyExists)
 		{
 			layers.remove(utilities);
+			utilities = null;
 		}
-        utilities = new UtilitiesPanel(utilitiesWidth, width, height,genericListener);
+        utilities = new UtilitiesPanel(utilitiesWidth, width, height,genericListener,bookLayout);
         utilitiesWidth = utilities.getWidth();
 		utilities.setLocation(width-utilitiesWidth, 0);
 		utilities.setBounds(width-utilitiesWidth, 0, utilitiesWidth, height);
@@ -863,11 +888,12 @@ public void bookMainPanelSetUp(){
 		if(AlreadyExists)
 		{
 			layers.remove(contentsPanel);
+			contentsPanel = null;
 		}
 		// TODO: CHANGES MADE HERE BY JOSHUA LANT, NO ACTUAL TODO, JUST REFERENCE POINT
 		//set up contents
 		//ArrayList<Book> bookList = mainMenuPanel.getBookList();
-		contentsPanel = new ContentsPanel(slideList.getSlideList(),collection.getPresentationList(), contentsWidth, slideWidth,540, mainMenuPanel.getCurrentSystem(), mainMenuPanel.getCurrentBook());
+		contentsPanel = new ContentsPanel(slideList.getSlideList(),collection.getPresentationList(), contentsWidth, slideWidth,540, mainMenuPanel.getCurrentSystem(), mainMenuPanel.getCurrentBook(), bookLayout);
 		contentsPanel.setBounds(0, 0, contentsWidth, height);
 		
 		contentsPanel.setPreferredSize(new Dimension(contentsWidth, height));

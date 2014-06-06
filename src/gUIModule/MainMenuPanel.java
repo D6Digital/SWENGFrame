@@ -46,6 +46,7 @@ public class MainMenuPanel extends JPanel{
 	
 	JButton openBookButton = new JButton();
 	JButton openShopButton = new JButton();
+	JPanel loadingPanel;
 	JLabel background;
 	JLabel logoLabel;
 	JLabel systemLabel;
@@ -70,6 +71,7 @@ public class MainMenuPanel extends JPanel{
 	double scaleFactorX = 1;
 	double scaleFactorY = 1;
 	private MouseAdapter genericMouseMotionListener;
+	private JLabel loadingLabel;
 	
 	public MainMenuPanel(int width, int height, MouseAdapter genericListener) {
 		
@@ -406,6 +408,7 @@ public class MainMenuPanel extends JPanel{
 	}
 	
 	public String getChosenBook(){
+		chosenBook = listOfBooks.getBook(bookList.getSelectedIndex()).getFileName();
 		return chosenBook;
 	}
 
@@ -419,6 +422,29 @@ public class MainMenuPanel extends JPanel{
 
 	public ArrayList<Book> getBookList() {
 		return bookListForContents;
+	}
+	
+	public void setToLoadScreen() {
+		this.removeAll();
+		loadingLabel = new JLabel("LOADING...");
+		loadingLabel.setBounds(0, 0, getWidth(), getHeight());
+		loadingLabel.setFont(new Font("Papyrus", Font.BOLD, 54));
+		this.add(loadingLabel);
+	}
+	
+	public void resetMainMenu() {
+		this.remove(loadingPanel);
+		checkAndAdd(imageLabel);
+		checkAndAdd(bookScroll);
+		checkAndAdd(systemScroll);
+		checkAndAdd(bookLabel);
+		checkAndAdd(systemLabel);
+		checkAndAdd(openShopButton);
+		checkAndAdd(openBookButton);
+		checkAndAdd(descriptionTitle);
+		checkAndAdd(description);
+		checkAndAdd(logoLabel);
+		checkAndAdd(background);
 	}
 	
 	

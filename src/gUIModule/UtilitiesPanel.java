@@ -71,6 +71,7 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
 
 
 	private Image scaledBackButtonImage;
+	int theBookLayout = 1;
 
 	//	GUI diceRoller;
 //	GUI calculatorGUI;
@@ -79,8 +80,9 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
 	/**
 	 * Create a simple panel and add the JButtons for the utilities
 	 * @param genericListener 
+	 * @param bookLayout 
 	 */
-	public UtilitiesPanel(int utilitiesWidth, int slideWidth, int slideHeight, MouseAdapter genericListener) {
+	public UtilitiesPanel(int utilitiesWidth, int slideWidth, int slideHeight, MouseAdapter genericListener, int bookLayout) {
 		//Calls JPanel to create the UtilitiesPanel object.
 		//Sets the layout to BoxLayout
 	    
@@ -88,6 +90,7 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
 		setLayout(null);
 		this.setOpaque(true);
 		this.genericMouseMotionListener = genericListener;
+		this.theBookLayout = bookLayout;
 		
 		heightOfSlide = slideHeight;
 		xOffset = slideWidth-utilitiesWidth;
@@ -96,7 +99,7 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
 		dicePanel = new DicePanel(300, slideHeight - backButtonHeight,genericListener);
 		standAloneMusicPlayer = new StandAloneMusicPlayer(genericListener);
 		
-		standAloneMusicPlayerPanel = standAloneMusicPlayer.getFullControlPanel(360, slideHeight - backButtonHeight);
+		standAloneMusicPlayerPanel = standAloneMusicPlayer.getFullControlPanel(360, 540 - backButtonHeight);
 
 		//back button
 		backButton.setBounds(10, (int) (slideHeight*0.965), (int) (utilitiesWidth*0.925),  (int) (slideHeight*0.035));
@@ -113,6 +116,13 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
 		//Set up background image
 		background = new JLabel();
 		try{
+			if(bookLayout == 2){
+				backgroundImage = ImageIO.read(new File("resources/buttons2/UtilitiesBackground.png"));
+			}
+			else
+			{
+				backgroundImage = ImageIO.read(new File("resources/buttons/UtilitiesBackground.png"));
+			}
 			backgroundImage = ImageIO.read(new File("resources/buttons/UtilitiesBackground.png"));
 			scaledBackground = backgroundImage.getScaledInstance(utilitiesWidth,slideHeight,java.awt.Image.SCALE_SMOOTH);
 			background = new JLabel(new ImageIcon(scaledBackground));
@@ -174,7 +184,13 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
 			public void mouseExited(MouseEvent e) {
 				BufferedImage buttonImage;
 				try{
-					buttonImage = ImageIO.read(new File("resources/buttons/DiceButton.png"));
+					if(theBookLayout == 2){
+						buttonImage = ImageIO.read(new File("resources/buttons2/DiceButton.png"));
+					}
+					else
+					{
+						buttonImage = ImageIO.read(new File("resources/buttons/DiceButton.png"));
+					}
 					Image scaledButton = buttonImage.getScaledInstance(100,100,java.awt.Image.SCALE_SMOOTH);
 					diceButton.setIcon(new ImageIcon(scaledButton));
 				}catch (IOException ex){
@@ -188,7 +204,13 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
 			public void mouseEntered(MouseEvent e) {
 				BufferedImage buttonImage;
 				try{
-					buttonImage = ImageIO.read(new File("resources/buttons/DiceButtonHover.png"));
+					if(theBookLayout == 2){
+						buttonImage = ImageIO.read(new File("resources/buttons2/DiceButtonHover.png"));
+					}
+					else
+					{
+						buttonImage = ImageIO.read(new File("resources/buttons/DiceButtonHover.png"));
+					}
 					Image scaledButton = buttonImage.getScaledInstance(100,100,java.awt.Image.SCALE_SMOOTH);
 					diceButton.setIcon(new ImageIcon(scaledButton));
 				}catch (IOException ex){
@@ -222,7 +244,13 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
 			public void mouseExited(MouseEvent e) {
 				BufferedImage buttonImage;
 				try{
-					buttonImage = ImageIO.read(new File("resources/buttons/CalculatorButton.png"));
+					if(theBookLayout == 2){
+						buttonImage = ImageIO.read(new File("resources/buttons2/CalculatorButton.png"));
+					}
+					else
+					{
+						buttonImage = ImageIO.read(new File("resources/buttons/CalculatorButton.png"));
+					}
 					Image scaledButton = buttonImage.getScaledInstance(100,100,java.awt.Image.SCALE_SMOOTH);
 					calculatorButton.setIcon(new ImageIcon(scaledButton));
 				}catch (IOException ex){
@@ -236,7 +264,13 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
 			public void mouseEntered(MouseEvent e) {
 				BufferedImage buttonImage;
 				try{
-					buttonImage = ImageIO.read(new File("resources/buttons/CalculatorButtonHover.png"));
+					if(theBookLayout == 2){
+						buttonImage = ImageIO.read(new File("resources/buttons2/CalculatorButtonHover.png"));
+					}
+					else
+					{
+						buttonImage = ImageIO.read(new File("resources/buttons/CalculatorButtonHover.png"));
+					}
 					Image scaledButton = buttonImage.getScaledInstance(100,100,java.awt.Image.SCALE_SMOOTH);
 					calculatorButton.setIcon(new ImageIcon(scaledButton));
 				}catch (IOException ex){
@@ -270,7 +304,13 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
 			public void mouseExited(MouseEvent e) {
 				BufferedImage buttonImage;
 				try{
-					buttonImage = ImageIO.read(new File("resources/buttons/AudioButton.png"));
+					if(theBookLayout == 2){
+						buttonImage = ImageIO.read(new File("resources/buttons2/AudioButton.png"));
+					}
+					else
+					{
+						buttonImage = ImageIO.read(new File("resources/buttons/AudioButton.png"));
+					}
 					Image scaledButton = buttonImage.getScaledInstance(100,100,java.awt.Image.SCALE_SMOOTH);
 					audioButton.setIcon(new ImageIcon(scaledButton));
 				}catch (IOException ex){
@@ -284,7 +324,13 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
 			public void mouseEntered(MouseEvent e) {
 				BufferedImage buttonImage;
 				try{
-					buttonImage = ImageIO.read(new File("resources/buttons/AudioButtonHover.png"));
+					if(theBookLayout == 2){
+						buttonImage = ImageIO.read(new File("resources/buttons2/AudioButtonHover.png"));
+					}
+					else
+					{
+						buttonImage = ImageIO.read(new File("resources/buttons/AudioButtonHover.png"));
+					}
 					Image scaledButton = buttonImage.getScaledInstance(100,100,java.awt.Image.SCALE_SMOOTH);
 					audioButton.setIcon(new ImageIcon(scaledButton));
 				}catch (IOException ex){
@@ -323,7 +369,12 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
 		button.setOpaque(false);
 		BufferedImage buttonImage;
 		try{
-			buttonImage = ImageIO.read(new File("resources/buttons/"+image));
+			if(theBookLayout == 2){
+				buttonImage = ImageIO.read(new File("resources/buttons2/"+image));
+			}
+			else{
+				buttonImage = ImageIO.read(new File("resources/buttons/"+image));
+			}
 			Image scaledButton = buttonImage.getScaledInstance(100,100,java.awt.Image.SCALE_SMOOTH);
 			button.setIcon(new ImageIcon(scaledButton));
 		}catch (IOException ex){

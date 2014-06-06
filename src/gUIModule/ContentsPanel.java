@@ -59,18 +59,21 @@ public class ContentsPanel extends JPanel implements ActionListener{
 	JScrollPane contents = new JScrollPane();
 	int slideHeight;
 	int slideWidth;
+	int bookLayout;
 	
 	/**
 	 * Creates the entire Contents panel to meet the UI design specification
+	 * @param bookLayout 
 	 * @param slide1
 	 * @param slide2
 	 */
-	public ContentsPanel(ArrayList<Slide> contentSlideList, ArrayList<Presentation> contentChapterList, int width, int slideWidth, int slideHeight, String currentSystem, String currentBook) {
+	public ContentsPanel(ArrayList<Slide> contentSlideList, ArrayList<Presentation> contentChapterList, int width, int slideWidth, int slideHeight, String currentSystem, String currentBook, int bookLayout) {
 		super();
 		this.setLayout(null);
 		this.setVisible(false);
 		this.slideHeight=slideHeight;
 		this.slideWidth=width;
+		this.bookLayout = bookLayout;
 				
 		this.contentsSlideList = contentSlideList;
 		this.contentsChapterList = contentChapterList;
@@ -226,7 +229,12 @@ public class ContentsPanel extends JPanel implements ActionListener{
 	private void setUpButtonImage(JButton button, String image){
 		BufferedImage choosePageButtonImage;
 		try{
-			choosePageButtonImage = ImageIO.read(new File("resources/buttons/"+image));
+			if(bookLayout == 1){
+				choosePageButtonImage = ImageIO.read(new File("resources/buttons/"+image));
+			}
+			else{
+				choosePageButtonImage = ImageIO.read(new File("resources/buttons" +bookLayout + "/"+image));
+			}
 			Image scaledButton = choosePageButtonImage.getScaledInstance(110,50,java.awt.Image.SCALE_SMOOTH);
 			button.setIcon(new ImageIcon(scaledButton));
 		}catch (IOException ex){
@@ -237,7 +245,12 @@ public class ContentsPanel extends JPanel implements ActionListener{
 	private void setUpLabelImage(JLabel label, String image, int width, int height){
 		BufferedImage titleImage;
 		try{
-			titleImage = ImageIO.read(new File("resources/buttons/"+image));
+			if(bookLayout == 1){
+				titleImage = ImageIO.read(new File("resources/buttons/"+image));
+			}
+			else{
+				titleImage = ImageIO.read(new File("resources/buttons" +bookLayout + "/"+image));
+			}
 			Image scaledButton = titleImage.getScaledInstance(width,height,java.awt.Image.SCALE_SMOOTH);
 			label.setIcon(new ImageIcon(scaledButton));
 			
