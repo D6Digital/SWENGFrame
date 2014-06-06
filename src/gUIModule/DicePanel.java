@@ -259,7 +259,7 @@ public class DicePanel extends JPanel implements ActionListener{
 		displayTotalResult.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
 		displayTotalResult.setBounds(
                 (int) (panelWidth*0.025), 
-                (int) (panelHeight*0.94),
+                (int) (panelHeight*0.93),
                 (int) (panelWidth*0.925),
                 (int) (panelHeight*0.035));
 		add(displayTotalResult);
@@ -497,7 +497,7 @@ public class DicePanel extends JPanel implements ActionListener{
 		setBounds(3,0,panelWidth, height);
 		displayTotalResult.setBounds(
                 (int) (panelWidth*0.025), 
-                (int) (height*0.94),
+                (int) (height*0.93),
                 (int) (panelWidth*0.925),
                 (int) (height*0.05)-(int)(height*0.025));
 		firstResultOutput.setBounds(

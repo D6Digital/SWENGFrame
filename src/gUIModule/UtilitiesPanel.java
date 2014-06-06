@@ -65,6 +65,7 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
     private int diceWidth = 500;
     private int musicWidth = 600;
     private int calculatorWidth = 550;
+    private int backButtonHeight = 38;
     
     private MouseAdapter genericMouseMotionListener;
 
@@ -94,18 +95,18 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
 		heightOfSlide = slideHeight;
 		xOffset = slideWidth-utilitiesWidth;
 		
-		calculatorPanel = new CalculatorPanel(calculatorWidth, slideHeight - 20,genericListener);
-		dicePanel = new DicePanel(diceWidth, slideHeight - 20,genericListener);
+		calculatorPanel = new CalculatorPanel(calculatorWidth, slideHeight - backButtonHeight,genericListener);
+		dicePanel = new DicePanel(diceWidth, slideHeight - backButtonHeight,genericListener);
 		standAloneMusicPlayer = new StandAloneMusicPlayer(genericListener);
 		
-		standAloneMusicPlayerPanel = standAloneMusicPlayer.getFullControlPanel(musicWidth, 540 - 20);
+		standAloneMusicPlayerPanel = standAloneMusicPlayer.getFullControlPanel(musicWidth, 540 - backButtonHeight);
 		
 		
-		backButton.setBounds(10, (int) (slideHeight*0.975), (int) (utilitiesWidth*0.925),  (int) (slideHeight*0.025));
+		backButton.setBounds(10, (int) (slideHeight*0.965), (int) (utilitiesWidth*0.925),  (int) (slideHeight*0.035));
 		backButton.setActionCommand("back");
 		try{
 			backButtonImage = ImageIO.read(new File("resources/buttons/Back Button.png"));
-			scaledBackButtonImage = backButtonImage.getScaledInstance((int) (utilitiesWidth*0.925),  (int) (slideHeight*0.025),java.awt.Image.SCALE_SMOOTH);
+			scaledBackButtonImage = backButtonImage.getScaledInstance((int) (utilitiesWidth*0.925),  (int) (slideHeight*0.035),java.awt.Image.SCALE_SMOOTH);
 			backButton.setIcon(new ImageIcon(scaledBackButtonImage));
 		}catch(IOException e2){
 			e2.printStackTrace();
@@ -435,8 +436,8 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
         this.utilitiesWidth = width;
         this.setBounds(this.xOffset, 0, utilitiesWidth, this.heightOfSlide);
         multiPanel.setBounds(0,0,utilitiesWidth,this.heightOfSlide);
-        backButton.setBounds(10, (int) (heightOfSlide*0.975), (int) (utilitiesWidth*0.925),  (int) (heightOfSlide*0.025));
-        scaledBackButtonImage = backButtonImage.getScaledInstance((int) (utilitiesWidth*0.925),  (int) (heightOfSlide*0.025),java.awt.Image.SCALE_SMOOTH);
+        backButton.setBounds(10, (int) (heightOfSlide*0.965), (int) (utilitiesWidth*0.925),  (int) (heightOfSlide*0.035));
+        scaledBackButtonImage = backButtonImage.getScaledInstance((int) (utilitiesWidth*0.925),  (int) (heightOfSlide*0.035),java.awt.Image.SCALE_SMOOTH);
 		backButton.setIcon(new ImageIcon(scaledBackButtonImage));
     }
     
@@ -467,8 +468,8 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
 		calculatorButton.setBounds((utilitiesWidth/2)-50, (slideHeight/2)-50, 100, 100);
 		audioButton.setBounds((utilitiesWidth/2)-50, (3*slideHeight/4)-50, 100, 100);
 		multiPanel.setBounds(0,0,utilitiesWidth,slideHeight);
-		backButton.setBounds(10, (int) (heightOfSlide*0.975), (int) (utilitiesWidth*0.925),  (int) (heightOfSlide*0.025));
-        scaledBackButtonImage = backButtonImage.getScaledInstance((int) (utilitiesWidth*0.925),  (int) (heightOfSlide*0.025),java.awt.Image.SCALE_SMOOTH);
+		backButton.setBounds(10, (int) (heightOfSlide*0.965), (int) (utilitiesWidth*0.925),  (int) (heightOfSlide*0.035));
+        scaledBackButtonImage = backButtonImage.getScaledInstance((int) (utilitiesWidth*0.925),  (int) (heightOfSlide*0.035),java.awt.Image.SCALE_SMOOTH);
 		backButton.setIcon(new ImageIcon(scaledBackButtonImage));
 		title.setBounds((utilitiesWidth/2)-40, 10, 80, 30);
 		
