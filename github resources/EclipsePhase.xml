@@ -3,21 +3,22 @@
 	<documentinfo><author>D6 Digital</author><version>2.1</version><title>Eclipse Phase Menu</title><comment>example comment for chapter 1</comment><width>720</width><height>540</height></documentinfo>
 	<defaults><backgroundcolor>#BFBFBF</backgroundcolor><font>Neo Sans Intel</font><fontsize>18</fontsize><fontcolor>#000000</fontcolor><linecolor>#404040</linecolor><fillcolor>#404040</fillcolor></defaults>
 	
-	<slide id="0" duration="60" descriptor="Contents Page" lastSlide="true" backgroundcolor="#BFBFBF"><text xstart="254" ystart="434" xend="518" yend="479" layer="10" starttime="0" font="Calibri" fontcolor="#FFFFFF" fontsize="24"><textbody chapterbranch="3" branch="0" italic="true" bold="true" underlined="false"><textstring>Sample Adventure</textstring>
+	<slide id="0" duration="60" descriptor="Contents Page" lastSlide="true" backgroundcolor="#BFBFBF"><video urlname="src\XMLBits\EclipsePhase.mp4" xstart="196" ystart="338" width="354" height="192" layer="12" starttime="0" duration="0" loop="false"/>
+	<text xstart="256" ystart="264" xend="520" yend="309" layer="10" starttime="0" font="Calibri" fontcolor="#FFFFFF" fontsize="24"><textbody chapterbranch="3" branch="0" italic="true" bold="true" underlined="false"><textstring>Sample Adventure</textstring>
 	</textbody>
 	</text>
-	<text xstart="254" ystart="287" xend="518" yend="332" layer="8" starttime="0" font="Calibri" fontcolor="#FFFFFF" fontsize="24"><textbody chapterbranch="2" branch="0" italic="true" bold="true" underlined="false"><textstring>Character Creation</textstring>
+	<text xstart="256" ystart="174" xend="520" yend="219" layer="8" starttime="0" font="Calibri" fontcolor="#FFFFFF" fontsize="24"><textbody chapterbranch="2" branch="0" italic="true" bold="true" underlined="false"><textstring>Character Creation</textstring>
 	</textbody>
 	</text>
-	<image urlname="Src/XMLBits/CH3.png" xstart="12" ystart="389" width="700" height="136" layer="7" starttime="0" chapterbranch="3" branch="0"/>
-	<image urlname="Src/XMLBits/CH5.png" xstart="12" ystart="242" width="700" height="136" layer="6" starttime="0" chapterbranch="2" branch="0"/>
-	<text xstart="254" ystart="145" xend="518" yend="190" layer="4" starttime="0" font="Calibri" fontcolor="#FFFFFF" fontsize="24"><textbody chapterbranch="1" branch="0" italic="true" bold="true" underlined="false"><textstring>GM Reference Tables</textstring>
+	<image urlname="Src/XMLBits/CH3.png" xstart="137" ystart="242" width="456" height="89" layer="7" starttime="0" chapterbranch="3" branch="0"/>
+	<image urlname="Src/XMLBits/CH5.png" xstart="137" ystart="151" width="456" height="89" layer="6" starttime="0" chapterbranch="2" branch="0"/>
+	<text xstart="252" ystart="77" xend="516" yend="122" layer="4" starttime="0" font="Calibri" fontcolor="#FFFFFF" fontsize="24"><textbody chapterbranch="1" branch="0" italic="true" bold="true" underlined="false"><textstring>GM Reference Tables</textstring>
 	</textbody>
 	</text>
-	<text xstart="12" ystart="27" xend="274" yend="72" layer="2" starttime="0" font="Calibri" fontcolor="#790909" fontsize="24"><textbody italic="false" bold="true" underlined="false"><textstring>Table of Contents</textstring>
+	<text xstart="3" ystart="4" xend="265" yend="49" layer="2" starttime="0" font="Calibri" fontcolor="#790909" fontsize="24"><textbody italic="false" bold="true" underlined="false"><textstring>Table of Contents</textstring>
 	</textbody>
 	</text>
-	<image urlname="Src/XMLBits/CH12.png" xstart="12" ystart="99" width="700" height="136" layer="1" starttime="0" chapterbranch="1" branch="0"/>
+	<image urlname="Src/XMLBits/CH12.png" xstart="137" ystart="59" width="456" height="89" layer="1" starttime="0" chapterbranch="1" branch="0"/>
 	</slide>
 	</slideshow><slideshow xmlns="">
 	<documentinfo><author>D6 Digital</author><version>2.1</version><title>GM’s Reference</title><comment>example comment for chapter 1</comment><width>720</width><height>540</height></documentinfo>
