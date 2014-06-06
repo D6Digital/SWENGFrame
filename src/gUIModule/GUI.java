@@ -994,9 +994,9 @@ public void bookMainPanelSetUp(){
 
 		bookPane.add(layers);
 		bookPane.setVisible(true);
-		this.repaint();
-		this.setVisible(true);
 		resizeMainPanel();
+		this.setVisible(true);
+		this.repaint();
 		
 
 
