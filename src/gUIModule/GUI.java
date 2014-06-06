@@ -258,6 +258,7 @@ public class GUI extends JFrame implements ComponentListener, KeyListener{
 					@Override
 					public void actionPerformed(ActionEvent arg0) {
 						mainMenuShowing=false;
+						setVisible(false);
 						frame.requestFocusInWindow();
 						layers.setVisible(true);
 						String chosenBook = mainMenuPanel.getChosenBook();
@@ -972,9 +973,10 @@ public void bookMainPanelSetUp(){
 
 		bookPane.add(layers);
 		bookPane.setVisible(true);
-		this.repaint();
-		this.setVisible(true);
 		resizeMainPanel();
+		this.setVisible(true);
+		this.repaint();
+		
 		
 
 
