@@ -258,16 +258,19 @@ public class GUI extends JFrame implements ComponentListener, KeyListener{
 					@Override
 					public void actionPerformed(ActionEvent arg0) {
 						mainMenuShowing=false;
-						setVisible(false);
 						frame.requestFocusInWindow();
-						layers.setVisible(true);
+						
 						String chosenBook = mainMenuPanel.getChosenBook();
+						if(chosenBook != null){
+						layers.setVisible(true);
+						setVisible(false);
 						XMLParser parser = new XMLParser(chosenBook);
 						collection = parser.getCollection();
 						slideList = collection.get(0);
 			            System.out.println("book = "+chosenBook);
 			            mainMenuPanel.setVisible(false);
 						bookMainPanelSetUp();
+						}
 					}
 				});
 		
@@ -285,6 +288,17 @@ public class GUI extends JFrame implements ComponentListener, KeyListener{
 						showPreviousSlide();
 						
 						
+					}
+				});
+		
+		nextSlideButton.addActionListener(
+				new ActionListener() {
+
+					@Override
+					public void actionPerformed(ActionEvent arg0) {
+						frame.requestFocusInWindow();
+						showNextSlide();
+
 					}
 				});
 		
@@ -980,16 +994,7 @@ public void bookMainPanelSetUp(){
 		
 
 
-	nextSlideButton.addActionListener(
-			new ActionListener() {
-
-				@Override
-				public void actionPerformed(ActionEvent arg0) {
-					frame.requestFocusInWindow();
-					showNextSlide();
-
-				}
-			});
+	
 }
 	
 private void borderListenerProcess(MouseEvent e1,Boolean isObject,Boolean isText, Boolean isVideo){
