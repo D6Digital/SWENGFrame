@@ -166,6 +166,7 @@ public class GUI extends JFrame implements ComponentListener, KeyListener{
 	public Slide showNextSlide() {
 		if(slideList.get(slidePanel.currentSlide.getSlideID()).getLastSlide()==false){
 			int nextSlideID	 = slidePanel.currentSlide.getSlideID() + 1;
+			System.out.println(nextSlideID);
 			Slide nextSlide = slideList.get(nextSlideID);
 			slidePanel.refreshSlide(nextSlide);
 			previousSlideButton.setBorderPainted(true);
@@ -260,16 +261,20 @@ public class GUI extends JFrame implements ComponentListener, KeyListener{
 						//mainMenuPanel.setVisible(false);
 						//mainMenuPanel.setToLoadScreen();
 						//mainMenuPanel.setVisible(true);
-						setVisible(false);
+						
 						frame.requestFocusInWindow();
 						layers.setVisible(true);
 						String chosenBook = mainMenuPanel.getChosenBook();
-						XMLParser parser = new XMLParser(chosenBook);
-						collection = parser.getCollection();
-						slideList = collection.get(0);
-			            System.out.println("book = "+chosenBook);
-						bookMainPanelSetUp();
-						mainMenuPanel.setVisible(false);
+						if(chosenBook!=null)
+						{
+							setVisible(false);
+							XMLParser parser = new XMLParser(chosenBook);
+							collection = parser.getCollection();
+							slideList = collection.get(0);
+				            System.out.println("book = "+chosenBook);
+							bookMainPanelSetUp();
+							mainMenuPanel.setVisible(false);
+						}
 					}
 				});
 		
@@ -287,6 +292,17 @@ public class GUI extends JFrame implements ComponentListener, KeyListener{
 						showPreviousSlide();
 						
 						
+					}
+				});
+		
+		nextSlideButton.addActionListener(
+				new ActionListener() {
+
+					@Override
+					public void actionPerformed(ActionEvent arg0) {
+						frame.requestFocusInWindow();
+						showNextSlide();
+
 					}
 				});
 		
@@ -1000,16 +1016,7 @@ public void bookMainPanelSetUp(){
 		
 
 
-	nextSlideButton.addActionListener(
-			new ActionListener() {
-
-				@Override
-				public void actionPerformed(ActionEvent arg0) {
-					frame.requestFocusInWindow();
-					showNextSlide();
-
-				}
-			});
+	
 }
 	
 private void borderListenerProcess(MouseEvent e1,Boolean isObject,Boolean isText, Boolean isVideo){
