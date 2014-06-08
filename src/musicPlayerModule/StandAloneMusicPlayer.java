@@ -899,6 +899,7 @@ public class StandAloneMusicPlayer {
         scrollPanel = new JPanel();
         scrollPanel.setOpaque(false);
         scrollPanel.setLayout(null);
+        scrollPanel.addKeyListener(JFrame.getFrames()[0].getKeyListeners()[0]);
 //        panel.setBounds(               
 //        (int) (widthOfPanel*0.025),
 //        (int) (heightOfSlide*0.025*10) + heightOfLockIcon + heightOfPlayButton*3  +  (int) (heightOfSlide*0.2),
@@ -1042,6 +1043,7 @@ public class StandAloneMusicPlayer {
         final EmbeddedMediaPlayerComponent mediaPlayerComponent = new EmbeddedMediaPlayerComponent();
         Canvas canvas = new Canvas();
         canvas.setBackground(Color.black);
+        canvas.addKeyListener(JFrame.getFrames()[0].getKeyListeners()[0]);
         CanvasVideoSurface videoSurface = mediaPlayerFactory.newVideoSurface(canvas);
         EmbeddedMediaPlayer mediaPlayer = mediaPlayerFactory.newEmbeddedMediaPlayer();
         mediaPlayer.setVideoSurface(videoSurface);

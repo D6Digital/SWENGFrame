@@ -482,6 +482,7 @@ private void setupTextListener() {
 										slidePanel.loadPresentation(slideList);
 										slidePanel.refreshSlide(slideList.getSlideList().get(branch));
 										contentsPanel.refreshContents(slideList.getSlideList());
+										frame.requestFocusInWindow();
 									//branch to slide specified by the object
 									}
 				            		
@@ -497,6 +498,7 @@ private void setupTextListener() {
 									}
 									else{
 									slidePanel.refreshSlide(slideList.get(branch));
+									frame.requestFocusInWindow();
 									//branch to slide specified by the object
 									}
 								}
@@ -580,6 +582,7 @@ private void setupObjectListener() {
 										slidePanel.loadPresentation(slideList);
 										slidePanel.refreshSlide(slideList.getSlideList().get(branch));
 										contentsPanel.refreshContents(slideList.getSlideList());
+										frame.requestFocusInWindow();
 									//branch to slide specified by the object
 									}
 				            		
@@ -595,6 +598,7 @@ private void setupObjectListener() {
 									}
 									else{
 									slidePanel.refreshSlide(slideList.get(branch));
+									frame.requestFocusInWindow();
 									//branch to slide specified by the object
 									}
 								}
@@ -657,6 +661,10 @@ private void setupVideoListener() {
 	    		borderListenerProcess(e1,false,false,true);
 	    		mouseMovedOnSlide();
 	    	}
+	    	@Override
+	    	public void mouseClicked(MouseEvent e1){
+	    		frame.requestFocusInWindow();
+	    	}
 	    	
 	    
 	};
@@ -680,7 +688,7 @@ public void bookMainPanelSetUp(){
 		scaleFactorX = (double)(getSize().width-(insets.left+insets.right))/(double)720;
 		scaleFactorY = (double)(getSize().height-(insets.top-insets.bottom))/(double)540;
 
-		
+		frame.requestFocusInWindow();
 		
 		bookPane = getContentPane();
 		bookPane.setBounds(0, 0, width, height);
@@ -1158,6 +1166,7 @@ private void borderListenerProcess(MouseEvent e1,Boolean isObject,Boolean isText
 	
 	
 	}
+	frame.requestFocusInWindow();
 	
 }
 

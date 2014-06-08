@@ -12,6 +12,7 @@ import uk.co.caprica.vlcj.player.embedded.videosurface.CanvasVideoSurface;
 
 import java.awt.Canvas;
 import java.awt.Color;
+import java.awt.FocusTraversalPolicy;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
@@ -21,6 +22,7 @@ import java.awt.event.MouseEvent;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JSlider;
@@ -156,7 +158,7 @@ public class VideoPlayer extends JPanel{
 	    mediaPlayer.prepareMedia(file, ":start-time="+start, ":stop-time="+end);
 	    System.out.println(this.getLocation().x);
 	    System.out.println(this.getLocation().y);
-	    
+	    canvas.addKeyListener(JFrame.getFrames()[0].getKeyListeners()[0]);
 	    canvas.addMouseListener(new java.awt.event.MouseAdapter() {  
 	    	@Override
 		    public void mousePressed(MouseEvent e) {
