@@ -1,0 +1,256 @@
+<?xml version="1.0"?><!--sample xml file created using XML DOM object.--><collection xmlns="http://www-users.york.ac.uk/~rjm529/schema.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<slideshow xmlns="">
+	<documentinfo><author>D6 Digital</author><version>2.1</version><title>Final Presentation</title><comment></comment><width>720</width><height>540</height></documentinfo>
+	<defaults><backgroundcolor>#FFFFFF</backgroundcolor><font>Book Antiqua</font><fontsize>18</fontsize><fontcolor>#FFFFFF</fontcolor><linecolor>#4D1C11</linecolor><fillcolor>#873624</fillcolor></defaults>
+	
+	<slide id="0" duration="60" descriptor="Alpha Field Testing&#xA;" lastSlide="false" backgroundcolor="#FFFFFF"><text xstart="133" ystart="157" xend="663" yend="243" layer="3" starttime="0" font="Book Antiqua" fontcolor="#895D1D" fontsize="54"><textbody italic="false" bold="false" underlined="false"><textstring>Alpha Field Testing</textstring>
+	</textbody>
+	</text>
+	<image urlname="resources/presentation/SecondaryBackground.png" xstart="0" ystart="0" width="720" height="540" layer="1" starttime="0"/>
+	</slide>
+	
+	<slide id="1" duration="60" descriptor="Field Test Results&#xA;" lastSlide="false" backgroundcolor="#FFFFFF"><image urlname="resources/presentation/BulletPoint.png" xstart="53" ystart="309" width="34" height="30" layer="10" starttime="0"/>
+	<image urlname="resources/presentation/BulletPoint.png" xstart="53" ystart="395" width="34" height="30" layer="9" starttime="0"/>
+	<image urlname="resources/presentation/BulletPoint.png" xstart="53" ystart="250" width="34" height="30" layer="8" starttime="0"/>
+	<image urlname="resources/presentation/BulletPoint.png" xstart="54" ystart="339" width="34" height="30" layer="7" starttime="0"/>
+	<image urlname="resources/presentation/BulletPoint.png" xstart="54" ystart="192" width="34" height="30" layer="6" starttime="0"/>
+	<text xstart="88" ystart="192" xend="649" yend="513" layer="5" starttime="0" font="Book Antiqua" fontcolor="#262626" fontsize="24"><textbody italic="false" bold="false" underlined="false"><textstring>100% agreed that the Grimoire Interactive Rulebook is more time efficient than physical copies \n71% agreed that the Grimoire Interactive Rulebook creates more immersion (others were undecided) \nAverage score (out of 5) for ease of use: 4.14 \nAverage score (out of 5) for design and professionalism: 4.29 \nAverage expected price for the software and 1 rule book: £38.50</textstring>
+	</textbody>
+	</text>
+	<text xstart="145" ystart="43" xend="616" yend="129" layer="3" starttime="0" font="Book Antiqua" fontcolor="#895D1D" fontsize="54"><textbody italic="false" bold="false" underlined="false"><textstring>Field Test Results</textstring>
+	</textbody>
+	</text>
+	<image urlname="resources/presentation/SlideBackground.png" xstart="0" ystart="0" width="720" height="540" layer="1" starttime="0"/>
+	</slide>
+	
+	<slide id="2" duration="60" descriptor="Field Test Results 2" lastSlide="false" backgroundcolor="#FFFFFF"><text xstart="145" ystart="43" xend="616" yend="129" layer="20" starttime="0" font="Book Antiqua" fontcolor="#895D1D" fontsize="54"><textbody italic="false" bold="false" underlined="false"><textstring>Field Test Results</textstring>
+	</textbody>
+	</text>
+	<image urlname="resources/presentation/MinorBulletPoint.png" xstart="97" ystart="460" width="30" height="26" layer="18" starttime="0"/>
+	<image urlname="resources/presentation/MinorBulletPoint.png" xstart="97" ystart="437" width="30" height="26" layer="17" starttime="0"/>
+	<image urlname="resources/presentation/MinorBulletPoint.png" xstart="97" ystart="415" width="30" height="26" layer="16" starttime="0"/>
+	<image urlname="resources/presentation/MinorBulletPoint.png" xstart="97" ystart="393" width="30" height="26" layer="15" starttime="0"/>
+	<text xstart="128" ystart="392" xend="377" yend="513" layer="14" starttime="0" font="Book Antiqua" fontcolor="#262626" fontsize="18"><textbody italic="false" bold="false" underlined="false"><textstring>Bookmarking pages \nMaps utility \nNote taking \nPage annotation</textstring>
+	</textbody>
+	</text>
+	<image urlname="resources/presentation/BulletPoint.png" xstart="54" ystart="345" width="34" height="30" layer="12" starttime="0"/>
+	<text xstart="88" ystart="345" xend="519" yend="382" layer="11" starttime="0" font="Book Antiqua" fontcolor="#262626" fontsize="24"><textbody italic="false" bold="false" underlined="false"><textstring>Suggestions for future development:</textstring>
+	</textbody>
+	</text>
+	<image urlname="resources/presentation/MinorBulletPoint.png" xstart="97" ystart="309" width="30" height="26" layer="9" starttime="0"/>
+	<image urlname="resources/presentation/MinorBulletPoint.png" xstart="97" ystart="288" width="30" height="26" layer="8" starttime="0"/>
+	<image urlname="resources/presentation/MinorBulletPoint.png" xstart="97" ystart="266" width="30" height="26" layer="7" starttime="0"/>
+	<image urlname="resources/presentation/BulletPoint.png" xstart="54" ystart="192" width="34" height="30" layer="6" starttime="0"/>
+	<text xstart="128" ystart="265" xend="689" yend="335" layer="5" starttime="0" font="Book Antiqua" fontcolor="#262626" fontsize="18"><textbody italic="false" bold="false" underlined="false"><textstring>Easy access to all sections of the book(contents, hyperlinks) \nEmbedded music \nUtilities(dice roller, calculator)</textstring>
+	</textbody>
+	</text>
+	<text xstart="88" ystart="192" xend="582" yend="261" layer="4" starttime="0" font="Book Antiqua" fontcolor="#262626" fontsize="24"><textbody italic="false" bold="false" underlined="false"><textstring>Favourite aspects of the Grimoire Interactive Rulebook:</textstring>
+	</textbody>
+	</text>
+	<image urlname="resources/presentation/SlideBackground.png" xstart="0" ystart="0" width="720" height="540" layer="1" starttime="0"/>
+	</slide>
+	
+	<slide id="3" duration="60" descriptor="Product Vision&#xA;" lastSlide="false" backgroundcolor="#FFFFFF"><image urlname="resources/presentation/BulletPoint.png" xstart="54" ystart="369" width="34" height="30" layer="12" starttime="0"/>
+	<image urlname="resources/presentation/BulletPoint.png" xstart="54" ystart="339" width="34" height="30" layer="11" starttime="0"/>
+	<image urlname="resources/presentation/BulletPoint.png" xstart="54" ystart="310" width="34" height="30" layer="10" starttime="0"/>
+	<image urlname="resources/presentation/BulletPoint.png" xstart="54" ystart="282" width="34" height="30" layer="9" starttime="0"/>
+	<image urlname="resources/presentation/BulletPoint.png" xstart="54" ystart="252" width="34" height="30" layer="8" starttime="0"/>
+	<image urlname="resources/presentation/BulletPoint.png" xstart="54" ystart="222" width="34" height="30" layer="7" starttime="0"/>
+	<image urlname="resources/presentation/BulletPoint.png" xstart="54" ystart="192" width="34" height="30" layer="6" starttime="0"/>
+	<text xstart="88" ystart="192" xend="695" yend="468" layer="5" starttime="0" font="Book Antiqua" fontcolor="#262626" fontsize="24"><textbody italic="false" bold="false" underlined="false"><textstring>Dedicated tablet version \nOnline book store to download new books and systems \nCharacter information save option \nSearch function\nAdditional utilities that are unique to certain systems \nVideo guides to make things easier for new players \nAdd some animation to make the product more commercial
+</textstring>
+	</textbody>
+	</text>
+	<text xstart="179" ystart="43" xend="582" yend="129" layer="3" starttime="0" font="Book Antiqua" fontcolor="#895D1D" fontsize="54"><textbody italic="false" bold="false" underlined="false"><textstring>Product Vision</textstring>
+	</textbody>
+	</text>
+	<image urlname="resources/presentation/SlideBackground.png" xstart="0" ystart="0" width="720" height="540" layer="1" starttime="0"/>
+	</slide>
+	
+	<slide id="4" duration="60" descriptor="5 Year Business Plan" lastSlide="false" backgroundcolor="#FFFFFF"><text xstart="122" ystart="157" xend="686" yend="243" layer="3" starttime="0" font="Book Antiqua" fontcolor="#895D1D" fontsize="54"><textbody italic="false" bold="false" underlined="false"><textstring>5 Year Business Plan</textstring>
+	</textbody>
+	</text>
+	<image urlname="resources/presentation/SecondaryBackground.png" xstart="0" ystart="0" width="720" height="540" layer="1" starttime="0"/>
+	</slide>
+	
+	<slide id="5" duration="60" descriptor="Year One&#xA;" lastSlide="false" backgroundcolor="#FFFFFF"><image urlname="resources/presentation/BulletPoint.png" xstart="87" ystart="302" width="32" height="28" layer="10" starttime="0"/>
+	<image urlname="resources/presentation/BulletPoint.png" xstart="88" ystart="274" width="32" height="28" layer="9" starttime="0"/>
+	<image urlname="resources/presentation/BulletPoint.png" xstart="88" ystart="246" width="32" height="28" layer="8" starttime="0"/>
+	<image urlname="resources/presentation/BulletPoint.png" xstart="88" ystart="219" width="32" height="28" layer="7" starttime="0"/>
+	<image urlname="resources/presentation/BulletPoint.png" xstart="88" ystart="193" width="32" height="28" layer="6" starttime="0"/>
+	<text xstart="122" ystart="192" xend="638" yend="400" layer="5" starttime="0" font="Book Antiqua" fontcolor="#262626" fontsize="22"><textbody italic="false" bold="false" underlined="false"><textstring>Project placed on Kickstarter \nBeta Version available for early release \nOnline Marketplace built \nProduct is finished, ready for sale \nFull working version of a system to be sold with product</textstring>
+	</textbody>
+	</text>
+	<text xstart="241" ystart="43" xend="631" yend="129" layer="3" starttime="0" font="Book Antiqua" fontcolor="#895D1D" fontsize="54"><textbody italic="false" bold="false" underlined="false"><textstring>Year One</textstring>
+	</textbody>
+	</text>
+	<image urlname="resources/presentation/SlideBackground.png" xstart="0" ystart="0" width="720" height="540" layer="1" starttime="0"/>
+	</slide>
+	
+	<slide id="6" duration="60" descriptor="Year Two&#xA;" lastSlide="false" backgroundcolor="#FFFFFF"><image urlname="resources/presentation/BulletPoint.png" xstart="89" ystart="354" width="32" height="28" layer="10" starttime="0"/>
+	<image urlname="resources/presentation/BulletPoint.png" xstart="88" ystart="274" width="32" height="28" layer="9" starttime="0"/>
+	<image urlname="resources/presentation/BulletPoint.png" xstart="88" ystart="246" width="32" height="28" layer="8" starttime="0"/>
+	<image urlname="resources/presentation/BulletPoint.png" xstart="88" ystart="327" width="32" height="28" layer="7" starttime="0"/>
+	<image urlname="resources/presentation/BulletPoint.png" xstart="88" ystart="193" width="32" height="28" layer="6" starttime="0"/>
+	<text xstart="122" ystart="192" xend="689" yend="463" layer="5" starttime="0" font="Book Antiqua" fontcolor="#262626" fontsize="22"><textbody italic="false" bold="false" underlined="false"><textstring>Marketing and Advertising move to forefront of the companies interest \nExpected initial customers – 4,000 \nTaken from approximations of 100,000 players worldwide, with 4% of those wanting to purchase the product \nFeedback from customers used to update product \nNew systems continually developed, major developers approached and offered free system conversion</textstring>
+	</textbody>
+	</text>
+	<text xstart="247" ystart="43" xend="525" yend="129" layer="3" starttime="0" font="Book Antiqua" fontcolor="#895D1D" fontsize="54"><textbody italic="false" bold="false" underlined="false"><textstring>Year Two</textstring>
+	</textbody>
+	</text>
+	<image urlname="resources/presentation/SlideBackground.png" xstart="0" ystart="0" width="720" height="540" layer="1" starttime="0"/>
+	</slide>
+	
+	<slide id="7" duration="60" descriptor="Year Three &amp; Four&#xA;" lastSlide="false" backgroundcolor="#FFFFFF"><image urlname="resources/presentation/BulletPoint.png" xstart="88" ystart="377" width="32" height="28" layer="10" starttime="0"/>
+	<image urlname="resources/presentation/BulletPoint.png" xstart="88" ystart="273" width="32" height="28" layer="9" starttime="0"/>
+	<image urlname="resources/presentation/BulletPoint.png" xstart="88" ystart="221" width="32" height="28" layer="8" starttime="0"/>
+	<image urlname="resources/presentation/BulletPoint.png" xstart="88" ystart="326" width="32" height="28" layer="7" starttime="0"/>
+	<image urlname="resources/presentation/BulletPoint.png" xstart="88" ystart="193" width="32" height="28" layer="6" starttime="0"/>
+	<text xstart="122" ystart="192" xend="666" yend="463" layer="5" starttime="0" font="Book Antiqua" fontcolor="#262626" fontsize="22"><textbody italic="false" bold="false" underlined="false"><textstring>Receiving recognition in the RPG world \nAt least one major developer involved with the project in year three, more major developers in year four \nAdditional systems placed on the marketplace with secure payment systems \nD6 Digital will take a commission of sales from the systems on sale, recommended 20%\nPositive net income</textstring>
+	</textbody>
+	</text>
+	<text xstart="104" ystart="43" xend="641" yend="129" layer="3" starttime="0" font="Book Antiqua" fontcolor="#895D1D" fontsize="54"><textbody italic="false" bold="false" underlined="false"><textstring>Year Three and Four</textstring>
+	</textbody>
+	</text>
+	<image urlname="resources/presentation/SlideBackground.png" xstart="0" ystart="0" width="720" height="540" layer="1" starttime="0"/>
+	</slide>
+	
+	<slide id="8" duration="60" descriptor="Year Five&#xA;" lastSlide="false" backgroundcolor="#FFFFFF"><image urlname="resources/presentation/BulletPoint.png" xstart="88" ystart="274" width="32" height="28" layer="8" starttime="0"/>
+	<image urlname="resources/presentation/BulletPoint.png" xstart="88" ystart="246" width="32" height="28" layer="7" starttime="0"/>
+	<image urlname="resources/presentation/BulletPoint.png" xstart="88" ystart="193" width="32" height="28" layer="6" starttime="0"/>
+	<text xstart="122" ystart="192" xend="621" yend="355" layer="5" starttime="0" font="Book Antiqua" fontcolor="#262626" fontsize="22"><textbody italic="false" bold="false" underlined="false"><textstring>Recognised brand and leader in the market of interactive RPGs \nDevelopers approaching us to host their system \nAll loans will have been paid off in full</textstring>
+	</textbody>
+	</text>
+	<text xstart="247" ystart="43" xend="519" yend="129" layer="3" starttime="0" font="Book Antiqua" fontcolor="#895D1D" fontsize="54"><textbody italic="false" bold="false" underlined="false"><textstring>Year Five</textstring>
+	</textbody>
+	</text>
+	<image urlname="resources/presentation/SlideBackground.png" xstart="0" ystart="0" width="720" height="540" layer="1" starttime="0"/>
+	</slide>
+	
+	<slide id="9" duration="60" descriptor="Marketing Strategy&#xA;" lastSlide="false" backgroundcolor="#FFFFFF"><text xstart="128" ystart="157" xend="692" yend="243" layer="3" starttime="0" font="Book Antiqua" fontcolor="#895D1D" fontsize="54"><textbody italic="false" bold="false" underlined="false"><textstring>Marketing Strategy</textstring>
+	</textbody>
+	</text>
+	<image urlname="resources/presentation/SecondaryBackground.png" xstart="0" ystart="0" width="720" height="540" layer="1" starttime="0"/>
+	</slide>
+	
+	<slide id="10" duration="60" descriptor="Marketing Strategy 1&#xA;" lastSlide="false" backgroundcolor="#FFFFFF"><text xstart="162" ystart="78" xend="601" yend="138" layer="11" starttime="0" font="Book Antiqua" fontcolor="#895D1D" fontsize="44"><textbody italic="false" bold="false" underlined="false"><textstring>and Implementation</textstring>
+	</textbody>
+	</text>
+	<image urlname="resources/presentation/BulletPoint.png" xstart="90" ystart="299" width="32" height="28" layer="9" starttime="0"/>
+	<image urlname="resources/presentation/BulletPoint.png" xstart="90" ystart="246" width="32" height="28" layer="8" starttime="0"/>
+	<image urlname="resources/presentation/BulletPoint.png" xstart="90" ystart="351" width="32" height="28" layer="7" starttime="0"/>
+	<image urlname="resources/presentation/BulletPoint.png" xstart="90" ystart="193" width="32" height="28" layer="6" starttime="0"/>
+	<text xstart="122" ystart="192" xend="661" yend="463" layer="5" starttime="0" font="Book Antiqua" fontcolor="#262626" fontsize="22"><textbody italic="false" bold="false" underlined="false"><textstring>The interactive rulebooks will have a dynamic design matching those in physical copies \nGUI design is versatile, this will be created when working with the developers’ design team \nSimple and quick to create/edit an interactive rulebook once designed \nTwo versions – laptop and tablet</textstring>
+	</textbody>
+	</text>
+	<text xstart="82" ystart="15" xend="672" yend="78" layer="3" starttime="0" font="Book Antiqua" fontcolor="#895D1D" fontsize="44"><textbody italic="false" bold="false" underlined="false"><textstring>Marketing Strategy –Design</textstring>
+	</textbody>
+	</text>
+	<image urlname="resources/presentation/SlideBackground.png" xstart="0" ystart="0" width="720" height="540" layer="1" starttime="0"/>
+	</slide>
+	
+	<slide id="11" duration="60" descriptor="Marketing Strategy 2&#xA;" lastSlide="false" backgroundcolor="#FFFFFF"><image urlname="resources/presentation/MinorBulletPoint.png" xstart="122" ystart="354" width="31" height="22" layer="17" starttime="0"/>
+	<image urlname="resources/presentation/MinorBulletPoint.png" xstart="122" ystart="427" width="31" height="22" layer="16" starttime="0"/>
+	<image urlname="resources/presentation/MinorBulletPoint.png" xstart="122" ystart="402" width="31" height="22" layer="15" starttime="0"/>
+	<image urlname="resources/presentation/MinorBulletPoint.png" xstart="122" ystart="331" width="31" height="22" layer="14" starttime="0"/>
+	<image urlname="resources/presentation/MinorBulletPoint.png" xstart="122" ystart="306" width="31" height="22" layer="13" starttime="0"/>
+	<image urlname="resources/presentation/MinorBulletPoint.png" xstart="122" ystart="257" width="31" height="22" layer="12" starttime="0"/>
+	<image urlname="resources/presentation/MinorBulletPoint.png" xstart="122" ystart="232" width="31" height="22" layer="11" starttime="0"/>
+	<text xstart="153" ystart="229" xend="695" yend="525" layer="10" starttime="0" font="Book Antiqua" fontcolor="#262626" fontsize="20"><textbody italic="false" bold="false" underlined="false"><textstring>Social media(Facebook, Twitter etc.) \nOnline blogs/reviews (eg. “rpgfan.com”, “tabletopgamingnews.com”, “rpg.net”, “rpgsite.net”, “youtube.com” etc.) \nMagazines (eg.“Dragon Roots Magazine”)/posters \nIn store demonstrations \nStalls / sponsorships at gaming fairs/conventions (eg.”Raiders of the Game Cupboard”) \nSponsor online game streams \nAdverts placed on TV. In breaks within fantasy shows (eg. Game of Thrones)</textstring>
+	</textbody>
+	</text>
+	<text xstart="258" ystart="78" xend="496" yend="138" layer="8" starttime="0" font="Book Antiqua" fontcolor="#895D1D" fontsize="44"><textbody italic="false" bold="false" underlined="false"><textstring>Promotion</textstring>
+	</textbody>
+	</text>
+	<image urlname="resources/presentation/BulletPoint.png" xstart="90" ystart="193" width="32" height="28" layer="6" starttime="0"/>
+	<text xstart="122" ystart="192" xend="672" yend="229" layer="5" starttime="0" font="Book Antiqua" fontcolor="#262626" fontsize="22"><textbody italic="false" bold="false" underlined="false"><textstring>Promotional techniques that match the market place:</textstring>
+	</textbody>
+	</text>
+	<text xstart="173" ystart="15" xend="621" yend="78" layer="3" starttime="0" font="Book Antiqua" fontcolor="#895D1D" fontsize="44"><textbody italic="false" bold="false" underlined="false"><textstring>Marketing Strategy – </textstring>
+	</textbody>
+	</text>
+	<image urlname="resources/presentation/SlideBackground.png" xstart="0" ystart="0" width="720" height="540" layer="1" starttime="0"/>
+	</slide>
+	
+	<slide id="12" duration="60" descriptor="Marketing Strategy 3&#xA;" lastSlide="false" backgroundcolor="#FFFFFF"><image urlname="resources/presentation/BulletPoint.png" xstart="90" ystart="272" width="32" height="28" layer="15" starttime="0"/>
+	<image urlname="resources/presentation/BulletPoint.png" xstart="90" ystart="221" width="32" height="28" layer="14" starttime="0"/>
+	<image urlname="resources/presentation/BulletPoint.png" xstart="90" ystart="193" width="32" height="28" layer="13" starttime="0"/>
+	<text xstart="122" ystart="192" xend="672" yend="312" layer="12" starttime="0" font="Book Antiqua" fontcolor="#262626" fontsize="22"><textbody italic="false" bold="false" underlined="false"><textstring>Download from our online store \n“Getting Started” deals for purchasing the software along with interactive rulebooks \nUpdates:</textstring>
+	</textbody>
+	</text>
+	<image urlname="resources/presentation/MinorBulletPoint.png" xstart="120" ystart="341" width="31" height="22" layer="10" starttime="0"/>
+	<image urlname="resources/presentation/MinorBulletPoint.png" xstart="120" ystart="316" width="31" height="22" layer="9" starttime="0"/>
+	<text xstart="151" ystart="312" xend="670" yend="404" layer="8" starttime="0" font="Book Antiqua" fontcolor="#262626" fontsize="20"><textbody italic="false" bold="false" underlined="false"><textstring>Small patches will be free of charge \nLarge changes will be released as new versions, current customers will get discounts on these new versions
+</textstring>
+	</textbody>
+	</text>
+	<text xstart="303" ystart="79" xend="434" yend="139" layer="6" starttime="0" font="Book Antiqua" fontcolor="#895D1D" fontsize="44"><textbody italic="false" bold="false" underlined="false"><textstring>Sales</textstring>
+	</textbody>
+	</text>
+	<image urlname="resources/presentation/BulletPoint.png" xstart="90" ystart="193" width="32" height="28" layer="4" starttime="0"/>
+	<text xstart="167" ystart="15" xend="604" yend="78" layer="3" starttime="0" font="Book Antiqua" fontcolor="#895D1D" fontsize="44"><textbody italic="false" bold="false" underlined="false"><textstring>Marketing Strategy – </textstring>
+	</textbody>
+	</text>
+	<image urlname="resources/presentation/SlideBackground.png" xstart="0" ystart="0" width="720" height="540" layer="1" starttime="0"/>
+	</slide>
+	
+	<slide id="13" duration="60" descriptor="Funding &amp; Sales" lastSlide="false" backgroundcolor="#FFFFFF"><text xstart="145" ystart="157" xend="638" yend="243" layer="3" starttime="0" font="Book Antiqua" fontcolor="#895D1D" fontsize="54"><textbody italic="false" bold="false" underlined="false"><textstring>Funding and Sales</textstring>
+	</textbody>
+	</text>
+	<image urlname="resources/presentation/SecondaryBackground.png" xstart="0" ystart="0" width="720" height="540" layer="1" starttime="0"/>
+	</slide>
+	
+	<slide id="14" duration="60" descriptor="Kickstarter&#xA;" lastSlide="false" backgroundcolor="#FFFFFF"><image urlname="resources/presentation/BulletPoint.png" xstart="59" ystart="216" width="32" height="28" layer="14" starttime="0"/>
+	<text xstart="235" ystart="43" xend="558" yend="129" layer="13" starttime="0" font="Book Antiqua" fontcolor="#895D1D" fontsize="54"><textbody italic="false" bold="false" underlined="false"><textstring>Kickstarter</textstring>
+	</textbody>
+	</text>
+	<image urlname="resources/presentation/MinorBulletPoint.png" xstart="90" ystart="397" width="31" height="22" layer="11" starttime="0"/>
+	<image urlname="resources/presentation/MinorBulletPoint.png" xstart="90" ystart="371" width="31" height="22" layer="10" starttime="0"/>
+	<image urlname="resources/presentation/MinorBulletPoint.png" xstart="90" ystart="349" width="31" height="22" layer="9" starttime="0"/>
+	<image urlname="resources/presentation/MinorBulletPoint.png" xstart="90" ystart="302" width="31" height="22" layer="8" starttime="0"/>
+	<image urlname="resources/presentation/MinorBulletPoint.png" xstart="90" ystart="276" width="31" height="22" layer="7" starttime="0"/>
+	<text xstart="121" ystart="273" xend="661" yend="508" layer="6" starttime="0" font="Book Antiqua" fontcolor="#262626" fontsize="20"><textbody italic="false" bold="false" underlined="false"><textstring>£5 - Certificate of thanks \n£20 - Early access to beta version and full version when it is available \n£50 - Above PLUS one full system \n£100 - Above PLUS a character named after you in a system \n£1000 - All of the above PLUS a Grimore Tshirt and name in the acknowledgements in the program and a tour of our facilities including a meal with the team</textstring>
+	</textbody>
+	</text>
+	<image urlname="resources/presentation/BulletPoint.png" xstart="59" ystart="189" width="32" height="28" layer="4" starttime="0"/>
+	<text xstart="90" ystart="189" xend="640" yend="273" layer="3" starttime="0" font="Book Antiqua" fontcolor="#262626" fontsize="22"><textbody italic="false" bold="false" underlined="false"><textstring>Kickstarter - £60,000 target by end of year one. \nThe proposed benefits available to donators are as follows:</textstring>
+	</textbody>
+	</text>
+	<image urlname="resources/presentation/SlideBackground.png" xstart="0" ystart="0" width="720" height="540" layer="1" starttime="0"/>
+	</slide>
+	
+	<slide id="15" duration="60" descriptor="Product Pricing" lastSlide="false" backgroundcolor="#FFFFFF"><image urlname="resources/presentation/BulletPoint.png" xstart="53" ystart="309" width="34" height="30" layer="10" starttime="0"/>
+	<image urlname="resources/presentation/BulletPoint.png" xstart="53" ystart="279" width="34" height="30" layer="9" starttime="0"/>
+	<image urlname="resources/presentation/BulletPoint.png" xstart="53" ystart="250" width="34" height="30" layer="8" starttime="0"/>
+	<image urlname="resources/presentation/BulletPoint.png" xstart="54" ystart="222" width="34" height="30" layer="7" starttime="0"/>
+	<image urlname="resources/presentation/BulletPoint.png" xstart="54" ystart="192" width="34" height="30" layer="6" starttime="0"/>
+	<text xstart="88" ystart="192" xend="530" yend="411" layer="5" starttime="0" font="Book Antiqua" fontcolor="#262626" fontsize="24"><textbody italic="false" bold="false" underlined="false"><textstring>Product on the market for £9.99 \nNet profit from sales, £8.33 post VAT \nSystems on sale for between £15 and £25 \nOpen source systems available free \n‘Get Started’ bundles £25 including £20 system</textstring>
+	</textbody>
+	</text>
+	<text xstart="173" ystart="43" xend="615" yend="129" layer="3" starttime="0" font="Book Antiqua" fontcolor="#895D1D" fontsize="54"><textbody italic="false" bold="false" underlined="false"><textstring>Product Pricing</textstring>
+	</textbody>
+	</text>
+	<image urlname="resources/presentation/SlideBackground.png" xstart="0" ystart="0" width="720" height="540" layer="1" starttime="0"/>
+	</slide>
+	
+	<slide id="16" duration="60" descriptor="Sales Projection" lastSlide="false" backgroundcolor="#FFFFFF"><image urlname="resources/presentation/BulletPoint.png" xstart="54" ystart="395" width="34" height="30" layer="10" starttime="0"/>
+	<image urlname="resources/presentation/BulletPoint.png" xstart="54" ystart="278" width="34" height="30" layer="9" starttime="0"/>
+	<image urlname="resources/presentation/BulletPoint.png" xstart="54" ystart="337" width="34" height="30" layer="8" starttime="0"/>
+	<image urlname="resources/presentation/BulletPoint.png" xstart="54" ystart="222" width="34" height="30" layer="7" starttime="0"/>
+	<image urlname="resources/presentation/BulletPoint.png" xstart="54" ystart="192" width="34" height="30" layer="6" starttime="0"/>
+	<text xstart="88" ystart="192" xend="683" yend="502" layer="5" starttime="0" font="Book Antiqua" fontcolor="#262626" fontsize="24"><textbody italic="false" bold="false" underlined="false"><textstring>Year One – Development Only. Balance -£20,000 \nYear Two – Target Market 4,000 – Income of £33,320 post VAT. Expenditure of £80,000. Balance -£66,680 \nYear Three – Income of £100,000. Expenditure of £60,000. Balance -£26,680 \nYear Four – Income of £120,000. Expenditure of £60,000. Balance +£33,320 \nYear Five – Income of £160,000. Expenditure of £60,000. Balance +£133,320</textstring>
+	</textbody>
+	</text>
+	<text xstart="173" ystart="43" xend="631" yend="129" layer="3" starttime="0" font="Book Antiqua" fontcolor="#895D1D" fontsize="54"><textbody italic="false" bold="false" underlined="false"><textstring>Sales Projection</textstring>
+	</textbody>
+	</text>
+	<image urlname="resources/presentation/SlideBackground.png" xstart="0" ystart="0" width="720" height="540" layer="1" starttime="0"/>
+	</slide>
+	
+	<slide id="17" duration="60" descriptor="Prototype &amp; Questions" lastSlide="true" backgroundcolor="#FFFFFF"><text xstart="77" ystart="156" xend="695" yend="242" layer="3" starttime="0" font="Book Antiqua" fontcolor="#895D1D" fontsize="54"><textbody italic="false" bold="false" underlined="false"><textstring>Prototype and Questions</textstring>
+	</textbody>
+	</text>
+	<image urlname="resources/presentation/SecondaryBackground.png" xstart="0" ystart="0" width="720" height="540" layer="1" starttime="0"/>
+	</slide>
+	
+</slideshow></collection>

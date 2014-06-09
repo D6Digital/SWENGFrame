@@ -13,68 +13,69 @@
 	<image urlname="resources/presentation/FrontCover.png" xstart="0" ystart="0" width="720" height="540" layer="1" starttime="0"/>
 	</slide>
 	
-	<slide id="1" duration="60" descriptor="Who are we?" lastSlide="false" backgroundcolor="#FFFFFF"><image urlname="resources/presentation/BulletPoint.png" xstart="54" ystart="225" width="34" height="30" layer="13" starttime="0"/>
+	<slide id="1" duration="60" descriptor="Introduction Video" lastSlide="false" backgroundcolor="#FFFFFF"><video urlname="resources\presentation\Grimoire Trailer.mov" xstart="0" ystart="0" width="720" height="540" layer="1" starttime="0" duration="0" loop="false"/>
+	</slide>
+	
+	<slide id="2" duration="60" descriptor="Front Cover 2" lastSlide="false" backgroundcolor="#FFFFFF"><image urlname="resources/presentation/FrontCoverBullet.png" xstart="162" ystart="315" width="40" height="35" layer="6" starttime="0"/>
+	<text xstart="230" ystart="155" xend="531" yend="232" layer="5" starttime="0" font="Book Antiqua" fontcolor="#ECE9C6" fontsize="54"><textbody italic="false" bold="false" underlined="false"><textstring>D6 Digital</textstring>
+	</textbody>
+	</text>
+	<text xstart="201" ystart="315" xend="588" yend="356" layer="2" starttime="0" font="Book Antiqua" fontcolor="#FFFFFF" fontsize="24"><textbody italic="false" bold="false" underlined="false"><textstring>Grimoire Interactive Rule Book</textstring>
+	</textbody>
+	</text>
+	<image urlname="resources/presentation/FrontCover.png" xstart="0" ystart="0" width="720" height="540" layer="1" starttime="0"/>
+	</slide>
+	
+	<slide id="3" duration="60" descriptor="D6 Digital" lastSlide="false" backgroundcolor="#FFFFFF"><image urlname="resources/presentation/BulletPoint.png" xstart="54" ystart="223" width="34" height="30" layer="13" starttime="0"/>
 	<image urlname="resources/presentation/MinorBulletPoint.png" xstart="97" ystart="327" width="31" height="26" layer="12" starttime="0"/>
 	<image urlname="resources/presentation/MinorBulletPoint.png" xstart="97" ystart="359" width="31" height="23" layer="11" starttime="0"/>
 	<image urlname="resources/presentation/MinorBulletPoint.png" xstart="97" ystart="297" width="31" height="26" layer="10" starttime="0"/>
 	<image urlname="resources/presentation/MinorBulletPoint.png" xstart="97" ystart="267" width="31" height="26" layer="9" starttime="0"/>
 	<image urlname="resources/presentation/BulletPoint.png" xstart="54" ystart="192" width="34" height="30" layer="8" starttime="0"/>
-	<text xstart="128" ystart="265" xend="463" yend="420" layer="7" starttime="0" font="Book Antiqua" fontcolor="#262626" fontsize="24"><textbody italic="false" bold="false" underlined="false"><textstring>Agile Development Programming 
-Project Management Multimedia and Interactivity</textstring>
+	<text xstart="128" ystart="265" xend="609" yend="420" layer="7" starttime="0" font="Book Antiqua" fontcolor="#262626" fontsize="24"><textbody italic="false" bold="false" underlined="false"><textstring>Agile Development\nProgramming \nProject Management\nMultimedia and Interactivity</textstring>
 	</textbody>
 	</text>
-	<text xstart="88" ystart="192" xend="604" yend="261" layer="6" starttime="0" font="Book Antiqua" fontcolor="#262626" fontsize="24"><textbody italic="false" bold="false" underlined="false"><textstring>Electronic Engineering undergraduates
-Wide ranging skill sets</textstring>
+	<text xstart="88" ystart="192" xend="655" yend="261" layer="6" starttime="0" font="Book Antiqua" fontcolor="#262626" fontsize="24"><textbody italic="false" bold="false" underlined="false"><textstring>Electronic Engineering undergraduates \nWide ranging skill sets</textstring>
 	</textbody>
 	</text>
-	<text xstart="197" ystart="48" xend="587" yend="134" layer="3" starttime="0" font="Book Antiqua" fontcolor="#895D1D" fontsize="54"><textbody italic="false" bold="false" underlined="false"><textstring>Who are we?</textstring>
+	<text xstart="227" ystart="43" xend="516" yend="129" layer="3" starttime="0" font="Book Antiqua" fontcolor="#895D1D" fontsize="54"><textbody italic="false" bold="false" underlined="false"><textstring>D6 Digital</textstring>
 	</textbody>
 	</text>
 	<image urlname="resources/presentation/SlideBackground.png" xstart="0" ystart="0" width="720" height="540" layer="1" starttime="0"/>
 	</slide>
 	
-	<slide id="2" duration="60" descriptor="Our project brief was to produce a presentation player and expand it into a more specialised individual product.&#xA;We decided to create an interactive version of the rule books required for table top role playing games.&#xA;This would smooth gameplay and therefore improve the experience by allowing greater immersion of players into the world&#xA;This smoothing of the gameplay would make it easier for new players to enjoy&#xA;" lastSlide="false" backgroundcolor="#FFFFFF"/>
+	<slide id="4" duration="60" descriptor="Grimoire&#xA;" lastSlide="false" backgroundcolor="#FFFFFF"><image urlname="resources/presentation/BulletPoint.png" xstart="53" ystart="309" width="34" height="30" layer="10" starttime="0"/>
+	<image urlname="resources/presentation/BulletPoint.png" xstart="53" ystart="279" width="34" height="30" layer="9" starttime="0"/>
+	<image urlname="resources/presentation/BulletPoint.png" xstart="53" ystart="250" width="34" height="30" layer="8" starttime="0"/>
+	<image urlname="resources/presentation/BulletPoint.png" xstart="54" ystart="222" width="34" height="30" layer="7" starttime="0"/>
+	<image urlname="resources/presentation/BulletPoint.png" xstart="54" ystart="192" width="34" height="30" layer="6" starttime="0"/>
+	<text xstart="88" ystart="192" xend="672" yend="411" layer="5" starttime="0" font="Book Antiqua" fontcolor="#262626" fontsize="24"><textbody italic="false" bold="false" underlined="false"><textstring>Develop a presentation player\nTargeted towards the role playing community\nInteractive version of Rule Book \nSmooth gameplay \nIntroduce new players through ease of play</textstring>
+	</textbody>
+	</text>
+	<text xstart="247" ystart="43" xend="508" yend="129" layer="3" starttime="0" font="Book Antiqua" fontcolor="#895D1D" fontsize="54"><textbody italic="false" bold="false" underlined="false"><textstring>Grimoire</textstring>
+	</textbody>
+	</text>
+	<image urlname="resources/presentation/SlideBackground.png" xstart="0" ystart="0" width="720" height="540" layer="1" starttime="0"/>
+	</slide>
 	
-	<slide id="3" duration="60" descriptor="The initial target of our product is the existing players of table top RPGs as with out support from within the current community it seemed harder to bring a product to market.&#xA;With out them it would be exceptionally hard to find an information base for what should be in it&#xA;It is also important that the product should make it easier for new players to start playing, for instance by combatting the myriad of books associated with each game and the complexities of navigating them" lastSlide="false" backgroundcolor="#FFFFFF"/>
+	<slide id="5" duration="60" descriptor="Gameplay&#xA;" lastSlide="false" backgroundcolor="#FFFFFF"><image urlname="resources/presentation/BulletPoint.png" xstart="53" ystart="309" width="34" height="30" layer="10" starttime="0"/>
+	<image urlname="resources/presentation/BulletPoint.png" xstart="53" ystart="279" width="34" height="30" layer="9" starttime="0"/>
+	<image urlname="resources/presentation/BulletPoint.png" xstart="53" ystart="250" width="34" height="30" layer="8" starttime="0"/>
+	<image urlname="resources/presentation/BulletPoint.png" xstart="54" ystart="222" width="34" height="30" layer="7" starttime="0"/>
+	<image urlname="resources/presentation/BulletPoint.png" xstart="54" ystart="192" width="34" height="30" layer="6" starttime="0"/>
+	<text xstart="88" ystart="192" xend="678" yend="377" layer="5" starttime="0" font="Book Antiqua" fontcolor="#262626" fontsize="24"><textbody italic="false" bold="false" underlined="false"><textstring>Portrays information in book using multimedia \nVideo, sounds, text, graphics and images \nUtilities to assist players with game mechanics \nCalculator and dice roller \nMusic player to add depth to gameplay</textstring>
+	</textbody>
+	</text>
+	<text xstart="230" ystart="43" xend="519" yend="129" layer="3" starttime="0" font="Book Antiqua" fontcolor="#895D1D" fontsize="54"><textbody italic="false" bold="false" underlined="false"><textstring>Gameplay</textstring>
+	</textbody>
+	</text>
+	<image urlname="resources/presentation/SlideBackground.png" xstart="0" ystart="0" width="720" height="540" layer="1" starttime="0"/>
+	</slide>
 	
-	<slide id="4" duration="60" descriptor="" lastSlide="false" backgroundcolor="#FFFFFF"/>
-	
-	<slide id="5" duration="60" descriptor="" lastSlide="false" backgroundcolor="#FFFFFF"/>
-	
-	<slide id="6" duration="60" descriptor="" lastSlide="false" backgroundcolor="#FFFFFF"/>
-	
-	<slide id="7" duration="60" descriptor="" lastSlide="false" backgroundcolor="#FFFFFF"/>
-	
-	<slide id="8" duration="60" descriptor="" lastSlide="false" backgroundcolor="#FFFFFF"/>
-	
-	<slide id="9" duration="60" descriptor="" lastSlide="false" backgroundcolor="#FFFFFF"/>
-	
-	<slide id="10" duration="60" descriptor="" lastSlide="false" backgroundcolor="#FFFFFF"/>
-	
-	<slide id="11" duration="60" descriptor="" lastSlide="false" backgroundcolor="#FFFFFF"/>
-	
-	<slide id="12" duration="60" descriptor="" lastSlide="false" backgroundcolor="#FFFFFF"/>
-	
-	<slide id="13" duration="60" descriptor="" lastSlide="false" backgroundcolor="#FFFFFF"/>
-	
-	<slide id="14" duration="60" descriptor="" lastSlide="false" backgroundcolor="#FFFFFF"/>
-	
-	<slide id="15" duration="60" descriptor="" lastSlide="false" backgroundcolor="#FFFFFF"/>
-	
-	<slide id="16" duration="60" descriptor="" lastSlide="false" backgroundcolor="#FFFFFF"/>
-	
-	<slide id="17" duration="60" descriptor="" lastSlide="false" backgroundcolor="#FFFFFF"/>
-	
-	<slide id="18" duration="60" descriptor="" lastSlide="false" backgroundcolor="#FFFFFF"/>
-	
-	<slide id="19" duration="60" descriptor="" lastSlide="false" backgroundcolor="#FFFFFF"/>
-	
-	<slide id="20" duration="60" descriptor="" lastSlide="false" backgroundcolor="#FFFFFF"/>
-	
-	<slide id="21" duration="60" descriptor="" lastSlide="false" backgroundcolor="#FFFFFF"/>
-	
-	<slide id="22" duration="60" descriptor="" lastSlide="false" backgroundcolor="#FFFFFF"/>
-	
-	<slide id="23" duration="60" descriptor="" lastSlide="true" backgroundcolor="#FFFFFF"/>
+	<slide id="6" duration="60" descriptor="Demo&#xA;" lastSlide="true" backgroundcolor="#FFFFFF"><text xstart="281" ystart="157" xend="462" yend="243" layer="3" starttime="0" font="Book Antiqua" fontcolor="#895D1D" fontsize="54"><textbody italic="false" bold="false" underlined="false"><textstring>Demo</textstring>
+	</textbody>
+	</text>
+	<image urlname="resources/presentation/SecondaryBackground.png" xstart="0" ystart="0" width="720" height="540" layer="1" starttime="0"/>
+	</slide>
 	
 </slideshow></collection>

@@ -5,4 +5,9 @@
     <filename>github resources\Presentation.xml</filename>
     <icon>src\XMLBits\LogoVertical.jpg</icon>
   </book>
+  <book id="002">
+    <title>SWENG Final Presentation continued</title>
+    <filename>github resources\PresentationContinued.xml</filename>
+    <icon>src\XMLBits\LogoVertical.jpg</icon>
+  </book>
 </booklist>
