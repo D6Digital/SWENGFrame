@@ -395,27 +395,8 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
 	/**
 	 * When a utility button is released instantiate the utility
 	 * if it doesn't already exist
+	 * @param button is the button that has triggered the method
 	 */
-//	@Override
-//	public void actionPerformed(ActionEvent e) {
-//		if ("diceRollerLaunch".equals(e.getActionCommand())){
-//		    this.setSize(dicePanel.getWidth(), dicePanel.getHeight());
-//			setPanelVisible("dicePanel");
-//			this.repaint();
-//		}
-//		else if ("calculatorLaunch".equals(e.getActionCommand())) {
-//		    this.setSize(calculatorPanel.getWidth(), calculatorPanel.getHeight());
-//		    setPanelVisible("calculatorPanel"); 
-//	        this.repaint();
-//		}
-//	    else if ("audioPlayerLaunch".equals(e.getActionCommand())) {
-//	        this.setSize(standAloneMusicPlayerPanel.getWidth(), standAloneMusicPlayerPanel.getHeight());
-//	        setPanelVisible("standAloneMusicPlayerPanel");
-//	        this.repaint();
-//        }
-//	   
-//	}
-	
 	public void setUtilityVisible(JButton button) {
 	    String caseString = button.getActionCommand();
 	    switch(caseString) {
