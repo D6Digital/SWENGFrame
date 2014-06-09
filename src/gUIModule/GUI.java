@@ -89,10 +89,8 @@ public class GUI extends JFrame implements ComponentListener, KeyListener{
 	Container calculatorPane;
 	Container audioPlayerPane;
 	private Presentation slideList;
-	private Presentation bigSlideList;
 	static Integer currentVisibleSlideID;
 	public SlidePanel slidePanel;
-	private Dimension availableScreenSize;
 
 	JButton nextSlideButton = new JButton();
 	JButton previousSlideButton = new JButton();
@@ -151,17 +149,8 @@ public class GUI extends JFrame implements ComponentListener, KeyListener{
 	int newHeight;
 	private int bookLayout = 1;
 	
-	/**
-	 * Create a simple JFrame and then populate it with specified JPanel type
-	 * @return 
-	 */
-	private void setCurrentSlideID(Integer newSlideID) {
-		this.currentVisibleSlideID = newSlideID;
-	}
-
-	private Integer getCurrentSlideID() {
-		return currentVisibleSlideID;
-	} 
+	
+	
 
 	public Slide showNextSlide() {
 		if(slideList.get(slidePanel.currentSlide.getSlideID()).getLastSlide()==false){
@@ -197,6 +186,12 @@ public class GUI extends JFrame implements ComponentListener, KeyListener{
 		return null;
 	}
 
+	/**
+	 * Create The main JFrame and populate with the Main Menu User interface.
+	 * Also setup the listeners and timers to be used by members of this class and
+	 * the mouse motion listeners for child components of this class.
+	 * @return 
+	 */
 	public GUI(String panelType) {
 
 	    //this.setResizable(false);
@@ -386,47 +381,7 @@ public class GUI extends JFrame implements ComponentListener, KeyListener{
 
 	
 
-	
-/*public Presentation reScale(Presentation slideList, double scaleFactorX, double scaleFactorY) {
-		
-		
-		for(Slide slide: slideList.getSlideList()){
-			for(presentation.Image image: slide.getImageList()) {
-				image.setX_coord((int)((double)image.getX_coord()*scaleFactorX));
-				image.setY_coord((int)((double)image.getY_coord()*scaleFactorY));
-				image.setWidth((int)((double)image.getWidth()*scaleFactorX));
-				image.setHeight((int)((double)image.getHeight()*scaleFactorY));
-			}
-			for(Video video: slide.getVideoList()) {
-				video.setX_coord((int)((double)video.getX_coord()*scaleFactorX));
-				video.setY_coord((int)((double)video.getY_coord()*scaleFactorY));
-				video.setWidth((int)((double)video.getWidth()*scaleFactorX));
-				video.setHeight((int)((double)video.getHeight()*scaleFactorY));
-				
-			}
-			for(Shapes shape: slide.getShapeList()) {
-				shape.setWidth((int)((double)shape.getWidth()*scaleFactorX));
-				shape.setHeight((int)((double)shape.getHeight()*scaleFactorY));
-				for(Point point: shape.getPointList()) {
-					point.setX((int)((double)point.getX()*scaleFactorX));
-					point.setY((int)((double)point.getY()*scaleFactorY));
-				}
-			}
-			for(Text text : slide.getTextList()) {
-				text.setX_coord((int)((double)text.getX_coord()*scaleFactorX));
-				text.setY_coord((int)((double)text.getY_coord()*scaleFactorY));
-				text.setXend((int)((double)text.getXend()*scaleFactorX));
-				text.setYend((int)((double)text.getYend()*scaleFactorY));
-				text.setSize(((int)((double)text.getSize()*scaleFactorX)+(int)((double)text.getSize()*scaleFactorX))/2);
-			}
-		}
-		
-		slideList.setWidth((int)((double)this.getWidth()*scaleFactorX));
-		slideList.setHeight((int)((double)this.getHeight()*scaleFactorY));
-		
-		// TODO Auto-generated method stub
-		return slideList;
-	}*/
+
 
 private void setupTextListener() {
 	textBranchListener = new MouseAdapter() {

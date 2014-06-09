@@ -284,6 +284,13 @@ public class SlidePanel extends JPanel{
 	}
 	
 	public void refreshSlide(Slide newSlide){
+		stopPlaying();
+        setupSlide(newSlide);
+		
+	}
+	
+	
+	public void stopPlaying() {
 		this.theTimer.stop();
 		for(Component component: layeredPane.getComponents()){
 			if(component instanceof VideoPlayer){
@@ -292,16 +299,13 @@ public class SlidePanel extends JPanel{
 			}
 		}
         clearSlide();
-        this.setupSlide(newSlide);
 		if(audioPlayer != null)
 		{
 			this.audioPlayer.stopMedia();
 		}
 		
-
-		//this.repaint();
-		
 	}
+	
 	
 	public Integer getCount() {
 		return count;
@@ -810,21 +814,7 @@ public class SlidePanel extends JPanel{
 		
 	}
 
-	public void stopPlaying() {
-		this.theTimer.stop();
-		for(Component component: layeredPane.getComponents()){
-			if(component instanceof VideoPlayer){
-				VideoPlayer videoPlayer = (VideoPlayer) component;
-					videoPlayer.stopMedia();
-			}
-		}
-        clearSlide();
-		if(audioPlayer != null)
-		{
-			this.audioPlayer.stopMedia();
-		}
-		
-	}
+	
 
 
 
