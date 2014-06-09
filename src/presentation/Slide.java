@@ -8,7 +8,6 @@ import java.util.ArrayList;
 /**
  * @author Robert Mills
  * @author Chris Sainsbury
- *
  */
 public class Slide {
 	private ArrayList<SlideObject> objectList = new ArrayList<SlideObject>(0);

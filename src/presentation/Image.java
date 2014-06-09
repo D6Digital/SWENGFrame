@@ -40,41 +40,45 @@ public class Image extends SlideObject {
 
 	/**
 	 * 
-	 * @return the width
+	 * @return the width of the image
 	 */
 	public int getWidth(){
 		return width;
 	}
 	
 	/**
-	 * 
-	 * 
+	 * @param width the desired width of the image
 	 */
 	public void setWidth(int width){
 		this.width = width;
 	}
 	
 	/**
-	 * 
-	 * @return the height
+	 * @return the height of the image
 	 */
 	public int getHeight(){
 		return height;
 	}
 	
+	
 	/**
-	 * 
-	 * 
+	 * @param height desired height of the image
 	 */
 	public void setHeight(int height){
 		this.height = height;
 	}
 
+	/**
+	 * @param chapterBranch
+	 */
 	public void setChapterBranch(int chapterBranch) {
 		this.chapterBranch = chapterBranch;
 		
 	}
 
+	/**
+	 * @return get the slide number to branch to
+	 */
 	public Integer getChapterBranch() {
 		return chapterBranch;
 	}
