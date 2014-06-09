@@ -59,64 +59,57 @@ public class Shapes {
 	}
 
 	/**
-	 * 
 	 * @return numberOfPoints
 	 */
 	public int getNumberOfPoints(){
 		return numberOfPoints;
 	}
 	
+	
 	/**
-	 * 
-	 * 
+	 * @param numberOfPoints the number of points hich make up the shape
 	 */
 	public void setNumberOfPoints(int numberOfPoints){
 		this.numberOfPoints = numberOfPoints;
 	}
 	
 	/**	
-	 * 	
-	 * @return the width
+	 * @return the width of the shape
 	 */
 	public int getWidth(){
 		return width;
 	}
-	
-	/**	
-	 * 	
-	 * 
+
+	/**
+	 * @param width the width of the shape
 	 */
 	public void setWidth(int width){
 		this.width = width;
 	}
 	
 	/**
-	 * 
-	 * @return the height
+	 * @return the height of the shape
 	 */
 	public int getHeight(){
 		return height;
 	}
 	
 	/**
-	 * 
-	 * @return the height
+	 * @param height the height of the shape 
 	 */
 	public void setHeight(int height){
 		this.height = height;
 	}
 	
 	/**
-	 * 
-	 * @return fillColor
+	 * @return the fill colour of the shape (defaults to presentation default)
 	 */
 	public String getFillColor(){
 		return fillColor;
 	}
-	
+
 	/**
-	 * 
-	 * 
+	 * @param fillColour the fill colour of the shape (defaults to presentation default)
 	 */
 	public void setFillColor(String fillColour){
 		this.fillColor = fillColour;
@@ -140,22 +133,20 @@ public class Shapes {
 	
 	/**
 	 * 
-	 * @return lineColor
+	 * @return lineColor of the shape
 	 */
 	public String getLineColor(){
 		return lineColor;
 	}
-	
+
 	/**
-	 * 
-	 * 
+	 * @param lineColour the colour of the lines
 	 */
 	public void setLineColor(String lineColour){
 		this.lineColor = lineColour;
 	}
 	
 	/**
-	 * 
 	 * @param index
 	 * @return the point at a given index
 	 * @see java.util.ArrayList#get(int)
@@ -165,8 +156,8 @@ public class Shapes {
 	}
 
 	/**
-	 * @param arg0
-	 * @return
+	 * @param arg0 a point on teh shape
+	 * @return true if successful
 	 * @see java.util.ArrayList#add(java.lang.Object)
 	 */
 	public boolean addPoint(Point arg0) {
@@ -174,17 +165,23 @@ public class Shapes {
 	}
 
 	/**
-	 * @return
+	 * @return the number of points
 	 * @see java.util.ArrayList#size()
 	 */
 	public int sizePointList() {
 		return pointList.size();
 	}
 
+    /**
+     * @return the array of points
+     */
     public ArrayList<Point> getPointList() {
         return pointList;
     }
 
+    /**
+     * @param pointList allows a list of points to be imported
+     */
     public void setPointList(ArrayList<Point> pointList) {
         this.pointList = pointList;        
     }
