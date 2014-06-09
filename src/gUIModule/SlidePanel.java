@@ -136,47 +136,20 @@ public class SlidePanel extends JPanel{
 	public void setupSlide(Slide newSlide){
 	    
 	    currentSlide = newSlide;
-	   
-	    ArrayList<Image> imageList = currentSlide.getImageList();
-	    ArrayList<Text> textList = currentSlide.getTextList();
-	    ArrayList<Video> videoList = currentSlide.getVideoList();
-	    ArrayList<Shapes> shapeList = currentSlide.getShapeList();
-	    ArrayList<Sound> soundList = currentSlide.getSoundList();
-	    
-	    currentSlide.getSlideID();
-	    currentSlide.getSlideName();
+	    slideID = currentSlide.getSlideID();
+	    slideName = currentSlide.getSlideName();
 	    
 	    layeredPane = new JLayeredPane();
-	    //layeredPane.setPreferredSize(new Dimension(presentation.getWidth(),presentation.getHeight()));
 	    layeredPane.setBounds(0, 0, (int) (presentation.getWidth()*scalingFactorX), (int) (presentation.getHeight()*scalingFactorY));
 	    layeredPane.setLayout(null);
 	    
 
 	    addSound();
         
-       /*   
-	   for(Image image: imageList) {
-	        addImage(image);
-	   }
-       for(Video video: videoList) {
-           addVideo(video);
-       }
-       for(Shapes shape: shapeList) {
-           addShape(shape);
-       }
-       for(Text text : textList) {
-            addText(text);
-       }*/
 	    repaintTask= new ActionListener() {
 			@Override
-			public void actionPerformed(ActionEvent e) { 
-				//System.out.println( getParent().getParent().getParent().getParent().getParent());
-				//if( getParent().getParent().getParent().getParent().getParent() instanceof GUI){
-					//GUI mainFrame = (GUI) getParent().getParent().getParent().getParent().getParent();
-					//mainFrame.repaint();
+			public void actionPerformed(ActionEvent e) {
 				getParent().getParent().getParent().getParent().getParent().repaint();
-					
-				//}
 				quickRepaintTimer.stop();
 			}
 	    };
