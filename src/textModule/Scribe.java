@@ -59,9 +59,6 @@ public class Scribe extends JPanel{
 	 * @param text
 	 * @param textSizeScale 
 	 */
-	
-	
-	
 	public Scribe(Text text, MouseAdapter listener, double textSizeScale) {
 		
 		textObject = text;
@@ -107,11 +104,15 @@ public class Scribe extends JPanel{
 		textPane.setVisible(true);
 		
 	}
-	
-public Scribe(Text text) {
+
+	/**
+	 * produces a JPanel containing text from the text object
+	 * @param text
+	 * @param textSizeScale 
+	 */
+	public Scribe(Text text) {
 		
 		textObject = text;
-		
 		
 		this.setOpaque(false);
 		
@@ -119,6 +120,7 @@ public Scribe(Text text) {
 		if(font.getFamily().equals("Dialog")){
 		// create a font object for a user defined font
 			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+			// Use the commented lines below to see the available fonts
 			/*for (String name : ge.getAvailableFontFamilyNames()) {
 				System.out.println(name);
 			}*/
@@ -128,7 +130,6 @@ public Scribe(Text text) {
 	
 				ge.registerFont(font);
 			} catch (FontFormatException | IOException e1) {
-				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
 		}
@@ -279,7 +280,10 @@ public Scribe(Text text) {
 	
 	
 
-
+	/**
+	 * Creates a listener for text so that when the user clicks on a section of text which has a branch
+	 * attribute it will cause an action such as going to a web page
+	 */
 	private void setupBranchListener() {
 		textbBranchListener = new MouseAdapter() {
 			
@@ -324,6 +328,10 @@ public Scribe(Text text) {
 	};
 	}
 
+	/**
+	 * Creates a listener for text so that when the users mouse is over text with a branch attribute
+	 * the cursor changes to a hand cursor indicating it can be clicked
+	 */
 	private void setupHandListener() {
 		textbBranchListener = new MouseAdapter() {
 

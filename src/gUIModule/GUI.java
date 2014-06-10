@@ -399,67 +399,67 @@ public class GUI extends JFrame implements ComponentListener, KeyListener{
 
 
 
-/**
- * setup the main interface which displays the book as a series of slideshows/chapters
- */
-public void bookMainPanelSetUp(){
-	
-	int width = getSize().width-(insets.left+insets.right);
-	int height = getSize().height-(insets.top-insets.bottom);
-	scaleFactorX = (double)(getSize().width-(insets.left+insets.right))/(double)720;
-	scaleFactorY = (double)(getSize().height-(insets.top-insets.bottom))/(double)540;
-
-	frame.requestFocusInWindow();
-	
-	bookPane = getContentPane();
-	bookPane.setBounds(0, 0, width, height);
-
-	layers.setLayout(null);
-	layers.setBounds(0,0,width, height);
-	
-	//set up listeners for objects on the slide panel
-	setupObjectListener();
-	setupTextListener();
-	setupVideoListener();
-
-	// Testing another book layout
-	if(collection.get(0).getTitle().equals("Sunward : The Inner System")){
-		bookLayout  = 2;
-	}
-	else{
-		bookLayout = 1;
-	}
-	
-	removePanel(slidePanel);
-	removePanel(utilities);
-	removePanel(contentsPanel);
-	
-	slidePanel = new SlidePanel();
-	utilities = new UtilitiesPanel(utilitiesWidth, width, height,genericListener,bookLayout);
-	contentsPanel = new ContentsPanel(slideList.getSlideList(),collection.getPresentationList(), contentsWidth, slideWidth,540, mainMenuPanel.getCurrentSystem(), mainMenuPanel.getCurrentBook(), bookLayout);
-	
-	setupTabs(width,height);
-	setupSlideButtons(width,height);
-	setupUtilities(width,height);
-	setupContents(width,height);
-	setupSlidePanel(width,height);
-	
-	
-	//Adding to layered pane
-	layers.add(utilities,0);
-	layers.add(contentsPanel,0);
-	layers.add(nextSlideButton,1);
-	layers.add(previousSlideButton,1);
-	layers.add(slidePanel,5);
-	
-	bookPane.add(layers);
-	bookPane.setVisible(true);
-	resizeMainPanel();
-	setVisible(true);
-	repaint();
+	/**
+	 * setup the main interface which displays the book as a series of slideshows/chapters
+	 */
+	public void bookMainPanelSetUp(){
 		
-}
-
+		int width = getSize().width-(insets.left+insets.right);
+		int height = getSize().height-(insets.top-insets.bottom);
+		scaleFactorX = (double)(getSize().width-(insets.left+insets.right))/(double)720;
+		scaleFactorY = (double)(getSize().height-(insets.top-insets.bottom))/(double)540;
+	
+		frame.requestFocusInWindow();
+		
+		bookPane = getContentPane();
+		bookPane.setBounds(0, 0, width, height);
+	
+		layers.setLayout(null);
+		layers.setBounds(0,0,width, height);
+		
+		//set up listeners for objects on the slide panel
+		setupObjectListener();
+		setupTextListener();
+		setupVideoListener();
+	
+		// Testing another book layout
+		if(collection.get(0).getTitle().equals("Sunward : The Inner System")){
+			bookLayout  = 2;
+		}
+		else{
+			bookLayout = 1;
+		}
+		
+		removePanel(slidePanel);
+		removePanel(utilities);
+		removePanel(contentsPanel);
+		
+		slidePanel = new SlidePanel();
+		utilities = new UtilitiesPanel(utilitiesWidth, width, height,genericListener,bookLayout);
+		contentsPanel = new ContentsPanel(slideList.getSlideList(),collection.getPresentationList(), contentsWidth, slideWidth,540, mainMenuPanel.getCurrentSystem(), mainMenuPanel.getCurrentBook(), bookLayout);
+		
+		setupTabs(width,height);
+		setupSlideButtons(width,height);
+		setupUtilities(width,height);
+		setupContents(width,height);
+		setupSlidePanel(width,height);
+		
+		
+		//Adding to layered pane
+		layers.add(utilities,0);
+		layers.add(contentsPanel,0);
+		layers.add(nextSlideButton,1);
+		layers.add(previousSlideButton,1);
+		layers.add(slidePanel,5);
+		
+		bookPane.add(layers);
+		bookPane.setVisible(true);
+		resizeMainPanel();
+		setVisible(true);
+		repaint();
+			
+	}
+	
 
 private void setupSlidePanel(int width, int height) {
 	
@@ -699,25 +699,26 @@ private void addTab(JPanel tab, String tabImagePath, int tabWidth, int tabHeight
 	
 }
 
-
-public Slide showNextSlide() {
+/**
+ * This method checks if the current slide is the last and if not branches to the next slide
+ */
+public void showNextSlide() {
 	if(slideList.get(slidePanel.currentSlide.getSlideID()).getLastSlide()==false){
 		int nextSlideID	 = slidePanel.currentSlide.getSlideID() + 1;
-		System.out.println(nextSlideID);
 		Slide nextSlide = slideList.get(nextSlideID);
 		slidePanel.refreshSlide(nextSlide);
+		
 		previousSlideButton.setBorderPainted(true);
-		System.out.println("Next slide = " + nextSlide.getLastSlide());
 		if(slidePanel.currentSlide.getLastSlide()==true){
 			nextSlideButton.setBorderPainted(false);
-
 		}
 	}
-	return null;
 }
 
-
-public Slide showPreviousSlide() {
+/**
+ * This method checks if the current slide is the first slide and if not branches to the previous slide
+ */
+public void showPreviousSlide() {
 	if(slidePanel.currentSlide.getSlideID() > 0){
 
 		nextSlideButton.setBorderPainted(true);
@@ -727,13 +728,21 @@ public Slide showPreviousSlide() {
 			previousSlideButton.setBorderPainted(false);
 
 		}
+		
 		int previousSlideID = slidePanel.currentSlide.getSlideID() - 1;
 		Slide previousSlide = slideList.get(previousSlideID);
 		slidePanel.refreshSlide(previousSlide);
-	}	
-	return null;
+	}
 }
 
+
+/**
+ * Creates a listener for text so that when the user clicks on a section of text which has a branch
+ * attribute it will cause an action such as going to a specific slide
+ * 
+ * Also creates a listener for text so that when the users mouse is over text with a branch attribute
+ * the cursor changes to a customised cursor indicating it can be clicked
+ */
 private void setupTextListener() {
 	textBranchListener = new MouseAdapter() {
 		
@@ -856,6 +865,13 @@ private void setupTextListener() {
 	};
 }
 
+/**
+ * Creates a listener for objects, including images and shapes, so that when the user clicks 
+ * on them the slide will be changed to the slide with an id of the branch number
+ * 
+ * Also creates a listener for objects so that when the users mouse hovers on an object with a branch attribute
+ * the cursor changes to a customised cursor indicating it can be clicked
+ */
 private void setupObjectListener() {
 	objectBranchListener = new MouseAdapter() {
 		
@@ -937,6 +953,10 @@ private void setupObjectListener() {
 	};
 }
 
+/**
+ * Creates a listener to be used by the video player which uses the Y-coordinate to
+ * decide if the control panel is shown.
+ */
 private void setupVideoListener() {
 	videoListener = new MouseAdapter() {
 	    	@Override
@@ -976,6 +996,10 @@ private void setupVideoListener() {
 	};
 }
 
+/**
+ * This method creates a generic listener used by any visible objects that have mouse listeners
+ * so that the custom cursors may be displayed correctly over all objects
+ */
 private void setupGenericMouseMotionListener() {
 	genericListener = new MouseAdapter(){
 		@Override
@@ -986,7 +1010,17 @@ private void setupGenericMouseMotionListener() {
 		}
 	};
 }
-	
+
+/**
+ * This method is called for all the mouse motion listeners used on the main book panel.
+ * When the mouse is in certain areas of the screen(near the edges) different panels are made visible.
+ * This shows the contents panel at the left side, utilities at the right side and 
+ * previous/next buttons at the bottom.
+ * @param e1
+ * @param isObject
+ * @param isText
+ * @param isVideo
+ */
 private void borderListenerProcess(MouseEvent e1,Boolean isObject,Boolean isText, Boolean isVideo){
 	
 	int xCoordinate = e1.getX();
@@ -1130,6 +1164,9 @@ private void borderListenerProcess(MouseEvent e1,Boolean isObject,Boolean isText
 	
 }
 
+/**
+ * resizes the main menu using a scale factor derived from the standard resolution of the slides
+ */
 private void resizeMainMenu() {
 	
 	scaleFactorX = (double)(getSize().width-insets.left-insets.right)/(double)720;
@@ -1139,6 +1176,10 @@ private void resizeMainMenu() {
 	
 }
 
+
+/**
+ * resizes the main book panel using a scale factor derived from the standard resolution of the slides
+ */
 private void resizeMainPanel() {
 	
 	
@@ -1170,7 +1211,20 @@ private void resizeMainPanel() {
     
 }
 
-
+/**
+ * redraws the contents panel and ensures the tabs are not visible
+ */
+public void refreshContents() {
+	
+	contentsPanel.setVisible(true);
+	contentsPanel.repaint();
+	contentsShowing=true;
+	utilitiesTab.setVisible(false);
+	contentsTab.setVisible(false);
+	nextTab.setVisible(false);
+	previousTab.setVisible(false);
+	previousSlideButton.setVisible(false);
+}
 
 
 @Override
@@ -1237,17 +1291,7 @@ public void keyTyped(KeyEvent e) {
 	
 }
 
-public void refreshContents() {
-	
-	contentsPanel.setVisible(true);
-	contentsPanel.repaint();
-	contentsShowing=true;
-	utilitiesTab.setVisible(false);
-	contentsTab.setVisible(false);
-	nextTab.setVisible(false);
-	previousTab.setVisible(false);
-	previousSlideButton.setVisible(false);
-}
+
 
 
 
