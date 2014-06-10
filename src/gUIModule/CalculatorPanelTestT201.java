@@ -1,13 +1,17 @@
 package gUIModule;
 
-import static org.junit.Assert.*;
-
 import javax.swing.JFrame;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * A test to check that the calculator panel is in working order.
+ * This test has not been automated and simply provides a frame with
+ * calculator panel on, for lone testing of the module without integration
+ * into system.
+ *
+ */
 public class CalculatorPanelTestT201 {
 
     CalculatorPanel calculatorPanel;

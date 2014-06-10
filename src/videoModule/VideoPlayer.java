@@ -9,6 +9,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionListener;
+
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -64,33 +66,21 @@ public class VideoPlayer extends JPanel{
         this.setLayout(null);
         this.setBounds(video.getX_coord(), video.getY_coord(), video.getWidth(), video.getHeight());
 
-        vidpanel = new JPanel();
-        vidpanel.setLayout(null);
-        vidpanel.setBounds(0, 0, width, height);
-        img = new ImageIcon("resources/buttons/pauseText.png");
+        setupVidpanel();
 
         // gives invisible panel over top of video to allow pausing by clicking on video.
-        overlayPanel = new JPanel();
-        overlayPanel.setLayout(null);
-        overlayPanel.setOpaque(false);
-        overlayPanel.setBounds(0, 0, width, height);
+        setupOverlayPanel();
         
         canvas = new Canvas();
         canvas.setBackground(Color.BLACK);
 
         // Initialise and setup the video player.
-        MediaPlayerFactory mediaPlayerFactory = new MediaPlayerFactory();
-        CanvasVideoSurface videoSurface = mediaPlayerFactory.newVideoSurface(canvas);
-        mediaPlayer = mediaPlayerFactory.newEmbeddedMediaPlayer();
-        mediaPlayer.setVideoSurface(videoSurface);
+        setupMediaPlayer();
         
         canvas.setBounds(0, 0, width, height);
 
         // Get the control panel to be associated with this video player.
-        ControlPanel = new PlayerControlsPanel(mediaPlayer);
-        ControlPanel.setBounds(0, height-80, width, 80);
-        ControlPanel.setBackground(Color.black);
-        ControlPanel.setOpaque(true);
+        setupControlPanel();
 
         // Setup the listeners for the features of the control panel and
         // their relation to the video playback.
@@ -119,54 +109,117 @@ public class VideoPlayer extends JPanel{
             mediaPlayer.prepareMedia(file, ":start-time="+start, ":stop-time="+end);
 
             // Setup the listener that plays the player and sets pause icon when play is clicked.
-            canvas.addKeyListener(JFrame.getFrames()[0].getKeyListeners()[0]);
-            canvas.addMouseListener(new java.awt.event.MouseAdapter() {  
-                @Override
-                public void mousePressed(MouseEvent e) {
-                    if (mediaPlayer.isPlaying()){
-                        mediaPlayer.pause();
-                        ControlPanel.setPlayButton();
-                        add(overlayPanel);	
-                        startTimer();
-                    }
-                    else{
-                        mediaPlayer.play();
-                        ControlPanel.setPauseButton();
-                    }		 		 	       
-                }	    	
-            });
+            addCanvasListener(videoListener);
 
-            canvas.addMouseMotionListener(videoListener);
+            
 
             // setup listeners for making control panel appear and disappear when not hovered over.
-            ControlPanel.addMouseListener(new java.awt.event.MouseAdapter() {   
-                @Override
-                public void mouseExited(java.awt.event.MouseEvent evt) {        
-                    ControlPanel.setVisible(false); 
-                    startTimer();
-                }
-            });
-            ControlPanel.addMouseListener(new java.awt.event.MouseAdapter() {   
-                @Override
-                public void mouseEntered(java.awt.event.MouseEvent evt) {        
-                    ControlPanel.setVisible(true); 
-                    startTimer();
-                }
-            });
+            controlPanelListeners();
 
             // setup listener for pausing or playing whenever user presses on video overlay.
-            overlayPanel.addMouseListener(new java.awt.event.MouseAdapter() {   
-                @Override
-                public void mouseClicked(MouseEvent e) {
-                    remove(overlayPanel);
-                    vidpanel.setVisible(true);
-                    mediaPlayer.play();	
-                    ControlPanel.setPauseButton();
-                    startTimer();
-                    repaint();
-                }	    	
-            });
+            addOverlayPanelListener();
     }
+
+	/**
+	 * setup listener for pausing or playing whenever user presses on video overlay.
+	 */
+	private void addOverlayPanelListener() {
+		overlayPanel.addMouseListener(new java.awt.event.MouseAdapter() {   
+		    @Override
+		    public void mouseClicked(MouseEvent e) {
+		        remove(overlayPanel);
+		        vidpanel.setVisible(true);
+		        mediaPlayer.play();	
+		        ControlPanel.setPauseButton();
+		        startTimer();
+		        repaint();
+		    }	    	
+		});
+	}
+
+	/**
+	 * setup listeners for making control panel appear and disappear when not hovered over.
+	 */
+	private void controlPanelListeners() {
+		ControlPanel.addMouseListener(new java.awt.event.MouseAdapter() {   
+		    @Override
+		    public void mouseExited(java.awt.event.MouseEvent evt) {        
+		        ControlPanel.setVisible(false); 
+		        startTimer();
+		    }
+		});
+		ControlPanel.addMouseListener(new java.awt.event.MouseAdapter() {   
+		    @Override
+		    public void mouseEntered(java.awt.event.MouseEvent evt) {        
+		        ControlPanel.setVisible(true); 
+		        startTimer();
+		    }
+		});
+	}
+
+	/**
+	 * Setup the listener that plays the player and sets pause icon when play is clicked
+	 * @param videoListener 
+	 */
+	private void addCanvasListener(MouseMotionListener videoListener) {
+		canvas.addKeyListener(JFrame.getFrames()[0].getKeyListeners()[0]);
+		canvas.addMouseListener(new java.awt.event.MouseAdapter() {  
+		    @Override
+		    public void mousePressed(MouseEvent e) {
+		        if (mediaPlayer.isPlaying()){
+		            mediaPlayer.pause();
+		            ControlPanel.setPlayButton();
+		            add(overlayPanel);	
+		            startTimer();
+		        }
+		        else{
+		            mediaPlayer.play();
+		            ControlPanel.setPauseButton();
+		        }		 		 	       
+		    }	    	
+		});
+		canvas.addMouseMotionListener(videoListener);
+	}
+
+	/**
+	 * Sets up the panel for the controls
+	 */
+	private void setupControlPanel() {
+		ControlPanel = new PlayerControlsPanel(mediaPlayer);
+        ControlPanel.setBounds(0, height-80, width, 80);
+        ControlPanel.setBackground(Color.black);
+        ControlPanel.setOpaque(true);
+	}
+
+	/**
+	 * Initialise and setup the video player.
+	 */
+	private void setupMediaPlayer() {
+		MediaPlayerFactory mediaPlayerFactory = new MediaPlayerFactory();
+        CanvasVideoSurface videoSurface = mediaPlayerFactory.newVideoSurface(canvas);
+        mediaPlayer = mediaPlayerFactory.newEmbeddedMediaPlayer();
+        mediaPlayer.setVideoSurface(videoSurface);
+	}
+
+	/**
+	 * Gives invisible panel over top of video to allow pausing by clicking on video.
+	 */
+	private void setupOverlayPanel() {
+		overlayPanel = new JPanel();
+        overlayPanel.setLayout(null);
+        overlayPanel.setOpaque(false);
+        overlayPanel.setBounds(0, 0, width, height);
+	}
+
+	/**
+	 * sets up the panel for the visdeo to be played in
+	 */
+	private void setupVidpanel() {
+		vidpanel = new JPanel();
+        vidpanel.setLayout(null);
+        vidpanel.setBounds(0, 0, width, height);
+        img = new ImageIcon("resources/buttons/pauseText.png");
+	}
     
     /**
      * Stops the media playback
