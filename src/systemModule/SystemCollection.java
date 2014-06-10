@@ -1,11 +1,6 @@
-/**
- * 
- */
 package systemModule;
 
 import java.util.ArrayList;
-
-import bookModule.Book;
 
 /**
  * Stores multiple GameSystems
@@ -16,24 +11,30 @@ public class SystemCollection {
 	public SystemCollection() {
 
 	}
+	
 	/**
-	 * @param e the system to add to the collection
-	 * @return true if the add successful
+	 * Adds a game system to the collection
+	 * @param e, the GameSystem to be added
+	 * @return systems.add(e), returns true if add was successful
 	 * @see java.util.ArrayList#add(java.lang.Object)
 	 */
-	public boolean add(GameSystem e) {
+	public Boolean add(GameSystem e) {
 		return systems.add(e);
 	}
+	
 	/**
-	 * @param index the index of the system to get
-	 * @return the requested system
+	 * Returns the system at a specified index in the collection
+	 * @param index, the index possition in the collection
+	 * @return systems.get(index), the GameSystem at the index possition
 	 * @see java.util.ArrayList#get(int)
 	 */
 	public GameSystem get(int index) {
 		return systems.get(index);
 	}
+	
 	/**
-	 * @return the size of the collection
+	 * returns the size of the collection
+	 * @return size, the number of entries in the collection
 	 * @see java.util.ArrayList#size()
 	 */
 	public int size() {
@@ -42,10 +43,9 @@ public class SystemCollection {
 	
 	/**
 	 * gets the list of RPG systems stored
-	 * @return systems
+	 * @return systems, an ArrayList<GameSystem> of all the systems in the collection
 	 */
 	public static ArrayList<GameSystem> getList() {
-		// TODO Auto-generated method stub
 		return systems;
 	}
 	
