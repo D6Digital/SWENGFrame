@@ -70,71 +70,32 @@ public class PlayerControlsPanel extends JPanel {
      * All methods in createControls() are self explanatory...
      */
     private void createControls() {
-        timeLabel = new JLabel("hh:mm:ss");
-        timeLabel.setOpaque(false);
-        timeLabel.setForeground(Color.WHITE);
+        setUpTimeLabel();
 
-        positionSlider = new JSlider();
-        positionSlider.setOpaque(false);
-        positionSlider.setMinimum(0);
-        positionSlider.setMaximum(1000);
-        positionSlider.setValue(0);
-        positionSlider.setToolTipText("Position");
+        setupPositionSlider();
 
-        chapterLabel = new JLabel("00/00");
-        chapterLabel.setOpaque(false);
-        chapterLabel.setForeground(Color.WHITE);
+        setupChapterLabel();
 
-        img = new ImageIcon("resources/buttons/rewind.png");
-        rewindButton = new JButton();
-        rewindButton.setIcon(img);
-        rewindButton.setToolTipText("Skip back");
-        rewindButton.setPreferredSize(new Dimension(45, 45));
-        rewindButton.setBorderPainted(false); 
-        rewindButton.setContentAreaFilled(false); 
-        rewindButton.setFocusPainted(false);
+        setupRewindButton();
 
-        img1 = new ImageIcon("resources/buttons/stop.png");
-        stopButton = new JButton();
-        stopButton.setIcon(img1);
-        stopButton.setToolTipText("Stop");
-        stopButton.setPreferredSize(new Dimension(45, 45));
-        stopButton.setBorderPainted(false); 
-        stopButton.setContentAreaFilled(false); 
-        stopButton.setFocusPainted(false);
+        setupStopButton();
 
-        img3 = new ImageIcon("resources/buttons/play.png");
-        img2 = new ImageIcon("resources/buttons/pause.png");
-        playButton = new JButton();
-        playButton.setIcon(img3);
-        playButton.setToolTipText("Play");
-        playButton.setPreferredSize(new Dimension(45, 45));
-        playButton.setBorderPainted(false); 
-        playButton.setContentAreaFilled(false); 
-        playButton.setFocusPainted(false);
+        setupPlayPauseButton();
 
-        img4 = new ImageIcon("resources/buttons/fastforward.png");
-        fastForwardButton = new JButton();
-        fastForwardButton.setIcon(img4);
-        fastForwardButton.setToolTipText("Skip forward");
-        fastForwardButton.setPreferredSize(new Dimension(45, 45));
-        fastForwardButton.setBorderPainted(false); 
-        fastForwardButton.setContentAreaFilled(false); 
-        fastForwardButton.setFocusPainted(false);
+        setupFastForwardButton();
 
-        volumeSlider = new JSlider();
-        volumeSlider.setOpaque(false);
-        volumeSlider.setOrientation(JSlider.HORIZONTAL);
-        volumeSlider.setMinimum(LibVlcConst.MIN_VOLUME);
-        volumeSlider.setMaximum(LibVlcConst.MAX_VOLUME);
-        volumeSlider.setPreferredSize(new Dimension(100, 40));
-        volumeSlider.setToolTipText("Change volume");
+        setupVolumeSlider();
 
-        fullScreenButton = new JButton();
-        fullScreenButton.setIcon(new ImageIcon(getClass().getClassLoader().getResource("icons/image.png")));
-        fullScreenButton.setToolTipText("Toggle full-screen");
+        setupFullScreenButton();
 
-        img5 = new ImageIcon("resources/buttons/loop.png");
+        setupLoopButton();
+    }
+
+	/**
+	 * Sets up the lop button
+	 */
+	private void setupLoopButton() {
+		img5 = new ImageIcon("resources/buttons/loop.png");
         loop = new JButton();
         loop.setIcon(img5);
         loop.setToolTipText("Loop video");
@@ -145,7 +106,116 @@ public class PlayerControlsPanel extends JPanel {
 
         loopLabel.setOpaque(false);
         loopLabel.setForeground(Color.WHITE);
-    }
+	}
+
+	/**
+	 * Sets up the full screen button
+	 */
+	private void setupFullScreenButton() {
+		fullScreenButton = new JButton();
+        fullScreenButton.setIcon(new ImageIcon(getClass().getClassLoader().getResource("icons/image.png")));
+        fullScreenButton.setToolTipText("Toggle full-screen");
+	}
+
+	/**
+	 * Sets up the volume slider
+	 */
+	private void setupVolumeSlider() {
+		volumeSlider = new JSlider();
+        volumeSlider.setOpaque(false);
+        volumeSlider.setOrientation(JSlider.HORIZONTAL);
+        volumeSlider.setMinimum(LibVlcConst.MIN_VOLUME);
+        volumeSlider.setMaximum(LibVlcConst.MAX_VOLUME);
+        volumeSlider.setPreferredSize(new Dimension(100, 40));
+        volumeSlider.setToolTipText("Change volume");
+	}
+
+	/**
+	 * sets up the fast forward button
+	 */
+	private void setupFastForwardButton() {
+		img4 = new ImageIcon("resources/buttons/fastforward.png");
+        fastForwardButton = new JButton();
+        fastForwardButton.setIcon(img4);
+        fastForwardButton.setToolTipText("Skip forward");
+        fastForwardButton.setPreferredSize(new Dimension(45, 45));
+        fastForwardButton.setBorderPainted(false); 
+        fastForwardButton.setContentAreaFilled(false); 
+        fastForwardButton.setFocusPainted(false);
+	}
+
+	/**
+	 * set up the play/pause button
+	 */
+	private void setupPlayPauseButton() {
+		img3 = new ImageIcon("resources/buttons/play.png");
+        img2 = new ImageIcon("resources/buttons/pause.png");
+        playButton = new JButton();
+        playButton.setIcon(img3);
+        playButton.setToolTipText("Play");
+        playButton.setPreferredSize(new Dimension(45, 45));
+        playButton.setBorderPainted(false); 
+        playButton.setContentAreaFilled(false); 
+        playButton.setFocusPainted(false);
+	}
+
+	/**
+	 * sets up the stop button
+	 */
+	private void setupStopButton() {
+		img1 = new ImageIcon("resources/buttons/stop.png");
+        stopButton = new JButton();
+        stopButton.setIcon(img1);
+        stopButton.setToolTipText("Stop");
+        stopButton.setPreferredSize(new Dimension(45, 45));
+        stopButton.setBorderPainted(false); 
+        stopButton.setContentAreaFilled(false); 
+        stopButton.setFocusPainted(false);
+	}
+
+	/**
+	 * sets up the rewind button
+	 */
+	private void setupRewindButton() {
+		img = new ImageIcon("resources/buttons/rewind.png");
+        rewindButton = new JButton();
+        rewindButton.setIcon(img);
+        rewindButton.setToolTipText("Skip back");
+        rewindButton.setPreferredSize(new Dimension(45, 45));
+        rewindButton.setBorderPainted(false); 
+        rewindButton.setContentAreaFilled(false); 
+        rewindButton.setFocusPainted(false);
+	}
+
+	/**
+	 * sets up teh chapter label
+	 */
+	private void setupChapterLabel() {
+		chapterLabel = new JLabel("00/00");
+        chapterLabel.setOpaque(false);
+        chapterLabel.setForeground(Color.WHITE);
+	}
+
+	/**
+	 * sets up the position slider
+	 */
+	private void setupPositionSlider() {
+		positionSlider = new JSlider();
+        positionSlider.setOpaque(false);
+        positionSlider.setMinimum(0);
+        positionSlider.setMaximum(1000);
+        positionSlider.setValue(0);
+        positionSlider.setToolTipText("Position");
+	}
+
+	/**
+	 * sets up the time label
+	 */
+	private void setUpTimeLabel() {
+		timeLabel = new JLabel("hh:mm:ss");
+        timeLabel.setOpaque(false);
+        timeLabel.setForeground(Color.WHITE);
+	}
 
     /**
      * Sets up the layout for the control panel.
@@ -154,20 +224,18 @@ public class PlayerControlsPanel extends JPanel {
         setBorder(new EmptyBorder(4, 4, 4, 4));
         setLayout(new BorderLayout());
 
-        JPanel positionPanel = new JPanel();
-        positionPanel.setOpaque(false);
-        positionPanel.setLayout(new GridLayout(1, 1));
-        positionPanel.add(positionSlider);
+        JPanel positionPanel = setupPositionPanel();
 
-        JPanel topPanel = new JPanel();
-        topPanel.setOpaque(false);
-        topPanel.setLayout(new BorderLayout(8, 0));
-        topPanel.add(timeLabel, BorderLayout.WEST);
-        topPanel.add(positionPanel, BorderLayout.CENTER);
-        topPanel.add(chapterLabel, BorderLayout.EAST);
-        add(topPanel, BorderLayout.NORTH);
+        setupTopPanel(positionPanel);
 
-        JPanel bottomPanel = new JPanel();
+        setupBottomPanel();
+    }
+
+	/**
+	 * sets up the bottom control panel
+	 */
+	private void setupBottomPanel() {
+		JPanel bottomPanel = new JPanel();
         bottomPanel.setOpaque(false);
         bottomPanel.setLayout(new FlowLayout());
         bottomPanel.add(rewindButton);
@@ -178,7 +246,33 @@ public class PlayerControlsPanel extends JPanel {
         bottomPanel.add(loopLabel);   
         bottomPanel.add(volumeSlider);
         add(bottomPanel, BorderLayout.SOUTH);
-    }
+	}
+
+	/**
+	 * sets up the position of the top control panel
+	 * @param positionPanel
+	 */
+	private void setupTopPanel(JPanel positionPanel) {
+		JPanel topPanel = new JPanel();
+        topPanel.setOpaque(false);
+        topPanel.setLayout(new BorderLayout(8, 0));
+        topPanel.add(timeLabel, BorderLayout.WEST);
+        topPanel.add(positionPanel, BorderLayout.CENTER);
+        topPanel.add(chapterLabel, BorderLayout.EAST);
+        add(topPanel, BorderLayout.NORTH);
+	}
+
+	/**
+	 * sets up poisiton panel
+	 * @return
+	 */
+	private JPanel setupPositionPanel() {
+		JPanel positionPanel = new JPanel();
+        positionPanel.setOpaque(false);
+        positionPanel.setLayout(new GridLayout(1, 1));
+        positionPanel.add(positionSlider);
+		return positionPanel;
+	}
 
     /**
      * Broken out position setting, handles updating mediaPlayer when slider is moved.
@@ -348,7 +442,6 @@ public class PlayerControlsPanel extends JPanel {
 
     /**
      * Updates the time slider which shows how far through the media is.
-     *
      */
     private final class UpdateRunnable implements Runnable {
         private final MediaPlayer mediaPlayer;
@@ -413,7 +506,7 @@ public class PlayerControlsPanel extends JPanel {
     }
 
     /**
-     * set new volume for medis player.
+     * set new volume for media player.
      * @param value
      */
     private void updateVolume(int value) {
