@@ -2,9 +2,6 @@ package musicPlayerModule;
 
 import static org.junit.Assert.*;
 
-import java.awt.List;
-import java.awt.Window;
-import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -12,7 +9,6 @@ import javax.swing.JPanel;
 import javax.swing.JSlider;
 
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -26,26 +22,24 @@ import org.junit.Test;
 public class MusButtonTestT001 {
     private static final long SLEEPMS = 2000;
     static JButton 
-    stopButton, playButton, pauseButton, nextButton, previousButton, openPlaylistButton 
-    = new JButton();
+    stopButton, playButton, pauseButton, nextButton, previousButton, openPlaylistButton = new JButton();
     static JSlider volumeSlider = new JSlider();
     static JFrame mainFrame = new JFrame();
     static JPanel mainPanel = new JPanel();
     StandAloneMusicPlayer  musicPlayer;
     static String currentFilePath = "M:\\Year 2\\Engineering for Hearing and Voice\\Lab 1- Week 3\\Audio Samples";
-   // static String vlcLibraryPath = "M:\\Year 2\\VLC\\vlc-2.0.1";
     static String vlcLibraryPath = "resources/lib/vlc-2.1.3";
     
     @Before
     public void setUp() throws Exception {
         musicPlayer = new StandAloneMusicPlayer(vlcLibraryPath, currentFilePath);
-        stopButton = musicPlayer.getStopButton();
-        pauseButton = musicPlayer.getPauseButton();
-        playButton = musicPlayer.getPlayButton();
-        nextButton = musicPlayer.getNextButton();
-        previousButton = musicPlayer.getPreviousButton();
-        openPlaylistButton = musicPlayer.getOpenPlaylistButton();
-        volumeSlider = musicPlayer.getVolumeSlider();
+        stopButton = new JButton();
+        pauseButton = new JButton();
+        playButton = new JButton();
+        nextButton = new JButton();
+        previousButton = new JButton();
+        openPlaylistButton = new JButton();
+        volumeSlider = new JSlider();
         mainPanel.add(stopButton);
         mainPanel.add(pauseButton);
         mainPanel.add(playButton);
@@ -126,14 +120,11 @@ public class MusButtonTestT001 {
     @Test
     public void steps3toX() throws InterruptedException {
         
-        /**TODO Step 3. fails out due to issue #2. Uncomment when issue resolved.
         playButton.doClick();
         Thread.sleep(SLEEPMS);
         assertEquals("The play button does not cause an item in the list to begin playing.", true, musicPlayer.mediaPlayer.isPlaying());
-        */
         
         // Step 4. When the user presses pause, the media will stop playing.
-        musicPlayer.playContents.setSelectedIndex(0);
         Thread.sleep(SLEEPMS);
         assertTrue(musicPlayer.mediaPlayer.isPlaying());
         pauseButton.doClick();
@@ -164,9 +155,6 @@ public class MusButtonTestT001 {
         
         // Step 8. Pressing the open playlist button displays the playlist frame. When closed the audio remains playing.
         openPlaylistButton.doClick();
-        
-        
-        
     }
 
     @After

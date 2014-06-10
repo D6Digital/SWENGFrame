@@ -2,11 +2,8 @@ package musicPlayerModule;
 
 import static org.junit.Assert.*;
 
-import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.JSlider;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -119,7 +116,6 @@ public class EmbeddedMusTestT002 {
         
         
         // Step 7. User is able to select start and stop times for the media, ie begin 20 seconds in, end 5 before end.
-         //TODO: Uncomment once issue #6 has been resolved.
         // Test whether individual methods can be used for setting start and end times.
         musicPlayer.stopMedia();
         Thread.sleep(SLEEPMS);
