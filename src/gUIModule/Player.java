@@ -16,19 +16,11 @@ public class Player {
 		slidePanel.loadPresentation(presentation);
 		slidePanel.setupSlide(presentation.get(0));
 		
-		
 		testFrame.add(slidePanel);	
 		testFrame.setVisible(true);
 		
-		
 		testFrame.revalidate();
-		
-		
-		
-		
-		
-		
-		
+	
 	}
 
 	public void play() {
