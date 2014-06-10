@@ -1,32 +1,21 @@
 package gUIModule;
 
-import java.awt.BorderLayout;
 import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Cursor;
 import java.awt.Dimension;
-import java.awt.Frame;
 import java.awt.Image;
 import java.awt.Insets;
-import java.awt.Rectangle;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentListener;
-import java.awt.event.ContainerEvent;
-import java.awt.event.ContainerListener;
-import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.awt.event.MouseMotionListener;
-import java.awt.event.WindowEvent;
-import java.awt.event.WindowListener;
-import java.awt.event.WindowStateListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -48,28 +37,18 @@ import javax.swing.text.Element;
 import javax.swing.text.StyledDocument;
 import javax.swing.text.html.HTML;
 
-import bookModule.Book;
-import bookModule.BookXMLParser;
-
-import main.Overall;
-import musicPlayerModule.StandAloneMusicPlayer;
 import presentation.Collection;
-import presentation.Point;
 import presentation.Presentation;
-import presentation.Shapes;
 import presentation.Slide;
-import presentation.Text;
-import presentation.Video;
 import presentation.XMLParser;
 import presentation.slideMediaObject;
 import videoModule.VideoPlayer;
-import gUIModule.UtilitiesPanel;
-import gUIModule.DicePanel;
-import gUIModule.CalculatorPanel;
 
 /**
  * 
  * @author Andrew Walter
+ * @author samPick
+ * @author joshDrake
  *
  */
 public class GUI extends JFrame implements ComponentListener, KeyListener{
@@ -79,82 +58,53 @@ public class GUI extends JFrame implements ComponentListener, KeyListener{
 	 */
 	private static final long serialVersionUID = 1L;
 	JFrame frame = new JFrame();
-	Container selectionPane;
-	Container menuPane;
-	Container bookPane;
-	Container videoPane;
-	Container audioPane;
-	Container utilitiesPane;
-	Container dicePane;
-	Container calculatorPane;
-	Container audioPlayerPane;
+	Container selectionPane, menuPane,bookPane,videoPane,audioPane,utilitiesPane,dicePane,calculatorPane,audioPlayerPane;
 	private Presentation slideList;
-	static Integer currentVisibleSlideID;
-	public SlidePanel slidePanel;
-
-	JButton nextSlideButton = new JButton();
-	JButton previousSlideButton = new JButton();
+	private SlidePanel slidePanel;
+	private Collection collection;
+	
+	
 	int borderSize = 20;
 	static int utilitiesWidth = 150;
 	static int contentsWidth = 200;
+	private int bookLayout = 1;
+	private int slideWidth, slideHeight, newWidth, newHeight;
+	private double scaleFactorY = 1;
+	private double scaleFactorX = 1;
+	Insets insets;
+	
+	
+	MainMenuPanel mainMenuPanel;
 	UtilitiesPanel utilities;
-
-
 	ContentsPanel contentsPanel;
 
 	JLayeredPane layers = new JLayeredPane();
-	boolean utilitiesShowing = false;
-	boolean contentsShowing = false;
-	boolean nextButtonShowing = false;
-	boolean previousButtonShowing = false;
-	boolean tabBool = true;
+	private boolean utilitiesShowing = false;
+	private boolean contentsShowing = false;
+	private boolean nextButtonShowing = false;
+	private boolean previousButtonShowing = false;
+	private boolean tabBool = true;
 	boolean fullScreen = false;
+	private boolean mainMenuShowing=true;
+	
 	JLabel leftBorderLabel = new JLabel();
 	JLabel rightBorderLabel = new JLabel();
 	JLabel topBorderLabel;
-	int slideWidth;
-	int slideHeight;
+	
+	JButton nextSlideButton = new JButton();
+	JButton previousSlideButton = new JButton();
 
-
-	Insets insets;
-	private double scaleFactorY = 1;
-	private double scaleFactorX = 1;
-
-	JButton maximiseRestoreButton = new JButton();
-
-	JPanel utilitiesTab = new JPanel();
 	JPanel contentsTab = new JPanel();
+	JPanel utilitiesTab = new JPanel();
 	JPanel nextTab = new JPanel();
 	JPanel previousTab = new JPanel();
-	MainMenuPanel mainMenuPanel;
+	
 
-	private MouseAdapter textBranchListener;
-	private MouseAdapter objectBranchListener;
-
-	private MouseAdapter videoListener;
-
-	private Collection collection;
-
-	private boolean mainMenuShowing=true;
-	private Timer resizingTimer;
+	private Timer resizingTimer,cursorTimer;
+	Cursor swordCursor,branchSwordCursor;
 	static Cursor blankCursor;
-	Cursor swordCursor;
-	Cursor branchSwordCursor;
-	protected Timer cursorTimer;
-	private MouseAdapter genericListener, layersMouseListener;
-	int newWidth;
-	int newHeight;
-	private int bookLayout = 1;
-	private MouseAdapter mainMenuMouseListener;
-	private ActionListener cursorTimerTask;
-	private ActionListener resizingTimerTask;
-	private ActionListener openBookListener;
-	private ActionListener previousSlideListener;
-	private ActionListener nextSlideListener;
-
-
-
-
+	private MouseAdapter genericListener, layersMouseListener, textBranchListener, objectBranchListener,mainMenuMouseListener, videoListener;
+	private ActionListener cursorTimerTask, resizingTimerTask, openBookListener, previousSlideListener, nextSlideListener;
 
 
 	/**
@@ -971,7 +921,6 @@ private void setupVideoListener() {
 	    	public void mouseMoved(MouseEvent e1){
 	    		Canvas videoCanvas = (Canvas) e1.getSource();
 	    		VideoPlayer videoPlayer = (VideoPlayer) videoCanvas.getParent().getParent();
-	    		//int xCoordinate = e1.getX();
 	    		int yCoordinate = e1.getY();
 	    		
 	    		videoPlayer.startTimer();
@@ -982,9 +931,7 @@ private void setupVideoListener() {
 	    		else
 	    		{
 	    			if (yCoordinate > ((videoPlayer.overlayPanel.getHeight())- 80)){
-		    			//if(!ControlPanel.isVisible()) {
-		    			    videoPlayer.ControlPanel.setVisible(true);
-		    			//}
+		    			   videoPlayer.ControlPanel.setVisible(true);
 		    		}
 	    			else
 	    			{
