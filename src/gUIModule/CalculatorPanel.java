@@ -164,6 +164,7 @@ public class CalculatorPanel extends JPanel implements ActionListener{
 
 
 	/**
+	 * adds JTextArea to display calculator output
 	 * @param genericListener
 	 */
 	private void showTotalMod(MouseAdapter genericListener) {
@@ -179,6 +180,10 @@ public class CalculatorPanel extends JPanel implements ActionListener{
 	}
 
 
+	/**
+	 * adds JTextArea to display list of selected mods.
+	 * @param genericListener
+	 */
 	private void displayChosenMods(MouseAdapter genericListener) {
 		//adds JTextArea for display of currently included modifiers
 		displayIncludedMods = new JTextArea();
@@ -193,6 +198,10 @@ public class CalculatorPanel extends JPanel implements ActionListener{
 	}
 
 
+	/**
+	 * action listener
+	 * @param e
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		//If the modSelection JComboBox is used, record the user selected modifier
@@ -217,6 +226,10 @@ public class CalculatorPanel extends JPanel implements ActionListener{
 		}
 	}
 
+	/**
+	 * adds the value of the selected Mod. to the total modifier value
+	 * @param Index
+	 */
 	private void includeSelectedMod(int Index) { 
 		totalMod = totalMod + modValues[Index];
 
@@ -227,6 +240,10 @@ public class CalculatorPanel extends JPanel implements ActionListener{
 		displayTotalMod.setText("Total Modifier = " + totalMod);
 	}
 
+	/**
+	 * adjusts dimensions of the JPanel
+	 * @param panelHeight
+	 */
 	public void setDimensions(int panelHeight){
 		modPlusButtonHeight = modHeight + (int) (panelHeight*0.025) + (int)(panelHeight*0.05);
 		modPlusButtonPlusDisplay = modPlusButtonHeight +  (int)(panelHeight*0.7);
