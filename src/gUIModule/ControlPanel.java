@@ -38,12 +38,13 @@ public class ControlPanel extends JPanel{
 	JButton previousSlide = new JButton("Previous");
     
 	
+	/**
+	 * Control Panel constructor
+	 */
 	public ControlPanel(){
 		super();
 		setLayout(null);
 		setOpaque(false);
-
-
 		
 		nextSlide.setVerticalTextPosition(AbstractButton.CENTER);
 		nextSlide.setHorizontalTextPosition(AbstractButton.CENTER);
@@ -66,12 +67,6 @@ public class ControlPanel extends JPanel{
 		                
 		                @Override
 		                public void actionPerformed(ActionEvent arg0) {
-		                   
-//		                   int currSlideID = Overall.bookMain.getCurrentSlideID();
-//		                   currSlideID ++;
-//		                   Overall.bookMain.setCurrentSlideID(currSlideID);
-//		                   
-//		                   Slide currSlide = Overall.bookMain.getNextSlide();
 		                   Overall.bookMain.showNextSlide();
 		                }
 		            });
@@ -80,69 +75,54 @@ public class ControlPanel extends JPanel{
 		                
 		                @Override
 		                public void actionPerformed(ActionEvent arg0) {
-		                   
-//		                   int currSlideID = Overall.bookMain.getCurrentSlideID();
-//		                   currSlideID ++;
-//		                   Overall.bookMain.setCurrentSlideID(currSlideID);
-//		                   
-//		                   Slide currSlide = Overall.bookMain.getNextSlide();
 		                   Overall.bookMain.showPreviousSlide();
 		                }
 		            });
 	}
 	
+	/**
+	 * creates the standalone audio player control interface
+	 */
 	public void MusicPlayer(){
-	      
-			musicPanel.setOpaque(false);
+		   musicPanel.setOpaque(false);
 	       
 	       NativeLibrary.addSearchPath(RuntimeUtil.getLibVlcLibraryName(),vlcLibraryPath);
 	       Native.loadLibrary(RuntimeUtil.getLibVlcLibraryName(), LibVlc.class);
 	       
 	       player = new EmbeddedAudioPlayer(vlcLibraryPath);
-
 	       player.prepareMediaWithDuration("src/XMLBits/RunWithUs.mp3", 30, 5, false);
-	      // player.playMedia("C:\\Users\\Public\\Music\\Sample Music\\Kalimba.mp3");
-	       
 	       play = new JButton("PLAY");
 	       stop = new JButton("STOP");
 	       pause = new JButton("PAUSE");
 	       loop = new JButton("NO LOOPING");
 	       volume = new JSlider();
-	       
+
 	       play.addActionListener(
-	               new ActionListener() {
-	                
+	                new ActionListener() {
 	                @Override
 	                public void actionPerformed(ActionEvent arg0) {
-
-	                    player.playMedia();
-
+	                	player.playMedia();
 	                }
 	            });
 	       
 	       stop.addActionListener(
-	               new ActionListener() {
-	                
+	               new ActionListener() {	                
 	                @Override
 	                public void actionPerformed(ActionEvent arg0) {
-	                    player.stopMedia();
-	                    
+	                    player.stopMedia();	                    
 	                }
 	            });
 	       
 	       pause.addActionListener(
-	               new ActionListener() {
-	                
+	               new ActionListener() {	                
 	                @Override
 	                public void actionPerformed(ActionEvent arg0) {
-	                    player.pauseMedia();
-	                    
+	                    player.pauseMedia();	                    
 	                }
 	            });
 	       
 	       loop.addActionListener(
-	               new ActionListener() {
-	                
+	               new ActionListener() {	                
 	                @Override
 	                public void actionPerformed(ActionEvent arg0) {
 	                    if(!player.getLooping()) {
@@ -161,9 +141,8 @@ public class ControlPanel extends JPanel{
 	        @Override
 	        public void stateChanged(ChangeEvent arg0) {
 	            player.setVolumePercentage(volume.getValue());
-	            
-	        }
-	    });
+	            	        }
+	       });
 	       
 	       musicPanel.add(play);
 	       musicPanel.add(pause);
@@ -171,30 +150,24 @@ public class ControlPanel extends JPanel{
 	       musicPanel.add(loop);
 	       volume.setBounds(0, 100, 100, 10);
 	       musicPanel.add(volume);
-	       
 	       musicThread.start();
-	       
-	       
-	       
 	    }
 	       
-	    static Thread musicThread = new Thread("Socket") {
+		/**
+		 * creates new thread for the audio player
+		 */
+		static Thread musicThread = new Thread("Socket") {
 	        public void run() {
 	                while (true) {
 	                    try {
-	                     Thread.sleep(100);
-	                 } catch (InterruptedException e) {
-	                     // TODO Auto-generated catch block
-	                     e.printStackTrace();
-	                 }
-	                    //playLoop();
-	                    label.setText(player.getCurrentPosition() + "/" + player.getTrackLength());               
-	                   // panel.repaint();
-	                }  
-	        }
-	    };
-	    
-		
-		
-	}
+	                    	Thread.sleep(100);
+	                    	}
+	                    catch (InterruptedException e) {
+	                    	e.printStackTrace();
+	                    	}
+	                    label.setText(player.getCurrentPosition() + "/" + player.getTrackLength());
+	              }  
+	       }
+	   };
+}
 
