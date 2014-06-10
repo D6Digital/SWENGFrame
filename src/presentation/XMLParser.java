@@ -65,7 +65,7 @@ public class XMLParser extends DefaultHandler{
 	/**
 	 * @throws MalformedURLException 
 	 * @throws SAXException 
-	 * 
+	 * @param fileName the filename and path of the xml to be parsed
 	 */
 	public XMLParser(String fileName){
 		super();
@@ -76,12 +76,13 @@ public class XMLParser extends DefaultHandler{
 		    .newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
 		schemaFile = new File("bin/schema.xsd");
         try {
+        	//load the schema into the parser
         	schema = schemaFactory.newSchema(schemaFile);
         } catch (SAXException e1) {
-        	// TODO Auto-generated catch block
         	schema = null;
         	e1.printStackTrace();
         }
+        //generate and run the validator
         Validator validator = schema.newValidator();
         try {
           validator.validate(xmlFile);
@@ -98,12 +99,9 @@ public class XMLParser extends DefaultHandler{
 		this.fileName = fileName;
 	    parse(this.fileName);
 
-
-		
-		//parse(this.fileName);
 	}
 	public Presentation getSlides() {
-		//Insert Parser here
+		
 		if(presentation == null) presentation = collection.get(0);
 		return presentation;
 	}
@@ -811,10 +809,7 @@ public class XMLParser extends DefaultHandler{
 			break;
 		case  TEXTSTRING:
 			String textString = new String(ch, start, length);
-			//ringBuffer buffer = new StringBuffer();
-			//Matcher match = new Matcher();
-			//match.reset(textString);
-			//match.appendReplacement( buffer, Matcher.quoteReplacement("\n"));
+			
 			char[] newline = {'\n'};
 			String newlineString = new String(newline,0,1);
 			textString = textString.replace("\\n", newlineString);

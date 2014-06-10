@@ -40,57 +40,53 @@ public class Video extends SlideObject {
 
 
 	/**
-	 * 
-	 * @return the width
+	 * @return the width of the video
 	 */
 	public int getWidth(){
 		return width;
 	}
 	
 	/**
-	 * 
-	 *
+	 * @param width the width of the video
 	 */
 	public void setWidth(int width){
 		this.width = width;
 	}
 
 	/**
-	 * 
-	 * @return the height
+	 * @return the height of the video
 	 */
 	public int getHeight(){
 		return height;
 	}
-	
+
 	/**
-	 * 
-	 * 
+	 * @param height the height of the video
 	 */
 	public void setHeight(int height){
 		this.height = height;
 	}
 
 	/**
-	 * @return the looping
+	 * @return true if looping
 	 */
 	public boolean isLooping() {
 		return looping;
 	}
 	/**
-	 * @param looping the looping to set
+	 * @param looping true if looping
 	 */
 	public void setLooping(boolean looping) {
 		this.looping = looping;
 	}
 	/**
-	 * @return the playtime
+	 * @return the start time within the video
 	 */
 	public int getPlaytime() {
 		return playtime;
 	}
 	/**
-	 * @param playtime the playtime to set
+	 * @param playtime the start time within the video
 	 */
 	public void setPlaytime(int playtime) {
 		this.playtime = playtime;

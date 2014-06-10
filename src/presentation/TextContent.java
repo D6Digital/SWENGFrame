@@ -14,26 +14,26 @@ public class TextContent {
 
 
 	public TextContent(ScriptTypeDef scriptType, Boolean bold, Boolean italic,
-	                   Boolean underlined, Boolean hyperlink, String textString) {
-	    this.scriptType = scriptType;
-	    this.bold = bold;
-	    this.italic = italic;
-	    this.underlined = underlined;
-	    this.hyperlink = hyperlink;
-	    this.textString = textString;
+			Boolean underlined, Boolean hyperlink, String textString) {
+		this.scriptType = scriptType;
+		this.bold = bold;
+		this.italic = italic;
+		this.underlined = underlined;
+		this.hyperlink = hyperlink;
+		this.textString = textString;
 	}
-	
-	
+
+
 	public TextContent() {
 	}
-	
+
 	/**
-	 * @return the scriptType
+	 * @return the scriptType (superscript, subscript, normal)
 	 */
 	public ScriptTypeDef getScriptType() {
 		return scriptType;
 	}
-	
+
 	/**
 	 * @param bold sets the text bold
 	 */
@@ -58,7 +58,7 @@ public class TextContent {
 	public void setTextString(String textString) {
 		this.textString = textString;
 	}
-	
+
 	/**
 	 * @param scriptType sets whether the text is super / sub or normal script
 	 */
@@ -91,14 +91,14 @@ public class TextContent {
 	}
 
 	/**
-	 * @return the hyperlink
+	 * @return true if a hyperlink
 	 */
 	public boolean isHyperlink() {
 		return hyperlink;
 	}
 
 	/**
-	 * @param hyperlink the hyperlink to set
+	 * @param hyperlink true if hyperlink
 	 */
 	public void setHyperlink(boolean hyperlink) {
 		this.hyperlink = hyperlink;
@@ -106,7 +106,7 @@ public class TextContent {
 
 
 	/**
-	 * @return the branch
+	 * @return the index of the slide to branch to
 	 */
 	public Integer getBranch() {
 		return branch;
@@ -114,21 +114,26 @@ public class TextContent {
 
 
 	/**
-	 * @param branch is the branch number to be set
+	 * @param branch the branch number to be set
 	 */
 	public void setBranch(int branch) {
 		this.branch = branch;
 	}
 
 
+	/**
+	 * @param chapterBranch Branch to a given chapter
+	 */
 	public void setChapterBranch(int chapterBranch) {
 		this.chapterBranch = chapterBranch;
-		
 	}
 
+	/**
+	 * @return the branch to a given chapter
+	 */
 	public Integer getChapterBranch() {
 		return chapterBranch;
 	}
-	
+
 
 }

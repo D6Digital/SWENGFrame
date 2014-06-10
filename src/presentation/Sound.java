@@ -9,12 +9,12 @@ package presentation;
 public class Sound {
 
 	private Boolean loop;
-    private Integer start;
-    private Integer duration = -1000;
-    private String file;
+	private Integer start;
+	private Integer duration = -1000;
+	private String file;
 	private Integer objectStartTime = 0;
 
-	
+
 
 	/**
 	 * @param x_coord
@@ -32,46 +32,77 @@ public class Sound {
 		this.loop = loop;
 		this.objectStartTime = objectStartTime;
 	}
-	
+
+
 	public Sound() {
 	}
-	
-	public void setStart(Integer start) {
-	    this.start = start;
-	}
-	
-	public Integer getStart() {
-	    return start;
-	}
-	
-   public void setDuration(Integer duration) {
-        this.duration = duration;
-    }
-    
-    public Integer getDuration() {
-        return duration;
-    }
-    
-    public void setFile(String file) {
-        this.file = file;
-    }
-    
-    public String getFile() {
-        return file;
-    }
 
+	/**
+	 * @param start the time after the slide loads when the sound starts
+	 */
+	public void setStart(Integer start) {
+		this.start = start;
+	}
+
+	/**
+	 * @return the time after the slide loads when the sound starts
+	 */
+	public Integer getStart() {
+		return start;
+	}
+
+	/**
+	 * @param duration the time the sound should play for
+	 */
+	public void setDuration(Integer duration) {
+		this.duration = duration;
+	}
+
+	/**
+	 * @return the time the sound should play for
+	 */
+	public Integer getDuration() {
+		return duration;
+	}
+
+	/**
+	 * @param file the file and filepath
+	 */
+	public void setFile(String file) {
+		this.file = file;
+	}
+
+	/**
+	 * @return the file and filepath
+	 */
+	public String getFile() {
+		return file;
+	}
+
+	/**
+	 * @return true is sound should loop
+	 */
 	public boolean getLoop(){
 		return loop;
 	}
-	
+
+	/**
+	 * @param loop true if sound should loop
+	 */
 	public void setLoop(boolean loop){
 		this.loop = loop;
 	}
-	
+
+	/**
+	 * @return the start time within the sound file
+	 */
 	public Integer getObjectStartTime() {
 		return objectStartTime;
 	}
 
+	/**
+	 * @param objectStartTime the start time within the sound file
+	 */
 	public void setObjectStartTime(Integer objectStartTime) {
 		this.objectStartTime = objectStartTime;
 	}

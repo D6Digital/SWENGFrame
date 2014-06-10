@@ -1,8 +1,5 @@
 package textModule;
 
-
-
-
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
@@ -21,11 +18,6 @@ import javax.swing.text.StyleConstants;
 import javax.swing.text.StyleContext;
 import javax.swing.text.StyledDocument;
 import javax.swing.text.html.HTML;
-
-
-
-
-
 
 /**
  * The contracted module for TRiBE which will accept their text objects to produce a transparent text JPanel
@@ -56,13 +48,11 @@ public class D6Digital_Scribe extends JPanel{
 	public D6Digital_Scribe(Text text) {
 		
 		this.setOpaque(false);
-		
+		//Create new text object
 		textObject = text;
-		
-		
-		
-		
+		//Set font and size
 		font = new Font(textObject.getFont(), Font.PLAIN, 12);
+		
 		if(font.getFamily().equals("Dialog")){
 		// create a font object for a user defined font
 			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
@@ -75,7 +65,6 @@ public class D6Digital_Scribe extends JPanel{
 	
 				ge.registerFont(font);
 			} catch (FontFormatException | IOException e1) {
-				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
 		}
@@ -112,10 +101,7 @@ public class D6Digital_Scribe extends JPanel{
 		this.setOpaque(false);
 		
 		textObject = text;
-		
-		
-		
-		
+
 		font = new Font(textObject.getFont(), Font.PLAIN, 12);
 		if(font.getFamily().equals("Dialog")){
 		// create a font object for a user defined font
@@ -129,7 +115,6 @@ public class D6Digital_Scribe extends JPanel{
 	
 				ge.registerFont(font);
 			} catch (FontFormatException | IOException e1) {
-				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
 		}

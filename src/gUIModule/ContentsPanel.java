@@ -51,8 +51,8 @@ public class ContentsPanel extends JPanel implements ActionListener{
 	JLabel bookLabel = new JLabel();
 	JLabel pageLabel = new JLabel();
 	JLabel title = new JLabel();
-	DefaultListModel listModel = new DefaultListModel<String>();
-	JList contentsList = new JList(listModel);
+	DefaultListModel<String> listModel = new DefaultListModel<String>();
+	JList<String> contentsList = new JList<String>(listModel);
 	JLabel background= new JLabel();
 	boolean pageListShowing=true;
 	BufferedImage chooseButtonImage;
@@ -60,7 +60,7 @@ public class ContentsPanel extends JPanel implements ActionListener{
 	int slideHeight;
 	int slideWidth;
 	int bookLayout;
-	
+
 	/**
 	 * Creates the entire Contents panel to meet the UI design specification
 	 * @param bookLayout 
@@ -74,15 +74,92 @@ public class ContentsPanel extends JPanel implements ActionListener{
 		this.slideHeight=slideHeight;
 		this.slideWidth=width;
 		this.bookLayout = bookLayout;
-				
+
 		this.contentsSlideList = contentSlideList;
 		this.contentsChapterList = contentChapterList;
 		//slidePanel1 = slide1;
 		//slidePanel2 = slide2;
 		mainMenuButton.setBounds((width/2)-55, (int)(slideHeight*0.1), 110, 50);
-		
+
 		changeListButton.setBounds((width/2)-55, (int)(slideHeight*0.21), 110, 50);
-		
+
+		setUpLabels(width, slideHeight, currentSystem, currentBook);
+
+		addLabels();
+
+
+		final JScrollPane contents = createScrollPane(contentsSlideList);
+		contents.setBounds(10,(int)(slideHeight*0.5),width-20,(int)(slideHeight*0.5)-10);
+		this.add(contents);
+
+		this.add(background);
+		setUpButtonImage(mainMenuButton,"MainMenuButton.png");
+		setUpButtonImage(changeListButton,"ChooseChapterButton.png");
+
+		setUpListener(contents);
+
+	}
+
+	/**
+	 * sets up the action listeners for the contents panel
+	 * @param contents
+	 */
+	private void setUpListener(final JScrollPane contents) {
+		changeListButton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if(pageListShowing==true){
+					setUpButtonImage(changeListButton,"ChangePageButton.png");
+					pageListShowing=false;
+
+					listModel.clear();
+					contentsList.removeAll();
+					for (Presentation currentPresentation : contentsChapterList) {
+						listModel.addElement(currentPresentation.getTitle());
+						pageLabel.setText("Choose a chapter:");
+					}
+					contents.setViewportView(contentsList);
+				}		
+				else{
+					setUpButtonImage(changeListButton,"ChooseChapterButton.png");
+					pageListShowing=true;
+
+					listModel.clear();
+					contentsList.removeAll();
+
+					for (Slide currentSlide : contentsSlideList) {
+						listModel.addElement(currentSlide.getSlideID() + ". " + currentSlide.getDescriptor());
+						pageLabel.setText("Choose a page:");
+					}
+					contents.setViewportView(contentsList);
+				}
+
+			}
+		});
+	}
+
+	/**
+	 * Adds the labels to the panel
+	 */
+	private void addLabels() {
+		this.add(title);
+		this.add(changeListButton);
+		this.add(mainMenuButton);
+		this.add(pageLabel);
+		this.add(systemLabel);
+		this.add(bookLabel);
+	}
+
+	/**
+	 * Sets up all the labels for the contents panel
+	 * @param width
+	 * @param slideHeight
+	 * @param currentSystem
+	 * @param currentBook
+	 */
+	private void setUpLabels(int width, int slideHeight, String currentSystem,
+			String currentBook) {
 		systemLabel.setBounds((width/2)-70,(int)(slideHeight*0.34),140,40);
 		bookLabel.setBounds((width/2)-70,(int)(slideHeight*0.39),140,40);
 		pageLabel.setBounds((width/2)-70,(int)(slideHeight*0.44),140,40);
@@ -92,83 +169,31 @@ public class ContentsPanel extends JPanel implements ActionListener{
 		systemLabel.setFont(new Font("Papyrus", Font.PLAIN, 12));
 		bookLabel.setFont(new Font("Papyrus", Font.PLAIN, 12));
 		pageLabel.setFont(new Font("Papyrus", Font.PLAIN, 12));
-		
 		title.setBounds((width/2)-40, 10, 80,30);
 		setUpLabelImage(title, "ContentsLabel.png",80,30);
 		background.setBounds(0, 0, width, slideHeight);
 		setUpLabelImage(background, "ContentsBackground.png",width,slideHeight);
-		
-		this.add(title);
-		this.add(changeListButton);
-		this.add(mainMenuButton);
-		this.add(pageLabel);
-		this.add(systemLabel);
-		this.add(bookLabel);
-		
-		
-		final JScrollPane contents = createScrollPane(contentsSlideList);
-		contents.setBounds(10,(int)(slideHeight*0.5),width-20,(int)(slideHeight*0.5)-10);
-		this.add(contents);
-		
-		this.add(background);
-		setUpButtonImage(mainMenuButton,"MainMenuButton.png");
-		setUpButtonImage(changeListButton,"ChooseChapterButton.png");
-		// TODO add a title JLabel and ensure the panel is ready
-		
-		//changeListButton.addMouseMotionListener(l)
-		changeListButton.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				if(pageListShowing==true){
-				setUpButtonImage(changeListButton,"ChangePageButton.png");
-				pageListShowing=false;
-				
-				listModel.clear();
-				contentsList.removeAll();
-				for (Presentation currentPresentation : contentsChapterList) {
-					listModel.addElement(currentPresentation.getTitle());
-					pageLabel.setText("Choose a chapter:");
-				}
-				contents.setViewportView(contentsList);
-				}		
-				else{
-					setUpButtonImage(changeListButton,"ChooseChapterButton.png");
-					pageListShowing=true;
-					
-					listModel.clear();
-					contentsList.removeAll();
-					
-					for (Slide currentSlide : contentsSlideList) {
-						listModel.addElement(currentSlide.getSlideID() + ". " + currentSlide.getDescriptor());
-						pageLabel.setText("Choose a page:");
-					}
-					contents.setViewportView(contentsList);
-				}
-				
-			}
-		});
-		
 	}
-	
+
+	/**
+	 * @param contentsSlideList
+	 */
 	public void refreshContents(ArrayList<Slide> contentsSlideList) {
-	
-		
-			setUpButtonImage(changeListButton,"ChooseChapterButton.png");
-			pageListShowing=true;
-			
-			listModel.clear();
-			contentsList.removeAll();
-			
-			for (Slide currentSlide : contentsSlideList) {
-				listModel.addElement(currentSlide.getSlideID() + ". " + currentSlide.getDescriptor());
-				pageLabel.setText("Choose a page:");
-			}
-			contents.setViewportView(contentsList);
-			
+		setUpButtonImage(changeListButton,"ChooseChapterButton.png");
+		pageListShowing=true;
+
+		listModel.clear();
+		contentsList.removeAll();
+
+		for (Slide currentSlide : contentsSlideList) {
+			listModel.addElement(currentSlide.getSlideID() + ". " + currentSlide.getDescriptor());
+			pageLabel.setText("Choose a page:");
+		}
+		contents.setViewportView(contentsList);
+
 	}
-	
-	
+
+
 	/**
 	 * 
 	 * Produces a scrolling pane which contains all the slides that should be in the contents
@@ -184,48 +209,21 @@ public class ContentsPanel extends JPanel implements ActionListener{
 		listModel.clear();
 		contentsList.removeAll();
 
-		
+
 		//Cycle through all slides in the contents list and creates a JButton for each 
 		for (Slide currentSlide : contentsSlideList) {
 			listModel.addElement(currentSlide.getSlideID() + ". " + currentSlide.getDescriptor());
 		}
 		contents.setViewportView(contentsList);
-		
-		
-		return contents;
 
-//		for (int i = 0; i < contentsSlideList.size(); i++) {
-//			final Slide currentSlide = contentsSlideList.get(i);
-//			final String currentTitle = (String) contentsSlideList.get(i).getSlideName();
-//			JButton currentButton = new JButton(currentTitle);
-//			currentButton.setVerticalTextPosition(AbstractButton.CENTER);
-//			currentButton.setHorizontalTextPosition(AbstractButton.CENTER);
-//			currentButton.setAlignmentX(Component.CENTER_ALIGNMENT);
-//			currentButton.setToolTipText("Go to " + currentTitle);	
-//			
-//			//Action listener will display the relevant slide when a button is pressed
-//	        currentButton.addActionListener(new ActionListener() {
-//	        	 
-//	            public void actionPerformed(ActionEvent e)
-//	            {
-//	                //Execute when button is pressed
-//	                System.out.println("You chose " + currentTitle);
-//	                SlidePanel newSlide = new SlidePanel();
-//	                newSlide.refreshSlide(currentSlide);
-//	                
-//	            }
-//	        });
-	        
-		//Add to contents JScrollPane	
-//			contents.add(currentButton);
-//		}
-//		
-//		return contents;
-		
-		//Set up background image
-			
+
+		return contents;	
 	}
-	//Method to set an image as the background to a button, the size is set within
+	/**
+	 * Method to set an image as the background to a button, the size is set within
+	 * @param button
+	 * @param image
+	 */
 	private void setUpButtonImage(JButton button, String image){
 		BufferedImage choosePageButtonImage;
 		try{
@@ -238,10 +236,16 @@ public class ContentsPanel extends JPanel implements ActionListener{
 			Image scaledButton = choosePageButtonImage.getScaledInstance(110,50,java.awt.Image.SCALE_SMOOTH);
 			button.setIcon(new ImageIcon(scaledButton));
 		}catch (IOException ex){
-			
+
 		}
 	}
-	//Method to set an image as the background to a label, the size is passed in
+	/**
+	 * Method to set an image as the background to a label, the size is passed in
+	 * @param label
+	 * @param image
+	 * @param width
+	 * @param height
+	 */
 	private void setUpLabelImage(JLabel label, String image, int width, int height){
 		BufferedImage titleImage;
 		try{
@@ -253,20 +257,29 @@ public class ContentsPanel extends JPanel implements ActionListener{
 			}
 			Image scaledButton = titleImage.getScaledInstance(width,height,java.awt.Image.SCALE_SMOOTH);
 			label.setIcon(new ImageIcon(scaledButton));
-			
-			
+
+
 		}catch (IOException ex){
-			
+
 		}
 	}
-	public JList getContentsList() {
-	    return contentsList;
+	/**
+	 * @return the contents list
+	 */
+	public JList<String> getContentsList() {
+		return contentsList;
 	}
-	
-	public void setContentsList(JList contentsList) {
-	    this.contentsList = contentsList;
+
+	/**
+	 * @param contentsList the contents list
+	 */
+	public void setContentsList(JList<String> contentsList) {
+		this.contentsList = contentsList;
 	}
-	
+
+	/**
+	 * @return the main menu button
+	 */
 	public JButton getMainMenuButton(){
 		return mainMenuButton;
 	}
@@ -278,7 +291,7 @@ public class ContentsPanel extends JPanel implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO manage button presses
-		
+
 	}
 
 	/**
@@ -298,16 +311,25 @@ public class ContentsPanel extends JPanel implements ActionListener{
 	}
 
 
+	/**
+	 * @return true if page list is showing
+	 */
 	public boolean getPageListShowing() {
 		return pageListShowing;
 	}
 
 
+	/**
+	 * @return change between page and chapter list
+	 */
 	public JButton getChangeButton() {
 		return changeListButton;
 	}
 
 
+	/**
+	 * @param slideList the list of slides
+	 */
 	public void setSlideList(Presentation slideList) {
 		this.contentsSlideList=slideList.getSlideList();	
 	}
@@ -316,10 +338,13 @@ public class ContentsPanel extends JPanel implements ActionListener{
 	public void setScrollList(Presentation slideList) {
 		this.contentsSlideList=slideList.getSlideList();
 	}
-public void setDimensions(int slideHeight) {
-	this.slideHeight = slideHeight;
-	setUpLabelImage(background, "ContentsBackground.png",slideWidth,slideHeight);
-	background.setBounds(0, 0, slideWidth, slideHeight);
-	contents.setBounds(10,280,slideWidth-20,slideHeight-290);
-}
+	/**
+	 * @param slideHeight set the height of the slide
+	 */
+	public void setDimensions(int slideHeight) {
+		this.slideHeight = slideHeight;
+		setUpLabelImage(background, "ContentsBackground.png",slideWidth,slideHeight);
+		background.setBounds(0, 0, slideWidth, slideHeight);
+		contents.setBounds(10,280,slideWidth-20,slideHeight-290);
+	}
 }

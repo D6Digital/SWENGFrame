@@ -7,6 +7,8 @@ package presentation;
  * @author Robert Mills
  * @version 1.1
  * @since 1.0
+ * This class is meant to be a basic class containing information
+ * relevant to most slide objects
  */
 public class SlideObject {
 	private Integer x_coord = null;
@@ -149,18 +151,16 @@ public class SlideObject {
 	public String getFile() {
 		return file;
 	}
-	
+
 	/**
-	 * 
-	 * @return branch
+	 * @return the index of the slide to be branched to
 	 */
 	public Integer getBranch(){
 		return branch;
 	}
-	
+
 	/**
-	 * 
-	 * 
+	 * @param the index of the slide to be branched to
 	 */
 	public void setBranch(Integer branch){
 		this.branch = branch;
