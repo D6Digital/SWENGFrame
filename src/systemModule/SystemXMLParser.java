@@ -1,13 +1,7 @@
-/**
- * 
- */
 package systemModule;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
-
 import javax.xml.XMLConstants;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
@@ -36,11 +30,12 @@ public class SystemXMLParser extends DefaultHandler{
 	private SystemCollection collection;
 	private String attrVal;
 	private String fileName;
+	@SuppressWarnings("unused")
 	private ProcessingElement currentElement = ProcessingElement.NONE;
 	
 	/**
 	 * Creates XML parser for system files
-	 * @param fileName
+	 * @param fileName, the name of the XML file to be parsed
 	 */
 	public SystemXMLParser(String fileName) {
 		File schemaFile;
@@ -81,7 +76,7 @@ public class SystemXMLParser extends DefaultHandler{
 
 	/**
 	 * uses the XML parser to parse a specified system file
-	 * @param filename
+	 * @param filename, the name of the XML file to be parsed
 	 */
 	private void parse(String filename) {
 		try {			
@@ -103,8 +98,11 @@ public class SystemXMLParser extends DefaultHandler{
 		}
 	
 	/**
-	 * deals with the first element of a system file
-	 * @param uri, localName, qName, attrs
+	 * handels start elements within the XML file
+	 * @param uri, address of the start element
+	 * @param localName, local identifier for the start element
+	 * @param qName, alternative local identifier
+	 * @param attrs, attributes of the first element
 	 * @see org.xml.sax.helpers.DefaultHandler#startElement(java.lang.String, java.lang.String, java.lang.String, org.xml.sax.Attributes)
 	 */
 	public void startElement(String uri, String localName, String qName, Attributes	attrs) throws SAXException {		
@@ -141,8 +139,10 @@ public class SystemXMLParser extends DefaultHandler{
 	}
 	
 	/**
-	 * deals with the last element of a system file
-	 * @param uri, localName, qName
+	 * handels end elements with the XML file
+	 * @param uri, address of end element
+	 * @param localName, local identifier for the start element
+	 * @param qName, alternative local identifier
 	 * @see org.xml.sax.helpers.DefaultHandler#endElement(java.lang.String, java.lang.String, java.lang.String)
 	 */
 	public void endElement(String uri, String localName, String qName) throws SAXException {		
@@ -162,7 +162,10 @@ public class SystemXMLParser extends DefaultHandler{
 	}
 	
 	/**
-	 * @param ch[], start, length
+	 * handels the content of elements with the XML file
+	 * @param ch[], characters to be parsed 
+	 * @param start, start value of the element
+	 * @param length, length of the element
 	 * @see org.xml.sax.helpers.DefaultHandler#characters(char[], int, int)
 	 */
 	public void characters(char ch[], int start, int length) throws SAXException {
@@ -170,7 +173,7 @@ public class SystemXMLParser extends DefaultHandler{
 	
 	/**
 	 * returns the list of systems
-	 * @return collection
+	 * @return collection, the SystemCollection being returned
 	 */
 	public SystemCollection getSystem(){
 		return collection;
