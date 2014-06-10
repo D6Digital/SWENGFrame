@@ -4,8 +4,8 @@
 package systemModule;
 
 /**
+ * Holds data one of the RPG systems the software can access
  * @author Robert Mills
- *
  */
 public class GameSystem {
 	String name, filename, description, logoFileName;
@@ -13,49 +13,57 @@ public class GameSystem {
 		
 	}
 	/**
-	 * @return the name
+	 * gets the name of the systems
+	 * @return name
 	 */
 	public String getName() {
 		return name;
 	}
 	/**
-	 * @param name the name to set
+	 * sets the name of the system
+	 * @param name
 	 */
 	public void setName(String name) {
 		this.name = name;
 	}
 	/**
-	 * @return the filename
+	 * gets the system's filename
+	 * @return filename
 	 */
 	public String getFilename() {
 		return filename;
 	}
 	/**
-	 * @param filename the filename to set
+	 * sets the system's filename
+	 * @param filename
 	 */
 	public void setFilename(String filename) {
 		this.filename = filename;
 	}
 	/**
-	 * @return the description
+	 * gets the description of the systems
+	 * @return description
 	 */
 	public String getDescription() {
 		return description;
 	}
 	/**
-	 * @param description the description to set
+	 * sets the description of the system
+	 * @param description
 	 */
 	public void setDescription(String description) {
 		this.description = description;
 	}
 	/**
-	 * @return the logoFileName
+	 * gets the filename of the system's logo
+	 * @return logoFileName
 	 */
 	public String getLogoFileName() {
 		return logoFileName;
 	}
 	/**
-	 * @param logoFileName the logoFileName to set
+	 * sets the filename of the system's logo
+	 * @param logoFileName
 	 */
 	public void setLogoFileName(String logoFileName) {
 		this.logoFileName = logoFileName;

@@ -8,8 +8,8 @@ import java.util.ArrayList;
 import bookModule.Book;
 
 /**
+ * Stores multiple GameSystems
  * @author Robert Mills
- *
  */
 public class SystemCollection {
 	static ArrayList<GameSystem> systems = new ArrayList<GameSystem>(0);
@@ -40,6 +40,10 @@ public class SystemCollection {
 		return systems.size();
 	}
 	
+	/**
+	 * gets the list of RPG systems stored
+	 * @return systems
+	 */
 	public static ArrayList<GameSystem> getList() {
 		// TODO Auto-generated method stub
 		return systems;
