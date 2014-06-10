@@ -6,6 +6,11 @@ import java.awt.Insets;
 
 import javax.swing.JTextPane;
 
+/**
+ * 
+ * @author samPick
+ *
+ */
 public class TransparentTextPane extends JTextPane{
 
 	/**
@@ -13,23 +18,13 @@ public class TransparentTextPane extends JTextPane{
 	 */
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * simply generates a transparent text pane
+	 */
 	public TransparentTextPane() {
 		this.setOpaque(false);
-		// TODO Auto-generated constructor stub
 	}
 
-//	@Override
-//	protected void paintComponent(Graphics g) {
-//		super.paintComponent(g);
-//		g.setColor(new Color(255,255,255,0));
-//		Insets insets = getInsets();
-//		int x = insets.left;
-//        int y = insets.top;
-//        int width = getWidth() - (insets.left + insets.right);
-//        int height = getHeight() - (insets.top + insets.bottom);
-//        g.fillRect(x, y, width, height);
-//        
-//	}
 	
 	
 	

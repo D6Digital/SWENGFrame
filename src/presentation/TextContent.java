@@ -12,7 +12,15 @@ public class TextContent {
 	private ScriptTypeDef scriptType = ScriptTypeDef.normal;
 	private Integer chapterBranch = null;
 
-
+	/**
+	 * 
+	 * @param scriptType
+	 * @param bold
+	 * @param italic
+	 * @param underlined
+	 * @param hyperlink
+	 * @param textString
+	 */
 	public TextContent(ScriptTypeDef scriptType, Boolean bold, Boolean italic,
 			Boolean underlined, Boolean hyperlink, String textString) {
 		this.scriptType = scriptType;
@@ -23,7 +31,9 @@ public class TextContent {
 		this.textString = textString;
 	}
 
-
+	/**
+	 * 
+	 */
 	public TextContent() {
 	}
 

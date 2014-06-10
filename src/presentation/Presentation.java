@@ -185,7 +185,7 @@ public class Presentation {
 	}
 	
 	/**
-	 * @param converts hex colours to RGB and returns a type Color
+	 * converts hex colours to RGB and returns a type Color
 	 */
 	public Color getBackgroundColourObject() {
 		int[] RGB = {0, 0, 0};
@@ -199,6 +199,11 @@ public class Presentation {
 		colourReturn = new Color(RGB[0], RGB[1], RGB[2]);
 		return colourReturn;
 	}
+	
+	/**
+	 * set the title of the presentation to string
+	 * @param string 
+	 */
 	public void setTitle(String string) {
 		title = string;
 		

@@ -23,6 +23,17 @@ public class Slide {
 	private Boolean isItLastSlide = false;
 	private String descriptor = "";
 
+	/**
+	 * 
+	 * @param objectList
+	 * @param imageList
+	 * @param textList
+	 * @param videoList
+	 * @param soundList
+	 * @param shapeList
+	 * @param slideID
+	 * @param slideName
+	 */
 	public Slide(ArrayList<SlideObject> objectList, ArrayList<Image> imageList, ArrayList<Text> textList,
 			ArrayList<Video> videoList, ArrayList<Sound> soundList, ArrayList<Shapes> shapeList,
 			Integer slideID, String slideName) {
@@ -36,6 +47,19 @@ public class Slide {
 		this.slideName = slideName;
 	}
 
+	/**
+	 * 
+	 * @param objectList
+	 * @param imageList
+	 * @param textList
+	 * @param videoList
+	 * @param soundList
+	 * @param shapeList
+	 * @param slideID
+	 * @param slideName
+	 * @param duration
+	 * @param isItLastSlide
+	 */
 	public Slide(ArrayList<SlideObject> objectList,
 			ArrayList<Image> imageList, ArrayList<Text> textList,
 			ArrayList<Video> videoList, ArrayList<Sound> soundList,
@@ -52,6 +76,10 @@ public class Slide {
 		this.duration = duration;
 		this.isItLastSlide = isItLastSlide;
 	}
+	
+	/**
+	 * 
+	 */
 	public Slide() {
 
 	}

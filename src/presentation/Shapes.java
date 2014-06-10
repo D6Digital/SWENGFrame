@@ -10,17 +10,9 @@ import java.util.ArrayList;
 
 public class Shapes {
 
-	private int numberOfPoints;
-	private int width;
-	private int height;
-	private int start;
-	private int duration;
-	private int layer;
-	private String fillColor;
-	private String lineColor;
+	private int numberOfPoints, width, height, start, duration, layer, branch;
+	private String fillColor, lineColor, file;
 	private ArrayList<Point> pointList = new ArrayList<Point>(0);
-    private String file;
-    private int branch;
 	private Integer chapterBranch = null;
 	/**
 	 * @param x_coord
@@ -54,6 +46,9 @@ public class Shapes {
 		this.pointList = pointList;
 	}
 	
+	/**
+	 * 
+	 */
 	public Shapes() {
 		// TODO Auto-generated constructor stub
 	}

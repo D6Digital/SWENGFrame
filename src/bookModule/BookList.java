@@ -16,6 +16,10 @@ public class BookList {
 	private String version;
 	private ArrayList<Book> books;
 
+	/**
+	 * create the booklist and setup a new array list of books
+	 * @param version
+	 */
 	public BookList(String version) {
 		this.version = version;
 		books = new ArrayList<Book>();

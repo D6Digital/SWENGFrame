@@ -41,7 +41,10 @@ public class BookXMLParser extends DefaultHandler{
 	public Image newIcon;
 	public String attrVal;
 	
-	
+	/**
+	 * create the parser and parse the inputFile
+	 * @param inputFile
+	 */
 	public BookXMLParser(String inputFile){
 		readBookXML(inputFile);
 		writeBookinfo();

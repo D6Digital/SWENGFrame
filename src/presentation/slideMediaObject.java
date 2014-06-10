@@ -1,6 +1,5 @@
 package presentation;
 
-import java.awt.LayoutManager;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
@@ -19,15 +18,16 @@ public class slideMediaObject extends JPanel implements MouseListener{
 	private static final long serialVersionUID = 1L;
 
 
-	private Integer branch;
-	private Integer chapterBranch;
-	private Integer startTime;
-	private Integer finishTime;
-
-
+	private Integer branch, chapterBranch, startTime, finishTime;
 	private boolean isText;
 
-
+	/**
+	 * 
+	 * @param branch
+	 * @param duration
+	 * @param startTime
+	 * @param chapterBranch
+	 */
 	public slideMediaObject(Integer branch,Integer duration,Integer startTime, Integer chapterBranch) {
 		super();
 		this.setOpaque(false);

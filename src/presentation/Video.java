@@ -15,22 +15,26 @@ public class Video extends SlideObject {
 	private int playtime;
 
 
+	
 	/**
-	 * @param x_coord
-	 * @param y_coord
-	 * @param start
-	 * @param end
-	 * @param layer
-	 * @param file
-	 * @param width
-	 * @param height
-	 * @param length
+	 * 
 	 */
-
 	public Video() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
+	/**
+	 * 
+	 * @param x_coord
+	 * @param y_coord
+	 * @param start
+	 * @param duration
+	 * @param layer
+	 * @param file
+	 * @param width
+	 * @param height
+	 */
 	public Video(int x_coord, int y_coord, int start, int duration, int layer,
 			String file, int width, int height) {
 		super(x_coord, y_coord, start, duration, layer, file, 0);

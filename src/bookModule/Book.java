@@ -16,6 +16,10 @@ public class Book {
 	private String iconFileName;
 	private String id;
 	
+/**
+ * Create a book and set the id
+ * @param id
+ */
 public Book(String id) {
 		this.setId(id);
 	}

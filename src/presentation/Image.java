@@ -34,8 +34,10 @@ public class Image extends SlideObject {
 		this.height = height;
 	}
 	
+	/**
+	 * 
+	 */
 	public Image() {
-		// TODO Auto-generated constructor stub
 	}
 
 	/**

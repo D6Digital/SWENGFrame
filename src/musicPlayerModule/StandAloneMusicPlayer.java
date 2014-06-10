@@ -50,39 +50,38 @@ import uk.co.caprica.vlcj.medialist.MediaList;
  * and search directories for audio, to be put in a playlist.
  */
 public class StandAloneMusicPlayer { 
-    String vlcLibraryPath;
+    
     DefaultListModel<String> listModel = new DefaultListModel<String>();
     JFrame mainFrame = new JFrame("mainFrame");
     JFrame playlistFrame = new JFrame("playlistFrame");
+    
     JPanel playPanel = new JPanel();
+    JPanel fullPanel = new JPanel();
+    JPanel scrollPanel;
+    
     JList<String> playContentsJList = new JList<String>(listModel);
     JLabel timeLabel = new JLabel();
     JSlider timeSlider = new JSlider();
-    JPanel fullPanel = new JPanel();
+    JScrollPane scrollPane = new JScrollPane();
 
     private String currentTime = "";
     private String newTime = "";
 
     Container contentPane;
-    JScrollPane scrollPane = new JScrollPane();
+    
     EmbeddedMediaPlayer mediaPlayer;
     MediaList mediaList;
     MediaListPlayer mediaListPlayer;
-    int currentPlayIndex = 0;
+    
+    
     Boolean newIndex = false;
-    String currentFilePath;
-    String newFilePath;
-    FileChooser fileChooser = new FileChooser(newFilePath);
     Boolean isPaused = false;
-    int widthOfPanel;
-    protected boolean threadKilled = false;
-    JPanel scrollPanel;
-
-    protected boolean changingTimeByHand;
-    protected boolean changingSelectedPlaylistByHand;
-
-    boolean initialLockedValue = true;
-
+    Boolean threadKilled = false;
+    Boolean changingTimeByHand, changingSelectedPlaylistByHand, areWeUnlocked;
+    Boolean initialLockedValue = true;
+    
+    String vlcLibraryPath;
+    String currentFilePath, newFilePath;
     String playImage = "resources/buttons/play.png";
     String pauseImage = "resources/buttons/pause.png";
     String stopImage = "resources/buttons/stop.png";
@@ -91,16 +90,14 @@ public class StandAloneMusicPlayer {
     String lockImage = "resources/buttons/lockText.png";
     String unlockImage = "resources/buttons/unlockText.png";
     String choosePlaylistImage = "/resources/buttons/openList";
-    int heightOfLockIcon;
-    int widthOfPlayButton;
-    int heightOfPlayButton;
-    int playlistIconHeight;
-
-    private boolean areWeUnlocked;
-
+    
+    int currentPlayIndex = 0;
+    int heightOfLockIcon, widthOfPlayButton, heightOfPlayButton, playlistIconHeight, widthOfPanel;
+    private int fontSize = 12;
+    
     private MouseMotionListener genericMouseMotionListener;
 
-    private int fontSize = 12;
+    FileChooser fileChooser = new FileChooser(newFilePath);
 
     /**
      * Constructor for StandAloneMusicPlayer() class.

@@ -20,6 +20,7 @@ import presentation.TextContent.ScriptTypeDef;
  * @author Robert Mills
  * @author Matt Winstanley
  *
+ * Testing class used as an example before text module was completed
  */
 public class TextPainter {
 
