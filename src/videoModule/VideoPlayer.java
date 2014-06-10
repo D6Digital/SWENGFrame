@@ -1,25 +1,14 @@
 package videoModule;
 
-/**
- * @author Josh Drake
- * @author samPick
- */
 import uk.co.caprica.vlcj.player.MediaPlayerFactory;
 import uk.co.caprica.vlcj.player.embedded.EmbeddedMediaPlayer;
 import uk.co.caprica.vlcj.player.embedded.videosurface.CanvasVideoSurface;
-
-
-
 import java.awt.Canvas;
 import java.awt.Color;
-import java.awt.FocusTraversalPolicy;
-import java.awt.Image;
-import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -27,290 +16,214 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JSlider;
 import javax.swing.Timer;
-
 import presentation.Video;
 import uk.co.caprica.vlcj.runtime.RuntimeUtil;
-
 import com.sun.jna.NativeLibrary;
 
+/**
+ * Video player module. Uses the PlayerControlPanel and EmbeddedMediaPlayer
+ * in order to create a video player inside a JPanel which can be placed 
+ * upon a slide in the presentation.
+ */
 public class VideoPlayer extends JPanel{
+    
+    private static final long serialVersionUID = 1L;
+    JButton playButton, stopButton, closeButton;
+    EmbeddedMediaPlayer mediaPlayer;
+    JPanel vidControlPanel, vidpanel, masterPanel, overlayPanel;
+    JSlider bar;
+    ImageIcon img;
+    public PlayerControlsPanel ControlPanel;
+    JLabel pausedLabel;
+    int xcoord, ycoord, start, end, width, height;
+    String file;
+    private Canvas canvas;
+    private Timer controlPanelTimer;
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	
-	
-	JButton playButton, stopButton, closeButton;
-	 EmbeddedMediaPlayer mediaPlayer;
-	 JPanel vidControlPanel;
-	 JPanel vidpanel;
-	 JPanel masterPanel;
-	 public JPanel overlayPanel;
-	 JSlider bar;
-	 ImageIcon img;
-	 public PlayerControlsPanel ControlPanel;
-	 JLabel pausedLabel;
-	 int xcoord;
-	 int ycoord;
-	 int start;
-	 int end;
-	 String file;
-	 int width;
-	 int height;
+    /**
+     * Constructor for Video Player, must provide a mouseAdapter to setup the
+     * listeners for the player with the rest of the presentation, as well as
+     * a video file to be used for attributing a given video to a video player.
+     * @param video
+     * @param videoListener
+     */
+    public VideoPlayer(Video video, MouseAdapter videoListener) {
+        NativeLibrary.addSearchPath(RuntimeUtil.getLibVlcLibraryName(), "resources/lib/vlc-2.1.3");
 
+        // set all parameters to base themselves upon information from video object.
+        xcoord = video.getX_coord();
+        ycoord = video.getY_coord();
+        start = video.getStart();
+        end = video.getStart() + video.getDuration();
+        file = video.getFile();
+        width = video.getWidth();
+        height = video.getHeight();
 
-	private Canvas canvas;
+        // set bounds of complete panel
+        this.setLayout(null);
+        this.setBounds(video.getX_coord(), video.getY_coord(), video.getWidth(), video.getHeight());
 
+        vidpanel = new JPanel();
+        vidpanel.setLayout(null);
+        vidpanel.setBounds(0, 0, width, height);
+        img = new ImageIcon("resources/buttons/pauseText.png");
 
-	private Timer controlPanelTimer;
-	 
-
-	public VideoPlayer(Video video, MouseAdapter videoListener) {
-		
-	
-		NativeLibrary.addSearchPath(
-                RuntimeUtil.getLibVlcLibraryName(), "resources/lib/vlc-2.1.3"
-            );
-		
-	    xcoord = video.getX_coord();
-	    ycoord = video.getY_coord();
-	    start = video.getStart();
-	    end = video.getStart() + video.getDuration();
-	    file = video.getFile();
-	    width = video.getWidth();
-	    height = video.getHeight();
-
-		this.setLayout(null);
-		this.setBounds(video.getX_coord(), video.getY_coord(), video.getWidth(), video.getHeight());
-		
-		System.out.println("xcoord = " + xcoord);
-		System.out.println("ycoord = " + ycoord);
-		System.out.println("start = " + start);
-		System.out.println("end = " + end);
-		System.out.println("file = " + file);
-		System.out.println("Width = " + width);
-		System.out.println("Height = " + height);
-		
-		//frame = new JFrame("Video Player");
-		
-		vidpanel = new JPanel();
-		vidpanel.setLayout(null);
-		vidpanel.setBounds(0, 0, width, height);
-		img = new ImageIcon("resources/buttons/pauseText.png");
-	    //img2 = new ImageIcon("resources/buttons/StoppedText.png");
-	    
-	    overlayPanel = new JPanel();
-	    overlayPanel.setLayout(null);
-	    overlayPanel.setOpaque(false);
-	    overlayPanel.setBounds(0, 0, width, height);
-	    //pausedLabel = new JLabel(img);
-	    //pausedLabel.setOpaque(true);
-	    //pausedLabel.setBounds(width/2, height/2, 50, 50);
-	    //overlayPanel.add(pausedLabel);
-	    canvas = new Canvas();
-	    canvas.setBackground(Color.BLACK);
-		
-		//frame.setLayout(new BorderLayout());
-		//frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);    
-	    
-	    MediaPlayerFactory mediaPlayerFactory = new MediaPlayerFactory();
-	    CanvasVideoSurface videoSurface = mediaPlayerFactory.newVideoSurface(canvas);
-	    mediaPlayer = mediaPlayerFactory.newEmbeddedMediaPlayer();
-	    mediaPlayer.setVideoSurface(videoSurface);
-	    canvas.setBounds(0, 0, width, height);
-	    
-	    ControlPanel = new PlayerControlsPanel(mediaPlayer);
-	    //ControlPanel.setLayout(null);
-	    ControlPanel.setBounds(0, height-80, width, 80);
-	    ControlPanel.setBackground(Color.black);
-	    ControlPanel.setOpaque(true);
-	    
-	    ActionListener taskPerformer =	new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				ControlPanel.setVisible(false);
-				 
-			}};
-		controlPanelTimer = new Timer(2500,taskPerformer);
-		controlPanelTimer.setInitialDelay(2500);
-		controlPanelTimer.setRepeats(false);
-	    
-	    // disables default VLCJ action listeners
-	    mediaPlayer.setEnableMouseInputHandling(false);
-	    mediaPlayer.setEnableKeyInputHandling(false);
-	    
-	    
-	    ControlPanel.setVisible(false);
-	        
-	    vidpanel.add(canvas);
-	    
-	    
-	    
-	    this.add(ControlPanel);
-	    this.add(vidpanel);    
-	    //this.add(vidpanel);    
-	    //frame.pack();
-	    //frame.setVisible(true);
-		
-	   // mediaPlayer.playMedia("resources/resources/video/"+file);
-	   // mediaPlayer.playMedia("resources/video/video/"+file, ":start-time="+start, ":stop-time="+end);
-	    mediaPlayer.prepareMedia(file, ":start-time="+start, ":stop-time="+end);
-	    System.out.println(this.getLocation().x);
-	    System.out.println(this.getLocation().y);
-	    canvas.addKeyListener(JFrame.getFrames()[0].getKeyListeners()[0]);
-	    canvas.addMouseListener(new java.awt.event.MouseAdapter() {  
-	    	@Override
-		    public void mousePressed(MouseEvent e) {
-		    	if (mediaPlayer.isPlaying()){
-		 	       mediaPlayer.pause();
-		 	       ControlPanel.setPlayButton();
-		 	       add(overlayPanel);	
-		 	       startTimer();
-		 	       //repaint();
-		    	}
-		    	else{
-		    	mediaPlayer.play();
-		    	ControlPanel.setPauseButton();
-		    		}		 		 	       
-		 	    }	    	
-	    	});
-	    
-	    /*canvas.addMouseMotionListener(new java.awt.event.MouseMotionAdapter(){
-	    	@Override
-	    	public void mouseMoved(MouseEvent e1){
-	    		VideoPlayer videoPlayer = (VideoPlayer) e1.getSource();
-	    		int xCoordinate = e1.getX();
-	    		int yCoordinate = e1.getY();
-	    		
-	    		//System.out.println(xCoordinate + "," + yCoordinate);
-	    		//System.out.println("---------listener------------");
-	    		//System.out.println(yCoordinate);
-	    		//System.out.println((height)- 80);
-	    		//System.out.println("---------END listener------------");
-	    		
-	    		if(!videoPlayer.isPlaying())
-	    		{
-	    			videoPlayer.ControlPanel.setVisible(true);
-	    		}
-	    		else
-	    		{
-	    			if (yCoordinate > ((height)- 80)){
-		    			//if(!ControlPanel.isVisible()) {
-		    			    videoPlayer.ControlPanel.setVisible(true);
-		    			//}
-		    		}
-	    			else
-	    			{
-	    			videoPlayer.ControlPanel.setVisible(false);
-	    			}
-	    		}
-	    		
-	    		
-	    		//else {
-                    //if(ControlPanel.isVisible()) {
-                        //ControlPanel.setVisible(false);
-                    //}
-	    		//}
-	    	}
-	    });*/
-	    
-	    
-	    canvas.addMouseMotionListener(videoListener);
-
-	    
-	    ControlPanel.addMouseListener(new java.awt.event.MouseAdapter() {   
-	    	@Override
-	    	public void mouseExited(java.awt.event.MouseEvent evt) {        
-	    		ControlPanel.setVisible(false); 
-	    		startTimer();
-	    		}
-	    	});
+        // gives invisible panel over top of video to allow pausing by clicking on video.
+        overlayPanel = new JPanel();
+        overlayPanel.setLayout(null);
+        overlayPanel.setOpaque(false);
+        overlayPanel.setBounds(0, 0, width, height);
         
-        ControlPanel.addMouseListener(new java.awt.event.MouseAdapter() {   
+        canvas = new Canvas();
+        canvas.setBackground(Color.BLACK);
+
+        // Initialise and setup the video player.
+        MediaPlayerFactory mediaPlayerFactory = new MediaPlayerFactory();
+        CanvasVideoSurface videoSurface = mediaPlayerFactory.newVideoSurface(canvas);
+        mediaPlayer = mediaPlayerFactory.newEmbeddedMediaPlayer();
+        mediaPlayer.setVideoSurface(videoSurface);
+        
+        canvas.setBounds(0, 0, width, height);
+
+        // Get the control panel to be associated with this video player.
+        ControlPanel = new PlayerControlsPanel(mediaPlayer);
+        ControlPanel.setBounds(0, height-80, width, 80);
+        ControlPanel.setBackground(Color.black);
+        ControlPanel.setOpaque(true);
+
+        // Setup the listeners for the features of the control panel and
+        // their relation to the video playback.
+        ActionListener taskPerformer =	new ActionListener() {
             @Override
-            public void mouseEntered(java.awt.event.MouseEvent evt) {        
-                ControlPanel.setVisible(true); 
-                startTimer();
+            public void actionPerformed(ActionEvent e) {
+                ControlPanel.setVisible(false);
+
+            }};
+            
+            // Create new timer
+            controlPanelTimer = new Timer(2500,taskPerformer);
+            controlPanelTimer.setInitialDelay(2500);
+            controlPanelTimer.setRepeats(false);
+
+            mediaPlayer.setEnableMouseInputHandling(false);
+            mediaPlayer.setEnableKeyInputHandling(false);
+
+            ControlPanel.setVisible(false);
+
+            vidpanel.add(canvas);
+
+            this.add(ControlPanel);
+            this.add(vidpanel);    
+
+            mediaPlayer.prepareMedia(file, ":start-time="+start, ":stop-time="+end);
+
+            // Setup the listener that plays the player and sets pause icon when play is clicked.
+            canvas.addKeyListener(JFrame.getFrames()[0].getKeyListeners()[0]);
+            canvas.addMouseListener(new java.awt.event.MouseAdapter() {  
+                @Override
+                public void mousePressed(MouseEvent e) {
+                    if (mediaPlayer.isPlaying()){
+                        mediaPlayer.pause();
+                        ControlPanel.setPlayButton();
+                        add(overlayPanel);	
+                        startTimer();
+                    }
+                    else{
+                        mediaPlayer.play();
+                        ControlPanel.setPauseButton();
+                    }		 		 	       
+                }	    	
+            });
+
+            canvas.addMouseMotionListener(videoListener);
+
+            // setup listeners for making control panel appear and disappear when not hovered over.
+            ControlPanel.addMouseListener(new java.awt.event.MouseAdapter() {   
+                @Override
+                public void mouseExited(java.awt.event.MouseEvent evt) {        
+                    ControlPanel.setVisible(false); 
+                    startTimer();
                 }
             });
-	      
+            ControlPanel.addMouseListener(new java.awt.event.MouseAdapter() {   
+                @Override
+                public void mouseEntered(java.awt.event.MouseEvent evt) {        
+                    ControlPanel.setVisible(true); 
+                    startTimer();
+                }
+            });
 
-	 overlayPanel.addMouseListener(new java.awt.event.MouseAdapter() {   
-		 	@Override
-		    public void mouseClicked(MouseEvent e) {
-		 	    remove(overlayPanel);
-		    	vidpanel.setVisible(true);
-		    	mediaPlayer.play();	
-		    	ControlPanel.setPauseButton();
-		    	startTimer();
-		    	repaint();
-		    	}	    	
-	    	});
-	}
-	
-	public void setupListeners(int controlPanelYLocation) {
-	    
-	}
-	
-	public void stopMedia(){
-		mediaPlayer.stop();
-	}
-	
-	public Boolean isPlaying(){
-		return mediaPlayer.isPlaying();
-	}
+            // setup listener for pausing or playing whenever user presses on video overlay.
+            overlayPanel.addMouseListener(new java.awt.event.MouseAdapter() {   
+                @Override
+                public void mouseClicked(MouseEvent e) {
+                    remove(overlayPanel);
+                    vidpanel.setVisible(true);
+                    mediaPlayer.play();	
+                    ControlPanel.setPauseButton();
+                    startTimer();
+                    repaint();
+                }	    	
+            });
+    }
+    
+    /**
+     * Stops the media playback
+     */
+    public void stopMedia(){
+        mediaPlayer.stop();
+    }
 
-	public void resizeVideo(double scalingFactorX, double scalingFactorY) {
-		
-		this.setBounds((int) (xcoord*scalingFactorX), (int) (ycoord*scalingFactorY), (int) (width*scalingFactorX), (int) (height*scalingFactorY));
-		ControlPanel.setBounds(0, (int) (height*scalingFactorY)-80, (int) (width*scalingFactorX), 80);
-		vidpanel.setBounds(0, 0, (int) (width*scalingFactorX), (int) (height*scalingFactorY));
-		canvas.setBounds(0, 0, (int) (width*scalingFactorX), (int) (height*scalingFactorY));
-		overlayPanel.setBounds(0, 0, (int) (width*scalingFactorX), (int) (height*scalingFactorY));
-		this.repaint();
-		
-	}
+    /**
+     * return true if media is playing.
+     * @return
+     */
+    public Boolean isPlaying(){
+        return mediaPlayer.isPlaying();
+    }
 
-	public void startTimer() {
-		if(controlPanelTimer.isRunning()){
-			controlPanelTimer.stop();
-		}
-		controlPanelTimer.start();
-		
-	}
-	
-	/**
-	 * Shows pause label when pause button is pressed
-	 */
-//	public static void setPause(){
-//		if (mediaPlayer.isPlaying()){
-//		 ControlPanel.setVisible(false);
-//	     vidpanel.setVisible(false);
-//	     frame.add(pausedLabel, BorderLayout.CENTER);
-//		}
-//		else{
-//			ControlPanel.setVisible(true);
-//			frame.remove(pausedLabel);
-//		     vidpanel.setVisible(true);
-//		     
-//		}
-//	}
+    /**
+     * resizes the video by the scaling factor x in width, y in height.
+     * @param scalingFactorX
+     * @param scalingFactorY
+     */
+    public void resizeVideo(double scalingFactorX, double scalingFactorY) {
+        this.setBounds(
+                (int) (xcoord*scalingFactorX), 
+                (int) (ycoord*scalingFactorY), 
+                (int) (width*scalingFactorX), 
+                (int) (height*scalingFactorY));
+        ControlPanel.setBounds(
+                0, 
+                (int) (height*scalingFactorY)-80, 
+                (int) (width*scalingFactorX), 
+                80);
+        vidpanel.setBounds(
+                0, 
+                0, 
+                (int) (width*scalingFactorX), 
+                (int) (height*scalingFactorY));
+        canvas.setBounds(
+                0,
+                0, 
+                (int) (width*scalingFactorX), 
+                (int) (height*scalingFactorY));
+        overlayPanel.setBounds(
+                0, 
+                0, 
+                (int) (width*scalingFactorX), 
+                (int) (height*scalingFactorY));
+        this.repaint();
+    }
 
-
-    /*public JPanel getPanel() {
-        return masterPanel;
-    }*/
-
-//	public static void main(String[] args) {
-//		
-//		Video Video = new Video(3, 5, 30, 50, 8, "monstersinc_high.mpg", 4, 76, 89);
-//        new VideoPlayer(Video);
-//                                     
-//
-//	}
-	
- 
-
+    /**
+     * Starts the timer to poll for changes in the control panel.
+     */
+    public void startTimer() {
+        if(controlPanelTimer.isRunning()){
+            controlPanelTimer.stop();
+        }
+        controlPanelTimer.start();
+    }
 
 }

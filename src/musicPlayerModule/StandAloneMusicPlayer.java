@@ -44,22 +44,10 @@ import uk.co.caprica.vlcj.runtime.RuntimeUtil;
 import uk.co.caprica.vlcj.medialist.MediaList;
 
 /**
- * @author Josh Lant
- * This class sets up a stand-alone music player with playlist searching feature, provided by FileChooser() class.
- * Methods provided return buttons and sliders to interface with music player. Player works in its own thread
- * enabling the user to perform other tasks simultaneously with music play.
- */
-/**
- * @author jl1132
- *
- */
-/**
- * @author jl1132
- *
- */
-/**
- * @author jl1132
- *
+ * Class which provides an audio player based upon vlcj EmbeddedAudioPlayer.
+ * implementations should call the getFullControlPanel() method. This returns
+ * a JPanel which can be attached to any frame or otherwise, and used to play audio
+ * and search directories for audio, to be put in a playlist.
  */
 public class StandAloneMusicPlayer { 
     String vlcLibraryPath;

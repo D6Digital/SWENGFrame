@@ -1,24 +1,22 @@
 package videoModule;
 
 import static org.junit.Assert.*;
-
-import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Robot;
 import java.awt.event.InputEvent;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
 import presentation.Video;
-import uk.co.caprica.vlcj.player.MediaPlayer;
 
+/**
+ * A test to check that the video player module works correctly. NOTE:
+ * No longer working automation due to addition of mouseAdapter to
+ * constructor of videoplayer. Test needs rewriting for iteration 3.
+ */
 public class VideoPlayerTestT601 {
-
     Robot robot;
     Integer SLEEPMS = 2000;
     VideoPlayer videoPlayer, videoPlayer2;
@@ -26,24 +24,23 @@ public class VideoPlayerTestT601 {
     JFrame frame;
     JPanel panel;
     String file = "resources/video/video/monstersinc_high.mpg";
+    String notAFile = "this/path/is/bullshit.mpg";
 
     Integer x_coord = 300;
     Integer y_coord = 0;
     Integer start = 10;
     Integer duration = 60;
-    Integer layer = 1;
-    String notAFile = "this/path/is/bullshit.mpg";
+    Integer layer = 1;  
     int width = 300;
     int height = 302;
 
     @Before
     public void setUp() throws Exception {
-
         robot = new Robot();
         video = new Video(0, 0, 30, 45, 0, file, 300, 300);
         video2 = new Video(x_coord, y_coord, start, duration, layer, notAFile, width, height);
-        videoPlayer = new VideoPlayer(video);
-        videoPlayer2 = new VideoPlayer(video2);
+        videoPlayer = new VideoPlayer(video, null);
+        videoPlayer2 = new VideoPlayer(video2, null);
         frame = new JFrame();
         frame.setSize(600, 600);
         frame.setPreferredSize(new Dimension(1000,600));
@@ -66,12 +63,11 @@ public class VideoPlayerTestT601 {
         frame.pack();
         frame.setVisible(true);
         Thread.sleep(SLEEPMS);
-        
-        //COMMENT OUT TO RUN TEST...
-//        Boolean x = true;
-//        do {
-//        }
-//        while(x);
+
+        /*COMMENT OUT TO RUN TEST...
+        Boolean x = true;
+        do {}
+        while(x);*/
 
         // Step 2. Ensure that when you supply a correct video path it will load the video correctly.
         robot.mouseMove(video.getWidth()/2, video.getHeight()-10);
@@ -128,8 +124,6 @@ public class VideoPlayerTestT601 {
                 video2.getWidth(), width); 
         assertEquals("height was incorrect in the video",
                 video2.getHeight(), height); 
-
-
         assertEquals("XCoord was incorrect in the video",
                 video2.getX_coord(), (Integer) videoPlayer2.getX());       
         assertEquals("YCoord was incorrect in the video",
@@ -139,7 +133,7 @@ public class VideoPlayerTestT601 {
         assertEquals("height was incorrect in the video",
                 video2.getHeight(), videoPlayer2.getHeight()); 
 
-        
+
         // Confirm that the fast forward button works correctly.
         long initTime = videoPlayer.mediaPlayer.getTime();
         robot.mouseMove((video.getWidth()*3)/4, video.getHeight()-10);
@@ -147,8 +141,8 @@ public class VideoPlayerTestT601 {
         robot.mouseRelease(InputEvent.BUTTON1_MASK );
         Thread.sleep(SLEEPMS);
         long newTime = videoPlayer.mediaPlayer.getTime();
-        
-        
+
+
         if(newTime < initTime + 4000) {
             fail("The fast forward button did not work correctly.");
         }
@@ -161,12 +155,12 @@ public class VideoPlayerTestT601 {
         robot.mouseRelease(InputEvent.BUTTON1_MASK );
         Thread.sleep(SLEEPMS);
         newTime = videoPlayer.mediaPlayer.getTime();
-        
+
         if(newTime > initTime - 4000) {
             fail("The rewind button did not work correctly.");
         }
         Thread.sleep(SLEEPMS);
-        
+
         // Confirm that the pause button works correctly.
         robot.mouseMove((video.getWidth())/2, video.getHeight()-10);
         robot.mousePress(InputEvent.BUTTON1_MASK );
@@ -180,18 +174,18 @@ public class VideoPlayerTestT601 {
             fail("The pause button did not work correctly.");
         }
         Thread.sleep(SLEEPMS);
-        
+
         // Confirm that the stop button works correctly.
         robot.mouseMove((video.getWidth())/2, video.getHeight()-10);
         robot.mousePress(InputEvent.BUTTON1_MASK );
         robot.mouseRelease(InputEvent.BUTTON1_MASK );
         Thread.sleep(SLEEPMS);
-        
+
         robot.mouseMove((video.getWidth())/3, video.getHeight()-10);
         robot.mousePress(InputEvent.BUTTON1_MASK );
         robot.mouseRelease(InputEvent.BUTTON1_MASK );
         Thread.sleep(SLEEPMS);
-        
+
         playingYet = true;
         slept = 0; 
         do {
@@ -203,10 +197,6 @@ public class VideoPlayerTestT601 {
 
         assertFalse("The video was not properly stopped.",
                 playingYet);
-        
-        
-        
-
     }
 
 }
