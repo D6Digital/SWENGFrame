@@ -1,6 +1,6 @@
 package imageModule;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.fail;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -9,9 +9,6 @@ import javax.swing.JPanel;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
-import Images.ImagePanel;
-import Images.TImage;
 
 /**
  * A test to check that the ImagePainter class works correctly.
@@ -49,7 +46,7 @@ public class ImagePainterTestT301INTERNAL {
 //        }
         
         // Step 2. confirm that when a correct filepath is supplied, a JLabel is returned.
-        label = image.produceImage("C:\\Users\\Public\\Pictures\\Sample Pictures\\Desert.jpg");
+        label = ImagePainter.produceImage("C:\\Users\\Public\\Pictures\\Sample Pictures\\Desert.jpg");
         if(label == null) {
             fail("A JLabel was not returned from the method produce image...");
         }

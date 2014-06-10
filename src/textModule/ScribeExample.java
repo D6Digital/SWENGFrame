@@ -1,7 +1,6 @@
 package textModule;
 
 import java.awt.Dimension;
-import java.io.ObjectInputStream.GetField;
 import java.util.ArrayList;
 
 import javax.swing.JFrame;

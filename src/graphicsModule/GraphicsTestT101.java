@@ -1,7 +1,5 @@
 package graphicsModule;
 
-import static org.junit.Assert.*;
-
 import java.awt.Color;
 import java.util.Random;
 

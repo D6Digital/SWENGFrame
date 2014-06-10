@@ -1,17 +1,11 @@
 package imageModule;
 
-import static org.junit.Assert.*;
-
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
-import presentation.Image;
-import presentation.slideMediaObject;
 
 import Images.ImagePanel;
 import Images.TImage;

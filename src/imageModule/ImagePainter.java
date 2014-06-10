@@ -1,11 +1,9 @@
 package imageModule;
 
 import java.awt.Dimension;
+
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
 
 public class ImagePainter {
 
@@ -52,20 +50,20 @@ public class ImagePainter {
 	}
 
 	//This is a test method which displays the JLabel produced  
-	private void showImageTest(JLabel image) {
-				
-		JFrame imageTestFrame = new JFrame("Image Test");
-		JPanel imageTestPanel = new JPanel();
-	
-		imageTestFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
-		imageTestFrame.add(imageTestPanel);
-		imageTestPanel.add(image);
-		
-		imageTestFrame.pack();
-        imageTestFrame.setVisible(true);
-        		
-	}
+//	private void showImageTest(JLabel image) {
+//				
+//		JFrame imageTestFrame = new JFrame("Image Test");
+//		JPanel imageTestPanel = new JPanel();
+//	
+//		imageTestFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//		
+//		imageTestFrame.add(imageTestPanel);
+//		imageTestPanel.add(image);
+//		
+//		imageTestFrame.pack();
+//        imageTestFrame.setVisible(true);
+//        		
+//	}
 
 	// Returns an ImageIcon, or null if the path was invalid. 
     protected static ImageIcon createImageIcon(String path, String description) {

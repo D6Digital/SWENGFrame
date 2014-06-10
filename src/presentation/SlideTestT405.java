@@ -22,7 +22,7 @@ public class SlideTestT405 {
     private ArrayList<Shapes> shapeList = new ArrayList<Shapes>(0);
     private Integer slideID;
     private String slideName;
-    private Integer duration2 = null;
+    //private Integer duration2 = null;
     private Boolean isItLastSlide = false;
     
     private Integer x_coord = 123145;
@@ -38,7 +38,7 @@ public class SlideTestT405 {
     private TextContent textContent = new TextContent();
     private String colour = "HEXVALUE";
     private int size = 6000000;
-    private int length = 51372098;
+    //private int length = 51372098;
     private Boolean loop = true;
     private Integer numberOfPoints =  63;
     private String fillColor = "ANOTHERHEX";

@@ -1,7 +1,5 @@
 package gUIModule;
 
-import static org.junit.Assert.*;
-
 import java.util.ArrayList;
 
 import javax.swing.JFrame;

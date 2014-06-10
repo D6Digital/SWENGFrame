@@ -3,8 +3,6 @@
  */
 package bookModule;
 
-import presentation.Image;
-
 /**
  * 
  * @author Sam Lambert
