@@ -2,10 +2,7 @@ package gUIModule;
 
 import java.awt.Color;
 import java.awt.Component;
-import java.awt.Dimension;
 import java.awt.Image;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -21,11 +18,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import main.Overall;
 import musicPlayerModule.StandAloneMusicPlayer;
-
-
-import gUIModule.GUI;
 
 /**
  * 
@@ -48,10 +41,9 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
 	DicePanel dicePanel;
 	JPanel standAloneMusicPlayerPanel;
 	StandAloneMusicPlayer standAloneMusicPlayer; //= new StandAloneMusicPlayer();
-	JLabel background; 
+	JLabel background, title; 
 	ArrayList<JButton> buttonList = new ArrayList<>();
 	JButton backButton = new JButton();
-	JLabel title;
 	JButton diceButton = new JButton();
 	JButton calculatorButton = new JButton();
 	JButton audioButton = new JButton();
@@ -63,12 +55,9 @@ public class UtilitiesPanel extends JPanel{ //implements ActionListener{
     private int xOffset = 0;
     private int backButtonHeight = 30;
     
-    
     private MouseAdapter genericMouseMotionListener;
-
-
+    
 	private BufferedImage backButtonImage;
-
 
 	private Image scaledBackButtonImage;
 	int theBookLayout = 1;

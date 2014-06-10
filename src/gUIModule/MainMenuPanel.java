@@ -12,12 +12,8 @@ import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.net.URLConnection;
 import java.util.ArrayList;
 
-import javax.imageio.IIOException;
 import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
 import javax.swing.DefaultListModel;
@@ -29,49 +25,45 @@ import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
-import javax.swing.JTextField;
 
+import systemModule.GameSystem;
+import systemModule.SystemCollection;
+import systemModule.SystemXMLParser;
 import bookModule.Book;
 import bookModule.BookList;
 import bookModule.BookXMLParser;
 
-import presentation.Presentation;
-import presentation.Slide;
-import presentation.XMLParser;
-import systemModule.GameSystem;
-import systemModule.SystemCollection;
-import systemModule.SystemXMLParser;
-
 public class MainMenuPanel extends JPanel{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
 	JButton openBookButton = new JButton();
 	JButton openShopButton = new JButton();
 	JPanel loadingPanel;
-	JLabel background;
-	JLabel logoLabel;
-	JLabel systemLabel;
-	JLabel bookLabel;
+	JLabel logoLabel, systemLabel, bookLabel, background;
 	JLabel imageLabel = new JLabel();
 	JLayeredPane layers = new JLayeredPane();
 	JTextArea description = new JTextArea();
 	JLabel descriptionTitle = new JLabel();
+	
 	DefaultListModel<String> systemListModel = new DefaultListModel<String>();
-	JList<String> systemList = new JList<String>(systemListModel);
-	JScrollPane systemScroll = new JScrollPane();
 	DefaultListModel<String> bookListModel = new DefaultListModel<String>();
+	JList<String> systemList = new JList<String>(systemListModel);
 	JList<String> bookList = new JList<String>(bookListModel);
+	
+	JScrollPane systemScroll = new JScrollPane();
 	JScrollPane bookScroll = new JScrollPane();
+	
 	private BookList listOfBooks;
 	private SystemCollection listOfSystems;
-	private String chosenBook;
-	private String systemDescription;
-	private String currentSystemName;
-	private String currentBookName;
+	private String chosenBook, systemDescription, currentSystemName, currentBookName;
 	private ArrayList<Book> bookListForContents;
 	double scaleFactorX = 1;
 	double scaleFactorY = 1;
 	private MouseAdapter genericMouseMotionListener;
-	private JLabel loadingLabel;
 
 	public MainMenuPanel(int width, int height, MouseAdapter genericListener) {
 
@@ -373,6 +365,7 @@ public class MainMenuPanel extends JPanel{
 
 							String command = "C:\\Program Files\\Internet Explorer\\IEXPLORE.EXE https://www.amazon.co.uk//" ;
 
+							@SuppressWarnings("unused")
 							Process link = Runtime.getRuntime().exec(command); 
 						}
 						catch(Exception ex){
@@ -542,16 +535,7 @@ public class MainMenuPanel extends JPanel{
 		return bookListForContents;
 	}
 
-	/**
-	 * display loading screen
-	 */
-	public void setToLoadScreen() {
-		this.removeAll();
-		loadingLabel = new JLabel("LOADING...");
-		loadingLabel.setBounds(0, 0, getWidth(), getHeight());
-		loadingLabel.setFont(new Font("Papyrus", Font.BOLD, 54));
-		this.add(loadingLabel);
-	}
+	
 
 	/**
 	 * populate the main menu

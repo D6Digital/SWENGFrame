@@ -1,15 +1,12 @@
 package gUIModule;
 
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.Container;
-import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 
-import javax.swing.AbstractButton;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -30,10 +27,8 @@ public class CalculatorPanel extends JPanel implements ActionListener{
 
 	Container contentPane;
 	JComboBox<String> modSelection;
-	JButton includeMod;
-	JButton clearMods;
-	JTextArea displayIncludedMods;
-	JTextArea displayTotalMod;
+	JButton includeMod,clearMods;
+	JTextArea displayIncludedMods, displayTotalMod;
 	//this will be system specific so will require future
 	//modification to the parser and schema
 	String[] modNames = {"", "Character using off-hand",
@@ -63,11 +58,7 @@ public class CalculatorPanel extends JPanel implements ActionListener{
 	int selectedModIndex = -1;
 	int totalMod = 0;
 
-	int panelWidth;
-	int panelHeight;
-	int modHeight;
-	int modPlusButtonPlusDisplay;
-	int modPlusButtonHeight;
+	int panelWidth,panelHeight,modHeight,modPlusButtonPlusDisplay,modPlusButtonHeight;
 
 	private int fontSize = 12;
 

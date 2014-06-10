@@ -1,44 +1,19 @@
 package gUIModule;
 
 
-import graphicsModule.GraphicsPainter;
-import imageModule.ImagePainter;
-
-
-
-
-import java.awt.Color;
 import java.awt.Component;
-import java.awt.Cursor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
-import java.awt.Dimension;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.util.ArrayList;
 
-import javax.swing.JButton;
-import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
-import javax.swing.JTextPane;
 import javax.swing.Timer;
-import javax.swing.text.AttributeSet;
-import javax.swing.text.Element;
-import javax.swing.text.StyledDocument;
-import javax.swing.text.html.HTML;
 
-
-
-
-import Graphics.graphicsObject;
-import Images.ImagePanel;
-import Images.TImage;
 import musicPlayerModule.EmbeddedAudioPlayer;
 import musicPlayerModule.LockedPlaylistValueAccess;
 import presentation.Image;
-import presentation.Point;
 import presentation.Presentation;
 import presentation.Shapes;
 import presentation.Slide;
@@ -47,8 +22,10 @@ import presentation.Text;
 import presentation.Video;
 import presentation.slideMediaObject;
 import textModule.Scribe;
-import videoModule.VideoPainter;
 import videoModule.VideoPlayer;
+import Graphics.graphicsObject;
+import Images.ImagePanel;
+import Images.TImage;
 
 
 
@@ -69,18 +46,22 @@ public class SlidePanel extends JPanel{
 	private static final long serialVersionUID = 1L;
 
 	int slideID;
+	
 	String slideName;
+	
 	Slide currentSlide;
+	
 	Presentation presentation;
-	Timer theTimer;
+	
+	private Timer objectTimer, quickRepaintTimer;
+	private Integer count;
+	ActionListener repaintTask;
 
-	private MouseAdapter textBranchListener;
-	private MouseAdapter branchListener;
+	private MouseAdapter textBranchListener, branchListener;
+	
 	ArrayList<slideMediaObject> mediaObjects;
 
 	EmbeddedAudioPlayer audioPlayer;
-
-
 	private String vlcLibraryPath = "resources/lib/vlc-2.1.3";
 
 	JLayeredPane layeredPane;
@@ -90,14 +71,11 @@ public class SlidePanel extends JPanel{
 	private MouseAdapter videoListener;
 
 	private double scalingFactorX = 1;
-
 	private double scalingFactorY = 1;
 
-	private Integer count;
+	
 
-	protected Timer quickRepaintTimer;
-
-	ActionListener repaintTask;
+	
 
 
 
@@ -176,9 +154,9 @@ public class SlidePanel extends JPanel{
 			}
 
 		};
-		theTimer = new Timer(delay, taskPerformer);
-		theTimer.setInitialDelay(50);
-		theTimer.start();
+		objectTimer = new Timer(delay, taskPerformer);
+		objectTimer.setInitialDelay(50);
+		objectTimer.start();
 
 		add(layeredPane);
 
@@ -217,7 +195,7 @@ public class SlidePanel extends JPanel{
 	 * stop playing video of sound at the correct time
 	 */
 	public void stopPlaying() {
-		this.theTimer.stop();
+		this.objectTimer.stop();
 		for(Component component: layeredPane.getComponents()){
 			if(component instanceof VideoPlayer){
 				VideoPlayer videoPlayer = (VideoPlayer) component;
@@ -496,7 +474,7 @@ public class SlidePanel extends JPanel{
 	 * changing there sizes or redrawing them altogether
 	 */
 	public void resizeSlide(){
-		theTimer.stop();
+		objectTimer.stop();
 		layeredPane.setBounds(0,0,this.getSize().width,this.getSize().height);
 		for(slideMediaObject object: mediaObjects){
 			if(object.getStartTime() <=  count){
@@ -560,7 +538,7 @@ public class SlidePanel extends JPanel{
 		}
 
 		this.getParent().getParent().repaint();
-		theTimer.start();
+		objectTimer.start();
 
 	}
 

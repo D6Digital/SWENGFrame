@@ -1,22 +1,16 @@
 package gUIModule;
 
 import java.awt.Component;
-import java.awt.FlowLayout;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.AbstractButton;
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JSlider;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
-
-import presentation.Slide;
 
 import main.Overall;
 import musicPlayerModule.EmbeddedAudioPlayer;
@@ -28,7 +22,12 @@ import com.sun.jna.NativeLibrary;
 
 public class ControlPanel extends JPanel{
 
-    static JLabel label = new JLabel();
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	static JLabel label = new JLabel();
     static EmbeddedAudioPlayer player; 
     static JButton stop, play, pause, loop;
     static JSlider volume;

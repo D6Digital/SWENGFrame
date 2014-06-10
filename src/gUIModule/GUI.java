@@ -798,9 +798,6 @@ public void showNextSlide() {
 			public void mouseMoved(MouseEvent e) {
 
 
-				Cursor handCursor = Cursor.getPredefinedCursor(Cursor.HAND_CURSOR);
-				Cursor defaultCursor = Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR);
-
 				JTextPane textPane = (JTextPane) e.getSource();
 				if(textPane.getParent().getParent().getParent().getMousePosition()!=null){
 					java.awt.Point pt = new java.awt.Point(e.getX(), e.getY());

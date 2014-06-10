@@ -1,20 +1,15 @@
 package gUIModule;
 
-import java.awt.Component;
 import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
-import javax.swing.AbstractButton;
 import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -22,8 +17,6 @@ import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-
-import bookModule.Book;
 
 import presentation.Presentation;
 import presentation.Slide;
@@ -54,12 +47,10 @@ public class ContentsPanel extends JPanel implements ActionListener{
 	DefaultListModel<String> listModel = new DefaultListModel<String>();
 	JList<String> contentsList = new JList<String>(listModel);
 	JLabel background= new JLabel();
-	boolean pageListShowing=true;
+	Boolean pageListShowing=true;
 	BufferedImage chooseButtonImage;
 	JScrollPane contents = new JScrollPane();
-	int slideHeight;
-	int slideWidth;
-	int bookLayout;
+	int slideHeight,slideWidth,bookLayout;
 
 	/**
 	 * Creates the entire Contents panel to meet the UI design specification

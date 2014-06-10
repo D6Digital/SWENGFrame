@@ -6,14 +6,11 @@ import java.awt.Container;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
-import java.sql.Array;
 import java.util.Random;
 
 import javax.swing.AbstractButton;
 import javax.swing.BorderFactory;
-import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JPanel;
@@ -34,27 +31,22 @@ public class DicePanel extends JPanel implements ActionListener{
 
 	Container contentPane;
 
-	JComboBox<String> diceType;
-	JComboBox<String> secondDiceType;
-	JComboBox<Integer> diceQuantity;
-	JComboBox<Integer> secondDiceQuantity;
+	JComboBox<String> diceType,secondDiceType;
+	JComboBox<Integer> diceQuantity,secondDiceQuantity;
 
 	JRadioButton multiDice;
 	Boolean multiDiceEnabled = false;
 
 	JButton rollButton;
-	JTextArea firstResultOutput;
-	JTextArea secondResultOutput;
-	JTextArea displayTotalResult;
+	JTextArea firstResultOutput,secondResultOutput,displayTotalResult;
 
 	String[] diceTypes = {"d2", "d3", "d4", "d6", "d8", "d10", "d12", "d20", "d100"};
 	String selectedDiceType = "d0";
-	int selectedDiceQuantity = 0;
 	String secondSelectedDiceType = "d0";
+	
+	int selectedDiceQuantity = 0;
 	int secondSelectedDiceQuantity = 0;
-
-	int panelWidth;
-	int panelHeight;
+	int panelWidth,panelHeight;
 
 	private int fontSize = 12;
 
