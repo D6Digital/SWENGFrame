@@ -281,7 +281,6 @@ public class StandAloneMusicPlayer {
                 // Add the new items to the playlist.
                 for(String filename : files) {
                     mediaList.addMedia(newFilePath + "\\" + filename, options);	
-                    System.out.println("" + filename);
                 }
 
                 mediaListPlayer.setMediaList(mediaList);

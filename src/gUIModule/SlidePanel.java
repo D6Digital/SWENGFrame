@@ -197,8 +197,6 @@ public class SlidePanel extends JPanel{
 	    	   if(sound.getObjectStartTime() == count)
 	    	   {
 	    	       if(LockedPlaylistValueAccess.lockedPlaylist) {
-	    	       System.out.println("file: " + sound.getFile());
-	    	       System.out.println("start: " + sound.getStart() + "duration: " + sound.getDuration());
 	    		   audioPlayer.playMedia();
 	    	       }
 	    	   }
@@ -483,9 +481,7 @@ public class SlidePanel extends JPanel{
 	 */
 	private void addSound(){
 	    
-	    if(LockedPlaylistValueAccess.lockedPlaylist) {
-            System.out.println(LockedPlaylistValueAccess.lockedPlaylist + " are we locked off?");
-		
+	    if(LockedPlaylistValueAccess.lockedPlaylist) {		
 		// Start paused by default
 		JPanel audioPanel = audioPlayer.getPanel();
 		this.add(audioPanel);
@@ -502,7 +498,6 @@ public class SlidePanel extends JPanel{
 	 */
 	public void playSounds(){
 	    if(LockedPlaylistValueAccess.lockedPlaylist) {
-	        System.out.println(LockedPlaylistValueAccess.lockedPlaylist + " are we locked off?");
     		ArrayList<Sound> soundList = currentSlide.getSoundList();
     		if(!soundList.isEmpty())
     		{
