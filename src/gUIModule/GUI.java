@@ -394,8 +394,6 @@ public class GUI extends JFrame implements ComponentListener, KeyListener{
 
 
 
-
-
 	/**
 	 * setup the main interface which displays the book as a series of slideshows/chapters
 	 */
@@ -697,6 +695,40 @@ public class GUI extends JFrame implements ComponentListener, KeyListener{
 	}
 
 
+/**
+ * This method checks if the current slide is the last and if not branches to the next slide
+ */
+public void showNextSlide() {
+	if(slideList.get(slidePanel.currentSlide.getSlideID()).getLastSlide()==false){
+		int nextSlideID	 = slidePanel.currentSlide.getSlideID() + 1;
+		Slide nextSlide = slideList.get(nextSlideID);
+		slidePanel.refreshSlide(nextSlide);
+		
+		previousSlideButton.setBorderPainted(true);
+		if(slidePanel.currentSlide.getLastSlide()==true){
+			nextSlideButton.setBorderPainted(false);
+		}
+	}
+}
+	
+	public Slide showPreviousSlide() {
+		if(slidePanel.currentSlide.getSlideID() > 0){
+
+			nextSlideButton.setBorderPainted(true);
+
+			if (slidePanel.currentSlide.getSlideID() ==1){
+
+				previousSlideButton.setBorderPainted(false);
+
+			}
+			int previousSlideID = slidePanel.currentSlide.getSlideID() - 1;
+			Slide previousSlide = slideList.get(previousSlideID);
+			slidePanel.refreshSlide(previousSlide);
+		}	
+		return null;
+	}
+
+
 	/**
 	 * Adds an image label to the tab and sets up the tabs dimensions
 	 * @param tab
@@ -728,50 +760,14 @@ public class GUI extends JFrame implements ComponentListener, KeyListener{
 	}
 
 
-	/**
-	 * Changes to the next slide
-	 * @return the desired slide
-	 */
-	public Slide showNextSlide() {
-		if(slideList.get(slidePanel.currentSlide.getSlideID()).getLastSlide()==false){
-			int nextSlideID	 = slidePanel.currentSlide.getSlideID() + 1;
-			System.out.println(nextSlideID);
-			Slide nextSlide = slideList.get(nextSlideID);
-			slidePanel.refreshSlide(nextSlide);
-			previousSlideButton.setBorderPainted(true);
-			System.out.println("Next slide = " + nextSlide.getLastSlide());
-			if(slidePanel.currentSlide.getLastSlide()==true){
-				nextSlideButton.setBorderPainted(false);
-
-			}
-		}
-		return null;
-	}
 
 
 	/**
-	 * changes to the previous slide
-	 * @return the desired slide
-	 */
-	public Slide showPreviousSlide() {
-		if(slidePanel.currentSlide.getSlideID() > 0){
-
-			nextSlideButton.setBorderPainted(true);
-
-			if (slidePanel.currentSlide.getSlideID() ==1){
-
-				previousSlideButton.setBorderPainted(false);
-
-			}
-			int previousSlideID = slidePanel.currentSlide.getSlideID() - 1;
-			Slide previousSlide = slideList.get(previousSlideID);
-			slidePanel.refreshSlide(previousSlide);
-		}	
-		return null;
-	}
-
-	/**
-	 * Adds the listeners to the text for branching and hyperlinks
+	 * Creates a listener for text so that when the user clicks on a section of text which has a branch
+	 * attribute it will cause an action such as going to a specific slide
+	 * 
+	 * Also creates a listener for text so that when the users mouse is over text with a branch attribute
+	 * the cursor changes to a customised cursor indicating it can be clicked
 	 */
 	private void setupTextListener() {
 		textBranchListener = new MouseAdapter() {
@@ -895,83 +891,69 @@ public class GUI extends JFrame implements ComponentListener, KeyListener{
 		};
 	}
 
-	/**
-	 * set up listeners on objects so that actions can be object specific
-	 */
-	private void setupObjectListener() {
-		objectBranchListener = new MouseAdapter() {
 
-			@Override
-			public void mouseClicked(MouseEvent e){
 
-				//Returns the object that triggered the action listener and casts it to
-				//a slideObject
-				slideMediaObject eventSource = (slideMediaObject) e.getSource();
-				if(eventSource != null){
-					if(eventSource.getParent().getMousePosition()!=null){
-						//Get the branch value assigned to the object of type slideObject
-						Integer branch = eventSource.getBranch();
-						Integer chapterBranch = eventSource.getChapterBranch();
-						if (chapterBranch != null && chapterBranch != -1){
-							if (chapterBranch > (collection.getPresentationList().size()-1) || chapterBranch < 0)
-							{
-								System.out.println("chapter branch: " + (chapterBranch+1) + " is out of range for this book");
-							}
-							else{
-								// change chapter and branch
-
-								if (branch > (collection.get(chapterBranch).getSlideList().size()-1) || branch < 0)
+/**
+ * Creates a listener for objects, including images and shapes, so that when the user clicks 
+ * on them the slide will be changed to the slide with an id of the branch number
+ * 
+ * Also creates a listener for objects so that when the users mouse hovers on an object with a branch attribute
+ * the cursor changes to a customised cursor indicating it can be clicked
+ */
+private void setupObjectListener() {
+	objectBranchListener = new MouseAdapter() {
+		
+		@Override
+		public void mouseClicked(MouseEvent e){
+					
+					//Returns the object that triggered the action listener and casts it to
+					//a slideObject
+					slideMediaObject eventSource = (slideMediaObject) e.getSource();
+					if(eventSource != null){
+						if(eventSource.getParent().getMousePosition()!=null){
+							//Get the branch value assigned to the object of type slideObject
+							Integer branch = eventSource.getBranch();
+							Integer chapterBranch = eventSource.getChapterBranch();
+							if (chapterBranch != null && chapterBranch != -1){
+								if (chapterBranch > (collection.getPresentationList().size()-1) || chapterBranch < 0)
 								{
-									System.out.println("page branch: " + (branch+1) + " is out of range for this chapter");
-
+									System.out.println("chapter branch: " + (chapterBranch+1) + " is out of range for this book");
 								}
 								else{
-									slideList = collection.get(chapterBranch);
-									slidePanel.loadPresentation(slideList);
-									slidePanel.refreshSlide(slideList.getSlideList().get(branch));
-									contentsPanel.refreshContents(slideList.getSlideList());
-									frame.requestFocusInWindow();
+									// change chapter and branch
+									
+									if (branch > (collection.get(chapterBranch).getSlideList().size()-1) || branch < 0)
+									{
+										System.out.println("page branch: " + (branch+1) + " is out of range for this chapter");
+										
+									}
+									else{
+										slideList = collection.get(chapterBranch);
+										slidePanel.loadPresentation(slideList);
+										slidePanel.refreshSlide(slideList.getSlideList().get(branch));
+										contentsPanel.refreshContents(slideList.getSlideList());
+										frame.requestFocusInWindow();
 									//branch to slide specified by the object
+									}
+				            		
 								}
-
+			            		
 							}
-
-						}
-						else
-						{
-							if (branch != null && branch != -1){
-								if (branch > (slideList.getSlideList().size()-1) || branch < 0)
-								{
-									System.out.println("page branch: " + (branch+1) + " is out of range for this chapter");
-								}
-								else{
+							else
+							{
+								if (branch != null && branch != -1){
+									if (branch > (slideList.getSlideList().size()-1) || branch < 0)
+									{
+										System.out.println("page branch: " + (branch+1) + " is out of range for this chapter");
+									}
+									else{
 									slidePanel.refreshSlide(slideList.get(branch));
 									frame.requestFocusInWindow();
 									//branch to slide specified by the object
+									}
 								}
 							}
 						}
-					}
-				}
-
-			}
-			@Override
-			public void mouseMoved(MouseEvent e) {
-				borderListenerProcess(e,true,false,false);
-				mouseMovedOnSlide();
-				slideMediaObject eventSource = (slideMediaObject) e.getSource();
-				if(eventSource != null){
-					if(eventSource.getParent().getMousePosition()!=null){
-						//Get the branch value assigned to the object of type slideObject
-						Integer branch = eventSource.getBranch();
-						if (branch != null && branch != -1){
-							layers.setCursor(branchSwordCursor);
-						}
-						else
-						{
-							layers.setCursor(swordCursor);
-						}
-					}
 				}
 			}
 
@@ -979,71 +961,75 @@ public class GUI extends JFrame implements ComponentListener, KeyListener{
 		};
 	}
 
-	/**
-	 * Listener such that events can occur based on the status of any playing video
-	 */
-	private void setupVideoListener() {
-		videoListener = new MouseAdapter() {
-			@Override
-			public void mouseMoved(MouseEvent e1){
-				Canvas videoCanvas = (Canvas) e1.getSource();
-				VideoPlayer videoPlayer = (VideoPlayer) videoCanvas.getParent().getParent();
-				//int xCoordinate = e1.getX();
-				int yCoordinate = e1.getY();
+/**
+ * Creates a listener to be used by the video player which uses the Y-coordinate to
+ * decide if the control panel is shown.
+ */
+private void setupVideoListener() {
+	videoListener = new MouseAdapter() {
+	    	@Override
+	    	public void mouseMoved(MouseEvent e1){
+	    		Canvas videoCanvas = (Canvas) e1.getSource();
+	    		VideoPlayer videoPlayer = (VideoPlayer) videoCanvas.getParent().getParent();
+	    		//int xCoordinate = e1.getX();
+	    		int yCoordinate = e1.getY();
+	    		
+	    		videoPlayer.startTimer();
+	    		if(!videoPlayer.isPlaying())
+	    		{
+	    			videoPlayer.ControlPanel.setVisible(true);
+	    		}
+	    		else
+	    		{
+	    			if (yCoordinate > ((videoPlayer.overlayPanel.getHeight())- 80)){
+		    			//if(!ControlPanel.isVisible()) {
+		    			    videoPlayer.ControlPanel.setVisible(true);
+		    			//}
+		    		}
+	    			else
+	    			{
+	    			videoPlayer.ControlPanel.setVisible(false);
+	    			}
+	    		}
+	    		layers.setCursor(swordCursor);
+	    		borderListenerProcess(e1,false,false,true);
+	    		mouseMovedOnSlide();
+	    	}
+	    	@Override
+	    	public void mouseClicked(MouseEvent e1){
+	    		frame.requestFocusInWindow();
+	    	}
+	    	
+	    
+	};
+}
 
-				videoPlayer.startTimer();
-				if(!videoPlayer.isPlaying())
-				{
-					videoPlayer.ControlPanel.setVisible(true);
-				}
-				else
-				{
-					if (yCoordinate > ((videoPlayer.overlayPanel.getHeight())- 80)){
-						//if(!ControlPanel.isVisible()) {
-						videoPlayer.ControlPanel.setVisible(true);
-						//}
-					}
-					else
-					{
-						videoPlayer.ControlPanel.setVisible(false);
-					}
-				}
-				layers.setCursor(swordCursor);
-				borderListenerProcess(e1,false,false,true);
-				mouseMovedOnSlide();
-			}
-			@Override
-			public void mouseClicked(MouseEvent e1){
-				frame.requestFocusInWindow();
-			}
+/**
+ * This method creates a generic listener used by any visible objects that have mouse listeners
+ * so that the custom cursors may be displayed correctly over all objects
+ */
+private void setupGenericMouseMotionListener() {
+	genericListener = new MouseAdapter(){
+		@Override
+		public void mouseMoved(MouseEvent e1){
+			mainMenuPanel.setCursor(swordCursor);
+			layers.setCursor(swordCursor);
+			mouseMovedOnSlide();
+		}
+	};
+}
 
-
-		};
-	}
-
-	/**
-	 * A generic mouse listener to detect mouse movement
-	 */
-	private void setupGenericMouseMotionListener() {
-		genericListener = new MouseAdapter(){
-			@Override
-			public void mouseMoved(MouseEvent e1){
-				mainMenuPanel.setCursor(swordCursor);
-				layers.setCursor(swordCursor);
-				mouseMovedOnSlide();
-			}
-		};
-	}
-
-	/**
-	 * listens for when the mouse is near the borders but not on
-	 * objects so that panels can appear automatically
-	 * @param e1
-	 * @param isObject
-	 * @param isText
-	 * @param isVideo
-	 */
-	private void borderListenerProcess(MouseEvent e1,Boolean isObject,Boolean isText, Boolean isVideo){
+/**
+ * This method is called for all the mouse motion listeners used on the main book panel.
+ * When the mouse is in certain areas of the screen(near the edges) different panels are made visible.
+ * This shows the contents panel at the left side, utilities at the right side and 
+ * previous/next buttons at the bottom.
+ * @param e1
+ * @param isObject
+ * @param isText
+ * @param isVideo
+ */
+private void borderListenerProcess(MouseEvent e1,Boolean isObject,Boolean isText, Boolean isVideo){
 
 		int xCoordinate = e1.getX();
 		int yCoordinate = e1.getY();
@@ -1186,67 +1172,83 @@ public class GUI extends JFrame implements ComponentListener, KeyListener{
 
 	}
 
-	/**
-	 * resizes the main menu when the frame size is changed
-	 */
-	private void resizeMainMenu() {
+/**
+ * resizes the main menu using a scale factor derived from the standard resolution of the slides
+ */
+private void resizeMainMenu() {
+	
+	scaleFactorX = (double)(getSize().width-insets.left-insets.right)/(double)720;
+	scaleFactorY = (double)(getSize().height-insets.top-insets.bottom)/(double)540;
+	mainMenuPanel.setBounds(0, 0, getSize().width-insets.left-insets.right, getSize().height-insets.top-insets.bottom);
+	mainMenuPanel.resizeMainMenu(scaleFactorX, scaleFactorY);
+	
+}
 
-		scaleFactorX = (double)(getSize().width-insets.left-insets.right)/(double)720;
-		scaleFactorY = (double)(getSize().height-insets.top-insets.bottom)/(double)540;
-		mainMenuPanel.setBounds(0, 0, getSize().width-insets.left-insets.right, getSize().height-insets.top-insets.bottom);
-		mainMenuPanel.resizeMainMenu(scaleFactorX, scaleFactorY);
 
+/**
+ * resizes the main book panel using a scale factor derived from the standard resolution of the slides
+ */
+private void resizeMainPanel() {
+	
+	
+	scaleFactorX = (double)(getSize().width-insets.left-insets.right)/(double)720;
+	scaleFactorY = (double)(getSize().height-insets.top-insets.bottom)/(double)540;
+	newWidth = (int) (slideList.getWidth()*scaleFactorX);
+	newHeight = (int) (slideList.getHeight()*scaleFactorY);
+    slidePanel.setScalingFactors(scaleFactorX, scaleFactorY);
+    slidePanel.setBounds(0, 0, newWidth, newHeight);
+    slidePanel.resizeSlide();
+    slidePanel.repaint();
+    
+    layers.setBounds(0,0,newWidth, newHeight+insets.top+insets.bottom);
+    previousSlideButton.setBounds(10,newHeight-60,150,50);
+    previousSlideButton.repaint();
+    nextSlideButton.setBounds(newWidth-170,newHeight-60,150,50);
+    nextSlideButton.repaint();
+    utilities.setBounds(newWidth-utilitiesWidth, 0, utilitiesWidth, newHeight);
+    utilities.setDimensions( newWidth-utilitiesWidth , newHeight);
+    contentsPanel.setDimensions(newHeight);
+    utilitiesTab.setBounds(newWidth-15,(newHeight/2)-60,15,120);
+    contentsTab.setBounds(0,(newHeight/2)-60,15,120);
+    nextTab.setBounds(newWidth-120,(newHeight)-20,90,20);
+    previousTab.setBounds(0,(newHeight)-20,100,20);
+    contentsPanel.setBounds(0, 0, contentsWidth, newHeight);
+    utilities.dicePanel.setDimensions(newHeight);
+    utilities.calculatorPanel.setDimensions(newHeight);
+    utilities.standAloneMusicPlayer.setDimension(newHeight);
+    
+}
+
+/**
+ * redraws the contents panel and ensures the tabs are not visible
+ */
+public void refreshContents() {
+	
+	contentsPanel.setVisible(true);
+	contentsPanel.repaint();
+	contentsShowing=true;
+	utilitiesTab.setVisible(false);
+	contentsTab.setVisible(false);
+	nextTab.setVisible(false);
+	previousTab.setVisible(false);
+	previousSlideButton.setVisible(false);
+}
+
+
+@Override
+public void componentResized(ComponentEvent e) {
+	if(resizingTimer.isRunning())
+	{
+		resizingTimer.stop();
+		resizingTimer.start();
 	}
-
-	/**
-	 * resizes the main panel when the frame is resized
-	 */
-	private void resizeMainPanel() {
-
-
-		scaleFactorX = (double)(getSize().width-insets.left-insets.right)/(double)720;
-		scaleFactorY = (double)(getSize().height-insets.top-insets.bottom)/(double)540;
-		newWidth = (int) (slideList.getWidth()*scaleFactorX);
-		newHeight = (int) (slideList.getHeight()*scaleFactorY);
-		slidePanel.setScalingFactors(scaleFactorX, scaleFactorY);
-		slidePanel.setBounds(0, 0, newWidth, newHeight);
-		slidePanel.resizeSlide();
-		slidePanel.repaint();
-
-		layers.setBounds(0,0,newWidth, newHeight+insets.top+insets.bottom);
-		previousSlideButton.setBounds(10,newHeight-60,150,50);
-		previousSlideButton.repaint();
-		nextSlideButton.setBounds(newWidth-170,newHeight-60,150,50);
-		nextSlideButton.repaint();
-		utilities.setBounds(newWidth-utilitiesWidth, 0, utilitiesWidth, newHeight);
-		utilities.setDimensions( newWidth-utilitiesWidth , newHeight);
-		contentsPanel.setDimensions(newHeight);
-		utilitiesTab.setBounds(newWidth-15,(newHeight/2)-60,15,120);
-		contentsTab.setBounds(0,(newHeight/2)-60,15,120);
-		nextTab.setBounds(newWidth-120,(newHeight)-20,90,20);
-		previousTab.setBounds(0,(newHeight)-20,100,20);
-		contentsPanel.setBounds(0, 0, contentsWidth, newHeight);
-		utilities.dicePanel.setDimensions(newHeight);
-		utilities.calculatorPanel.setDimensions(newHeight);
-		utilities.standAloneMusicPlayer.setDimension(newHeight);
-
+	else
+	{
+		resizingTimer.start();
 	}
-
-
-	@Override
-	public void componentResized(ComponentEvent e) {
-		if(resizingTimer.isRunning())
-		{
-			resizingTimer.stop();
-			resizingTimer.start();
-		}
-		else
-		{
-			resizingTimer.start();
-		}
-
-
-	}
+	
+	
+}
 
 	@Override
 	public void componentHidden(ComponentEvent e) {
@@ -1297,19 +1299,12 @@ public class GUI extends JFrame implements ComponentListener, KeyListener{
 
 	}
 
-	/**
-	 * refreshes the contents of the GUI
-	 */
-	public void refreshContents() {
-		contentsPanel.setVisible(true);
-		contentsPanel.repaint();
-		contentsShowing=true;
-		utilitiesTab.setVisible(false);
-		contentsTab.setVisible(false);
-		nextTab.setVisible(false);
-		previousTab.setVisible(false);
-		previousSlideButton.setVisible(false);
-	}
+	
+
+	
+
+
+
 
 
 

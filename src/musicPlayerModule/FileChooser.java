@@ -76,8 +76,6 @@ public class FileChooser extends JPanel implements ActionListener {
      * @return
      */
     public JButton getButton() {
-
-        System.out.println("here " + openButton.getBounds());
         return openButton;
     }
 
