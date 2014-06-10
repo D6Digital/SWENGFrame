@@ -30,7 +30,8 @@ public class VideoPlayer extends JPanel{
     private static final long serialVersionUID = 1L;
     JButton playButton, stopButton, closeButton;
     EmbeddedMediaPlayer mediaPlayer;
-    JPanel vidControlPanel, vidpanel, masterPanel, overlayPanel;
+    JPanel vidControlPanel, vidpanel, masterPanel;
+	public JPanel overlayPanel;
     JSlider bar;
     ImageIcon img;
     public PlayerControlsPanel ControlPanel;
