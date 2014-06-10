@@ -17,8 +17,8 @@ public class slideMediaObject extends JPanel implements MouseListener{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
-	
+
+
 	private Integer branch;
 	private Integer chapterBranch;
 	private Integer startTime;
@@ -26,11 +26,8 @@ public class slideMediaObject extends JPanel implements MouseListener{
 
 
 	private boolean isText;
-	
 
-	/**
-	 * @param branch
-	 */
+
 	public slideMediaObject(Integer branch,Integer duration,Integer startTime, Integer chapterBranch) {
 		super();
 		this.setOpaque(false);
@@ -46,53 +43,53 @@ public class slideMediaObject extends JPanel implements MouseListener{
 			this.finishTime = duration + startTime;
 		}
 		this.startTime = startTime;
-		
-		
+
+
 	}
-	
+
 	/**
 	 * @return branch
 	 */
 	public int getBranch(){
 		return branch;
 	}
-	
+
 	/**
 	 */
 	public void setBranch(int branch){
 		this.branch = branch;
 	}
-	
+
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
 		// TODO Auto-generated method stub
-		
+
 	}
-	
+
 	@Override
 	public void mouseEntered(MouseEvent arg0) {
 		// TODO Auto-generated method stub
-		
+
 	}
-	
+
 	@Override
 	public void mouseExited(MouseEvent arg0) {
 		// TODO Auto-generated method stub
-		
+
 	}
-	
+
 	@Override
 	public void mousePressed(MouseEvent arg0) {
 		// TODO Auto-generated method stub
-		
+
 	}
-	
+
 	@Override
 	public void mouseReleased(MouseEvent arg0) {
 		// TODO Auto-generated method stub
-		
+
 	}
-	
+
 	public void setFinishTime(Integer finishTime) {
 		// TODO Auto-generated method stub
 		this.finishTime = finishTime;
@@ -116,7 +113,7 @@ public class slideMediaObject extends JPanel implements MouseListener{
 	public void setStartTime(Integer startTime) {
 		this.startTime = startTime;
 	}
-	
+
 	/**
 	 * set to verify this object contains text 
 	 * @param isText
