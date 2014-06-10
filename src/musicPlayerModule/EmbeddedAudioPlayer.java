@@ -105,6 +105,7 @@ public class EmbeddedAudioPlayer {
      * after this a new EmbeddedAudioPlayer must be instantiated.
      * @return true if the thread has been destroyed, otherwise returns false.
      */
+    @SuppressWarnings("deprecation")
     public boolean threadKill() {
         theTimer.stop();
         musicThread.stop();
