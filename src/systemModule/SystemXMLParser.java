@@ -23,47 +23,53 @@ import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
 /**
+ * Parses system XML files
  * @author Robert Mills
- *
  */
 enum ProcessingElement{
 	SYSTEMLIST, SYSTEM, NONE
 }
+
 public class SystemXMLParser extends DefaultHandler{
+	
 	private GameSystem currentSystem;
 	private SystemCollection collection;
-	
 	private String attrVal;
 	private String fileName;
-	
 	private ProcessingElement currentElement = ProcessingElement.NONE;
 	
+	/**
+	 * Creates XML parser for system files
+	 * @param fileName
+	 */
 	public SystemXMLParser(String fileName) {
 		File schemaFile;
 		Schema schema;
 		Source xmlFile = new StreamSource(new File(fileName));
-		SchemaFactory schemaFactory = SchemaFactory
-		    .newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
+		SchemaFactory schemaFactory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
 		schemaFile = new File("bin/schema.xsd");
+		
 		try {
 			schema = schemaFactory.newSchema(schemaFile);
-		} catch (SAXException e1) {
-			// TODO Auto-generated catch block
+			}
+		catch (SAXException e1) {
 			schema = null;
 			e1.printStackTrace();
-		}
+			}
 		Validator validator = schema.newValidator();
+		
 		try {
 		  validator.validate(xmlFile);
 		  System.out.println(xmlFile.getSystemId() + " is valid");
 		  System.out.println("Is Valid");
-		} catch (SAXException e) {
+			}
+		catch (SAXException e) {
 		  System.out.println(xmlFile.getSystemId() + " is NOT valid");
 		  System.out.println("Reason: " + e.getLocalizedMessage());
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
+			}
+		catch (IOException e) {
 			e.printStackTrace();
-		}
+			}
 		
 		this.fileName = fileName;
 	    parse(this.fileName);
@@ -73,33 +79,36 @@ public class SystemXMLParser extends DefaultHandler{
 	    }
 	}
 
+	/**
+	 * uses the XML parser to parse a specified system file
+	 * @param filename
+	 */
 	private void parse(String filename) {
-
 		try {			
 			// use the default parser
 			SAXParserFactory factory = SAXParserFactory.newInstance();
 			SAXParser saxParser = factory.newSAXParser();
 			// parse the input			
 			saxParser.parse(filename, this);
-		}
+			}
 		catch (ParserConfigurationException pce) {
 			pce.printStackTrace();
-		}		
+			}		
 		catch (SAXException saxe) {			
 			saxe.printStackTrace();		
-		}		
+			}		
 		catch (IOException ioe) {			
 			ioe.printStackTrace();		
+			}
 		}
-		
-	}
 	
 	/**
+	 * deals with the first element of a system file
+	 * @param uri, localName, qName, attrs
 	 * @see org.xml.sax.helpers.DefaultHandler#startElement(java.lang.String, java.lang.String, java.lang.String, org.xml.sax.Attributes)
 	 */
-	public void startElement(String uri, String localName, String qName, Attributes	attrs)
-			throws SAXException {
-		// sort out element name if (no) namespace in use		
+	public void startElement(String uri, String localName, String qName, Attributes	attrs) throws SAXException {		
+		
 		String elementName = localName;
 		if ("".equals(elementName)) {
 			elementName = qName;
@@ -127,18 +136,16 @@ public class SystemXMLParser extends DefaultHandler{
 			attrVal = attrs.getValue("logofilename");
 			if(!(attrVal == null)){
 				currentSystem.setLogoFileName(attrVal);
-			}
-			
-		}
-		
+			}			
+		}		
 	}
 	
 	/**
+	 * deals with the last element of a system file
+	 * @param uri, localName, qName
 	 * @see org.xml.sax.helpers.DefaultHandler#endElement(java.lang.String, java.lang.String, java.lang.String)
 	 */
-	public void endElement(String uri, String localName, String qName)
-			throws SAXException {
-		// sort out element name if (no) namespace in use		
+	public void endElement(String uri, String localName, String qName) throws SAXException {		
 		String elementName = localName;
 		if ("".equals(elementName)) {
 			elementName = qName;
@@ -153,12 +160,18 @@ public class SystemXMLParser extends DefaultHandler{
 			currentElement = ProcessingElement.SYSTEMLIST;
 		}
 	}
+	
 	/**
+	 * @param ch[], start, length
 	 * @see org.xml.sax.helpers.DefaultHandler#characters(char[], int, int)
 	 */
 	public void characters(char ch[], int start, int length) throws SAXException {
-		
 	}
+	
+	/**
+	 * returns the list of systems
+	 * @return collection
+	 */
 	public SystemCollection getSystem(){
 		return collection;
 	}
