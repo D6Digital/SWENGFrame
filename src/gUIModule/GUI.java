@@ -2,6 +2,7 @@ package gUIModule;
 
 import java.awt.Canvas;
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Container;
 import java.awt.Cursor;
 import java.awt.Dimension;
@@ -192,9 +193,6 @@ public class GUI extends JFrame implements ComponentListener, KeyListener{
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				mainMenuShowing=false;
-				//mainMenuPanel.setVisible(false);
-				//mainMenuPanel.setToLoadScreen();
-				//mainMenuPanel.setVisible(true);
 
 				frame.requestFocusInWindow();
 				layers.setVisible(true);
@@ -205,7 +203,7 @@ public class GUI extends JFrame implements ComponentListener, KeyListener{
 					XMLParser parser = new XMLParser(chosenBook);
 					collection = parser.getCollection();
 					slideList = collection.get(0);
-					System.out.println("book = "+chosenBook);
+					//System.out.println("book = "+chosenBook);
 					bookMainPanelSetUp();
 					mainMenuPanel.setVisible(false);
 				}
@@ -238,9 +236,6 @@ public class GUI extends JFrame implements ComponentListener, KeyListener{
 		cursorTimerTask =	new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Toolkit toolkit = Toolkit.getDefaultToolkit();
-				Image image = toolkit.getImage("resources/buttons/blankCursor.png");
-				java.awt.Point point = new java.awt.Point(frame.getX(), frame.getY());
 				layers.setCursor (blankCursor);
 				mainMenuPanel.setCursor(blankCursor);
 
@@ -410,7 +405,7 @@ public class GUI extends JFrame implements ComponentListener, KeyListener{
 		layers.add(contentsPanel,0);
 		layers.add(nextSlideButton,1);
 		layers.add(previousSlideButton,1);
-		layers.add(slidePanel,5);
+		layers.add(slidePanel,10);
 	}
 
 
@@ -451,7 +446,7 @@ public class GUI extends JFrame implements ComponentListener, KeyListener{
 						scaleFactorY = (double)(getSize().height-insets.top-insets.bottom)/(double)540;
 						mainMenuPanel.setBounds(0, 0, getSize().width-insets.left-insets.right, getSize().height-insets.top-insets.bottom);
 						mainMenuPanel.resizeMainMenu(scaleFactorX, scaleFactorY);
-						System.out.println("Main Menu Pressed");
+						//System.out.println("Main Menu Pressed");
 						layers.setVisible(false);
 						mainMenuPanel.setVisible(true);
 					}
@@ -514,9 +509,6 @@ public class GUI extends JFrame implements ComponentListener, KeyListener{
 				utilities.setDimensions( (int) (720*scaleFactorX)-150 , (int) (540*scaleFactorY));
 				utilities.setUtilityVisible(backButton);
 				utilitiesWidth = utilities.getWidth();
-				//utilities.setBounds(720-utilitiesWidth, 0, utilitiesWidth, 540);
-				//utilitiesWidth = 500;
-				System.out.println(utilities.getWidth());
 				utilities.setDimensions(newWidth-utilitiesWidth , newHeight);
 				utilities.validate();
 				utilities.repaint();
@@ -543,9 +535,6 @@ public class GUI extends JFrame implements ComponentListener, KeyListener{
 					utilities.setDimensions( (int) (720*scaleFactorX)-150 , (int) (540*scaleFactorY));
 					utilities.setUtilityVisible(button);
 					utilitiesWidth = utilities.getWidth();
-					//utilities.setBounds(720-utilitiesWidth, 0, utilitiesWidth, 540);
-					//utilitiesWidth = 500;
-					System.out.println(utilities.getWidth());
 					utilities.validate();
 					utilities.repaint();
 				}
@@ -639,9 +628,16 @@ public class GUI extends JFrame implements ComponentListener, KeyListener{
 	private void setupTabs(int width,int height) {
 		//utilities tab
 		addTab(utilitiesTab, "resources/buttons/utilitiesTab.png", 15, 110, width, height);
+		layers.add(utilitiesTab,2);
+
 		addTab(contentsTab, "resources/buttons/contentsTab.png", 15, 100, width, height);
+		layers.add(contentsTab,3);
+		
 		addTab(nextTab, "resources/buttons/nextTab.png", 80, 15, width, height);
+		layers.add(nextTab,4);
+		
 		addTab(previousTab, "resources/buttons/previousTab.png", 90, 15, width, height);
+		layers.add(previousTab,5);
 	}
 
 
@@ -691,10 +687,10 @@ public void showNextSlide() {
 	private void addTab(JPanel tab, String tabImagePath, int tabWidth, int tabHeight, int width, int height) {
 
 		tab.setBounds(width-tabWidth,(height/2)-(tabHeight/2),tabWidth,tabHeight);
-		BufferedImage utilitiesTabImage;
+		BufferedImage TabImage;
 		try{
-			utilitiesTabImage = ImageIO.read(new File(tabImagePath));
-			Image scaledUTab = utilitiesTabImage.getScaledInstance(tabWidth, tabHeight, java.awt.Image.SCALE_SMOOTH);
+			TabImage = ImageIO.read(new File(tabImagePath));
+			Image scaledUTab = TabImage.getScaledInstance(tabWidth, tabHeight, java.awt.Image.SCALE_SMOOTH);
 			JLabel uTabLabel = new JLabel(new ImageIcon(scaledUTab));
 			uTabLabel.setBounds(0, 0, tabWidth, tabHeight);
 			uTabLabel.setOpaque(false);
@@ -704,8 +700,6 @@ public void showNextSlide() {
 		}
 		tab.setOpaque(false);
 		tab.setVisible(false);
-
-		layers.add(tab,4);
 
 	}
 
@@ -906,6 +900,25 @@ private void setupObjectListener() {
 						}
 				}
 			}
+		@Override		
+		public void mouseMoved(MouseEvent e) {			
+			borderListenerProcess(e,true,false,false);			
+			mouseMovedOnSlide();			
+			slideMediaObject eventSource = (slideMediaObject) e.getSource();			
+			if(eventSource != null){				
+				if(eventSource.getParent().getMousePosition()!=null){					
+					//Get the branch value assigned to the object of type slideObject					
+					Integer branch = eventSource.getBranch();					
+					if (branch != null && branch != -1){						
+						layers.setCursor(branchSwordCursor);					
+						}					
+					else					
+					{						
+						layers.setCursor(swordCursor);					
+						}				
+					}			
+				}		
+			}
 
 
 		};
@@ -1030,16 +1043,10 @@ private void borderListenerProcess(MouseEvent e1,Boolean isObject,Boolean isText
 
 			slideWidth = this.getWidth()-insets.left-insets.right;
 			slideHeight = this.getHeight()-insets.top-insets.bottom;
-			//System.out.println("x="+xCoordinate+"y="+yCoordinate);
-			//System.out.println("width="+slideWidth+"height="+slideHeight);
 
 			if (xCoordinate>(slideWidth-borderSize)){
-				utilities.setVisible(true);
+				setComponentsVisibility(utilities,true);
 				utilitiesShowing=true;
-				utilitiesTab.setVisible(false);
-				contentsTab.setVisible(false);
-				nextTab.setVisible(false);
-				previousTab.setVisible(false);
 				nextSlideButton.setVisible(false);
 			}
 			if (xCoordinate<(slideWidth-utilitiesWidth)){
@@ -1049,13 +1056,9 @@ private void borderListenerProcess(MouseEvent e1,Boolean isObject,Boolean isText
 				}
 			}
 			if(xCoordinate<borderSize){
-				contentsPanel.setVisible(true);
+				setComponentsVisibility(contentsPanel,true);
 				contentsPanel.repaint();
 				contentsShowing=true;
-				utilitiesTab.setVisible(false);
-				contentsTab.setVisible(false);
-				nextTab.setVisible(false);
-				previousTab.setVisible(false);
 				previousSlideButton.setVisible(false);
 			}
 			if(xCoordinate>contentsWidth){
@@ -1066,12 +1069,8 @@ private void borderListenerProcess(MouseEvent e1,Boolean isObject,Boolean isText
 			}
 			if((xCoordinate>(slideWidth)/2)&(yCoordinate>(slideHeight-(borderSize*3)))){
 				if(utilitiesShowing==false){
-					nextSlideButton.setVisible(true);
+					setComponentsVisibility(nextSlideButton,true);
 					nextButtonShowing=true;
-					utilitiesTab.setVisible(false);
-					contentsTab.setVisible(false);
-					nextTab.setVisible(false);
-					previousTab.setVisible(false);
 				}
 			}
 			if((xCoordinate<(slideWidth)/2)|(yCoordinate<(slideHeight-50))){
@@ -1082,12 +1081,8 @@ private void borderListenerProcess(MouseEvent e1,Boolean isObject,Boolean isText
 			}
 			if((xCoordinate<(slideWidth)/2)&(yCoordinate>(slideHeight-(borderSize*3)))){
 				if(contentsShowing==false){
-					previousSlideButton.setVisible(true);
+					setComponentsVisibility(previousSlideButton,true);
 					previousButtonShowing=true;
-					utilitiesTab.setVisible(false);
-					contentsTab.setVisible(false);
-					nextTab.setVisible(false);
-					previousTab.setVisible(false);
 				}
 			}
 			if((xCoordinate>(slideWidth)/2)|(yCoordinate<(slideHeight-50))){
@@ -1118,6 +1113,16 @@ private void borderListenerProcess(MouseEvent e1,Boolean isObject,Boolean isText
 		frame.requestFocusInWindow();
 
 	}
+
+private void setComponentsVisibility(Component component, boolean b) {
+	component.setVisible(b);
+	utilitiesTab.setVisible(false);
+	contentsTab.setVisible(false);
+	nextTab.setVisible(false);
+	previousTab.setVisible(false);
+	
+}
+
 
 /**
  * resizes the main menu using a scale factor derived from the standard resolution of the slides
@@ -1220,13 +1225,11 @@ public void componentResized(ComponentEvent e) {
 	@Override
 	public void keyPressed(KeyEvent e) {
 		if(e.getKeyCode()== KeyEvent.VK_LEFT){
-			System.out.println("Left Button Pressed");
 			if(mainMenuShowing==false){
 				showPreviousSlide();
 			}
 		}
 		if(e.getKeyCode()== KeyEvent.VK_RIGHT){
-			System.out.println("Right Button Pressed");	
 			if(mainMenuShowing==false){
 				showNextSlide();
 			}
