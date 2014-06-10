@@ -7,8 +7,7 @@ import java.awt.image.BufferedImage;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
-import javax.swing.filechooser.*;
-    
+
 /*
  * Copyright (c) 1995, 2008, Oracle and/or its affiliates. All rights reserved.
  *
@@ -39,200 +38,155 @@ import javax.swing.filechooser.*;
  * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */ 
-    
+
 public class FileChooser extends JPanel implements ActionListener {
+    private static final long serialVersionUID = 1L;
+    static public String filePath;
+    JButton openButton;
+    JFileChooser fc;
+    int panelWidth;
+    int panelHeight;
+    int buttonWidth = 100;
+    int buttonHeight = 50;
 
-        static public String filePath;
-        static private final String newline = "\n";
-        //static private boolean lockOpenPlaylistButton = false;
-        JButton openButton;
-        JTextArea log;
-        JFileChooser fc;
-        int panelWidth;
-        int panelHeight;
-        int buttonWidth = 100;
-        int buttonHeight = 50;
-        
-           public FileChooser(String initialisedFilePath) {
-                super.setLayout(null);
-                setInitialFilePath(initialisedFilePath);
-                //Create the log first, because the action listeners
-                //need to refer to it.
-                log = new JTextArea(5,20);
-                //log.setLayout(null);
-                //log.setBounds(0, 100, 50, 50);
-                
-                log.setMargin(new Insets(5,5,5,5));
-                log.setEditable(false);
-                //JScrollPane logScrollPane = new JScrollPane(log);
+    /**
+     * Instantiate a new filechooser object. Allows the user
+     * to choose directories from a dialog and get their path,
+     * for use in java.
+     * @param initialisedFilePath
+     */
+    public FileChooser(String initialisedFilePath) {
+        super.setLayout(null);
+        setInitialFilePath(initialisedFilePath);
 
-                //Create a file chooser
-                fc = new JFileChooser();
+        //Create a file chooser
+        fc = new JFileChooser();
 
-                //Uncomment one of the following lines to try a different
-                //file selection mode.  The first allows just directories
-                //to be selected (and, at least in the Java look and feel,
-                //shown).  The second allows both files and directories
-                //to be selected.  If you leave these lines commented out,
-                //then the default mode (FILES_ONLY) will be used.
-                //
-                fc.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-                //fc.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
+        // Set filechooser to only show directories, as only they will be required.
+        fc.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
 
-                //Create the open button.  We use the image from the JLF
-                //Graphics Repository (but we extracted it from the jar).
-                ImageIcon buttonIcon = new ImageIcon("resources/buttons/openList.png");
-                JButton button = new JButton();
-                openButton = setUpButtonImage(button, "resources/buttons/openList.png", buttonWidth, buttonHeight);
-                
-                //openButton = new JButton("Choose a playlist directory", buttonIcon);
-                openButton.addActionListener(this);
-                //openButton.setBounds(0, 200, 30, 30);
-
-                //For layout purposes, put the buttons in a separate panel
-                //JPanel buttonPanel = new JPanel(); //use FlowLayout
-                //buttonPanel.setLayout(null);
-                //buttonPanel.setBounds(0, 0, 100, 100);
-                //buttonPanel.add(openButton);
-
-                //Add the buttons and the log to this panel.
-                //add(buttonPanel);
-                //add(logScrollPane, BorderLayout.CENTER);
-            }
-           
-           public JButton getButton() {
-             
-               System.out.println("here " + openButton.getBounds());
-               return openButton;
-           }
-           
-           public int getButtonWidth() {
-               return buttonWidth;
-           }
-        
-           public int getButtonHeight() {
-               return buttonHeight;
-           }
-           
-           public JButton setUpButtonImage(JButton button, String image, int width, int height){
-               BufferedImage choosePageButtonImage;
-               try{
-                   choosePageButtonImage = ImageIO.read(new File(image));
-                   Image scaledButton = choosePageButtonImage.getScaledInstance(width,height,java.awt.Image.SCALE_SMOOTH);
-                   button.setIcon(new ImageIcon(scaledButton));
-               }catch (IOException ex){
-                   
-               }
-               return button;
-           }
-           
-
-//      public FileChooser(String initialisedFilePath, int widthOfPanel, int heightOfPanel) {
-//          super.setLayout(null);
-//          panelHeight = heightOfPanel;
-//          panelWidth = widthOfPanel;
-//          setInitialFilePath(initialisedFilePath);
-//          //Create the log first, because the action listeners
-//          //need to refer to it.
-//          log = new JTextArea(5,20);
-//          log.setMargin(new Insets(5,5,5,5));
-//          log.setEditable(false);
-//          //JScrollPane logScrollPane = new JScrollPane(log);
-//
-//          //Create a file chooser
-//          fc = new JFileChooser();
-//          fc.setLayout(null);
-//          fc.setBounds(0, 0, panelWidth, panelHeight);
-//
-//          //Uncomment one of the following lines to try a different
-//          //file selection mode.  The first allows just directories
-//          //to be selected (and, at least in the Java look and feel,
-//          //shown).  The second allows both files and directories
-//          //to be selected.  If you leave these lines commented out,
-//          //then the default mode (FILES_ONLY) will be used.
-//          //
-//          fc.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-//          //fc.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
-//
-//          //Create the open button.  We use the image from the JLF
-//          //Graphics Repository (but we extracted it from the jar).
-//          openButton = new JButton("Choose a playlist directory",
-//                                   createImageIcon("images/Open16.gif"));
-//          openButton.addActionListener(this);
-//          openButton.setBounds(0, 0, panelWidth, (int) (panelHeight*0.15));
-//
-//          //For layout purposes, put the buttons in a separate panel
-//          JPanel buttonPanel = new JPanel(); //use FlowLayout
-//          buttonPanel.setLayout(null);
-//          buttonPanel.add(openButton);
-//
-//          //Add the buttons and the log to this panel.
-//          add(buttonPanel);
-//          //add(logScrollPane, BorderLayout.CENTER);
-//      }
-
-        private void setInitialFilePath(String initialisedFilePath) {
-            filePath = initialisedFilePath;     
-        }
-
-        public void actionPerformed(ActionEvent e) {
-            System.out.println("RE? ");
-            if(!LockedPlaylistValueAccess.lockedPlaylist) {
-            //Handle open button action.
-                if (e.getSource() == openButton) {
-                
-                    
-                    System.out.println("HERE???" + LockedPlaylistValueAccess.lockedPlaylist);
-                    int returnVal = fc.showOpenDialog(FileChooser.this);
-    
-                    if (returnVal == JFileChooser.APPROVE_OPTION) {
-                        System.out.println("INHERE? ");
-                        File file = fc.getSelectedFile();
-                        filePath = file.getAbsolutePath();
-                      //  //This is where a real application would open the file.
-                      //  log.append("Opening: " + file.getName() + "." + newline);
-                    } else {
-                      //  log.append("Open command cancelled by user." + newline);
-                    }
-                    log.setCaretPosition(log.getDocument().getLength());
-                }
-           }
-        }
-        
-        public void lockTheOpenButton(boolean trueOrFalse) {
-            System.out.println("in method 2 " + trueOrFalse);
-            LockedPlaylistValueAccess.lockedPlaylist = trueOrFalse;
-            System.out.println(LockedPlaylistValueAccess.lockedPlaylist + " EHEHHEEHEHEH");
-        }
-
-        /** Returns an ImageIcon, or null if the path was invalid. */
-        protected static ImageIcon createImageIcon(String path) {
-            java.net.URL imgURL = FileChooser.class.getResource(path);
-            if (imgURL != null) {
-                return new ImageIcon(imgURL);
-            } else {
-                System.err.println("Couldn't find file: " + path);
-                return null;
-            }
-        }
-
-        public Component openDialog() {
-            //Schedule a job for the event dispatch thread:
-            //creating and showing this application's GUI.
-            SwingUtilities.invokeLater(new Runnable() {
-                public void run() {
-                    //Turn off metal's use of bold fonts
-                    UIManager.put("swing.boldMetal", Boolean.FALSE); 
-                   
-                }
-            });
-            Component jFrameItems = new FileChooser(filePath);
-            return jFrameItems; 
-        }
-        
-        public String getNewFilePath() {
-            return filePath;
-        }
-
+        // Set image icon to open playlist button.
+        JButton button = new JButton();
+        openButton = setUpButtonImage(button, "resources/buttons/openList.png", buttonWidth, buttonHeight);
+        openButton.addActionListener(this);
     }
+
+    /**
+     * Get the button that opens the playlist.
+     * @return
+     */
+    public JButton getButton() {
+
+        System.out.println("here " + openButton.getBounds());
+        return openButton;
+    }
+
+    /**
+     * get the width of the button in pixels.
+     * @return
+     */
+    public int getButtonWidth() {
+        return buttonWidth;
+    }
+
+    /**
+     * get the height of the button in pixels.
+     * @return
+     */
+    public int getButtonHeight() {
+        return buttonHeight;
+    }
+
+    /**
+     * Sets up a JButton to have an image icon.
+     * @param button
+     * @param image- Path to the image you wish to be the icon.
+     * @param width- width you would like image to be
+     * @param height- height you would like image to be.
+     * @return
+     */
+    public JButton setUpButtonImage(JButton button, String image, int width, int height){
+        BufferedImage choosePageButtonImage;
+        try{
+            choosePageButtonImage = ImageIO.read(new File(image));
+            Image scaledButton = choosePageButtonImage.getScaledInstance(width,height,java.awt.Image.SCALE_SMOOTH);
+            button.setIcon(new ImageIcon(scaledButton));
+        }catch (IOException ex){
+
+        }
+        return button;
+    }
+
+    /**
+     * Provide an initialised filepath for the playlist directory.
+     * @param initialisedFilePath
+     */
+    private void setInitialFilePath(String initialisedFilePath) {
+        filePath = initialisedFilePath;     
+    }
+
+    /**
+     * Action listener for the button. opens the browser dialog.
+     */
+    public void actionPerformed(ActionEvent e) {
+        // only open the dialog if the playlist is not locked.
+        if(!LockedPlaylistValueAccess.lockedPlaylist) {
+            if (e.getSource() == openButton) {
+                int returnVal = fc.showOpenDialog(FileChooser.this);
+                if (returnVal == JFileChooser.APPROVE_OPTION) {
+                    File file = fc.getSelectedFile();
+                    filePath = file.getAbsolutePath();
+                } else {
+                    System.out.println("Open command cancelled by user.");
+                }
+            }
+        }
+    }
+
+    /**
+     * Sets the open button to locked. not playlist can be chosen if
+     * this has been set true.
+     * @param trueOrFalse
+     */
+    public void lockTheOpenButton(boolean trueOrFalse) {
+        LockedPlaylistValueAccess.lockedPlaylist = trueOrFalse;
+    }
+
+    /** Returns an ImageIcon, or null if the path was invalid. */
+    protected static ImageIcon createImageIcon(String path) {
+        java.net.URL imgURL = FileChooser.class.getResource(path);
+        if (imgURL != null) {
+            return new ImageIcon(imgURL);
+        } else {
+            System.err.println("Couldn't find file: " + path);
+            return null;
+        }
+    }
+
+    /**
+     * Opens the dialog box, which user can then browse files from.
+     * @return
+     */
+    public Component openDialog() {
+        //Schedule a job for the event dispatch thread:
+        //creating and showing this application's GUI.
+        SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                //Turn off metal's use of bold fonts
+                UIManager.put("swing.boldMetal", Boolean.FALSE); 
+            }
+        });
+        Component jFrameItems = new FileChooser(filePath);
+        return jFrameItems; 
+    }
+
+    /**
+     * gets the chosen filepath.
+     * @return
+     */
+    public String getNewFilePath() {
+        return filePath;
+    }
+
+}
 
