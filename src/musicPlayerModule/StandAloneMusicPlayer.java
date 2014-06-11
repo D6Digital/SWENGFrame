@@ -79,7 +79,9 @@ public class StandAloneMusicPlayer {
     Boolean newIndex = false;
     Boolean isPaused = false;
     Boolean threadKilled = false;
-    Boolean changingTimeByHand, changingSelectedPlaylistByHand, areWeUnlocked;
+    Boolean changingTimeByHand = false;
+    Boolean changingSelectedPlaylistByHand= false; 
+    Boolean areWeUnlocked = false;
     Boolean initialLockedValue = true;
     
     String vlcLibraryPath;
