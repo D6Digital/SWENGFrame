@@ -96,8 +96,22 @@ public class SlidePanel extends JPanel{
 		setVisibility(false);
 
 		clearSlide();
+	}
 
-		// TODO ensure this panel is ready to be displayed when necessary
+	public SlidePanel(EmbeddedAudioPlayer audioPlayer) {
+		super();
+
+
+		mediaObjects = new ArrayList<slideMediaObject>();
+
+		this.audioPlayer = audioPlayer;
+		// set layout manager to null so media components can be added to their specific co-ordinates
+		setLayout(null);
+
+		// By default the panel is invisible until the player chooses to display it
+		setVisibility(false);
+
+		clearSlide();
 	}
 
 	public void loadPresentation(Presentation presentation) {
@@ -207,8 +221,8 @@ public class SlidePanel extends JPanel{
 		{
 			this.audioPlayer.stopMedia();
 		}
-
 	}
+	
 
 	/**
 	 * @return the count for the addition of objects

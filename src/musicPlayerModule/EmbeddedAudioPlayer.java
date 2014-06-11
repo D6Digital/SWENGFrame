@@ -103,15 +103,14 @@ public class EmbeddedAudioPlayer {
     /**
      * destroys the thread and releases the media player. If new audio is required
      * after this a new EmbeddedAudioPlayer must be instantiated.
-     * @return true if the thread has been destroyed, otherwise returns false.
      */
-    @SuppressWarnings("deprecation")
-    public boolean threadKill() {
-        theTimer.stop();
-        musicThread.stop();
-        musicThread.destroy();
+    
+    public void threadKill() {
+    	if(theTimer != null){
+    		theTimer.stop();
+    	}
+        musicThread = null;
         mediaPlayer.release();
-        return(!musicThread.isAlive());
     }
 
     /**

@@ -17,6 +17,8 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -37,6 +39,8 @@ import javax.swing.text.AttributeSet;
 import javax.swing.text.Element;
 import javax.swing.text.StyledDocument;
 import javax.swing.text.html.HTML;
+
+import musicPlayerModule.EmbeddedAudioPlayer;
 
 import presentation.Collection;
 import presentation.Presentation;
@@ -106,6 +110,8 @@ public class GUI extends JFrame implements ComponentListener, KeyListener{
 	static Cursor blankCursor;
 	private MouseAdapter genericListener, layersMouseListener, textBranchListener, objectBranchListener,mainMenuMouseListener, videoListener;
 	private ActionListener cursorTimerTask, resizingTimerTask, openBookListener, previousSlideListener, nextSlideListener;
+	private EmbeddedAudioPlayer audioPlayer;
+	private String vlcLibraryPath = "resources/lib/vlc-2.1.3";
 
 
 	/**
@@ -161,6 +167,8 @@ public class GUI extends JFrame implements ComponentListener, KeyListener{
 		mainMenuShowing=true;
 		revalidate();
 		repaint();
+		
+		audioPlayer = new EmbeddedAudioPlayer(vlcLibraryPath);
 
 	}
 
@@ -373,8 +381,8 @@ public class GUI extends JFrame implements ComponentListener, KeyListener{
 		removePanel(slidePanel);
 		removePanel(utilities);
 		removePanel(contentsPanel);
-
-		slidePanel = new SlidePanel();
+		
+		slidePanel = new SlidePanel(audioPlayer);
 		utilities = new UtilitiesPanel(utilitiesWidth, width, height,genericListener,bookLayout);
 		contentsPanel = new ContentsPanel(slideList.getSlideList(),collection.getPresentationList(), contentsWidth, slideWidth,540, mainMenuPanel.getCurrentSystem(), mainMenuPanel.getCurrentBook(), bookLayout);
 
@@ -393,6 +401,8 @@ public class GUI extends JFrame implements ComponentListener, KeyListener{
 		resizeMainPanel();
 		setVisible(true);
 		repaint();
+		
+		
 
 	}
 
@@ -440,13 +450,13 @@ public class GUI extends JFrame implements ComponentListener, KeyListener{
 					@Override
 					public void actionPerformed(ActionEvent arg0) {
 						mainMenuShowing = true;
+						removeAllComponentsInContainer(slidePanel);
 						slidePanel.stopPlaying();
 						utilities.stopPlaying();
 						scaleFactorX = (double)(getSize().width-insets.left-insets.right)/(double)720;
 						scaleFactorY = (double)(getSize().height-insets.top-insets.bottom)/(double)540;
 						mainMenuPanel.setBounds(0, 0, getSize().width-insets.left-insets.right, getSize().height-insets.top-insets.bottom);
 						mainMenuPanel.resizeMainMenu(scaleFactorX, scaleFactorY);
-						//System.out.println("Main Menu Pressed");
 						layers.setVisible(false);
 						mainMenuPanel.setVisible(true);
 					}
@@ -689,12 +699,14 @@ public void showNextSlide() {
 		tab.setBounds(width-tabWidth,(height/2)-(tabHeight/2),tabWidth,tabHeight);
 		BufferedImage TabImage;
 		try{
-			TabImage = ImageIO.read(new File(tabImagePath));
-			Image scaledUTab = TabImage.getScaledInstance(tabWidth, tabHeight, java.awt.Image.SCALE_SMOOTH);
-			JLabel uTabLabel = new JLabel(new ImageIcon(scaledUTab));
-			uTabLabel.setBounds(0, 0, tabWidth, tabHeight);
-			uTabLabel.setOpaque(false);
-			tab.add(uTabLabel);
+			if(tab.getComponentCount() == 0){
+				TabImage = ImageIO.read(new File(tabImagePath));
+				Image scaledUTab = TabImage.getScaledInstance(tabWidth, tabHeight, java.awt.Image.SCALE_SMOOTH);
+				JLabel uTabLabel = new JLabel(new ImageIcon(scaledUTab));
+				uTabLabel.setBounds(0, 0, tabWidth, tabHeight);
+				uTabLabel.setOpaque(false);
+				tab.add(uTabLabel);
+			}
 		}catch (IOException ex){
 
 		}
@@ -1182,6 +1194,99 @@ public void refreshContents() {
 	previousTab.setVisible(false);
 	previousSlideButton.setVisible(false);
 }
+
+
+
+
+
+/**
+ * This method removes all the components a container 
+ * @param container
+ */
+private void removeAllComponentsInContainer(Container container){
+	for (Component component : container.getComponents()) {
+		if(component instanceof Container){
+			Container childContainer = (Container) component;
+			removeAllComponents(childContainer);
+			//System.out.println("removed all components on:" + childContainer.getClass());
+		}
+	}
+}
+
+
+
+/**
+ * This method removes all the components from any container
+ * @param container
+ */
+private void removeAllComponents(Container container){
+	if(container.getComponentCount() != 0){
+		for (Component component : container.getComponents()) {
+			if(component instanceof Container){
+				Container childContainer = (Container) component;
+				if(childContainer.getComponentCount() != 0){
+					removeAllComponents(childContainer);
+				}
+			//System.out.println("removed: " + component.getClass());
+			removeAllListenersOnComponent(component);
+			((Container) component).removeAll();
+			component = null;
+			}
+		}
+	}
+	//System.out.println("removed: " + container.getClass());
+	container = null;
+}
+
+/**
+ * This method removes all the listeners from the slide panel to ensure resources are freed
+ * @param component
+ */
+private void removeAllListenersOnComponent(Component component) {
+	if(component instanceof slideMediaObject){
+		slideMediaObject object = (slideMediaObject) component;
+		for (MouseMotionListener listener : object.getMouseMotionListeners()) {
+			object.removeMouseMotionListener(listener);
+			//System.out.println("removed mouse motion listener from object");
+			listener = null;
+		}
+		for (MouseListener listener : object.getMouseListeners()) {
+			object.removeMouseListener(listener);
+			//System.out.println("removed mouse listener from object");
+			listener = null;
+		}
+	}
+	if(component instanceof JButton){
+		JButton button = (JButton) component;
+		for (ActionListener listener : button.getActionListeners()) {
+			button.removeActionListener(listener);
+			//System.out.println("removed action listener from button");
+			listener = null;
+		}
+		for (MouseMotionListener listener : button.getMouseMotionListeners()) {
+			button.removeMouseMotionListener(listener);
+		}
+		for (MouseListener listener : button.getMouseListeners()) {
+			button.removeMouseListener(listener);
+		}
+	}
+	if(component instanceof JTextPane){
+		JTextPane textPane = (JTextPane) component;
+		for (MouseMotionListener listener : textPane.getMouseMotionListeners()) {
+			textPane.removeMouseMotionListener(listener);
+			//System.out.println("removed mouse motion listener from textPane");
+			listener = null;
+		}
+		for (MouseListener listener : textPane.getMouseListeners()) {
+			textPane.removeMouseListener(listener);
+			//System.out.println("removed mouse listener from textPane");
+			listener = null;
+		}
+	}
+	
+}
+
+
 
 
 @Override
