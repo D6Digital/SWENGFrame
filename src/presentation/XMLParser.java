@@ -30,7 +30,9 @@ enum ProcessingElement{
 }
 
 /**
- * 
+ * @author samPick
+ * @author Robert Mills
+ * @author Joshua Lant
  */
 public class XMLParser extends DefaultHandler{
 	private String fileName;

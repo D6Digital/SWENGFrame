@@ -48,6 +48,8 @@ import uk.co.caprica.vlcj.medialist.MediaList;
  * implementations should call the getFullControlPanel() method. This returns
  * a JPanel which can be attached to any frame or otherwise, and used to play audio
  * and search directories for audio, to be put in a playlist.
+ * 
+ * @author Joshua Lant
  */
 public class StandAloneMusicPlayer { 
     

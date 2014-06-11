@@ -36,6 +36,11 @@ import videoModule.*;
     VideoPlayerTestT601.class
 })
 
+/**
+ * 
+ * @author Joshua Lant
+ *
+ */
 public class AllTests {
    
 }

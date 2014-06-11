@@ -26,6 +26,7 @@ import presentation.Slide;
  * 
  * @author Sam Pick
  * @author Sam L
+ * @author Josh Drake
  */
 public class ContentsPanel extends JPanel implements ActionListener{
 

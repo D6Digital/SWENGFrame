@@ -1,5 +1,10 @@
 package presentation;
 
+/**
+ * 
+ * @author sp807
+ *
+ */
 public class Point {
 	
 	int num, xCoord, yCoord;

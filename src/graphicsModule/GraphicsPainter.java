@@ -7,7 +7,7 @@ import java.awt.Color;
 import javax.swing.JPanel;
 
 /**
- * @author Robert
+ * @author Robert Mills
  *
  */
 public class GraphicsPainter {

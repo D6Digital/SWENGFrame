@@ -19,7 +19,7 @@ import com.sun.jna.NativeLibrary;
  * Sets up basic higher module to provide test for working of standalone audio player.
  * Note, test needs rewrite. No longer running due to addition of adapter for mouse
  * in StandAloneAudioPlayer.
- *
+ *@author Joshua Lant
  */
 public class SecondHigherModuleExampleT001_2 {
     static JFrame mainFrame = new JFrame();

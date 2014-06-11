@@ -1,5 +1,11 @@
 package textModule;
 
+
+/**
+ * 
+ * @author TRiBE
+ *
+ */
 public class TextBody 
 {
 

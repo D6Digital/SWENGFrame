@@ -33,6 +33,11 @@ import bookModule.Book;
 import bookModule.BookList;
 import bookModule.BookXMLParser;
 
+/**
+ * 
+ * @author Josh Drake
+ *
+ */
 public class MainMenuPanel extends JPanel{
 
 	/**

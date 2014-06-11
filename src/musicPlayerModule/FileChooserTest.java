@@ -18,7 +18,7 @@ import uk.co.caprica.vlcj.player.list.MediaListPlayer;
 /**
  * Provides a basic setup with frame and panel that allows
  * the user to test the file chooser on its own.
- * @author jl1132
+ * @author Joshua Lant
  *
  */
 public class FileChooserTest {

@@ -7,8 +7,15 @@ import java.util.ArrayList;
  * ystart, xend, yend, linecolor
  * and will contain the element TextBody
  * It sets the value (from the XML file) and gets the value (for the tests)
+ * 
+ * 
  */
 
+/**
+ * 
+ * @author TRiBE
+ *
+ */
 public class Text {
 
 	String Font = "Arial";

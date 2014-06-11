@@ -12,7 +12,7 @@ import org.junit.Test;
  * A test to check that the Dice panel is in working order. Produces
  * a frame upon which the dice panel sits, the testing is performed
  * with no integration in system.
- *
+ * @author Joshua Lant
  */
 public class DicePanelTestT203 {
 

@@ -9,7 +9,7 @@ import javax.swing.JFrame;
  * hard-coded text objects
  * 
  * This is the fully working version of D6Digital_Scribe and there will be updates if bugs arise
- * 
+ * @author samPick
  */
 public class D6Digital_ScribeExample {
 	

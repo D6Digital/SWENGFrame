@@ -11,6 +11,7 @@ import org.junit.Test;
  * calculator panel on, for lone testing of the module without integration
  * into system.
  *
+ * @author Joshua Lant
  */
 public class CalculatorPanelTestT201 {
 

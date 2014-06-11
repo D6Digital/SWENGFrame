@@ -10,7 +10,7 @@ import javax.swing.JSlider;
 
 /**
  * Provides a basic higher class example to test use of the Standalone music player.
- * @author jl1132
+ * @author Joshua Lant
  *
  */
 public class HigherModuleExample {

@@ -26,6 +26,8 @@ import com.sun.jna.NativeLibrary;
  * Video player module. Uses the PlayerControlPanel and EmbeddedMediaPlayer
  * in order to create a video player inside a JPanel which can be placed 
  * upon a slide in the presentation.
+ * @author Josh Drake
+ * @author samPick
  */
 public class VideoPlayer extends JPanel{
     

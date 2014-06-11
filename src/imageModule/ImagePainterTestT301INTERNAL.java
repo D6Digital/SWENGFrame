@@ -13,7 +13,7 @@ import org.junit.Test;
 /**
  * A test to check that the ImagePainter class works correctly.
  * TODO: Complete test writing once issue #9 has been resolved.
- * @author Joshua Lant.
+ * @author Joshua Lant
  */
 public class ImagePainterTestT301INTERNAL {
     ImagePainter image;

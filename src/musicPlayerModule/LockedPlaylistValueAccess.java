@@ -5,7 +5,7 @@ package musicPlayerModule;
  * and filechooser, and slide panel timing, which allows the
  * playlist to be locked so that embedded and standalone audio cannot
  * play at the same time.
- * @author jl1132
+ * @author Joshua Lant
  *
  */
 public class LockedPlaylistValueAccess {

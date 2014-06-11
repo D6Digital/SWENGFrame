@@ -15,6 +15,8 @@ import presentation.Video;
  * A test to check that the video player module works correctly. NOTE:
  * No longer working automation due to addition of mouseAdapter to
  * constructor of videoplayer. Test needs rewriting for iteration 3.
+ * 
+ * @author Joshua Lant
  */
 public class VideoPlayerTestT601 {
     Robot robot;

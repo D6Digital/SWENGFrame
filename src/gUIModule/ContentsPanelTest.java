@@ -9,6 +9,11 @@ import org.junit.Test;
 
 import presentation.Slide;
 
+/**
+ * 
+ * @author Joshua Lant
+ *
+ */
 public class ContentsPanelTest {
 	
 	ArrayList<Slide> slideList = new ArrayList<>();

@@ -23,6 +23,7 @@ import com.sun.jna.NativeLibrary;
  * example uses buttons for the user to control the player, although it is intended for 
  * head-less use.
  *
+ *@author Joshua Lant
  */
 public class EmbeddedAudioHigherModuleExample {
     static JFrame frame = new JFrame(); 
